@@ -1,0 +1,602 @@
+[
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0001.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  },
+  {
+    "file": "false_negative_tests/plausible/plausible_0002.bib",
+    "type": "plausible_fake",
+    "expected": "INVALID",
+    "note": "Completely fabricated citation with plausible format"
+  }
+]

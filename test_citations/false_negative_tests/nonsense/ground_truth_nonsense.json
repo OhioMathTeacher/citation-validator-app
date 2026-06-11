@@ -1,0 +1,602 @@
+[
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2027)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2029)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2029)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2028)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2029)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2027)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2030)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2029)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2027)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2027)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2030)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2028)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2028)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2030)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2030)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2029)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2030)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2029)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2030)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2027)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2028)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2029)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2030)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2030)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_future_year",
+    "expected": "INVALID",
+    "note": "Future year (2029)"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0001.bib",
+    "type": "nonsense_generic",
+    "expected": "INVALID",
+    "note": "Extremely generic title and metadata"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_random_doi",
+    "expected": "INVALID",
+    "note": "Random string DOI"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  },
+  {
+    "file": "false_negative_tests/nonsense/nonsense_0002.bib",
+    "type": "nonsense_anachronism",
+    "expected": "INVALID",
+    "note": "Modern topic (deep learning) with impossible early year"
+  }
+]

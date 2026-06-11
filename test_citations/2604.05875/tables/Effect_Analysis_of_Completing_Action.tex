@@ -1,0 +1,47 @@
+% \renewcommand{\arraystretch}{1.1}
+% \begin{table}[t]
+% % \begin{wraptable}[9]{r}{6cm}
+% \centering
+% \setlength{\tabcolsep}{3pt}
+% \resizebox{0.45\textwidth}{!}{%
+% \begin{tabular}{lccccc}
+% \toprule
+% \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c}{\textit{\textbf{WebQSP}}} & \multicolumn{2}{c}{\textit{\textbf{CWQ}}} \\ \cmidrule(r){2-3} \cmidrule(r){4-5} 
+%                                & \textit{30\% KB} & \textit{50\% KB} & \textit{30\% KB} & \textit{50\% KB} \\ 
+% \midrule
+% JCQL                                 & \textbf{0.730} & \textbf{0.738} & \textbf{0.502} & \textbf{0.508} \\
+% JCQL w/o  \texttt{generate}                   & 0.706 & 0.722 & 0.482 & 0.490 \\
+% JCQL w/o  \texttt{complete}                   & 0.691 & 0.696 & 0.473 & 0.475 \\  
+% \bottomrule
+% \end{tabular}%
+% }
+% \caption{Ablation study on the SLM for the task of KBQA in terms of Hits@1.}
+% \label{Effect Analysis of Complete Action}
+% \end{table}
+% % \end{wraptable}
+% \renewcommand{\arraystretch}{1}
+
+
+
+\renewcommand{\arraystretch}{1.0}
+\begin{table}[t]
+\small
+\centering
+\setlength{\tabcolsep}{1.0pt}
+\begin{tabular}{lccccc}
+\toprule
+\multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c}{\textit{\textbf{WebQSP}}} & \multicolumn{2}{c}{\textit{\textbf{CWQ}}} \\ \cmidrule(r){2-3} \cmidrule(r){4-5} 
+                               & \textit{30\% KB} & \textit{50\% KB} & \textit{30\% KB} & \textit{50\% KB} \\ 
+\midrule
+JCQL                                 & \textbf{0.730} & \textbf{0.738} & \textbf{0.502} & \textbf{0.508} \\
+JCQL w/o  \texttt{generate}                   & 0.706 & 0.722 & 0.482 & 0.490 \\
+JCQL w/o  \texttt{complete}                   & 0.691 & 0.696 & 0.473 & 0.475 \\  
+\bottomrule
+\end{tabular}%
+\vspace{-1mm}
+\caption{Ablation study on the SLM for the task of KBQA in terms of Hits@1.}
+\label{Effect Analysis of Complete Action}
+\end{table}
+% \end{wraptable}
+\renewcommand{\arraystretch}{1}
+

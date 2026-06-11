@@ -1,0 +1,89 @@
+
+% \IncMargin{-0.5em}
+% \begin{algorithm}[t!]
+% \caption{JCQL}\label{alg:joint training framework}
+% \DontPrintSemicolon
+% \SetAlgoLined
+% \KwIn{The KB $G$, KBQA's training set $\{Q,A_Q,E_Q\}$, KBC's training set $\{\langle h,r,t\rangle\in G\}$, an $SLM$ $\mathcal{M}_S$, an $LLM$ $\mathcal{M}_L$}
+% \KwOut{The fine-tuned $\mathcal{M}_S$}
+% % \BlankLine 
+
+% $\mathcal{M}_S \gets \textsc{Pretrain}(\{\langle h,r,t\rangle\},\mathcal{M}_S)$\\
+% \ForEach{$\{q,a_q,e_q\} \in \{Q,A_Q,E_Q\}$}{
+%     \tcp{KBC $\rightarrow$ KBQA:}
+%     $C_q \gets \textsc{Agent}(q,a_q,e_q,\mathcal{M}_S)$\\
+%     \tcp{KBQA $\rightarrow$ KBC:}
+%     $P_q \gets \textsc{Parse}(C_q,\mathcal{M}_L)$\\
+
+%     \vspace{0.1em}
+%     $\mathcal{M}_S \gets \textsc{IncFineTune}(\{\langle h,r,t\rangle\},P_q,\mathcal{M}_S)$\\
+% }
+% \end{algorithm}
+% \DecMargin{-0.5em}
+
+
+% \IncMargin{-0.5em}
+% \begin{algorithm}[t!]
+% \small % 【优化1】整体使用小号字体，显著节省空间
+% \SetAlCapSkip{0.2em} % 【优化2】减少标题与下方横线的间距
+% \caption{JCQL}\label{alg:joint training framework}
+% \DontPrintSemicolon
+% \SetAlgoLined
+
+% % 【优化3】Input/Output 顶格处理
+% % 默认的 \KwIn 会导致第二行文字向右缩进对齐 "Input:" 之后，浪费左侧空间。
+% % 这里我们定义不带悬挂缩进的关键词，或者直接使用加粗文本。
+% % 使用 \SetKw 定义的命令，后续文字换行时会紧贴代码左边界（顶格），利用率最高。
+% \SetKw{KwInput}{Input:}
+% \SetKw{KwOutput}{Output:}
+
+% \KwInput The KB $G$, KBQA's training set $\{Q,A_Q,E_Q\}$, KBC's training set $\{\langle h,r,t\rangle\in G\}$, an $SLM$ $\mathcal{M}_S$, an $LLM$ $\mathcal{M}_L$\\
+% \KwOutput The fine-tuned $\mathcal{M}_S$
+
+% % 逻辑部分
+% $\mathcal{M}_S \gets \textsc{Pretrain}(\{\langle h,r,t\rangle\},\mathcal{M}_S)$\;
+% \ForEach{$\{q,a_q,e_q\} \in \{Q,A_Q,E_Q\}$}{
+%     % 【优化4】将注释改为行内侧边注释 (\tcp*)，节省垂直行数
+%     $C_q \gets \textsc{Agent}(q,a_q,e_q,\mathcal{M}_S)$ \tcp*{KBC $\rightarrow$ KBQA}
+%     $P_q \gets \textsc{Parse}(C_q,\mathcal{M}_L)$ \tcp*{KBQA $\rightarrow$ KBC}
+    
+%     % 【优化5】删除了 \vspace{0.1em}，更加紧凑
+%     $\mathcal{M}_S \gets \textsc{IncFineTune}(\{\langle h,r,t\rangle\},P_q,\mathcal{M}_S)$\;
+% }
+% \end{algorithm}
+% \DecMargin{-0.5em}
+
+
+\begin{center}  % 居中
+\begin{minipage}{0.96\columnwidth}  % 限制宽度，防止过宽
+\begin{algorithm}[H] % [H] 强制原地显示
+\small % 全局小号字体，节省空间
+    \caption{JCQL}
+    \label{alg:joint training framework}
+    % 重定义 Input/Output 样式，使其变为粗体
+    \renewcommand{\algorithmicrequire}{\textbf{Input:}}
+    \renewcommand{\algorithmicensure}{\textbf{Output:}}
+    
+    \begin{algorithmic}[1] % [1] 显示行号
+        % 【优化】使用 \! 减少集合符号间的空隙，争取在一行内显示更多内容
+        \REQUIRE The KB $G$, KBQA's training set $\{Q,A_Q,E_Q\}$, KBC's training set $\{\langle h,r,t\rangle\!\in\!G\}$, an SLM $\mathcal{M}_S$, an LLM $\mathcal{M}_L$
+        \ENSURE The fine-tuned $\mathcal{M}_S$
+        
+        % 逻辑部分
+        \STATE $\mathcal{M}_S \leftarrow \textsc{Pretrain}(\{\langle h,r,t\rangle\},\mathcal{M}_S)$
+        
+        \FOR{$\{q,a_q,e_q\} \in \{Q,A_Q,E_Q\}$}
+            % 【优化】使用 \hfill 强制注释右对齐，利用行尾空间
+            % \textit{// ...} 模仿 C++ 风格注释，比默认的三角符号更紧凑
+            \STATE \textcolor{gray}{\textit{// KBC $\to$ KBQA}}
+            \STATE Trajectory $C_q \leftarrow \textsc{Agent}(q,a_q,e_q,\mathcal{M}_S)$
+
+            \STATE \textcolor{gray}{\textit{// KBQA $\to$ KBC}}
+            \STATE Paths $P_q \leftarrow \textsc{Parse}(C_q,\mathcal{M}_L)$
+            
+            \STATE $\mathcal{M}_S \leftarrow \textsc{IncFineTune}(\{\langle h,r,t\rangle\},P_q,\mathcal{M}_S)$
+        \ENDFOR
+    \end{algorithmic}
+\end{algorithm}
+\end{minipage}
+\end{center}

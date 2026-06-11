@@ -1,0 +1,12 @@
+{
+  "cabanac2021":    { "ground_truth": "valid", "notes": "Real paper — foundational work on tortured phrases in science" },
+  "sakai2026":      { "ground_truth": "valid", "notes": "Real paper — HalluCitation study of ACL/NAACL/EMNLP" },
+  "bienz2026":      { "ground_truth": "valid", "notes": "Real paper — HPC conference analysis, source of Nature's 2-6% figure" },
+  "abbonato2026":   { "ground_truth": "valid", "notes": "Real paper — CheckIfExist citation validation tool" },
+  "resnik2026":     { "ground_truth": "valid", "notes": "Real paper — fabricated references in academic publishing" },
+  "cobb2024":       { "ground_truth": "valid", "notes": "Real paper — Am Psychol 2024, no DOI in original BibTeX" },
+  "baethge2025":    { "ground_truth": "valid", "notes": "Real paper — hallucinated refs in medical literature" },
+  "liang2025":      { "ground_truth": "valid", "notes": "Real paper — LLM usage mapping in Nature Human Behaviour" },
+  "duane2026":      { "ground_truth": "valid", "notes": "Real paper — dental literature hallucinations" },
+  "linardon2025":   { "ground_truth": "valid", "notes": "Real paper — mental health research hallucinations" }
+}

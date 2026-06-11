@@ -1,0 +1,30 @@
+\begin{tcolorbox}[prompt=
+{\begin{prompt} \label{prompts for instruction used in knowledge extraction}The Prompt for the Training Phase of JCQL 
+\end{prompt}}]
+$\bullet$ Instruction: \\ \\
+Solve a question answering task with interleaving Thought, Action, Observation steps. Thought can reason about the current situation, and Action can be four types: \\
+\textbf{(1) Search[entity1 | entity2 | ...],} which searches the exact entities on Wikidata and returns their one-hop subgraphs. You should extract all concrete entities appeared in your last thought without redundant words, and you should always select entities from topic entities in the first search. \\
+\textbf{(2) Complete[head entity | relation],} which completes tail entities based on the head entity and relationships. \\ 
+\textbf{(3) Generate[subquestion],} which generates some new triples related to your last thought. The subquestion should be a one-hop question. \\
+\textbf{(4) Finish[answer1 | answer2 | ...],} which summarizes the answers from the triples and returns the true answers. You should reason about the answer based on the known triples. Firstly, you need to summarize all possible answers appeared in the known triples. Secondly, you should compare them with the reference answers. Finally, you should return all the true answers. If you don't know the answer, please return Finish[unknown].\\
+You should generate each step without redundant words. \\
+
+$\bullet$ Example: \\ \\
+\textbf{Question:} where did woodrow wilson go to school? \\
+\textbf{Topic Entity:} [Woodrow Wilson] \\
+\textbf{Answer:} Davidson College | University of Virginia School of Law | Princeton University | Johns Hopkins University \\
+\textbf{Thought 1:} The task requires identifying educational institutions attended by Woodrow Wilson. Based on the question, I will focus on gathering educational institutions linked to him. \\
+\textbf{Action 1:} Search[Woodrow Wilson] \\
+\textbf{Observation 1:} Woodrow Wilson, educated at, \textcolor[rgb]{0,0.4392,0.7529}{Davidson College} \\
+Woodrow Wilson, employer, Bryn Mawr College \\
+Woodrow Wilson, educated at, University of Virginia \\
+\textbf{Thought 2:} While Davidson College and the University of Virginia are identified, I suspect there are more institutions. I will use the "Complete" action with "Woodrow Wilson" and the relation "educated at" to find additional schools. \\
+\textbf{Action 2:} \textcolor[rgb]{0.4549,0.7137,0.0078}{Complete[Woodrow Wilson | educated at]} \\
+\textbf{Observation 2:} Woodrow Wilson, educated at, \textcolor[rgb]{0,0.4392,0.7529}{Princeton University} \\
+\textbf{Thought 3:} The result of Complete Action shows that Princeton University is also the school attended by Woodrow Wilson. I need to conduct further analysis to determine if there are other possible institutions. \\
+\textbf{Action 3:} \textcolor[rgb]{0.7529,0,0}{Generate[which additional educational institutions are linked to Woodrow Wilson?]} \\
+\textbf{Observation 3:} Woodrow Wilson, educated at, \textcolor[rgb]{0,0.4392,0.7529}{Johns Hopkins University} \\
+\textbf{Thought 4:} Firstly, I have gathered four educational institutions associated with Woodrow Wilson: Davidson College, University of Virginia, Princeton University, and Johns Hopkins University. Secondly, I compare them completely with the reference answers. The University of Virginia School of Law is missing. \\
+\textbf{Action 4:} Finish[Davidson College | University of Virginia | Princeton University | Johns Hopkins University] \\
+\textbf{Observation 4:} Davidson College | Princeton University | Johns Hopkins University
+\end{tcolorbox}

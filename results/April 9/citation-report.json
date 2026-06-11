@@ -1,0 +1,231 @@
+{
+  "details": [
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Cabanac, Guillaume and Labb\\'{e}, Cyril and Magazinov, Alexander",
+        "doi": "10.48550/arXiv.2107.06751",
+        "journal": "arXiv preprint",
+        "title": "Tortured phrases: A dubious writing style emerging in science. Evidence of critical these from arXiv",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "cabanac2021",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Sakai, Yusuke and Kamigaito, Hidetaka and Watanabe, Taro",
+        "doi": "10.48550/arXiv.2601.18724",
+        "journal": "arXiv preprint",
+        "title": "HalluCitation Matters: Revealing the Impact of Hallucinated References with 300 Hallucinated Papers in ACL Conferences",
+        "year": "2026"
+      },
+      "issues": [],
+      "key": "sakai2026",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Bienz, Amanda and Pearson, Carl and Garcia de Gonzalo, Simon",
+        "doi": "10.48550/arXiv.2602.05867",
+        "journal": "arXiv preprint",
+        "title": "The Case of the Mysterious Citations",
+        "year": "2026"
+      },
+      "issues": [],
+      "key": "bienz2026",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Abbonato, Diletta",
+        "doi": "10.48550/arXiv.2602.15871",
+        "journal": "arXiv preprint",
+        "title": "CheckIfExist: Detecting Citation Hallucinations in the Era of AI-Generated Content",
+        "year": "2026"
+      },
+      "issues": [],
+      "key": "abbonato2026",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": {
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "The DOI resolves to a different title ('Hallucinated citations produced by generative arti...') than the provided BibTeX title ('Fabricated references in academic publishing...'). Additionally, the paper is not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), despite a future publication year (2026) which would typically be indexed if the DOI was valid for the given title. The combination of a title mismatch on a resolving DOI and complete absence from databases strongly suggests fabrication."
+      },
+      "fields": {
+        "author": "Resnik, David B. and Hosseini, Mohammad",
+        "doi": "10.1080/08989621.2026.2645390",
+        "journal": "Accountability in Research",
+        "title": "Fabricated references in academic publishing",
+        "year": "2026"
+      },
+      "issues": [],
+      "key": "resnik2026",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "DOI title similarity only 0.05"
+      ],
+      "type": "article",
+      "warnings": [
+        "Title mismatch (similarity 0.05): BibTeX='Fabricated references in academic publishing...' vs DOI='Hallucinated citations produced by generative arti...'"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is listed with a 2024 publication year, which is recent enough that it should appear in major databases like CrossRef, OpenAlex, or Semantic Scholar. The absence of a DOI and its complete lack of presence across all checked databases, despite being a recent publication in a prominent journal (American Psychologist), is a significant red flag indicating it is likely fabricated."
+      },
+      "fields": {
+        "author": "Cobb, Christy L. and Crumly, Bridgette and Montero-Zamora, Pamela and Schwartz, Seth J. and Mart\\'{i}nez, Charles R.",
+        "journal": "American Psychologist",
+        "pages": "299--311",
+        "title": "Addressing anti-immigrant policies to advance the psychological health and well-being of immigrants",
+        "volume": "79",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "cobb2024",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is listed with a future publication year (2025), has no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While a future date could explain the lack of indexing, the complete absence across all checked databases combined with no DOI is a significant red flag, especially for a journal like 'Research Integrity and Peer Review' which is typically well-indexed."
+      },
+      "fields": {
+        "author": "Baethge, Christopher and Jergas, Hannah",
+        "journal": "Research Integrity and Peer Review",
+        "pages": "13",
+        "title": "Hallucinated references in the medical literature",
+        "volume": "10",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "baethge2025",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is dated 2025, which is in the future, and it was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). This combination, especially the future publication year and complete absence from databases, strongly suggests it is fabricated."
+      },
+      "fields": {
+        "author": "Liang, Weixin and others",
+        "journal": "Nature Human Behaviour",
+        "pages": "2599--2609",
+        "title": "Mapping the increasing use of LLMs in scientific papers",
+        "volume": "9",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "liang2025",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is dated 2026, which is in the future, making it highly suspicious. Additionally, it has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for any published paper, especially one that purports to be from a well-known journal like 'International Dental Journal'."
+      },
+      "fields": {
+        "author": "Duane, Brett and Ashley, Paul and Larkin, Jessica",
+        "journal": "International Dental Journal",
+        "pages": "103979",
+        "title": "Hallucinated references in dental literature",
+        "volume": "76",
+        "year": "2026"
+      },
+      "issues": [],
+      "key": "duane2026",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is dated 2025, which is in the future. It has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). These are strong indicators of a fabricated citation, especially given the future publication year."
+      },
+      "fields": {
+        "author": "Linardon, Jake and others",
+        "journal": "JMIR Mental Health",
+        "pages": "e80371",
+        "title": "Hallucinated citations in mental health research",
+        "volume": "12",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "linardon2025",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    }
+  ],
+  "file": "/tmp/temp_citations.bib",
+  "invalid": 0,
+  "suspicious": 1,
+  "total": 10,
+  "valid": 4,
+  "warnings": 5,
+  "run_info": {
+    "started_at": "2026-04-09T21:00:10.514Z",
+    "citation_count": 10,
+    "ai_enabled": true,
+    "ai_provider": "gemini",
+    "ai_model": "Gemini 2.5 Flash",
+    "estimated_duration_seconds": 5,
+    "deterministic_completed_at": "2026-04-09T21:00:23.690Z",
+    "ai_completed_at": "2026-04-09T21:00:31.648Z",
+    "completed_at": "2026-04-09T21:00:31.648Z"
+  },
+  "export_metadata": {
+    "generatedAt": "2026-04-09T21:00:33.777Z",
+    "model": "Gemini 2.5 Flash",
+    "provider": "gemini",
+    "aiEnabled": "Yes",
+    "count": 10
+  }
+}

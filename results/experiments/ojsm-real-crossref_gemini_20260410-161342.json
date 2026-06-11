@@ -1,0 +1,1868 @@
+{
+  "run": {
+    "timestamp": "2026-04-10T16:13:42.613390+00:00",
+    "dataset_id": "ojsm-real-crossref",
+    "dataset_name": "Real CrossRef Random Sample",
+    "citation_count": 96,
+    "ai_enabled": true,
+    "ai_provider": "gemini",
+    "ai_model": "Gemini 2.5 Flash",
+    "ai_calls": 2,
+    "ai_errors": 0,
+    "deterministic_seconds": 42.6,
+    "ai_seconds": 3.0,
+    "total_seconds": 45.6,
+    "counts": {
+      "valid": 94,
+      "warning": 0,
+      "suspicious": 2,
+      "invalid": 0
+    },
+    "accuracy": {
+      "tp": 0,
+      "tn": 94,
+      "fp": 2,
+      "fn": 0,
+      "total": 96,
+      "skipped": 0,
+      "accuracy": 0.9792,
+      "precision": 0.0,
+      "recall": 0,
+      "f1": 0,
+      "fpr": 0.0208,
+      "fnr": 0,
+      "false_negatives": [],
+      "false_positives": [
+        "\uae40\uacc4\uc7902013",
+        "ward1885"
+      ]
+    },
+    "tokens": {
+      "input_tokens": 956,
+      "output_tokens": 241,
+      "total_tokens": 1197,
+      "avg_per_call": 598.5
+    }
+  },
+  "details": [
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "K. Thulsi Rao and M. Prudhvi Raju and S. M. Maqsood Javed and I. Siva Rama Krishna",
+        "doi": "10.11609/jott.zpj.1184.1713-5",
+        "journal": "Zoos' Print Journal",
+        "number": "12",
+        "pages": "1713-1715",
+        "publisher": "Wildlife Information Liaison Development Society",
+        "title": "Fauna of Protected Areas - 18: A checklist of butterflies of Nagarjunasagar Srisailam Tiger Reserve, Andhra Pradesh",
+        "volume": "19",
+        "year": "2004"
+      },
+      "issues": [],
+      "key": "rao2004",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Geoffrey Martin and Edward I. Cooke and William H. Kapfer",
+        "doi": "10.1149/1.2430352",
+        "journal": "Journal of The Electrochemical Society",
+        "number": "7",
+        "pages": "157C",
+        "publisher": "The Electrochemical Society",
+        "title": "Industrial and Manufacturing Chemistry, Part I, Organic",
+        "volume": "103",
+        "year": "1956"
+      },
+      "issues": [],
+      "key": "martin1956",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Edgar Diem",
+        "doi": "10.1007/978-3-642-67382-5_11",
+        "pages": "88-91",
+        "publisher": "Springer Berlin Heidelberg",
+        "title": "Subkutan gestielte Lappenplastik zur Defektdeckung im Gesichtsbereich",
+        "year": "1979"
+      },
+      "issues": [],
+      "key": "diem1979",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "inbook",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Xiangyu Wang and Liguo Wang and Denis Sidorov and Aliona Dreglea and Chunlai Yu and others",
+        "doi": "10.1109/tpwrd.2025.3568584",
+        "journal": "IEEE Transactions on Power Delivery",
+        "number": "4",
+        "pages": "2105-2117",
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "title": "High-Order LADRC-Based Current-Decoupling Control With Embedded Grid Impedance for LCL-Type Energy Storage Converters",
+        "volume": "40",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "wang2025",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Xuan Jing and Lap-Pui Chau",
+        "booktitle": "2004 IEEE International Conference on Multimedia and Expo (ICME) (IEEE Cat. No.04TH8763)",
+        "doi": "10.1109/icme.2004.1394405",
+        "pages": "1111-1114",
+        "publisher": "IEEE",
+        "title": "An efficient inter mode decision approach for H.264 video coding",
+        "year": "2005"
+      },
+      "issues": [],
+      "key": "xuanjing2005",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "inproceedings",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "doi": "10.1136/bmj.1.4651.494",
+        "journal": "BMJ",
+        "number": "4651",
+        "pages": "494-495",
+        "publisher": "BMJ",
+        "title": "OBITUARY",
+        "volume": "1",
+        "year": "1950"
+      },
+      "issues": [],
+      "key": "unknown1950",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Antony Polonsky",
+        "doi": "10.3828/polin.2000.13.3",
+        "journal": "Polin: Studies in Polish Jewry",
+        "pages": "3-33",
+        "publisher": "Liverpool University Press",
+        "title": "Introduction",
+        "volume": "13",
+        "year": "2000"
+      },
+      "issues": [],
+      "key": "polonsky2000",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "doi": "10.1163/9789004525863-cp091299",
+        "journal": "The Plantin Press Online",
+        "publisher": "Walter de Gruyter GmbH",
+        "title": "ESNE, Michel \u010f",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "unknown2023",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Graziella Tocco and Michela Begala and Giovanna Delogu and Gabriele Meli and Carmen Picciau and others",
+        "doi": "10.1055/s-2005-865231",
+        "journal": "Synlett",
+        "number": "08",
+        "pages": "1296-1300",
+        "publisher": "Georg Thieme Verlag KG",
+        "title": "Soluble Polymer-Supported Synthesis of 4-Methyl Coumarin on Modified Poly(ethylene glycol)s",
+        "volume": "2005",
+        "year": "2005"
+      },
+      "issues": [],
+      "key": "tocco2005",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Arining Wibowo and Juanda Juanda and Siane Herawati and Basrin Melamba and Genya Kurnain",
+        "booktitle": "Proceedings of the First International Conference on Arts and Culture: \u201cTransforming New Creative Values in Arts and Culture\u201d, INCARTURE 2023, December 5th-6th, 2023, Bandung, Indonesia",
+        "doi": "10.4108/eai.5-12-2023.2354785",
+        "publisher": "EAI",
+        "title": "Soleh Adi Pramono: A Malangese Mask Puppet Dalang (1951-Present)",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "wibowo2025",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "inproceedings",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "D. J. Adams and Robert L. Dawson",
+        "doi": "10.2307/3729091",
+        "journal": "The Modern Language Review",
+        "number": "4",
+        "pages": "956",
+        "publisher": "JSTOR",
+        "title": "Additions to the Bibliographies of French Prose Fiction 1618-1806",
+        "volume": "82",
+        "year": "1987"
+      },
+      "issues": [],
+      "key": "adams1987",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 473,
+            "output_tokens": 121,
+            "total_tokens": 594
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "The paper has a DOI but was not found in CrossRef, OpenAlex, or Semantic Scholar, which is highly unusual for a paper published in 2013. The author name is also suspiciously short, and the journal name is in Korean while the title is in English, which can sometimes be a red flag for fabricated citations, although not definitive on its own. The combination of a non-resolving DOI and absence from major databases strongly suggests fabrication."
+      },
+      "fields": {
+        "author": "\uae40\uacc4\uc790",
+        "doi": "10.34252/acsri.2013.31..001",
+        "journal": "\uc544\uc2dc\uc544\ubb38\ud654\uc5f0\uad6c",
+        "number": "null",
+        "pages": "5-26",
+        "publisher": "Asian Cultural Studies Research Institute",
+        "title": "Defeat Diary\uff1aNight Shoes by Yokomitsu Riichi",
+        "volume": "31",
+        "year": "2013"
+      },
+      "issues": [],
+      "key": "\uae40\uacc4\uc7902013",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Suspiciously short author"
+      ],
+      "type": "article",
+      "warnings": [
+        "Suspiciously short author"
+      ]
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Rainer Schnauffer",
+        "doi": "10.1007/978-3-322-99495-0_4",
+        "pages": "79-90",
+        "publisher": "Deutscher Universit\u00e4tsverlag",
+        "title": "Datenerhebung und Struktur der Stichprobe",
+        "year": "1999"
+      },
+      "issues": [],
+      "key": "schnauffer1999",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "inbook",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Xinyi Zhang and Zhongxing Zhao and Xiaoyan Guo and Jiandong Lin and Mingrui Lin and others",
+        "doi": "10.21203/rs.3.rs-4437699/v1",
+        "publisher": "Springer Science and Business Media LLC",
+        "title": "Machine Learning-Based Mortality Prediction of 90-Day Discharge in Acute Coronary Syndrome Patients",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "zhang2024",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Mattia Fumanti",
+        "doi": "10.1080/21681392.2017.1282724",
+        "journal": "Critical African Studies",
+        "number": "1",
+        "pages": "1-8",
+        "publisher": "Informa UK Limited",
+        "title": "The politics of homosexuality in Africa",
+        "volume": "9",
+        "year": "2017"
+      },
+      "issues": [],
+      "key": "fumanti2017",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "doi": "10.1021/acsami.9b10534.s001",
+        "publisher": "American Chemical Society (ACS)",
+        "title": "An in Situ-Formed Mosaic Li7Sn3/LiF Interface Layer for High-Rate and Long-Life Garnet-Based Lithium Metal Batteries",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "unknown2020",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Hugh B. Hammett",
+        "doi": "10.1177/002234097502900202",
+        "journal": "Journal of Pastoral Care",
+        "number": "2",
+        "pages": "76-85",
+        "publisher": "SAGE Publications",
+        "title": "The Historical Context of the Origins of CPE",
+        "volume": "29",
+        "year": "1975"
+      },
+      "issues": [],
+      "key": "hammett1975",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Bing Z. Carter and Duncan H. Mak and Jorge Cortes and Michael Andreeff",
+        "doi": "10.1053/j.seminhematol.2010.06.006",
+        "journal": "Seminars in Hematology",
+        "number": "4",
+        "pages": "362-370",
+        "publisher": "Elsevier BV",
+        "title": "The Elusive Chronic Myeloid Leukemia Stem Cell: Does It Matter and How Do We Eliminate It?",
+        "volume": "47",
+        "year": "2010"
+      },
+      "issues": [],
+      "key": "carter2010",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Alyssa Woronik and Kalle Tunstr\u00f6m and Michael W. Perry and Ramprasad Neethiraj and Constanti Stefanescu and others",
+        "doi": "10.1101/424879",
+        "publisher": "openRxiv",
+        "title": "A transposable element insertion is the switch between alternative life history strategies",
+        "year": "2018"
+      },
+      "issues": [],
+      "key": "woronik2018",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Yong Sun and Zhijin Zhang and Hailin Shi and Jinzhuang Lv and Xiaoxing Wei and others",
+        "doi": "10.22541/au.171386234.44676617/v1",
+        "publisher": "Wiley",
+        "title": "Study of Switching Impulse Discharge Characteristics and Correction Methods for Rod-plate Air-gap at High Altitude",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "sun2024",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Richard L. Branham",
+        "doi": "10.1007/s10509-014-2005-9",
+        "journal": "Astrophysics and Space Science",
+        "number": "1",
+        "pages": "179-190",
+        "publisher": "Springer Science and Business Media LLC",
+        "title": "The distance to the Galactic center determined by OB stars",
+        "volume": "353",
+        "year": "2014"
+      },
+      "issues": [],
+      "key": "branham2014",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Alice Maison",
+        "doi": "10.5194/egusphere-2023-2786-ac2",
+        "publisher": "Copernicus GmbH",
+        "title": "Reply on RC2",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "maison2024",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "and Laure Melani",
+        "doi": "10.70675/0d1d6099z7a25z443fzbd99zfda0c0bc713e",
+        "publisher": "Agence Bibliographique de l'Enseignement Sup\u00e9rieur",
+        "title": "Acc\u00e9l\u00e9ration d'une flamme hydrog\u00e8ne-air en milieu obstru\u00e9 et/ou confin\u00e9.",
+        "year": "2026"
+      },
+      "issues": [],
+      "key": "unknown2026",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "phdthesis",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "D.T.J. Hurle",
+        "doi": "10.1016/0038-1098(79)90690-2",
+        "journal": "Solid State Communications",
+        "number": "8",
+        "pages": "iii",
+        "publisher": "Elsevier BV",
+        "title": "Solubility and point defect-dopant interactions in gallium arsenide. III. Germanium doping",
+        "volume": "29",
+        "year": "1979"
+      },
+      "issues": [],
+      "key": "hurle1979",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Richard M. Rosenfeld",
+        "doi": "10.1016/s0031-3955(05)70512-5",
+        "journal": "Pediatric Clinics of North America",
+        "number": "6",
+        "pages": "1165-1181",
+        "publisher": "Elsevier BV",
+        "title": "AN EVIDENCE-BASED APPROACH TO TREATING OTITIS MEDIA",
+        "volume": "43",
+        "year": "1996"
+      },
+      "issues": [],
+      "key": "rosenfeld1996",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Eisaku Ninagawa",
+        "doi": "10.1246/nikkashi1948.76.388",
+        "journal": "Nippon kagaku zassi",
+        "number": "4",
+        "pages": "388-391",
+        "publisher": "The Chemical Society of Japan",
+        "title": "Studies on the Urea Resins. III. On the Quantitative Analysis of the Early-Stage Reaction Mixtures of Urea and Formaldehyde.",
+        "volume": "76",
+        "year": "1955"
+      },
+      "issues": [],
+      "key": "ninagawa1955",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Herve Paulino and Paulo Cancela and Tiago Franco",
+        "booktitle": "2010 International Conference on Parallel and Distributed Computing, Applications and Technologies",
+        "doi": "10.1109/pdcat.2010.85",
+        "pages": "386-392",
+        "publisher": "IEEE",
+        "title": "A Platform-Centric Framework for the Web Exposure and Orchestration of Distributed Objects",
+        "year": "2010"
+      },
+      "issues": [],
+      "key": "paulino2010",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "inproceedings",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "O. Winqvist and F.A. Karlsson and O. K\u00e4mpe",
+        "doi": "10.1016/0140-6736(92)91829-w",
+        "journal": "The Lancet",
+        "number": "8809",
+        "pages": "1559-1562",
+        "publisher": "Elsevier BV",
+        "title": "21-hydroxylase, a major autoantigen in idiopathic Addison's disease",
+        "volume": "339",
+        "year": "1992"
+      },
+      "issues": [],
+      "key": "winqvist1992",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Jason M. Lajoie and Moriah E. Katt and Elizabeth A. Waters and Brantley R. Herrin and Eric V. Shusta",
+        "doi": "10.1038/s41598-022-09962-8",
+        "journal": "Scientific Reports",
+        "number": "1",
+        "publisher": "Springer Science and Business Media LLC",
+        "title": "Identification of lamprey variable lymphocyte receptors that target the brain vasculature",
+        "volume": "12",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "lajoie2022",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Rob Bethune and Eleanor Soo and Patricia Woodhead and Clare Van Hamel and Joanne Watson",
+        "doi": "10.1136/bmjqs-2013-001926",
+        "journal": "BMJ Quality &amp; Safety",
+        "number": "8",
+        "pages": "613-617",
+        "publisher": "BMJ",
+        "title": "Engaging all doctors in continuous quality improvement: a structured, supported programme for first-year doctors across a training deanery in England",
+        "volume": "22",
+        "year": "2013"
+      },
+      "issues": [],
+      "key": "bethune2013",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Victor A. Ferrari and Muredach P. Reilly and Leon Axel and Martin G. St. John Sutton",
+        "doi": "10.1161/01.cir.98.15.1583",
+        "journal": "Circulation",
+        "number": "15",
+        "pages": "1583-1584",
+        "publisher": "Ovid Technologies (Wolters Kluwer Health)",
+        "title": "Scimitar Syndrome",
+        "volume": "98",
+        "year": "1998"
+      },
+      "issues": [],
+      "key": "ferrari1998",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "doi": "10.5040/9798400650185.ch-004",
+        "journal": "Fathers and Daughters in Shakespeare and Shaw",
+        "pages": "121-140",
+        "publisher": "Greenwood Publishing Group, Inc.",
+        "title": "In Care of Thee",
+        "year": "2001"
+      },
+      "issues": [],
+      "key": "unknown2001",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "B Noble",
+        "doi": "10.17989/encsr742nua",
+        "journal": "ENCODE Datasets",
+        "publisher": "ENCODE Data Coordination Center",
+        "title": "ENCSR742NUA",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "noble2020",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Nat\u00e1lia Cristina de Oliveira and Sandoval Vatri and Fabio Marcon Alfieri",
+        "doi": "10.5935/0104-7795.20160002",
+        "journal": "Acta Fisi\u00e1trica",
+        "number": "1",
+        "publisher": "Universidade de Sao Paulo, Agencia USP de Gestao da Informacao Academica (AGUIA)",
+        "title": "Comparison of the effects of resistance exercise versus kinesiotherapy in knee osteoarthritis",
+        "volume": "23",
+        "year": "2016"
+      },
+      "issues": [],
+      "key": "oliveira2016",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Vinicio C. Catania and Gino Franco Lovo",
+        "doi": "10.1177/030089166304900101",
+        "journal": "Tumori Journal",
+        "number": "1",
+        "pages": "1-15",
+        "publisher": "SAGE Publications",
+        "title": "Pharyngo-Esophago-Laryngectomy Immediately Followed by Pharyngo-Esopha-Goplasty",
+        "volume": "49",
+        "year": "1963"
+      },
+      "issues": [],
+      "key": "catania1963",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "and Mishreky Lawandy",
+        "doi": "10.23860/thesis-lawandy-mishreky-2019",
+        "publisher": "University of Rhode Island",
+        "title": "RHODE ISLAND\u2019S AGRICULTURAL PRODUCTION AND CLIMATE CHANGE: PRACTICES, PERCEPTIONS, AND LIMITATIONS",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "unknown2020",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "phdthesis",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Salem Alshahrani and Muhammad Khalid and Muhammad Almuhaini",
+        "doi": "10.1109/access.2019.2928639",
+        "journal": "IEEE Access",
+        "pages": "99031-99064",
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "title": "Electric Vehicles Beyond Energy Storage and Modern Power Networks: Challenges and Applications",
+        "volume": "7",
+        "year": "2019"
+      },
+      "issues": [],
+      "key": "alshahrani2019",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Matja\u017e Kova\u010d",
+        "booktitle": "Proceedings of The 9th International Conference on Modern Research in Management, Economics and Accounting",
+        "doi": "10.33422/9th.meaconf.2019.05.1065",
+        "publisher": "Acavent",
+        "title": "HARMONIZATION OF DIRECT TAXATION IN THE EU AND IT\u2019S INFLUENCE ON INTERNATIONAL TAXATION",
+        "year": "2019"
+      },
+      "issues": [],
+      "key": "kova\u010d2019",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "inproceedings",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "doi": "10.1525/9780520341760-fm",
+        "pages": "I-IV",
+        "publisher": "University of California Press",
+        "title": "Frontmatter",
+        "year": "1951"
+      },
+      "issues": [],
+      "key": "unknown1951",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "inbook",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "A Davis",
+        "doi": "10.1016/s0029-7844(98)00569-9",
+        "journal": "Obstetrics &amp; Gynecology",
+        "number": "6",
+        "pages": "904-909",
+        "publisher": "Ovid Technologies (Wolters Kluwer Health)",
+        "title": "Methotrexate compared with mercaptopurine for early induced abortion",
+        "volume": "93",
+        "year": "1999"
+      },
+      "issues": [],
+      "key": "davis1999",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "R RAMAMOORTHY and A PARIKH and C KUCKEL and C LEEVY and J HOUGHTON and others",
+        "doi": "10.1016/s0016-5085(01)81868-0",
+        "journal": "Gastroenterology",
+        "number": "5",
+        "pages": "A376-A376",
+        "publisher": "Elsevier BV",
+        "title": "Low incidence of complications of large volume paracentesis in the coagulopathic patient",
+        "volume": "120",
+        "year": "2001"
+      },
+      "issues": [],
+      "key": "ramamoorthy2001",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "\u0413\u0440\u0438\u0433\u043e\u0440\u0438\u0439 \u0412\u0430\u0441\u0438\u043b\u0435\u0432\u0438\u0447 and Grigoriy Vasilevich",
+        "doi": "10.12737/jflcl.2019.4.1",
+        "journal": "Journal of Foreign Legislation and Comparative Law",
+        "number": "4",
+        "pages": "1-1",
+        "publisher": "Legal Publishing House &quot;Norma&quot;",
+        "title": "REGULATORY ACTIVITY OF THE EXECUTIVE POWER BODIES UNDER THE LEGISLATION OF THE REPUBLIC OF BELARUS",
+        "volume": "5",
+        "year": "2019"
+      },
+      "issues": [],
+      "key": "\u0432\u0430\u0441\u0438\u043b\u0435\u0432\u0438\u04472019",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Thomas Butkiewicz and Colin Ware and Ilya Atkin and Jennifer Miksis-Olds and Anthony Lyons",
+        "booktitle": "OCEANS 2021: San Diego \u2013 Porto",
+        "doi": "10.23919/oceans44145.2021.9705860",
+        "pages": "1-8",
+        "publisher": "IEEE",
+        "title": "Web-based Visualization of Long-term Ocean Acoustic Observations and Modeled Soundscapes",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "butkiewicz2021",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "inproceedings",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Antonio Matus-Vargas and Gustavo Rodriguez-Gomez and Jose Martinez-Carranza",
+        "booktitle": "2019 Workshop on Research, Education and Development of Unmanned Aerial Systems (RED UAS)",
+        "doi": "10.1109/reduas47371.2019.8999709",
+        "pages": "219-226",
+        "publisher": "IEEE",
+        "title": "Sensor Fault Mitigation for MAVs under Ground Effect",
+        "year": "2019"
+      },
+      "issues": [],
+      "key": "matus-vargas2019",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "inproceedings",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Walter R. Paczkowski",
+        "doi": "10.4324/9781315178349-6",
+        "pages": "68-104",
+        "publisher": "Routledge",
+        "title": "Conjoint analysis",
+        "year": "2018"
+      },
+      "issues": [],
+      "key": "paczkowski2018",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "inbook",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "doi": "10.1001/jama.1954.03690190065021",
+        "journal": "Journal of the American Medical Association",
+        "number": "1",
+        "pages": "59",
+        "publisher": "American Medical Association (AMA)",
+        "title": "ENGLAND",
+        "volume": "155",
+        "year": "1954"
+      },
+      "issues": [],
+      "key": "unknown1954",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Barbara S. Durrant and Nicole Ravida and Thomas Spady and Alice Cheng",
+        "doi": "10.1016/j.theriogenology.2006.02.046",
+        "journal": "Theriogenology",
+        "number": "6-7",
+        "pages": "1729-1736",
+        "publisher": "Elsevier BV",
+        "title": "New technologies for the study of carnivore reproduction",
+        "volume": "66",
+        "year": "2006"
+      },
+      "issues": [],
+      "key": "durrant2006",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Aur\u00e9lien Patoz and Thibault Lussiana and Bastiaan Breine and Cyrille Gindre and Davide Malatesta",
+        "doi": "10.1016/j.jbiomech.2021.110667",
+        "journal": "Journal of Biomechanics",
+        "pages": "110667",
+        "publisher": "Elsevier BV",
+        "title": "Estimating effective contact and flight times using a sacral-mounted inertial measurement unit",
+        "volume": "127",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "patoz2021",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "\u0647\u062f\u0648\u0649 \u0645\u062d\u0645\u062f \u0633\u0644\u0627\u0645 \u0627\u0644\u0634\u0631\u0627\u0631\u064a",
+        "doi": "10.26389/ajsrp.a171124",
+        "journal": "\u0645\u062c\u0644\u0629 \u0627\u0644\u0639\u0644\u0648\u0645 \u0627\u0644\u062a\u0631\u0628\u0648\u064a\u0629 \u0648 \u0627\u0644\u0646\u0641\u0633\u064a\u0629",
+        "number": "2 (\u0645\u0644\u062d\u0642)",
+        "pages": "106-119",
+        "publisher": "The Arab Journal of Sciences and Research Publishing",
+        "title": "\u0627\u0644\u0627\u062d\u062a\u0631\u0627\u0642 \u0627\u0644\u0646\u0641\u0633\u064a \u0644\u062f\u0649 \u0645\u0639\u0644\u0645\u0627\u062a \u0631\u064a\u0627\u0636 \u0627\u0644\u0623\u0637\u0641\u0627\u0644 \u0648\u0645\u0639\u0644\u0645\u0627\u062a \u0627\u0644\u0635\u0641\u0648\u0641 \u0627\u0644\u062b\u0644\u0627\u062b\u0629 \u0627\u0644\u0623\u0648\u0644\u0649 \u0641\u064a \u0645\u062d\u0627\u0641\u0638\u0629 \u0631\u0646\u064a\u0629 \u0628\u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629: \u062f\u0631\u0627\u0633\u0629 \u0645\u0642\u0627\u0631\u0646\u0629",
+        "volume": "9",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "\u0627\u0644\u0634\u0631\u0627\u0631\u064a2025",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Courtney Grant and Andrea Hicks",
+        "doi": "10.1002/ieam.4081",
+        "journal": "Integrated Environmental Assessment and Management",
+        "number": "5",
+        "pages": "660-663",
+        "publisher": "Oxford University Press (OUP)",
+        "title": "The Environmental Impact of Electricity Generation: Agent-Based Modeling of Residential Solar Adoption",
+        "volume": "14",
+        "year": "2018"
+      },
+      "issues": [],
+      "key": "grant2018",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Shuao Wang and Evgeny\u2005V. Alekseev and Jie Ling and S. Skanthakumar and L. Soderholm and others",
+        "doi": "10.1002/ange.200906127",
+        "journal": "Angewandte Chemie",
+        "number": "7",
+        "pages": "1285-1288",
+        "publisher": "Wiley",
+        "title": "Neptunium Diverges Sharply from Uranium and Plutonium in Crystalline Borate Matrixes: Insights into the Complex Behavior of the Early Actinides Relevant to Nuclear Waste Storage",
+        "volume": "122",
+        "year": "2010"
+      },
+      "issues": [],
+      "key": "wang2010",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "A. S. Arrott and T. L. Templeton and Y. Yoshida",
+        "doi": "10.1007/978-94-011-1076-1_68",
+        "pages": "663-674",
+        "publisher": "Springer Netherlands",
+        "title": "Rotational Hysteresis in Small Magnetic Particles",
+        "year": "1994"
+      },
+      "issues": [],
+      "key": "arrott1994",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "inbook",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Alberto Jos\u00e9 S. Ramos and Ana D\u00e9bora M. da Costa and Ana Val\u00e9ria L. Benicio and Andr\u00e9 Luiz C. Ramos and Carla Rameri A. Silva and others",
+        "doi": "10.1590/s0004-27302003000200011",
+        "journal": "Arquivos Brasileiros de Endocrinologia &amp; Metabologia",
+        "number": "2",
+        "pages": "177-182",
+        "publisher": "FapUNIFESP (SciELO)",
+        "title": "Preval\u00eancia de doen\u00e7a tireoideana em pacientes com diabetes tipo 1",
+        "volume": "47",
+        "year": "2003"
+      },
+      "issues": [],
+      "key": "ramos2003",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "doi": "10.24894/sprengglossarium_t04369",
+        "journal": "Johann Jakob Spreng, Allgemeines deutsches Glossarium. Historisch-etymologisches W\u00f6rterbuch der deutschen Sprache online",
+        "publisher": "Schwabe Verlag",
+        "title": "Trompeter",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "unknown2025",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Abigail Pepin and Neil D. Almeida and Simon Fung\u2010Kee\u2010Fung and Megan Kassick and Neil K. Taunk and others",
+        "doi": "10.1002/jso.70228",
+        "journal": "Journal of Surgical Oncology",
+        "publisher": "Wiley",
+        "title": "Boost Approaches in Patients Undergoing Postoperative Radiotherapy",
+        "year": "2026"
+      },
+      "issues": [],
+      "key": "pepin2026",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Ian Griffiths and Darren J. Woodhouse",
+        "doi": "10.1109/tpwrd.2016.2601306",
+        "journal": "IEEE Transactions on Power Delivery",
+        "number": "4",
+        "pages": "2052-2059",
+        "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+        "title": "A Calculation Framework for Quantifying the Probability of Ventricular Fibrillation of Rare Events",
+        "volume": "32",
+        "year": "2017"
+      },
+      "issues": [],
+      "key": "griffiths2017",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Michael Grouchko and Polina Roitman and Xi Zhu and Inna Popov and Alexander Kamyshny and others",
+        "doi": "10.1038/ncomms3994",
+        "journal": "Nature Communications",
+        "number": "1",
+        "publisher": "Springer Science and Business Media LLC",
+        "title": "Merging of metal nanoparticles driven by selective wettability of silver nanostructures",
+        "volume": "5",
+        "year": "2014"
+      },
+      "issues": [],
+      "key": "grouchko2014",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "weijian Wu",
+        "doi": "10.22541/au.172282306.67253172/v1",
+        "publisher": "Wiley",
+        "title": "Local Color Display Technology",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "wu2024",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Mieko Nishida",
+        "doi": "10.1353/tam.2001.0077",
+        "journal": "The Americas",
+        "number": "1",
+        "pages": "152-153",
+        "publisher": "Cambridge University Press (CUP)",
+        "title": "\u201cLicentious Liberty\u201d in a Brazilian Gold-Mining Region: Slavery, Gender, and Social Control in Eighteenth-Century Sabar\u00e1, Minas Gerais. By Kathleen J. Higgins. University Park: Penn State University Press, 1999. Pp. xii, 236. Illustrations. Appendix. Sources. Index. $55.00 cloth; $22.50 paper.",
+        "volume": "58",
+        "year": "2001"
+      },
+      "issues": [],
+      "key": "nishida2001",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Emmanuel Augustine Etukudoh and Ahmad Hamdan and Valentine Ikenna Ilojianya and Cosmas Dominic Daudu and Adefunke Fabuyide",
+        "doi": "10.51594/estj.v5i1.747",
+        "journal": "Engineering Science &amp; Technology Journal",
+        "number": "1",
+        "pages": "245-258",
+        "publisher": "Fair East Publishers",
+        "title": "ELECTRIC VEHICLE CHARGING INFRASTRUCTURE: A COMPARATIVE REVIEW IN CANADA, USA, AND AFRICA",
+        "volume": "5",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "emmanuelaugustineetukudoh2024",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Andrea Chaves-Villota and Ana Jimenez-Mart\u00edn and Mario Jojoa-Acosta and Alfonso Bahillo and Juan Jes\u00fas Garc\u00eda-Dom\u00ednguez",
+        "doi": "10.1016/j.csl.2025.101873",
+        "journal": "Computer Speech &amp; Language",
+        "pages": "101873",
+        "publisher": "Elsevier BV",
+        "title": "Deep feature representations and fusion strategies for speech emotion recognition from acoustic and linguistic modalities: A systematic review",
+        "volume": "96",
+        "year": "2026"
+      },
+      "issues": [],
+      "key": "chaves-villota2026",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Rafael Lucena and Marta Cruz-Vera and Soledad C\u00e1rdenas and Miguel Valc\u00e1rcel",
+        "doi": "10.4155/bio.09.16",
+        "journal": "Bioanalysis",
+        "number": "1",
+        "pages": "135-149",
+        "publisher": "Informa UK Limited",
+        "title": "Liquid-Phase Microextraction in Bioanalytical Sample Preparation",
+        "volume": "1",
+        "year": "2009"
+      },
+      "issues": [],
+      "key": "lucena2009",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Elefth\u00e8rios Miliaressis",
+        "doi": "10.1016/0361-9230(81)90124-6",
+        "journal": "Brain Research Bulletin",
+        "number": "6",
+        "pages": "715-718",
+        "publisher": "Elsevier BV",
+        "title": "A miniature, moveable electrode for brain stimulation in small animals",
+        "volume": "7",
+        "year": "1981"
+      },
+      "issues": [],
+      "key": "miliaressis1981",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Sylwia Gwo\u017adziewicz and Dariusz Prokopowicz",
+        "doi": "10.5604/01.3001.0010.7640",
+        "journal": "International Journal of New Economics and Social Sciences",
+        "number": "2",
+        "pages": "0-0",
+        "publisher": "Index Copernicus",
+        "title": "FAMILY 500 PLUS PROGRAMS AND FLAT PLUS WITH KEY INSTRUMENTS FOR PRIVATE SOCIAL POLICY IN POLAND",
+        "volume": "6",
+        "year": "2017"
+      },
+      "issues": [],
+      "key": "gwo\u017adziewicz2017",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "doi": "10.1080/10884600490463421",
+        "journal": "Journal of Addictions Nursing",
+        "number": "2",
+        "pages": "51",
+        "publisher": "Ovid Technologies (Wolters Kluwer Health)",
+        "title": "Sex Addiction and Women: A Nursing Issue: Exploring the Lived Experience of Surviving with both Alcoholism and Diabetes",
+        "volume": "15",
+        "year": "2004"
+      },
+      "issues": [],
+      "key": "unknown2004",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "doi": "10.1007/s40278-022-29564-5",
+        "journal": "Reactions Weekly",
+        "number": "1",
+        "pages": "367-367",
+        "publisher": "Springer Science and Business Media LLC",
+        "title": "Multiple drugs",
+        "volume": "1936",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "unknown2022",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "D. J. G. Ives and H. N. Rydon",
+        "doi": "10.1039/jr9350001735",
+        "journal": "Journal of the Chemical Society (Resumed)",
+        "pages": "1735",
+        "publisher": "Royal Society of Chemistry (RSC)",
+        "title": "408. Isotopic exchange reactions of organic compounds. Part I. The intermolecular nature of three-carbon tautomerism",
+        "year": "1935"
+      },
+      "issues": [],
+      "key": "ives1935",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "C. W. Miller and P. C. Laberge",
+        "doi": "10.1116/1.576052",
+        "journal": "Journal of Vacuum Science &amp; Technology A: Vacuum, Surfaces, and Films",
+        "number": "3",
+        "pages": "1818-1822",
+        "publisher": "American Vacuum Society",
+        "title": "Surface characterization of the copper\u2013epoxy adhesion interface from production printed circuit boards",
+        "volume": "7",
+        "year": "1989"
+      },
+      "issues": [],
+      "key": "miller1989",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Z A I Supardi and Munasir and A I Najihah and S Priyono and B Prihandoko",
+        "doi": "10.1088/1757-899x/1125/1/012007",
+        "journal": "IOP Conference Series: Materials Science and Engineering",
+        "number": "1",
+        "pages": "012007",
+        "publisher": "IOP Publishing",
+        "title": "Electrochemical performances of lithium-ion coin cell based on Li<sub>4</sub>Ti<sub>5</sub>O<sub>12</sub> anode",
+        "volume": "1125",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "supardi2021",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Haiyun Xin and Kuo Zhang and Hao He and Weisheng Hu",
+        "booktitle": "Optical Fiber Communication Conference",
+        "doi": "10.1364/ofc.2017.tu3g.5",
+        "pages": "Tu3G.5",
+        "publisher": "OSA",
+        "title": "EVM Reduction in Digital Mobile Fronthaul by Sample Bits Interleaving and Uneven PAM4",
+        "year": "2017"
+      },
+      "issues": [],
+      "key": "xin2017",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "inproceedings",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "AB Ars Bilduma",
+        "doi": "10.1387/ars-bilduma.17738",
+        "journal": "Ars Bilduma",
+        "publisher": "EHU Press",
+        "title": "\u00cdndice",
+        "year": "2017"
+      },
+      "issues": [],
+      "key": "arsbilduma2017",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Detlef Liebs",
+        "doi": "10.3790/978-3-428-58335-5",
+        "publisher": "Duncker & Humblot",
+        "title": "Scintilla de libro legum",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "liebs2022",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "book",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "doi": "10.1093/benz/9780199773787.article.b00105701",
+        "journal": "Benezit Dictionary of Artists",
+        "publisher": "Oxford University Press",
+        "title": "Lazzarini, Elisabetta",
+        "year": "2011"
+      },
+      "issues": [],
+      "key": "unknown2011",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Daniel Shor and  and Bryan Zaaijer and Laura Ahsmann and Max Weetzel and others",
+        "doi": "10.20965/ijat.2019.p0453",
+        "journal": "International Journal of Automation Technology",
+        "number": "4",
+        "pages": "453-463",
+        "publisher": "Fuji Technology Press Ltd.",
+        "title": "Designing Haptics: Improving a Virtual Reality Glove with Respect to Realism, Performance, and Comfort",
+        "volume": "13",
+        "year": "2019"
+      },
+      "issues": [],
+      "key": "shor2019",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "H\u00e9ctor Ram\u00edrez Garc\u00eda",
+        "doi": "10.22201/fq.18708404e.2006.3.66038",
+        "journal": "Educaci\u00f3n Qu\u00edmica",
+        "number": "3",
+        "pages": "357",
+        "publisher": "Universidad Nacional Autonoma de Mexico",
+        "title": "La imagen descubierta por la Qu\u00edmica",
+        "volume": "17",
+        "year": "2018"
+      },
+      "issues": [],
+      "key": "ram\u00edrezgarc\u00eda2018",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Abhishek Srivastava and Devarshi Das and M S Vignesh and K. Bharadwaj and Sourya Dewan and others",
+        "booktitle": "2016 IEEE Region 10 Humanitarian Technology Conference (R10-HTC)",
+        "doi": "10.1109/r10-htc.2016.7906827",
+        "pages": "1-6",
+        "publisher": "IEEE",
+        "title": "Bio-telemetry and bio-instrumentation technologies for healthcare monitoring systems",
+        "year": "2016"
+      },
+      "issues": [],
+      "key": "srivastava2016",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "inproceedings",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Rob Roy MacGregor",
+        "doi": "10.1300/j251v07n02_06",
+        "journal": "Advances in Alcohol &amp; Substance Abuse",
+        "number": "2",
+        "pages": "47-71",
+        "publisher": "The Haworth Press",
+        "title": "Alcohol and Drugs as Co-Factors for AIDS",
+        "volume": "7",
+        "year": "1988"
+      },
+      "issues": [],
+      "key": "macgregor1988",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Cathy Humphreys and Caroline Bradbury\u2010Jones",
+        "doi": "10.1002/car.2410",
+        "journal": "Child Abuse Review",
+        "number": "4",
+        "pages": "231-234",
+        "publisher": "Wiley",
+        "title": "Domestic Abuse and Safeguarding Children: Focus, Response and Intervention",
+        "volume": "24",
+        "year": "2015"
+      },
+      "issues": [],
+      "key": "humphreys2015",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Howard Cannatella",
+        "doi": "10.5406/jaesteduc.50.2.0026",
+        "journal": "Journal of Aesthetic Education",
+        "number": "2",
+        "pages": "26-44",
+        "publisher": "University of Illinois Press",
+        "title": "Building Public Confidence in Arts Education",
+        "volume": "50",
+        "year": "2016"
+      },
+      "issues": [],
+      "key": "cannatella2016",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Emily Hauser",
+        "doi": "10.7208/chicago/9780226839691.001.0001",
+        "publisher": "University of Chicago Press",
+        "title": "Penelope\u2019s Bones",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "hauser2025",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "book",
+      "warnings": []
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 483,
+            "output_tokens": 120,
+            "total_tokens": 603
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "The citation has a DOI, but it did not resolve and the paper was not found in CrossRef, OpenAlex, or Semantic Scholar. While the year 1885 is very old, which can make database indexing less comprehensive, the non-resolving DOI is a significant red flag for a paper that purports to have one. The short title 'Pace' and single-page length are also unusual, though not definitive on their own."
+      },
+      "fields": {
+        "author": "C. A. Ward",
+        "doi": "10.1093/nq/s6-xi.283.438h",
+        "journal": "Notes and Queries",
+        "number": "283",
+        "pages": "438-438",
+        "publisher": "Oxford University Press (OUP)",
+        "title": "Pace",
+        "volume": "s6-XI",
+        "year": "1885"
+      },
+      "issues": [],
+      "key": "ward1885",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Suspiciously old year (1885)",
+        "Suspiciously short title"
+      ],
+      "type": "article",
+      "warnings": [
+        "Suspiciously old year (1885)",
+        "Suspiciously short title"
+      ]
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Keith S. Taber",
+        "doi": "10.1080/13664530.2013.879006",
+        "journal": "Teacher Development",
+        "number": "1",
+        "pages": "137-139",
+        "publisher": "Informa UK Limited",
+        "title": "Making learning happen: a guide for post-compulsory education",
+        "volume": "18",
+        "year": "2014"
+      },
+      "issues": [],
+      "key": "taber2014",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "M.E. Ionica and V. Nour and M. Botu",
+        "doi": "10.17660/actahortic.2007.737.5",
+        "journal": "Acta Horticulturae",
+        "number": "737",
+        "pages": "47-51",
+        "publisher": "International Society for Horticultural Science (ISHS)",
+        "title": "STUDY CONCERNING THE INFLUENCE OF THE ELECTRO-IONIC TECHNOLOGY ON LONG TERM STORAGE OF APPLES",
+        "year": "2007"
+      },
+      "issues": [],
+      "key": "ionica2007",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "and S\u00e9rgio Hecker Luz and Zsuzsanna Ilona Katalin de J\u00e1rmy Di Bella",
+        "doi": "10.5935/978-65-5848-499-8.b0001",
+        "publisher": "10.5935",
+        "title": "Proago: Programa de Atualiza\u00e7\u00e3o em Ginecologia e Obstetr\u00edcia: Ciclo 18: Volume: 3",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "unknown2021",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Andrew Verstein",
+        "doi": "10.2139/ssrn.2568140",
+        "journal": "SSRN Electronic Journal",
+        "publisher": "Elsevier BV",
+        "title": "Insider Trading in Commodities Markets",
+        "year": "2015"
+      },
+      "issues": [],
+      "key": "verstein2015",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Yoon\u2010Na Cho and Charles Ray Taylor and Mivena Panteqi",
+        "doi": "10.1111/ijcs.70030",
+        "journal": "International Journal of Consumer Studies",
+        "number": "2",
+        "publisher": "Wiley",
+        "title": "The Interplay of Mind and Body: The Impact of Influencers' Body Size and Motivation Appeals",
+        "volume": "49",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "cho2025",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Raj Kumar and Manoj Jain and Devendra Chhabra",
+        "doi": "10.1007/s003810000425",
+        "journal": "Child's Nervous System",
+        "number": "6",
+        "pages": "348-352",
+        "publisher": "Springer Science and Business Media LLC",
+        "title": "Dandy-Walker syndrome: different modalities of treatment and outcome in 42 cases",
+        "volume": "17",
+        "year": "2001"
+      },
+      "issues": [],
+      "key": "kumar2001",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Ramon Vilela and Nilson Mascia and Bruno Donadon",
+        "doi": "10.2139/ssrn.4037961",
+        "journal": "SSRN Electronic Journal",
+        "publisher": "Elsevier BV",
+        "title": "Structural Performance of Cross-Laminated Timber Plates in Bending: An Experimental and Numerical Approach",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "vilela2022",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "doi": "10.1093/oed/8594015986",
+        "publisher": "Oxford University Press",
+        "title": "isosterism, n.",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "unknown2023",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "inbook",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Cezary Kuklo",
+        "doi": "10.15290/sp.1998.08.24",
+        "journal": "Studia Podlaskie",
+        "number": "8",
+        "pages": "361-369",
+        "publisher": "University of Bialystok",
+        "title": "Instytut Historii Uniwersytetu w Bia\u0142ymstoku w latach 1968-1998",
+        "year": "1998"
+      },
+      "issues": [],
+      "key": "kuklo1998",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Mandour, A. F. and Abd Elrehim, M. A. and Gad, M. A. and Graish, A. M. H.",
+        "doi": "10.21608/jes.2016.27738",
+        "journal": "Journal of Environmental Science",
+        "number": "2",
+        "pages": "363-395",
+        "publisher": "Egypts Presidential Specialized Council for Education and Scientific Research",
+        "title": "THE IMPACT OF APPLYING THE ENVIRONMENTAL QUALITY STANDARDS ON COMPETITIVE ABILITY OF AGRICULTURAL EXPORTATIONS AN APPLICATION ON THE AGRICULTURAL SECTOR OF THE SUEZ CANAL GOVERNORATES",
+        "volume": "36",
+        "year": "2016"
+      },
+      "issues": [],
+      "key": "a.f.2016",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "A John Kanellopoulos and Lawrence H Pe",
+        "doi": "10.3928/1081-597x-20060401-08",
+        "journal": "Journal of Refractive Surgery",
+        "number": "4",
+        "pages": "345-349",
+        "publisher": "SLACK, Inc.",
+        "title": "Wavefront-guided Enhancements Using the WaveLight Excimer Laser in Symptomatic Eyes Previously Treated With LASIK",
+        "volume": "22",
+        "year": "2006"
+      },
+      "issues": [],
+      "key": "kanellopoulos2006",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "doi": "10.2307/j.ctv1s7cc2g.8",
+        "pages": "37-50",
+        "publisher": "Policy Press",
+        "title": "Apocalypse now:",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "unknown2021",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "inbook",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "L.W.M.E. Beckers and E.A.A. Rameckers and R.J.E.M. Smeets and J.J.W. van der Burg and P.B.M. Aarts and others",
+        "doi": "10.1016/j.conctc.2019.100371",
+        "journal": "Contemporary Clinical Trials Communications",
+        "pages": "100371",
+        "publisher": "Elsevier BV",
+        "title": "Barriers to recruitment of children with cerebral palsy in a trial of home-based training",
+        "volume": "15",
+        "year": "2019"
+      },
+      "issues": [],
+      "key": "beckers2019",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "doi": "10.60029/v4n2art9",
+        "journal": "Revista Cient\u00edfica de la Escuela Superior de Guerra del Ej\u00e9rcito",
+        "number": "2",
+        "pages": "187-210",
+        "publisher": "Escuela Superior de Guerra del Ej\u00e9rcito del Peru",
+        "title": "Asuntos Civiles, factor decisivo para la consolidaci\u00f3n de la paz en el VRAEM",
+        "volume": "4",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "unknown2025",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "",
+        "doi": "10.32388/y3nsdj",
+        "journal": "Definitions",
+        "publisher": "Qeios",
+        "title": "Stage IV Colon Cancer AJCC v7",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "unknown2020",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": []
+    }
+  ]
+}

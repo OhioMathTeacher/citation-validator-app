@@ -1,0 +1,114 @@
+% \renewcommand{\arraystretch}{1.2}
+% \begin{table}[t!]
+% \caption{Knowledge Graph Question Answering Performance}
+% \vspace{-1.2em}
+% \centering
+% \setlength{\tabcolsep}{1.5pt}
+% \resizebox{0.3\textwidth}{!}{%
+% \begin{tabular}{lccccc}
+% \toprule
+% \multirow{2}{*}{\textbf{Model}} & \multicolumn{2}{c}{\textbf{WebQSP}} & \multicolumn{2}{c}{\textbf{CWQ}} \\ \cmidrule(r){2-3} \cmidrule(r){4-5} 
+%                                & 30\% KG & 50\% KG & 30\% KG & 50\% KG \\ 
+% \midrule
+% \multicolumn{5}{c}{w/o Knowledge Graph} \\ \hline
+% GPT-4o-mini           & \multicolumn{2}{c}{0.6772} & \multicolumn{2}{c}{0.4219} \\ 
+% CoT                   & \multicolumn{2}{c}{0.6461} & \multicolumn{2}{c}{0.4468} \\ 
+% CoT-SC                & \multicolumn{2}{c}{0.6436} & \multicolumn{2}{c}{0.4647} \\ 
+% \midrule
+% \multicolumn{5}{c}{w/ Knowledge Graph} \\ \hline
+% ToG                   & 0.4573 & 0.7069 & 0.3602 & 0.3285 \\ 
+% GoG                   & 0.6845 & 0.6937 & 0.4764 & 0.4766 \\ 
+% KGT5                  & 0.2014 & 0.2088 & 0.2486 & 0.2612 \\
+% BiNet                 & 0.1666 & 0.1771 & 0.1838 & 0.2081 \\ 
+% Ours                  & \textbf{0.7571} & \textbf{0.7596} & \textbf{0.5315} & \textbf{0.5377} \\ 
+% \bottomrule
+% \end{tabular}%
+% }
+% \label{Knowledge Graph Question Answering Performance}
+% \end{table}
+% \renewcommand{\arraystretch}{1}
+
+
+% \renewcommand{\arraystretch}{1.3}
+% \begin{table}[t!]
+% \centering
+% \setlength{\tabcolsep}{0.5pt}
+% % \resizebox{0.45\textwidth}{!}{%
+% \resizebox{0.95\linewidth}{!}{%
+% \begin{tabular}{lccccc}
+% \toprule
+% \textit{\textbf{Method}} & \multicolumn{2}{c}{\textit{\textbf{WebQSP}}} & \multicolumn{2}{c}{\textit{\textbf{CWQ}}} \\ 
+% \midrule
+% \multicolumn{5}{c}{\textbf{w/o KB}} \\ \hline
+% GPT-4o-mini                                                                & \multicolumn{2}{c}{0.677} & \multicolumn{2}{c}{0.421} \\ 
+% CoT (NeurIPS'22)            & \multicolumn{2}{c}{0.646} & \multicolumn{2}{c}{0.446} \\ 
+% SC (ICLR'23)                & \multicolumn{2}{c}{0.643} & \multicolumn{2}{c}{0.464} \\ 
+% \midrule
+% \multicolumn{5}{c}{\textbf{w/ KB}} \\ 
+% \midrule
+% & \textit{30\% KB} & \textit{50\% KB} & \textit{30\% KB} & \textit{50\% KB} \\ \hline
+% KGT5 (ACL'22)      & 0.201 & 0.208 & 0.248 & 0.261 \\
+% BiNet (SIGKDD'22)      & 0.166 & 0.177 & 0.183 & 0.208 \\ 
+% KG-CoT (IJCAI'24)         & 0.230 & 0.265 & 0.097 & 0.165 \\
+% ToG (ICLR'24)                  & 0.457 & \underline{0.706} & 0.360 & 0.328 \\ 
+% GoG (EMNLP'24)              & 0.684 & 0.693 & \underline{0.476} & \underline{0.477} \\
+% PoG (NeurIPS'24)              & 0.668 & 0.688 & 0.400 & 0.423 \\
+% % \midrule
+% % \multicolumn{5}{c}{\textbf{Joint Methods}} \\ 
+% % \midrule
+% % & \textit{30\% KB} & \textit{50\% KB} & \textit{30\% KB} & \textit{50\% KB} \\ \hline
+% JCQL$_{LLaMA3.1-70B}$                 & \underline{0.697} & 0.705 & 0.460 & 0.469 \\
+% JCQL$_{GPT-4o-mini}$                  & \textbf{0.730} & \textbf{0.738} & \textbf{0.502} & \textbf{0.508} \\ 
+% \bottomrule
+% \end{tabular}%
+% }
+% \caption{Performance on the KBQA task in terms of Hits@1. The best results are indicated in bold. The second best results are underlined.}
+% \label{Knowledge Graph Question Answering Performance}
+% \end{table}
+% \renewcommand{\arraystretch}{1}
+
+
+\renewcommand{\arraystretch}{1.0}
+\begin{table}[t!]
+\centering
+\small
+\setlength{\tabcolsep}{1.1pt}
+\resizebox{0.97\linewidth}{!}{
+\begin{tabular}{lccccc}
+\toprule
+\textit{\textbf{Method}} & \multicolumn{2}{c}{\textit{\textbf{WebQSP}}} & \multicolumn{2}{c}{\textit{\textbf{CWQ}}} \\ 
+\midrule
+\multicolumn{5}{c}{\textbf{w/o KB}} \\ 
+\midrule
+GPT-4o-mini                                                                & \multicolumn{2}{c}{0.677} & \multicolumn{2}{c}{0.421} \\ 
+CoT (NeurIPS'22)            & \multicolumn{2}{c}{0.646} & \multicolumn{2}{c}{0.446} \\ 
+SC (ICLR'23)                & \multicolumn{2}{c}{0.643} & \multicolumn{2}{c}{0.464} \\ 
+\midrule
+\multicolumn{5}{c}{\textbf{w/ KB}} \\ 
+\midrule
+& \textit{30\% KB} & \textit{50\% KB} & \textit{30\% KB} & \textit{50\% KB} \\ 
+\midrule
+DECAF$_{Ans}$ (ICLR'23) & 0.419 & 0.487 & 0.295 & 0.312 \\
+KGT5 (ACL'22)      & 0.201 & 0.208 & 0.248 & 0.261 \\
+BiNet (SIGKDD'22)      & 0.166 & 0.177 & 0.183 & 0.208 \\ 
+KG-CoT (IJCAI'24)         & 0.230 & 0.265 & 0.097 & 0.165 \\
+ToG (ICLR'24)                  & 0.457 & 0.706 & 0.360 & 0.328 \\ 
+GoG (EMNLP'24)              & 0.684 & 0.693 & \underline{0.476} & \underline{0.477} \\
+PoG (NeurIPS'24)              & 0.668 & 0.688 & 0.400 & 0.423 \\
+LMP (ACL'25)              & \underline{0.716} & \underline{0.725} & 0.381 & 0.401 \\
+PDRR (AAAI'26)              & 0.687 & 0.690 & 0.469 & 0.471 \\
+% \midrule
+% \multicolumn{5}{c}{\textbf{Joint Methods}} \\ 
+% \midrule
+% & \textit{30\% KB} & \textit{50\% KB} & \textit{30\% KB} & \textit{50\% KB} \\ \hline
+JCQL$_{Qwen3-30B-A3B}$                & 0.668 & 0.676 & 0.422 & 0.427 \\
+JCQL$_{LLaMA3.1-70B}$                 & 0.697 & 0.705 & 0.460 & 0.469 \\
+JCQL$_{GPT-4o-mini}$                  & \textbf{0.730} & \textbf{0.738} & \textbf{0.502} & \textbf{0.508} \\ 
+\bottomrule
+\end{tabular}%
+}
+\vspace{-1mm}
+\caption{Performance on the KBQA task in terms of Hits@1. The best results are indicated in bold. The second best results are underlined.}
+\label{Knowledge Graph Question Answering Performance}
+\end{table}
+\renewcommand{\arraystretch}{1}

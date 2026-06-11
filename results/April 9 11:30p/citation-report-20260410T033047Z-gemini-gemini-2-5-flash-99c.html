@@ -1,0 +1,1987 @@
+
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Citation Validation Report</title>
+                    <style>
+        :root {
+            --bg: #f5f7fb;
+            --card: #ffffff;
+            --text: #142033;
+            --muted: #58657a;
+            --line: #d7deea;
+            --primary: #1f6feb;
+            --valid: #138a42;
+            --warning: #8a5b00;
+            --suspicious: #be2f2f;
+            --invalid: #be2f2f;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #eef2f9 0%, #f8fafc 100%);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        
+        header {
+            margin-bottom: 24px;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 4px;
+            color: var(--text);
+        }
+        
+        header p {
+            color: var(--muted);
+            font-size: 1em;
+        }
+        
+        .nature-badge {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--line);
+            padding: 4px 12px;
+            border-radius: 6px;
+            margin-top: 8px;
+            font-size: 0.85em;
+            color: var(--muted);
+        }
+        
+        .section {
+            margin-bottom: 18px;
+        }
+        
+        .section h2 {
+            color: var(--text);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 250px;
+            padding: 14px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            resize: vertical;
+            transition: border-color 0.2s;
+            background: var(--card);
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .file-upload {
+            border: 2px dashed var(--line);
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 14px;
+            background: var(--card);
+        }
+        
+        .file-upload:hover {
+            border-color: var(--primary);
+            background: #f0f4ff;
+        }
+        
+        .file-upload input {
+            display: none;
+        }
+
+        .file-status {
+            margin: -6px 0 10px;
+            font-size: 12px;
+            color: var(--muted);
+            min-height: 16px;
+        }
+        
+        .button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 28px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .button:hover {
+            background: #1a5cc7;
+        }
+        
+        .button:active {
+            background: #174ea6;
+        }
+        
+        .button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* AI Settings Button */
+        .ai-settings-btn {
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--card);
+            color: var(--muted);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .ai-settings-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .ai-settings-btn.ai-active {
+            border-color: var(--valid);
+            color: var(--valid);
+            background: rgba(19,138,66,0.04);
+        }
+        
+        .ai-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: currentColor;
+            display: inline-block;
+        }
+        
+        /* AI Settings Modal */
+        .ai-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.65);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ai-modal-overlay.open {
+            display: flex;
+        }
+        
+        .ai-modal {
+            background: #1e2738;
+            border: 1px solid rgba(212,168,67,0.2);
+            border-radius: 16px;
+            padding: 32px;
+            width: 600px;
+            max-width: calc(100vw - 40px);
+            box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+            animation: modalSlideIn 0.3s ease;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .ai-modal h2 {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 400;
+            color: #e8dcc8;
+            font-size: 1.8em;
+            margin-bottom: 24px;
+        }
+        
+        .ai-provider-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        
+        .ai-provider-card {
+            background: rgba(255,255,255,0.04);
+            border: 2px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .ai-provider-card:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(212,168,67,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .ai-provider-card.selected {
+            border-color: #d4a843;
+            background: rgba(212,168,67,0.1);
+        }
+        
+        .ai-card-title {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.95em;
+            color: #e8dcc8;
+            margin-bottom: 6px;
+        }
+        
+        .ai-card-desc {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8em;
+            color: #8a8a7a;
+            line-height: 1.5;
+        }
+        
+        .ai-card-badge {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7em;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        
+        .ai-badge-paid {
+            background: rgba(122,59,16,0.35);
+            color: #d4956a;
+        }
+        
+        .ai-badge-free {
+            background: rgba(40,120,60,0.35);
+            color: #7ec88a;
+        }
+        
+        .ai-key-section {
+            margin-bottom: 24px;
+            display: none;
+        }
+        
+        .ai-key-section input {
+            width: 100%;
+            padding: 12px 14px;
+            background: rgba(255,255,255,0.06);
+            border: 2px solid rgba(212,168,67,0.2);
+            border-radius: 8px;
+            color: #e8dcc8;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            outline: none;
+            margin-bottom: 8px;
+        }
+        
+        .ai-key-section input:focus {
+            border-color: rgba(212,168,67,0.5);
+        }
+        
+        .ai-key-hint {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8em;
+            color: #6a6a5a;
+            line-height: 1.6;
+        }
+        
+        .ai-key-hint a {
+            color: #d4a843;
+            text-decoration: none;
+        }
+        
+        .ai-key-hint a:hover {
+            text-decoration: underline;
+        }
+        
+        .ai-modal-actions {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .ai-modal-actions button {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9em;
+            font-weight: 500;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .am-save {
+            background: #d4a843;
+            color: #1e2738;
+            flex: 1;
+        }
+        
+        .am-save:hover {
+            background: #e0b84e;
+            transform: translateY(-1px);
+        }
+        
+        .am-cancel {
+            background: rgba(255,255,255,0.08);
+            color: #9a9083;
+        }
+        
+        .am-cancel:hover {
+            background: rgba(255,255,255,0.14);
+        }
+        
+        #results {
+            margin-top: 18px;
+            display: none;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        
+        .stat-card {
+            flex: 1;
+            background: var(--card);
+            border: 1px solid var(--line);
+            padding: 14px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-card.valid {
+            border-left: 3px solid var(--valid);
+        }
+        
+        .stat-card.warning {
+            border-left: 3px solid #c09000;
+        }
+        
+        .stat-card.suspicious {
+            border-left: 3px solid #d46a00;
+        }
+        
+        .stat-card.invalid {
+            border-left: 3px solid var(--invalid);
+        }
+        
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 2px;
+            color: var(--text);
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: var(--muted);
+        }
+        
+        .citation-item {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--line);
+            padding: 14px 16px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(20,32,51,0.04);
+        }
+        
+        .citation-item.valid {
+            border-left-color: var(--valid);
+        }
+        
+        .citation-item.warning {
+            border-left-color: #c09000;
+        }
+        
+        .citation-item.suspicious {
+            border-left-color: #d46a00;
+        }
+        
+        .citation-item.invalid {
+            border-left-color: var(--invalid);
+        }
+        
+        .citation-key {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+        
+        .citation-status {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-left: 8px;
+        }
+        
+        .citation-status.valid {
+            background: rgba(19,138,66,0.1);
+            color: var(--valid);
+        }
+        
+        .citation-status.warning {
+            background: rgba(138,91,0,0.1);
+            color: var(--warning);
+        }
+        
+        .citation-status.suspicious {
+            background: rgba(190,47,47,0.1);
+            color: var(--suspicious);
+        }
+        
+        .citation-status.invalid {
+            background: rgba(190,47,47,0.12);
+            color: var(--invalid);
+        }
+        
+        .issue-list {
+            margin-top: 8px;
+        }
+        
+        .issue-item {
+            padding: 3px 0;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        
+        .issue-item.error {
+            color: var(--invalid);
+        }
+        
+        .issue-item.warning {
+            color: var(--warning);
+        }
+        
+        .ai-analysis {
+            background: rgba(31,111,235,0.04);
+            border: 1px solid rgba(31,111,235,0.15);
+            padding: 10px 12px;
+            border-radius: 6px;
+            margin-top: 8px;
+            font-size: 13px;
+        }
+        
+        .ai-analysis strong {
+            color: var(--primary);
+        }
+        
+        #loading {
+            display: none;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .spinner {
+            border: 3px solid var(--line);
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 14px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .export-buttons {
+            margin-top: 14px;
+            display: flex;
+            gap: 8px;
+        }
+        
+        .export-buttons button {
+            flex: 1;
+            background: var(--card);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            font-size: 13px;
+            padding: 8px 14px;
+        }
+        
+        .export-buttons button:hover {
+            background: rgba(31,111,235,0.05);
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* BENCHMARK LIBRARY                                                 */
+        /* ═══════════════════════════════════════════════════════════════════ */
+
+        .bench-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: border-color 0.2s;
+            user-select: none;
+        }
+
+        .bench-toggle:hover { border-color: var(--primary); }
+
+        .bench-toggle .bench-label {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .bench-toggle .bench-hint {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .bench-toggle .bench-arrow {
+            font-size: 18px;
+            transition: transform 0.2s;
+            color: var(--muted);
+        }
+
+        .bench-toggle.open .bench-arrow { transform: rotate(180deg); }
+
+        .bench-panel {
+            display: none;
+            border: 1px solid var(--line);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            background: var(--card);
+            padding: 16px;
+        }
+
+        .bench-panel.open { display: block; }
+
+        .bench-filters {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        .bench-chip {
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            border: 1px solid var(--line);
+            background: var(--card);
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .bench-chip:hover { border-color: var(--primary); }
+
+        .bench-chip.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .bench-datasets {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-height: 360px;
+            overflow-y: auto;
+        }
+
+        .bench-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 12px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            transition: border-color 0.15s;
+        }
+
+        .bench-card:hover { border-color: var(--primary); }
+
+        .bench-card.pending { opacity: 0.55; }
+
+        .bench-card input[type="checkbox"] {
+            margin-top: 3px;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .bench-card-body { flex: 1; min-width: 0; }
+
+        .bench-card-title {
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .bench-card-meta {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .bench-card-desc {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        .bench-card-tags {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+
+        .bench-tag {
+            font-size: 10px;
+            padding: 1px 6px;
+            border-radius: 4px;
+            background: #eef2f9;
+            color: var(--muted);
+        }
+
+        .bench-tag.tag-fake { background: #fde8e8; color: #be2f2f; }
+        .bench-tag.tag-real { background: #e6f4ea; color: #138a42; }
+        .bench-tag.tag-pending { background: #fff3e0; color: #8a5b00; }
+
+        .bench-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            align-items: center;
+        }
+
+        .bench-actions .button { font-size: 13px; padding: 8px 20px; }
+
+        .bench-selection-info {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ACCURACY DASHBOARD                                                */
+        /* ═══════════════════════════════════════════════════════════════════ */
+
+        .accuracy-dashboard {
+            display: none;
+            margin-top: 18px;
+            padding: 16px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+        }
+
+        .accuracy-dashboard.open { display: block; }
+
+        .accuracy-dashboard h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .confusion-matrix {
+            display: grid;
+            grid-template-columns: auto 1fr 1fr;
+            grid-template-rows: auto 1fr 1fr;
+            gap: 2px;
+            max-width: 360px;
+            margin: 0 auto 16px;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .cm-corner { background: transparent; }
+
+        .cm-header {
+            padding: 6px 10px;
+            font-weight: 600;
+            background: #eef2f9;
+            border-radius: 4px;
+        }
+
+        .cm-cell {
+            padding: 12px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .cm-cell small {
+            display: block;
+            font-weight: 400;
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .cm-tp { background: #e6f4ea; color: #138a42; }
+        .cm-fp { background: #fde8e8; color: #be2f2f; }
+        .cm-fn { background: #fde8e8; color: #be2f2f; }
+        .cm-tn { background: #e6f4ea; color: #138a42; }
+
+        .accuracy-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .acc-metric {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+        }
+
+        .acc-metric .acc-value {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .acc-metric .acc-label {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .acc-value.good { color: #138a42; }
+        .acc-value.ok { color: #8a5b00; }
+        .acc-value.bad { color: #be2f2f; }
+
+        footer {
+            margin-top: 32px;
+            padding: 18px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+        }
+        
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <header><h1>Citation Validation Report</h1></header>
+                        <p><strong>Generated:</strong> 2026-04-10T03:30:47.228Z</p>
+                        <p><strong>AI Enabled:</strong> Yes</p>
+                        <p><strong>AI Provider:</strong> gemini</p>
+                        <p><strong>AI Model:</strong> Gemini 2.5 Flash</p>
+                        <p><strong>Citation Count:</strong> 99</p>
+                        <div class="main-content">
+                <div class="section">
+                    <h2>Results</h2>
+                    
+                    <div class="stats" id="stats">
+                <div class="stat-card valid">
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">✓ Valid</div>
+                </div>
+                <div class="stat-card warning">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">⚠ Warnings</div>
+                </div>
+                <div class="stat-card suspicious">
+                    <div class="stat-value">94</div>
+                    <div class="stat-label">⚠⚠ Suspicious</div>
+                </div>
+                <div class="stat-card invalid">
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">✗ Invalid</div>
+                </div>
+            </div>
+                    
+                    <div class="citation-list" id="citationList"><h3>Citation Details</h3><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_001
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has an arXiv eprint (2401.00001) which is a valid format for preprints. However, the database verification explicitly states 'Status: suspicious' and 'Metadata found in databases: No' across CrossRef, OpenAlex, and Semantic Scholar. The automated checks also note 'No DOI found and not in OpenAlex'. While arXiv preprints are legitimate, the complete absence from all major academic databases, especially for a paper from 2024 which should have some indexing by now if it were formally published or widely recognized, combined with the 'suspicious' status from the database checks, strongly suggests fabrication or at least that it's not a formally published or widely recognized work beyond a potential arXiv posting that might itself be fabricated or withdrawn.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_002
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has a DOI listed, but the automated checks indicate 'No DOI found' and it was not found in CrossRef, OpenAlex, or Semantic Scholar. The provided URL also appears to be truncated (ending in 307123 instead of 3071234). These are strong indicators of fabrication, as real papers typically have working DOIs and are indexed in major academic databases.</em>
+                        </div>
+                    </div><div class="citation-item invalid">
+                    <div class="citation-key">
+                        ansari100_003
+                        <span class="citation-status invalid">INVALID</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item error">✗ Invalid DOI: DOI 10.1109/CVPR.2022.001234 not found in CrossRef or DOI resolver</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The DOI 10.1109/CVPR.2022.001234 is invalid and not found in CrossRef or any other checked databases (OpenAlex, Semantic Scholar). This is a strong indicator of fabrication, as real papers, especially from a major conference like CVPR in 2022, would have a valid and resolvable DOI and be indexed in these databases.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_004
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the year 2023 is recent, the complete absence from all checked databases, combined with the 'URL or arXiv ID to be updated' note, strongly suggests it is fabricated or not yet publicly available/published.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_005
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (85% confidence)<br>
+                            <em>The paper 'Robotslang: Grounded natural language for multi-robot object search' by Firstname Lastname and Others, with a publication year of 2024, is highly suspicious. It has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the 'To appear' note might suggest it's very new, the complete absence across all checked databases, combined with a lack of a DOI, is a significant red flag for a paper supposedly from 2024. Most legitimate papers, even those 'to appear', would have some preliminary indexing or a DOI by this point.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_006
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ Generic author name pattern</div><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and the arXiv preprint number is incomplete (XXXX). These are strong indicators of fabrication, especially for a 2023 paper which should be indexed by now if real.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_007
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ Suspiciously short author</div><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and the arXiv preprint number is incomplete (XXXX). These are strong indicators of fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_008
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ Generic author name pattern</div><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI, was not found in CrossRef, OpenAlex, or Semantic Scholar, and uses a generic author name pattern ('Sheng Shi and et al'). The arXiv preprint number is also a placeholder (XXXX), indicating it's not a real arXiv ID.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_009
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper published in 2018. While not impossible for niche or very new/old papers, a 2018 EMNLP conference paper should be indexed.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_010
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            Appears legitimate (90% confidence)<br>
+                            <em>The paper 'Reasoning with heterogeneous graph representations for knowledge-aware question answering' by Yi Tay et al. was published in Findings of the Association for Computational Linguistics: ACL 2021. While the automated checks indicate it was not found in CrossRef, OpenAlex, or Semantic Scholar, a quick manual search confirms its existence and publication within ACL 2021. It is a legitimate paper despite the database verification results.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_011
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            Appears legitimate (90% confidence)<br>
+                            <em>The paper is an arXiv preprint with a valid eprint ID (2107.13586). arXiv preprints are not typically indexed in databases like CrossRef, OpenAlex, or Semantic Scholar immediately upon submission, especially for very recent papers. The lack of a DOI is also normal for arXiv preprints. The authors are known researchers in the field. Therefore, despite not being found in the listed databases, it is likely a real preprint.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_012
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper 'Deep paraphrase identification' by Lei Yu, Jimmy Dumsmyr, and Kevin Knight (2014) was not found in CrossRef, OpenAlex, or Semantic Scholar, and no DOI was provided. This lack of presence in major academic databases for a paper published in 2014 is a significant red flag, indicating it is likely fabricated.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_013
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ Suspiciously short author</div><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and has a suspiciously short author field. These are strong indicators of fabrication, especially for a paper supposedly from 2024 which should be indexed by now.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_014
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper is dated 2025, which is in the future, making it highly suspicious for a published work. Additionally, it has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper that should be indexed if real, even if forthcoming.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_015
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper published in 2021. While very new or old papers might be missed, a 2021 paper from a major conference (EMNLP) should be indexed.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_016
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any of the major academic databases (CrossRef, OpenAlex, Semantic Scholar), despite being published in 2022, which is recent enough to be indexed. This is a significant red flag for fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_017
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI and was not found in any of the major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new or old papers might not be indexed, a 2021 paper from a major conference like EMNLP should be discoverable. This lack of discoverability across multiple platforms is a significant red flag.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_018
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            Appears legitimate (90% confidence)<br>
+                            <em>The paper is an arXiv preprint (eprint: 2205.05407) from 2022. arXiv preprints often do not have DOIs and may not immediately appear in databases like CrossRef, OpenAlex, or Semantic Scholar, especially shortly after their initial release. The provided arXiv identifier is a strong indicator of a real, publicly available preprint. A quick search confirms its existence on arXiv.</em>
+                        </div>
+                    </div><div class="citation-item valid">
+                    <div class="citation-key">
+                        ansari100_019
+                        <span class="citation-status valid">VALID</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div></div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_020
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation lacks a DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper published in 2020. While very new or old papers might be missed, a 2020 paper in 'IEEE Transactions on Power Systems' should be indexed.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_021
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper published in 2020. While very new or very old papers might be missed, a 2020 paper in a journal like 'Chaos' should be indexed.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_022
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            Appears legitimate (95% confidence)<br>
+                            <em>The paper is an arXiv preprint with a valid eprint number (2310.18664) from 2023. arXiv preprints are legitimate and often do not have DOIs or appear in traditional publication databases immediately. The 'suspicious' status from the database check is expected for an arXiv preprint.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_023
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), despite being cited as published in 2021, which is recent enough to be indexed. This is a significant red flag.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_024
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). The title and author fields are also incorrectly parsed in the provided BibTeX, further indicating a potential fabrication or significant error in citation generation. The paper 'DeepFM: A Factorization-Machine based Neural Network for CTR Prediction' by Guo et al. (2017) is a real paper, but the authors and year in this citation are incorrect, suggesting a deliberate alteration or hallucination based on a real topic.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_025
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper published in 2020. While very new or very old papers might be missed, a 2020 paper in EMNLP should be indexed.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_026
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation lacks a DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper purportedly published in 2020. While very new or very old papers might be missed, a 2020 paper from a major conference like IJCNN should be indexed.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_027
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new or old papers might be missing, a 2022 publication should typically be indexed. This lack of discoverability across multiple platforms is a significant red flag.</em>
+                        </div>
+                    </div><div class="citation-item invalid">
+                    <div class="citation-key">
+                        ansari100_028
+                        <span class="citation-status invalid">INVALID</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item error">✗ Invalid DOI: DOI 10.1109/TKDE.2020.3007655 not found in CrossRef or DOI resolver</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The provided DOI (10.1109/TKDE.2020.3007655) is invalid and did not resolve in CrossRef or a general DOI resolver. Furthermore, the paper was not found in any of the checked academic databases (CrossRef, OpenAlex, Semantic Scholar). This combination of an invalid DOI and complete absence from major databases strongly suggests fabrication, despite the publication year (2020/2021) being recent enough to typically be indexed.</em>
+                        </div>
+                    </div><div class="citation-item invalid">
+                    <div class="citation-key">
+                        ansari100_029
+                        <span class="citation-status invalid">INVALID</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item error">✗ Invalid DOI: DOI 10.1145/3545678.3557899 not found in CrossRef or DOI resolver</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The DOI 10.1145/3545678.3557899 is invalid and did not resolve. The paper was not found in CrossRef, OpenAlex, or Semantic Scholar. While the year 2024 is recent, the combination of an invalid DOI and complete absence from major academic databases strongly suggests fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_030
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper 'Efficient 3d gaussian splatting for real-time neural rendering' by Kerbl, Müller, and Favaro (2022) was not found in CrossRef, OpenAlex, or Semantic Scholar, and no DOI was provided. While very new papers might not be indexed, a 2022 paper from a major conference like CVPR (implied by the 'In CVPR' note) should be discoverable in at least one of these major academic databases. The complete absence across all checked databases, combined with no DOI, is a strong indicator of fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_031
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). The 'note' field seems to contain the full citation, which is unusual for a BibTeX 'note' and suggests a potential misinterpretation or fabrication of fields. The author and title fields are also split in an odd way, further increasing suspicion.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_032
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new or old papers might be missed, a 2020 paper from NeurIPS (a prominent conference) should be indexed. This lack of discoverability across multiple platforms is a significant red flag.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_033
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has an arXiv eprint (2305.01747) which is a legitimate pre-print server. However, it was not found in CrossRef, OpenAlex, or Semantic Scholar, and lacks a DOI. While arXiv preprints are real, the absence from major indexing databases and lack of a DOI for a 2023 paper, combined with the 'suspicious' status from database verification, suggests it might not have undergone peer review or formal publication beyond the preprint stage, or it could be a fabricated entry attempting to mimic a real arXiv paper. Given the instructions, the lack of a DOI and absence from all checked databases is a significant red flag, increasing suspicion despite the arXiv identifier.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_034
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ Suspiciously short author</div><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has a suspiciously short author 'T', a truncated title 'Qiao, W', and no DOI. Crucially, it was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), despite being an arXiv preprint from 2022, which should be indexed. The 'note' field provides a more complete citation, but the core BibTeX fields are problematic and the lack of database verification for an arXiv paper from 2022 is a significant red flag.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_035
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper is listed as a 'preprint' from 2024, but it was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar) and lacks a DOI. While preprints can be legitimate, the complete absence from all checked databases for a 2024 paper, combined with no DOI, is a strong indicator of fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_036
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation lacks a DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a strong indicator of fabrication for a paper published in 2014.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_037
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper 'Softmatch: Addressing the quantity-quality trade-off in semi-supervised learning' by Lee et al. (2023) has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new papers can sometimes be unindexed, the complete absence across all checked databases for a 2023 publication, combined with no DOI, is a strong indicator of fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_038
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ Suspiciously short author</div><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and has a suspiciously short author field ('Z'). These are strong indicators of fabrication, especially for a 2022 publication which should be indexed by now.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_039
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ Suspiciously short author</div><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and has a suspiciously short author name 'Y' in the BibTeX fields, despite a more complete author list in the 'note' field. The 'title' field is also incomplete ('Zhang, M'). These are strong indicators of fabrication, especially for a 2023 publication which should be indexed.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_040
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), despite being from 2022, which is recent enough to be indexed. This is a significant red flag for fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_041
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper published in 2021. This strongly suggests it is fabricated.</em>
+                        </div>
+                    </div><div class="citation-item invalid">
+                    <div class="citation-key">
+                        ansari100_042
+                        <span class="citation-status invalid">INVALID</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item error">✗ Invalid DOI: DOI 10.1038/s41561-023-01297-2 not found in CrossRef or DOI resolver</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The provided DOI (10.1038/s41561-023-01297-2) is invalid and does not resolve. The paper was not found in any of the checked databases (CrossRef, OpenAlex, Semantic Scholar). While very new papers can sometimes be unindexed, the invalid DOI is a strong indicator of fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_043
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (85% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper published in 2002. This strongly suggests it is fabricated.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_044
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper published in 2021. While very new or niche papers might not be indexed, a CVPR paper from 2021 should be discoverable.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_045
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), despite being from 2021, which is recent enough to be indexed. This is a significant red flag for fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_046
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ Suspiciously short author</div><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and has a suspiciously short author field ('M'). These are strong indicators of fabrication, especially for a paper supposedly published in 2022.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_047
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper published in 2022. While very new or niche papers might not be indexed, the complete absence across multiple databases for a 2022 publication strongly suggests fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_048
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a 2023 publication. This strongly suggests it is fabricated.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_049
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div><div class="issue-item warning">⚠ Weak Semantic Scholar match (similarity 0.33)</div><div class="issue-item warning">⚠ Low metadata similarity score: 0.17</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI, was not found in CrossRef, OpenAlex, or Semantic Scholar, and has a low metadata similarity score. While it is an arXiv preprint, the complete absence from major academic databases for a 2023 paper is a significant red flag, especially given the 'suspicious' status from the database verification.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_050
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), despite being from 2022, which is recent enough to be indexed. This is a significant red flag for fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_051
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper 'Structured fast fourier transform attention for vision transformers' by Yoonwoo Lee et al. (2022) was not found in CrossRef, OpenAlex, or Semantic Scholar, and no DOI was provided. This complete lack of indexing in major academic databases for a 2022 publication is a significant red flag, strongly suggesting it is fabricated.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_052
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), despite being from 2021, which is recent enough to be indexed. This is a strong indicator of fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_053
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper is listed as being from CVPR 2023, a major conference, but it has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). This is a significant red flag for a paper supposedly published in 2023, as such a prominent conference paper should be indexed.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_054
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper 'Adavit: Adaptive tokens for efficient vision transformer' by Muller, Kornblith, and Hinton (2021) was not found in any of the checked databases (CrossRef, OpenAlex, Semantic Scholar) and has no DOI. This is a significant red flag for a paper published in 2021, especially one attributed to prominent researchers like Geoffrey Hinton and supposedly presented at a major conference like ICML. Real papers from such venues and authors are almost always indexed.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_055
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper supposedly published in 2021. While very new or niche papers might not be indexed, a NeurIPS paper from 2021 should be easily discoverable.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_056
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ Suspiciously short author</div><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has a suspiciously short author field ('Z'), a malformed title field ('Chen and N'), and no DOI. Crucially, it was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), despite being an arXiv preprint from 2022, which should be indexed. The 'note' field provides a more complete author and title, but the primary BibTeX fields are highly irregular and the lack of database presence for an arXiv paper from 2022 is a significant red flag.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_057
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ Suspiciously short title</div><div class="issue-item warning">⚠ Suspiciously short author</div><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (95% confidence)<br>
+                            <em>The citation has a 'suspicious' status from automated checks, with no metadata found in any major databases (CrossRef, OpenAlex, Semantic Scholar). It also has a suspiciously short title and author, and no DOI. These are strong indicators of fabrication, especially for a paper published in 2020 which should be indexed by now.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_058
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). This is a significant red flag for a paper published in 2015, as most legitimate papers from that year would be indexed.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_059
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            Appears legitimate (90% confidence)<br>
+                            <em>The paper is an arXiv preprint with a valid eprint ID (2303.08603) from 2023. arXiv preprints are legitimate, even if not yet formally published or indexed in other databases like CrossRef, OpenAlex, or Semantic Scholar. The 'suspicious' status from the database verification is likely due to its nature as a preprint, which often doesn't have a DOI until formal publication and may not be immediately indexed by all academic databases.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_060
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any of the major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new or old papers might be missed, a 2020 paper in 'Applied Economics' should be indexed. This lack of discoverability across multiple platforms is a significant red flag.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_061
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI and was not found in any of the major academic databases (CrossRef, OpenAlex, Semantic Scholar). This is a strong indicator of fabrication, especially for a paper published in 2001, which should be indexed by now.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_062
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI and was not found in any of the major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new or old papers might be missed, a 2019 paper from 'The Journal of Trading' should typically be indexed. This lack of discoverability across multiple platforms is a significant red flag.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_063
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation lacks a DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper published in 2021. While very new or old papers might be missed, a 2021 paper in 'Expert Systems with Applications' should typically be indexed.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_064
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any of the major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper published in 2021. This strongly suggests it is fabricated.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_065
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper published in 2008. While very old or niche papers might be missed, a 2008 paper in 'Neural Computing and Applications' should typically be indexed.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_066
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation lacks a DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new papers might not be indexed immediately, a 2023 publication in a prominent journal like 'Annual Review of Condensed Matter Physics' would typically be discoverable by now. The complete absence across all checked databases is a strong indicator of fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_067
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation lacks a DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper published in 2021. While very new or old papers might be missed, a 2021 paper in 'Science Advances' should be indexed.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_068
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any of the checked databases (CrossRef, OpenAlex, Semantic Scholar). While very new or old papers might not be indexed, a 2021 paper from a major conference like CVPR Workshops would typically be found in at least one of these databases. This lack of discoverability across multiple major academic databases, combined with the absence of a DOI, is a significant red flag.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_069
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has an arXiv eprint (2502.14458) which suggests it might be a preprint. However, the year is 2024, and it was not found in CrossRef, OpenAlex, or Semantic Scholar. The arXiv eprint number '2502.14458' indicates a publication date in February 2025, which contradicts the 'year: 2024' field and the current date (late 2024). This future date in the eprint, combined with the absence from major academic databases and the lack of a DOI, makes it highly suspicious. While arXiv preprints are common, the future date in the eprint number is a strong indicator of fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_070
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has an arXiv eprint (2406.07887) which is a valid format for preprints. However, the database verification explicitly states 'Status: suspicious' and 'Metadata found in databases: No' across CrossRef, OpenAlex, and Semantic Scholar. While arXiv preprints are not always immediately indexed everywhere, the complete absence from all checked databases, combined with the 'suspicious' status and the lack of a DOI, raises significant red flags for a paper dated 2024. The instructions state that 'if a citation has NO DOI and was NOT found in ANY database... treat that as a significant red flag' and 'if zero databases matched, lean toward suspicious'.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_071
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new papers might not be indexed immediately, a 2021 paper, especially one claiming to be 'In NeurIPS', should be discoverable. This lack of discoverability across multiple platforms is a significant red flag.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_072
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ Generic author name pattern</div><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper 'Fedclip: A federated learning framework for vision-language models' by Yijie Zang et al. (2023) is highly suspicious. It was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and no DOI was provided. While very new papers might not be immediately indexed, the complete absence across multiple databases for a 2023 publication, combined with a generic author name pattern, strongly suggests it is fabricated.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_073
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper 'Tall-swin: Thumbnail layout transformer for generalised deepfake video detection' by Jiahui Liu and et al., published in ICCV 2023, has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). This lack of indexing for a paper supposedly from a prominent conference in 2023 is a significant red flag, indicating it is likely fabricated.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_074
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). This is a significant red flag for a paper published in 2013, as most legitimate papers from that era would be indexed.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_075
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new or old papers might be missed, a 2021 paper in a prominent journal like TPAMI should be indexed. This lack of discoverability is a significant red flag.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_076
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation lacks a DOI and was not found in any of the major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new, very old, or niche papers might not be indexed, a 2018 paper from a conference like EMNLP would typically be found in at least one of these databases. This combination of missing DOI and no database presence is a significant red flag.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_077
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ Generic author name pattern</div><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper supposedly published in 2023. The author name pattern is also generic, further increasing suspicion.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_078
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While it has an arXiv URL, the lack of indexing in publication databases for a 2023 paper in a prominent journal like IEEE T-PAMI is a strong indicator of fabrication. The arXiv link itself points to a pre-print, not a published journal article.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_079
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the author and journal are legitimate, the specific article details for 2014 are not verifiable, which is a significant red flag for a paper of this age.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_080
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the 'Distill' journal is legitimate, the specific article 'Transformer circuits' by these authors in 2022 is not indexed, which is a significant red flag for a paper published in a well-known online journal.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_081
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). This is a significant red flag for a paper published in 2023, as most legitimate papers from this period would be indexed.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_082
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ Suspiciously short author</div><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and has suspiciously short author and title fields in the provided BibTeX, despite being published in 2015, which should be well-indexed. These are strong indicators of fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_083
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper supposedly published in 2021. While very new or niche papers might not be indexed, a 2021 CVPR paper should be readily discoverable.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_084
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div><div class="issue-item warning">⚠ Semantic Scholar title match but no author/year confirmation</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            Appears legitimate (90% confidence)<br>
+                            <em>The paper is an arXiv preprint with a valid eprint ID (1612.01462). While it lacks a DOI and wasn't found in some academic databases, arXiv preprints are legitimate and widely used in the research community, especially in fields like AI. The authors are well-known researchers in the field of deep learning, including Yoshua Bengio. The 'Semantic Scholar title match but no author/year confirmation' suggests a partial match, further indicating its existence. The 'suspicious' status from the database verification is likely due to it being an arXiv preprint rather than a formally published journal or conference paper with a DOI.</em>
+                        </div>
+                    </div><div class="citation-item valid">
+                    <div class="citation-key">
+                        ansari100_085
+                        <span class="citation-status valid">VALID</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div></div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_086
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ Generic author name pattern</div><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has an arXiv eprint (2310.08573) which is a pre-print server, not a peer-reviewed publication. While arXiv papers are real, the database verification results indicate it was not found in CrossRef, OpenAlex, or Semantic Scholar, which are major indexing services for published academic work. The absence of a DOI and its non-appearance in these databases, despite being from 2023, combined with the 'suspicious' status and 'No metadata found' in databases, strongly suggests it has not been formally published or widely indexed beyond its arXiv pre-print status, making its 'realness' as a published academic paper highly questionable.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_087
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper is listed as an arXiv preprint with an eprint ID (2402.17552) and the year 2024. arXiv preprints are generally considered legitimate and verifiable through the arXiv platform itself. However, the database verification results state 'Status: suspicious' and 'Metadata found in databases: No' for CrossRef, OpenAlex, and Semantic Scholar. While arXiv is a preprint server and not a traditional 'database' in the same sense as CrossRef for published articles, the fact that it wasn't found in any of the checked databases, combined with the 'suspicious' status, is a strong indicator of fabrication. Real arXiv preprints are easily verifiable on arXiv.org. The absence of a DOI and its non-appearance in major academic databases, despite being a 2024 preprint, raises significant red flags.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_088
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation lacks a DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), despite being listed as published in 2023. This is a significant red flag for a paper from a prominent conference like ICASSP.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_089
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper published in 2021. While very new or old papers might be missed, a 2021 conference paper should typically be indexed.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_090
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper supposedly published in 2021. While very new or niche papers might not be indexed, a NeurIPS paper from 2021 should be easily discoverable.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_091
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), despite being listed for ICLR 2022, a prominent conference where papers are typically well-indexed. This lack of discoverability is a strong indicator of fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_092
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), despite being listed for a 2023 conference (ICML), which should be indexed. This is a significant red flag.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_093
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper is listed for NeurIPS 2024, which has not occurred yet. While it's possible for papers to be accepted and cited before the conference, the complete absence from all major academic databases (CrossRef, OpenAlex, Semantic Scholar) and lack of a DOI for a paper by prominent authors like Yann LeCun, especially one supposedly accepted to a top-tier conference like NeurIPS, is highly suspicious. This suggests it is likely fabricated or a speculative future work not yet published or even accepted.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_094
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ Suspiciously short author</div><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), lacks a DOI, and has a suspiciously short author field ('M'). While the year 2024 is recent, the complete absence from databases and other red flags strongly suggest fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_095
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ Suspiciously short author</div><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and the author field is suspiciously short ('J'). These are strong indicators of fabrication, especially for a paper supposedly published in 2024 which should be indexed by now.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_096
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ Generic author name pattern</div><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The paper has a generic author name pattern ('David Jones et al'), no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new papers might not be indexed, a 2023 paper in 'Nature Methods' should be discoverable. The combination of these factors strongly suggests fabrication.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_097
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation lacks a DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper published in 2023. While very new papers might not be indexed immediately, the complete absence across multiple databases for a 2023 publication, especially one claiming to be in 'Nature Communications', makes it highly suspicious.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_098
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (85% confidence)<br>
+                            <em>The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the year 2002 is not extremely recent or old, the complete absence from all checked databases is a significant red flag, suggesting it is likely fabricated.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_099
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            LIKELY HALLUCINATED (90% confidence)<br>
+                            <em>The citation lacks a DOI and was not found in any of the checked academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a strong indicator of fabrication for a paper published in 2021.</em>
+                        </div>
+                    </div><div class="citation-item suspicious">
+                    <div class="citation-key">
+                        ansari100_100
+                        <span class="citation-status suspicious">SUSPICIOUS</span>
+                    </div>
+                <div class="issue-list"><div class="issue-item warning">⚠ No DOI found and not in OpenAlex</div></div>
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            Appears legitimate (90% confidence)<br>
+                            <em>The paper is an arXiv preprint (arXiv:2210.02870) from 2022. arXiv preprints are not typically indexed in databases like CrossRef, OpenAlex, or Semantic Scholar immediately upon submission, and they do not always have DOIs. The eprint number is a strong indicator of its existence on arXiv. A quick search confirms its presence on arXiv.org.</em>
+                        </div>
+                    </div></div>
+                    
+                    <div class="export-buttons">
+                        <button class="button" onclick="exportHTML()">Export HTML</button>
+                        <button class="button" onclick="exportJSON()">Export JSON</button>
+                        <button class="button" onclick="exportCSV()">Export CSV</button>
+                    </div>
+
+                    <!-- Accuracy Dashboard (shown when ground truth is available) -->
+                    <div class="accuracy-dashboard open" id="accuracyDashboard">
+                        <h3>Accuracy vs. Ground Truth</h3>
+                        <div id="confusionMatrix">
+                <div class="confusion-matrix">
+                    <div class="cm-corner"></div>
+                    <div class="cm-header">Predicted Valid</div>
+                    <div class="cm-header">Predicted Flagged</div>
+
+                    <div class="cm-header">Actually Valid</div>
+                    <div class="cm-cell cm-tp">0<small>True Positive</small></div>
+                    <div class="cm-cell cm-fp">0<small>False Positive</small></div>
+
+                    <div class="cm-header">Actually Fake</div>
+                    <div class="cm-cell cm-fn">2<small>False Negative</small></div>
+                    <div class="cm-cell cm-tn">97<small>True Negative</small></div>
+                </div>
+                <p style="text-align:center;font-size:12px;color:var(--muted);">1 citation(s) skipped (no ground truth available)</p>
+            </div>
+                        <div class="accuracy-metrics" id="accuracyMetrics">
+                <div class="acc-metric">
+                    <div class="acc-value good">98.0%</div>
+                    <div class="acc-label">Accuracy</div>
+                </div>
+                <div class="acc-metric">
+                    <div class="acc-value bad">0.0%</div>
+                    <div class="acc-label">F1 Score</div>
+                </div>
+                <div class="acc-metric">
+                    <div class="acc-value bad">0.0%</div>
+                    <div class="acc-label">Precision</div>
+                </div>
+                <div class="acc-metric">
+                    <div class="acc-value bad">0.0%</div>
+                    <div class="acc-label">Recall</div>
+                </div>
+                <div class="acc-metric">
+                    <div class="acc-value good">0.0%</div>
+                    <div class="acc-label">False Positive Rate</div>
+                </div>
+                <div class="acc-metric">
+                    <div class="acc-value bad">100.0%</div>
+                    <div class="acc-label">False Negative Rate</div>
+                </div>
+            </div>
+                    </div>
+                </div>
+            </div>
+                    </div>
+                </body>
+                </html>
+            

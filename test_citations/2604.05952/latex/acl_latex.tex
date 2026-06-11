@@ -1,0 +1,498 @@
+\documentclass[11pt]{article}
+
+% Change "review" to "final" to generate the final (sometimes called camera-ready) version.
+% Change to "preprint" to generate a non-anonymous version with page numbers.
+\usepackage[preprint]{acl}
+
+% Standard package includes
+\usepackage{times}
+\usepackage{latexsym}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{tcolorbox}
+\usepackage{lipsum}
+\tcbuselibrary{breakable} % 引入 breakable 库
+
+% For proper rendering and hyphenation of words containing Latin characters (including in bib files)
+\usepackage[T1]{fontenc}
+% For Vietnamese characters
+% \usepackage[T5]{fontenc}
+% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
+
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+% This is not strictly necessary, and may be commented out,
+% but it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+
+% This is also not strictly necessary, and may be commented out.
+% However, it will improve the aesthetics of text in
+% the typewriter font.
+\usepackage{inconsolata}
+
+%Including images in your LaTeX document requires adding
+%additional package(s)
+\usepackage{graphicx}
+
+\usepackage{courier}
+\usepackage{listings}
+\lstset{
+  breaklines=true,
+  breakatwhitespace=true,
+  basicstyle=\ttfamily\small,
+  breakindent=0pt
+}
+% If the title and author information does not fit in the area allocated, uncomment the following
+%
+%\setlength\titlebox{<dim>}
+%
+% and set <dim> to something 5cm or larger.
+
+\title{Towards Trustworthy Report Generation: A Deep Research Agent with Progressive Confidence Estimation and Calibration}
+
+% Author information can be set in various styles:
+% For several authors from the same institution:
+% \author{Author 1 \and ... \and Author n \\
+%         Address line \\ ... \\ Address line}
+% if the names do not fit well on one line use
+%         Author 1 \\ {\bf Author 2} \\ ... \\ {\bf Author n} \\
+% For authors from different institutions:
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \And  ... \And
+%         Author n \\ Address line \\ ... \\ Address line}
+% To start a separate ``row'' of authors use \AND, as in
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \AND
+%         Author 2 \\ Address line \\ ... \\ Address line \And
+%         Author 3 \\ Address line \\ ... \\ Address line}
+
+\author{
+  \textbf{Yi Yuan\textsuperscript{1,2}\thanks{Work done during an internship at Shanghai Artificial Intelligence Laboratory.}},
+  \textbf{Xuhong Wang\textsuperscript{1}},
+  \textbf{Shanzhe Lei\textsuperscript{1}\thanks{Corresponding author}}
+  \\
+  \\
+  \textsuperscript{1}Shanghai Artificial Intelligence Laboratory,
+  \textsuperscript{2}Southeast University
+  \\
+  \small{
+  \texttt{yiyuan@seu.edu.cn, \{wangxuhong, leishanzhe\}@pjlab.org.cn}
+    }
+}
+
+
+%\author{
+%  \textbf{First Author\textsuperscript{1}},
+%  \textbf{Second Author\textsuperscript{1,2}},
+%  \textbf{Third T. Author\textsuperscript{1}},
+%  \textbf{Fourth Author\textsuperscript{1}},
+%\\
+%  \textbf{Fifth Author\textsuperscript{1,2}},
+%  \textbf{Sixth Author\textsuperscript{1}},
+%  \textbf{Seventh Author\textsuperscript{1}},
+%  \textbf{Eighth Author \textsuperscript{1,2,3,4}},
+%\\
+%  \textbf{Ninth Author\textsuperscript{1}},
+%  \textbf{Tenth Author\textsuperscript{1}},
+%  \textbf{Eleventh E. Author\textsuperscript{1,2,3,4,5}},
+%  \textbf{Twelfth Author\textsuperscript{1}},
+%\\
+%  \textbf{Thirteenth Author\textsuperscript{3}},
+%  \textbf{Fourteenth F. Author\textsuperscript{2,4}},
+%  \textbf{Fifteenth Author\textsuperscript{1}},
+%  \textbf{Sixteenth Author\textsuperscript{1}},
+%\\
+%  \textbf{Seventeenth S. Author\textsuperscript{4,5}},
+%  \textbf{Eighteenth Author\textsuperscript{3,4}},
+%  \textbf{Nineteenth N. Author\textsuperscript{2,5}},
+%  \textbf{Twentieth Author\textsuperscript{1}}
+%\\
+%\\
+%  \textsuperscript{1}Affiliation 1,
+%  \textsuperscript{2}Affiliation 2,
+%  \textsuperscript{3}Affiliation 3,
+%  \textsuperscript{4}Affiliation 4,
+%  \textsuperscript{5}Affiliation 5
+%\\
+%  \small{
+%    \textbf{Correspondence:} \href{mailto:email@domain}{email@domain}
+%  }
+%}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+% This document is a supplement to the general instructions for *ACL authors. It contains instructions for using the \LaTeX{} style files for ACL conferences.
+% The document itself conforms to its own specifications, and is therefore an example of what your manuscript should look like.
+% These instructions should be used both for papers submitted for review and for final versions of accepted papers.
+
+As agent-based systems continue to evolve, deep research agents are capable of automatically generating research-style reports across diverse domains. While these agents promise to streamline information synthesis and knowledge exploration, existing evaluation frameworks—typically based on subjective dimensions—fail to capture a critical aspect of report quality: \textbf{Trustworthiness}. In open-ended research scenarios where ground-truth answers are unavailable, current evaluation methods cannot effectively measure the epistemic confidence of generated content, making calibration difficult and leaving users susceptible to misleading or hallucinated information. To address this limitation, we propose a novel deep research agent that incorporates progressive confidence estimation and calibration within the report generation pipeline. Our system leverages a Deliberative Search Model, featuring deep retrieval and multi-hop reasoning to ground outputs in verifiable evidence while assigning confidence scores to individual claims. Combined with a carefully designed workflow, this approach produces trustworthy reports with enhanced transparency. Experimental results and case studies demonstrate that our method substantially improves interpretability and significantly increases user trust.
+
+\end{abstract}
+
+\section{Introduction}
+
+% These instructions are for authors submitting papers to *ACL conferences using \LaTeX. They are not self-contained. All authors must follow the general instructions for *ACL proceedings,\footnote{\url{http://acl-org.github.io/ACLPUB/formatting.html}} and this document contains additional instructions for the \LaTeX{} style files.
+
+% The templates include the \LaTeX{} source of this document (\texttt{acl\_latex.tex}),
+% the \LaTeX{} style file used to format it (\texttt{acl.sty}),
+% an ACL bibliography style (\texttt{acl\_natbib.bst}),
+% an example bibliography (\texttt{custom.bib}),
+% and the bibliography for the ACL Anthology (\texttt{anthology.bib}).
+
+% 思路：With the rapid development of **, many deep research agents can generate reports to fulfill research demands. However, 目前对report质量的评估仍然停留在四个维度：Comprehensiveness: Coverage breadth and depth of the research topic, Insight/Depth: Quality of analysis and insight generation, Instruction-Following: Adherence to specific task requirements, Readability: Clarity, organization, and presentation quality. 因为构建评估报告可靠性的benchmark很难，没有ground-truth无法量化可靠度等原因没有办法评估生成的报告的可靠性与可信度，可能会误导用户。因此我们提出了一个deep research agent，通过引入confidence输出和改进workflow的可解释性以生成trustworthy reports。
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\columnwidth]{latex/figures/overconfidence.png}
+    \caption{
+        Illustration of overconfidence in question answering. When asked \textit{``Who was the first person to walk on the Moon?''}, an overconfident LLM might respond with an incorrect but assertive answer such as \textit{``Yuri Gagarin''} who was the first human in space but never walked on the Moon, which can mislead users. In contrast, a calibrated model may still provide an incorrect answer, but with lower confidence, encouraging users to verify the information.
+    }
+    \label{fig:overconfidence}
+\end{figure}
+
+With the rapid advancement of large language models (LLMs) and agent-based systems, an increasing number of deep research \cite{rodegast2024using, liang2024fourier, yu2023dsformer, li2023camel, qian2023chatdev} have been developed to automatically generate research-style reports across diverse domains. These systems promise to alleviate the burden of information synthesis and knowledge exploration by producing comprehensive, task-specific outputs. However, evaluating the quality and trustworthiness of these generated reports remains a significant challenge. Current evaluation practices typically rely on four subjective dimensions: Comprehensiveness (the breadth and depth of topic coverage), Insight/Depth (the analytical quality and originality of insights), Instruction-Following (adherence to the given task or prompt), and Readability (clarity, organization, and presentation)\cite{du2025deepresearch}. While these metrics provide a general framework for assessing output quality, they fall short in one critical respect: \textbf{they do not offer a reliable measure of trustworthiness}.
+
+This limitation becomes particularly pronounced in open-ended research tasks, where there are no ground-truth answers and constructing reliable evaluation benchmarks is inherently difficult. As a result, LLM-based research agents may generate reports that appear coherent and insightful, yet contain hallucinated information or unsupported claims that are difficult for users to verify. These issues are especially concerning in high-stakes domains such as finance, healthcare, and policy-making, where users often rely on such outputs to support real-world decisions.
+
+% 为什么评价可靠度是必要的呢？如图1所示，在QA领域经常会出现overconfident的现象，在QA问题上有groundtruth，可以对模型进行校准，但是在report生成上是不行的，这就会带来一个问题，模型可能会胡说八道来误导用户，所以在报告生成上引入置信度是必要的
+% report generation中没有正确答案，所以不能用QA中calibration的方法去做。虽然report generation不行，但是我们可以把报告生成拆分成多个QA子任务，引入pretrained-model来解决
+As illustrated in Figure~\ref{fig:overconfidence}, the problem of overconfidence is well-documented in the question-answering (QA) domain, where models frequently produce incorrect answers with high certainty. In QA tasks, the presence of ground-truth labels enables the use of calibration techniques\cite{luo2025your, yang2023calibration, manggala2024qa} to mitigate these risks. However, in the context of report generation—particularly for open-domain and long-form outputs—such calibration strategies are largely infeasible due to the absence of definitive reference answers. Consequently, current systems lack mechanisms to evaluate or correct the epistemic confidence of their outputs, leaving users vulnerable to confidently presented but potentially misleading content.
+
+To address this challenge, we argue that modeling of uncertainty and calibration is essential for trustworthy report generation. While direct calibration is difficult due to the absence of ground truth, we propose to incorporate progressive confidence estimation and calibration within the report generation pipeline. Specifically, we decompose report generation into a sequence of QA-style subtasks, each focused on a specific, verifiable query. This allows us to leverage pretrained QA models that are better suited for evidence-grounded generation and confidence estimation. By aligning the strengths of QA calibration with the demands of open-ended report writing, this modular approach introduces finer-grained control over reliability, making it possible to assess and communicate the trustworthiness of individual claims within the report. In doing so, it establishes a practical foundation for uncertainty-aware report generation systems that are both interpretable and robust.
+
+% 将trustworthy这个概念从QA任务上extend到report生成上，通过deep search怎么怎么样来生成confidence，最后我们也改进了现有开源的的workflow中的反思机制，使其能够定位问题，提高可解释性，避免每一次都从头开始生成章节提高efficiency（虽然一直都没触发过反思）
+% In this work, we extend the concept of trustworthiness from QA to research report generation by introducing a novel deep research agent equipped with confidence estimation and interpretability mechanisms. Our system leverages deep retrieval and multi-hop reasoning to support its outputs with traceable evidence, while assigning confidence scores that reflect the epistemic reliability of individual sections or claims. Furthermore, we enhance the agent’s internal reflection mechanism, enabling it to identify potential inconsistencies or weakly grounded assertions without regenerating entire sections from scratch. This design not only improves efficiency but also enhances transparency, facilitates user feedback integration, and contributes to the long-term reliability of the research workflow.
+
+Building on this insight, we introduce a novel deep research agent designed to extend the concept of trustworthiness from QA to full report generation. Our system integrates progressive confidence estimation and calibration mechanisms into the generation pipeline. It leverages a Deliberative Search Model, featuring deep retrieval and multi-hop reasoning to ground its outputs in verifiable sources while assigning confidence scores that reflect the epistemic reliability of individual sections or assertions. In addition, we have carefully designed a three-stage framework for automatic report generation, integrating planning, retrieval, and synthesis. This architecture improves not only the trustworthiness of report generation but also its transparency and adaptability, allowing for more interactive and accountable research workflows.
+
+Through a series of experiments and case studies, we demonstrate that incorporating trustworthiness modeling—via both source-grounded reasoning and uncertainty-aware generation—can substantially improve user confidence in the generated outputs and enhance their practical utility in downstream applications.
+
+
+\section{Relevant Research}
+\subsection{Deep Search \& Deep Research}
+% deep search 和 deep research 是 结合了 Search Engine, Tool Use, Workflow, Tuning, Non-parametric Continual Learning 的工作。
+% 早在24年初，STORM就实现了Deep Research，直到o1-preview的test time comput提出，揭示了探索思考空间、深入规划以及自我反思的作用。ttc范式被推广后，模型推理时延变得被接受，因此有更多的研究者开始探索在think中使用search engine等tool，这正是Deep Search，这一设计通过search，read，inference的loop，在xxx上表现优异。与此同时更多的研究者与公司在Deep Research上也有了xxx的研究成果，相对于Deep Search，Deep Research更常用的设计是多智能体框架，它的最终的目的从提高模型推理的准确性和完整性，转到了文档的多维度分析和拆解。更多成果还体现在xxx产品上。尽管如此，无论是deepsearch还是 deep research，依然会盲从search，缺乏对搜索质量的反思.........
+Large language models augmented with external tools or knowledge have evolved beyond static retrieval-augmented generation into deep search agents that iteratively query, read, and reason over multiple documents and webs. These agents engage in multi-turn search-read-infer loops, dynamically planning queries and integrating retrieved evidence into chain-of-thought reasoning for complex information needs \cite{xi2025survey, huang2025deep}. Recent systems improve this process through self-refinement and structured memory: for example, new frameworks use reflection and mind-map knowledge graphs to correct errors and maintain coherence across long reasoning chains with web search and other tools \cite{wu2025agentic, guan2025deeprag}.
+
+In parallel, deep research paradigms orchestrate structured multi-step workflows - often via specialized sub-agents or modular planning - to decompose broad tasks and synthesize comprehensive outputs. Multi-agent collaborations can divide labor(e.g., parallel document analyses or cross-checking) and are coordinated by a high-level planner to produce thorough research reports beyond a single-turn chatbot is capacity \cite{zhang2024chain, huang2025manusearch, xu2025comprehensive}. Researchers have introduced transparent open-source agents following this approach \cite{huang2025manusearch} and demontrated that even complex "research" queries benefit from hierarchical planning and tool use. To evaluate these emergent abilities, new benchmarks have been proposed: BrowseComp and BrowseComp-ZH \cite{wei2025browsecomp, zhou2025browsecomp} which chanllenges agents to locate hard-to-find factual information through sustained browsing, and Deep Research Bench provides 100 PhD-level research tasks and two novel evaluation frameworks-RACE and FACT-for assessing report quality and citation accuracy.\cite{mialon2023gaia}.
+
+Overall, early studies underline the promise of these deep search/research frameworks thile also highlighting challenges in aligning retrieval, reasoning, and planing at scale \cite{liang2025reasoning}.
+
+\subsection{Confidence Elicitation in LLMs}
+% 端到端模型的显式的置信度
+% 如何显示给出置信度有大量研究，当前的工作可以分为三类：1. prompt让模型显示给出； 2. 多轮输出或解码时选择高置信度答案； 3. 第三者评估校准。但是从已有工作中发现，如何准确评估置信度，以及保证acc和置信度的相关性是相当困难的。
+
+Verbalized Confidence: Lin et al. \cite{lin2022teaching} first taught GPT-3 to output calibrated verbal confidence levels (e.g., "90\% confidence") alongside its answers. Subsequent work, including methods by Yang et al. \cite{yang2024verbalized} and Chen et al. \cite{chen2023quantifying}, demonstrated that with appropriate prompting, LLMs can self-report probabilities that align with correctness. However, these verbalized scores often remain overconfident without further alignment.
+
+Consistency-Based Methods: A different approach infers confidence from answer consistency. Xiong et al. \cite{xiong2023can} show that aggregating multiple outputs from diverse prompts improves calibration. Additionally, methods like self-consistency decoding \cite{taubenfeld2025confidence} and semantic perturbations \cite{lyu2025calibrating} further enhance confidence by measuring agreement between answers or reasoning paths.
+
+External Predictors: Another strategy involves training separate models to estimate the LLM’s correctness. Mielke et al. \cite{mielke2022reducing} used a post-hoc calibrator.
+
+Our framework integrates these approaches to provide a unified, black-box confidence elicitation model for deep research pipelines.
+
+% Our work follows this trend, building on prompt-based self-evaluation and output consistency to elicit more trustworthy confidence estimates from LLM answers.
+
+\section{Methodology}
+As shown in Figure~\ref{fig:workflow}, we design an autonomous research agent that integrates deliberative reasoning, confidence estimation, and modular workflow orchestration to enable trustworthy, evidence-grounded report generation. Below, we detail the design of the core deliberative model and the orchestration workflow that governs the report generation process.
+
+% sisou
+\subsection{Deliberative Search Model}
+%在我们之前的工作中，通过xxx方法训练了xxx模型，该模型拥有deep search能力以及显示提出source confidence和answer confidence的能力。
+% 该模型不单是聚合外部世界知识，而是注重于从关键数据中搜索信息，从而增强推理可信度
+% 该模型迭代操作与同步给出置信度，提供包括对信息源的置信度和操作的置信度
+% 该模型动作空间包括：思考、搜索、阅读，每个动作会转移到下一个状态，同时会给出一个confidence
+% 该模型输出的 confidence 让用户能够观察到外部信源对模型推理的可信度影响，从而判断是否接纳模型推理结果
+% 之前的工作通过rl训练框架，将这个方法训练到了一个端到端模型上
+% 训练设计时发现，高acc带来overconfidence，如何平衡acc和confidence，是多约束问题，为了解决这个问题，使用了拉格朗日优化算法
+
+Our deep research framework is built upon a deliberative search model, which serves as the core component of the \textbf{Researcher}. The model is designed to tightly integrate step-by-step reasoning with on-demand external knowledge retrieval~\cite{lab2025safework}. Rather than aggregating large amounts of external information upfront, it adopts a reasoning-first paradigm, in which external evidence is actively sought only when the current reasoning state is assessed as insufficient.
+
+In prior work, this deliberative search model was trained using a constrained reinforcement learning framework that jointly optimizes answer accuracy and confidence behavior. Importantly, the confidence signal used in this model is not derived from heuristic rules or post-hoc statistics. Instead, it is produced by a learned scalar prediction head that shares internal representations with the policy network and is optimized end-to-end under the constrained reinforcement learning objective.
+
+From a conceptual perspective, this confidence head can be understood as learning a state-dependent assessment of evidential support. At each step, the model’s internal state encodes both the ongoing reasoning trace and the external information that has been retrieved and read so far. The confidence prediction therefore reflects how consistently and sufficiently the accumulated evidence supports the current intermediate conclusion, rather than attempting to directly estimate the probability that the final answer is correct. In this sense, confidence functions as an internal reliability signal grounded in the model’s reasoning context.
+
+During inference, the model operates in an iterative loop over a fixed action space consisting of \textit{THINK}, \textit{SEARCH}, and \textit{READ}. Each action transitions the model to a new internal reasoning state and is accompanied by an updated confidence estimate. As a result, the confidence signal is process-level and evolves synchronously with the model’s reasoning and information acquisition steps, instead of being limited to the final answer.
+
+\paragraph{THINK Step} 
+In the \textit{THINK} step, the model refines its understanding of the problem, produces an intermediate reasoning result or tentative answer, and formulates a query to guide subsequent information retrieval.
+
+\paragraph{SEARCH Step} 
+In the \textit{SEARCH} step, the model retrieves potentially relevant external sources based on this query.
+
+\paragraph{READ Step} 
+In the \textit{READ} step, the model selectively ingests information from retrieved sources when they are judged to be informative, incorporating new evidence into the ongoing reasoning process.
+
+As deliberation proceeds and additional evidence is accumulated, the model’s confidence may increase when retrieved information consistently supports the emerging conclusion. Conversely, when external evidence remains insufficient or contradictory, the confidence may decrease, signaling increased uncertainty. Crucially, the model is not explicitly optimized to maximize confidence during inference. Instead, confidence naturally emerges as a byproduct of evidence-grounded reasoning shaped by the constrained training objective.
+
+Finally, the entire deliberative inference process is orchestrated through carefully designed prompts that activate the model’s learned decision-making policy, enabling adaptive control over internal reasoning and external verification.
+
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{latex/figures/workflow.png}  % or .pdf
+  \caption{A three-stage framework for autonomous trustworthy report generation, consisting of a planning module, multiple research workers and synthesis module.}
+  \label{fig:workflow}
+\end{figure*}
+
+\subsection{Workflow} % langchain workflow+sisou %langchain的GitHub应该要cite一下来着
+
+Inspired by the modular workflow \footnote{\url{https://github.com/langchain-ai/open_deep_research}} designed by LangChain-AI, we develop a three-stage framework for automatic report generation, which integrates planning, retrieval, and synthesis into a coherent workflow. As illustrated in Figure~\ref{fig:workflow}, our framework is composed of three modules: \textbf{Planner}, \textbf{Researcher}, and \textbf{Writer}. Each module plays a distinct role in structuring and generating high-quality research-style reports grounded in external knowledge.
+
+% The \textbf{Planner} module serves as the high-level coordinator. Given an input topic and optional user-defined constraints (e.g., report type or target audience), it performs task decomposition by generating a structured report outline. This outline includes a logically ordered sequence of sections (e.g., \textit{Introduction}, \textit{Body Sections} 1--N, \textit{Conclusion}), each annotated with specific sub-goals or content expectations.
+
+\subsubsection{Planner: Topic Decomposition and Section Planning}
+Given a user-defined topic or a high-level report outline, the \textbf{Planner} is responsible for decomposing the task into a structured set of sections. This module mimics the behavior of human researchers who begin by outlining the structure of a report before gathering supporting information.
+
+Specifically, the planner generates a sequence of sections---including \textit{Introduction}, \textit{Section 1, Section 2, ..., Section N}, and \textit{Conclusion}---that define the scope and logical flow of the final document. The planning process also determines the granularity of each section, enabling targeted retrieval in later stages.
+
+% The \textbf{Researcher} module is instantiated as a collection of concurrent workers, each assigned to fulfill the information needs of a specific section. For each section, the agent formulates search queries based on the section’s objective, conducts information retrieval over external knowledge sources (e.g., web search, academic databases), and performs multi-step reflection loops. These loops iteratively refine the query and extracted evidence until termination criteria are met (e.g., token budget or marginal utility threshold). Retrieved evidence is cached in a local memory for future grounding.
+\subsubsection{Researcher: Deliberative Search and Knowledge Accumulation}
+
+The \textbf{Researcher} module performs iterative, deliberative search to gather relevant evidence and insights for each planned section. For every subsection, the system generates one or more \textit{search queries} tailored to the topic and context. These queries are formulated by a trained query generator that takes into account both the section title and prior context.
+
+The core of the Researcher is a \textit{Deliberative Search Model}, which operates in a \textit{Think} $\rightarrow$ \textit{Search} $\rightarrow$ \textit{Read} cycle. Throughout this process, a \textbf{Reflection} mechanism is employed to evaluate the sufficiency of the accumulated information. If gaps or inconsistencies are detected, new queries are generated and the cycle continues. The outputs of this module are structured content summaries and fact-rich notes for each section.
+
+% Following evidence accumulation, each section is composed using retrieval-augmented generation conditioned on the section plan and supporting documents. The \textit{Introduction} and \textit{Conclusion} sections are synthesized in a holistic manner, using global context derived from all body sections. The final report is assembled from these individually grounded outputs.
+\subsubsection{Writer: Final Composition and Report Generation}
+
+Once sufficient content has been gathered for all sections, the \textbf{Writer} module composes the final parts of the report---specifically the \textit{Introduction} and \textit{Conclusion}---using the accumulated research. These sections integrate the broader narrative, providing context and summarization respectively.
+
+% This modular, parallelized framework enhances controllability, traceability, and factuality, while enabling efficient scaling across diverse report topics and domains.
+Our framework emulates the human research-writing process by integrating structured planning, reflective information retrieval, and final composition. By decomposing the task into these stages, we are able to build a system that is both controllable and capable of producing high-quality, research-grounded outputs.
+
+
+\section{Experiments}
+To comprehensively evaluate the effectiveness and trustworthiness of our proposed framework, we design a \textbf{two-tiered} experimental setup that assesses both the core Deliberative Search capability and the overall report generation quality. At the foundational level, we benchmark the Deliberative Search Model on challenging QA datasets to verify its ability to produce accurate, evidence-grounded answers for decomposed sub-queries. Building upon this, we further evaluate the end-to-end performance of our full report generation pipeline on the DeepResearch Bench (DRB). This hierarchical evaluation allows us to analyze how the reliability of individual QA modules contributes to the overall quality, coherence, and trustworthiness of the generated reports.
+
+\subsection{Deliberative Search on QA Benchmark}
+% 首先讲一下我们为什么要在QA bench上做实验？-> 为了保证生成的报告是可信的，我们本质上将一个大的topic拆分成了很多的小query交给Deliberative Search Model去做，因此Deliberative Search Model生成答案的可信程度会直接影响报告的可信程度。为了验证Deliberative Search Model回复的可信程度，我们在QA bench上进行了验证。
+To ensure the trustworthiness of the generated research reports, our framework decomposes a complex topic into a set of smaller sub-queries, each of which is handled by the Deliberative Search Model. As the quality of the final report heavily depends on the reliability of the answers produced by this model, it is crucial to assess the factual accuracy and response quality of the Deliberative Search process itself. Therefore, we evaluate our Deliberative Search model on two of the most representative and challenging QA benchmarks to date: GPQA-Diamond and xBench-DeepSearch.
+
+% 数据集介绍
+\paragraph{GPQA-Diamond.}  
+GPQA-Diamond is a challenging subset of the GPQA benchmark\cite{rein2024gpqa} designed to evaluate advanced reasoning and generalization capabilities in large language models. Unlike simpler QA tasks, GPQA-Diamond includes complex, multi-hop, and compositional questions that require deep understanding across multiple domains. It serves as a rigorous test for probing the limits of factual reasoning and abstraction in AI systems.
+
+\paragraph{xBench-DeepSearch.}  
+xBench-DeepSearch\cite{chen2025xbench} is a benchmark designed to evaluate the deep research and information synthesis capabilities of language models. It features complex, open-ended queries that require multi-step reasoning, cross-document evidence retrieval, and coherent report generation. The benchmark emphasizes models' abilities to perform deliberate search, integrate diverse sources, and produce insightful, structured outputs.
+
+\vspace{0.5em}
+In evaluating our Deliberative Search Model, we adopt different evaluation metrics tailored to the distinct objectives of each QA benchmark. For \textbf{GPQA-Diamond}, we use \emph{accuracy} as the primary metric, as the benchmark consists of well-defined multiple-choice questions with objectively correct answers. Accuracy effectively reflects the model's ability to perform precise factual reasoning and select the correct answer from a set of alternatives, making it a suitable indicator of raw reasoning capability.
+
+In contrast, \textbf{xBench-DeepSearch} focuses on open-ended, research-style queries that require multi-step reasoning, synthesis of information across sources, and structured answer generation. In such settings, correctness is often not binary and ground-truth answers are not always definitive. Therefore, we adopt \emph{Expected Calibration Error (ECE)} to evaluate the reliability of the model’s confidence scores. ECE captures how well the model’s predicted probabilities align with the actual correctness of its outputs, providing insights into whether the model is \emph{overconfident} or \emph{underconfident} in its deliberative search process. This is crucial in research-style applications where users rely on the model’s confidence to assess the trustworthiness of the synthesized content.
+
+% Add any additional baselines or implementation details below
+
+\paragraph{Results.}  
+% 讲一下sisou模型的ece指标很好 -> 输出的confidence与真实的acc是对齐的 -> 能够让report更加可信
+As shown in Table~\ref{tab:gpqa_results} and Table~\ref{tab:xbench_results}, our model achieves strong performance on both QA benchmarks, demonstrating its effectiveness in handling complex queries through deliberate search. On \textbf{GPQA-Diamond}, the model attains a high accuracy, indicating robust factual reasoning and the ability to resolve challenging multi-hop and compositional questions. On \textbf{xBench-DeepSearch}, the model exhibits a notably low Expected Calibration Error (ECE), reflecting not only high-quality answer synthesis but also well-calibrated confidence estimates—an essential property for supporting downstream decision-making and information aggregation. These results validate the model's capability to retrieve, reason, and integrate information across diverse contexts, establishing a solid foundation for high-quality report generation in more open-ended, research-driven scenarios.
+
+\begin{table}[ht]
+    \small
+    \centering
+    \begin{tabular}{c|c}
+        \toprule[1pt]\midrule
+        \textbf{Methods} & \textbf{Accuracy} $\uparrow$ \\
+        \midrule
+        Qwen-VL2.5-72B & 48.99 \\
+        GPT-4o & 33.48 \\
+        Gemini-2.0-Flash & 32.39 \\
+        Gemini-2.0-Flash-Thinking & 40.91 \\
+        Gemini-2.5-Pro-Exp & 52.02 \\
+        Claude-3-7-Sonnet & 54.04 \\
+        Claude-3-7-Sonnet-Thinking & 54.04 \\
+        \rowcolor[gray]{0.9}
+        \textbf{Ours (Deliberative Search)} & \textbf{61.62} \\
+        \midrule\bottomrule[1pt]
+    \end{tabular}
+    \caption{Accuracy results of various large language models evaluated on the GPQA-Diamond benchmark.}
+    \label{tab:gpqa_results}
+\end{table}
+
+\begin{table}[ht]
+    \small
+    \centering
+    \begin{tabular}{c|c}
+        \toprule[1pt]\midrule
+        \textbf{Methods} & $\mathbf{N}_{\mathrm{ECE}} \downarrow$ \\
+        \midrule
+        Qwen-VL2.5-72B                 & 0.53 \\
+        Intern-VL3-78B                  & 0.50 \\
+        DeepSeek-R1-Distill-Llama-70B & 0.42 \\
+        GPT-4.1                       & 0.47 \\
+        GPT-4o                        & 0.39 \\
+        Claude-4-Sonnet              & 0.36 \\
+        \rowcolor[gray]{.9}
+        \textbf{Ours (Deliberative Search)} & \textbf{0.34} \\
+        \midrule\bottomrule[1pt]
+    \end{tabular}
+    \caption{Calibration performance measured by the normalized Expected Calibration Error ($\mathbf{N}_{\mathrm{ECE}}$) on the xBench-DeepSearch benchmark across various large language models.}
+    \label{tab:xbench_results}
+\end{table}
+
+
+\subsection{Report Quality on DeepResearch Bench}
+To evaluate the effectiveness of our report generation framework, we conduct experiments on the DeepResearch Bench (DRB)\cite{du2025deepresearch}, a recently proposed benchmark designed for assessing the quality of long-form research-style outputs. The dataset consists of 100 PhD-level research tasks, each meticulously crafted by domain experts across 22 distinct fields such as finance, healthcare, technology, and public policy. Each question is accompanied by a language tag (e.g., \texttt{zh}, \texttt{en}) and requires systems to produce informative, structured, and trustworthy long-form responses.
+
+\paragraph{Experimental Setup.}
+Our system adopts a multi-stage workflow, for all stages of the pipeline—including \textbf{planning}, \textbf{writing}, and \textbf{reflection}—we employ \texttt{gpt-4o} as the backbone model to ensure consistency and high-quality generation across the pipeline. Specifically:
+
+\begin{itemize}
+    \item \textbf{Planning:} Given a user query, the system first generates a high-level outline that identifies major research points, subtopics, and supporting facts to be investigated.
+    \item \textbf{Writing:} Each planned subtopic is then expanded into a detailed paragraph or section, guided by the planning phase and executed by the same GPT-4o model.
+    \item \textbf{Reflection:} Finally, the system conducts a self-reflection phase to verify factual consistency, coherence, and instruction alignment, optionally revising parts of the draft where necessary.
+\end{itemize}
+
+\paragraph{Evaluation.}
+To systematically evaluate the quality of generated research reports, we adopt the RACE (Reference-based Adaptive Criteria-driven Evaluation) framework from DeepResearch Bench\cite{du2025deepresearch}. RACE provides a comprehensive multi-dimensional assessment by dynamically generating task-specific evaluation criteria across four key aspects: \textit{Comprehensiveness}, \textit{Insight/Depth}, \textit{Instruction-Following}, and \textit{Readability}. Each generated report is compared against high-quality reference reports through reference-based scoring, enabling a fine-grained and discriminative evaluation. Furthermore, RACE introduces adaptive weighting tailored to each task’s objectives, ensuring that the final scores reflect both the general and task-specific expectations of high-quality research outputs.
+
+\paragraph{Results.}
+
+\begin{table*}[t]
+    \begin{center}
+        \resizebox{1.9\columnwidth}{!}{
+            \begin{tabular}{c|ccccc}
+                \toprule[1pt]\midrule
+                \textbf{Method} & \textbf{Overall} & \textbf{Comprehensiveness} & \textbf{Insightfulness} & \textbf{Instruction} & \textbf{Readability} \\
+                \midrule
+                \multicolumn{6}{c}{\textbf{Deep Research Agents}} \\
+                \midrule
+                Gemini-2.5-Pro Deep Research & \textbf{48.92} & \textbf{48.45} & \textbf{48.30} & 49.29 & \textbf{49.77} \\
+                OpenAI Deep Research & 46.45 & 46.46 & 43.73 & \textbf{49.39} & 47.22 \\
+                Claude-Researcher & 45.00 & 45.34 & 42.79 & 47.58 & 44.66 \\
+                Kimi-Researcher & 44.64 & 44.96 & 41.97 & 47.14 & 45.59 \\
+                Doubao-DeepResearch & 44.34 & 44.84 & 40.56 & 47.95 & 44.69 \\
+                Perplexity-Research & 40.46 & 39.10 & 35.65 & 46.11 & 43.08 \\
+                Grok Deeper Search & 38.22 & 36.08 & 30.89 & 46.59 & 42.17 \\
+                \midrule
+                \multicolumn{6}{c}{\textbf{LLM with Search Tools}} \\
+                \midrule
+                Perplexity-Sonar-Reasoning-Pro & 37.76 & 34.96 & 31.65 & 44.93 & 42.42 \\
+                Perplexity-Sonar-Reasoning & 37.75 & 34.73 & 32.59 & 44.42 & 42.39 \\
+                Claude-3.7-Sonnet w/Search & 36.63 & 35.95 & 31.29 & 44.05 & 36.07 \\
+                Perplexity-Sonar-Pro & 36.19 & 33.92 & 29.69 & 43.39 & 41.07 \\
+                \rowcolor[gray]{0.9} \textbf{Ours (Report)} & 34.13 & 32.15 & 28.07 & 41.25 & 38.19 \\
+                Gemini-2.5-Pro-Preview & 31.90 & 31.75 & 24.61 & 40.24 & 32.76 \\
+                GPT-4o-Search-Preview & 30.74 & 27.81 & 20.44 & 41.01 & 37.60 \\
+                Perplexity-Sonar & 30.64 & 27.14 & 21.62 & 40.70 & 37.46 \\
+                GPT-4.1 w/Search & 29.31 & 25.59 & 18.42 & 40.63 & 36.49 \\
+                Gemini-2.5-Flash-Preview & 29.19 & 28.97 & 21.62 & 37.80 & 29.97 \\
+                GPT-4o-Mini-Search-Preview & 27.62 & 24.24 & 16.62 & 38.59 & 35.27 \\
+                GPT-4.1-Mini w/Search & 26.62 & 22.86 & 15.39 & 38.18 & 34.49 \\
+                Claude-3.5-Sonnet w/Search & 23.95 & 21.28 & 16.20 & 32.41 & 29.87 \\
+                \midrule\bottomrule[1pt]
+            \end{tabular}
+        }
+    \end{center}
+    \vspace{-0.2cm}
+    \caption{Comparative results of different deep research agents and LLMs with search tools on the Deep Research Bench across four evaluation dimensions.}
+    \label{tab:drb-results}
+\end{table*}
+
+% 对比闭源的deep research agents以及闭源的LLMs+多轮迭代搜索框架，我们的模型在这个bench上表现不差，大概在中游的位置，能够兼顾报告质量和可靠度
+% 提一下appendix里面的case study，以及分析了在什么情况下confidence会高什么时候会低
+% Our Deliberative Report Agent significantly outperforms baselines across all four evaluation dimensions. The improvements are particularly notable in Insightfulness and Instruction-Following, where the reflection mechanism enables the model to better align with complex task requirements and produce more nuanced reasoning. Detailed results are shown in Table~\ref{tab:drb-results}.
+ As shown in Table~\ref{tab:drb-results}, compared with several proprietary deep research agents and closed LLMs integrated with multi-step search frameworks, our model achieves \textbf{competitive performance}, ranking around the \textbf{mid-range} across key quality dimensions including \textit{comprehensiveness}, \textit{insightfulness}, and \textit{instruction-following}. Notably, our approach strikes a favorable balance between report quality and reliability, offering outputs that are both coherent and evidence-grounded.
+
+In Appendix~\ref{sec:agent-demonstration}, we showcase our report generation process on a randomly selected topic from the DeepResearch benchmark. Appendix~\ref{sec:report-Comparison} presents case studies comparing our system’s reports with those from baseline models. We further analyze how confidence is expressed throughout the generated reports. Our system consistently assigns higher epistemic confidence to claims supported by well-defined, objective evidence such as quantitative data or scientific facts, while exhibiting lower confidence when addressing more abstract or speculative topics, including philosophical or policy-related discussions. This behavior reflects the model’s discriminative ability to calibrate confidence in accordance with the inherent epistemic uncertainty of the task domain, thereby enhancing the reliability and trustworthiness of the final research outputs.
+
+
+\section{Conclusion}
+In this work, we have presented a novel deep research framework that addresses a fundamental limitation in current report generation systems: the lack of trustworthiness estimation in open-ended, long-form outputs. By decomposing the report generation process into a sequence of verifiable QA-style subtasks, and integrating progressive confidence estimation and calibration mechanisms, our framework bridges the gap between epistemic uncertainty modeling and large-scale, automated research synthesis. Through the use of a deliberative search model and modular planning-synthesis stages, our system provides not only more reliable outputs, but also a clearer representation of the confidence associated with each generated claim. We hope this work lays the foundation for building more transparent, trustworthy, and accountable research agents, and serves as a step toward closing the gap between LLM capabilities and the rigorous demands of human-centered knowledge work.
+
+
+\bibliography{latex/ref}
+
+% \clearpage
+\appendix
+% \clearpage
+\onecolumn
+\section{Appendix}
+
+\subsection{Case Study: Demonstration of Our Deep Research Agent in Action}
+\label{sec:agent-demonstration}
+% 我们给出了我们Deliberative Search Agent的输出示例。Given a topic "What are the investment philosophies of Duan Yongping, Warren Buffett, and Charlie Munger?"，我们的deep research agent的planner model会根据这个topic拆出很多Sections：
+To demonstrate the effectiveness and trustworthiness of our Deliberative Search Agent, we present a case study based on a randomly sampled topic from the \textsc{DeepResearch} benchmark:
+\textit{“What are the investment philosophies of Duan Yongping, Warren Buffett, and Charlie Munger?”}
+This topic requires synthesis across multiple domains of knowledge, including individual investment principles, long-term financial strategies, and the historical context of major investment decisions.
+
+\subsubsection{Planning and Decomposition}
+
+Upon receiving the input topic, the \textbf{Planner Model} in our framework first decomposes the question into a structured set of \textit{Sections}, each targeting a key sub-area of the topic. This modular breakdown not only guides the research process but also ensures broad and deep coverage of the subject matter.
+
+\begin{itemize}
+\item \textbf{Section 1: Duan Yongping's Investment Philosophy} \\
+\textit{Description:} An exploration of Duan Yongping's approach to investment, highlighting his strategic focus, key principles, and notable investments.
+
+\item \textbf{Section 2: Warren Buffett's Investment Philosophy} \\
+\textit{Description:} A detailed analysis of Warren Buffett's investment philosophy, including his value investing approach, famous quotes, and successful investment strategies.
+
+\item \textbf{Section 3: Charlie Munger's Investment Philosophy} \\
+\textit{Description:} A study on Charlie Munger's investment principles, with emphasis on his mental models, ideas about risk, and the concept of worldly wisdom.
+
+\item \textbf{Section 4: Comparative Analysis of Philosophies} \\
+\textit{Description:} A comparative analysis of the investment philosophies of Duan Yongping, Warren Buffett, and Charlie Munger, identifying common elements and key differences.
+
+
+\end{itemize}
+
+\subsubsection{Focused Query Generation}
+
+Within each section, the \textbf{Researcher Module} further refines the information needs into targeted search queries. For instance, under the section “Duan Yongping’s Investment Philosophy,” the system automatically generated the following focused queries:
+
+\begin{itemize}
+\item \texttt{“Duan Yongping investment strategy principles”}
+\item \texttt{“Notable investments by Duan Yongping and their outcomes”}
+\end{itemize}
+
+These queries enable the system to retrieve specific and relevant information rather than relying on generic content retrieval, ensuring higher factual grounding.
+
+\subsubsection{Deliberative Search Output}
+
+As an example, consider the query \texttt{“Duan Yongping investment strategy principles”}. Our \textbf{Deliberative Search Model} retrieved and synthesized relevant content through iterative reasoning and retrieval. Below is a representative output excerpt:
+
+\begin{tcolorbox}[title = {Deliberative Search Model Output}, fontupper=\footnotesize, fontlower=\Large, breakable]
+\lstinputlisting{latex/appendix/sisou_output.txt}
+% \input{latex/appendix/sisou_output.tex}
+\end{tcolorbox}
+
+From this example, we observe that the model follows a multi-round \textit{Think–Search–Read} cycle until a satisfactory answer can be produced. In each iteration, the model first reflects on its current information state (\textit{Think}), formulates refined search intents (\textit{Search}), and reads the retrieved content to update its knowledge base (\textit{Read}). Importantly, each round is accompanied by an internal estimation of confidence, followed by a calibration step to ensure the reliability of accumulated evidence before proceeding to the next stage.
+
+\subsection{Case Study: Report Comparison}
+\label{sec:report-Comparison}
+% 对于一个随机从deepresearch bench中选出来的topic“What are the investment philosophies of Duan Yongping, Warren Buffett, and Charlie Munger?”，我们给出了不同的deep research agents（例如perplexity、doubao）生成的报告的对比
+For a randomly selected topic from the \textsc{DeepResearch} benchmark—\textit{“What are the investment philosophies of Duan Yongping, Warren Buffett, and Charlie Munger?”}—we compare the reports generated by different deep research agents, including \textbf{Perplexity} and \textbf{Doubao}.
+
+\begin{tcolorbox}[title = {Ours Report}, fontupper=\footnotesize, fontlower=\Large, breakable]
+\lstinputlisting{latex/appendix/ours_report.txt}
+% \input{latex/appendix/ours_report.txt}
+\end{tcolorbox}
+
+% We implement a confidence assessment framework for investment claims using a threshold model (High: >6; Low: <4), based primarily on evidence verifiability and quality. High confidence claims, such as Duan Yongping's well-documented conservative strategy (exemplified by specific allocations like 63.33\% in Apple during 2025) and Warren Buffett's established economic moat concept (supported by canonical examples like Coca-Cola), derive from clear empirical evidence and widely accepted interpretations. Conversely, lower confidence is assigned to claims where evidence is scarce or subjective, including the precise market conditions during Duan's NetEase entry, the rationale behind Buffett's shift towards technology stocks, and the uncertain long-term outlook of investments like Occidental Petroleum in the volatile energy sector. This framework explicitly links confidence levels to the availability of objective, verifiable data.
+From this example, we illustrate the application of our \textbf{confidence assessment framework} for evaluating investment-related claims. The framework adopts a threshold-based model—assigning \textit{high confidence} to claims with a score above 6 and \textit{low confidence} to those below 4—primarily grounded in the verifiability and quality of supporting evidence.
+
+High-confidence claims typically involve well-documented, widely accepted information. For instance, Duan Yongping's conservative investment strategy, exemplified by his 2025 portfolio allocation with 63.33\% in Apple, is supported by clear empirical data. Similarly, Warren Buffett's principle of economic moats, illustrated through canonical examples such as Coca-Cola, reflects long-standing, substantiated investment philosophy.
+
+In contrast, low-confidence is attributed to claims that lack verifiable support or rely on subjective interpretation. Examples include the specific market conditions at the time of Duan’s entry into NetEase, the motivations behind Buffett’s increasing allocation to technology stocks, and the uncertain long-term trajectory of positions such as Occidental Petroleum in the volatile energy sector.
+
+This framework explicitly links confidence levels to the availability of objective, high-quality evidence, enabling more calibrated reasoning and improving the reliability of the final research output.
+
+\begin{tcolorbox}[title = {Perplexity's Report}, fontupper=\footnotesize, fontlower=\Large, breakable]
+% \input{latex/appendix/perplexity_report.txt}
+\lstinputlisting{latex/appendix/perplexity_report.txt}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title = {Doubao's Report}, fontupper=\footnotesize, fontlower=\Large, breakable]
+% \input{latex/appendix/doubao_report.txt}
+\lstinputlisting{latex/appendix/doubao_report.txt}
+\end{tcolorbox}
+
+\end{document}
+

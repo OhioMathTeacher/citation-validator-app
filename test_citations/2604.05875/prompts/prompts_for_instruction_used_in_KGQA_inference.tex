@@ -1,0 +1,43 @@
+
+
+
+\begin{tcolorbox}[prompt=
+{\begin{prompt} \label{prompts for instruction used in KGQA inference.} The Prompt for the Inference Phase of JCQL
+% Prompts for instruction used in the inference phase for KBQA task.
+\end{prompt}}]
+
+$\bullet$ Instruction: \\ \\
+Solve a question answering task with interleaving Thought, Action, Observation steps. Thought can reason about the current situation, and Action can be four types:  \\
+\textbf{(1) Search[entity1 | entity2 | ...],} which searches the exact entities on Wikidata and returns their one-hop subgraphs. You should extract all concrete entities appeared in your last thought without redundant words, and you should always select entities from topic entities in the first search.  \\
+\textbf{(2) Complete[head entity | relation],} which completes tail entities based on the head entity and relationships. \\ 
+\textbf{(3) Generate[subquestion],} which generates some new triples related to your last thought. The subquestion should be a one-hop question.  \\
+\textbf{(4) Finish[answer1 | answer2 | ...],} which summarizes the answers based on all the known triples. You should reason about the answer based on the known triples. If you don't know the answer, please return Finish[unknown]. \\
+You should generate each step without redundant words. \\
+
+$\bullet$ Example: \\ \\
+\textbf{Question:} Which one of Shakespeare's parents worked as a business person? \\
+\textbf{Topic Entity:} [William Shakespeare] \\
+\textbf{Thought 1:} I need to find Shakespeare's parents firstly. \\
+\textbf{Action 1:} Search[William Shakespeare] \\
+Observation 1: Judith Quiney, father, William Shakespeare \\
+\textbf{Thought 2:} The search results did not provide specific information about William Shakespeare's parents or their occupations. Therefore, I need to identify Shakespeare's father. \\
+\textbf{Action 2:} Generate[who are William Shakespeare's father?] \\
+\textbf{Observation 2:} William Shakespeare, father, John Shakespeare \\
+\textbf{Thought 3:} I could find the father of William Shakespeare is John Shakespeare. I need to identify Shakespeare's mother then. \\
+\textbf{Action 3:} \textcolor[rgb]{0.7529,0,0}{Generate[who are William Shakespeare's mother?]} \\
+Observation 3: William Shakespeare, mother, Mary Shakespeare \\
+\textbf{Thought 4:} According to the generate results, I can find the father of William Shakespeare is John Shakespeare and the mother is Mary Shakespeare. So next I will search for some information about their occupations. \\
+\textbf{Action 4:} Search[John Shakespeare | Mary Shakespeare] \\
+\textbf{Observation 4:} John Shakespeare, child, Joan Shakespeare \\
+Mary Shakespeare, spouse, John Shakespeare \\
+Mary Shakespeare, occupation, writer \\
+\textbf{Thought 5:} I find the occupation of Mary Shakespeare is writer, but the search results did not provide specific information about John Shakespeare's occupations. Therefore, I need to identify his business-related activities. \\
+\textbf{Action 5:} \textcolor[rgb]{0.4549,0.7137,0.0078}{Complete[John Shakespeare | occupation]} \\
+Observation 5: \textcolor[rgb]{0,0.4392,0.7529}{John Shakespeare}, occupation, merchant \\
+John Shakespeare, occupation, politician \\
+\textbf{Thought 6:} John Shakespeare is identified as William Shakespeare's father with occupations as a glove maker and a local government official. This connects him to the business realm. Therefore, I can summarize the answers. \\
+\textbf{Action 6:} Finish[John Shakespeare]
+
+
+\end{tcolorbox}
+

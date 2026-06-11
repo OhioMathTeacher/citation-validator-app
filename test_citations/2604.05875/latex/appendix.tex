@@ -1,0 +1,165 @@
+\clearpage
+\appendix
+
+\section{Statistics of KBs} \label{appendix:dataset}
+
+\paragraph{\textbf{KBC Task.}} The statistics of KBs are shown in Table \ref{Statistics of the 50 KG for the two datasets} and Table \ref{Statistics of the 30 KG for the two datasets}. Note that isolated nodes refer to nodes that do not have any edges connecting to other nodes, and these nodes maintain self-loops (edges pointing to themselves). We retain those samples which have isolated entities (entities without any neighboring nodes). For the entity $e$ that is an isolated node, we add a triple, represented as $\langle e, noop, e \rangle$.
+\input{tables/Statistics_of_the_50_KG}
+\input{tables/Statistics_of_the_30_KG}
+
+\paragraph{\textbf{KBQA Task.}} The statistics of the KBQA data sets used in this paper are shown in Table \ref{Statistics of KGQA datasets.}. Note that QA pairs in the training set without topic entities are removed. It can be seen that simply using the operation edge traverse on the complete KB could achieve nearly 100\% accuracy.
+\input{tables/Statistics_of_KGQA_dataset}
+
+
+\paragraph{\textbf{Reasoning Paths.}} The statistics of reasoning paths are shown in Table \ref{Statistics of Reasoning Paths}. In both KBQA data sets, the inference paths involve less than 1\% of the KBC test triples, indicating that even if the KBQA reasoning path is fully learned, its impact on the KBC test set remains minimal.
+\input{tables/Statistics_of_Reasoning_Paths}
+
+
+\section{Supplementary Experiment Settings} \label{appendix:settings}
+\textbf{Evaluation Measures.} For KBC, we adopt the evaluation measures mean reciprocal rank (MRR) and Hits@$i$ ($i \in \{1, 3, 10\}$). MRR is calculated by averaging the reciprocal ranks of true tail entities over all test triples. Hits@$i$ evaluates the proportion of true tail entities in the top $i$ predictions. 
+For KBQA, we adopt the evaluation measure Hits@1.(the proportion of true answers in the top $1$ predictions) to evaluate all methods. 
+
+\noindent\textbf{KBC task.} For DIFT, we utilize SimKGC as the pre-trained KBC model. For IVR, we use ComplEx as the backbone. For BiNet, we utilize the BFS method to construct relational paths. 
+
+\noindent\textbf{KBQA task.} For ToG and GoG, we change the prompt to adapt to Wikidata. For BiNet, we adopt the same setting as introduced above. 
+
+\input{tables/Effect_Analysis_of_the_information_for_Joint_Fine_Tuning_T5}
+
+\section{Baselines} \label{appendix:baseline}
+\subsection{KBC Methods} \label{appendix:baseline:kbc}
+For this task, we compare JCQL with eleven SOTA approaches as follows: 
+\begin{itemize}[left=0pt]
+\item TransE \cite{bordes2013} computes the candidate tail entity' score by representing relationships as vector translations.
+\item DistMult \cite{yang2015} uses a bilinear scoring function with a diagonal relationship matrix to calculate scores of candidate tail entities.
+\item ComplEx \cite{trouillon2016complex} extends DistMult by embedding entities and relations in a complex space.
+\item RotatE \cite{sun2018rotate} obtains the score of tail entities by defining the relationship as rotations to capture a wider range of relational patterns.
+\item IVR \cite{xiao2024knowledge} represents entities and relationships as embedding matrices and computes scores using a tensor decomposition model.
+\item GoldE \cite{GoldE} computes the score of tail entities by applying hyperbolic orthogonal transformations to head entities and calculating the inner product with tail entities to capture hierarchical and geometric structures in knowledge graphs.
+
+\item SimKGC \cite{wang-etal-2022-simkgc} leverages contrastive learning to optimize query embeddings derived from BERT, and computes the scores of candidate tail entities using the cosine similarity.
+\item CSProm-KG \cite{chen-etal-2023-dipping} uses the embedding of entities and relationships to generate conditional soft prompts, which are then entered into the frozen SLM to predict the tail entity.
+\item DIFT \cite{liu2024finetuninggenerativelargelanguage} predicts candidate tail entity by a pre-trained KBC model and refines the selection process with LLaMA.
+\item SATKGC \cite{satkgc} proposes a subgraph-aware training framework that incorporates structural inductive biases into SLMs by utilizing random-walk based subgraph sampling as mini-batches and employing contrastive learning to prioritize topologically hard negatives based on shortest path distances.
+\item RAA-KGC \cite{raa-kgc} proposes a relation-aware anchor enhancement strategy that utilizes neighbors of the head entity sharing the same relation as context.
+\item BiNet \cite{lihui2022binet} converts multi-hop questions into relational paths via an encoder-decoder structure and utilizes a shared embedding space with an answer scoring module for joint optimization of KBC and KBQA.
+\item KGT5 \cite{saxena2022kgt5} integrates KBC and KBQA tasks into a unified framework by converting the query and the question into a simple input sequence form and fine-tuning the model T5.
+\end{itemize}
+
+\input{image/training_time}
+\input{image/Performance_of_JCQL_with_different_sample_number}
+
+\subsection{KBQA Methods} \label{appendix:baseline:kbqa}
+For this task, in addition to BiNet and KGT5, we use other baselines as follows:
+\begin{itemize}[left=0pt]
+\item GPT-4o-mini is adopted under the standard prompting\cite{brown2020languagemodelsfewshotlearners} without requiring the KB.
+\item Chain-of-Thought (CoT) prompt \cite{wei2023chainofthoughtpromptingelicitsreasoning} solves questions through step-by-step reasoning without requiring the KB.
+\item Self-Consistency (SC) \cite{wang2023selfconsistencyimproveschainthought} can generate multiple candidate answers via CoT and select the most consistent answer.
+\item KG-CoT \cite{DBLP:conf/ijcai/Zhao0W0024} leverages a step-by-step graph reasoning model to perform reasoning over KBs and generates chains of knowledge with high confidence for LLMs based on the reasoning paths.
+\item ToG \cite{sun2023thinkongraph} explores relation paths within KBs through iterative interactions with the LLM and let the LLM derive final answers based on the retrieved paths.
+\item PoG \cite{Plan-on-Graph} adaptively explores and self-corrects reasoning paths to efficiently answer questions by leveraging guidance, memory, and reflection.
+\item GoG \cite{xu-etal-2024-generate} retrieves triples from the KB and generates novel triples through the LLM to answer complex questions in the incomplete KB.
+\item LMP \cite{lmp} adapts the message passing paradigm to the textual domain by iteratively condensing neighborhoods into hierarchical semantic facts, enabling LLMs to digest structural knowledge for effective reasoning.
+\item PDRR \cite{pdrr} employs a semantic parsing-inspired framework to predict question types and decompose them into structured triples, enabling flexible planning for both chain and parallel reasoning over KGs.
+\end{itemize}
+
+
+\section{Supplementary Experimental Results} \label{appendix:supplementary_results}
+% \subsection{Knowledge Base Completion} To gain deeper insight into the performance of JCQL in KBC, we conduct a comparative analysis of all baseline models with the Hits@10 metric. As shown in Table \ref{Knowledge Graph Completion Performance hits10}, JCQL also achieving the best performance in terms of Hits@10. % 为了进一步探究JCQL在KBC上的贡献，我们测试了所有baseline在Hits@10的性能。如图\ref{tables/KGC_compare_hits10}所示，JCQL在Hits@10上仍然达到了最佳性能。
+
+\subsection{Effect Analysis of the Input Sequence Form of the SLM}
+To verify the effectiveness of two kinds of information (i.e., entity description \textbf{$\mathcal{D}$} and context \textbf{$\mathcal{T}$}) introduced in Section \ref{sec:3.3}, we remove them from JCQL. As shown in Table \ref{Effect Analysis of the information for Joint Fine-Tuning T5}, without \textbf{$\mathcal{D}$} and \textbf{$\mathcal{T}$}, the performance of JCQL declines for KBC task on both data sets under different settings, which demonstrates the effectiveness of them. 
+
+% \subsection{Effect Analysis of Different Numbers of Completed Triples}
+% We investigate how the number of completed triples influence JCQL's performance. As depicted in Figure \ref{num_complete_triples}, JCQL performance generally improves with more triples, peaking before declining. This decline is likely due to the noise and irrelevant knowledge introduced by excessive complementation. Crucially, complementing the knowledge base with any number of predicted triples enhances the reasoning capacity for the KBQA task compared to the absence of complementation (i.e., $k=0$).
+
+\subsection{Efficiency Study of Training Process}
+In this subsection, we study the efficiency of JCQL's training process under different settings. Figure \ref{training_time:subfig:(a)} and Figure \ref{training_time:subfig:(b)} plot the total running time on WebQSP under different settings i.e., 30\% and 50\% of the KB, respectively. From the results, we can see that the total running time is approximately linear to the number of questions in the training data set, which is consistent with calls to the LLM described in Section \ref{sec:3.4}. Note that the running time of $\textsc{Parse}(C_q,\mathcal{M}_L)$ and $\textsc{IncFineTune}(\{\langle h,r,t\rangle\},P_q,\mathcal{M}_S)$ is negligible compared with $\textsc{Agent}(q,a_q,e_q,\mathcal{M}_S)$. Therefore, the training time mainly depends on $\textsc{Agent}(q,a_q,e_q,\mathcal{M}_S)$.
+
+\subsection{Performance of JCQL with different sample size in experience replay.} To explore the influence of the sample size in experience replay on JCQL’s performance, we conduct experiments with the size set to $\{0, 5, 10, 15, 20\}$. As shown in Figure \ref{figure:Performance under Different Sample Numbers}, JCQL’s performance improves with the sample size. 
+This suggests that our experience replay strategy can effectively mitigate catastrophic forgetting in SLM. It also demonstrates that performance growth diminishes when the sample size exceeds 10. To balance performance and computational cost, we set the sample size to 10.
+
+\input{image/num_complete_triples}
+
+\section{Prompt List} \label{appendix:prompt}
+% \subsection{Prompts in Training Phase}\label{appendix:prompt:training phase}
+% The following shows the prompts used in JCQL including Knowledge Extraction Prompt, KBQA Inference Selecting Entity and Template Consistency Prompt.
+
+\subsection{Prompts for JCQL}\label{appendix:prompt:framework}
+As shown in Prompt \ref{prompts for instruction used in knowledge extraction}, the prompt is designed to extract the reasoning process of KBQA. 
+% \textcolor[rgb]{0,0.4392,0.7529}{The blue font} indicates the retrieved answers, \textcolor[rgb]{0.7529,0,0}{the red font} indicates \texttt{Generate Action} and \textcolor[rgb]{0.4549,0.7137,0.0078}{the green font} indicates \texttt{Complete Action}.
+\input{prompts/prompts_for_instruction_used_in_knowledge_extraction}
+% \input{prompts/prompts for example used in knowledge extraction}
+
+% \subsection{Prompts in Inference Phase}\label{appendix:prompt:inference phase}
+As shown in Prompt \ref{prompts for instruction used in KGQA inference.}, the prompt is designed to executive reasoning for KBQA via the agent. \textcolor[rgb]{0,0.4392,0.7529}{The blue font} denotes the retrieved answers, \textcolor[rgb]{0.7529,0,0}{the red font} denotes the action \texttt{generate}, and \textcolor[rgb]{0.4549,0.7137,0.0078}{the green font} denotes the action \texttt{complete}.
+\input{prompts/prompts_for_instruction_used_in_KGQA_inference}
+% \input{prompts/prompts for example used in KGQA inference}
+
+\subsection{Supplementary Prompts for JCQL}\label{appendix:prompt:supplementary}
+As shown in Prompt \ref{prompts for selecting entity}, the prompt is designed to select entities that are most related to the last \texttt{thought} based on the description of entities. During the reasoning, LLM may generate ambiguous entity names. With Prompt \ref{prompts for selecting entity}, LLM will select the suitable entity.
+\input{prompts/prompts_for_selecting_entity}
+
+As shown in Prompt \ref{prompts for selecting relations}, the prompt is designed to select relations that are most related to the last \texttt{thought} in the action \texttt{search}.
+\input{prompts/prompts_for_selecting_relations}
+
+As shown in Prompt \ref{prompts for generating triples}, the prompt is designed to generate new triples that are most related to the sub-question in the action \texttt{generate}. \textcolor[rgb]{0.98,0.4,0.5}{The pink font} indicates the supervision in the training phase of the KBQA task.
+\input{prompts/prompts_for_generating_triples}
+
+\input{tables/A_sample_for_KBC}
+
+We first link the relations within the generated triples to the canonical relations in the background KB using the BM25 algorithm. As shown in Prompt \ref{prompts for modifying triples}, the prompt is then designed to modify the triples generated by LLM. The LLM often frequently generates unreliable triples. For instance, this prompt may allow the LLM invert head-tail entity pairs, such as modifying $\langle$Pak Pong-ju, head of government, North Korea$\rangle$ into $\langle$North Korea, head of government, Pak Pong-ju$\rangle$. Specifically, as a pre-processing step, for each relation in the background KB, the description and schema are obtained by retrieving the original description from Wikidata and extracting multiple corresponding triples from the background KB. Subsequently, the original description and these triples are input into the LLM to generate refined description and to summarize the schema from the triples.
+\input{prompts/prompts_for_modifying_triples}
+
+As shown in Prompt \ref{prompts for generating paths}, the prompt is designed to select the triples most relevant to the question to construct reasoning paths. 
+\input{prompts/prompts_for_generating_paths}
+
+% \section{Pseudocodes}
+% The pseudocodes of JCQL are listed below.
+% \begin{algorithm}[bth]
+% \caption{KBQA Training}\label{alg:kgqa}
+% \KwData{incomplete knowledge graph $G=\{E,R,T\}$, \texttt{question} $q$, \texttt{gold answers} $E_a$, hyper parameter $k$, max length of LLMs output $L$}
+% \KwResult{\texttt{Top-k candidates}}
+% $W=\{w_1,w_2 \dots, w_{|L|}\} \gets \texttt{Knowledge\_Extraction}(q, E_a)$\;
+% $G_{q} \gets \texttt{construct\_subgraph}(W)$\;
+% \For{\texttt{each} $e_a \in E_a$}{
+% $\texttt{Path}\ P \gets \texttt{BFS}(e_t,e_a)$\;
+% $\texttt{content}\ T_{c} \gets \texttt{Filter}(P)$\;
+% $\texttt{Sequence}\gets$ \texttt{Concatenate topic entity }$e_a$, \texttt{entity description}, \texttt{relations in} $T_c$ and \texttt{context} $T_c$\;
+% \texttt{Top-k candidates} $\gets \texttt{T5}(\texttt{Sequence})$\;
+% }
+% \end{algorithm}
+
+% \begin{algorithm}[bth]
+% \caption{KBC Training}\label{alg:kgc}
+% \KwData{incomplete knowledge graph $G=\{E,R,T\}$, \texttt{training triples} $T=\{(h,r,t)\}$, \texttt{generated triples} $T_{gen}$, hyper parameter $k$}
+% \KwResult{\texttt{Top-k candidates}}
+% $T_{all} \gets T\ \cap\ T_{gen}$\;
+% \For{\texttt{each} $(h,r,t) \in T_{all}$}{
+% $\texttt{content}\ T_{c} \gets \texttt{Sample\_Neighbor}(h)$\;
+% $\texttt{Sequence}\gets$ \texttt{Concatenate head entity }$h$, \texttt{entity description}, \texttt{relation} $r$ and \texttt{context} $T_c$\;
+% \texttt{Top-k candidates} $\gets \texttt{T5}(\texttt{Sequence})$\;
+% }
+% \end{algorithm}
+
+% \section{Notations and definitions} \label{appendix:notations and definitions}
+% Table \ref{Notations and definitions.} gives the main notations used throughout this paper.
+
+\section{Case Study} \label{appendix:case study}
+% \paragraph{\textbf{Comparison between GoG and JCQL under 50\% KB.}}
+\paragraph{\textbf{Comparison between \texttt{generate} and \texttt{complete} under 50\% KB.}}
+JCQL treats LLM as both agent and KB, generating new triples from the internal knowledge of the LLM. However, when triples are missing, action \texttt{generate} over-relies on the LLM's internal knowledge, increasing the risk of hallucination. To alleviate this issue, our approach incorporates the SLM, ensuring that predicted relations and entities are assigned unique IDs. As shown in Table \ref{tab:cmp_gog}, action \texttt{generate} incorrectly generates relationships and entities that do not exist in the KB. In contrast, JCQL generates valid entities through its action \texttt{complete}.
+\paragraph{\textbf{A typical case of input sequences and corresponding output for the SLM.}} table \ref{tab:cmp_kbc} shows a typical case of input sequences and corresponding output for the SLM. Given the query $\langle Justin\ Bieber, f ather, ? \rangle$, JCQL obtains triples with the one-hop neighborhoods of the head entity $Justin\ Bieber$ uniformly, at random and without replacement. Finally, we concatenate them with $\langle SEP \rangle$.
+
+\input{tables/The_comparison_between_GoG_and_ours_under_50_KG_setting}
+
+
+
+% \section{Supplementary Related Work} 
+
+\section{Supplementary Setting Details} \label{appendix:implementation_details}
+In all experiments, the depth of exploration is set to $10$ to avoid endless exploration. The maximum token length for generation is set to $512$. All experiments are conducted on a server with an Intel(R) Xeon(R) Silver $4310$ CPU ($2.10$GHz), $256$ GB RAM memory, and an NVIDIA RTX A6000 GPU.
+
+\section{Broader Impact} \label{appendix:limitations}
+By performing KBQA and KBC jointly, JCQL enhances the complex reasoning abilities of the KB-augmented LLM and improves the performance of the SLM when faced with incomplete KBs. Furthermore, other broader impacts of JCQL are listed as follows. (1) The proposed framework JCQL is flexible. For KBQA, we can choose any KBC model to complete missing triples for any KB. 
+(2) JCQL can generate reasoning paths based on input questions and update the KB in real time using incremental learning techniques, demonstrating its real-time performance and the ability of lifelong learning.
+(3) From a long-term perspective, the LLM's reasoning paths generated from continuous increasing of question-answer pairs strengthen the KBC model, which in turn improves the reasoning capability of LLM.

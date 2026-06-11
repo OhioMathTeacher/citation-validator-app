@@ -1,0 +1,33 @@
+
+
+\begin{tcolorbox}[prompt=
+{\begin{prompt} \label{prompts for modifying triples}The Prompt for Triple Modification
+\end{prompt}}]
+$\bullet$ Instruction: \\ \\
+Please modify the known triples based on the descriptions and schemas of the relations. You should generate triples without redundant words. \\
+\\
+$\bullet$ Example: \\ \\
+\textbf{Question: }who is ruling north korea now? \\
+\textbf{Known Triples: }""" \\
+North Korea, office held by head of state, Kim Il-sung \\
+North Korea, office held by head of state, Kim Jong-un \\
+Pak Pong-ju, head of government, North Korea \\
+""" \\
+\textbf{Descriptions: }""" \\
+1. office held by head of state: This relation links a geographical or political entity... \\
+2. member of political party: This relation connects individuals to the political parties... \\
+3. head of government: This relation links a specific location—such as a city, municipality... \\
+4. head of state: This relation links a geographical entity, such as a country or state... \\
+""" \\
+\textbf{Schemas: }""" \\
+1. office held by head of state: [Location], office held by head of state, [Political Office] \\
+2. member of political party: [Human], member of political party, [Political Party] \\
+3. head of government: [Location], head of government, [Human] \\
+4. head of state: [Location], head of state, [Human] \\
+""" \\
+\textbf{New Triples: }""" \\
+1. North Korea, head of state, Kim Il-sung \\
+2. North Korea, head of state, Kim Jong-un \\
+3. North Korea, head of government, Pak Pong-ju \\
+"""
+\end{tcolorbox}

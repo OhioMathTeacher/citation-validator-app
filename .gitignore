@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Secrets — never commit
+.env
+.env.*
+*.key
+*_secret*
+api_keys.txt
+
+# OS / editor
+.DS_Store
+*.swp

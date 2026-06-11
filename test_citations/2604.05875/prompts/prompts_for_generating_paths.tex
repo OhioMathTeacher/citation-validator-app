@@ -1,0 +1,32 @@
+
+
+\begin{tcolorbox}[prompt=
+{\begin{prompt} \label{prompts for generating paths}The Prompt for Path Generation
+\end{prompt}}]
+$\bullet$ Instruction: \\ \\
+Considering the known triples and relations, please select the triples and relations that are relevant to the questions and answers. \\
+\\
+$\bullet$ Example: \\ \\
+\textbf{Question:} which one of Shakespeare's parents worked as a business person? \\
+\textbf{Answer:} John Shakespeare \\
+\textbf{Topic entity:} William Shakespeare \\
+\textbf{Known triples:} """ \\
+William Shakespeare, field of work, acting \\
+William Shakespeare, field of work, poetry \\
+William Shakespeare, field of work, theatre \\
+William Shakespeare, father, John Shakespeare \\
+William Shakespeare, mother, Mary Shakespeare \\
+Mary Shakespeare, spouse, John Shakespeare \\
+Mary Shakespeare, occupation, writer \\
+John Shakespeare, occupation, merchant \\
+John Shakespeare, occupation, politician \\
+""" \\
+\textbf{Related relations:} father, mother, occupation \\
+\textbf{Related triples:} """ \\
+William Shakespeare, father, John Shakespeare \\
+William Shakespeare, mother, Mary Shakespeare \\
+Mary Shakespeare, occupation, writer \\
+John Shakespeare, occupation, merchant \\
+John Shakespeare, occupation, politician \\
+""" 
+\end{tcolorbox}

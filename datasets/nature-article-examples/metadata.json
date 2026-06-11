@@ -1,0 +1,20 @@
+{
+  "dataset": "nature-article-examples",
+  "description": "Frankenstein citations featured in the Nature article (April 2026). These are confirmed AI-fabricated citations from the Linardon et al. (2025) study where GPT-4o generated literature reviews on mental health disorders.",
+  "source": "Nature Vol 652, 2 April 2026 - 'The growing problem of hallucinated citations'",
+  "source_study": "Linardon, J. et al. JMIR Ment. Health 12, e80371 (2025)",
+  "citations": {
+    "schleider2022single": {
+      "ground_truth": "invalid",
+      "fabrication_type": "frankenstein",
+      "notes": "Real author (Schleider publishes on single-session interventions), real co-authors (Abel & Weisz), real journal (Annual Review of Clinical Psychology), plausible volume/year/pages, DOI starts correctly for journal but points to nothing. Every component is real; the combination is fake.",
+      "why_convincing": [
+        "Schleider has 77+ cited papers on single-session interventions",
+        "Abel and Weisz are real collaborators of Schleider",
+        "Annual Review of Clinical Psychology Vol 18 exists (2022)",
+        "Pages 351-378 are plausible for that volume",
+        "DOI prefix 10.1146/annurev-clinpsy matches real journal DOIs"
+      ]
+    }
+  }
+}

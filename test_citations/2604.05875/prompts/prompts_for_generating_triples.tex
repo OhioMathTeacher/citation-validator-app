@@ -1,0 +1,23 @@
+
+
+\begin{tcolorbox}[prompt=
+{\begin{prompt} \label{prompts for generating triples}The Prompt for Triple Generation
+\end{prompt}}]
+$\bullet$ Instruction: \\ \\
+Given the existing triples, please think step by step and generate new triples related to the current question. \\
+\\
+$\bullet$ Example: \\ \\
+\textbf{Question:} what are the types of government in the United States? \\
+\textcolor[rgb]{0.98,0.4,0.5}{\textbf{Hint:} federal republic | constitutional republic | presidential system} \\
+\textbf{Known Triples: }""" \\
+United States of America, instance of, country \\
+United States of America, instance of, constitutional republic \\
+United States of America, has cabinet, United States Cabinet \\
+United States of America, basic form of government, republic \\
+""" \\
+\textbf{Generated Triples: }""" \\
+1. United States of America, instance of, federal republic \\
+2. United States of America, instance of, Democratic Republic \\
+3. United States of America, basic form of government, presidential system \\
+""" 
+\end{tcolorbox}

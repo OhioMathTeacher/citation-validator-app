@@ -1,0 +1,18 @@
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[h!]
+\centering
+\setlength{\tabcolsep}{1pt}
+\resizebox{0.45\textwidth}{!}{%
+    \begin{tabular}{>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2.5cm}>{\centering\arraybackslash}p{2.5cm}>{\centering\arraybackslash}p{3.5cm}}
+    \toprule
+    \textit{\textbf{Data set}} & \textit{\textbf{Number$_{path}$}} & \textit{\textbf{Number$_{test}$}} & \textit{\textbf{Number$_{test}$/Number$_{path}$}} \\
+    \midrule
+    WebQSP     & 8,623   & 27   & 0.31 \\
+    CWQ        & 39,776  & 73   & 0.18 \\
+    \bottomrule
+    \end{tabular}%
+}
+\caption{Statistics of the reasoning path. \textit{\textbf{Number$_{path}$}} denotes the number of triples in the inference paths. \textit{\textbf{Number$_{test}$}} denotes the number of triples belonging to inference paths within the KBC test set.}
+\label{Statistics of Reasoning Paths}
+\end{table}
+\renewcommand{\arraystretch}{1}

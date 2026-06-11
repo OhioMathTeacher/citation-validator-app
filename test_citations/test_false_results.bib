@@ -1,0 +1,71 @@
+% TEST SUITE: False Positives and False Negatives
+% These citations test edge cases where our validator might get it WRONG
+%
+% FALSE POSITIVES (real papers that might be flagged as invalid):
+% fp1 - Zenodo DOI (uses DataCite, not CrossRef)
+% fp2 - Figshare DOI (uses DataCite, not CrossRef)
+% fp3 - Real paper, DOI uses old dx.doi.org format
+%
+% FALSE NEGATIVES (fake papers that might sneak through):
+% fn1 - Real DOI stolen from a different paper, fake title/authors
+% fn2 - Frankenstein: real author + real journal + fabricated title
+% fn3 - Completely fabricated but has a plausible-looking DOI format
+
+% =====================================================================
+% FALSE POSITIVE TESTS - These are ALL REAL, validator should say VALID
+% =====================================================================
+
+@article{fp1_zenodo,
+  author = {European Organization for Nuclear Research},
+  title = {Zenodo},
+  year = {2013},
+  doi = {10.25495/7GXK-RD71}
+}
+
+@article{fp2_figshare,
+  author = {Singh, Amritpal},
+  title = {Figshare Dataset},
+  year = {2023},
+  doi = {10.6084/m9.figshare.5559914}
+}
+
+@article{fp3_real_paper,
+  author = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N. and Kaiser, Lukasz and Polosukhin, Illia},
+  title = {Attention Is All You Need},
+  journal = {Advances in Neural Information Processing Systems},
+  year = {2017},
+  doi = {10.48550/arXiv.1706.03762}
+}
+
+% =====================================================================
+% FALSE NEGATIVE TESTS - These are ALL FAKE, validator should catch them
+% =====================================================================
+
+@article{fn1_stolen_doi,
+  author = {Madeupington, J. and Fakerson, Q.},
+  title = {A Revolutionary Framework for Quantum Blockchain Synergies},
+  journal = {Nature},
+  volume = {620},
+  pages = {172--176},
+  year = {2023},
+  doi = {10.1038/s41586-023-06600-9}
+}
+
+@article{fn2_frankenstein,
+  author = {Hinton, Geoffrey and Bengio, Yoshua},
+  title = {Deep Recursive Transformative Meta-Learning for Autonomous Generalization},
+  journal = {Journal of Machine Learning Research},
+  volume = {24},
+  pages = {1--42},
+  year = {2024}
+}
+
+@article{fn3_fake_plausible_doi,
+  author = {Thompson, Sarah R. and Williams, David K.},
+  title = {Statistical Methods for Detecting Citation Anomalies in Large Corpora},
+  journal = {Scientometrics},
+  volume = {129},
+  pages = {3401--3418},
+  year = {2024},
+  doi = {10.1007/s11192-024-99999-9}
+}

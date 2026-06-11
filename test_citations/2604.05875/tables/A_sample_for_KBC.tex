@@ -1,0 +1,18 @@
+\renewcommand{\arraystretch}{2.0}
+\begin{table*}[t!]
+\centering
+\begin{tabular}{>{\hspace{0pt}}m{0.1\linewidth}|>{\hspace{0pt}}m{0.85\linewidth}} 
+\hline
+\rowcolor[rgb]{0.9490,0.9490,0.9490} 
+\textbf{input} & $\langle$ Justin\ Bieber,\ father,\ ? $\rangle$ \\
+\hline
+\textbf{sequence} & predict tail: Justin Bieber $|$ father \par{} entity description: Justin Bieber [Canadian singer (born 1994)] \par{} related relationship: father \par{} context: $\langle$ Justin Bieber $|$ mother $|$ Pattie Mallette $\rangle$ $\langle SEP\rangle$ $\langle$ Justin Bieber $|$ sibling $|$ Jazmyn Bieber$\rangle$ $\langle SEP \rangle$ ... \\
+\hline
+\rowcolor[rgb]{0.9490,0.9490,0.9490} 
+\textbf{output} & Jeremy Bieber \\
+\hline
+\end{tabular}
+\caption{A typical case of input sequences and corresponding output for the SLM.}
+\label{tab:cmp_kbc}
+\end{table*}
+\renewcommand{\arraystretch}{1}

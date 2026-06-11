@@ -1,0 +1,930 @@
+[2026-05-24T00:21:16Z] === PASS C CHAIN START  HEAD=7973dc2 ===
+[2026-05-24T00:21:16Z] step1 (FP baseline) -- start
+Terminated                 python3 scripts/run_fp_baseline.py --step 1 2>&1
+[2026-05-24T00:24:18Z] step1 -- done, copied to passC_step1.json
+[2026-05-24T00:24:18Z] step4 (fake detection) -- start
+
+[2026-05-24T00:28:45Z] === PASS C CHAIN START (DETACHED v2)  HEAD=7973dc2 ===
+[2026-05-24T00:28:45Z] PID=666818  PPID=666814
+[2026-05-24T00:28:45Z] step1 (FP baseline) -- start
+
+======================================================================
+  STEP 1: DETERMINISTIC FALSE-POSITIVE BASELINE
+  Testing real citations — every flag is a false positive.
+  Version: 7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+────────────────────────────────────────────────────────────
+  Dataset: Real arXiv CS Citations (2024) (ojsm-real-arxiv)
+────────────────────────────────────────────────────────────
+  Loaded 285 citations
+  [25/285] 0.1 cit/s  [50/285] 0.1 cit/s  [75/285] 0.1 cit/s  [100/285] 0.2 cit/s  [125/285] 0.2 cit/s  [150/285] 0.2 cit/s  [175/285] 0.2 cit/s  [200/285] 0.2 cit/s  [225/285] 0.2 cit/s  [250/285] 0.2 cit/s  [275/285] 0.2 cit/s  [285/285] 0.2 cit/s  Completed in 1836.4s                              
+
+  Results:
+         Valid:  104/285  ██████████████████ 36.5%
+       Warning:  181/285  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 63.5%
+    Suspicious:    0/285   0.0%
+       Invalid:    0/285   0.0%
+
+  FALSE POSITIVE RATE: 0/285 = 0.0%  <<<  PASS (target < 5%)
+
+────────────────────────────────────────────────────────────
+  Dataset: Real CrossRef Random Sample (ojsm-real-crossref)
+────────────────────────────────────────────────────────────
+  Loaded 96 citations
+  [25/96] 1.3 cit/s  [50/96] 1.6 cit/s  [75/96] 1.7 cit/s  [96/96] 1.5 cit/s  Completed in 62.3s                              
+
+  Results:
+         Valid:   95/96  █████████████████████████████████████████████████ 99.0%
+       Warning:    1/96   1.0%
+    Suspicious:    0/96   0.0%
+       Invalid:    0/96   0.0%
+
+  FALSE POSITIVE RATE: 0/96 = 0.0%  <<<  PASS (target < 5%)
+
+────────────────────────────────────────────────────────────
+  Dataset: Nature Article References (nature-article-refs)
+────────────────────────────────────────────────────────────
+  Loaded 10 citations
+  [10/10] 0.1 cit/s  Completed in 198.1s                              
+
+  Results:
+         Valid:    1/10  █████ 10.0%
+       Warning:    9/10  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ 90.0%
+    Suspicious:    0/10   0.0%
+       Invalid:    0/10   0.0%
+
+  FALSE POSITIVE RATE: 0/10 = 0.0%  <<<  PASS (target < 5%)
+
+======================================================================
+  OVERALL FALSE-POSITIVE RATE: 0/391 = 0.0%
+  STATUS: PASS (target < 5%)
+======================================================================
+
+Results saved to /home/todd/Repos/Ohio-Journal-of-School-Mathematics/results/fp-baseline/step1_deterministic.json
+[2026-05-24T01:03:42Z] step1 -- done, copied to passC_step1.json
+[2026-05-24T01:03:42Z] step4 (fake detection) -- start
+
+======================================================================
+  STEP 4: FAKE-CITATION DETECTION (RECALL TEST)
+  Testing fabricated citations — every miss is a false negative.
+  Version: 7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+────────────────────────────────────────────────────────────
+  Dataset: Ansari 100 — NeurIPS 2025 Fakes (compound-deception-ansari)
+────────────────────────────────────────────────────────────
+  Loaded 100 citations
+  [25/100] 0.1 cit/s  [50/100] 0.1 cit/s  [75/100] 0.1 cit/s  [100/100] 0.1 cit/s  Completed in 719.8s                              
+
+  Results:
+         Valid:    3/100  ░ 3.0%
+       Warning:   93/100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 93.0%
+    Suspicious:    0/100   0.0%
+       Invalid:    4/100  ██ 4.0%
+
+  DETECTION RATE: 4/100 = 4.0%  <<<  FAIL (target >= 95%)
+
+  Missed fakes (96):
+    [   WARNING] ansari100_001
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_002
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_004
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_005
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_006
+      warning: Generic author name pattern
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_007
+      warning: Suspiciously short author
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_008
+      warning: Generic author name pattern
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_009
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_010
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_011
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_012
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_013
+      warning: Suspiciously short author
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_014
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_015
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_016
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_017
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_018
+      warning: No DOI found and not in OpenAlex
+    [     VALID] ansari100_019
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_020
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] ansari100_021
+      warning: No DOI found and not in OpenAlex
+    ... and 76 more
+
+────────────────────────────────────────────────────────────
+  Dataset: Frankenstein Citations (real author + real journal + fake title) (ojsm-fake-frankenstein)
+────────────────────────────────────────────────────────────
+  Loaded 100 citations
+  [25/100] 0.1 cit/s  [50/100] 0.2 cit/s  [75/100] 0.2 cit/s  [100/100] 0.2 cit/s  Completed in 651.1s                              
+
+  Results:
+         Valid:    2/100  ░ 2.0%
+       Warning:   98/100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 98.0%
+    Suspicious:    0/100   0.0%
+       Invalid:    0/100   0.0%
+
+  DETECTION RATE: 0/100 = 0.0%  <<<  FAIL (target >= 95%)
+
+  Missed fakes (100):
+    [   WARNING] frankenstein0001
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] frankenstein0002
+      warning: No DOI found and not in OpenAlex
+      warning: Weak Semantic Scholar match (similarity 0.35)
+      warning: Low metadata similarity score: 0.18
+    [   WARNING] frankenstein0003
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] frankenstein0004
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] frankenstein0005
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] frankenstein0006
+      warning: No DOI found and not in OpenAlex
+    [     VALID] frankenstein0007
+      warning: Generic title pattern (common in hallucinations)
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] frankenstein0008
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] frankenstein0009
+      warning: Generic title pattern (common in hallucinations)
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] frankenstein0010
+      warning: No DOI found and not in OpenAlex
+      warning: Semantic Scholar title match but no author/year confirmation
+    [   WARNING] frankenstein0011
+      warning: Generic title pattern (common in hallucinations)
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] frankenstein0012
+      warning: No DOI found and not in OpenAlex
+      warning: Weak Semantic Scholar match (similarity 0.38)
+      warning: Low metadata similarity score: 0.19
+    [   WARNING] frankenstein0013
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] frankenstein0014
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] frankenstein0015
+      warning: No DOI found and not in OpenAlex
+      warning: Weak Semantic Scholar match (similarity 0.33)
+      warning: Low metadata similarity score: 0.17
+    [   WARNING] frankenstein0016
+      warning: No DOI found and not in OpenAlex
+      warning: Semantic Scholar title match but no author/year confirmation
+    [   WARNING] frankenstein0017
+      warning: Generic title pattern (common in hallucinations)
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] frankenstein0018
+      warning: No DOI found and not in OpenAlex
+      warning: Weak Semantic Scholar match (similarity 0.45)
+      warning: Low metadata similarity score: 0.23
+    [   WARNING] frankenstein0019
+      warning: Generic title pattern (common in hallucinations)
+      warning: No DOI found and not in OpenAlex
+      warning: Weak Semantic Scholar match (similarity 0.44)
+      warning: Low metadata similarity score: 0.22
+    [   WARNING] frankenstein0020
+      warning: No DOI found and not in OpenAlex
+    ... and 80 more
+
+────────────────────────────────────────────────────────────
+  Dataset: Stolen DOI Citations (real DOI + wrong metadata) (ojsm-fake-stolen-doi)
+────────────────────────────────────────────────────────────
+  Loaded 100 citations
+  [25/100] 0.1 cit/s  [50/100] 0.1 cit/s  [75/100] 0.1 cit/s  [100/100] 0.1 cit/s  Completed in 754.2s                              
+
+  Results:
+         Valid:    0/100   0.0%
+       Warning:    1/100   1.0%
+    Suspicious:   99/100  █████████████████████████████████████████████████ 99.0%
+       Invalid:    0/100   0.0%
+
+  DETECTION RATE: 99/100 = 99.0%  <<<  PASS (target >= 95%)
+
+  Missed fakes (1):
+    [   WARNING] stolen_doi0075
+      warning: Title mismatch (similarity 0.00): BibTeX='Recent Advances in Reinforcement Learning...' vs DOI='Reducing the Dimensionality of Data with Neural Ne...'
+      warning: Year mismatch: BibTeX=2020 vs DOI=2006
+      warning: Low metadata similarity score: 0.00
+
+────────────────────────────────────────────────────────────
+  Dataset: Plausible Fakes (entirely fabricated but realistic) (ojsm-fake-plausible)
+────────────────────────────────────────────────────────────
+  Loaded 100 citations
+  [25/100] 2.0 cit/s  [50/100] 2.0 cit/s  [75/100] 2.0 cit/s  [100/100] 2.0 cit/s  Completed in 50.3s                              
+
+  Results:
+         Valid:    0/100   0.0%
+       Warning:    2/100  ░ 2.0%
+    Suspicious:    0/100   0.0%
+       Invalid:   98/100  █████████████████████████████████████████████████ 98.0%
+
+  DETECTION RATE: 98/100 = 98.0%  <<<  PASS (target >= 95%)
+
+  Missed fakes (2):
+    [   WARNING] plausible0069
+      warning: Generic author name pattern
+      warning: DOI could not be verified: DOI resolver HTTP 400
+    [   WARNING] plausible0093
+      warning: Generic author name pattern
+      warning: DOI could not be verified: DOI resolver HTTP 400
+
+────────────────────────────────────────────────────────────
+  Dataset: Nonsense Citations (obviously wrong, sanity check) (ojsm-fake-nonsense)
+────────────────────────────────────────────────────────────
+  Loaded 100 citations
+  [25/100] 0.1 cit/s  [50/100] 0.1 cit/s  [75/100] 0.2 cit/s  [100/100] 0.2 cit/s  Completed in 538.3s                              
+
+  Results:
+         Valid:    0/100   0.0%
+       Warning:   75/100  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 75.0%
+    Suspicious:    0/100   0.0%
+       Invalid:   25/100  ████████████ 25.0%
+
+  DETECTION RATE: 25/100 = 25.0%  <<<  FAIL (target >= 95%)
+
+  Missed fakes (75):
+    [   WARNING] future0001
+      warning: Future year (2027) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+      warning: Weak Semantic Scholar match (similarity 0.45)
+      warning: Low metadata similarity score: 0.23
+    [   WARNING] future0002
+      warning: Future year (2029) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] future0003
+      warning: Future year (2029) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] future0004
+      warning: Future year (2028) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+      warning: Weak Semantic Scholar match (similarity 0.45)
+      warning: Low metadata similarity score: 0.23
+    [   WARNING] future0005
+      warning: Future year (2029) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] future0006
+      warning: Future year (2027) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] future0007
+      warning: Future year (2030) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] future0008
+      warning: Future year (2029) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+      warning: Weak Semantic Scholar match (similarity 0.45)
+      warning: Low metadata similarity score: 0.23
+    [   WARNING] future0009
+      warning: Future year (2027) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+      warning: Semantic Scholar title match but no author/year confirmation
+    [   WARNING] future0010
+      warning: Future year (2027) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] future0011
+      warning: Future year (2030) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] future0012
+      warning: Future year (2028) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+      warning: Semantic Scholar title match but no author/year confirmation
+    [   WARNING] future0013
+      warning: Future year (2028) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] future0014
+      warning: Future year (2030) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] future0015
+      warning: Future year (2030) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+      warning: Semantic Scholar title match but no author/year confirmation
+      warning: Low metadata similarity score: 0.25
+    [   WARNING] future0016
+      warning: Future year (2029) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] future0017
+      warning: Future year (2030) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] future0018
+      warning: Future year (2029) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] future0019
+      warning: Future year (2030) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+    [   WARNING] future0020
+      warning: Future year (2027) - likely hallucinated
+      warning: No DOI found and not in OpenAlex
+    ... and 55 more
+
+======================================================================
+  OVERALL DETECTION RATE: 226/500 = 45.2%
+  FALSE NEGATIVES (missed fakes): 274
+  STATUS: FAIL (target >= 95%)
+======================================================================
+
+Results saved to /home/todd/Repos/Ohio-Journal-of-School-Mathematics/results/fp-baseline/step4_fake_detection.json
+[2026-05-24T01:48:56Z] step4 -- done, copied to passC_step4.json
+[2026-05-24T01:48:56Z] AI: compound-deception-ansari / gemini -- start
+
+======================================================================
+  BENCHMARK: Compound Deception — NeurIPS 2025 Fakes
+  Dataset:   compound-deception-ansari
+  AI:        gemini (Gemini 2.5 Flash)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 100 BibTeX entries
+Ground truth: 100 per-citation labels loaded
+
+Step 1/2: Deterministic validation...
+  Done in 549.6s — 3 valid, 93 warning, 0 suspicious, 4 invalid
+
+Step 2/2: AI analysis on 97 citations...
+  10/97 complete...
+  20/97 complete...
+  30/97 complete...
+  40/97 complete...
+  50/97 complete...
+  60/97 complete...
+  70/97 complete...
+  80/97 complete...
+  90/97 complete...
+  97/97 complete...
+  AI pass done in 104.2s (97 successful calls, 0 errors)
+  Tokens: 47179 in, 10534 out, 57713 total
+  Avg per call: 595 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      3
+  Warning:    5
+  Suspicious: 88
+  Invalid:    4
+
+  Accuracy:   92.0%
+  F1 Score:   95.8%
+  TP: 92  TN: 0  FP: 0  FN: 8  Skipped: 0
+
+  False negatives (missed fakes):
+    - ansari100_019
+    - ansari100_022
+    - ansari100_037
+    - ansari100_059
+    - ansari100_084
+    - ansari100_087
+    - ansari100_092
+    - ansari100_100
+
+  Time: 653.8s (det: 549.6s, ai: 104.2s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/compound-deception-ansari_gemini_20260524-015950.json
+[2026-05-24T01:59:50Z] AI: compound-deception-ansari / gemini -- done (exit=0)
+[2026-05-24T01:59:50Z] AI: compound-deception-ansari / anthropic -- start
+
+======================================================================
+  BENCHMARK: Compound Deception — NeurIPS 2025 Fakes
+  Dataset:   compound-deception-ansari
+  AI:        anthropic (Anthropic Claude Sonnet 4)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 100 BibTeX entries
+Ground truth: 100 per-citation labels loaded
+
+Step 1/2: Deterministic validation...
+  Done in 739.9s — 3 valid, 93 warning, 0 suspicious, 4 invalid
+
+Step 2/2: AI analysis on 97 citations...
+  10/97 complete...
+  20/97 complete...
+  30/97 complete...
+  40/97 complete...
+  50/97 complete...
+  60/97 complete...
+  70/97 complete...
+  80/97 complete...
+  90/97 complete...
+  97/97 complete...
+  AI pass done in 313.6s (97 successful calls, 0 errors)
+  Tokens: 50066 in, 8891 out, 58957 total
+  Avg per call: 608 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      3
+  Warning:    12
+  Suspicious: 81
+  Invalid:    4
+
+  Accuracy:   85.0%
+  F1 Score:   91.9%
+  TP: 85  TN: 0  FP: 0  FN: 15  Skipped: 0
+
+  False negatives (missed fakes):
+    - ansari100_001
+    - ansari100_018
+    - ansari100_019
+    - ansari100_022
+    - ansari100_030
+    - ansari100_033
+    - ansari100_035
+    - ansari100_044
+    - ansari100_059
+    - ansari100_070
+    - ansari100_074
+    - ansari100_084
+    - ansari100_087
+    - ansari100_092
+    - ansari100_100
+
+  Time: 1053.5s (det: 739.9s, ai: 313.6s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/compound-deception-ansari_anthropic_20260524-021723.json
+[2026-05-24T02:17:23Z] AI: compound-deception-ansari / anthropic -- done (exit=0)
+[2026-05-24T02:17:23Z] AI: ojsm-fake-frankenstein / gemini -- start
+
+======================================================================
+  BENCHMARK: Frankenstein Citations
+  Dataset:   ojsm-fake-frankenstein
+  AI:        gemini (Gemini 2.5 Flash)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 100 BibTeX entries
+Ground truth: dataset-level = invalid
+
+Step 1/2: Deterministic validation...
+  Done in 635.0s — 1 valid, 99 warning, 0 suspicious, 0 invalid
+
+Step 2/2: AI analysis on 99 citations...
+  10/99 complete...
+  20/99 complete...
+  30/99 complete...
+  40/99 complete...
+  50/99 complete...
+  60/99 complete...
+  70/99 complete...
+  80/99 complete...
+  90/99 complete...
+  99/99 complete...
+  AI pass done in 105.5s (99 successful calls, 0 errors)
+  Tokens: 43530 in, 11231 out, 54761 total
+  Avg per call: 553 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      1
+  Warning:    0
+  Suspicious: 99
+  Invalid:    0
+
+  Accuracy:   99.0%
+  F1 Score:   99.5%
+  TP: 99  TN: 0  FP: 0  FN: 1  Skipped: 0
+
+  False negatives (missed fakes):
+    - frankenstein0007
+
+  Time: 740.5s (det: 635.0s, ai: 105.5s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/ojsm-fake-frankenstein_gemini_20260524-022944.json
+[2026-05-24T02:29:44Z] AI: ojsm-fake-frankenstein / gemini -- done (exit=0)
+[2026-05-24T02:29:44Z] AI: ojsm-fake-frankenstein / anthropic -- start
+
+======================================================================
+  BENCHMARK: Frankenstein Citations
+  Dataset:   ojsm-fake-frankenstein
+  AI:        anthropic (Anthropic Claude Sonnet 4)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 100 BibTeX entries
+Ground truth: dataset-level = invalid
+
+Step 1/2: Deterministic validation...
+  Done in 740.9s — 1 valid, 99 warning, 0 suspicious, 0 invalid
+
+Step 2/2: AI analysis on 99 citations...
+  10/99 complete...
+  20/99 complete...
+  30/99 complete...
+  40/99 complete...
+  50/99 complete...
+  60/99 complete...
+  70/99 complete...
+  80/99 complete...
+  90/99 complete...
+  99/99 complete...
+  AI pass done in 322.6s (99 successful calls, 0 errors)
+  Tokens: 45096 in, 8664 out, 53760 total
+  Avg per call: 543 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      1
+  Warning:    0
+  Suspicious: 99
+  Invalid:    0
+
+  Accuracy:   99.0%
+  F1 Score:   99.5%
+  TP: 99  TN: 0  FP: 0  FN: 1  Skipped: 0
+
+  False negatives (missed fakes):
+    - frankenstein0007
+
+  Time: 1063.6s (det: 740.9s, ai: 322.6s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/ojsm-fake-frankenstein_anthropic_20260524-024727.json
+[2026-05-24T02:47:27Z] AI: ojsm-fake-frankenstein / anthropic -- done (exit=0)
+[2026-05-24T02:47:27Z] AI: ojsm-real-arxiv / gemini -- start
+
+======================================================================
+  BENCHMARK: Real arXiv CS Citations (2024)
+  Dataset:   ojsm-real-arxiv
+  AI:        gemini (Gemini 2.5 Flash)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 285 BibTeX entries
+Ground truth: dataset-level = valid
+
+Step 1/2: Deterministic validation...
+  Done in 3784.1s — 96 valid, 189 warning, 0 suspicious, 0 invalid
+
+Step 2/2: AI analysis on 189 citations...
+  10/189 complete...
+  20/189 complete...
+  30/189 complete...
+  40/189 complete...
+  50/189 complete...
+  60/189 complete...
+  70/189 complete...
+  80/189 complete...
+  90/189 complete...
+  100/189 complete...
+  110/189 complete...
+  120/189 complete...
+  130/189 complete...
+  140/189 complete...
+  150/189 complete...
+  160/189 complete...
+  170/189 complete...
+  180/189 complete...
+  189/189 complete...
+  AI pass done in 226.5s (189 successful calls, 0 errors)
+  Tokens: 89645 in, 22005 out, 111650 total
+  Avg per call: 591 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      96
+  Warning:    37
+  Suspicious: 152
+  Invalid:    0
+
+  Accuracy:   46.7%
+  F1 Score:   0.0%
+  TP: 0  TN: 133  FP: 152  FN: 0  Skipped: 0
+
+  False positives (wrongly flagged real):
+    - qwen3-embedding
+    - diaglink
+    - pdrr
+    - yao2019kgbertbertknowledgegraph
+    - yao2024exploringlargelanguagemodels
+    - 2020t5
+    - Huang_2024
+    - vrandevcic2014wikidata
+    - DBLP:journals/pvldb/FanGZZCCLMDT24
+    - RoG
+    - Incremental_Learning2
+    - chen-etal-2021-hitter
+    - luo-etal-2024-chatkbqa
+    - sun2023thinkongraph
+    - wang2023selfconsistencyimproveschainthought
+    - yang2015
+    - ayoola2022refinedefficientzeroshotcapableapproach
+    - balazevic2019tucker
+    - bang2023multitaskmultilingualmultimodalevaluation
+    - bordes2013
+    - chen-etal-2023-dipping
+    - KG_S2S
+    - kochsiek2023friendly
+    - li2023haluevallargescalehallucinationevaluation
+    - liu2024finetuninggenerativelargelanguage
+    - saxena2020improving
+    - saxena2022kgt5
+    - sun-etal-2018-open
+    - sun-etal-2019-pullnet
+    - talmor-berant-2018-web
+    - trouillon2016complex
+    - wang-etal-2022-simkgc
+    - wei2023kicgpt
+    - xu-etal-2024-generate
+    - yih-etal-2016-value
+    - qwen3-embedding
+    - diaglink
+    - pdrr
+    - achiam2023gpt
+    - yao2019kgbertbertknowledgegraph
+    - yao2024exploringlargelanguagemodels
+    - 2020t5
+    - Huang_2024
+    - robertson2009
+    - vrandevcic2014wikidata
+    - DBLP:journals/tkde/PanLWCWW24
+    - DBLP:journals/tkde/SongSLLSXZ24
+    - DBLP:journals/pvldb/FanGZZCCLMDT24
+    - RoG
+    - Incremental_Learning2
+    - Plan-on-Graph
+    - chen-etal-2021-hitter
+    - luo-etal-2024-chatkbqa
+    - fu2023complexitybasedpromptingmultistepreasoning
+    - li2024cok
+    - sun2023thinkongraph
+    - yang2015
+    - jiang2024kgfit
+    - xiao2024knowledge
+    - ayoola2022refinedefficientzeroshotcapableapproach
+    - balazevic2019tucker
+    - bang2023multitaskmultilingualmultimodalevaluation
+    - bordes2013
+    - chen-etal-2023-dipping
+    - KG_S2S
+    - kochsiek2023friendly
+    - li2023haluevallargescalehallucinationevaluation
+    - lihui2022binet
+    - liu2024finetuninggenerativelargelanguage
+    - xu2024sayself
+    - saxena2020improving
+    - saxena2022kgt5
+    - trouillon2016complex
+    - wang-etal-2022-simkgc
+    - wei2023kicgpt
+    - xu-etal-2024-generate
+    - chatkbqa
+    - qwen3-embedding
+    - yao2019kgbertbertknowledgegraph
+    - yao2024exploringlargelanguagemodels
+    - Huang_2024
+    - robertson2009
+    - vrandevcic2014wikidata
+    - DBLP:journals/tgdk/PanRKSCDJO0LBMB23
+    - DBLP:journals/tkde/SongSLLSXZ24
+    - DBLP:journals/pvldb/FanGZZCCLMDT24
+    - Incremental_Learning2
+    - Plan-on-Graph
+    - GoldE
+    - chen-etal-2021-hitter
+    - DBLP:conf/ijcai/Zhao0W0024
+    - fu2023complexitybasedpromptingmultistepreasoning
+    - sun2023thinkongraph
+    - yang2015
+    - xiao2024knowledge
+    - ayoola2022refinedefficientzeroshotcapableapproach
+    - bang2023multitaskmultilingualmultimodalevaluation
+    - chen-etal-2023-dipping
+    - KG_S2S
+    - kochsiek2023friendly
+    - li2023haluevallargescalehallucinationevaluation
+    - lihui2022binet
+    - liu2024finetuninggenerativelargelanguage
+    - xu2024sayself
+    - saxena2020improving
+    - sun-etal-2018-open
+    - sun-etal-2019-pullnet
+    - talmor-berant-2018-web
+    - trouillon2016complex
+    - wang-etal-2022-simkgc
+    - wei2023kicgpt
+    - chatkbqa
+    - yih-etal-2016-value
+    - Aho:72
+    - andrew2007scalable
+    - xi2025survey
+    - xu2025comprehensive
+    - huang2025deep
+    - wu2025agentic
+    - liang2025reasoning
+    - zhou2025browsecompzhbenchmarkingwebbrowsing
+    - lab2025safeworkr1coevolvingsafetyintelligence
+    - lin2022uncertainty
+    - xiong2024uncertainty
+    - wang2023selfconsistency
+    - kuhn2023semantic
+    - lin2022
+    - chen2023
+    - yang2024
+    - xiong2024
+    - lyu2025
+    - ozaki2024
+    - li2025
+    - du2025deepresearch
+    - rein2024gpqa
+    - chen2025xbench
+    - rodegast2024using
+    - liang2024fourier
+    - manggala2024qa
+    - rodegast2024using
+    - liang2024fourier
+    - li2023camel
+    - du2025deepresearch
+    - manggala2024qa
+    - wang2020automatic
+    - huang2025deep
+    - guan2025deeprag
+    - huang2025manusearch
+    - xu2025comprehensive
+    - wei2025browsecomp
+    - liang2025reasoning
+    - rein2024gpqa
+
+  Time: 4010.6s (det: 3784.1s, ai: 226.5s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/ojsm-real-arxiv_gemini_20260524-035418.json
+[2026-05-24T03:54:18Z] AI: ojsm-real-arxiv / gemini -- done (exit=0)
+[2026-05-24T03:54:18Z] AI: ojsm-real-crossref / gemini -- start
+
+======================================================================
+  BENCHMARK: Real CrossRef Random Sample
+  Dataset:   ojsm-real-crossref
+  AI:        gemini (Gemini 2.5 Flash)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 96 BibTeX entries
+Ground truth: dataset-level = valid
+
+Step 1/2: Deterministic validation...
+  Done in 58.6s — 94 valid, 2 warning, 0 suspicious, 0 invalid
+
+Step 2/2: AI analysis on 2 citations...
+  2/2 complete...
+  AI pass done in 2.5s (2 successful calls, 0 errors)
+  Tokens: 956 in, 317 out, 1273 total
+  Avg per call: 636 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      94
+  Warning:    0
+  Suspicious: 2
+  Invalid:    0
+
+  Accuracy:   97.9%
+  F1 Score:   0.0%
+  TP: 0  TN: 94  FP: 2  FN: 0  Skipped: 0
+
+  False positives (wrongly flagged real):
+    - 김계자2013
+    - ward1885
+
+  Time: 61.1s (det: 58.6s, ai: 2.5s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/ojsm-real-crossref_gemini_20260524-035519.json
+[2026-05-24T03:55:19Z] AI: ojsm-real-crossref / gemini -- done (exit=0)
+[2026-05-24T03:55:19Z] citeaudit det full -- start
+====================================================================
+  CiteAudit external validation — CiteAudit — Real-World Group
+  Dataset: citeaudit-realworld  (3356 citations)
+  AI tier: OFF
+====================================================================
+
+Step 1: deterministic validation (3356 citations)...
+  100/3356  (1306s elapsed)
+  200/3356  (2654s elapsed)
+  300/3356  (3922s elapsed)
+  400/3356  (5289s elapsed)
+  500/3356  (6623s elapsed)
+  600/3356  (7969s elapsed)
+  700/3356  (9374s elapsed)
+  800/3356  (10800s elapsed)
+  900/3356  (12116s elapsed)
+  1000/3356  (13452s elapsed)
+  1100/3356  (14799s elapsed)
+  1200/3356  (16186s elapsed)
+  1300/3356  (17532s elapsed)
+  1400/3356  (18926s elapsed)
+  1500/3356  (20325s elapsed)
+  1600/3356  (21709s elapsed)
+  1700/3356  (23049s elapsed)
+  1800/3356  (24319s elapsed)
+  1900/3356  (25595s elapsed)
+  2000/3356  (26889s elapsed)
+  2100/3356  (28078s elapsed)
+  2200/3356  (29383s elapsed)
+  2300/3356  (30678s elapsed)
+  2400/3356  (32074s elapsed)
+  2500/3356  (33403s elapsed)
+  2600/3356  (34760s elapsed)
+  2700/3356  (36081s elapsed)
+  2800/3356  (37359s elapsed)
+  2900/3356  (38678s elapsed)
+  3000/3356  (39977s elapsed)
+  3100/3356  (41326s elapsed)
+  3200/3356  (42618s elapsed)
+  3300/3356  (43837s elapsed)
+  3356/3356  (44582s elapsed)
+  deterministic done in 44582s
+
+====================================================================
+  RESULTS — citeaudit-realworld
+====================================================================
+                      valid  warning  suspic.  invalid   error
+  real citations        842     2041        4        2       0
+  fake citations         54      407        2        4       0
+
+  Confusion matrix:  TP=6  FP=6  TN=2883  FN=461
+  False-positive rate (FPR): 0.2%   <- key claim: real citations wrongly flagged
+  Recall (fake detection):   1.3%
+  Precision:                 50.0%
+  F1:                        2.5%
+====================================================================
+
+Saved: results/experiments/citeaudit_citeaudit-realworld_det_20260524T161822Z.json
+[2026-05-24T16:18:22Z] citeaudit det -- done (exit=0)
+[2026-05-24T16:18:22Z] citeaudit subset ai gemini -- start
+====================================================================
+  CiteAudit external validation — CiteAudit — Real-World Balanced Subset
+  Dataset: citeaudit-realworld-subset  (500 citations)
+  AI tier: gemini
+====================================================================
+
+Step 1: deterministic validation (500 citations)...
+  100/500  (1292s elapsed)
+  200/500  (2650s elapsed)
+  300/500  (3970s elapsed)
+  400/500  (5201s elapsed)
+  500/500  (6535s elapsed)
+  deterministic done in 6535s
+
+Step 2: Gemini AI tier on 397 non-valid citations...
+  50/397  (23525 tokens, 0 errors)
+  100/397  (46953 tokens, 0 errors)
+  150/397  (70602 tokens, 0 errors)
+  200/397  (99384 tokens, 0 errors)
+  250/397  (123128 tokens, 0 errors)
+  300/397  (147626 tokens, 0 errors)
+  350/397  (171742 tokens, 0 errors)
+  397/397  (193985 tokens, 0 errors)
+  AI tier done in 497s
+
+====================================================================
+  RESULTS — citeaudit-realworld-subset
+====================================================================
+                      valid  warning  suspic.  invalid   error
+  real citations         65       11      173        1       0
+  fake citations         38        6      201        5       0
+
+  Confusion matrix:  TP=206  FP=174  TN=76  FN=44
+  False-positive rate (FPR): 69.6%   <- key claim: real citations wrongly flagged
+  Recall (fake detection):   82.4%
+  Precision:                 54.2%
+  F1:                        65.4%
+
+  Deterministic-only FPR was 0.4%, recall 2.0% (before the AI tier)
+  AI tier: 397 calls, 0 errors, 193985 tokens (~19.4% of Gemini's daily free quota)
+====================================================================
+
+Saved: results/experiments/citeaudit_citeaudit-realworld-subset_ai_20260524T181534Z.json
+[2026-05-24T18:15:34Z] citeaudit subset ai gemini -- done (exit=0)
+[2026-05-24T18:15:34Z] === PASS C CHAIN END ===

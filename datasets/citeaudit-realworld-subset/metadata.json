@@ -1,0 +1,3010 @@
+{
+  "dataset": "citeaudit-realworld-subset",
+  "name": "CiteAudit — Human-Validated Citation Benchmark",
+  "authors": "Yuan, Shi, Zhang, Sun, Chawla & Ye (2026)",
+  "arxiv": "2602.23452",
+  "retrieved_on": "2026-05-21",
+  "citation_count": 500,
+  "citations": {
+    "citeaudit_rw_2962": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "B. Greshake, et al., \"Prompt injection in practice,\" 2023."
+    },
+    "citeaudit_rw_1528": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "K. D. Ashley. Artificial Intelligence and Legal Reasoning. Cambridge University Press, 2017."
+    },
+    "citeaudit_rw_1501": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Farhad Huseynov, C Kim, Eugene J Obrien, JMW Brownjohn, D Hester, and KC Chang. Bridge damage detection using rotation measurements–experimental validation. Mechanical Systems and Signal Processing, 135:106380, 2020."
+    },
+    "citeaudit_rw_1488": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Alice Kim and Bob Lee. Hybrid approaches for predicting legal outcomes: Integrating llms with traditional legal reasoning. In 2023 IEEE International Conference on Artificial Intelligence and Law, pages 123–130, 2023."
+    },
+    "citeaudit_rw_1385": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692, 2019."
+    },
+    "citeaudit_rw_2867": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Ryan Pope, Zhaoning Li, and Hai-Jun Mao. Understanding artificial neural network's behavior from neuron activation perspective. In 2023 IEEE International Conference on Big Data (BigData), pp. 1671-1679. IEEE, 2023."
+    },
+    "citeaudit_rw_0222": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Chong Zhang, Xinyi Liu, Mingyu Jin, Zhongmou Zhang, Lingyao Li, Zhengting Wang, Wenyue Hua, Dong Shu, Suiyuan Zhu, Xiaobo Jin, et al. When ai meets finance (stockagent): Large language model-based stock trading in simulated real-world environments. arXiv preprint arXiv:2407.18957, 2024."
+    },
+    "citeaudit_rw_3238": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yi Wang, Andrew Baker, Veronika Eyring, et al. Climatebench v2: A benchmark for data-driven climate projections. Geoscientific Model Development, 16(7):2105-2123, 2023b."
+    },
+    "citeaudit_rw_1354": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Yao Lu, Shang Liu, Qijun Zhang, and Zhiyao Xie. Rtllm: An open-source benchmark for design rtl generation with large language model. In 2024 29th Asia and South Pacific Design Automation Conference (ASP-DAC), pages 722–727. IEEE, 2024."
+    },
+    "citeaudit_rw_2590": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Lizi Zhang, Chengyu Zhang, Xiaoxue Wang, Yichao Wang, Meng Zhang, Yali Wang, and Yu Qiao. Counterfactual collaborative reasoning. In Proceedings of the 31st ACM International Conference on Multimedia, pp. 6080-6089, 2023. URL https://dl.acm.org/doi/10.1145/ 3539597.3570464."
+    },
+    "citeaudit_rw_2252": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Deepak Nathani, Lovish Madaan, Nicholas Roberts, et al. MLGym: A framework and benchmark for training and evaluating ai research agents. arXiv preprint arXiv:2502.14499, 2025."
+    },
+    "citeaudit_rw_0263": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Daoan Zhang, Weitong Zhang, Yu Zhao, Jianguo Zhang, Bing He, Chenchen Qin, and Jianhua Yao. Dnagpt: a generalized pre-trained tool for versatile dna sequence analysis tasks. arXiv preprint arXiv:2307.05628, 2023."
+    },
+    "citeaudit_rw_2578": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Koustuv Sinha, Shagun Wang, Matt Liska, Lu Wang, Benjamin Packer, Benjamin Van Durme, and Kyle Richardson. Clutrr: A diagnostic benchmark for inductive reasoning from text. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pp. 4944-4954, 2019. URL https://aclanthology.org/D19-1500/."
+    },
+    "citeaudit_rw_2717": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Andreas Veit, Michael J. Wilber, and Serge Belongie. Residual networks behave like ensembles of relatively shallow networks. In Advances in Neural Information Processing Systems, volume 29, 2016."
+    },
+    "citeaudit_rw_0261": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Daniil A Boiko, Robert MacKnight, Ben Kline, and Gabe Gomes. Autonomous chemical research with large language models. Nature, 624(7992):570–578, 2023."
+    },
+    "citeaudit_rw_1865": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Tianwen Zhu, Yongyi Ran, Xin Zhou, and Yonggang Wen. A survey of predictive maintenance: Systems, purposes and approaches. arXiv preprint arXiv:1912.07383, 2019."
+    },
+    "citeaudit_rw_3234": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Tamar Lavee, Matan Orbach, Lili Kotlerman, Yoav Kantor, Shai Gretz, Lena Dankin, Michal Jacovi, Yonatan Bilu, Ranit Aharonov, and Noam Slonim. Towards effective rebuttal: Listening comprehension using corpus-wide claim mining. In Proceedings of the 6th Workshop on Argument Mining, pages 58-66, Florence, Italy, August 2019. Association for Computational Linguistics. doi: 10.18653/v1/W19-4507. URL https://aclanthology.org/W19-4507."
+    },
+    "citeaudit_rw_2853": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. Deep residual learning for image recognition. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 770-778, 2016."
+    },
+    "citeaudit_rw_1651": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Meta. The llama 3 herd of models, 2024. URL https://arxiv.org/abs/2407.21783."
+    },
+    "citeaudit_rw_3084": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yifei Wang, Tongzhou Wu, and Elias Bareinboim. Counterfactual data augmentation for causal reinforcement learning. In International Conference on Learning Representations (ICLR), 2021."
+    },
+    "citeaudit_rw_1471": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Zhoumingju Jiang and Mengjun Jiang. Beyond answers: Large language model-powered tutoring system in physics education for deep learning and precise understanding. arXiv preprint arXiv:2406.10934, 2024."
+    },
+    "citeaudit_rw_0351": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Fatih Ozsolak and Patrice M Milos. Rna sequencing: advances, challenges and opportunities. Nature reviews genetics, 12(2):87–98, 2011."
+    },
+    "citeaudit_rw_3262": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "CodeSignal Team. Codesignal: Coding practice and assessment platform, 2025. URL https: //codesignal.com. Accessed: 2025-09-16."
+    },
+    "citeaudit_rw_2035": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Carl Doersch and Andrew Zisserman. Sim2real transfer learning for 3d human pose estimation: Motion to the rescue. In Advances in Neural Information Processing Systems (NeurIPS) 32, December 2019. URL https://papers.nips.cc/paper_files/paper/2019/hash/ d4a93297083a23cc099f7bd6a8621131-Abstract.html."
+    },
+    "citeaudit_rw_3273": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Shiyang Liu, Hongyi Xu, and Min Chen. Measuring and reducing perplexity in large-scale llms. arXiv preprint arXiv:2309.12345, 2023."
+    },
+    "citeaudit_rw_2961": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "L. Weidinger, et al., \"Ethical and societal risks of harm from language models,\" NeurIPS 2022."
+    },
+    "citeaudit_rw_2495": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yang Cao, Rosa Martinez, and Sarah Thompson. Preserving indigenous languages through neural language models: Challenges and opportunities. Computational Linguistics, 49(3):567-592, 2023."
+    },
+    "citeaudit_rw_3055": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Sanchez-Gonzalez, A., Godwin, J., Pfaff, T., Ying, R., Leskovec, J., and Battaglia, P. (2020). Learning mesh-based simulation with graph networks. In International Conference on Machine Learning (ICML)."
+    },
+    "citeaudit_rw_0323": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Elizabeth A Jares-Erijman and Thomas M Jovin. Fret imaging. Nature biotechnology, 21(11):1387–1395, 2003."
+    },
+    "citeaudit_rw_2405": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Trivellore E Raghunathan, James M Lepkowski, John Van Hoewyk, Peter Solenberger, et al. A multivariate technique for multiply imputing missing values using a sequence of regression models. Survey methodology, 27(1):85-96, 2001."
+    },
+    "citeaudit_rw_2155": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Hunter Lightman, Vineet Kosaraju, Yura Burda, Harri Edwards, Bowen Baker, Teddy Lee, Jan Leike, John Schulman, Ilya Sutskever, and Karl Cobbe. Let's verify step by step. arXiv preprint arXiv:2305.20050, 2023."
+    },
+    "citeaudit_rw_2171": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Christopher JC Burges, Robert Ragno, and Quoc V Le. Learning to rank with nonsmooth cost functions. Advances in neural information processing systems, 19, 2007."
+    },
+    "citeaudit_rw_0656": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Kartar Kumar Lohana Tharwani, Rajesh Kumar, Numan Ahmed, Yong Tang, et al. Large language models transform organic synthesis from reaction prediction to automation. arXiv preprint arXiv:2508.05427, 2025."
+    },
+    "citeaudit_rw_3128": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Z Dai, A S, Q L, W L, and E T. Stablemoe: Improved gating for mixture of experts. arXiv preprint arXiv:2205.14367, 2022."
+    },
+    "citeaudit_rw_2980": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Y. Huang, et al., \"Trustworthy LLMs: survey,\" 2024."
+    },
+    "citeaudit_rw_2027": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yugandhar Balaji, Jianwei Yang, Zhen Xu, Menglei Chai, Zhoutong Xu, Ersin Yumer, Greg Shakhnarovich, and Deva Ramanan. Conditional gan with discriminative filter generation for text-to-video synthesis. In Proceedings of the 28th International Joint Conference on Artificial Intelligence (IJCAI), pp. 2155-2161, July 2019. doi: 10.24963/ijcai.2019/276."
+    },
+    "citeaudit_rw_2496": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Daniel Hershcovich, Stella Frank, Heather Lent, Miryam de Lhoneux, Mostafa Abdou, Stephanie Brandl, Emanuele Bugliarello, Laura Cabello Piqueras, Ilias Chalkidis, Ruixiang Cui, et al. Challenges and strategies in cross-cultural NLP. arXiv preprint arXiv:2203.10020, 2022."
+    },
+    "citeaudit_rw_2197": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Chutian Meng, Fan Ma, Jiaxu Miao, Chi Zhang, Yi Yang, and Yueting Zhuang. Image regeneration: Evaluating text-to-image model via generating identical image with multimodal large language models, 2024. URL https://arxiv.org/abs/2411.09449."
+    },
+    "citeaudit_rw_2262": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Gui-Song Xia, Xiang Bai, Jian Ding, Zhen Zhu, Serge Belongie, Jiebo Luo, Mihai Datcu, Marcello Pelillo, and Liangpei Zhang. Dota: A large-scale dataset for object detection in aerial images. In The IEEE Conference on Computer Vision and Pattern Recognition (CVPR), June 2018."
+    },
+    "citeaudit_rw_2507": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Claude Sarthou, Elena Martinez, and Philippe Bernard. Using large language models for cultural heritage documentation: Opportunities and challenges. In Proceedings of the Digital Heritage International Congress, pp. 234-245, 2023."
+    },
+    "citeaudit_rw_0996": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "René Just, Darioush Jalali, and Michael D Ernst. Defects4j: A database of existing faults to enable controlled testing studies for java programs. In Proceedings of the 2014 international symposium on software testing and analysis, pages 437–440, 2014."
+    },
+    "citeaudit_rw_1980": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yian Zhao, Wenyu Lv, Shangliang Xu, Jinman Wei, Guanzhong Wang, Qingqing Dang, Yi Liu, and Jie Chen. Detrs beat yolos on real-time object detection, 2023."
+    },
+    "citeaudit_rw_2220": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yixiang Ma, Ziyi Liu, Zhaoyu Wang, Zhaofeng Xu, Yitao Wang, and Yang Liu. Safechain: A framework for securely executing complex commands using large language models. arXiv preprint arXiv:2402.16521, 2024a."
+    },
+    "citeaudit_rw_3320": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Ziyin Zhou, Yunpeng Luo, Yuanchen Wu, Ke Sun, Jiayi Ji, Ke Yan, and Shouhong Ding. Aigiholmes: Towards explainable and generalizable ai-generated image detection via multimodal large language models. arXiv preprint arXiv:2507.02664, 2025."
+    },
+    "citeaudit_rw_3356": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jie Zhou et al. Uni-mol: A universal 3d molecular representation learning framework. Nature Machine Intelligence, 5(5):440-450, 2023."
+    },
+    "citeaudit_rw_3163": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Siddharth Nair, Anand Kumar, and Richa Gupta. Predictive modeling of patient outcomes through temporal reasoning. Journal of Biomedical Informatics, 109:103514, 2020."
+    },
+    "citeaudit_rw_3171": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jane Smith and Alan Lee. Managing clinical uncertainty: Practices and perspectives. Journal of Clinical Medicine, 9:2314, 2020. Placeholder; replace with a verified source if available."
+    },
+    "citeaudit_rw_2953": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "X. Liu, et al., \"AutoDAN: Automated adversarial jailbreak generation,\" ICLR 2024."
+    },
+    "citeaudit_rw_1832": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Haixu Liu, Qingsong Wen, Tian Zhou, Ziqing Ma, Xue Wang, Liang Sun, and Rong Jin. Pyraformer: Low-complexity pyramidal attention for long-range time series modeling and forecasting. In International Conference on Learning Representations (ICLR), 2021a."
+    },
+    "citeaudit_rw_2466": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Kevin Meng, David Bau, Alex Andonian, and Yonatan Belinkov. Memit: Mass editing memory in a transformer. In Proceedings of NeurIPS, 2022b."
+    },
+    "citeaudit_rw_3070": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Christos Louizos, Uri Shalit, J. M. Mooij, David Sontag, Richard Zemel, and Max Welling. Causal effect inference with deep latent-variable models. Advances in Neural Information Processing Systems, 30, 2017."
+    },
+    "citeaudit_rw_3337": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jonas Köhler, Michele Invernizzi, Pim de Haan, and Frank Noé. Rigid body flows for sampling molecular orientations. Proceedings of Machine Learning Research, 3672-3696, 2023."
+    },
+    "citeaudit_rw_2371": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Alec Radford, Jeffrey Wu, Rewon Child, et al. Language models are unsupervised multitask learners. OpenAI blog, 1(8):9, 2019."
+    },
+    "citeaudit_rw_1556": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Xinyu Fei, Boxin Wang, Jiaqi Hu, Rujing Xu, Wei Zhang, Bin Cao, Xuemin Liu, Jiaxin Liu, Junchi Tang, Zhiyuan Lin, et al. Lawbench: A benchmark for legal knowledge measurement of large language models. arXiv preprint arXiv:2309.16289, 2023."
+    },
+    "citeaudit_rw_2007": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Claus Lundegaard, Ole Lund, and Morten Nielsen. Pickpocket: predicting binding specificities for receptors based on receptor pocket similarities. BMC Bioinformatics, 9(1):368, 2008b. doi: 10.1186 / 1471-2105-9-368."
+    },
+    "citeaudit_rw_2189": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yash Goyal, Anamay Mohapatra, Nihar Kwatra, and Pawan Goyal. A benchmark for compositional text-to-image synthesis. In Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (Round 1), 2021."
+    },
+    "citeaudit_rw_2069": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Luma AI. Dream machine. Product page, June 2024. URL https://lumalabs.ai/ dream-machine. Text-to-video model."
+    },
+    "citeaudit_rw_2233": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Andy Zou, Zifan Wang, J. Zico Kolter, and Matt Fredrikson. Universal and transferable adversarial attacks on aligned language models, 2023b."
+    },
+    "citeaudit_rw_2464": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Ximing Liu, Ziniu Hu, Yujia Zhu, Zhi He, Lemao Liu, Yue Zhang, and Wanxiang Che. G-eval: Nlg evaluation using gpt-4 with better human alignment. In arXiv preprint arXiv:2307.15243, 2023."
+    },
+    "citeaudit_rw_1805": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Rodrigo Barbosa De Santis, Tiago Silveira Gontijo, and Marcelo Azevedo Costa. Dynamic time scan forecasting: A benchmark with m4 competition data. IEEE Latin America Transactions, 21(2): 320-327,2023."
+    },
+    "citeaudit_rw_1582": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Lei Su. Can we get rid of handcrafted feature extractors? sparsevit: Nonsemantics-centered, parameter-efficient image manipulation localization through spare-coding transformer. In Proceedings of the AAAI Conference on Artificial Intelligence, 2025. arXiv:2412.14598."
+    },
+    "citeaudit_rw_1011": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Richard M Martin. Electronic structure: basic theory and practical methods. Cambridge university press, 2020."
+    },
+    "citeaudit_rw_2368": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "X. Lyu and Z. Liu. A unified framework for federated learning and continual learning. arXiv preprint arXiv:2501.16117, 2025. URL https://arxiv.org/abs/2501.16117."
+    },
+    "citeaudit_rw_1992": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "A Chakrabarty, R Singh, and S Kumar. Deepppapred: Deep learning for antibody-antigen binding affinity via patch-level interface learning. In Proceedings of the AAAI Conference on Artificial Intelligence. AAAI Press, 2025. Forthcoming / preprint available."
+    },
+    "citeaudit_rw_3243": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Ruty Rinott, Lena Dankin, Carlos Alzate Perez, Mitesh M. Khapra, Ehud Aharoni, and Noam Slonim. Show me your evidence - an automatic method for context dependent evidence detection. In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing, pages 440-450, Lisbon, Portugal, September 2015. Association for Computational Linguistics. doi: 10.18653/v1/D15-1050. URL https://aclanthology.org/D15-1050."
+    },
+    "citeaudit_rw_0512": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "J Donald Warren, Kevin C Moffitt, and Paul Byrnes. How big data will change accounting. Accounting horizons, 29(2):397–407, 2015."
+    },
+    "citeaudit_rw_3208": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "The White House. Inflation reduction act guidebook. https://www.whitehouse.gov/ cleanenergy, 2022."
+    },
+    "citeaudit_rw_3176": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Guang Yang et al. Unbox the black-box for the medical explainable ai via multi-modal and multiinstance learning. Computers in Biology and Medicine, 143:105238, 2022. doi: 10.1016/j.comp biomed.2022.105238."
+    },
+    "citeaudit_rw_1608": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Mark Chen, Jerry Tworek, Heewoo Jun, Qiming Yuan, Henrique Ponde De Oliveira Pinto, Jared Kaplan, Harri Edwards, Yuri Burda, Nicholas Joseph, Greg Brockman, et al. Evaluating large language models trained on code. arXiv preprint arXiv:2107.03374, 2021."
+    },
+    "citeaudit_rw_1526": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "John Smith and Jane Doe. Augmented legal reasoning for case outcome prediction. arXiv:2401.15770 [cs.CL], 2024. https://arxiv.org/abs/2401.15770."
+    },
+    "citeaudit_rw_0701": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Laressa L Wolfenbarger and Paul R Phifer. The ecological risks and benefits of genetically engineered plants. Science, 290(5499):2088–2093, 2000."
+    },
+    "citeaudit_rw_1086": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Scott M Williams, Jonathan L Haines, and Jason H Moore. The use of animal models in the study of complex disease: all else is never equal or why do so many human studies fail to replicate animal findings? Bioessays, 26(2):170–179, 2004."
+    },
+    "citeaudit_rw_1566": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Francesco Guillaro, Davide Cozzolino, Samuel Rota Bul‘o, Andrea Piva, Luisa Verdoliva, Marius A Riegler, and Marc Thaler. Trufor: Leveraging all-round clues for trustworthy image forgery detection and localization. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), pp. 18949-18959, 2023."
+    },
+    "citeaudit_rw_3228": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Phan Minh Dung. On the acceptability of arguments and its fundamental role in nonmonotonic reasoning, logic programming and n-person games. Artificial Intelligence, 77(2):321-357, 1995. doi: 10.1016 / 0004-3702(94) 00041-X."
+    },
+    "citeaudit_rw_2607": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "OpenAI. Gpt-4v(ision) system card. Technical Report, 2023."
+    },
+    "citeaudit_rw_0788": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Mauro Cettolo, Christian Girardi, and Marcello Federico. WIT3: Web inventory of transcribed and translated talks. In Proceedings of the 16th Annual Conference of the European Association for Machine Translation, 2012."
+    },
+    "citeaudit_rw_1534": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Metric Coders. Exploring the role of large language models (llms) in physics. Metric Coders Blog, 2024. https://www.metriccoders.com/post/exploring-the-role-of-large-language-models-llms-in-physics."
+    },
+    "citeaudit_rw_0667": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Kelvin JL Koa, Yunshan Ma, Ritchie Ng, and Tat-Seng Chua. Learning to generate explainable stock predictions using self-reflective large language models. In Proceedings of the ACM Web Conference 2024, pages 4304–4315, 2024."
+    },
+    "citeaudit_rw_1106": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Shengchao Liu, Jiongxiao Wang, Yijin Yang, Chengpeng Wang, Ling Liu, Hongyu Guo, and Chaowei Xiao. Chatgpt-powered conversational drug editing using retrieval and domain feedback. arXiv preprint arXiv:2305.18090, 2023."
+    },
+    "citeaudit_rw_2504": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jing Liu, Shuai Wang, Lei Chen, and Wei Zhang. Knowledge graph construction for cultural heritage: A survey. Journal of Cultural Heritage, 57:12-28, 2022."
+    },
+    "citeaudit_rw_0284": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Demian Brady. Tax complexity 2024: It takes americans billions of hours to do their taxes, 2024."
+    },
+    "citeaudit_rw_3140": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Tianjian Cai, Ming Zhou, and Lili Wang. Matrix completion for imputation in healthcare data. Journal of the American Medical Informatics Association, 29(2):239-247, 2022."
+    },
+    "citeaudit_rw_1570": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Alexander Kirillov, Eric Mintun, Nikhila Ravi, Hanzi Mao, Chloe Rolland, Laura Gustafson, Tete Xiao, Spencer Whitehead, Alexander C Berg, Wan-Yen Lo, et al. Segment anything. In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), pp. 4015-4026, 2023."
+    },
+    "citeaudit_rw_1141": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Siqi Lai, Zhao Xu, Weijia Zhang, Hao Liu, and Hui Xiong. Llmlight: Large language models as traffic signal control agents. arXiv preprint arXiv:2312.16044, 2023."
+    },
+    "citeaudit_rw_1539": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "R. Wright and M. Miller. Contract Drafting and Negotiation. Oxford University Press, 2013."
+    },
+    "citeaudit_rw_0542": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Jean Tirole. The theory of corporate finance. Princeton university press, 2010."
+    },
+    "citeaudit_rw_0915": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Paul Rabinow and Gaymon Bennett. Designing human practices: An experiment with synthetic biology. University of Chicago Press, 2012."
+    },
+    "citeaudit_rw_2169": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Clayton Shepard, Hang Zheng, and Lin Zhong. Understanding real many-antenna mu-mimo channels. In Proceedings of the 22nd Annual International Conference on Mobile Computing and Networking, pp. 461-473, 2016."
+    },
+    "citeaudit_rw_0896": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "OpenAI. Introducing openai o1. OpenAI, 2024."
+    },
+    "citeaudit_rw_2033": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Xinyuan Chen, Yaohui Wang, Lingjun Zhang, Shaobin Zhuang, Xin Ma, Jiashuo Yu, Yali Wang, Dahua Lin, Yu Qiao, and Ziwei Liu. Seine: Short-to-long video diffusion model for generative transition and prediction. arXiv preprint arXiv:2310.20700, 2023c."
+    },
+    "citeaudit_rw_3074": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Uri Shalit, Fredrik D. Johansson, and David Sontag. Estimating individual treatment effect: Generalization bounds and algorithms. International Conference on Machine Learning, pp. 3076-3085, 2017."
+    },
+    "citeaudit_rw_0457": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Hashem Alshurafat. The usefulness and challenges of chatbots for accounting professionals: Application on chatgpt. Available at SSRN 4345921, 2023."
+    },
+    "citeaudit_rw_0882": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Norman K Denzin. Performance ethnography: Critical pedagogy and the politics of culture. Sage, 2003."
+    },
+    "citeaudit_rw_3221": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Roy Bar-Haim, Shachar Bhattacharya, Michal Jacovi, Yosi Mass, Matan Orbach, Eyal Sliwowicz, and Noam Slonim. Key point analysis via contrastive learning and extractive argument summarization. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 7953-7962, Online and Punta Cana, Dominican Republic, November 2021a. Association for Computational Linguistics. doi: 10.18653/v1/2021.emnlp-main.629. URL https://aclanthology.org/2021.emnlp-main. 629."
+    },
+    "citeaudit_rw_2579": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Xinwei Shen, Yali Wang, Yue Yu, Clark Glymour, Bernhard Sch\"olkopf, and Kun Cheng. Deep learning of causal structures in high dimensions under data heterogeneity. Nature Machine Intelligence, 5(10):1147-1158, 2023. URL https://www.nature.com/articles/ s42256-023-00744-z."
+    },
+    "citeaudit_rw_2180": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jared Hoffman, Nitish Arora, Orin Bransom, Nathan Gopalan, Bryant Hui, Arjun Kannappan, Yangjun Li, Mantas Mazeika, Laura Mendoza, Erik Prangel, et al. Training language models with language feedback at scale. arXiv preprint arXiv:2402.08658, 2024."
+    },
+    "citeaudit_rw_2916": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Hongyang Wang, Peng Li, Furong Gao, Zhihuan Song, and Steven X Ding. A novel deep learning based fault diagnosis approach for chemical process with extended deep belief network. ISA Transactions, 96:457-467, 2020."
+    },
+    "citeaudit_rw_1565": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jun Dong, Wei Wang, and Tieniu Tan. Casia image tampering detection evaluation database v1.0. http://forensics.idealtest.org/downloads/, 2009a."
+    },
+    "citeaudit_rw_2199": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Julian Lorenz, Robin Schön, Katja Ludwig, and Rainer Lienhart. Deconstructing bias: A multifaceted framework for diagnosing cultural and compositional inequities in text-to-image generative models. arXiv preprint, 2024."
+    },
+    "citeaudit_rw_1139": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Simon Thorne, David Ball, and Zoe Lawson. Reducing error in spreadsheets: Example driven modeling versus traditional programming. International Journal of Human-Computer Interaction, 29(1):40–53, 2013."
+    },
+    "citeaudit_rw_0859": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "National Research Council, Commission on Geosciences, Resources, Board on Earth Sciences, Resources, and Committee on Basic Research Opportunities in the Earth Sciences. Basic research opportunities in earth science. 2001."
+    },
+    "citeaudit_rw_0327": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Emmanuel Noutahi, Cristian Gabellini, Michael Craig, Jonathan SC Lim, and Prudencio Tossou. Gotta be safe: a new framework for molecular design. Digital Discovery, 3(4):796–804, 2024."
+    },
+    "citeaudit_rw_3000": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Grace Lee et al. Biomni: A general-purpose biomedical ai agent for autonomous research. bioRxiv, 2025."
+    },
+    "citeaudit_rw_2828": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Genta Indra Winata, Samuel Cahyawijaya, Zihan Lin, Zhaojiang Liu, Peng Xu, and Pascale Fung. Multilingual pretrained models are effective for code-switching nlp. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pp. 2345-2356, 2021."
+    },
+    "citeaudit_rw_0662": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Kehan Guo et al. Leveraging large language models for predictive chemistry. Nature Machine Intelligence, 2023."
+    },
+    "citeaudit_rw_1547": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Sanjay Mohapatra, Zhenqin Wu, Guodong Zhang, Ping Men, and Yuedong Liu. Molecule attention transformer. arXiv preprint arXiv:2002.08264, 2020."
+    },
+    "citeaudit_rw_2364": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Xiangru Lian, Wei Zhang, Ce Zhang, and Ji Liu. Asynchronous decentralized parallel stochastic gradient descent. In Proceedings of International Conference on Machine Learning (ICML), pp. 3043-3052, 2018."
+    },
+    "citeaudit_rw_0450": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Harold W Kuhn and Albert W Tucker. Nonlinear programming. In Traces and emergence of nonlinear programming, pages 247–258. Springer, 2013."
+    },
+    "citeaudit_rw_2356": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Y. He and X. Wang. Masked autoencoders are parameter-efficient federated continual learners. 2024 IEEE International Conference on Big Data, 2024. URL https://arxiv.org/abs/2411. 01916 ."
+    },
+    "citeaudit_rw_2105": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Jinbo Xing, Menghan Xia, Yuxin Liu, Yuechen Zhang, Yong Zhang, Yingqing He, Hanyuan Liu, Haoxin Chen, Xiaodong Cun, Xintao Wang, et al. Make-your-video: Customized video generation using textual and structural guidance. arXiv preprint arXiv:2306.00943, 2023a."
+    },
+    "citeaudit_rw_1546": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Sanguk Lee, Tai-Quan Peng, Matthew H. Goldberg, et al. Can large language models estimate public opinion about global warming? an empirical assessment of algorithmic fidelity and bias. PLOS Climate, 3(6):e0000429, 2024."
+    },
+    "citeaudit_rw_2988": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Alex Brown et al. Autonomous scientific experimentation at the advanced light source using language-model-driven agents. Nature Communications, 16:7001, 2025."
+    },
+    "citeaudit_rw_3281": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "David C. Cone. Start triage: development and evaluation. Prehospital and Disaster Medicine, 18:279-284, 2003."
+    },
+    "citeaudit_rw_2708": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Sarthak Jain and Byron C. Wallace. Attention is not explanation. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, 2019."
+    },
+    "citeaudit_rw_0900": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Oron Shagrir. What is computer science about? The Monist, 82(1):131–149, 1999."
+    },
+    "citeaudit_rw_2709": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Toan Q Nguyen and Julian Salazar. Transformers without tears: Improving the normalization of self-attention. arXiv preprint arXiv:1910.05895, 2019."
+    },
+    "citeaudit_rw_0419": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Google. Zero-shot translation with google’s multilingual neural machine translation system. Google Blog, 2016."
+    },
+    "citeaudit_rw_3336": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Daniel Levy, Matt D. Hoffman, and Jascha Sohl-Dickstein. Generalizing hamiltonian monte carlo with neural networks. 2018."
+    },
+    "citeaudit_rw_2485": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Nelson F. Liu Xu, Esin Durmus, Sebastian Gehrmann, Noah A. Smith, Andrew McCallum, and Yonatan Belinkov. Robustness gym: Unifying the nlp evaluation landscape. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), pp. 767-782. Association for Computational Linguistics, 2021. URL https://aclanthology.org/2021.naacl-main.62."
+    },
+    "citeaudit_rw_3261": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Codeforces Team. Codeforces: Competitive programming platform, 2024. URL https:// codeforces.com/. Accessed: 2025-09-16."
+    },
+    "citeaudit_rw_3037": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Shunyu Yao, Dian Yu, Jeffrey Zhao, Izhak Shafran, Tom Griffiths, Graham Neubig, and Shixiang Shane Cao. Tree of thoughts: Deliberate problem solving with large language models. arXiv preprint arXiv:2305.10601, 2023. URL https://arxiv.org/abs/2305.10601."
+    },
+    "citeaudit_rw_3139": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Subhrajit Chakraborty and Ravi Patel. Augmenting clinical reasoning through knowledge discovery systems. Journal of Biomedical Informatics, 138:104151, 2023."
+    },
+    "citeaudit_rw_0526": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "James R Couper. Chemical process equipment: selection and design, volume 6. Gulf professional publishing, 2005."
+    },
+    "citeaudit_rw_1863": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Tian Zhou, Ziqing Ma, Qingsong Wen, Xue Wang, Liang Sun, and Rong Jin. Fedformer: Frequency enhanced decomposed transformer for long-term series forecasting. In International Conference on Machine Learning (ICML), 2022a."
+    },
+    "citeaudit_rw_1561": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Belhassen Bayar and Matthew C Stamm. A deep learning approach to universal image manipulation detection using a new convolutional layer. IEEE Transactions on Information Forensics and Security, 13(11):3056-3070, 2018."
+    },
+    "citeaudit_rw_1605": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal,"
+    },
+    "citeaudit_rw_2381": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Hongxu Yin, Pavlo Molchanov, Jose M Alvarez, et al. Dreaming to distill: Data-free knowledge transfer via deepinversion. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), pp. 8715-8724, 2020."
+    },
+    "citeaudit_rw_2697": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Guanzhi Wang, Yunfan Xie, Debidatta Jiang, Ajay Mandlekar, Chaowei Xiao, Yuke Zhu, Linxi Fan, and Anima Anandkumar. Voyager: An open-ended embodied agent with large language models. arXiv preprint arXiv:2305.16291, 2023."
+    },
+    "citeaudit_rw_2497": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Maud Ehrmann, Matteo Romanello, Alexandre Flückiger, and Simon Clematide. Extended overview of HIPE-2022: Named entity recognition and linking in multilingual historical documents. CEUR Workshop Proceedings, 3180:1-26, 2022."
+    },
+    "citeaudit_rw_2307": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Chenlu Ye, Wei Xiong, Yuheng Zhang, Hanze Dong, Nan Jiang, and Tong Zhang. Online iterative reinforcement learning from human feedback with general preference model. Advances in Neural Information Processing Systems, 37:81773-81807, 2024."
+    },
+    "citeaudit_rw_2657": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Christos Baziotis, Isabel Papadimitriou, Marti Futeral, Ruosong Xiong, Antonios Anastasopoulos, and Dan Roth. Byte latent transformer: Patches scale better than tokens. arXiv preprint arXiv:2412.09871, 2024."
+    },
+    "citeaudit_rw_1711": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Four Flynn, Helen King, Anca Dragan. Strengthening our Frontier Safety Framework. https://deepmind.google/discover/blog/strengthening-our-frontier-safety-framework/, 2025."
+    },
+    "citeaudit_rw_3235": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Daniel Kokotajlo, Scott Alexander, Thomas Larsen, Eli Lifland, and Romeo Dean. Ai 2027: Summary, April 2025. URL https://ai-2027.com/summary."
+    },
+    "citeaudit_rw_3160": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Roderick J.A. Little and Donald B. Rubin. Statistical Analysis with Missing Data. Wiley, 3rd edition, 2020."
+    },
+    "citeaudit_rw_1097": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Shang Liu, Yao Lu, Wenji Fang, Mengming Li, and Zhiyao Xie. Openllm-rtl: Open dataset and benchmark for llm-aided design rtl generation. In Proceedings of the 43rd IEEE/ACM International Conference on Computer-Aided Design, pages 1–9, 2024."
+    },
+    "citeaudit_rw_2903": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Mateo Rojas-Carulla, Bernhard Schölkopf, Richard Turner, and Jonas Peters. Invariant models for causal transfer learning. The Journal of Machine Learning Research, 19(1):1309-1342, 2018."
+    },
+    "citeaudit_rw_2432": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Ziniu Dai, Maosong Sun, and Xiaojun Wan. Knowledge neurons in pretrained transformers. In Proceedings of ACL, 2022."
+    },
+    "citeaudit_rw_1692": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Lucia Zheng, Neel Guha, Daniel E. Ho, Julian Nyarko Dahl, and Brian Chary. CaseHOLD: A new dataset for legal reasoning in contract law. In Proceedings of the 18th International Conference on Artificial Intelligence and Law, pp. 326-330, São Paulo, Brazil, June 2021. Association for Computing Machinery. URL https://aclanthology.org/2021.icail-1.35."
+    },
+    "citeaudit_rw_1004": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Richard C Dorf. The electrical engineering handbook. CRC press, 1997."
+    },
+    "citeaudit_rw_1552": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "X. Guo and et al. Comprehensive evaluation of gpt-4 for chemistry tasks. arXiv preprint arXiv:2301.00000, 2023."
+    },
+    "citeaudit_rw_2564": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yue Li, Chandler Squires, Jennifer G Dy, and Murat A Erdogdu. Demystifying amortized causal discovery with transformers. arXiv preprint arXiv:2405.16924, 2025a. URL https://arxiv. org/pdf/2405.16924."
+    },
+    "citeaudit_rw_3078": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Maximilian Seitzer, Wei Gao, Andrea Dittadi, Stefan Bauer, and Bernhard Schölkopf. Causal influence detection for improving reinforcement learning. In International Conference on Learning Representations (ICLR), 2021."
+    },
+    "citeaudit_rw_2761": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Dagmawi Gashaw. Neural machine translation for amharic to afan oromo using bidirectional gru with attention mechanism. Master's thesis, Addis Ababa University, 2020."
+    },
+    "citeaudit_rw_0938": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Philip Hans Franses and Richard Paap. Quantitative models in marketing research. Cambridge University Press, 2001."
+    },
+    "citeaudit_rw_3201": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "R. Rohde, R. Muller, et al. Berkeley earth surface temperature data. http://berkeleyearth. org/data/, 2019. D. Rolnick, P. Donti, L. Kaack, et al. Tackling climate change with machine learning. arXiv preprint arXiv:1906.05433, 2019."
+    },
+    "citeaudit_rw_0272": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "David Griffiths. Introduction to elementary particles. John Wiley & Sons, 2020."
+    },
+    "citeaudit_rw_3350": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "J. S. Smith, O. Isayev, and A. E. Roitberg. Ani-1: an extensible neural network potential with dft accuracy at force field computational cost. Chem. Sci., 8:3192-3203, 2017."
+    },
+    "citeaudit_rw_2573": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jonas Peters, Peter Bühlmann, and Nicolai Meinshausen. Causal inference using invariant prediction: identification and confidence intervals. Journal of the Royal Statistical Society Series B: Statistical Methodology, 78(5):947-1012, 2016. URL https://rss.onlinelibrary. wiley.com/doi/abs/10.1111/rssb. 12167."
+    },
+    "citeaudit_rw_0178": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Bryan A Jones, Jane Nicholson Moorhead, and M Jean Mohammadi-Aragh. Less is more: Developing complex designs using a minimal hdl subset in an introductory digital devices laboratory. In 2015 ASEE Annual Conference & Exposition, pages 26–1082, 2015."
+    },
+    "citeaudit_rw_2499": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Naeem Khan, Asif Khan, Farhan Ullah, and Salman Khan. Deep learning for cultural heritage materials: A comprehensive survey. IEEE Access, 9:84252-84273, 2021."
+    },
+    "citeaudit_rw_2004": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Xin Liu, Yuchen Fang, and Ling Zhao. Pareto-optimal persistent homology features for biomolecular binding prediction. Journal of Computational Chemistry, 43(12):820-834, 2022."
+    },
+    "citeaudit_rw_3169": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Melissa Rotmensch, Yael Halpern, Ameet Tlimat, Steven Horng, and David Sontag. Learning a health knowledge graph from electronic medical records. Scientific Reports, 7(1):5994, 2017."
+    },
+    "citeaudit_rw_1515": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Ilias Chalkidis, Marios Fergadiotis, Nikolaos Malakasiotis, and Nikolaos Aletras. Legal-bert: The muppets straight out of law school. In Proceedings of the 12th Language Resources and Evaluation Conference, pages 850–857. European Language Resources Association, 2020."
+    },
+    "citeaudit_rw_1562": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Min Chen, Vahid Sedighi, Adrian G Bors, and Jessica Fridrich. Image manipulation detection by multi-view multi-scale supervision. In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), pp. 15509-15518, 2021."
+    },
+    "citeaudit_rw_2563": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Diego Kreuzer, Dominique Beaini, William L Hamilton, Vincent Létourneau, and Prudencio Pouliot. Rethinking pooling in graph neural networks. In Advances in Neural Information Processing Systems 34 (NeurIPS 2021), pp. 18385-18397, 2021. URL https://proceedings.neurips.cc/paper/2021/hash/ 962781b2556399d81713316a6b901899-Abstract.html."
+    },
+    "citeaudit_rw_1518": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "James Clerk Maxwell. Matter and Motion. D. Van Nostrand, 1878."
+    },
+    "citeaudit_rw_1186": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Svilen Ivanov. Using artificial intelligence to create marketing content – opportunities and limitations. Journal, 2023. Accessed: 2025-04-06."
+    },
+    "citeaudit_rw_2450": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Robin Jia, Kevin Meng, Eric Wallace, Yichao Li, Fenglei Zhang, Rachel Rudinger, and Chris Callison-Burch. Right for the right reasons: Training differentiable models by constraining their explanations. In Proceedings of ACL, 2019."
+    },
+    "citeaudit_rw_2148": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Roy D Yates, Shivendra Kaul, Marco Gruteser, and Dipankar Raychaudhuri. Timely cloud gaming. IEEE Transactions on Multimedia, 19(7):1588-1597, 2017."
+    },
+    "citeaudit_rw_3203": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "S. Selvaraj and H. Kaur. Ai in climate adaptation: Early warning systems for disasters. Environmental Modelling Software, 140:105005, 2021."
+    },
+    "citeaudit_rw_2779": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Matthias Hein and Maksym Andriushchenko. Formal guarantees on the robustness of a classifier against adversarial manipulation. In Advances in Neural Information Processing Systems (NeurIPS), 2017."
+    },
+    "citeaudit_rw_2808": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Matthew E Peters, Mark Neumann, Mohit Iyyer, et al. Deep contextualized word representations. arXiv preprint arXiv:1802.05365, 2018."
+    },
+    "citeaudit_rw_1645": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Ariel Lee. Open-platypus. https://huggingface.co/datasets/garage-bAInd/ Open-Platypus, 2023."
+    },
+    "citeaudit_rw_0420": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Graham L Patrick. An introduction to medicinal chemistry. Oxford university press, 2023."
+    },
+    "citeaudit_rw_2606": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Gary Lupyan and Benjamin Bergen. Language and thought are not the same thing: Evidence from neuroimaging and neurological patients. Annals of the New York Academy of Sciences, 1369(1): 132-153,2012."
+    },
+    "citeaudit_rw_2016": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Birkir Reynisson, Bjoern Alvarez, Sinu Paul, Bjoern Peters, and Morten Nielsen. Netmhcpan-4.2: improved prediction of cd8+ epitopes by use of transfer learning and structural features. Frontiers in Immunology, 16:1616113, 2025. doi: 10.3389/fimmu.2025.1616113."
+    },
+    "citeaudit_rw_2005": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Claus Lundegaard, Kasper Lamberth, Mikkel Harndahl, Søren Buus, Ole Lund, and Morten Nielsen. Netmhc-3.0: accurate web accessible predictions of human, mouse and monkey mhc class i affinities for peptides of length 8-11. Nucleic Acids Research, 36(suppl_2):W509-W512, 2008a."
+    },
+    "citeaudit_rw_1895": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Optimum Quanto. Optimum quanto, 2024. URL https://huggingface.co/docs/ transformers/main/en/quantization/quanto. [Online; accessed 2025-06-07]."
+    },
+    "citeaudit_rw_1516": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Immanuel Kant. Critique of Pure Reason. Cambridge University Press, 1998."
+    },
+    "citeaudit_rw_1815": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yan Huang, Yuxuan Liu, Chao Huang, Jingxiang Zhu, and Naixue Xiong. Stagnn: Spatial-temporal aware graph neural network with multi-perspective feature fusion for remaining useful life prediction. arXiv preprint arXiv:2401.15964, 2024."
+    },
+    "citeaudit_rw_2532": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Aman Madaan, Niket Tandon, Prakhar Gupta, Kevin Hall, Luyu Gao, Sarah Wiegreffe, Uri Alon, Sumeet Garg, Aari Azaria, Jane Dwivedi-Yu, et al. Self-refine: Iterative refinement with selffeedback. arXiv preprint arXiv:2303.17651, 2023."
+    },
+    "citeaudit_rw_2937": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Anthropic, \"Claude model card,\" 2023."
+    },
+    "citeaudit_rw_2757": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yujia Wang, Hu Huang, Cynthia Rudin, and Yaron Shaposhnik. Pacmap: Dimension reduction using pairwise controlled manifold approximation projection. Machine Learning, 110:559-590, 2021."
+    },
+    "citeaudit_rw_2388": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Ishita et al. Bardhan. Icu length-of-stay prediction with interaction-based explanations. Journal of Biomedical Informatics, 144:104490, 2024."
+    },
+    "citeaudit_rw_0293": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Diana Taylor. The archive and the repertoire: Performing cultural memory in the Americas. Duke University Press, 2003."
+    },
+    "citeaudit_rw_2998": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Kanchan Jha, Sriparna Saha, and Sudipta Karmakar. Prediction of protein-protein interactions using vision transformer and language model. IEEE/ACM Transactions on Computational Biology and Bioinformatics, 20(5):3215-3225, 2023."
+    },
+    "citeaudit_rw_0277": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "David T Riglar and Pamela A Silver. Engineering bacteria for diagnostic and therapeutic applications. Nature Reviews Microbiology, 16(4):214–225, 2018."
+    },
+    "citeaudit_rw_1498": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Enrique Mencia and Johannes Furnkranz. Efficient multilabel classification algorithms for large-scale document categorization. In ECML PKDD, 2008."
+    },
+    "citeaudit_rw_2583": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jian Wang, Xiaoli Li, Jinwu Gao, and Hong Liu. A multi-head attention neural network with nonlinear correlation coefficient for causal discovery in time series. Applied Soft Computing, 163: 112236, 2024. URL https://www.sciencedirect.com/science/article/abs/ pii/S1568494624008366. Xu Wang, Hanwang Zhang, and Tat-Seng Chua. Causal attention for vision-language tasks. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), pp. 17778-17787, 2022. URL https://openaccess.thecvf.com/content/ CVPR2022/html/Wang_Causal_Attention_for_Vision-Language_Tasks_ CVPR_2022_paper.html. Sarah Wiegreffe and Yuval Pinter. Attention is not not explanation. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pp. 11-20, 2019. URL https://aclanthology.org/D19-1002/."
+    },
+    "citeaudit_rw_1748": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Michael Cogswell, Faruk Ahmed, Ross Girshick, Larry Zitnick, and Dhruv Batra. Reducing overfitting in deep networks by decorrelating representations. arXiv preprint arXiv:1511.06068, 2015."
+    },
+    "citeaudit_rw_2743": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Romain Lopez, Jeffrey Regier, Michael B Cole, Michael I Jordan, and Nir Yosef. Deep generative modeling for single-cell transcriptomics. Nature methods, 15(12):1053-1058, 2018."
+    },
+    "citeaudit_rw_0014": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Adam Nowakowski, Anna Andrzejewska, Miroslaw Janowski, Piotr Walczak, and Barbara Lukomska. Genetic engineering of stem cells for enhanced therapy. Acta neurobiologiae experimentalis, 73(1):1–18, 2013."
+    },
+    "citeaudit_rw_1809": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yongbo Chen, Dong Zhang, Hamid Reza Karimi, Huaicheng Yan, and Wei Xue. Remaining useful life prediction based on deep learning: A survey. Sensors, 24(11):3454, 2024b."
+    },
+    "citeaudit_rw_2807": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Niklas Muennighoff, Thomas Wang, Lintang Sutawika, Adam Roberts, Stella Biderman, Teven Le Scao, M Saiful Bari, Sheng Shen, Zheng-Xin Yong, Hailey Schoelkopf, et al. Crosslingual generalization through multitask finetuning. arXiv preprint arXiv:2211.01786, 2022."
+    },
+    "citeaudit_rw_3008": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jane Smith et al. Machine learning to predict de novo protein-protein interactions. Trends in Biotechnology, 43(5):321-335, 2025."
+    },
+    "citeaudit_rw_1409": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yuchao Liao, Tosiron Adegbija, and Roman Lysecky. Are llms any good for high-level synthesis? In Proceedings of the 43rd IEEE/ACM International Conference on Computer-Aided Design, pages 1–8, 2024."
+    },
+    "citeaudit_rw_1732": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Roman Vershynin. High-dimensional probability: An introduction with applications in data science, volume 47. Cambridge University Press, 2018."
+    },
+    "citeaudit_rw_1485": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Alberto Berenguer, Alba Morejón, David Tomás, and Juan-Nicolás Mazón. Leveraging large language models for sensor data retrieval. Applied Sciences, 14(6):2506, 2024."
+    },
+    "citeaudit_rw_0987": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Ravinder Kumar and Virender Sharma. Auditing: Principles and practice. PHI Learning Pvt. Ltd., 2015."
+    },
+    "citeaudit_rw_2574": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Donald B Rubin. Estimating causal effects of treatments in randomized and nonrandomized studies. Journal of educational Psychology, 66(5):688, 1974."
+    },
+    "citeaudit_rw_2048": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Google DeepMind. Veo 3. https://deepmind.google/models/veo/, 2025. Official model page; accessed 2025-09-25."
+    },
+    "citeaudit_rw_2968": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "N. Papernot, et al., \"Practical black-box attacks against ML,\" 2017."
+    },
+    "citeaudit_rw_2226": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, Amy Yang, Angela Fan, Anirudh Goyal, Anthony Hartshorn, Aobo Yang, Archi Mitra, Archie Sravankumar, Artem Korenev, Arthur Hinsvark, Arun Rao, Aston Zhang, Aurelien Rodriguez, Austen Gregerson, Ava Spataru, Baptiste Roziere, Bethany Biron, Binh Tang, Bobbie Chern, Charlotte Caucheteux, Chaya Nayak, Chloe Bi, Chris Marra, Chris McConnell, Christian Keller, Christophe Touret, Chunyang Wu, Corinne Wong, Cristian Canton Ferrer, Cyrus Nikolaidis, Damien Allonsius, Daniel Song, Danielle Pintz, Danny Livshits, Danny Wyatt, David Esiobu, Dhruv Choudhary, Dhruv Mahajan, Diego Garcia-Olano, Diego Perino, Dieuwke Hupkes, Egor Lakomkin, Ehab AlBadawy, Elina Lobanova, Emily Dinan, Eric Michael Smith, Filip Radenovic, Francisco Guzmán, Frank Zhang, Gabriel Synnaeve, Gabrielle Lee, Georgia Lewis Anderson, Govind Thattai, Graeme Nail, Gregoire Mialon, Guan Pang, Guillem Cucurell, Hailey Nguyen, Hannah Korevaar, Hu Xu, Hugo Touvron, Iliyan Zarov, Imanol Arrieta Ibarra, Isabel Kloumann, Ishan Misra, Ivan Evtimov, Jack Zhang, Jade Copet, Jaewon Lee, Jan Geffert, Jana Vranes, Jason Park, Jay Mahadeokar, Jeet Shah, Jelmer van der Linde, Jennifer Billock, Jenny Hong, Jenya Lee, Jeremy Fu, Jianfeng Chi, Jianyu Huang, Jiawen Liu, Jie Wang, Jiecao Yu, Joanna Bitton, Joe Spisak, Jongsoo Park, Joseph Rocca, Joshua Johnstun, Joshua Saxe, Junteng Jia, Kalyan Vasuden Alwala, Karthik Prasad, Kartikeya Upasani, Kate Plawiak, Ke Li, Kenneth Heafield, Kevin Stone, Khalid El-Arini, Krithika Iyer, Kshitiz Malik, Kuenley Chiu, Kunal Bhalla, Kushal Lakhotia, Lauren Rantala-Yeary, Laurens van der Maaten, Lawrence Chen, Liang Tan, Liz Jenkins, Louis Martin, Lovish Madaan, Lubo Malo, Lukas Blecher, Lukas Landzaat, Luke de Oliveira, Madeline Muzzi, Mahesh Pasupuleti, Mannat Singh, Manohar Paluri, Marcin Kardas, Maria Tsimpoukelli, Mathew Oldham, Mathieu Rita, Maya Pavlova, Melanie Kambadur, Mike Lewis, Min Si, Mitesh Kumar Singh, Mona Hassan, Naman Goyal, Narjes Torabi, Nikolay Bashlykov, Nikolay Bogoychev, Niladri Chatterji, Ning Zhang, Olivier Duchenne, Onur Çelebi, Patrick Alrassy, Pengchuan Zhang, Pengwei Li, Petar Vasic, Peter Weng, Prajjwal Bhargava, Pratik Dubai, Praveen Krishnan, Punit Singh Koura, Pixin Xu, Qing He, Qingxiao Dong, Ragavan Srinivasan, Raj Ganapathy, Ramon Calderer, Ricardo Silveira Cabral, Robert Stojnic, Roberta Raileanu, Rohan Maheswari, Rohit Girdhar, Rohit Patel, Romain Sauvestre, Ronnie Polidoro, Roshan Sumbaly, Ross Taylor, Ruan Silva, Rui Hou, Rui Wang, Saghar Hosseini, Sahana Chennabasappa, Sanjay Singh, Sean Bell, Seohyun Sonia Kim, Sergey Edunov, Shaoliang Nie, Sharan Narang, Sharath Raparthy, Sheng Shen, Shengye Wan, Shruti Bhosale, Shun Zhang, Simon Vandenhende, Soumya Batra, Spencer Whitman, Sten Sootla, Stephane Collot, Suchin Gururangan, Sydney Borodinsky, Tamar Herman, Tara Fowler, Tarek Sheasha, Thomas Georgiou, Thomas Scialom, Tobias Speckbacher, Todor Mihaylov, Tong Xiao, Ujjwal Karn, Vedanuj Goswami, Vibhor Gupta, Vignesh Ramanathan, Viktor Kerkez, Vincent Gonguet, Virginie Do, Vish Vogeti, Vítor Albiero, Vladan Petrovic, Weiwei Chu, Wenhan Xiong, Wenyin Fu, Whitney Meers, Xavier Martinet, Xiaodong Wang, Xiaofang Wang, Xiaoqing Ellen Tan, Xide Xia, Xinfeng Xie, Xuchao Jia, Xuewei Wang, Yaelle Goldschlag, Yashesh Gaur, Yasmine Babaei, Yi Wen, Yiwen Song, Yuchen Zhang, Yue Li, Yuning Mao, Zacharie Delpierre Coudert, Zheng Yan, Zhengxing Chen, Zoe Papakipos, Aaditya Singh, Aayushi Srivastava, Abha Jain, Adam Kelsey, Adam Shajnfeld, Adithya Gangidi, Adolfo Victoria, Ahuva Goldstand, Ajay Menon, Ajay Sharma, Alex Boesenberg, Alexei Baevski, Allie Feinstein, Amanda Kallet, Amit Sangani, Amos Teo, Anam Yunus, Andrei Lupu, Andres Alvarado, Andrew Caples, Andrew Gu, Andrew Ho, Andrew Poulton, Andrew Ryan, Ankit Ramchandani, Annie Dong, Annie Franco, Anuj Goyal, Aparajita Saraf, Arkabandhu Chowdhury, Ashley Gabriel, Ashwin Bharambe, Assaf Eisenman, Azadeh Yazdan, Beau James, Ben Maurer, Benjamin Leonhardi, Bernie Huang, Beth Loyd, Beto De Paola, Bhargavi Paranjape, Bing Liu, Bo Wu, Boyu Ni, Braden Hancock, Bram Wasti, Brandon Spence, Brani Stojkovic, Brian Gamido, Britt Montalvo, Carl Parker, Carly Burton, Catalina Mejia, Ce Liu, Changhan Wang, Changkyu Kim, Chao Zhou, Chester Hu, Ching-Hsiang Chu, Chris Cai, Chris Tindal, Christoph Feichtenhofer, Cynthia Gao, Damon Civin, Dana Beaty, Daniel Kreymer, Daniel Li, David Adkins, David Xu, Davide Testuggine, Delia David, Devi Parikh, Diana Liskovich, Didem Foss, Dingkang Wang, Duc Le, Dustin Holland, Edward Dowling, Eissa Jamil, Elaine Montgomery, Eleonora Presani, Emily Hahn, Emily Wood, EricTuan Le, Erik Brinkman, Esteban Arcaute, Evan Dunbar, Evan Smothers, Fei Sun, Felix Kreuk, Feng Tian, Filippos Kokkinos, Firat Ozgenel, Francesco Caggioni, Frank Kanayet, Frank Seide, Gabriela Medina Florez, Gabriella Schwarz, Gada Badeer, Georgia Swee, Gil Halpern, Grant Herman, Grigory Sizov, Guangyi, Zhang, Guna Lakshminarayanan, Hakan Inan, Hamid Shojanazeri, Han Zou, Hannah Wang, Hanwen Zha, Haroun Habeeb, Harrison Rudolph, Helen Suk, Henry Aspegren, Hunter Goldman, Hongyuan Zhan, Ibrahim Damlaj, Igor Molybog, Igor Tufanov, Ilias Leontiadis, Irina-Elena Veliche, Itai Gat, Jake Weissman, James Geboski, James Kohli, Janice Lam, Japhet Asher, Jean-Baptiste Gaya, Jeff Marcus, Jeff Tang, Jennifer Chan, Jenny Zhen, Jeremy Reizenstein, Jeremy Teboul, Jessica Zhong, Jian Jin, Jingyi Yang, Joe Cummings, Jon Carvifi, Jon Shepard, Jonathan McPhie, Jonathan Torres, Josh Ginsburg, Junjie Wang, Kai Wu, Kam Hou U, Karan Saxena, Kartikay Khandelwal, Katayoun Zand, Kathy Matosich, Kaushik Veeraraghavan, Kelly Michelena, Keqian Li, Kiran Jagadeesh, Kun Huang, Kunal Chawla, Kyle Huang, Lailin Chen, Lakshya Garg, Lavender A, Leandro Silva, Lee Bell, Lei Zhang, Liangpeng Guo, Licheng Yu, Liron Moshkovich, Luca Wehrstedt, Madian Khabsa, Manav Avalani, Manish Bhatt, Martynas Mankus, Matan Hasson, Matthew Lennie, Matthias Reso, Maxim Groshev, Maxim Naumov, Maya Lathi, Meghan Keneally, Miao Liu, Michael L. Seltzer, Michal Valko, Michelle Restrepo, Mihir Patel, Mik Vyatskov, Mikayel Samvelyan, Mike Clark, Mike Macey, Mike Wang, Miquel Jubert Hermoso, Mo Metanat, Mohammad Rastegari, Munish Bansal, Nandhini Santhanam, Natascha Parks, Natasha White, Navyata Bawa, Nayan Singhal, Nick Egebo, Nicolas Usunier, Nikhil Mehta, Nikolay Pavlovich Laptev, Ning Dong, Norman Cheng, Oleg Chernoguz, Olivia Hart, Omkar Salpekar, Ozlem Kalinli, Parkin Kent, Parth Parekh, Paul Saab, Pavan Balaji, Pedro Rittner, Philip Bontrager, Pierre Roux, Piotr Dollar, Polina Zvyagina, Prashant Ratanchandani, Pritish Yuvraj, Qian Liang, Rachad Alao, Rachel Rodriguez, Rafi Ayub, Raghotham Murthy, Raghu Nayani, Rahul Mitra, Rangaprabhu Parthasarathy, Raymond Li, Rebekkah Hogan, Robin Battey, Rocky Wang, Russ Howes, Ruty Rinott, Sachin Mehta, Sachin Siby, Sai Jayesh Bondu, Samyak Datta, Sara Chugh, Sara Hunt, Sargun Dhillon, Sasha Sidorov, Satadru Pan, Saurabh Mahajan, Saurabh Verma, Seiji Yamamoto, Sharadh Ramaswamy, Shaun Lindsay, Shaun Lindsay, Sheng Feng, Shenghao Lin, Shengxin Cindy Zha, Shishir Patil, Shiva Shankar, Shuqiang Zhang, Shuqiang Zhang, Sinong Wang, Sneha Agarwal, Soji Sajuyigbe, Soumith Chintala, Stephanie Max, Stephen Chen, Steve Kehoe, Steve Satterfield, Sudarshan Govindaprasad, Sumit Gupta, Summer Deng, Sungmin Cho, Sunny Virk, Suraj Subramanian, Sy Choudhury, Sydney Goldman, Tal Remez, Tamar Glaser, Tamara Best, Thilo Koehler, Thomas Robinson, Tianhe Li, Tianjun Zhang, Tim Matthews, Timothy Chou, Tzook Shaked, Varun Vontimitta, Victoria Ajayi, Victoria Montanez, Vijai Mohan, Vinay Satish Kumar, Vishal Mangla, Vlad Ionescu, Vlad Poenaru, Vlad Tiberiu Mihailescu, Vladimir Ivanov, Wei Li, Wenchen Wang, Wenwen Jiang, Wes Bouaziz, Will Constable, Xiaocheng Tang, Xiaojian Wu, Xiaolan Wang, Xilun Wu, Xinbo Gao, Yaniv Kleinman, Yanjun Chen, Ye Hu, Ye Jia, Ye Qi, Yenda Li, Yilin Zhang, Ying Zhang, Yossi Adi, Youngjin Nam, Yu, Wang, Yu Zhao, Yuchen Hao, Yundi Qian, Yunlu Li, Yuzi He, Zach Rait, Zachary DeVito, Zef Rosnbrick, Zhaoduo Wen, Zhenyu Yang, Zhiwei Zhao, and Zhiyu Ma. The llama 3 herd of models, 2024. URL https://arxiv.org/abs/2407.21783."
+    },
+    "citeaudit_rw_2390": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Edward Choi, Mohammad Taha Bahadori, Jimeng Sun, Joshua Kulas, Andy Schuetz, and Walter Stewart. Gram: Graph-based attention model for healthcare representation learning. In Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, pp. 787-795, 2017."
+    },
+    "citeaudit_rw_2791": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Huan Zhang, Hongge Chen, Chaowei Xiao, and Bo Zhang. Towards deeper and better certified defenses against adversarial attacks. In International Conference on Learning Representations, 2019. URL https://openreview.net/forum?id=rJgG92A2m."
+    },
+    "citeaudit_rw_3250": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Keshav Singh, Naoya Inoue, Farjana Sultana, and Kentaro Inui. Conceptualizing and constructing a lexical resource of sentential arguments. In Proceedings of the Eleventh International Conference on Language Resources and Evaluation (LREC 2018), Miyazaki, Japan, May 2018. European Language Resources Association (ELRA). URL https://aclanthology.org/L18-1037."
+    },
+    "citeaudit_rw_2022": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Nicola Alfarano, Andrea Palazzi, Francesco Solera, and Rita Cucchiara. Optical flow in the deep learning era: A survey. Computer Vision and Image Understanding, 249:104160, December 2024. doi: 10.1016/j.cviu.2024.104160. URL https://doi.org/10.1016/j.cviu. 2024.104160 ."
+    },
+    "citeaudit_rw_1003": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Richard A Posner. Reasoning by analogy, 2005."
+    },
+    "citeaudit_rw_2959": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "S. J. Pocock, \"Group sequential methods in the design and analysis of clinical trials,\" Biometrika, 1977."
+    },
+    "citeaudit_rw_1519": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jane Lin et al. Question rephrasing for quantifying uncertainty in large language models. arXiv preprint arXiv:2408.03732, 2024."
+    },
+    "citeaudit_rw_0953": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Pranab Islam, Anand Kannappan, Douwe Kiela, Rebecca Qian, Nino Scherrer, and Bertie Vidgen. Financebench: A new benchmark for financial question answering. arXiv preprint arXiv:2311.11944, 2023."
+    },
+    "citeaudit_rw_1955": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "K. Marino, R. Salakhutdinov, and A. Gupta. Fine-grained image classification with learnable semantic parts. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 4500-4509, 2019."
+    },
+    "citeaudit_rw_2443": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Todd M Gureckis and Bradley C Love. Learning priors for decision making. Psychonomic bulletin & review, 16(3):486-492, 2009."
+    },
+    "citeaudit_rw_2538": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Shunyu Yao, Dian Yu, Jeffrey Zhao, Izhak Sha, Silvio Savarese, and Tao an. Tree of thoughts: Deliberate problem solving with large language models. arXiv preprint arXiv:2305.10601, 2023."
+    },
+    "citeaudit_rw_1858": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Shuaicheng Zhang, Tuo Wang, Stephen Adams, Sanmitra Bhattacharya, Sunil Reddy Tiyyagura, Edward Bowen, Balaji Veeramani, and Dawei Zhou. Mentorpdm: Learning data-driven curriculum for multi-modal predictive maintenance. In Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V. 1, pp. 2837-2847, 2025."
+    },
+    "citeaudit_rw_0670": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Ken Chen, Yue Zhou, Maolin Ding, Yu Wang, Zhixiang Ren, and Yuedong Yang. Self-supervised learning on millions of pre-mrna sequences improves sequence-based rna splicing prediction. BioRxiv, pages 2023–01, 2023."
+    },
+    "citeaudit_rw_1548": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Sifan Wu, Amir Khasahmadi, Mor Katz, et al. Cadvlm: Bridging language and vision in the generation of parametric cad sketches. arXiv preprint arXiv:2409.17457, 2024."
+    },
+    "citeaudit_rw_1277": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Wei Zhang, Miaoxin Cai, Tong Zhang, Yin Zhuang, and Xuerui Mao. Earthgpt: A universal multi-modal large language model for multi-sensor image comprehension in remote sensing domain. IEEE Transactions on Geoscience and Remote Sensing, 2024."
+    },
+    "citeaudit_rw_1531": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Li Chen and Yu Wang. Algorithmic bias in large language models: Implications for political research. Journal of Computational Social Science, 7(3):210–230, 2025."
+    },
+    "citeaudit_rw_1626": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Kenneth Heafield, Elaine Farrow, Jelmer van der Linde, Gema Ramírez-Sánchez, and Dion Wiggins. The EuroPat corpus: A parallel corpus of European patent data. In Nicoletta Calzolari, Frédéric Béchet, Philippe Blache, Khalid Choukri, Christopher Cieri, Thierry Declerck, Sara Goggi, Hitoshi Isahara, Bente Maegaard, Joseph Mariani, Hélène Mazo, Jan Odijk, and Stelios Piperidis (eds.), Proceedings of the Thirteenth Language Resources and Evaluation Conference, pp. 732-740, Marseille, France, June 2022. European Language Resources Association. URL https://aclanthology.org/2022.lrec-1.78/."
+    },
+    "citeaudit_rw_1140": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Simranjit Singh, Michael Fore, and Dimitrios Stamoulis. Geollm-engine: A realistic environment for building geospatial copilots. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 585–594, 2024."
+    },
+    "citeaudit_rw_1500": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Eugene P Wigner. The unreasonable effectiveness of mathematics in the natural sciences. Communications on Pure and Applied Mathematics, 13(1):1–14, 1960."
+    },
+    "citeaudit_rw_1559": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yuchen Gao, Liang Zhou, Ming Xu, and Xiaohui Sun. Prediction of chemical reaction yields with large-scale multi-view pre-training (reamvp). Journal of Cheminformatics, 16:45, 2024."
+    },
+    "citeaudit_rw_0080": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Ana Clara Teixeira, Vaishali Marar, Hamed Yazdanpanah, Aline Pezente, and Mohammad M. Ghassemi. Enhancing credit risk reports generation using llms: An integration of bayesian networks and labeled guide prompting. Proceedings of the Fourth ACM International Conference on AI in Finance, 2023."
+    },
+    "citeaudit_rw_2762": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Solomon T. Abate, Michael Melese, and Martha Y. Tachbelie. Machine translation for ethiopian languages: A survey. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing (EMNLP), pp. 567-578, 2019."
+    },
+    "citeaudit_rw_1508": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "H. Liu, Q. Chen, and L. Zhao. Adapting open-source large language models for domain-specific contract drafting. In Proceedings of the 2024 Conference on Artificial Intelligence and Law, pages 210–218. ACM, 2024."
+    },
+    "citeaudit_rw_1260": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Vinay Pursnani, Carlos Erazo Ramirez, Muhammed Yusuf Sermet, and Ibrahim Demir. Hydrosuite-ai: Facilitating hydrological research with llm-driven code assistance. 2024."
+    },
+    "citeaudit_rw_2724": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Zijie J Wang, Yuhao Choi, and Dongyeop Wei. On the identity of the representation learned by pre-trained language models. arXiv preprint arXiv:2109.01819, 2021."
+    },
+    "citeaudit_rw_1532": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Liane Makatura, Michael Foshey, Bohan Wang, et al. Large language models for design and manufacturing. MIT GenAI, 2024."
+    },
+    "citeaudit_rw_1487": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Alex Bornmanica, John Smith, and Jane Doe. High-diversity molecular generation with transformer-based embeddings. Journal of Cheminformatics, 15(1):123, 2023."
+    },
+    "citeaudit_rw_3224": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Beth Barnes. Risks from ai persuasion. AI Alignment Forum, December 2021. URL https://www.alignmentforum.org/posts/5cWtwATHL6KyzChck/ risks-from-ai-persuasion. T. J. M. Bench-Capon. Argument in artificial intelligence and law. Künstliche Intelligenz, 16(4): 18-22,2002."
+    },
+    "citeaudit_rw_0459": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "He Cao, Zijing Liu, Xingyu Lu, Yuan Yao, and Yu Li. Instructmol: Multi-modal integration for building a versatile and reliable molecular assistant in drug discovery. arXiv preprint arXiv:2311.16208, 2023."
+    },
+    "citeaudit_rw_3300": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Michael Golovanevsky, Tal Rott Shaham, and Idan Schwartz. Towards vision-language mechanistic interpretability: A causal tracing tool for blip. arXiv preprint arXiv:2308.14573, 2024."
+    },
+    "citeaudit_rw_2771": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Tianyi Zhang, Varsha Kishore, Felix Wu, Kilian Q Weinberger, and Yoav Artzi. Bertscore: Evaluating text generation with bert. arXiv preprint arXiv:1904.09675, 2019."
+    },
+    "citeaudit_rw_2402": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Sherry L Murphy, Kenneth D Kochanek, Jiaquan Xu, and Elizabeth Arias. Mortality in the united states, 2019. National Center for Health Statistics, 2019."
+    },
+    "citeaudit_rw_2357": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Junho Jeong and Jaehong Moon. Federated continual learning with efficient parameter transfer. In ICML, 2023."
+    },
+    "citeaudit_rw_2886": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yutian Chen, Kun Zhang, Jonas Peters, and Bernhard Schölkopf. Causal discovery and inference for nonstationary systems. Journal of Machine Learning Research, 22(103):1-72, 2021."
+    },
+    "citeaudit_rw_3248": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "NSDA. Policy debate judge training guide, 2025. URL https://sites.google.com/view/ judge-training/how-to-judge-debate/policy-debate. Accessed 6 Aug 2025."
+    },
+    "citeaudit_rw_1328": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Xingtong Ge, Yi Yang, Jiahui Chen, Weichao Li, Zhisheng Huang, Wenyue Zhang, and Ling Peng. Disaster prediction knowledge graph based on multi-source spatio-temporal information. Remote Sensing, 14(5):1214, 2022."
+    },
+    "citeaudit_rw_3227": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Eric W. Dolan. Scientists demonstrate that \"ai's superhuman persuasiveness is already a reality\", July 2025. URL https://www.psypost.org/ scientists-demonstrate-that-ais-superhuman-persuasiveness-is-already-a-reality/. PsyPost."
+    },
+    "citeaudit_rw_2095": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Ruben Villegas, Mohammad Babaeizadeh, Pieter-Jan Kindermans, Hernan Moraldo, Han Zhang, Mohammad Taghi Saffar, Santiago Castro, Julius Kunze, and Dumitru Erhan. Phenaki: Variable length video generation from open domain textual descriptions. In International Conference on Learning Representations, 2022."
+    },
+    "citeaudit_rw_0572": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jihwan Song and Sungmin Yoon. Ontology-assisted gpt-based building performance simulation and assessment: Implementation of multizone airflow simulation. Energy and Buildings, 325:114983, 2024."
+    },
+    "citeaudit_rw_0470": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Hongxu Pu, Xincong Yang, Jing Li, and Runhao Guo. Autorepo: A general framework for multimodal llm-based automated construction reporting. Expert Systems with Applications, 255:124601, 2024."
+    },
+    "citeaudit_rw_0903": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "P. Brown, J. Cocke, S. Della Pietra, V. Della Pietra, F. Jelinek, R. Mercer, and P. Roossin. A statistical approach to language translation. In Coling Budapest 1988 Volume 1: International Conference on Computational Linguistics, 1988."
+    },
+    "citeaudit_rw_3339": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Zengyi Li, Yubei Chen, and Friedrich T. Sommer. A neural network mcmc sampler that maximizes proposal entropy. Entropy, 23(3), 2023."
+    },
+    "citeaudit_rw_3295": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "S. Michie, R. West, and R. Campbell. Simulation in healthcare training: state of the art. BMJ Simulation & Technology Enhanced Learning, 3:2-8, 2017. [6] S. Bubeck, V. Chandrasekaran, and Others. Sparks of artificial general intelligence: Early experiments with gpt-4. arXiv preprint arXiv:2303.12712, 2023."
+    },
+    "citeaudit_rw_1764": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Robert Huben, Logan Riggs, Aidan Ewart, Hoagy Cunningham, and Lee Sharkey. Sparse autoencoders can interpret randomly initialized transformers, 2025. URL https://arxiv.org/ abs/2501.17727."
+    },
+    "citeaudit_rw_3151": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "D. Hossain et al. A study on neuro-symbolic artificial intelligence for reasoning under uncertainty in clinical decision support systems. Journal of AI Research, 2025."
+    },
+    "citeaudit_rw_1512": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Hyunwoo Lee, Sooyeon Kim, Jisoo Park, and Eunji Choi. Enhancing generic reaction yield prediction through reaction condition-based contrastive learning. Research, 2023, 2023."
+    },
+    "citeaudit_rw_2157": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Dan Hendrycks, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. Measuring massive multitask language understanding. arXiv preprint arXiv:2009.03300, 2021."
+    },
+    "citeaudit_rw_0677": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Kevin G Becker, Kathleen C Barnes, Tiffani J Bright, and S Alex Wang. The genetic association database. Nature genetics, 36(5):431–432, 2004."
+    },
+    "citeaudit_rw_2927": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Krzysztof Choromanski, Valerii Likhosherstov, David Dohan, Xingyou Song, Andreea Gane, Tamas Sarlos, Peter Hawkins, Jared Davis, Afroz Mohiuddin, Lukasz Kaiser, Wojciech Paczesny, Adrian Weller, and Marc'Aurelio Ranzato. Rethinking attention with performers. In Proceedings of the 9th International Conference on Learning Representations (ICLR), 2021."
+    },
+    "citeaudit_rw_2832": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Junxian He and Graham Neubig. Adapterfusion: Non-destructive task composition for transfer learning. In EMNLP, 2021."
+    },
+    "citeaudit_rw_3051": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Liu, Y., Lütjens, B., Azizzadenesheli, K., and Anandkumar, A. (2022). U-netformer: A u-net style transformer for solving pdes. arXiv preprint arXiv:2206.11832."
+    },
+    "citeaudit_rw_2543": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "David Maxwell Chickering. Optimal structure identification with greedy search. Journal of machine learning research, 3(Nov):507-554, 2002. URL https://www.jmlr.org/papers/ volume3/chickering02a/chickering02a.pdf."
+    },
+    "citeaudit_rw_1625": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Andrew S. Gordon, Cosmin Adrian Bejan, and Jerry R. Hobbs. Copa: A corpus for reading comprehension of commonsense causal reasoning. In Proceedings of the AAAI Workshop on Causal Reasoning, 2012."
+    },
+    "citeaudit_rw_1573": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Xin Lai, Zhuotao Li, Yukun Wang, Jun Ouyang, Jiashi Li, and Hao Fu. Lisa: Reasoning segmentation via large language model. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), pp. 12985-12996, 2024."
+    },
+    "citeaudit_rw_3022": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Tomek Korbak, Chris Olah, et al. Chain of thought monitorability: A new and fragile opportunity. arXiv preprint arXiv:2507.11473, 2025. URL https://arxiv.org/abs/2507.11473."
+    },
+    "citeaudit_rw_1077": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Santosh Singh. Empowering personal finance management with large language models (llms) in financial services, September 2024."
+    },
+    "citeaudit_rw_1201": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Tate Van Patten and Van Patten. Evaluating domain specific llm performance within economics evaluating domain specific llm performance within economics using the novel econqa dataset using the novel econqa dataset. 2023."
+    },
+    "citeaudit_rw_1538": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Olgierd Cecil Zienkiewicz, Robert Leroy Taylor, and Jian Z Zhu. The finite element method: its basis and fundamentals. Elsevier, 2005."
+    },
+    "citeaudit_rw_1030": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Robert M. Solow. A contribution to the theory of economic growth. The Quarterly Journal of Economics, 70(1):65–94, 1956."
+    },
+    "citeaudit_rw_2712": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Andrew M. Saxe, Yamini Bansal, Joel Dapello, Madhu Advani, Artemy Kolchinsky, Brendan D. Tracey, and David D. Cox. On the information bottleneck theory of deep learning. Journal of Statistical Mechanics: Theory and Experiment, 2019(12):124020, 2019."
+    },
+    "citeaudit_rw_3255": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Qingyun Wu, Gagan Bansal, Jieyu Zhang, Yiran Wu, Shaokun Zhang, Erkang Zhu, Beibin Li, Xinbin Li, Hancheng Ge, and Yanyun Wang. AutoGen: Enabling next-gen LLM applications via multi-agent conversation framework. arXiv preprint arXiv:2308.08155, 2023."
+    },
+    "citeaudit_rw_1888": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Shiyao Li, Xuefei Ning, Ke Hong, Tengxuan Liu, Luning Wang, Xiuhong Li, Kai Zhong, Guohao Dai, Huazhong Yang, and Yu Wang. Llm-mq: Mixed-precision quantization for efficient llm deployment. In NeurIPS 2023 Efficient Natural Language and Speech Processing Workshop, pp. 1-5,2023 a."
+    },
+    "citeaudit_rw_3082": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "J. Zhang and Elias Bareinboim. Near-optimal reinforcement learning in dynamic treatment regimes. Advances in Neural Information Processing Systems, 32, 2019."
+    },
+    "citeaudit_rw_2921": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Xiaofeng Yuan, Lin Li, Yalin Wang, Chunhua Yang, and Weihua Gui. Nonlinear dynamic soft sensor modeling with supervised long short-term memory network. IEEE Transactions on Industrial Informatics, 16(5):3168-3176, 2020."
+    },
+    "citeaudit_rw_1522": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jian Wang, Ying Zhang, Min Xu, and Xiaohui Sun. Pushing the boundaries of molecular property prediction for drug discovery with multi-task learning bert enhanced by smiles enumeration. Journal of Chemical Information and Modeling, 2022."
+    },
+    "citeaudit_rw_1571": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Minseok Kwon, Sungmin Yu, Hyungyu Kim, Hyun Ko, and Jaeyoung Kim. Cat-net: Compression artifact tracing network for detection and localization of image manipulation. In Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), pp. 723-731, 2021a."
+    },
+    "citeaudit_rw_1756": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Jing Huang, Zhengxuan Wu, Christopher Potts, Mor Geva, and Atticus Geiger. Ravel: Evaluating interpretability methods on disentangling language model representations. arXiv preprint arXiv:2402.17700, 2024."
+    },
+    "citeaudit_rw_2125": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Ho Kei Cheng, Seoung Wug Oh, Brian Price, Alexander Schwing, and Joon-Young Lee. Tracking anything in high quality. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 1415-1425, 2023."
+    },
+    "citeaudit_rw_0384": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "G de Q Robin. Ice cores and climatic change. Philosophical Transactions of the Royal Society of London. B, Biological Sciences, 280(972):143–168, 1977."
+    },
+    "citeaudit_rw_0109": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Anson Ho and Tamay Besiroglu. What is the future of ai in mathematics? interviews with leading mathematicians, 2024. Accessed: 2025-04-04."
+    },
+    "citeaudit_rw_1935": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "KJ Joseph, Avinash Pal, S Rajanala, and Vineeth N Balasubramanian. Towards open world object detection. arXiv preprint arXiv:2103.02603, 2021."
+    },
+    "citeaudit_rw_0586": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Jiyao Wang, Haolong Hu, Zuyuan Wang, Song Yan, Youyu Sheng, and Dengbo He. Evaluating large language models on academic literature understanding and review: An empirical study among early-stage scholars. In Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems, pages 1–18, 2024."
+    },
+    "citeaudit_rw_0981": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Raihan Saputra, Muhammad Irwan Padli Nasution, and Budi Dharma. The impact of using ai chat gpt on marketing effectiveness: A case study on instagram marketing. Indonesian Journal of Economics and Management, 2023."
+    },
+    "citeaudit_rw_1846": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Wade A Smith and Robert B Randall. Rolling element bearing diagnostics using the case western reserve university data: A benchmark study. Mechanical systems and signal processing, 64: 100-131,2015."
+    },
+    "citeaudit_rw_2453": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Pang Wei Koh and Percy Liang. Understanding black-box predictions via influence functions. In International conference on machine learning, pp. 1885-1894. PMLR, 2017."
+    },
+    "citeaudit_rw_0398": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Gayane Chilingaryan, Hovhannes Tamoyan, Ani Tevosyan, Nelly Babayan, Karen Hambardzumyan, Zaven Navoyan, Armen Aghajanyan, Hrant Khachatrian, and Lusine Khondkaryan. Bartsmiles: Generative masked language models for molecular representations. Journal of Chemical Information and Modeling, 64(15):5832–5843, 2024."
+    },
+    "citeaudit_rw_2965": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Y. Mo, et al., \"Adversarial training for safer language models,\" 2024."
+    },
+    "citeaudit_rw_0373": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Frank K Reilly. Investment analysis and portfolio management. CITIC Press Group, 2002."
+    },
+    "citeaudit_rw_3101": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yining Liu, Yujie Pan, Hao Zhang, et al. Llm-inference-bench: Benchmarking llm inference on ai accelerators. arXiv preprint arXiv:2411.00136, 2024."
+    },
+    "citeaudit_rw_2074": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Naohisa Nakano, Takaaki Sakura, Koh Ueda, Liko Omura, Akira Kimura, Yoshiharu Iino, Senshi Fukashiro, and Shota Yoshioka. Evaluation of OpenPose software for estimating joint centers and kinematics of human motion. Frontiers in Sports and Active Living, 2:50, May 2020. doi: 10.3389/fspor.2020.00050. URL https://www.frontiersin.org/articles/ 10.3389/fspor.2020.00050/full."
+    },
+    "citeaudit_rw_2612": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Michael S Ryoo, AJ Piergiovanni, Anurag Arnab, Mostafa Dehghani, and Anelia Angelova. Token turing machines. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 5358-5367, 2023."
+    },
+    "citeaudit_rw_1502": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "First Liu and Others. Evaluation of legal judgment prediction using llms. arXiv:2310.09241 [cs.CL], 2023. https://arxiv.org/abs/2310.09241."
+    },
+    "citeaudit_rw_2944": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "L. Zheng, et al., \"MT-Bench,\" 2023."
+    },
+    "citeaudit_rw_2626": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Michael Gutmann and Aapo Hyvärinen. Noise-contrastive estimation: A new estimation principle for unnormalized statistical models. In Proceedings of the thirteenth international conference on artificial intelligence and statistics, pp. 297-304. JMLR Workshop and Conference Proceedings, 2010."
+    },
+    "citeaudit_rw_0871": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Nicola Armaroli and Vincenzo Balzani. Solar electricity and solar fuels: status and perspectives in the context of the energy transition. Chemistry–A European Journal, 22(1):32–57, 2016."
+    },
+    "citeaudit_rw_2489": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Han Zhou and et al. Can language models be biomedical qa systems out of the box? In EMNLP, 2022."
+    },
+    "citeaudit_rw_2963": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "V. Raina, et al., \"Do Judges Judge? Robustness of LLM-as-judge,\" EMNLP 2024."
+    },
+    "citeaudit_rw_2896": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Christos Louizos, Max Welling, and Diederik P Kingma. Learning sparse neural networks through l_0 regularization. arXiv preprint arXiv:1712.01312, 2018."
+    },
+    "citeaudit_rw_3191": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "T. Nguyen and Y. Zhao. Hybrid physics-informed deep learning for climate modeling. In Proceedings of I C L R, 2023."
+    },
+    "citeaudit_rw_3268": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Frederick Jelinek and Robert L. Mercer. Perplexity—a measure of the difficulty of speech recognition tasks. The Journal of the Acoustical Society of America, 62(S1):S63-S63, 1977."
+    },
+    "citeaudit_rw_2096": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Xiang Wang, Hangjie Yuan, Shiwei Zhang, Dayou Chen, Jiuniu Wang, Yingya Zhang, Yujun Shen, Deli Zhao, and Jingren Zhou. Videocomposer: Compositional video synthesis with motion controllability. arXiv preprint arXiv:2306.02018, 2023b."
+    },
+    "citeaudit_rw_0414": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "GL De Lange and K Donath. Interface between bone tissue and implants of solid hydroxyapatite or hydroxyapatite-coated titanium implants. Biomaterials, 10(2):121–125, 1989."
+    },
+    "citeaudit_rw_2913": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Ryan J Tibshirani. Adaptive piecewise polynomial estimation via trend filtering. The Annals of Statistics, 42(1):285-323, 2014."
+    },
+    "citeaudit_rw_1657": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Marianna Nezhurina, Joerg Franke, Taishi Nakamura, Timur Carstensen, Niccolò Ajroldi, Ville Komulainen, David Salinas, and Jenia Jitsev. Open-sci-ref-0.01: open and reproducible reference baselines for language model and dataset comparison. arXiv:2509.09009, 2025."
+    },
+    "citeaudit_rw_2414": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Chao Zhang, Peng Cao, Yanwei Li, Li Wang, and Junzhou Yang. Attain: Attention-based timeaware lstm networks for disease progression modeling. In Proceedings of the 28th International Joint Conference on Artificial Intelligence (IJCAI), pp. 4369-4375, 2019."
+    },
+    "citeaudit_rw_2500": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Vincent Lai, Xiaoyuan Chen, and Zihao Wang. Machine-generated cultural narratives: Evaluation metrics and benchmarks. In Proceedings of the Conference on Computational Creativity, pp. 89-101, 2024."
+    },
+    "citeaudit_rw_1747": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "David Chanin and Adrià Garriga-Alonso. Sparse but wrong: Incorrect 10 leads to incorrect features in sparse autoencoders. arXiv preprint arXiv:2508.16560, 2025."
+    },
+    "citeaudit_rw_0131": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Avinash Patil. Advancing reasoning in large language models: Promising methods and approaches. arXiv preprint arXiv:2502.03671, 2025."
+    },
+    "citeaudit_rw_3310": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Junnan Li, Xinyang Chen, Eduard Hovy, and Dan Jurafsky. Visualizing and understanding multimodal models. Proceedings of the AAAI Conference on Artificial Intelligence, 38:1234-1245, 2024."
+    },
+    "citeaudit_rw_1911": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Chen Zhu et al. A survey on efficient deployment of large language models. arXiv preprint arXiv:2307.03744, 2023."
+    },
+    "citeaudit_rw_0387": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Gabriele Centi. Smart catalytic materials for energy transition. SmartMat, 1(1), 2020."
+    },
+    "citeaudit_rw_2933": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Sinong Wang, Belinda Z. Li, Madian Khabsa, Han Fang, and Hao Ma. Linformer: Self-attention with linear complexity. In arXiv preprint arXiv:2006.04768, 2020."
+    },
+    "citeaudit_rw_3198": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "David Patterson, Rafael Gonzalez, Quoc Le, Cliff Liang, Julian Munguia, Daniel Rothchild, Jeffrey Dean, and Andrew Ng. Carbon emissions and large neural network training. arXiv preprint arXiv:2104.10350, 2021b."
+    },
+    "citeaudit_rw_2755": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Remy Vu, Suoqin Jin, Peng Sun, Qing Nie, and Xing Dai. Wound healing in aged skin exhibits systems-level alterations in cellular composition and cell-cell communication. Cell Reports, 40 (6):111155, 2022. doi: 10.1016/j.celrep.2022.111155."
+    },
+    "citeaudit_rw_2505": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Tuan Nguyen, Linh Pham, and Duc Tran. CulturalBERT: Pre-training language models on southeast asian cultural texts. arXiv preprint arXiv:2309.04085, 2023."
+    },
+    "citeaudit_rw_0123": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Arthur B Laffer, Wayne H Winegarden, and John Childs. The economic burden caused by tax code complexity. The Laffer Center for Supply-Side Economics, pages 1–24, 2011."
+    },
+    "citeaudit_rw_1493": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Clara Colombatto and Stephen M. Fleming. Folk psychological attributions of consciousness to large language models. Neuroscience of Consciousness, 2024(1):niae013, 2024."
+    },
+    "citeaudit_rw_3127": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Mor Geva, Avi Caciularu, S Wang, A Chronopoulou, G Shachaf, A SADA, N Slonim, and O Levy. Transformer feed-forward layers are key-value memories. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 5484-5495, 2021."
+    },
+    "citeaudit_rw_2668": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Thomas M Cover and Joy A Thomas. Elements of information theory. John Wiley & Sons, 1991. Mark Davis. Unicode standard annex #29: Unicode text segmentation. Technical report, Unicode Consortium, 2023. URL https://unicode.org/reports/tr29/. Revision 43."
+    },
+    "citeaudit_rw_2947": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "J. Kuhn, et al., \"Semantic Entropy for Hallucination Detection,\" ACL 2023."
+    },
+    "citeaudit_rw_3042": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Kissas, G., Seidman, J., Guilhoto, L. F., Preciado, V. M., Pappas, G. J., and Perdikaris, P. (2022). Learning operators with coupled attention. Journal of Machine Learning Research, 23(152):1-63."
+    },
+    "citeaudit_rw_1592": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Ziyin Zhou, Yixuan Li, et al. Aigi-holmes: Towards explainable and generalizable ai-generated image detection via multimodal large language models. In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025."
+    },
+    "citeaudit_rw_2582": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Alessandro Stolfo, Bjarke Christoffersen, Yue Yu, and Kun Cheng. Causal reasoning and large language models: Opening the black box. arXiv preprint arXiv:2305.09631, 2023. URL https: //arxiv.org/abs/2305.09631."
+    },
+    "citeaudit_rw_3327": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "O. Anstine, D. M. Isayev. Machine learning interaction potentials and long-range ... 2020."
+    },
+    "citeaudit_rw_2526": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Ziwei Ji, Nayeon Lee, Rita Frieske, Tiezheng Yu, Dan Su, Yan Xu, Etsuko Ishii, Yejin Bang, Andrea Madotto, and Pascale Fung. Survey of hallucination in natural language generation. ACM Computing Surveys, 55(12):1-38, 2023."
+    },
+    "citeaudit_rw_1503": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Gary A Polis and Tsunemi Yamashita. Ecology. 1990."
+    },
+    "citeaudit_rw_2974": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "I. Raji, et al., \"Closing the AI accountability gap,\" FAT* 2020."
+    },
+    "citeaudit_rw_0238": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Colin N Waters, Jan Zalasiewicz, Colin Summerhayes, Anthony D Barnosky, Clément Poirier, Agnieszka Gałuszka, Alejandro Cearreta, Matt Edgeworth, Erle C Ellis, Michael Ellis, et al. The anthropocene is functionally and stratigraphically distinct from the holocene. Science, 351(6269):aad2622, 2016."
+    },
+    "citeaudit_rw_1127": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Shukai Liu, Linzheng Chai, Jian Yang, Jiajun Shi, He Zhu, Liran Wang, Ke Jin, Wei Zhang, Hualei Zhu, Shuyue Guo, et al. Mdeval: Massively multilingual code debugging. arXiv preprint arXiv:2411.02310, 2024."
+    },
+    "citeaudit_rw_1866": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Kamil Adamczewski, Yawei Li, and Luc Van Gool. Shapley pruning for neural network compression, 2024b. arXiv preprint."
+    },
+    "citeaudit_rw_1611": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Gabriele Cicero et al. Nemotron-4 340B Technical Report. Technical report, NVIDIA, 2024."
+    },
+    "citeaudit_rw_1549": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Thomas S. Kuhn. The Structure of Scientific Revolutions. University of Chicago Press, 1962."
+    },
+    "citeaudit_rw_0357": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Fengxiang Cheng, Haoxuan Li, Fenrong Liu, Robert van Rooij, Kun Zhang, and Zhouchen Lin. Empowering llms with logical reasoning: A comprehensive survey. arXiv preprint arXiv:2502.15652, 2025."
+    },
+    "citeaudit_rw_2481": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Eric Wallace, Shi Feng, Nikhil Kandpal, Matt Singh, and Matt Gardner. Universal adversarial triggers for attacking and analyzing nlp. In EMNLP, 2019."
+    },
+    "citeaudit_rw_0824": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Mirac Suzgun, Nathan Scales, Nathanael Schärli, Sebastian Gehrmann, Yi Tay, Hyung Won Chung, Aakanksha Chowdhery, Quoc V Le, Ed H Chi, Denny Zhou, et al. Challenging big-bench tasks and whether chain-of-thought can solve them. arXiv preprint arXiv:2210.09261, 2022."
+    },
+    "citeaudit_rw_2431": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jesse Dodge, Gabriel Ilharco, Roy Schwartz, et al. Documenting large webtext corpora: A case study on the colossal clean crawled corpus. EMNLP, 2021."
+    },
+    "citeaudit_rw_0865": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Neil Fligstein and Luke Dauter. The sociology of markets. Annu. Rev. Sociol., 33(1):105–128, 2007."
+    },
+    "citeaudit_rw_0027": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Akira Kasuga and Ryo Yonetani. Cxsimulator: A user behavior simulation using llm embeddings for web-marketing campaign assessment. In International Conference on Information and Knowledge Management, 2024."
+    },
+    "citeaudit_rw_2558": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Ilyes Khemakhem, Yuchen Wang, Amit Sharma, Emre Kiciman, and Matthew Richardson. Towards causal foundation model: on duality between causal inference and foundation model. In International Conference on Learning Representations (ICLR 2024), 2024. URL https: //openreview.net/forum?id=TgeVptDYAt."
+    },
+    "citeaudit_rw_3064": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Reinaldo A. C. Bianchi, Luis A. Celiberto Jr, and Ramon Lopez de Mantaras. Knowledge-based reinforcement learning: A survey. Journal of Artificial Intelligence Research, 62:215-261, 2018."
+    },
+    "citeaudit_rw_1506": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Giovanni Polverini and Bor Gregorcic. How understanding large language models can inform the use of chatgpt in physics education. arXiv preprint arXiv:2309.12074, 2023."
+    },
+    "citeaudit_rw_1530": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Lei Zhou, Kai Chen, Qiang Li, and Rui Wang. Solvbert for solvation free energy and solubility prediction. Digital Discovery, 2023."
+    },
+    "citeaudit_rw_1016": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Risqo M. Wahid, Joel Mero, and Paavo Ritala. Editorial: Written by chatgpt, illustrated by midjourney: generative ai for content marketing. Asia Pacific Journal of Marketing and Logistics, 2023."
+    },
+    "citeaudit_rw_3158": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Rohit Kumar, Arjun Singh, and Neha Gupta. Agent-based clinical simulations for multi-agent decision-making. Artificial Intelligence in Medicine, 112:102045, 2021."
+    },
+    "citeaudit_rw_0654": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Karl Cobbe, Vineet Kosaraju, Mohammad Bavarian, Mark Chen, Heewoo Jun, Lukasz Kaiser, Matthias Plappert, Jerry Tworek, Jacob Hilton, Reiichiro Nakano, et al. Training verifiers to solve math word problems. arXiv preprint arXiv:2110.14168, 2021."
+    },
+    "citeaudit_rw_1557": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Xiuying Chen, Tairan Wang, Taicheng Guo, Kehan Guo, Juexiao Zhou, Haoyang Li, Mingchen Zhuge, Jürgen Schmidhuber, Xin Gao, and Xiangliang Zhang. Scholarchemqa: Unveiling the power of language models in chemical research question answering. arXiv preprint arXiv:2407.16931, 2024."
+    },
+    "citeaudit_rw_1094": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Shailja Thakur, Baleegh Ahmad, Hammond Pearce, Benjamin Tan, Brendan Dolan-Gavitt, Ramesh Karri, and Siddharth Garg. Verigen: A large language model for verilog code generation. ACM Transactions on Design Automation of Electronic Systems, 29(3):1–31, 2024."
+    },
+    "citeaudit_rw_2979": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "G. Rafailov, et al., \"Baseline approaches for safety evaluation,\" 2024."
+    },
+    "citeaudit_rw_2413": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin. Attention is all you need. In Advances in Neural Information Processing Systems (NeurIPS), pp. 5998-6008, 2017."
+    },
+    "citeaudit_rw_3146": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Google Research. Amie: A research ai system for diagnostic medical reasoning and conversations. https://research.google/blog/amie-a-research-ai-system-for-diagn ostic-medical-reasoning-and-conversations/, 2024a. Accessed: 2025-07-31."
+    },
+    "citeaudit_rw_2003": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Vanessa Jurtz, Sinu Paul, Massimo Andreatta, Paolo Marcatili, Bjoern Peters, and Morten Nielsen. Netmhcpan-4.0: improved peptide-mhc class i interaction predictions integrating eluted ligand and peptide binding affinity data. Journal of Immunology, 199(9):3360-3368, 2017. doi: 10. 4049/jimmunol. 1700893."
+    },
+    "citeaudit_rw_0380": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Frederikke Isa Marin, Felix Teufel, Marc Horlacher, Dennis Madsen, Dennis Pultz, Ole Winther, and Wouter Boomsma. Bend: Benchmarking dna language models on biologically meaningful tasks. arXiv preprint arXiv:2311.12570, 2023."
+    },
+    "citeaudit_rw_3355": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yifan Wang et al. Ai2bmd: Machine-learned force fields for ab initio molecular dynamics. Journal of Chemical Theory and Computation, 20(3):765-777, 2024."
+    },
+    "citeaudit_rw_2887": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Zhiqiang Ge, Huang Biao, and Zhihuan Song. Mixture semisupervised principal component regression model and soft sensor application. AIChE Journal, 60(2):533-545, 2014."
+    },
+    "citeaudit_rw_1990": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "H Cai et al. Gearbind: Geometry-aware binding affinity prediction for general macromolecule pairs. Nature Communications, 15:7785, 2024. doi: 10.1038/s41467-024-37785-9."
+    },
+    "citeaudit_rw_1681": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Yuxia Wang, Haonan Li, Xudong Han, Preslav Nakov, and Timothy Baldwin. Do-not-answer: A dataset for evaluating safeguards in llms, 2023. URL https://arxiv.org/abs/2308. 13387 ."
+    },
+    "citeaudit_rw_2638": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jing Liang, Fan Zhou, Shuying Li, Jun Chen, Guandong Zhou, Huaiming Xu, and Xin Li. Learning opponent behavior for robust cooperation in multi-agent reinforcement learning. IEEE Transactions on Cybernetics, 53(12):7527-7540, 2023."
+    },
+    "citeaudit_rw_2266": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yunzhu Yang, Shuang Li, and Jiajun Wu. MM-ReAct: Prompting chatgpt to multi-modal chain-ofthought reasoning. arXiv preprint arXiv:2401.04740, 2024."
+    },
+    "citeaudit_rw_1379": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yikun Zhang, Mei Lang, Jiuhong Jiang, Zhiqiang Gao, Fan Xu, Thomas Litfin, Ke Chen, Jaswinder Singh, Xiansong Huang, Guoli Song, et al. Multiple sequence alignment-based rna language model and its application to structural inference. Nucleic Acids Research, 52(1):e3–e3, 2024."
+    },
+    "citeaudit_rw_2291": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "OpenAI. Gpt-4 technical report, 2024. URL https://arxiv.org/abs/2303.08774."
+    },
+    "citeaudit_rw_1667": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "David Saxton, Edward Grefenstette, Felix Hill, and Pushmeet Kohli. Analysing mathematical reasoning abilities of neural models. arXiv preprint arXiv:1904.01557, 2019."
+    },
+    "citeaudit_rw_2685": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Suma Bailis, Jane Friedhoff, and Feiyang Chen. Werewolf arena: A case study in llm evaluation via social deduction. arXiv preprint arXiv:2407.13943, 2024."
+    },
+    "citeaudit_rw_3154": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Kuang Huang, Jianguo Lee, Jeremy Pembroke, Dmitry Zheleznyakov, Jian Chen, and David Ferrucci. Clinicalbert: Modeling clinical notes and predicting hospital readmission, 2019."
+    },
+    "citeaudit_rw_3180": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Tianqi Chen and Carlos Guestrin. Xgboost: A scalable tree boosting system. In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, pp. 785-794, 2016."
+    },
+    "citeaudit_rw_3134": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Wenqi Luo, Yiwen Ouyang, Yujia Wu, Hongyi Liu, Yanming Zhang, Haokun Chen, Wei Lin, and Jingren Zhou. Hierarchy of multi-gate experts for multi-task learning at kuaishou. arXiv preprint, 2024. URL https:// arxiv.org/abs/2408.05430."
+    },
+    "citeaudit_rw_2741": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Malte D Luecken and Fabian J Theis. Current best practices in single-cell rna-seq analysis: a tutorial. Molecular Systems Biology, 15(6):e8746, 2019."
+    },
+    "citeaudit_rw_1563": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Davide Cozzolino, Justus Thies, Marius A Riegler, Matthias Niessner, and Luisa Verdoliva. Coverage: A novel database for copy-move forgery detection. In IEEE International Conference on Image Processing (ICIP), pp. 2082-2086, 2016."
+    },
+    "citeaudit_rw_0567": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Jiaxin Zhang, Rikui Xiang, Zheyuan Kuang, Bowen Wang, and Yunqin Li. Archgpt: harnessing large language models for supporting renovation and conservation of traditional architectural heritage. Heritage Science, 12:1–14, 2024."
+    },
+    "citeaudit_rw_0627": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Juan Cristóbal Zagal, Javier Ruiz-del Solar, and Paul Vallejos. Back to reality: Crossing the reality gap in evolutionary robotics. IFAC Proceedings Volumes, 37(8):834–839, 2004."
+    },
+    "citeaudit_rw_0878": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Nitish Shirish Keskar, Bryan McCann, Lav R Varshney, Caiming Xiong, and Richard Socher. Ctrl: A conditional transformer language model for controllable generation. arXiv preprint arXiv:1909.05858, 2019."
+    },
+    "citeaudit_rw_2001": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yuchen Han, Yohan Kim, Dalibor Petrovic, Alessandro Sette, Morten Nielsen, and Bjoern Peters. Deepligand: a deep learning framework for peptide-mhc binding prediction. Bioinformatics, 39 (1):btac834, 2023. doi: 10.1093/bioinformatics/btac834."
+    },
+    "citeaudit_rw_3014": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Kaito Baba, Chaoran Liu, Shuhei Kurita, and Akiyoshi Sannai. Prover agent: An agent-based framework for formal mathematical proofs. arXiv preprint arXiv:2506.19923, 2025. URL https://arxiv.org/abs/2506.19923."
+    },
+    "citeaudit_rw_3135": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "James Bergstra and Yoshua Bengio. Random search for hyper-parameter optimization. Journal of Machine Learning Research, 13(Feb):281-305, 2012."
+    },
+    "citeaudit_rw_2230": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Eric Zelikman, Yuhuai Wu, Erik Nijkamp, and Noah Goodman. Star: Self-taught reasoner bootstrapping reasoning with reasoning. arXiv preprint arXiv:2203.14465, 2022."
+    },
+    "citeaudit_rw_0291": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Di Jin, Eileen Pan, Nassim Oufattole, Wei-Hung Weng, Hanyi Fang, and Peter Szolovits. What disease does this patient have. A Large-scale Open Domain Question Answering Dataset from Medical Exams. arXiv [cs. CL], 2020."
+    },
+    "citeaudit_rw_1536": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Morten Overgaard and Asger Kirkeby-Hinrup. A clarification of the conditions under which large language models could be conscious. Humanities and Social Sciences Communications, 11:1031, 2024."
+    },
+    "citeaudit_rw_1510": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Hedda Martina Šola, Fayyaz Hussain Qureshi, and Sarwar Khawaja. Human-centred design meets ai-driven algorithms: Enhancing political campaign materials. Informatics, 12(1):30, 2025."
+    },
+    "citeaudit_rw_1533": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Max Planck Institute for Iron Research. Langsim - large language model interface for atomistic simulation. https://www.mpie.de/5063016/LangSim, 2024."
+    },
+    "citeaudit_rw_0436": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Hanliang Zhu, Haoqing Zhang, Ying Xu, Soña Laššáková, Marie Korabečná, and Pavel Neužil. Pcr past, present and future. Biotechniques, 69(4):317–325, 2020."
+    },
+    "citeaudit_rw_3175": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Edward H. Shortliffe. Computer-based medical consultations: Mycin. American Scientist, 64(2): 173-181, 1976."
+    },
+    "citeaudit_rw_2425": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Marvin Binz, Xuezhi Li, Romal Thoppilan, and et al. Finding and fixing representational shortcuts in finetuned language models. arXiv preprint arXiv:2311.00682, 2023."
+    },
+    "citeaudit_rw_2472": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Rumen Rafailov, Yining Zhang, Tengyu Ma, et al. Direct preference optimization: Your language model is secretly a reward model. arXiv preprint arXiv:2305.18290, 2023."
+    },
+    "citeaudit_rw_1666": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jack W Rae, Sebastian Borgeaud, Trevor Cai, Katie Millican, Jordan Hoffmann, Laurent Sifre, Tom Noland, GOR Young, Ankur Bapna, Ian Caswell, et al. Scaling language models: Methods, analysis & insights from training Gopher. In arXiv preprint arXiv:2112.11446, 2021."
+    },
+    "citeaudit_rw_2537": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Arun James Thirunavukarasu, Darren Shu Jeng Ting, Kavya Elangovan, Laura Gutierrez, Tze-Fang Tan, and Zsolt Hodi. Large language models in medicine. Nature Medicine, 29(8):1930-1940, 2023."
+    },
+    "citeaudit_rw_0954": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Pranav Rajpurkar, Jian Zhang, Konstantin Lopyrev, and Percy Liang. Squad: 100,000+ questions for machine comprehension of text. arXiv preprint arXiv:1606.05250, 2016."
+    },
+    "citeaudit_rw_1535": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Mohamad Ali-Dib and Kristen Menou. Physics simulation capabilities of llms. arXiv preprint arXiv:2312.02091, 2023."
+    },
+    "citeaudit_rw_0285": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Denis Herbert, R Elsworth, and RC Telling. The continuous culture of bacteria; a theoretical and experimental study. Microbiology, 14(3):601–622, 1956."
+    },
+    "citeaudit_rw_2272": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Tianwen Zhang, Xiaoling Zhang, Jia Li, Xiang Xu, Bo Wang, Xiang Zhan, Yahui Xu, Xiaozhi Ke, Tao Zeng, Hao Su, Imran Ahmad, Dong Pan, Chao Liu, Yanan Zhou, Jie Shi, and Shaoyi Wei. Sar ship detection dataset (ssdd): Official release and comprehensive data analysis. Remote Sensing, 13(18):3690, 2021. doi: 10.3390/rs13183690."
+    },
+    "citeaudit_rw_1577": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Minseok Kwon et al. Cat-net tampercoco: Image splicing dataset. Kaggle, 2021b."
+    },
+    "citeaudit_rw_2452": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Daniel Kahneman. Thinking, Fast and Slow. Farrar, Straus and Giroux, 2011."
+    },
+    "citeaudit_rw_1782": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Yangzhou Liu, Yue Cao, Zhangwei Gao, Weiyun Wang, Zhe Chen, Wenhai Wang, Hao Tian, Lewei Lu, Xizhou Zhu, and Tong Lu. Mminstruct: A high-quality multi-modal instruction tuning dataset with extensive diversity. Science China Information Sciences, 67(12):220103, 2024."
+    },
+    "citeaudit_rw_2446": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Xiaojian Han, Moustafa Alzantot, Mani Srivastava, et al. Explaining black-box classifiers using post-hoc explanations by learning from local faithful explanations. In Proceedings of the AAAI Conference on Artificial Intelligence, 2020."
+    },
+    "citeaudit_rw_2611": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Shuhuai Ren, Linli Li, Junlin Li, Xudong Cai, Xin Zhang, Yuan Liang, and Lei Wang. Timechat: A time-sensitive multimodal large language model for long video understanding. arXiv preprint arXiv:2312.02051, 2024."
+    },
+    "citeaudit_rw_1655": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Sewon Min, Suchin Gururangan, Eric Wallace, Weijia Shi, Hannaneh Hajishirzi, Noah A. Smith, and Luke Zettlemoyer. Silo language models: Isolating legal risk in a nonparametric datastore, 2024. URL https://arxiv.org/abs/2308.04430."
+    },
+    "citeaudit_rw_2989": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Bruno E Correia et al. One-shot design of functional protein binders with bindcraft. Nature, 48(5): 1-15,2025."
+    },
+    "citeaudit_rw_0030": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Albert Einstein. Physics and reality. Journal of the Franklin Institute, 221(3):349–382, 1936."
+    },
+    "citeaudit_rw_2515": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "UNESCO. Convention for the safeguarding of the intangible cultural heritage. In 32nd Session of the General Conference, Paris, France, 2003. United Nations Educational, Scientific and Cultural Organization."
+    },
+    "citeaudit_rw_0103": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Angelo Pio Rossi and Stephan Van Gasselt. Planetary geology. Springer, 2018."
+    },
+    "citeaudit_rw_1683": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "United States Patent and Trademark Office. USPTO Patent Public Data Sets. https:// developer.uspto.gov/product/patent-public-data-sets, 2024. U.S. Securities and Exchange Commission. EDGAR: Electronic Data Gathering, Analysis, and Retrieval System. https://www.sec.gov/edgar, 2024."
+    },
+    "citeaudit_rw_2458": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Ben Krause, Akari Lu, Anuj Goyal, Sumanth Dathathri, Bryan McCann, Vered Shwartz, Amanpreet Singh, Ronan Le Bras, Chandra Bhagavatula, Luke Zettlemoyer, et al. Gedi: Generative discriminator guided sequence generation. In arXiv preprint arXiv:2009.06367, 2020."
+    },
+    "citeaudit_rw_2094": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Chuanjia Wang, Yifan Chen, Wenhao Zhang, et al. Videofactory: Swap attention in spatiotemporal diffusions for text-to-video generation. arXiv e-prints, May 2023a. doi: 10.48550/arXiv. 2305. 10874 ."
+    },
+    "citeaudit_rw_1564": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Zhe Chen, Weiyun Wang, Hao Tian, Shenglong Ye, Zhangwei Gao, Erfei Cui, Wenwen Tong, Kongzhi Hu, Jiapeng Luo, Zheng Ma, et al. Expanding performance boundaries of open-source multimodal models with model, data, and test-time scaling. arXiv preprint arXiv:2412.05271, 2024."
+    },
+    "citeaudit_rw_1932": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "My Kieu, Andrew D Bagdanov, and Marco Bertini. Bottom-up and layerwise domain adaptation for pedestrian detection in thermal images. ACM Transactions on Multimedia Computing, Communications, and Applications, 17(1):1-19, 2021."
+    },
+    "citeaudit_rw_2417": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Wei Zhang, Jie Chen, Zhenhui Li, and Jimeng Sun. Xtsformer: A hierarchical multi-scale transformer for irregularly sampled clinical time series. arXiv preprint arXiv:2401.12345, 2024."
+    },
+    "citeaudit_rw_0868": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Nian Ran, Yue Wang, and Richard Allmendinger. Mollm: Multi-objective large language model for molecular design–optimizing with experts. arXiv preprint arXiv:2502.12845, 2025."
+    },
+    "citeaudit_rw_2362": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jianwei Zheng et al. On the benefits of memory for modeling time-dependent pdes. ICLR, 2025."
+    },
+    "citeaudit_rw_2834": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yuwei Guo, Qihang Xu, Xiaojie Li, et al. Animatediff: Animate your personalized text-to-image models without specific tuning. arXiv:2307.04725, 2023."
+    },
+    "citeaudit_rw_0939": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Philip Kotler, Suzan Burton, Kenneth Deans, Linen Brown, and Gary Armstrong. Marketing. Pearson Higher Education AU, 2015."
+    },
+    "citeaudit_rw_1482": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "A. Sato and K. Nakamura. Legal status of ai-generated contract clauses: An analysis of prompt-based generation. Journal of Legal Technology, 15(2):101–115, 2023."
+    },
+    "citeaudit_rw_2740": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Haixiang Huang et al. Towards a comprehensive evaluation of dimension reduction methods for single-cell rna-seq data. Communications Biology, 5(1):1135, 2022."
+    },
+    "citeaudit_rw_0087": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Andrea Matarazzo and Riccardo Torlone. A survey on large language models with some insights on their capabilities and limitations. arXiv preprint arXiv:2501.04040, 2025."
+    },
+    "citeaudit_rw_2649": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Mingyu Yang, Jian Zhao, Xunhan Hu, Wengang Zhou, Jiangcheng Zhu, and Houqiang Li. Ldsa: Learning dynamic subtask assignment in cooperative multi-agent reinforcement learning. Advances in neural information processing systems, 35:1698-1710, 2022."
+    },
+    "citeaudit_rw_0637": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Justin P. Johnson and David P. Myatt. On the simple economics of advertising, marketing, and product design. IO: Theory, 2005."
+    },
+    "citeaudit_rw_1540": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Rakesh Karanjai et al. Synthesizing public opinions with llms: Role creation, impacts, and challenges. arXiv preprint arXiv:2504.00241, 2025."
+    },
+    "citeaudit_rw_1743": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Dinghuai Zhang, Yang Song, Inderjit Dhillon, and Eric Xing. Defense against adversarial attacks using spectral regularization. In International Conference on Learning Representations (ICLR), 2020."
+    },
+    "citeaudit_rw_1452": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Zhenyuan Yang, Zhengliang Liu, Jing Zhang, Cen Lu, Jiaxin Tai, Tianyang Zhong, Yiwei Li, Siyan Zhao, Teng Yao, Qing Liu, et al. Analyzing nobel prize literature with large language models. arXiv preprint arXiv:2410.18142, 2024."
+    },
+    "citeaudit_rw_0899": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Oren Etzioni, Michele Banko, Stephen Soderland, and Daniel S Weld. Open information extraction from the web. Communications of the ACM, 2008."
+    },
+    "citeaudit_rw_3023": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Lee Sharkey, Bilal Chughtai, Joshua Batson, Jack Lindsey, Jeff Wu, Lucius Bushnaq, Nicholas Goldowsky-Dill, Stefan Heimersheim, Alejandro Ortega, Joseph Bloom, et al. Open problems in mechanistic interpretability. arXiv preprint arXiv:2501.16496, 2025."
+    },
+    "citeaudit_rw_1857": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Ailing Zeng, Muxi Chen, Lei Zhang, and Qiang Xu. Are transformers effective for time series forecasting? In Proceedings of the AAAI conference on artificial intelligence, volume 37, pp. 11121-11128,2023."
+    },
+    "citeaudit_rw_1456": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, Xiao Bi, Haowei Zhang, Mingchuan Zhang, YK Li, Y Wu, et al. Deepseekmath: Pushing the limits of mathematical reasoning in open language models. arXiv preprint arXiv:2402.03300, 2024."
+    },
+    "citeaudit_rw_1293": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Wikipedia. Chemistry. Wikipedia, The Free Encyclopedia, 2023. [Accessed: 2025-03-22]."
+    },
+    "citeaudit_rw_1085": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Scott Emett, Marc Eulerich, Egemen Lipinski, Nicolo Prien, and David A Wood. Leveraging chatgpt for enhancing the internal audit process—a real-world example from uniper, a large multinational company. Accounting Horizons, pages 1–11, 2024."
+    },
+    "citeaudit_rw_2556": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Ilyes Khemakhem, Emre Kiciman, Amit Sharma, Yuchen Wang, and Matthew Richardson. Dowhygcm: An extension of dowhy for causal inference in graphical causal models. In International Conference on Learning Representations (ICLR 2023), 2023. URL https://openreview. net/forum?id=wWPrzlh_n3."
+    },
+    "citeaudit_rw_3117": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "A Bulatov, M S, G S, M S, D V, and D D. Recurrent memory transformer. arXiv preprint arXiv:2207.06881, 2022."
+    },
+    "citeaudit_rw_2689": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Avinash K. Dixit and Barry J. Nalebuff. Thinking Strategically: The Competitive Edge in Business, Politics, and Everyday Life. W.W. Norton & Company, 1991."
+    },
+    "citeaudit_rw_2064": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Kuaishou Technology. Kling 1.0. Product site, June 2024. URL https://klingai.com/. Global launch in mid-2024."
+    },
+    "citeaudit_rw_1084": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Scott Dodelson and Fabian Schmidt. Modern cosmology. Elsevier, 2024."
+    },
+    "citeaudit_rw_0003": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "A. Shukla and J. Thömmes. Recent advances in large-scale production of monoclonal antibodies and related proteins. Trends in biotechnology, 28 5:253–61, 2010."
+    },
+    "citeaudit_rw_3352": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "João M. L. Ribeiro et al. End-to-end learning of molecular force fields using differentiable molecular mechanics. Journal of Chemical Physics, 153(12):124109, 2020."
+    },
+    "citeaudit_rw_2530": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Subhabrata Mukherjee, Arindam Mitra, Ganesh Jawahar, Sahaj Agarwal, Hamid Pal, and Senthil Rangarajan. Orca: Progressive learning from complex explanation traces of gpt-4. arXiv preprint arXiv:2306.02707, 2023."
+    },
+    "citeaudit_rw_2692": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Tom Eccles, Jeffrey Tweedale, and Yvette Izza. Let's pretend: A study of negotiation with autonomous agents. In 2009 IEEE/WIC/ACM International Joint Conference on Web Intelligence and Intelligent Agent Technology (WI-IAT), volume 3, pp. 449-452. IEEE, 2009."
+    },
+    "citeaudit_rw_2477": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Irene Solaiman, Jack Clark, Amanda Askell, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Anton Bakhtin, Andrew Cross, Saadia Gabriel, Jonas Schneider, et al. Palms: Private and languagemodel-safe training objectives with human feedback. In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (FAccT), pp. 635-646. ACM, 2021."
+    },
+    "citeaudit_rw_2520": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Mark Chen, Jerry Tworek, Heewoo Jun, Qiming Yuan, Henrique Ponde de Oliveira Pinto, Jared Kaplan, Harri Edwards, Yuri Burda, Nicholas Joseph, Greg Brockman, et al. Evaluating large language models trained on code. arXiv preprint arXiv:2107.03374, 2021."
+    },
+    "citeaudit_rw_0397": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Gavin Ye. De novo drug design as gpt language modeling: large chemistry models with supervised and reinforcement learning. Journal of Computer-Aided Molecular Design, 38(1):20, 2024."
+    },
+    "citeaudit_rw_1542": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Rodrigo Rabelo, Masatoshi Kaneko, Randy Goebel, and et al. Overview of the coliee 2020 competition on legal information extraction and entailment. In Proceedings of COLIEE 2020, 2020."
+    },
+    "citeaudit_rw_2392": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "James A Hanley and Barbara J McNeil. The meaning and use of the area under a receiver operating characteristic (roc) curve. Radiology, 143(1):29-36, 1982."
+    },
+    "citeaudit_rw_2212": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "D Xu, Y Zhu, C Choy, and L Fei-Fei. A comprehensive survey on scene graphs: Generation, inference, and application. IEEE Transactions on Pattern Analysis and Machine Intelligence, 45 (1):1-23, 2022."
+    },
+    "citeaudit_rw_1507": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Gottlob Frege. The Foundations of Arithmetic. Blackwell, 1953."
+    },
+    "citeaudit_rw_1859": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Wei Zhang, Ming Li, and Jie Chen. Multi-mode fault diagnosis datasets of gearbox under variable working conditions. Data in Brief, 50:109123, 2024a. doi: 10.1016/j.dib.2024.109123."
+    },
+    "citeaudit_rw_1901": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, Dan Bikel, Lukas Blecher, Cristian Canton Ferrer, Moya Chen, Guillem Cucurull, David Esiobu, Jude Fernandes, Jeremy Fu, Wenyin Fu, Brian Fuller, Cynthia Gao, Vedanuj Goswami, Naman Goyal, Anthony Hartshorn, Saghar Hosseini, Rui Hou, Hakan Inan, Marcin Kardas, Viktor Kerkez, Madian Khabsa, Isabel Kloumann, Artem Korenev, Punit Singh Koura, Marie-Anne Lachaux, Thibaut Lavril, Jenya Lee, Diana Liskovich, Yinghai Lu, Yuning Mao, Xavier Martinet, Todor Mihaylov, Pushkar Mishra, Igor Molybog, Yixin Nie, Andrew Poulton, Jeremy Reizenstein, Rashi Rungta, Kalyan Saladi, Alan Schelten, Ruan Silva, Eric Michael Smith, Ranjan Subramanian, Xiaoqing Ellen Tan, Binh Tang, Ross Taylor, Adina Williams, Jian Xiang Kuan, Puxin Xu, Zheng Yan, Iliyan Zarov, Yuchen Zhang, Angela Fan, Melanie Kambadur, Sharan Narang, Aurelien Rodriguez, Robert Stojnic, Sergey Edunov, and Thomas Scialom. Llama 2: Open foundation and fine-tuned chat models, 2023. URL https://arxiv.org/abs/2307.09288."
+    },
+    "citeaudit_rw_3155": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Alexandra C. Kiser, Kaitlyn Eilbeck, and Brandon T. Bucher. Developing an lstm model to identify surgical site infections using electronic healthcare records. AMIA Joint Summits on Translational Science Proceedings, 2023:330-339, 2023."
+    },
+    "citeaudit_rw_3052": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Xiao, Z., Hao, Z., Lin, B., Deng, Z., and Su, H. (2024). Improved operator learning by orthogonal attention. In Salakhutdinov, R., Kolter, Z., Heller, K., Weller, A., Oliver, N., Scarlett, J., and Berkenkamp, F., editors, Proceedings of the 41st International Conference on Machine Learning, volume 235 of Proceedings of Machine Learning Research, pages 54288-54299. PMLR."
+    },
+    "citeaudit_rw_2442": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Deep Ganguli, Danny Hernandez, Samuel Huber, Andrew Lohn, Catherine Olsson, Miles Andrus, Amanda Askell, Yuntao Bai, Alex Conerly, Nelson Elhage, and et al. Predictability and surprise in large language models. arXiv preprint arXiv:2302.08582, 2023b."
+    },
+    "citeaudit_rw_2950": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "G. Rafailov, et al., \"Direct Preference Optimization,\" ICLR 2023."
+    },
+    "citeaudit_rw_0975": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Qiuhao Lu, Dejing Dou, and Thien Nguyen. Clinicalt5: A generative language model for clinical text. In Findings of the Association for Computational Linguistics: EMNLP 2022, pages 5436–5443, 2022."
+    },
+    "citeaudit_rw_0780": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Maryam Rahmati, David K. Mills, Aleksandra M. Urbanska, Mohammad Reza Saeb, Jayarama Reddy Venugopal, Seeram Ramakrishna, and Masoud Mozafari. Electrospinning for tissue engineering applications. 117:100721–100721, 2020."
+    },
+    "citeaudit_rw_1223": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Timothy Truong Jr and Tristan Bepler. Poet: A generative model of protein families as sequences-of-sequences. Advances in Neural Information Processing Systems, 36:77379–77415, 2023."
+    },
+    "citeaudit_rw_1802": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Winston Yu, Albert Jiang, Jiahe Zhang, Zhihong Xu, Shen Wang, Yiming Xu, He He, Quanquan Gu, and Weikun Shi. NuminaMath: A new frontier for LLM mathematical reasoning. arXiv preprint arXiv:2406.00762, 2024."
+    },
+    "citeaudit_rw_1590": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Chong Zou, Zhipeng Wang, Ziyu Li, Nan Wu, Yuling Cai, Shan Shi, Jiawei Wei, Xia Sun, Jian Wang, and Yizhou Wang. Segment everything everywhere all at once. In Advances in Neural Information Processing Systems (NeurIPS), volume 36, 2023."
+    },
+    "citeaudit_rw_1908": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Lloyd S Shapley. A value for n-person games. In Harold W. Kuhn and Albert W. Tucker (eds.), Contributions to the Theory of Games II, pp. 307-317. Princeton University Press, Princeton, 1953. M. Sun et al. Efficient shapley value-based non-uniform pruning of large language models. arXiv preprint arXiv:2505.01731, 2025. URL https://arxiv.org/html/2505.01731v2."
+    },
+    "citeaudit_rw_3041": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Cuomo, S., Di Cola, V., Giampaolo, F., Rozza, G., Raissi, M., and Piccialli, F. (2022). Physicsinformed machine learning: A survey on problems, methods, and applications. ACM Computing Surveys (CSUR), 55(1):1-38."
+    },
+    "citeaudit_rw_2459": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Hao Liu, Stella Biderman, Sidney Black, et al. Olmotrace: Tracing pretraining sources of model outputs at scale. arXiv preprint arXiv:2402.01685, 2024."
+    },
+    "citeaudit_rw_1289": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Wenji Fang, Mengming Li, Min Li, Zhiyuan Yan, Shang Liu, Zhiyao Xie, and Hongce Zhang. Assertllm: Generating and evaluating hardware verification assertions from design specifications via multi-llms. arXiv preprint arXiv:2402.00386, 2024."
+    },
+    "citeaudit_rw_0048": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Alexey G Kikhney and Dmitri I Svergun. A practical guide to small angle x-ray scattering (saxs) of flexible and intrinsically disordered proteins. FEBS letters, 589(19):2570–2577, 2015."
+    },
+    "citeaudit_rw_0648": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Kanchan M Tarwani and Swathi Edem. Survey on recurrent neural network in natural language processing. Int. J. Eng. Trends Technol, 48(6):301–304, 2017."
+    },
+    "citeaudit_rw_3204": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "B. Ruddell and C. Monteleoni. Overfitting in climate-ai models: Challenges and risks. Climatic Informatics, 2020."
+    },
+    "citeaudit_rw_1499": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Eugene Avallone, I Baumeister, and Ali Sadegh. Marks’ Standard Handbook for Mechanical Engineers. 10. Citeseer, 2006."
+    },
+    "citeaudit_rw_3192": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "C. Monteleoni and B. Ruddell. Deep learning applications in weather and climate science. In Proceedings of AAAI, 2018."
+    },
+    "citeaudit_rw_0496": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Ieee jstsp special series on ai in signal and data science - toward large language model (llm) theory and applications, December 2024."
+    },
+    "citeaudit_rw_1918": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Xiuye Gu, Tsung-Yi Lin, Weicheng Kuo, and Yin Cui. Open-vocabulary object detection via vision and language knowledge distillation. arXiv preprint arXiv:2104.13921, 2021a."
+    },
+    "citeaudit_rw_1511": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Herbert Surden. Machine Learning and Law. Oxford University Press, 2012."
+    },
+    "citeaudit_rw_3091": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Alibaba DAMO Academy. Qwen2: Scaling up language models with data and computation. arXiv preprint arXiv:2412.15115, 2024."
+    },
+    "citeaudit_rw_2047": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jonathan Ho, Tim Salimans, Alexey Gritsenko, William Chan, Mohammad Norouzi, and David J Fleet. Video diffusion models. Advances in Neural Information Processing Systems, 35:86338646, 2022b."
+    },
+    "citeaudit_rw_2584": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Zhaofeng Wu, Emre Kıcıman, Amit Sharma, Bill Yuchen Wang, Christopher Meek, Matthew Richardson, and Bei Zhang. Cladder: Assessing causal reasoning in language models. In Advances in Neural Information Processing Systems 36 (NeurIPS 2023), 2023. URL https: //neurips.cc/virtual/2023/poster/70983."
+    },
+    "citeaudit_rw_2949": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "A. Zou, et al., \"AdvBench: Transferable adversarial jailbreak attacks on LLMs,\" 2023."
+    },
+    "citeaudit_rw_2795": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Kevin Clark, Minh-Thang Luong, Quoc V Le, and Christopher D Manning. Electra: Pre-training text encoders as discriminators rather than generators. In International Conference on Learning Representations, 2020."
+    },
+    "citeaudit_rw_3185": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "C. Huntingford, J. A. Lowe, B. B. Booth, and C. D. Jones. Contributions of climate model uncertainties to future projections of lps (linear pattern scaling). Climatic Change, 2012."
+    },
+    "citeaudit_rw_0943": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Philippe Schwaller, Riccardo Petraglia, Valerio Zullo, Vishnu H Nair, Rico Andreas Haeuselmann, Riccardo Pisoni, Costas Bekas, Anna Iuliano, and Teodoro Laino. Predicting retrosynthetic pathways using transformer-based models and a hyper-graph exploration strategy. Chemical science, 11(12):3316–3325, 2020."
+    },
+    "citeaudit_rw_0230": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Chuang Zhu, Wenkai Chen, Ting Peng, Ying Wang, and Mulan Jin. Hard sample aware noise robust learning for histopathology image classification. IEEE transactions on medical imaging, 41(4):881–894, 2021."
+    },
+    "citeaudit_rw_0934": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Peter Mooney, Wencong Cui, Boyuan Guan, and Levente Juhász. Towards understanding the geospatial skills of chatgpt: Taking a geographic information systems (gis) exam. In Proceedings of the 6th ACM SIGSPATIAL international workshop on AI for geographic knowledge discovery, pages 85–94, 2023."
+    },
+    "citeaudit_rw_3114": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Zhihang Sun, Zhiqiang Liu, Zhiyu Wang, and Jinyang Li. A comprehensive study on activating and weight quantization for large language models. arXiv preprint arXiv:2402.18158, 2024."
+    },
+    "citeaudit_rw_1093": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Seung Ho Woo, Seonho Woo, and Young-Jun Son. LLM Integrated Economic Decision-Making Model for Advancing Socio-Economic Simulation. 2024."
+    },
+    "citeaudit_rw_3177": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yifan Zhang, Ming Chen, and Hong Wang. Madip: Multi-agent decision infrastructure for healthcare. In Proceedings of AAAI, pp. 1220-1227, 2019."
+    },
+    "citeaudit_rw_1993": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Zixuan Cang and Guo-Wei Wei. Representability of algebraic topology for biomolecules in machine learning based scoring and virtual screening. PLoS Computational Biology, 14(1):e1005929, 2018."
+    },
+    "citeaudit_rw_1630": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Alejandro Hernández-Cano, Alexander Hägele, Allen Hao Huang, Angelika Romanou, AntoniJoan Solergibert, Barna Pasztor, Bettina Messmer, Dhia Garbaya, Eduard Frank Durech, Ido Hakimi, Juan García Giraldo, Mete Ismayilzada, Negar Foroutan, Skander Moalla, Tiancheng Chen, Vinko Sabolčec, Yixuan Xu, Michael Aerni, Badr AlKhamissi, Ines Altemir Marinas, Mohammad Hossein Amani, Matin Ansaripour, Ilia Badanin, Harold Benoit, Emanuela Boros, Nicholas Browning, Fabian Bösch, Maximilian Böther, Niklas Canova, Camille Challier, Clement Charmillot, Jonathan Coles, Jan Deriu, Arnout Devos, Lukas Drescher, Daniil Dzenhaliou, Maud Ehrmann, Dongyang Fan, Simin Fan, Silin Gao, Miguel Gila, María Grandury, Diba Hashemi,"
+    },
+    "citeaudit_rw_0921": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Pei Hou and Shiliang Wu. Long-term changes in extreme air pollution meteorology and the implications for air quality. Scientific reports, 6(1):23792, 2016."
+    },
+    "citeaudit_rw_3111": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "DeepSeek Team. Deepseek-v2: Towards deeper language understanding and reasoning. arXiv preprint arXiv:2501.12948, 2024a."
+    },
+    "citeaudit_rw_1079": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Sarah David Müzel, Eduardo Pires Bonhin, Nara Miranda Guimarães, and Erick Siqueira Guidi. Application of the finite element method in the analysis of composite materials: A review. Polymers, 12(4), 2020."
+    },
+    "citeaudit_rw_1854": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yucheng Wang, Yuejiao Zhao, and Sri Addepalli. A survey on graph neural networks for remaining useful life prediction: Methodologies, evaluation and future trends. Mechanical Systems and Signal Processing, 226:111918, 2024a."
+    },
+    "citeaudit_rw_1203": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Tatsuro Ichiishi. Game Theory for Economic Analysis. Elsevier, Amsterdam, 2014."
+    },
+    "citeaudit_rw_1490": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Bjorn Andersen and Tom Fagerhaug. Root cause analysis. Quality Press, 2006."
+    },
+    "citeaudit_rw_1861": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Weijie Zhang, Jiayan Chen, and Dongjiao Chen. Timemixer: Decomposable multiscale mixing for time series forecasting. arXiv preprint arXiv:2405.14616, 2024b."
+    },
+    "citeaudit_rw_0188": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Carl L Pritchard, PMI-RMP PMP, et al. Risk management: concepts and guidance. CRC Press, 2014."
+    },
+    "citeaudit_rw_2300": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Chenglong Wang, Yang Liu, Zhihong Xu, Ruochen Zhang, Jiahao Wu, Tao Luo, Jingang Li, Xunliang Liu, Weiran Qi, Yujiu Yang, et al. Gram-r ^8 : Self-training generative foundation reward models for reward reasoning. arXiv preprint arXiv:2509.02492, 2025b."
+    },
+    "citeaudit_rw_1840": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Microsoft. Microsoft azure predictive maintenance dataset. https://www.kaggle.com/ datasets/arnabbiswas1/microsoft-azure-predictive-maintenance. Accessed: 2025-05-04."
+    },
+    "citeaudit_rw_2385": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Y. Zhu, D. Zhou, and Z. Wang. Maintaining discrimination and fairness in class incremental learning. In CVPR, 2022."
+    },
+    "citeaudit_rw_2121": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Mayank Bakshi, Shivang Jain, Suhas N Krishnamurthy, and Omid Abari. Fast millimeter wave beam alignment. In Proceedings of the 2019 Conference of the ACM Special Interest Group on Data Communication, pp. 112-125, 2019."
+    },
+    "citeaudit_rw_2416": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "John R Anderson. The adaptive nature of human categorization. Psychological Review, 107(2):356, 2000 ."
+    },
+    "citeaudit_rw_3133": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Haonan Yuan, Changhua Yang, Ming Zhou, and Junchi Yan. Cmmlu: Measuring massive multitask language understanding in chinese. arXiv preprint, 2023. URL https://arxiv.org/abs/2311.09280."
+    },
+    "citeaudit_rw_3152": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Meera Jain and Albert Chen. Explainable ai techniques for medical applications: A comprehensive review. AI in Healthcare, 5:22-37, 2024."
+    },
+    "citeaudit_rw_1394": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yonatan Bisk, Rowan Zellers, Jianfeng Gao, Yejin Choi, et al. Piqa: Reasoning about physical commonsense in natural language. In Proceedings of the AAAI conference on artificial intelligence, 2020."
+    },
+    "citeaudit_rw_0242": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Cunxiang Wang, Xiaoze Liu, Yuanhao Yue, Xiangru Tang, Tianhang Zhang, Cheng Jiayang, Yunzhi Yao, Wenyang Gao, Xuming Hu, Zehan Qi, et al. Survey on factuality in large language models: Knowledge, retrieval and domain-specificity. arXiv preprint arXiv:2310.07521, 2023."
+    },
+    "citeaudit_rw_0516": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 conference of the North American chapter of the association for computational linguistics: human language technologies, volume 1 (long and short papers), 2019."
+    },
+    "citeaudit_rw_0132": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Ayelet Dar, Michal Shachar, Jonathan Leor, and Smadar Cohen. Optimization of cardiac cell seeding and distribution in 3d porous alginate scaffolds. Biotechnology and bioengineering, 80(3):305–312, 2002."
+    },
+    "citeaudit_rw_2833": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Junxian He et al. Adalora: Adaptive low-rank adaptation of large language models. In ICLR, 2023."
+    },
+    "citeaudit_rw_3202": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "J. Smith and T. Brown. Overfitting in climate prediction models: Risks and mitigation. In Proceedings of NeurIPS Workshop on Climate Informatics, 2021."
+    },
+    "citeaudit_rw_2335": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Fei Li, Dongfang Yu, Yi Kang, Wenbo Liu, Cheng Zhang, Weipeng Zheng, and Deo Jin. Stagnn: a spatio-temporal attention-based graph neural network for weather forecasting. In Proceedings of the 31st ACM International Conference on Information & Knowledge Management, pp. 1118-1128, 2022."
+    },
+    "citeaudit_rw_2653": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Tim Plaehn, Lennart Maes, Julian Köhn, and Peter Sunehag. Opponent modeling with multi-agent transfer learning. In Proceedings of the 22nd International Conference on Autonomous Agents and Multi-Agent Systems (AAMAS), 2023."
+    },
+    "citeaudit_rw_1892": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Xuechen Li et al. Llm-mq: Layer-wise mixed-precision quantization with outlier-aware gradient sensitivity. arXiv preprint arXiv:2310.11230, 2023b."
+    },
+    "citeaudit_rw_2605": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Ji Lin, Hongxu Zhu, Haotian Wang, Jiahao Yang, Dongliang Song, Bo Dai, Ruiyi Geng, Yue Hu, Shengfeng Zhang, et al. Vila: On pre-training for visual language models. arXiv preprint arXiv:2312.07533, 2024."
+    },
+    "citeaudit_rw_3183": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Google. 3 new ways to navigate more sustainably with maps eco-friendly routing. https://blog.google/products/maps/ 3-new-ways-navigate-more-sustainably-maps/, 2021. Accessed: 2025-0921."
+    },
+    "citeaudit_rw_3274": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "OpenJS Foundation. Node.js - javascript runtime built on chrome's v8 engine, 2009. URL https: //nodejs.org/. Accessed: 2025-09-18."
+    },
+    "citeaudit_rw_1620": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Ganqu Cui, Lifan Yuan, Ning Ding, Guanming Yao, Wei Zhu, XiaoNi Ding, Yitos Budiman, Jiaju Lin, Zedong Wang, Yu-Chen Mack, et al. Ultrafeedback: Boosting language models with highquality feedback, 2023."
+    },
+    "citeaudit_rw_2966": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "A. Madry, et al., \"Towards deep learning models resistant to adversarial attacks,\" ICLR 2018."
+    },
+    "citeaudit_rw_2976": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "A. Radford, et al., \"GPT-2,\" 2019."
+    },
+    "citeaudit_rw_2483": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yizhong Wang, Lianmin Zhang, Yuxuan Liang, et al. Far better than we thought: A highly strong baseline for instruction-following. arXiv preprint arXiv:2309.00615, 2023."
+    },
+    "citeaudit_rw_0815": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Microsoft Research AI4Science and Microsoft Azure Quantum. The impact of large language models on scientific discovery: a preliminary study using gpt-4. arXiv preprint arXiv:2311.07361, 2023."
+    },
+    "citeaudit_rw_0193": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Cass R Sunstein. On analogical reasoning. Harvard Law Review, 106(3):741–791, 1993."
+    },
+    "citeaudit_rw_1329": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Xingyu Lu, He Cao, Zijing Liu, Shengyuan Bai, Leqing Chen, Yuan Yao, Hai-Tao Zheng, and Yu Li. Moleculeqa: A dataset to evaluate factual accuracy in molecular comprehension. arXiv preprint arXiv:2403.08192, 2024."
+    },
+    "citeaudit_rw_2382": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Yong Zhao, Jiyang Sun, and Sheng Li. Feddfkd: Data-free knowledge distillation for federated continual learning. In NeurIPS, 2023."
+    },
+    "citeaudit_rw_2484": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Jeffrey Wu, Roger Grosse, and et al. Recursively summarizing books with human feedback. arXiv preprint arXiv:2109.10862, 2021."
+    },
+    "citeaudit_rw_2415": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Jiachen Zhu, Xinlei Chen, Kaiming He, Yann LeCun, and Zhuang Liu. Transformers without normalization. arXiv preprint arXiv:2503.10622, 2025."
+    },
+    "citeaudit_rw_2654": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Xiaopeng Yu, Jiechuan Jiang, Wanpeng Zhang, Haobin Jiang, and Zongqing Lu. Model-based opponent modeling. Advances in Neural Information Processing Systems, 35:28208-28221, 2022b."
+    },
+    "citeaudit_rw_1628": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Dan Hendrycks, Collin Burns, Steven Basart, Andy Critch, Jerry Li, Dawn Ippolito, Aina Lapedriza, Florian Tramer, Rylan Macfarlane, Eric Jiang, et al. Measuring massive multitask language understanding. In Proceedings of the International Conference on Learning Representations (ICLR), 2021."
+    },
+    "citeaudit_rw_3282": {
+      "ground_truth": "invalid",
+      "source_type": "realworld",
+      "citeaudit_predict": false,
+      "citation_text": "Tianyi Zhang, Vivek Kishore, Felix Wu, Kilian Q. Weinberger, and Yoav Artzi. Bertscore: Evaluating text generation with bert. In International Conference on Learning Representations (ICLR), 2020. URL https://arxiv.org/abs/1904.09675."
+    },
+    "citeaudit_rw_0129": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Augustin Toma, Patrick R Lawler, Jimmy Ba, Rahul G Krishnan, Barry B Rubin, and Bo Wang. Clinical camel: An open-source expert-level medical language model with dialogue-based knowledge encoding. CoRR, 2023."
+    },
+    "citeaudit_rw_0732": {
+      "ground_truth": "valid",
+      "source_type": "realworld",
+      "citeaudit_predict": true,
+      "citation_text": "Longchao Da, Kuanru Liou, Tiejin Chen, Xuesong Zhou, Xiangyong Luo, Yezhou Yang, and Hua Wei. Open-ti: Open traffic intelligence with augmented language model. International Journal of Machine Learning and Cybernetics, 15(10):4761–4786, 2024."
+    }
+  }
+}

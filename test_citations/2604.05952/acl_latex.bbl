@@ -1,0 +1,154 @@
+\begin{thebibliography}{30}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Chen and Mueller(2023)}]{chen2023quantifying}
+Jiuhai Chen and Jonas Mueller. 2023.
+\newblock Quantifying uncertainty in answers from any language model and enhancing their trustworthiness.
+\newblock \emph{arXiv preprint arXiv:2308.16175}.
+
+\bibitem[{Chen et~al.(2025)Chen, Ren, Liu, Hu, Tian, Xie, Liu, Zhang, Liu, Gong et~al.}]{chen2025xbench}
+Kaiyuan Chen, Yixin Ren, Yang Liu, Xiaobo Hu, Haotong Tian, Tianbao Xie, Fangfu Liu, Haoye Zhang, Hongzhang Liu, Yuan Gong, and 1 others. 2025.
+\newblock xbench: Tracking agents productivity scaling with profession-aligned real-world evaluations.
+\newblock \emph{arXiv preprint arXiv:2506.13651}.
+
+\bibitem[{Du et~al.(2025)Du, Xu, Zhu, Wang, and Mao}]{du2025deepresearch}
+Mingxuan Du, Benfeng Xu, Chiwei Zhu, Xiaorui Wang, and Zhendong Mao. 2025.
+\newblock Deepresearch bench: A comprehensive benchmark for deep research agents.
+\newblock \emph{arXiv preprint}.
+
+\bibitem[{Guan et~al.(2025)Guan, Zeng, Meng, Xin, Lu, Lin, Han, Sun, and Zhou}]{guan2025deeprag}
+Xinyan Guan, Jiali Zeng, Fandong Meng, Chunlei Xin, Yaojie Lu, Hongyu Lin, Xianpei Han, Le~Sun, and Jie Zhou. 2025.
+\newblock Deeprag: Thinking to retrieve step by step for large language models.
+\newblock \emph{arXiv preprint arXiv:2502.01142}.
+
+\bibitem[{Huang et~al.(2025{\natexlab{a}})Huang, Liu, Jiang, Zhang, Yan, Li, and Zhao}]{huang2025manusearch}
+Lisheng Huang, Yichen Liu, Jinhao Jiang, Rongxiang Zhang, Jiahao Yan, Junyi Li, and Wayne~Xin Zhao. 2025{\natexlab{a}}.
+\newblock Manusearch: Democratizing deep search in large language models with a transparent and open multi-agent framework.
+\newblock \emph{arXiv preprint arXiv:2505.18105}.
+
+\bibitem[{Huang et~al.(2025{\natexlab{b}})Huang, Chen, Zhang, Li, Fang, Yang, Li, Shang, Xu, Hao et~al.}]{huang2025deep}
+Yuxuan Huang, Yihang Chen, Haozheng Zhang, Kang Li, Meng Fang, Linyi Yang, Xiaoguang Li, Lifeng Shang, Songcen Xu, Jianye Hao, and 1 others. 2025{\natexlab{b}}.
+\newblock Deep research agents: A systematic examination and roadmap.
+\newblock \emph{arXiv preprint arXiv:2506.18096}.
+
+\bibitem[{Lab et~al.(2025)Lab, Bao, Chen, Chen, Chen, Chen, Chen, Chen, Chen, Cheng et~al.}]{lab2025safework}
+Shanghai~AI Lab, Yicheng Bao, Guanxu Chen, Mingkang Chen, Yunhao Chen, Chiyu Chen, Lingjie Chen, Sirui Chen, Xinquan Chen, Jie Cheng, and 1 others. 2025.
+\newblock {SafeWork-R1}: Coevolving safety and intelligence under the {AI-45°} law.
+\newblock \emph{arXiv preprint arXiv:2507.18576}.
+
+\bibitem[{Li et~al.(2023)Li, Hammoud, Itani, Khizbullin, and Ghanem}]{li2023camel}
+Guohao Li, Hasan Hammoud, Hani Itani, Dmitrii Khizbullin, and Bernard Ghanem. 2023.
+\newblock Camel: Communicative agents for" mind" exploration of large language model society.
+\newblock \emph{Advances in Neural Information Processing Systems}, 36:51991--52008.
+
+\bibitem[{Liang et~al.(2025)Liang, Su, Lin, Wu, Zhao, and Li}]{liang2025reasoning}
+Jintao Liang, Gang Su, Huifeng Lin, You Wu, Rui Zhao, and Ziyue Li. 2025.
+\newblock Reasoning rag via system 1 or system 2: A survey on reasoning agentic retrieval-augmented generation for industry challenges.
+\newblock \emph{arXiv preprint arXiv:2506.10408}.
+
+\bibitem[{Liang et~al.(2024)Liang, Cao, Deng, Dou, and Deng}]{liang2024fourier}
+YuJie Liang, Zihan Cao, Shangqi Deng, Hong-Xia Dou, and Liang-Jian Deng. 2024.
+\newblock Fourier-enhanced implicit neural fusion network for multispectral and hyperspectral image fusion.
+\newblock \emph{Advances in Neural Information Processing Systems}, 37:63441--63465.
+
+\bibitem[{Lin et~al.(2022)Lin, Hilton, and Evans}]{lin2022teaching}
+Stephanie Lin, Jacob Hilton, and Owain Evans. 2022.
+\newblock Teaching models to express their uncertainty in words.
+\newblock \emph{arXiv preprint arXiv:2205.14334}.
+
+\bibitem[{Luo et~al.(2025)Luo, Wang, Li, and Wei}]{luo2025your}
+Beier Luo, Shuoyuan Wang, Yixuan Li, and Hongxin Wei. 2025.
+\newblock Your pre-trained llm is secretly an unsupervised confidence calibrator.
+\newblock \emph{arXiv preprint arXiv:2505.16690}.
+
+\bibitem[{Lyu et~al.(2025)Lyu, Shridhar, Malaviya, Zhang, Elazar, Tandon, Apidianaki, Sachan, and Callison-Burch}]{lyu2025calibrating}
+Qing Lyu, Kumar Shridhar, Chaitanya Malaviya, Li~Zhang, Yanai Elazar, Niket Tandon, Marianna Apidianaki, Mrinmaya Sachan, and Chris Callison-Burch. 2025.
+\newblock Calibrating large language models with sample consistency.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial Intelligence}, volume~39, pages 19260--19268.
+
+\bibitem[{Manggala et~al.(2024)Manggala, Mastakouri, Kirschbaum, Kasiviswanathan, and Ramdas}]{manggala2024qa}
+Putra Manggala, Atalanti Mastakouri, Elke Kirschbaum, Shiva~Prasad Kasiviswanathan, and Aaditya Ramdas. 2024.
+\newblock Qa-calibration of language model confidence scores.
+\newblock \emph{arXiv preprint arXiv:2410.06615}.
+
+\bibitem[{Mialon et~al.(2023)Mialon, Fourrier, Wolf, LeCun, and Scialom}]{mialon2023gaia}
+Gr{\'e}goire Mialon, Cl{\'e}mentine Fourrier, Thomas Wolf, Yann LeCun, and Thomas Scialom. 2023.
+\newblock Gaia: a benchmark for general ai assistants.
+\newblock In \emph{The Twelfth International Conference on Learning Representations}.
+
+\bibitem[{Mielke et~al.(2022)Mielke, Szlam, Dinan, and Boureau}]{mielke2022reducing}
+Sabrina~J Mielke, Arthur Szlam, Emily Dinan, and Y-Lan Boureau. 2022.
+\newblock Reducing conversational agents’ overconfidence through linguistic calibration.
+\newblock \emph{Transactions of the Association for Computational Linguistics}, 10:857--872.
+
+\bibitem[{Qian et~al.(2023)Qian, Liu, Liu, Chen, Dang, Li, Yang, Chen, Su, Cong et~al.}]{qian2023chatdev}
+Chen Qian, Wei Liu, Hongzhang Liu, Nuo Chen, Yufan Dang, Jiahao Li, Cheng Yang, Weize Chen, Yusheng Su, Xin Cong, and 1 others. 2023.
+\newblock Chatdev: Communicative agents for software development.
+\newblock \emph{arXiv preprint arXiv:2307.07924}.
+
+\bibitem[{Rein et~al.(2024)Rein, Hou, Stickland, Petty, Pang, Dirani, Michael, and Bowman}]{rein2024gpqa}
+David Rein, Betty~Li Hou, Asa~Cooper Stickland, Jackson Petty, Richard~Yuanzhe Pang, Julien Dirani, Julian Michael, and Samuel~R. Bowman. 2024.
+\newblock \href {https://openreview.net/forum?id=Ti67584b98} {{GPQA}: A graduate-level google-proof q\&a benchmark}.
+\newblock In \emph{First Conference on Language Modeling}.
+
+\bibitem[{Rodegast et~al.(2024)Rodegast, Maier, Kneifl, and Fehr}]{rodegast2024using}
+Philipp Rodegast, Steffen Maier, Jonas Kneifl, and J{"o}rg Fehr. 2024.
+\newblock On using machine learning algorithms for motorcycle collision detection.
+\newblock \emph{Discover Applied Sciences}, 6(6):326.
+
+\bibitem[{Taubenfeld et~al.(2025)Taubenfeld, Sheffer, Ofek, Feder, Goldstein, Gekhman, and Yona}]{taubenfeld2025confidence}
+Amir Taubenfeld, Tom Sheffer, Eran Ofek, Amir Feder, Ariel Goldstein, Zorik Gekhman, and Gal Yona. 2025.
+\newblock Confidence improves self-consistency in llms.
+\newblock \emph{arXiv preprint arXiv:2502.06233}.
+
+\bibitem[{Wei et~al.(2025)Wei, Sun, Papay, McKinney, Han, Fulford, Chung, Passos, Fedus, and Glaese}]{wei2025browsecomp}
+Jason Wei, Zhiqing Sun, Spencer Papay, Scott McKinney, Jeffrey Han, Isa Fulford, Hyung~Won Chung, Alex~Tachard Passos, William Fedus, and Amelia Glaese. 2025.
+\newblock Browsecomp: A simple yet challenging benchmark for browsing agents.
+\newblock \emph{arXiv preprint arXiv:2504.12516}.
+
+\bibitem[{Wu et~al.(2025)Wu, Zhu, Liu, Xu, and Jin}]{wu2025agentic}
+Junde Wu, Jiayuan Zhu, Yuyuan Liu, Min Xu, and Yueming Jin. 2025.
+\newblock Agentic reasoning: A streamlined framework for enhancing llm reasoning with agentic tools.
+\newblock In \emph{Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}, pages 28489--28503.
+
+\bibitem[{Xi et~al.(2025)Xi, Lin, Xiao, Zhou, Shan, Gao, Zhu, Liu, Yu, and Zhang}]{xi2025survey}
+Yunjia Xi, Jianghao Lin, Yongzhao Xiao, Zheli Zhou, Rong Shan, Te~Gao, Jiachen Zhu, Weiwen Liu, Yong Yu, and Weinan Zhang. 2025.
+\newblock A survey of llm-based deep search agents: Paradigm, optimization, evaluation, and challenges.
+\newblock \emph{arXiv preprint arXiv:2508.05668}.
+
+\bibitem[{Xiong et~al.(2023)Xiong, Hu, Lu, Li, Fu, He, and Hooi}]{xiong2023can}
+Miao Xiong, Zhiyuan Hu, Xinyang Lu, Yifei Li, Jie Fu, Junxian He, and Bryan Hooi. 2023.
+\newblock Can llms express their uncertainty? an empirical evaluation of confidence elicitation in llms.
+\newblock \emph{arXiv preprint arXiv:2306.13063}.
+
+\bibitem[{Xu and Peng(2025)}]{xu2025comprehensive}
+Renjun Xu and Jingwen Peng. 2025.
+\newblock A comprehensive survey of deep research: Systems, methodologies, and applications.
+\newblock \emph{arXiv preprint arXiv:2506.12594}.
+
+\bibitem[{Yang et~al.(2024)Yang, Tsai, and Yamada}]{yang2024verbalized}
+Daniel Yang, Yao-Hung~Hubert Tsai, and Makoto Yamada. 2024.
+\newblock On verbalized confidence scores for llms.
+\newblock \emph{arXiv preprint arXiv:2412.14737}.
+
+\bibitem[{Yang et~al.(2023)Yang, Dan, Roth, and Lee}]{yang2023calibration}
+Yahan Yang, Soham Dan, Dan Roth, and Insup Lee. 2023.
+\newblock On the calibration of multilingual question answering llms.
+\newblock \emph{arXiv preprint arXiv:2311.08669}.
+
+\bibitem[{Yu et~al.(2023)Yu, Wang, Shao, Sun, Wu, and Xu}]{yu2023dsformer}
+Chengqing Yu, Fei Wang, Zezhi Shao, Tao Sun, Lin Wu, and Yongjun Xu. 2023.
+\newblock Dsformer: A double sampling transformer for multivariate time series long-term prediction.
+\newblock In \emph{Proceedings of the 32nd ACM international conference on information and knowledge management}, pages 3062--3072.
+
+\bibitem[{Zhang et~al.(2024)Zhang, Sun, Chen, Pfister, Zhang, and Arik}]{zhang2024chain}
+Yusen Zhang, Ruoxi Sun, Yanfei Chen, Tomas Pfister, Rui Zhang, and Sercan Arik. 2024.
+\newblock Chain of agents: Large language models collaborating on long-context tasks.
+\newblock \emph{Advances in Neural Information Processing Systems}, 37:132208--132237.
+
+\bibitem[{Zhou et~al.(2025)Zhou, Leon, Ying, Zhang, Shao, Ye, Chong, Jin, Xie, Cao et~al.}]{zhou2025browsecomp}
+Peilin Zhou, Bruce Leon, Xiang Ying, Can Zhang, Yifan Shao, Qichen Ye, Dading Chong, Zhiling Jin, Chenxuan Xie, Meng Cao, and 1 others. 2025.
+\newblock Browsecomp-zh: Benchmarking web browsing ability of large language models in chinese.
+\newblock \emph{arXiv preprint arXiv:2504.19314}.
+
+\end{thebibliography}

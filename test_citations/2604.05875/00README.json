@@ -1,0 +1,33 @@
+{
+   "sources" : [
+      {
+         "usage" : "toplevel",
+         "filename" : "acl_latex_camera_ready.tex"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "acl_natbib.bst"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "custom.bib"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "latex/acl_natbib.bst"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "latex/custom.bib"
+      },
+      {
+         "usage" : "ignore",
+         "filename" : "tables/Effect_Analysis_of_the_generated_triples_for_KGQA_inference..tex"
+      }
+   ],
+   "spec_version" : 1,
+   "texlive_version" : "2025",
+   "process" : {
+      "compiler" : "pdflatex"
+   }
+}

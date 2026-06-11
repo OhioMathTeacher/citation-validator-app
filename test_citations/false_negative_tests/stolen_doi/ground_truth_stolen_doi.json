@@ -1,0 +1,602 @@
+[
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/nature14539) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.48550/arXiv.1706.03762) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/nature14539) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.48550/arXiv.1706.03762) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.48550/arXiv.1706.03762) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/nature14539) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/nature14539) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.48550/arXiv.1706.03762) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/nature14539) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/nature14539) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/nature14539) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.48550/arXiv.1706.03762) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/nature14539) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/nature14539) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.48550/arXiv.1706.03762) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.48550/arXiv.1706.03762) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0001.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.48550/arXiv.1706.03762) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.48550/arXiv.1706.03762) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/nature14539) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.48550/arXiv.1706.03762) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/nature14539) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/nature14539) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.48550/arXiv.1706.03762) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.48550/arXiv.1706.03762) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/nature14539) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/nature14539) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/nature14539) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/nature14539) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/nature14539) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1126/science.1127647) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-021-03819-2) with completely fabricated metadata"
+  },
+  {
+    "file": "false_negative_tests/stolen_doi/stolen_doi_0002.bib",
+    "type": "stolen_doi",
+    "expected": "INVALID",
+    "note": "Real DOI (10.1038/s41586-019-1799-6) with completely fabricated metadata"
+  }
+]

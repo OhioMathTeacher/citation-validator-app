@@ -1,0 +1,16 @@
+\renewcommand{\arraystretch}{1.5}
+\begin{table*}[t!]
+\centering
+\begin{tabular}{>{\hspace{0pt}}m{0.1\linewidth}|>{\hspace{0pt}}m{0.83\linewidth}} 
+\hline
+\rowcolor[rgb]{0.8588,0.8588,0.8588} Question   & what type of government did soviet union have? \\ 
+\hline
+\rowcolor[rgb]{0.9490,0.9490,0.9490} JCQL w/o \texttt{complete}   & Thought 1:~I need to find out what type of government the Soviet Union had.\par{}Action 1:~Search[Soviet Union]\par{}Observation 1:~soviet union, history of topic, history of the soviet union\par{}soviet union, legislative body, supreme soviet of the soviet union\par{}soviet union, official religion, state atheism\par\null\par{}Thought 2:~The Soviet Union had a legislative body called the Supreme Soviet, which implies a type of government. I need to generate more information about the government structure of the Soviet Union based on this observation.\par{}Action 2:~\textcolor[rgb]{0.7529,0,0}{Generate[type of government of the Soviet Union]}\par{}Observation 2: soviet union, ideological basis, Marxism-Leninism\par{}soviet union, type of government, one-party socialist republic\par\null\par{}Thought 3:~The Soviet Union is characterized as a one-party socialist republic based on its ideological basis of Marxism-Leninism.\par{}Action 3:~Finish[one-party socialist republic]  \\
+\hline
+\rowcolor[rgb]{0.9490,0.9490,0.9490} JCQL w/o \texttt{generate}                     & Thought 1:~The question requires identifying the type of government in the Soviet Union. I should gather information regarding the political structure and governance of the Soviet Union.\par{}Action 1:~Search[Soviet Union]\par{}Observation 1:~Soviet Union, foundational text, Declaration of the Creation of the Union of Soviet Socialist Republics\par{}Soviet Union, foundational text, Treaty on the Creation of the Union of Soviet Socialist Republics\par{}Soviet Union, legislative body, Supreme Soviet of the Soviet Union\par{}member of the Supreme Soviet of the Russian Soviet Federative Socialist Republic, country, Soviet Union\par\null\par{}Thought 2:~The current information provides some context about the Soviet Union but lacks specific details about its type of government. I need to find the governance structure of the Soviet Union.\par{}Action 2:~\textcolor[rgb]{0.4549,0.7137,0.0078}{Complete[Soviet Union | instance of]}\par{}Observation 2: Soviet Union, instance of, country\par{}Soviet Union, instance of, \textcolor[rgb]{0,0.4392,0.7529}{socialist state}\par\null\par{}Thought 3:~The results indicate that the Soviet Union was a socialist state. This clarifies the type of government. Therefore, I can summarize the answers.\par{}Action 3:~Finish[\textcolor[rgb]{0,0.4392,0.7529}{socialist state}]. \\
+\hline
+\end{tabular}
+\caption{The comparison between \texttt{generate} and \texttt{complete} under the setting i.e., 50\% KB.}
+\label{tab:cmp_gog}
+\end{table*}
+\renewcommand{\arraystretch}{1}

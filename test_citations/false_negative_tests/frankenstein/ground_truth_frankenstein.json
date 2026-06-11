@@ -1,0 +1,602 @@
+[
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0001.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  },
+  {
+    "file": "false_negative_tests/frankenstein/frankenstein_0002.bib",
+    "type": "frankenstein",
+    "expected": "INVALID",
+    "note": "Real author + generic title + real journal (fabricated combination)"
+  }
+]

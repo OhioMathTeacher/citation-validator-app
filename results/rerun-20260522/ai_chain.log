@@ -1,0 +1,1028 @@
+[2026-05-23T11:31:22Z] [ai] === AI CHAIN v2 START  HEAD=7973dc2 ===
+[2026-05-23T11:31:22Z] [ai] PASS A compound-deception-ansari / gemini -- start (before: compound-deception-ansari_gemini_20260410-150402.json)
+
+======================================================================
+  BENCHMARK: Compound Deception — NeurIPS 2025 Fakes
+  Dataset:   compound-deception-ansari
+  AI:        gemini (Gemini 2.5 Flash)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 100 BibTeX entries
+Ground truth: 100 per-citation labels loaded
+
+Step 1/2: Deterministic validation...
+  Done in 1252.4s — 0 valid, 96 warning, 0 suspicious, 4 invalid
+
+Step 2/2: AI analysis on 100 citations...
+  10/100 complete...
+  20/100 complete...
+  30/100 complete...
+  40/100 complete...
+  50/100 complete...
+  60/100 complete...
+  70/100 complete...
+  80/100 complete...
+  90/100 complete...
+  100/100 complete...
+  AI pass done in 107.4s (100 successful calls, 0 errors)
+  Tokens: 48481 in, 10387 out, 58868 total
+  Avg per call: 589 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      0
+  Warning:    6
+  Suspicious: 90
+  Invalid:    4
+
+  Accuracy:   94.0%
+  F1 Score:   96.9%
+  TP: 94  TN: 0  FP: 0  FN: 6  Skipped: 0
+
+  False negatives (missed fakes):
+    - ansari100_022
+    - ansari100_049
+    - ansari100_059
+    - ansari100_084
+    - ansari100_087
+    - ansari100_100
+
+  Time: 1359.8s (det: 1252.4s, ai: 107.4s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/compound-deception-ansari_gemini_20260523-115402.json
+[2026-05-23T11:54:02Z] [ai] PASS A compound-deception-ansari/gemini -- done (rc=0, new: compound-deception-ansari_gemini_20260523-115402.json)
+[2026-05-23T11:54:02Z] [ai] GATE PASSED -- AI plumbing works. Continuing full AI suite.
+[2026-05-23T11:54:02Z] [ai] PASS A compound-deception-ansari / anthropic -- start (before: compound-deception-ansari_anthropic_20260410-154525.json)
+
+======================================================================
+  BENCHMARK: Compound Deception — NeurIPS 2025 Fakes
+  Dataset:   compound-deception-ansari
+  AI:        anthropic (Anthropic Claude Sonnet 4)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 100 BibTeX entries
+Ground truth: 100 per-citation labels loaded
+
+Step 1/2: Deterministic validation...
+  Done in 1367.5s — 3 valid, 93 warning, 0 suspicious, 4 invalid
+
+Step 2/2: AI analysis on 97 citations...
+  10/97 complete...
+  20/97 complete...
+  30/97 complete...
+  40/97 complete...
+  50/97 complete...
+  60/97 complete...
+  70/97 complete...
+  80/97 complete...
+  90/97 complete...
+  97/97 complete...
+  AI pass done in 313.6s (97 successful calls, 0 errors)
+  Tokens: 50116 in, 8886 out, 59002 total
+  Avg per call: 608 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      3
+  Warning:    14
+  Suspicious: 79
+  Invalid:    4
+
+  Accuracy:   83.0%
+  F1 Score:   90.7%
+  TP: 83  TN: 0  FP: 0  FN: 17  Skipped: 0
+
+  False negatives (missed fakes):
+    - ansari100_019
+    - ansari100_022
+    - ansari100_023
+    - ansari100_025
+    - ansari100_030
+    - ansari100_033
+    - ansari100_043
+    - ansari100_044
+    - ansari100_047
+    - ansari100_059
+    - ansari100_067
+    - ansari100_070
+    - ansari100_073
+    - ansari100_084
+    - ansari100_087
+    - ansari100_092
+    - ansari100_100
+
+  Time: 1681.1s (det: 1367.5s, ai: 313.6s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/compound-deception-ansari_anthropic_20260523-122203.json
+[2026-05-23T12:22:03Z] [ai] PASS A compound-deception-ansari/anthropic -- done (rc=0, new: compound-deception-ansari_anthropic_20260523-122203.json)
+[2026-05-23T12:22:03Z] [ai] PASS A ojsm-fake-frankenstein / gemini -- start (before: NONE)
+
+======================================================================
+  BENCHMARK: Frankenstein Citations
+  Dataset:   ojsm-fake-frankenstein
+  AI:        gemini (Gemini 2.5 Flash)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 100 BibTeX entries
+Ground truth: dataset-level = invalid
+
+Step 1/2: Deterministic validation...
+  Done in 1357.2s — 1 valid, 99 warning, 0 suspicious, 0 invalid
+
+Step 2/2: AI analysis on 99 citations...
+  10/99 complete...
+  20/99 complete...
+  30/99 complete...
+  40/99 complete...
+  50/99 complete...
+  60/99 complete...
+  70/99 complete...
+  80/99 complete...
+  90/99 complete...
+  99/99 complete...
+  AI pass done in 106.4s (99 successful calls, 0 errors)
+  Tokens: 43347 in, 10984 out, 54331 total
+  Avg per call: 549 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      1
+  Warning:    0
+  Suspicious: 99
+  Invalid:    0
+
+  Accuracy:   99.0%
+  F1 Score:   99.5%
+  TP: 99  TN: 0  FP: 0  FN: 1  Skipped: 0
+
+  False negatives (missed fakes):
+    - frankenstein0007
+
+  Time: 1463.6s (det: 1357.2s, ai: 106.4s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/ojsm-fake-frankenstein_gemini_20260523-124626.json
+[2026-05-23T12:46:26Z] [ai] PASS A ojsm-fake-frankenstein/gemini -- done (rc=0, new: ojsm-fake-frankenstein_gemini_20260523-124626.json)
+[2026-05-23T12:46:26Z] [ai] PASS A ojsm-fake-frankenstein / anthropic -- start (before: NONE)
+
+======================================================================
+  BENCHMARK: Frankenstein Citations
+  Dataset:   ojsm-fake-frankenstein
+  AI:        anthropic (Anthropic Claude Sonnet 4)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 100 BibTeX entries
+Ground truth: dataset-level = invalid
+
+Step 1/2: Deterministic validation...
+  Done in 1351.3s — 0 valid, 100 warning, 0 suspicious, 0 invalid
+
+Step 2/2: AI analysis on 100 citations...
+  10/100 complete...
+  20/100 complete...
+  30/100 complete...
+  40/100 complete...
+  50/100 complete...
+  60/100 complete...
+  70/100 complete...
+  80/100 complete...
+  90/100 complete...
+  100/100 complete...
+  AI pass done in 320.3s (100 successful calls, 0 errors)
+  Tokens: 45472 in, 8858 out, 54330 total
+  Avg per call: 543 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      0
+  Warning:    0
+  Suspicious: 100
+  Invalid:    0
+
+  Accuracy:   100.0%
+  F1 Score:   100.0%
+  TP: 100  TN: 0  FP: 0  FN: 0  Skipped: 0
+
+  Time: 1671.6s (det: 1351.3s, ai: 320.3s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/ojsm-fake-frankenstein_anthropic_20260523-131418.json
+[2026-05-23T13:14:18Z] [ai] PASS A ojsm-fake-frankenstein/anthropic -- done (rc=0, new: ojsm-fake-frankenstein_anthropic_20260523-131418.json)
+[2026-05-23T13:14:18Z] [ai] PASS A ojsm-real-arxiv / gemini -- start (before: ojsm-real-arxiv_gemini_20260410-161256.json)
+
+======================================================================
+  BENCHMARK: Real arXiv CS Citations (2024)
+  Dataset:   ojsm-real-arxiv
+  AI:        gemini (Gemini 2.5 Flash)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 285 BibTeX entries
+Ground truth: dataset-level = valid
+
+Step 1/2: Deterministic validation...
+  Done in 3774.7s — 90 valid, 195 warning, 0 suspicious, 0 invalid
+
+Step 2/2: AI analysis on 195 citations...
+  10/195 complete...
+  20/195 complete...
+  30/195 complete...
+  40/195 complete...
+  50/195 complete...
+  60/195 complete...
+  70/195 complete...
+  80/195 complete...
+  90/195 complete...
+  100/195 complete...
+  110/195 complete...
+  120/195 complete...
+  130/195 complete...
+  140/195 complete...
+  150/195 complete...
+  160/195 complete...
+  170/195 complete...
+  180/195 complete...
+  190/195 complete...
+  195/195 complete...
+  AI pass done in 239.9s (195 successful calls, 0 errors)
+  Tokens: 92436 in, 22874 out, 115310 total
+  Avg per call: 591 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      90
+  Warning:    46
+  Suspicious: 149
+  Invalid:    0
+
+  Accuracy:   47.7%
+  F1 Score:   0.0%
+  TP: 0  TN: 136  FP: 149  FN: 0  Skipped: 0
+
+  False positives (wrongly flagged real):
+    - diaglink
+    - pdrr
+    - yao2019kgbertbertknowledgegraph
+    - Huang_2024
+    - robertson2009
+    - vrandevcic2014wikidata
+    - DBLP:journals/tkde/PanLWCWW24
+    - DBLP:journals/tgdk/PanRKSCDJO0LBMB23
+    - DBLP:journals/tkde/SongSLLSXZ24
+    - DBLP:journals/pvldb/FanGZZCCLMDT24
+    - satkgc
+    - lmp
+    - RoG
+    - Incremental_Learning2
+    - Plan-on-Graph
+    - GoldE
+    - chen-etal-2021-hitter
+    - luo-etal-2024-chatkbqa
+    - li2024cok
+    - sun2023thinkongraph
+    - sun2018rotate
+    - yang2015
+    - jiang2024kgfit
+    - ayoola2022refinedefficientzeroshotcapableapproach
+    - balazevic2019tucker
+    - bang2023multitaskmultilingualmultimodalevaluation
+    - bordes2013
+    - chen-etal-2023-dipping
+    - KG_S2S
+    - li2023haluevallargescalehallucinationevaluation
+    - lihui2022binet
+    - xu2024sayself
+    - saxena2020improving
+    - saxena2022kgt5
+    - sun-etal-2019-pullnet
+    - trouillon2016complex
+    - wang-etal-2022-simkgc
+    - xu-etal-2024-generate
+    - chatkbqa
+    - qwen3-embedding
+    - diaglink
+    - achiam2023gpt
+    - yao2024exploringlargelanguagemodels
+    - robertson2009
+    - vrandevcic2014wikidata
+    - DBLP:journals/tgdk/PanRKSCDJO0LBMB23
+    - DBLP:journals/tkde/SongSLLSXZ24
+    - raa-kgc
+    - satkgc
+    - lmp
+    - RoG
+    - Incremental_Learning2
+    - Plan-on-Graph
+    - GoldE
+    - chen-etal-2021-hitter
+    - luo-etal-2024-chatkbqa
+    - DBLP:conf/ijcai/Zhao0W0024
+    - fu2023complexitybasedpromptingmultistepreasoning
+    - li2024cok
+    - sun2023thinkongraph
+    - yang2015
+    - ayoola2022refinedefficientzeroshotcapableapproach
+    - bang2023multitaskmultilingualmultimodalevaluation
+    - bordes2013
+    - chen-etal-2023-dipping
+    - KG_S2S
+    - kochsiek2023friendly
+    - li2023haluevallargescalehallucinationevaluation
+    - lihui2022binet
+    - liu2024finetuninggenerativelargelanguage
+    - saxena2020improving
+    - saxena2022kgt5
+    - wang-etal-2022-simkgc
+    - wei2023kicgpt
+    - chatkbqa
+    - yih-etal-2016-value
+    - qwen3-embedding
+    - pdrr
+    - achiam2023gpt
+    - yao2019kgbertbertknowledgegraph
+    - 2020t5
+    - lehmann2015dbpedia
+    - robertson2009
+    - vrandevcic2014wikidata
+    - DBLP:journals/tkde/PanLWCWW24
+    - raa-kgc
+    - satkgc
+    - lmp
+    - RoG
+    - chen-etal-2021-hitter
+    - luo-etal-2024-chatkbqa
+    - DBLP:conf/ijcai/Zhao0W0024
+    - fu2023complexitybasedpromptingmultistepreasoning
+    - li2024cok
+    - yang2015
+    - jiang2024kgfit
+    - ayoola2022refinedefficientzeroshotcapableapproach
+    - bang2023multitaskmultilingualmultimodalevaluation
+    - chen-etal-2023-dipping
+    - kochsiek2023friendly
+    - li2023haluevallargescalehallucinationevaluation
+    - saxena2020improving
+    - sun-etal-2019-pullnet
+    - talmor-berant-2018-web
+    - trouillon2016complex
+    - wang-etal-2022-simkgc
+    - xu-etal-2024-generate
+    - chatkbqa
+    - yih-etal-2016-value
+    - Aho:72
+    - andrew2007scalable
+    - huang2025deep
+    - wu2025agentic
+    - wang2024mint
+    - huang2025manusearch
+    - liang2025reasoning
+    - lin2022uncertainty
+    - xiong2024uncertainty
+    - zhang2024fidelity
+    - kuhn2023semantic
+    - lin2022
+    - chen2023
+    - taubenfeld2025
+    - ozaki2024
+    - li2025
+    - du2025deepresearch
+    - rein2024gpqa
+    - chen2025xbench
+    - rodegast2024using
+    - liang2024fourier
+    - li2023camel
+    - luo2025your
+    - manggala2024qa
+    - rodegast2024using
+    - yu2023dsformer
+    - du2025deepresearch
+    - wang2020automatic
+    - guan2025deeprag
+    - xu2025comprehensive
+    - wei2025browsecomp
+    - zhou2025browsecomp
+    - mialon2023gaia
+    - liang2025reasoning
+    - lin2022teaching
+    - yang2024verbalized
+    - xiong2023can
+    - lyu2025calibrating
+    - rein2024gpqa
+    - chen2025xbench
+
+  Time: 4014.6s (det: 3774.7s, ai: 239.9s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/ojsm-real-arxiv_gemini_20260523-142113.json
+[2026-05-23T14:21:13Z] [ai] PASS A ojsm-real-arxiv/gemini -- done (rc=0, new: ojsm-real-arxiv_gemini_20260523-142113.json)
+[2026-05-23T14:21:13Z] [ai] PASS A ojsm-real-crossref / gemini -- start (before: ojsm-real-crossref_gemini_20260410-161342.json)
+
+======================================================================
+  BENCHMARK: Real CrossRef Random Sample
+  Dataset:   ojsm-real-crossref
+  AI:        gemini (Gemini 2.5 Flash)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 96 BibTeX entries
+Ground truth: dataset-level = valid
+
+Step 1/2: Deterministic validation...
+  Done in 61.9s — 94 valid, 2 warning, 0 suspicious, 0 invalid
+
+Step 2/2: AI analysis on 2 citations...
+  2/2 complete...
+  AI pass done in 2.4s (2 successful calls, 0 errors)
+  Tokens: 956 in, 231 out, 1187 total
+  Avg per call: 594 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      94
+  Warning:    0
+  Suspicious: 2
+  Invalid:    0
+
+  Accuracy:   97.9%
+  F1 Score:   0.0%
+  TP: 0  TN: 94  FP: 2  FN: 0  Skipped: 0
+
+  False positives (wrongly flagged real):
+    - 김계자2013
+    - ward1885
+
+  Time: 64.3s (det: 61.9s, ai: 2.4s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/ojsm-real-crossref_gemini_20260523-142217.json
+[2026-05-23T14:22:17Z] [ai] PASS A ojsm-real-crossref/gemini -- done (rc=0, new: ojsm-real-crossref_gemini_20260523-142217.json)
+[2026-05-23T14:22:17Z] [ai] PASS A citeaudit-subset/ai-gemini -- start (before: citeaudit_citeaudit-realworld-subset_ai_20260521T210132Z.json)
+====================================================================
+  CiteAudit external validation — CiteAudit — Real-World Balanced Subset
+  Dataset: citeaudit-realworld-subset  (500 citations)
+  AI tier: gemini
+====================================================================
+
+Step 1: deterministic validation (500 citations)...
+  100/500  (1278s elapsed)
+  200/500  (2567s elapsed)
+  300/500  (3886s elapsed)
+  400/500  (5171s elapsed)
+  500/500  (6528s elapsed)
+  deterministic done in 6528s
+
+Step 2: Gemini AI tier on 392 non-valid citations...
+  50/392  (23600 tokens, 0 errors)
+  100/392  (47592 tokens, 0 errors)
+  150/392  (75860 tokens, 0 errors)
+  200/392  (100014 tokens, 0 errors)
+  250/392  (123996 tokens, 0 errors)
+  300/392  (148422 tokens, 0 errors)
+  350/392  (173064 tokens, 0 errors)
+  392/392  (192653 tokens, 0 errors)
+  AI tier done in 481s
+
+====================================================================
+  RESULTS — citeaudit-realworld-subset
+====================================================================
+                      valid  warning  suspic.  invalid   error
+  real citations         71       13      165        1       0
+  fake citations         37        7      200        6       0
+
+  Confusion matrix:  TP=206  FP=166  TN=84  FN=44
+  False-positive rate (FPR): 66.4%   <- key claim: real citations wrongly flagged
+  Recall (fake detection):   82.4%
+  Precision:                 55.4%
+  F1:                        66.2%
+
+  Deterministic-only FPR was 0.4%, recall 2.4% (before the AI tier)
+  AI tier: 392 calls, 0 errors, 192653 tokens (~19.3% of Gemini's daily free quota)
+====================================================================
+
+Saved: results/experiments/citeaudit_citeaudit-realworld-subset_ai_20260523T161906Z.json
+[2026-05-23T16:19:06Z] [ai] PASS A citeaudit-subset/ai-gemini -- done (rc=0)
+[2026-05-23T16:19:06Z] [ai] --- Pass A complete, starting Pass B ---
+[2026-05-23T16:19:06Z] [ai] PASS B compound-deception-ansari / gemini -- start (before: compound-deception-ansari_gemini_20260523-115402.json)
+
+======================================================================
+  BENCHMARK: Compound Deception — NeurIPS 2025 Fakes
+  Dataset:   compound-deception-ansari
+  AI:        gemini (Gemini 2.5 Flash)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 100 BibTeX entries
+Ground truth: 100 per-citation labels loaded
+
+Step 1/2: Deterministic validation...
+  Done in 1261.2s — 5 valid, 91 warning, 0 suspicious, 4 invalid
+
+Step 2/2: AI analysis on 95 citations...
+  10/95 complete...
+  20/95 complete...
+  30/95 complete...
+  40/95 complete...
+  50/95 complete...
+  60/95 complete...
+  70/95 complete...
+  80/95 complete...
+  90/95 complete...
+  95/95 complete...
+  AI pass done in 105.1s (95 successful calls, 0 errors)
+  Tokens: 45947 in, 9886 out, 55833 total
+  Avg per call: 588 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      5
+  Warning:    5
+  Suspicious: 86
+  Invalid:    4
+
+  Accuracy:   90.0%
+  F1 Score:   94.7%
+  TP: 90  TN: 0  FP: 0  FN: 10  Skipped: 0
+
+  False negatives (missed fakes):
+    - ansari100_022
+    - ansari100_023
+    - ansari100_033
+    - ansari100_037
+    - ansari100_059
+    - ansari100_073
+    - ansari100_084
+    - ansari100_085
+    - ansari100_087
+    - ansari100_100
+
+  Time: 1366.3s (det: 1261.2s, ai: 105.1s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/compound-deception-ansari_gemini_20260523-164153.json
+[2026-05-23T16:41:53Z] [ai] PASS B compound-deception-ansari/gemini -- done (rc=0, new: compound-deception-ansari_gemini_20260523-164153.json)
+[2026-05-23T16:41:53Z] [ai] PASS B compound-deception-ansari / anthropic -- start (before: compound-deception-ansari_anthropic_20260523-122203.json)
+
+======================================================================
+  BENCHMARK: Compound Deception — NeurIPS 2025 Fakes
+  Dataset:   compound-deception-ansari
+  AI:        anthropic (Anthropic Claude Sonnet 4)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 100 BibTeX entries
+Ground truth: 100 per-citation labels loaded
+
+Step 1/2: Deterministic validation...
+  Done in 1250.0s — 2 valid, 94 warning, 0 suspicious, 4 invalid
+
+Step 2/2: AI analysis on 98 citations...
+  10/98 complete...
+  20/98 complete...
+  30/98 complete...
+  40/98 complete...
+  50/98 complete...
+  60/98 complete...
+  70/98 complete...
+  80/98 complete...
+  90/98 complete...
+  98/98 complete...
+  AI pass done in 315.9s (98 successful calls, 0 errors)
+  Tokens: 50566 in, 9135 out, 59701 total
+  Avg per call: 609 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      2
+  Warning:    11
+  Suspicious: 83
+  Invalid:    4
+
+  Accuracy:   87.0%
+  F1 Score:   93.0%
+  TP: 87  TN: 0  FP: 0  FN: 13  Skipped: 0
+
+  False negatives (missed fakes):
+    - ansari100_022
+    - ansari100_025
+    - ansari100_033
+    - ansari100_037
+    - ansari100_043
+    - ansari100_044
+    - ansari100_047
+    - ansari100_059
+    - ansari100_070
+    - ansari100_084
+    - ansari100_087
+    - ansari100_092
+    - ansari100_100
+
+  Time: 1565.9s (det: 1250.0s, ai: 315.9s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/compound-deception-ansari_anthropic_20260523-170759.json
+[2026-05-23T17:07:59Z] [ai] PASS B compound-deception-ansari/anthropic -- done (rc=0, new: compound-deception-ansari_anthropic_20260523-170759.json)
+[2026-05-23T17:07:59Z] [ai] PASS B ojsm-fake-frankenstein / gemini -- start (before: ojsm-fake-frankenstein_gemini_20260523-124626.json)
+
+======================================================================
+  BENCHMARK: Frankenstein Citations
+  Dataset:   ojsm-fake-frankenstein
+  AI:        gemini (Gemini 2.5 Flash)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 100 BibTeX entries
+Ground truth: dataset-level = invalid
+
+Step 1/2: Deterministic validation...
+  Done in 1334.5s — 1 valid, 99 warning, 0 suspicious, 0 invalid
+
+Step 2/2: AI analysis on 99 citations...
+  10/99 complete...
+  20/99 complete...
+  30/99 complete...
+  40/99 complete...
+  50/99 complete...
+  60/99 complete...
+  70/99 complete...
+  80/99 complete...
+  90/99 complete...
+  99/99 complete...
+  AI pass done in 109.4s (99 successful calls, 0 errors)
+  Tokens: 43369 in, 11232 out, 54601 total
+  Avg per call: 552 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      1
+  Warning:    0
+  Suspicious: 99
+  Invalid:    0
+
+  Accuracy:   99.0%
+  F1 Score:   99.5%
+  TP: 99  TN: 0  FP: 0  FN: 1  Skipped: 0
+
+  False negatives (missed fakes):
+    - frankenstein0007
+
+  Time: 1443.9s (det: 1334.5s, ai: 109.4s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/ojsm-fake-frankenstein_gemini_20260523-173203.json
+[2026-05-23T17:32:03Z] [ai] PASS B ojsm-fake-frankenstein/gemini -- done (rc=0, new: ojsm-fake-frankenstein_gemini_20260523-173203.json)
+[2026-05-23T17:32:03Z] [ai] PASS B ojsm-fake-frankenstein / anthropic -- start (before: ojsm-fake-frankenstein_anthropic_20260523-131418.json)
+
+======================================================================
+  BENCHMARK: Frankenstein Citations
+  Dataset:   ojsm-fake-frankenstein
+  AI:        anthropic (Anthropic Claude Sonnet 4)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 100 BibTeX entries
+Ground truth: dataset-level = invalid
+
+Step 1/2: Deterministic validation...
+  Done in 1274.9s — 0 valid, 100 warning, 0 suspicious, 0 invalid
+
+Step 2/2: AI analysis on 100 citations...
+  10/100 complete...
+  20/100 complete...
+  30/100 complete...
+  40/100 complete...
+  50/100 complete...
+  60/100 complete...
+  70/100 complete...
+  80/100 complete...
+  90/100 complete...
+  100/100 complete...
+  AI pass done in 314.8s (100 successful calls, 0 errors)
+  Tokens: 45724 in, 8910 out, 54634 total
+  Avg per call: 546 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      0
+  Warning:    0
+  Suspicious: 100
+  Invalid:    0
+
+  Accuracy:   100.0%
+  F1 Score:   100.0%
+  TP: 100  TN: 0  FP: 0  FN: 0  Skipped: 0
+
+  Time: 1589.7s (det: 1274.9s, ai: 314.8s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/ojsm-fake-frankenstein_anthropic_20260523-175832.json
+[2026-05-23T17:58:32Z] [ai] PASS B ojsm-fake-frankenstein/anthropic -- done (rc=0, new: ojsm-fake-frankenstein_anthropic_20260523-175832.json)
+[2026-05-23T17:58:32Z] [ai] PASS B ojsm-real-arxiv / gemini -- start (before: ojsm-real-arxiv_gemini_20260523-142113.json)
+
+======================================================================
+  BENCHMARK: Real arXiv CS Citations (2024)
+  Dataset:   ojsm-real-arxiv
+  AI:        gemini (Gemini 2.5 Flash)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 285 BibTeX entries
+Ground truth: dataset-level = valid
+
+Step 1/2: Deterministic validation...
+  Done in 3687.2s — 112 valid, 173 warning, 0 suspicious, 0 invalid
+
+Step 2/2: AI analysis on 173 citations...
+  10/173 complete...
+  20/173 complete...
+  30/173 complete...
+  40/173 complete...
+  50/173 complete...
+  60/173 complete...
+  70/173 complete...
+  80/173 complete...
+  90/173 complete...
+  100/173 complete...
+  110/173 complete...
+  120/173 complete...
+  130/173 complete...
+  140/173 complete...
+  150/173 complete...
+  160/173 complete...
+  170/173 complete...
+  173/173 complete...
+  AI pass done in 210.7s (173 successful calls, 0 errors)
+  Tokens: 82455 in, 19564 out, 102019 total
+  Avg per call: 590 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      112
+  Warning:    36
+  Suspicious: 137
+  Invalid:    0
+
+  Accuracy:   51.9%
+  F1 Score:   0.0%
+  TP: 0  TN: 148  FP: 137  FN: 0  Skipped: 0
+
+  False positives (wrongly flagged real):
+    - diaglink
+    - yao2019kgbertbertknowledgegraph
+    - Huang_2024
+    - robertson2009
+    - vrandevcic2014wikidata
+    - DBLP:journals/tkde/PanLWCWW24
+    - DBLP:journals/tgdk/PanRKSCDJO0LBMB23
+    - raa-kgc
+    - satkgc
+    - RoG
+    - Plan-on-Graph
+    - chen-etal-2021-hitter
+    - luo-etal-2024-chatkbqa
+    - DBLP:conf/ijcai/Zhao0W0024
+    - fu2023complexitybasedpromptingmultistepreasoning
+    - li2024cok
+    - sun2023thinkongraph
+    - sun2018rotate
+    - wang2023selfconsistencyimproveschainthought
+    - yang2015
+    - xiao2024knowledge
+    - ayoola2022refinedefficientzeroshotcapableapproach
+    - bang2023multitaskmultilingualmultimodalevaluation
+    - chen-etal-2023-dipping
+    - KG_S2S
+    - kochsiek2023friendly
+    - li2023haluevallargescalehallucinationevaluation
+    - lihui2022binet
+    - liu2024finetuninggenerativelargelanguage
+    - sun-etal-2018-open
+    - sun-etal-2019-pullnet
+    - trouillon2016complex
+    - wang-etal-2022-simkgc
+    - chatkbqa
+    - yih-etal-2016-value
+    - diaglink
+    - 2020t5
+    - Huang_2024
+    - robertson2009
+    - vrandevcic2014wikidata
+    - raa-kgc
+    - satkgc
+    - lmp
+    - chen-etal-2021-hitter
+    - luo-etal-2024-chatkbqa
+    - DBLP:conf/ijcai/Zhao0W0024
+    - fu2023complexitybasedpromptingmultistepreasoning
+    - sun2023thinkongraph
+    - wang2023selfconsistencyimproveschainthought
+    - xiao2024knowledge
+    - ayoola2022refinedefficientzeroshotcapableapproach
+    - bang2023multitaskmultilingualmultimodalevaluation
+    - bordes2013
+    - KG_S2S
+    - kochsiek2023friendly
+    - li2023haluevallargescalehallucinationevaluation
+    - liu2024finetuninggenerativelargelanguage
+    - xu2024sayself
+    - saxena2020improving
+    - talmor-berant-2018-web
+    - wang-etal-2022-simkgc
+    - wei2023kicgpt
+    - yih-etal-2016-value
+    - qwen3-embedding
+    - pdrr
+    - achiam2023gpt
+    - yao2019kgbertbertknowledgegraph
+    - yao2024exploringlargelanguagemodels
+    - 2020t5
+    - robertson2009
+    - vrandevcic2014wikidata
+    - DBLP:journals/tgdk/PanRKSCDJO0LBMB23
+    - DBLP:journals/pvldb/FanGZZCCLMDT24
+    - raa-kgc
+    - lmp
+    - RoG
+    - Incremental_Learning2
+    - Plan-on-Graph
+    - chen-etal-2021-hitter
+    - luo-etal-2024-chatkbqa
+    - li2024cok
+    - yang2015
+    - xiao2024knowledge
+    - ayoola2022refinedefficientzeroshotcapableapproach
+    - balazevic2019tucker
+    - bang2023multitaskmultilingualmultimodalevaluation
+    - bordes2013
+    - chen-etal-2023-dipping
+    - li2023haluevallargescalehallucinationevaluation
+    - lihui2022binet
+    - xu2024sayself
+    - sun-etal-2019-pullnet
+    - talmor-berant-2018-web
+    - trouillon2016complex
+    - wang-etal-2022-simkgc
+    - wei2023kicgpt
+    - chatkbqa
+    - Aho:72
+    - Ando2005
+    - xi2025survey
+    - wu2025agentic
+    - zhang2024chain
+    - wang2024mint
+    - guan2025deeprag
+    - huang2025manusearch
+    - liang2025reasoning
+    - wei2025browsecomp
+    - zhou2025browsecompzhbenchmarkingwebbrowsing
+    - lab2025safeworkr1coevolvingsafetyintelligence
+    - lin2022uncertainty
+    - zhang2024fidelity
+    - wang2023selfconsistency
+    - formento2025attack
+    - lin2022
+    - chen2023
+    - lyu2025
+    - ozaki2024
+    - li2025
+    - du2025deepresearch
+    - rein2024gpqa
+    - chen2025xbench
+    - rodegast2024using
+    - luo2025your
+    - rodegast2024using
+    - yu2023dsformer
+    - luo2025your
+    - manggala2024qa
+    - wang2020automatic
+    - guan2025deeprag
+    - xu2025comprehensive
+    - wei2025browsecomp
+    - liang2025reasoning
+    - yang2024verbalized
+    - xiong2023can
+    - lyu2025calibrating
+    - lab2025safework
+    - rein2024gpqa
+
+  Time: 3897.9s (det: 3687.2s, ai: 210.7s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/ojsm-real-arxiv_gemini_20260523-190330.json
+[2026-05-23T19:03:30Z] [ai] PASS B ojsm-real-arxiv/gemini -- done (rc=0, new: ojsm-real-arxiv_gemini_20260523-190330.json)
+[2026-05-23T19:03:30Z] [ai] PASS B ojsm-real-crossref / gemini -- start (before: ojsm-real-crossref_gemini_20260523-142217.json)
+
+======================================================================
+  BENCHMARK: Real CrossRef Random Sample
+  Dataset:   ojsm-real-crossref
+  AI:        gemini (Gemini 2.5 Flash)
+  Version:   7973dc2 (2026-05-22 08:01:27)
+======================================================================
+
+Loaded 96 BibTeX entries
+Ground truth: dataset-level = valid
+
+Step 1/2: Deterministic validation...
+  Done in 61.8s — 94 valid, 2 warning, 0 suspicious, 0 invalid
+
+Step 2/2: AI analysis on 2 citations...
+  2/2 complete...
+  AI pass done in 2.6s (2 successful calls, 0 errors)
+  Tokens: 956 in, 286 out, 1242 total
+  Avg per call: 621 tokens
+
+======================================================================
+  RESULTS
+======================================================================
+  Valid:      94
+  Warning:    0
+  Suspicious: 2
+  Invalid:    0
+
+  Accuracy:   97.9%
+  F1 Score:   0.0%
+  TP: 0  TN: 94  FP: 2  FN: 0  Skipped: 0
+
+  False positives (wrongly flagged real):
+    - 김계자2013
+    - ward1885
+
+  Time: 64.4s (det: 61.8s, ai: 2.6s)
+======================================================================
+
+Run appended to results/experiments/experiment_log.jsonl
+Full details saved to results/experiments/ojsm-real-crossref_gemini_20260523-190435.json
+[2026-05-23T19:04:35Z] [ai] PASS B ojsm-real-crossref/gemini -- done (rc=0, new: ojsm-real-crossref_gemini_20260523-190435.json)
+[2026-05-23T19:04:35Z] [ai] PASS B citeaudit-subset/ai-gemini -- start (before: citeaudit_citeaudit-realworld-subset_ai_20260523T161906Z.json)
+====================================================================
+  CiteAudit external validation — CiteAudit — Real-World Balanced Subset
+  Dataset: citeaudit-realworld-subset  (500 citations)
+  AI tier: gemini
+====================================================================
+
+Step 1: deterministic validation (500 citations)...
+  100/500  (1221s elapsed)
+  200/500  (2491s elapsed)
+  300/500  (3764s elapsed)
+  400/500  (5031s elapsed)
+  500/500  (6369s elapsed)
+  deterministic done in 6369s
+
+Step 2: Gemini AI tier on 374 non-valid citations...
+  50/374  (23516 tokens, 0 errors)
+  100/374  (46956 tokens, 0 errors)
+  150/374  (75370 tokens, 0 errors)
+  200/374  (99658 tokens, 0 errors)
+  250/374  (123693 tokens, 0 errors)
+  300/374  (147767 tokens, 0 errors)
+  350/374  (171722 tokens, 0 errors)
+  374/374  (183187 tokens, 0 errors)
+  AI tier done in 448s
+
+====================================================================
+  RESULTS — citeaudit-realworld-subset
+====================================================================
+                      valid  warning  suspic.  invalid   error
+  real citations         81       10      158        1       0
+  fake citations         45        9      191        5       0
+
+  Confusion matrix:  TP=196  FP=159  TN=91  FN=54
+  False-positive rate (FPR): 63.6%   <- key claim: real citations wrongly flagged
+  Recall (fake detection):   78.4%
+  Precision:                 55.2%
+  F1:                        64.8%
+
+  Deterministic-only FPR was 0.4%, recall 2.0% (before the AI tier)
+  AI tier: 374 calls, 0 errors, 183187 tokens (~18.3% of Gemini's daily free quota)
+====================================================================
+
+Saved: results/experiments/citeaudit_citeaudit-realworld-subset_ai_20260523T205812Z.json
+[2026-05-23T20:58:12Z] [ai] PASS B citeaudit-subset/ai-gemini -- done (rc=0)
+[2026-05-23T20:58:12Z] [ai] === AI CHAIN COMPLETE -- 14 AI runs done ===

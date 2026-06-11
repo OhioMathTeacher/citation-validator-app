@@ -1,0 +1,171 @@
+% \begin{table}[thb]
+% % \scriptsize
+% \small
+% \centering
+% \setlength{\abovecaptionskip}{-3mm}
+% \setlength{\belowcaptionskip}{-0.1mm}
+% \caption{Efficiency comparison between our proposed JCQL and the baseline.}
+% \label{Effect_Study}
+% \resizebox{\linewidth}{!}{
+% \begin{tabular}{cccccccccc}
+
+% \toprule
+% \multirow{2}{*}{\textit{\textbf{Data set}}}                  & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{4}{c}{\textit{\textbf{30\% KB}}} & \multicolumn{4}{c}{\textit{\textbf{50\% KB}}} \\
+% \cmidrule(r){3-6} \cmidrule(r){7-10}
+%  & & \textit{LLM Call} & \textit{Input Token} & \textit{Output Token} & \textit{Time (s)}  & \textit{LLM Call} & \textit{Input Token} & \textit{Output Token} & \textit{Time (s)} \\ \midrule
+
+% \multirow{4}{*}{CWQ}     & ToG   & 18.5   & 7505.1    & 1633.8      & 33.7 
+%                                  & 18.2   & 7272.7    & 1572.5      & 32.7 \\
+%                          & PoG   & 11.7  & 4479.0    & 270.5      & 42.6 
+%                                  & 9.7   & 3832.1    & 250.1      & 42.8 \\ 
+%                          & GoG   & 7.9   & \textbf{3832.5}    & \textbf{266.1}      & 26.3 
+%                                  & 7.7   & 3241.1    & 264.0      & 26.1 \\
+%                          & JCQL   & \textbf{7.3}   & 4619.5   & 291.1  & \textbf{25.3} 
+%                                  & \textbf{7.2}   & 4384.8    & 269.3      & \textbf{19.9} \\
+%                          \midrule
+% \multirow{4}{*}{WebQSP}  & ToG   & 17.5   & 6780.0    & 1394.1      & 26.6 
+%                                  & 15.2   & 6028.6    & 1298.7      & 23.9 \\
+%                          & PoG   & 6.8   & \textbf{2645.9}    & \textbf{216.3}      & 31.0 
+%                                  & 5.4   & \textbf{2052.5}    & \textbf{178.4}      & 26.2 \\ 
+%                          & GoG   & 5.9   & 3610.6    & 309.0      & 16.8 
+%                                  & 6.0   & 3298.9    & 275.8      & 16.2 \\
+%                          & JCQL   & \textbf{5.1}   & 4050.6    & 262.3  & \textbf{16.6} 
+%                                  & \textbf{5.2}   & 3933.3    & 272.2      & \textbf{15.9} \\ 
+% \midrule
+% \end{tabular}
+% }
+% \vspace{-2mm}
+% \end{table}
+
+% \begin{table}[thb]
+% % \scriptsize
+% \small
+% \centering
+% \setlength{\abovecaptionskip}{-4mm}
+% \setlength{\belowcaptionskip}{-0.01mm}
+% \caption{Efficiency on the task of KBQA.}
+% \label{Effect_Study}
+% \resizebox{0.5\linewidth}{!}{
+% \begin{tabular}{cccccc}
+
+% \toprule
+% \multirow{2}{*}{\textit{\textbf{Data set}}}                  & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c}{\textit{\textbf{30\% KB}}} & \multicolumn{2}{c}{\textit{\textbf{50\% KB}}} \\
+% \cmidrule(r){3-4} \cmidrule(r){5-6}
+%  & & \textit{LLM call} & \textit{Time (s)}  & \textit{LLM call} & \textit{Time (s)} \\ \midrule
+
+% \multirow{4}{*}{CWQ}     & ToG   & 18.5   & 33.7 
+%                                  & 18.2   & 32.7 \\
+%                          & PoG   & 11.7   & 42.6 
+%                                  & 9.7    & 42.8 \\ 
+%                          & GoG   & 7.9    & 26.3 
+%                                  & 7.7    & 26.1 \\
+%                          & JCQL  & \textbf{7.3}   & \textbf{25.3} 
+%                                  & \textbf{7.2}   & \textbf{19.9} \\
+%                          \midrule
+% \multirow{4}{*}{WebQSP}  & ToG   & 17.5   & 26.6 
+%                                  & 15.2   & 23.9 \\
+%                          & PoG   & 6.8    & 31.0 
+%                                  & 5.4    & 26.2 \\ 
+%                          & GoG   & 5.9    & 16.8 
+%                                  & 6.0    & 16.2 \\
+%                          & JCQL  & \textbf{5.1}   & \textbf{16.6} 
+%                                  & \textbf{5.2}   & \textbf{15.9} \\ 
+% \midrule
+% \end{tabular}
+% }
+% \vspace{-2mm}
+% \end{table}
+
+% \renewcommand{\arraystretch}{1.0}
+% \begin{table}[t!]
+% % \scriptsize
+% \small
+% \centering
+% % \setlength{\abovecaptionskip}{-4mm}
+% % \setlength{\belowcaptionskip}{-0.1mm}
+% \resizebox{1.0\linewidth}{!}{
+% \begin{tabular}{>{\centering\arraybackslash}p{1.0cm}>{\centering\arraybackslash}p{1.8cm}>{\centering\arraybackslash}p{1.2cm}>{\centering\arraybackslash}p{1.1cm}>{\centering\arraybackslash}p{1.2cm}>{\centering\arraybackslash}p{1.1cm}}
+
+% \toprule
+% \multirow{2}{*}{\textit{\textbf{Data set}}}                  & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c}{\textit{\textbf{30\% KB}}} & \multicolumn{2}{c}{\textit{\textbf{50\% KB}}} \\
+% \cmidrule(r){3-4} \cmidrule(r){5-6}
+%  & & \textit{LLM call} & \textit{Time (s)}  & \textit{LLM call} & \textit{Time (s)} \\ 
+% \midrule
+
+% \multirow{5}{*}{CWQ}     & ToG   & 18.5   & 33.7 
+%                                  & 18.2   & 32.7 \\
+%                          & GoG   & 7.9    & 26.3 
+%                                  & 7.7    & 26.1 \\
+%                          & PoG   & 11.7   & 42.6 
+%                                  & 9.7    & 42.8 \\
+%                          & JCQL-SLM  & 8.2  & 28.4 
+%                          & 8.0  & 27.2 \\
+%                          & JCQL  & \textbf{7.3}   & \textbf{25.3} 
+%                                  & \textbf{7.2}   & \textbf{19.9} \\
+%                          \midrule
+% \multirow{5}{*}{WebQSP}  & ToG   & 17.5   & 26.6 
+%                                  & 15.2   & 23.9 \\
+%                          & GoG   & 5.9    & 16.8 
+%                                  & 6.0    & 16.2 \\
+%                          & PoG   & 6.8    & 31.0 
+%                                  & 5.4    & 26.2 \\ 
+%                          & JCQL-SLM  & 5.8    & 17.4 
+%                          & 5.8    & 17.2 \\
+%                          & JCQL  & \textbf{5.1}   & \textbf{16.6} 
+%                                  & \textbf{5.2}   & \textbf{15.9} \\ 
+% \midrule
+% \end{tabular}
+% }
+% \caption{Efficiency study on the task of KBQA.}
+% \label{Effect_Study}
+% \end{table}
+
+\renewcommand{\arraystretch}{1.0}
+\begin{table}[t!]
+\small
+\centering
+\setlength{\tabcolsep}{1.0pt}
+\resizebox{0.92\linewidth}{!}{
+\begin{tabular}{cccccc}
+\toprule
+\multirow{2}{*}{\textit{\textbf{Data set}}}                  & \multirow{2}{*}{\textit{\textbf{Method}}} & \multicolumn{2}{c}{\textit{\textbf{30\% KB}}} & \multicolumn{2}{c}{\textit{\textbf{50\% KB}}} \\
+\cmidrule(r){3-4} \cmidrule(r){5-6}
+ & & \textit{LLM call} & \textit{Time (s)}  & \textit{LLM call} & \textit{Time (s)} \\ 
+\midrule
+
+\multirow{7}{*}{CWQ}     & ToG   & 18.5   & 33.7 
+                                 & 18.2   & 32.7 \\
+                         & GoG   & 7.9    & 26.3 
+                                 & 7.7    & 26.1 \\
+                         & PoG   & 11.7   & 42.6 
+                                 & 9.7    & 42.8 \\
+                         & LMP   & 11.4   & 59.4 
+                                 & 11.3   & 58.8 \\
+                         & PDRR  & 8.6    & 49.5  
+                                 & 7.6    & 45.8 \\
+                         & JCQL-SLM  & 8.2  & 28.4 
+                         & 8.0  & 27.2 \\
+                         & JCQL  & \textbf{7.3}   & \textbf{25.3} 
+                                 & \textbf{7.2}   & \textbf{20.9} \\
+                         \midrule
+\multirow{7}{*}{WebQSP}  & ToG   & 17.5   & 26.6 
+                                 & 15.2   & 23.9 \\
+                         & GoG   & 5.9    & 16.8 
+                                 & 6.0    & 16.2 \\
+                         & PoG   & 6.8    & 31.0 
+                                 & 5.4    & 26.2 \\ 
+                         & LMP   & 5.4    & 22.1 
+                                 & 5.5    & 21.3 \\
+                         & PDRR  & 7.5    & 33.1 
+                                 & 7.6    & 31.6 \\
+                         & JCQL-SLM  & 5.8    & 17.4 
+                         & 5.8    & 17.2 \\
+                         & JCQL  & \textbf{5.1}   & \textbf{16.6} 
+                                 & \textbf{5.2}   & \textbf{15.9} \\ 
+\midrule
+\end{tabular}
+}
+\vspace{-1mm}
+\caption{Efficiency study on the task of KBQA.}
+\label{Effect_Study}
+\end{table}

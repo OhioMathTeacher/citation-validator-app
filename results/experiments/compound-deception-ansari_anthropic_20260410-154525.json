@@ -1,0 +1,3209 @@
+{
+  "run": {
+    "timestamp": "2026-04-10T15:45:25.586115+00:00",
+    "dataset_id": "compound-deception-ansari",
+    "dataset_name": "Compound Deception \u2014 NeurIPS 2025 Fakes",
+    "citation_count": 100,
+    "ai_enabled": true,
+    "ai_provider": "anthropic",
+    "ai_model": "Anthropic Claude Sonnet 4",
+    "ai_calls": 94,
+    "ai_errors": 6,
+    "deterministic_seconds": 94.0,
+    "ai_seconds": 429.3,
+    "total_seconds": 523.3,
+    "counts": {
+      "valid": 0,
+      "warning": 18,
+      "suspicious": 78,
+      "invalid": 4
+    },
+    "accuracy": {
+      "tp": 82,
+      "tn": 0,
+      "fp": 0,
+      "fn": 18,
+      "total": 100,
+      "skipped": 0,
+      "accuracy": 0.82,
+      "precision": 1.0,
+      "recall": 0.82,
+      "f1": 0.9011,
+      "fpr": 0,
+      "fnr": 0.18,
+      "false_negatives": [
+        "ansari100_018",
+        "ansari100_022",
+        "ansari100_025",
+        "ansari100_033",
+        "ansari100_034",
+        "ansari100_036",
+        "ansari100_037",
+        "ansari100_039",
+        "ansari100_043",
+        "ansari100_044",
+        "ansari100_046",
+        "ansari100_047",
+        "ansari100_059",
+        "ansari100_067",
+        "ansari100_070",
+        "ansari100_084",
+        "ansari100_092",
+        "ansari100_100"
+      ],
+      "false_positives": []
+    },
+    "tokens": {
+      "input_tokens": 48455,
+      "output_tokens": 8806,
+      "total_tokens": 57261,
+      "avg_per_call": 609.2
+    }
+  },
+  "details": [
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 514,
+            "output_tokens": 96,
+            "total_tokens": 610
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Multiple red flags: generic author names 'John Doe and Jane Smith', suspicious arXiv ID format 2401.00001 (too clean/sequential), not found in any academic databases, and the note field redundantly repeats citation information. Real arXiv papers typically have more random eprint IDs and appear in at least one academic database."
+      },
+      "fields": {
+        "archiveprefix": "arXiv",
+        "author": "John Doe and Jane Smith",
+        "eprint": "2401.00001",
+        "note": "John Doe and Jane Smith. Webvoyager: Building an end-to-end web agent with large multimodal models. arXiv preprint arXiv:2401.00001, 2024.",
+        "title": "Webvoyager: Building an end-to-end web agent with large multimodal models",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "ansari100_001",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 516,
+            "output_tokens": 91,
+            "total_tokens": 607
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper not found in any major database (CrossRef, OpenAlex, Semantic Scholar), DOI format appears malformed with incomplete URL, and generic author names 'John Smith and Jane Doe' are commonly used placeholders. The combination of no database presence and technical issues with the citation strongly suggests fabrication."
+      },
+      "fields": {
+        "author": "John Smith and Jane Doe",
+        "note": "John Smith and Jane Doe. Deep learning techniques for avatar-based interaction in virtual environments. IEEE Transactions on Neural Networks and Learning Systems, 32(12):5600-5612, 2021. doi: 10.1109/ TNNLS.2021.3071234. URL https://ieeexplore.ieee.org/document/307123",
+        "title": "Deep learning techniques for avatar-based interaction in virtual environments",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_002",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 578,
+            "output_tokens": 79,
+            "total_tokens": 657
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Invalid DOI that doesn't resolve, paper not found in any major databases (CrossRef, OpenAlex, Semantic Scholar), and incomplete URL in note field. CVPR is a major conference where legitimate papers should be indexed and have working DOIs."
+      },
+      "fields": {
+        "author": "Min-Jun Lee and Soo-Young Kim",
+        "doi": "10.1109/CVPR.2022.001234",
+        "note": "Min-Jun Lee and Soo-Young Kim. Generative adversarial networks for hyper-realistic avatar creation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), pages 1234-1243, 2022. doi: 10.1109/CVPR.2022.001234. URL https://ieeexplore.ieee.org/ document/00123",
+        "title": "Generative adversarial networks for hyper-realistic avatar creation",
+        "year": "2022"
+      },
+      "issues": [
+        "Invalid DOI: DOI 10.1109/CVPR.2022.001234 not found in CrossRef or DOI resolver"
+      ],
+      "key": "ansari100_003",
+      "status": "invalid",
+      "suspicion_reasons": [
+        "DOI validation failed"
+      ],
+      "type": "misc",
+      "warnings": []
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 480,
+            "output_tokens": 87,
+            "total_tokens": 567
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Multiple red flags: placeholder author names 'Firstname Lastname and Others', incomplete note field stating 'URL or arXiv ID to be updated', no DOI, and not found in any database despite being from 2023. The citation appears to be a template or fabricated entry rather than a real publication."
+      },
+      "fields": {
+        "author": "Firstname Lastname and Others",
+        "note": "Firstname Lastname and Others. Drivlme: A large-scale multi-agent driving benchmark, 2023. URL or arXiv ID to be updated.",
+        "title": "Drivlme: A large-scale multi-agent driving benchmark, 2023",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_004",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 475,
+            "output_tokens": 76,
+            "total_tokens": 551
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Multiple red flags: malformed BibTeX with generic placeholder author names, redundant title/note fields, no DOI, and complete absence from all major academic databases. The formatting inconsistencies and placeholder-like content strongly suggest fabrication."
+      },
+      "fields": {
+        "author": "Firstname Lastname and Others",
+        "note": "Firstname Lastname and Others. Robotslang: Grounded natural language for multi-robot object search, 2024. To appear.",
+        "title": "Robotslang: Grounded natural language for multi-robot object search, 2024",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "ansari100_005",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 489,
+            "output_tokens": 78,
+            "total_tokens": 567
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Multiple red flags: generic author format 'Nuo Lou and et al', incomplete arXiv ID with 'XXXX' placeholder, no DOI, and not found in any major academic databases. The placeholder in the arXiv number strongly suggests fabrication."
+      },
+      "fields": {
+        "author": "Nuo Lou and et al",
+        "note": "Nuo Lou and et al. Dsp: Diffusion-based span prediction for masked text modeling. arXiv preprint arXiv:2305.XXXX, 2023.",
+        "title": "Dsp: Diffusion-based span prediction for masked text modeling",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_006",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic author name pattern"
+      ],
+      "type": "misc",
+      "warnings": [
+        "Generic author name pattern",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 475,
+            "output_tokens": 80,
+            "total_tokens": 555
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "Multiple red flags: malformed BibTeX with incorrect author/title fields, suspiciously short author 'A', incomplete arXiv ID (XXXX placeholder), and complete absence from all databases despite being from 2024 when papers should be indexed"
+      },
+      "fields": {
+        "author": "A",
+        "note": "A. Sahoo and et al. inatk: Iterative noise aware text denoising. arXiv preprint arXiv:2402.XXXX, 2024.",
+        "title": "Sahoo and et al",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "ansari100_007",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Suspiciously short author"
+      ],
+      "type": "misc",
+      "warnings": [
+        "Suspiciously short author",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 489,
+            "output_tokens": 85,
+            "total_tokens": 574
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Multiple red flags: generic author format 'Sheng Shi and et al', placeholder arXiv number 'arXiv:2401.XXXX', no DOI, and not found in any major database despite being a 2024 paper on a popular AI topic that should be indexed"
+      },
+      "fields": {
+        "author": "Sheng Shi and et al",
+        "note": "Sheng Shi and et al. Maskgpt: Uniform denoising diffusion for language. arXiv preprint arXiv:2401.XXXX, 2024.",
+        "title": "Maskgpt: Uniform denoising diffusion for language",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "ansari100_008",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic author name pattern"
+      ],
+      "type": "misc",
+      "warnings": [
+        "Generic author name pattern",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 509,
+            "output_tokens": 116,
+            "total_tokens": 625
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper claims to be from EMNLP 2018, a major NLP conference, but has no DOI and is not found in any major database (CrossRef, OpenAlex, Semantic Scholar). EMNLP papers are well-indexed and should appear in academic databases. The topic and venue are plausible, but the complete absence from all databases for a supposedly mainstream conference paper is a significant red flag."
+      },
+      "fields": {
+        "author": "Asma Issa, George Mohler, and John Johnson",
+        "note": "Asma Issa, George Mohler, and John Johnson. Paraphrase identification using deep contextualized representations. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing (EMNLP), pp. 517-526, 2018.",
+        "title": "Paraphrase identification using deep contextualized representations",
+        "year": "2018"
+      },
+      "issues": [],
+      "key": "ansari100_009",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 587,
+            "output_tokens": 93,
+            "total_tokens": 680
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "High-profile authors from major institutions (Google, Microsoft Research, UCSD) publishing at ACL 2021 should definitely be indexed in academic databases. The complete absence from CrossRef, OpenAlex, and Semantic Scholar, combined with no DOI, is a strong indicator of fabrication for a paper of this caliber and venue."
+      },
+      "fields": {
+        "author": "Yi Tay, Kelvin Fu, Kai Wu, Ivan Casanueva, Jianfeng Liu, Byron Wallace, Shuohang Wang, Bajrang Singh, and Julian McAuley",
+        "note": "Yi Tay, Kelvin Fu, Kai Wu, Ivan Casanueva, Jianfeng Liu, Byron Wallace, Shuohang Wang, Bajrang Singh, and Julian McAuley. Reasoning with heterogeneous graph representations for knowledge-aware question answering. In Findings of the Association for Computational Linguistics: ACL 2021, pp. 3497-3506, 2021.",
+        "title": "Reasoning with heterogeneous graph representations for knowledge-aware question answering",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_010",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Metadata similarity only 0.29"
+      ],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Low metadata similarity score: 0.29"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 545,
+            "output_tokens": 82,
+            "total_tokens": 627
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "ArXiv paper from 2021 not found in any database (CrossRef, OpenAlex, Semantic Scholar) with no DOI is highly suspicious. Real arXiv papers from 2021 should be indexed by now, especially with these well-known ML researchers as authors."
+      },
+      "fields": {
+        "archiveprefix": "arXiv",
+        "author": "Alex Wang, Rishi Bommasani, Dan Hendrycks, Daniel Song, and Zhilin Zhang",
+        "eprint": "2107.13586",
+        "note": "Alex Wang, Rishi Bommasani, Dan Hendrycks, Daniel Song, and Zhilin Zhang. Efficient fewshot learning with efl: A single transformer for all tasks. In arXiv preprint arXiv:2107.13586, 2021.",
+        "title": "Efficient fewshot learning with efl: A single transformer for all tasks",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_011",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 504,
+            "output_tokens": 97,
+            "total_tokens": 601
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "No DOI and completely absent from all major academic databases (CrossRef, OpenAlex, Semantic Scholar). EMNLP 2014 is a well-established, prestigious conference that should be thoroughly indexed. The weak Semantic Scholar match (0.33 similarity) suggests no genuine paper exists with this exact title and authors."
+      },
+      "fields": {
+        "author": "Lei Yu, Jimmy Dumsmyr, and Kevin Knight",
+        "note": "Lei Yu, Jimmy Dumsmyr, and Kevin Knight. Deep paraphrase identification. In Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP), pp. $650-655,2014$.",
+        "title": "Deep paraphrase identification",
+        "year": "2014"
+      },
+      "issues": [],
+      "key": "ansari100_012",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Weak Semantic Scholar match (similarity 0.33)"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 462,
+            "output_tokens": 89,
+            "total_tokens": 551
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Multiple red flags: malformed BibTeX with 'X' as author and title fields, inconsistent formatting with actual paper title in 'note' field, no DOI, and not found in any major academic database despite claiming to be from ACL 2024 (a major venue that should be well-indexed)"
+      },
+      "fields": {
+        "author": "X",
+        "note": "X. Ou and et al. Tuqdm: Token unmasking with quantized diffusion models. In ACL, 2024.",
+        "title": "Ou and et al",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "ansari100_013",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Suspiciously short author"
+      ],
+      "type": "misc",
+      "warnings": [
+        "Suspiciously short author",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 487,
+            "output_tokens": 100,
+            "total_tokens": 587
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper claims to be from ICLR 2025 (a major AI conference) but has no DOI and is not found in any database (CrossRef, OpenAlex, Semantic Scholar). ICLR papers are typically well-indexed, and 2025 is not far enough in the future to explain complete absence from all databases."
+      },
+      "fields": {
+        "author": "Franz Aichberger, Lily Chen, and John Smith",
+        "note": "Franz Aichberger, Lily Chen, and John Smith. Semantically diverse language generation. In International Conference on Learning Representations (ICLR), 2025.",
+        "title": "Semantically diverse language generation",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "ansari100_014",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Metadata similarity only 0.25"
+      ],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Low metadata similarity score: 0.25"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 511,
+            "output_tokens": 100,
+            "total_tokens": 611
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper claims to be from EMNLP 2021 Findings but has no DOI and is completely absent from all major databases (CrossRef, OpenAlex, Semantic Scholar). EMNLP is a major NLP conference with well-indexed proceedings, so legitimate papers from this venue should be findable in at least one database."
+      },
+      "fields": {
+        "author": "Maria Glushkova, Shiori Kobayashi, and Junichi Suzuki",
+        "note": "Maria Glushkova, Shiori Kobayashi, and Junichi Suzuki. Uncertainty estimation in neural text regression. In Findings of the Association for Computational Linguistics: EMNLP 2021, pp. $4567-4576,2021$.",
+        "title": "Uncertainty estimation in neural text regression",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_015",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 511,
+            "output_tokens": 94,
+            "total_tokens": 605
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper allegedly from major 2022 ACL conference lacks DOI and is completely absent from all major databases (CrossRef, OpenAlex, Semantic Scholar). ACL papers are well-indexed and should appear in these databases. The complete absence across all sources is a significant red flag for a supposedly mainstream NLP conference paper."
+      },
+      "fields": {
+        "author": "Yichao Wang, Bowen Zhou, Adam Lopez, and Benjamin Snyder",
+        "note": "Yichao Wang, Bowen Zhou, Adam Lopez, and Benjamin Snyder. Uncertainty quantification in abstractive summarization. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (ACL), pp. 1234-1245, 2022.",
+        "title": "Uncertainty quantification in abstractive summarization",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "ansari100_016",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 505,
+            "output_tokens": 74,
+            "total_tokens": 579
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper not found in any major database (CrossRef, OpenAlex, Semantic Scholar) and lacks DOI. EMNLP 2021 papers should be well-indexed. The authors are real researchers but this specific paper appears fabricated."
+      },
+      "fields": {
+        "author": "Mohit Jain, Ethan Perez, and James Glass",
+        "note": "Mohit Jain, Ethan Perez, and James Glass. Learning to predict confidence for language models. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing (EMNLP), pp. 245-256, 2021.",
+        "title": "Learning to predict confidence for language models",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_017",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 553,
+            "output_tokens": 77,
+            "total_tokens": 630
+          }
+        },
+        "confidence": 75,
+        "is_suspicious": false,
+        "reason": "arXiv preprint with valid format and plausible authors from major AI labs. Not finding it in databases is expected for some arXiv papers, especially if withdrawn or not widely indexed. The eprint number follows correct arXiv format."
+      },
+      "fields": {
+        "archiveprefix": "arXiv",
+        "author": "Srinivasan Kadavath, Urvashi Khandelwal, Alec Radford, and Noam Shazeer",
+        "eprint": "2205.05407",
+        "note": "Srinivasan Kadavath, Urvashi Khandelwal, Alec Radford, and Noam Shazeer. Answer me this: Self-verifying large language models. In arXiv preprint arXiv:2205.05407, 2022.",
+        "title": "Answer me this: Self-verifying large language models",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "ansari100_018",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 509,
+            "output_tokens": 101,
+            "total_tokens": 610
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "No DOI and not found in any major databases (CrossRef, OpenAlex, Semantic Scholar). For a 2023 EMNLP paper with known authors like Greg Durrett, this should be indexed somewhere. The combination of missing DOI and complete absence from all databases is a significant red flag for a recent paper from a major venue."
+      },
+      "fields": {
+        "author": "Zayne Sprague, Xi Ye, Kyle Richardson, and Greg Durrett",
+        "note": "Zayne Sprague, Xi Ye, Kyle Richardson, and Greg Durrett. MuSR: Testing the limits of chain-of-thought with multistep soft reasoning. In EMNLP, 2023.",
+        "title": "MuSR: Testing the limits of chain-of-thought with multistep soft reasoning",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_019",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 580,
+            "output_tokens": 84,
+            "total_tokens": 664
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Citation lacks DOI and is not found in any major databases (CrossRef, OpenAlex, Semantic Scholar). For a 2020 paper in IEEE Transactions on Power Systems with 9 prominent authors, this is highly suspicious as such papers are typically well-indexed."
+      },
+      "fields": {
+        "author": "Mario Paolone, Trevor Gaunt, Xavier Guillaud, Marco Liserre, Sakis Meliopoulos, Antonello Monti, Thierry Van Cutsem, Vijay Vittal, and Costas Vournas",
+        "note": "Mario Paolone, Trevor Gaunt, Xavier Guillaud, Marco Liserre, Sakis Meliopoulos, Antonello Monti, Thierry Van Cutsem, Vijay Vittal, and Costas Vournas. A benchmark model for power system stability controls. IEEE Transactions on Power Systems, 35(5):3627-3635, 2020.",
+        "title": "A benchmark model for power system stability controls",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "ansari100_020",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 578,
+            "output_tokens": 111,
+            "total_tokens": 689
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "No DOI provided and not found in any of the three major academic databases (CrossRef, OpenAlex, Semantic Scholar). The journal 'Chaos: An Interdisciplinary Journal of Nonlinear Science' is a legitimate publication that should be well-indexed. The combination of missing DOI and complete absence from all databases for a 2020 paper from a reputable journal is a strong indicator of fabrication."
+      },
+      "fields": {
+        "author": "Mingliang Han, Bingni W Wei, Phelan Senatus, J\u00f6rg D Winkel, Mason Youngblood, I-Han Lee, and David J Mandell",
+        "note": "Mingliang Han, Bingni W Wei, Phelan Senatus, J\u00f6rg D Winkel, Mason Youngblood, I-Han Lee, and David J Mandell. Deep koopman operator: A model-free approach to nonlinear dynamical systems. Chaos: An Interdisciplinary Journal of Nonlinear Science, 30(12):123135, 2020.",
+        "title": "Deep koopman operator: A model-free approach to nonlinear dynamical systems",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "ansari100_021",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 524,
+            "output_tokens": 92,
+            "total_tokens": 616
+          }
+        },
+        "confidence": 25,
+        "is_suspicious": false,
+        "reason": "ArXiv preprint from 2023 with valid arXiv ID format. While not found in databases, arXiv preprints may not be indexed in all academic databases, especially newer ones. The authors appear to be real researchers and the topic (GFlowNets) is a legitimate research area."
+      },
+      "fields": {
+        "archiveprefix": "arXiv",
+        "author": "Francisco Ramalho, Meng Liu, Zihan Liu, and Etienne Mathieu",
+        "eprint": "2310.18664",
+        "note": "Francisco Ramalho, Meng Liu, Zihan Liu, and Etienne Mathieu. Towards gflownets for continuous control. arXiv preprint arXiv:2310.18664, 2023.",
+        "title": "Towards gflownets for continuous control",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_022",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 546,
+            "output_tokens": 108,
+            "total_tokens": 654
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper claims to be published at NeurIPS 2021 (a top-tier venue) but has no DOI and appears in zero databases. NeurIPS papers are well-indexed and should appear in multiple academic databases. The author list combines real researchers but includes suspicious name 'Carlos Guestrin Ferrer' (likely fabricated variant of Carlos Guestrin)."
+      },
+      "fields": {
+        "author": "Arjun Gupta, Xi Victoria Lin, Chunyuan Zhang, Michel Galley, Jianfeng Gao, and Carlos Guestrin Ferrer",
+        "note": "Arjun Gupta, Xi Victoria Lin, Chunyuan Zhang, Michel Galley, Jianfeng Gao, and Carlos Guestrin Ferrer. Robust compositional visual reasoning via language-guided neural module networks. In Advances in Neural Information Processing Systems (NeurIPS), 2021.",
+        "title": "Robust compositional visual reasoning via language-guided neural module networks",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_023",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 473,
+            "output_tokens": 93,
+            "total_tokens": 566
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Multiple red flags: malformed BibTeX with author/title fields swapped, creates nonsensical citation structure, paper title 'DeepFM' doesn't match actual Kingma/Ba work from 2015 (Adam optimizer), and zero database matches despite being supposedly high-profile ICLR paper"
+      },
+      "fields": {
+        "author": "Diederik P",
+        "note": "Diederik P. Kingma and Jimmy Ba. Deepfm: a factorization-machine based neural network for ctr prediction. In International Conference on Learning Representations, 2015.",
+        "title": "Kingma and Jimmy Ba",
+        "year": "2015"
+      },
+      "issues": [],
+      "key": "ansari100_024",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 512,
+            "output_tokens": 108,
+            "total_tokens": 620
+          }
+        },
+        "confidence": 25,
+        "is_suspicious": false,
+        "reason": "While the paper wasn't found in major databases, the authors are real NLP researchers (Weijia Xu at UW, Marine Carpuat at UMD) who work on machine translation. EMNLP 2020 is a legitimate venue. The topic of toxicity control in NMT is plausible research. Database absence could be due to indexing gaps rather than fabrication."
+      },
+      "fields": {
+        "author": "Weijia Xu, Xing Niu, and Marine Carpuat",
+        "note": "Weijia Xu, Xing Niu, and Marine Carpuat. Controlling toxicity in neural machine translation. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 4245-4256, 2020.",
+        "title": "Controlling toxicity in neural machine translation",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "ansari100_025",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 525,
+            "output_tokens": 89,
+            "total_tokens": 614
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper not found in any major databases (CrossRef, OpenAlex, Semantic Scholar), lacks DOI, and claims to be from a major IEEE conference (IJCNN 2020) which should be well-indexed. The combination of no database presence and missing DOI for a supposedly prominent venue publication is highly suspicious."
+      },
+      "fields": {
+        "author": "Xiang Zhang, Xuehai Wei, Xian Zhang, and Xue Zhang",
+        "note": "Xiang Zhang, Xuehai Wei, Xian Zhang, and Xue Zhang. Adversarial attacks and defenses in toxicity detection: A survey. In Proceedings of the 2020 International Joint Conference on Neural Networks (IJCNN), pages 1-8. IEEE, 2020.",
+        "title": "Adversarial attacks and defenses in toxicity detection: A survey",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "ansari100_026",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 602,
+            "output_tokens": 91,
+            "total_tokens": 693
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper claims to be from a major 2022 conference (MICCAI) with established researchers, but has no DOI and is completely absent from all major academic databases (CrossRef, OpenAlex, Semantic Scholar). MICCAI papers are typically well-indexed, making this absence highly suspicious."
+      },
+      "fields": {
+        "author": "Fenglin Ding, Debesh Jha, Maria H\u00e4rgestam, P\u00e5l Halvorsen, Michael A Riegler, Dag Johansen, Ronny H\u00e4nsch, and H\u00e5vard Stensland",
+        "note": "Fenglin Ding, Debesh Jha, Maria H\u00e4rgestam, P\u00e5l Halvorsen, Michael A Riegler, Dag Johansen, Ronny H\u00e4nsch, and H\u00e5vard Stensland. Vits: Vision transformer for video self-supervised pretraining of surgical phase recognition. In International Conference on Medical Image Computing and Computer-Assisted Intervention, pages 293-302. Springer, 2022.",
+        "title": "Vits: Vision transformer for video self-supervised pretraining of surgical phase recognition",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "ansari100_027",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 567,
+            "output_tokens": 96,
+            "total_tokens": 663
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Invalid DOI that doesn't resolve in any system, not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and inconsistent year information (2020 in DOI and main year field, but 2021 in note field). The combination of non-working DOI and complete absence from all databases strongly suggests fabrication."
+      },
+      "fields": {
+        "author": "Humberto Acevedo-Viloria, Juan Martinez, and Maria Garcia",
+        "doi": "10.1109/TKDE.2020.3007655",
+        "note": "Humberto Acevedo-Viloria, Juan Martinez, and Maria Garcia. Relational graph convolutional networks for financial fraud detection. IEEE Transactions on Knowledge and Data Engineering, 33(7):1357-1370, 2021. doi: 10.1109/TKDE.2020.3007655.",
+        "title": "Relational graph convolutional networks for financial fraud detection",
+        "year": "2020"
+      },
+      "issues": [
+        "Invalid DOI: DOI 10.1109/TKDE.2020.3007655 not found in CrossRef or DOI resolver"
+      ],
+      "key": "ansari100_028",
+      "status": "invalid",
+      "suspicion_reasons": [
+        "DOI validation failed"
+      ],
+      "type": "misc",
+      "warnings": []
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 574,
+            "output_tokens": 108,
+            "total_tokens": 682
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "The DOI 10.1145/3545678.3557899 does not resolve and the paper was not found in any major databases (CrossRef, OpenAlex, Semantic Scholar). ACM papers typically have working DOIs and appear in academic databases. The topic and author names appear plausible, but the complete absence from all verification sources is a strong indicator of fabrication."
+      },
+      "fields": {
+        "author": "Majid Zolghadr, Mohsen Jamali, and Jiawei Zhang",
+        "doi": "10.1145/3545678.3557899",
+        "note": "Majid Zolghadr, Mohsen Jamali, and Jiawei Zhang. Diffurecsys: Diffusion-based generative modeling for sequential recommendation. Proceedings of the ACM Web Conference (WWW), pages 2156-2165, 2024. doi: 10.1145/3545678.3557899.",
+        "title": "Diffurecsys: Diffusion-based generative modeling for sequential recommendation",
+        "year": "2024"
+      },
+      "issues": [
+        "Invalid DOI: DOI 10.1145/3545678.3557899 not found in CrossRef or DOI resolver"
+      ],
+      "key": "ansari100_029",
+      "status": "invalid",
+      "suspicion_reasons": [
+        "DOI validation failed"
+      ],
+      "type": "misc",
+      "warnings": []
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 498,
+            "output_tokens": 102,
+            "total_tokens": 600
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "High-profile computer vision paper claiming CVPR 2022 publication but absent from all major databases (CrossRef, OpenAlex, Semantic Scholar) and lacks DOI. CVPR papers are typically well-indexed. The topic (3D Gaussian splatting) became prominent around 2023, making 2022 publication date questionable."
+      },
+      "fields": {
+        "author": "Bernd Kerbl, Thomas M\u00fcller, and Paolo Favaro",
+        "note": "Bernd Kerbl, Thomas M\u00fcller, and Paolo Favaro. Efficient 3d gaussian splatting for real-time neural rendering. In CVPR, 2022. 2, 3",
+        "title": "Efficient 3d gaussian splatting for real-time neural rendering",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "ansari100_030",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 491,
+            "output_tokens": 114,
+            "total_tokens": 605
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "The citation is malformed with author names appearing in the title field and publication details in the note field. The actual paper title 'Matching real-world material appearance' published in TPAMI 2015 should be easily findable in academic databases, but it appears in none (CrossRef, OpenAlex, Semantic Scholar), has no DOI, and the garbled formatting suggests fabrication or severe corruption."
+      },
+      "fields": {
+        "author": "Punchana Khungurn, Edward H",
+        "note": "Punchana Khungurn, Edward H. Adelson, Julie Dorsey, and Holly Rushmeier. Matching real-world material appearance. TPAMI, 2015. 6",
+        "title": "Adelson, Julie Dorsey, and Holly Rushmeier",
+        "year": "2015"
+      },
+      "issues": [],
+      "key": "ansari100_031",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 519,
+            "output_tokens": 119,
+            "total_tokens": 638
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper claims to be published in NeurIPS 2020, a major ML conference, but has no DOI and is not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). NeurIPS papers are well-indexed and should appear in these databases. The author combination and topic seem plausible for this venue, but the complete absence from all databases is a significant red flag for a supposedly prominent conference publication."
+      },
+      "fields": {
+        "author": "Ashish Kumar, Logan Engstrom, Andrew Ilyas, and Dimitris Tsipras",
+        "note": "Ashish Kumar, Logan Engstrom, Andrew Ilyas, and Dimitris Tsipras. Understanding self-training for gradient-boosted trees. In Advances in Neural Information Processing Systems (NeurIPS), volume 33, pp. 1651-1662, 2020.",
+        "title": "Understanding self-training for gradient-boosted trees",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "ansari100_032",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 598,
+            "output_tokens": 98,
+            "total_tokens": 696
+          }
+        },
+        "confidence": 25,
+        "is_suspicious": false,
+        "reason": "ArXiv preprint from 2023 with reputable authors (Anima Anandkumar, Silvio Savarese, etc.) from known institutions. ArXiv papers may not appear in all academic databases, and the eprint number 2305.01747 follows correct ArXiv formatting for May 2023 submissions."
+      },
+      "fields": {
+        "archiveprefix": "arXiv",
+        "author": "Chuang Fan, Shipeng Liu, Seyed Motamed, Shiyu Zhong, Silvio Savarese, Juan Carlos Niebles, Anima Anandkumar, Adrien Gaidon, and Stefan Scherer",
+        "eprint": "2305.01747",
+        "note": "Chuang Fan, Shipeng Liu, Seyed Motamed, Shiyu Zhong, Silvio Savarese, Juan Carlos Niebles, Anima Anandkumar, Adrien Gaidon, and Stefan Scherer. Expectation maximization pseudo labels. arXiv preprint arXiv:2305.01747, 2023.",
+        "title": "Expectation maximization pseudo labels",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_033",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "archiveprefix": "arXiv",
+        "author": "T",
+        "eprint": "2201.07519",
+        "note": "T. Qiao, W. Liu, Z. Xie, H. Xu, J. Lin, J. Huang, and Y. Yang, \"Clip-score: A robust scoring metric for text-to-image generation,\" arXiv preprint arXiv:2201.07519, 2022.",
+        "title": "Qiao, W",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "ansari100_034",
+      "status": "warning",
+      "suspicion_reasons": [
+        "Suspiciously short author"
+      ],
+      "type": "misc",
+      "warnings": [
+        "Suspiciously short author",
+        "No DOI found and not in OpenAlex"
+      ],
+      "ai_error": {
+        "status_code": 529,
+        "message": "{\n  \"error\": \"Anthropic API error: {\\\"type\\\":\\\"error\\\",\\\"error\\\":{\\\"type\\\":\\\"overloaded_error\\\",\\\"message\\\":\\\"Overloaded\\\"},\\\"request_id\\\":\\\"req_011CZvLt9UsFxVWJva4nuPQY\\\"}\"\n}\n"
+      }
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 509,
+            "output_tokens": 100,
+            "total_tokens": 609
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Citation lacks DOI and is not found in any major database (CrossRef, OpenAlex, Semantic Scholar). While marked as a 2024 preprint, legitimate preprints typically appear on arXiv or other repositories that are indexed by these databases. The combination of no DOI, no database presence, and the technical nature of the topic makes this likely fabricated."
+      },
+      "fields": {
+        "author": "Yunwen Lei, Puyu Wang, Yiming Ying, and Ding-Xuan Zhou",
+        "note": "Yunwen Lei, Puyu Wang, Yiming Ying, and Ding-Xuan Zhou. Optimization and generalization of gradient descent for shallow relu networks with minimal width. preprint, 2024.",
+        "title": "Optimization and generalization of gradient descent for shallow relu networks with minimal width",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "ansari100_035",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Uher, R., Goodman, R., Moutoussis, M., Brammer, M., Williams, S.C.R., Dolan, R.J.: Cognitive and neural predictors of response to cognitive behavioral therapy for depression: a review of the evidence",
+        "note": "Uher, R., Goodman, R., Moutoussis, M., Brammer, M., Williams, S.C.R., Dolan, R.J.: Cognitive and neural predictors of response to cognitive behavioral therapy for depression: a review of the evidence. Journal of Affective Disorders 169, 94-104 (2014)",
+        "title": "Journal of Affective Disorders 169, 94-104 (2014)",
+        "year": "2014"
+      },
+      "issues": [],
+      "key": "ansari100_036",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ],
+      "ai_error": {
+        "status_code": 529,
+        "message": "{\n  \"error\": \"Anthropic API error: {\\\"type\\\":\\\"error\\\",\\\"error\\\":{\\\"type\\\":\\\"overloaded_error\\\",\\\"message\\\":\\\"Overloaded\\\"},\\\"request_id\\\":\\\"req_011CZvLtbEB2AtpzKhvxisra\\\"}\"\n}\n"
+      }
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 538,
+            "output_tokens": 87,
+            "total_tokens": 625
+          }
+        },
+        "confidence": 25,
+        "is_suspicious": false,
+        "reason": "While not found in databases and lacking DOI, NeurIPS 2023 is recent and this appears to be a legitimate conference paper that may not yet be fully indexed. The authors have Korean names consistent with active ML research community, title follows academic conventions, and page numbers are realistic for NeurIPS proceedings."
+      },
+      "fields": {
+        "author": "Junyeong Lee, Yiseong Kim, Seungju Park, and Hyunjik Lee",
+        "note": "Junyeong Lee, Yiseong Kim, Seungju Park, and Hyunjik Lee. Softmatch: Addressing the quantity-quality trade-off in semi-supervised learning. In Advances in Neural Information Processing Systems (NeurIPS), volume 36, pages 18315-18327, 2023.",
+        "title": "Softmatch: Addressing the quantity-quality trade-off in semi-supervised learning",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_037",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 493,
+            "output_tokens": 83,
+            "total_tokens": 576
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "Multiple red flags: corrupted BibTeX format with 'author: Z' and 'title: Zhu, T', no DOI, and not found in any major academic database despite claiming to be from a prestigious venue (IEEE CVPR 2022)"
+      },
+      "fields": {
+        "author": "Z",
+        "note": "Z. Zhu, T. Yu, X. Zhang, J. Li, Y. Zhang, and Y. Fu. Neuralrgb-d: Neural representations for depth estimation and scene mapping. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, 2022.",
+        "title": "Zhu, T",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "ansari100_038",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Suspiciously short author"
+      ],
+      "type": "misc",
+      "warnings": [
+        "Suspiciously short author",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Y",
+        "note": "Y. Zhang, M. Oswald, and D. Cremers. Airslam: Illumination-invariant hybrid slam. In International Conference on Computer Vision (ICCV), pages 2345-2354, 2023.",
+        "title": "Zhang, M",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_039",
+      "status": "warning",
+      "suspicion_reasons": [
+        "Suspiciously short author"
+      ],
+      "type": "misc",
+      "warnings": [
+        "Suspiciously short author",
+        "No DOI found and not in OpenAlex"
+      ],
+      "ai_error": {
+        "status_code": 529,
+        "message": "{\n  \"error\": \"Anthropic API error: {\\\"type\\\":\\\"error\\\",\\\"error\\\":{\\\"type\\\":\\\"overloaded_error\\\",\\\"message\\\":\\\"Overloaded\\\"},\\\"request_id\\\":\\\"req_011CZvLuqVSvHH9USJmEWoWy\\\"}\"\n}\n"
+      }
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 526,
+            "output_tokens": 97,
+            "total_tokens": 623
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper claims to be published at ICLR 2022, a major venue that should be well-indexed in academic databases. The complete absence from CrossRef, OpenAlex, and Semantic Scholar, combined with no DOI, is highly suspicious for a supposedly recent paper from a top-tier conference. ICLR papers are typically well-documented online."
+      },
+      "fields": {
+        "author": "Yihong Zhu, Junxian Li, Xianfeng Han, Shirui Pan, Liang Yao, and Chengqi Wang",
+        "note": "Yihong Zhu, Junxian Li, Xianfeng Han, Shirui Pan, Liang Yao, and Chengqi Wang. Spectral contrastive graph clustering. In International Conference on Learning Representations, 2022.",
+        "title": "Spectral contrastive graph clustering",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "ansari100_040",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 532,
+            "output_tokens": 101,
+            "total_tokens": 633
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper claims to be from ACL 2021 (a major AI conference) with 7 authors from prominent institutions, but has no DOI and is completely absent from all major databases (CrossRef, OpenAlex, Semantic Scholar). ACL papers are reliably indexed, making this absence highly suspicious for a recent publication from a top-tier venue."
+      },
+      "fields": {
+        "author": "Ming Zhong, Han Liu, Weizhu Zhang, Houyu Wang, Xiang Li, Maosong Sun, and Xu Han",
+        "note": "Ming Zhong, Han Liu, Weizhu Zhang, Houyu Wang, Xiang Li, Maosong Sun, and Xu Han. Hyperbolic and spherical embeddings for long-tail entities. In ACL, pages 5491-5501, 2021.",
+        "title": "Hyperbolic and spherical embeddings for long-tail entities",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_041",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Ye Gao, Robert Tardif, Jiale Cao, and Tapio Schneider",
+        "doi": "10.1038/s41561-023-01297-2",
+        "note": "Ye Gao, Robert Tardif, Jiale Cao, and Tapio Schneider. Artificial intelligence reconstructs missing climate information. Nature Geoscience, 17:158-164, 2024. doi: 10.1038/s41561-023-01297-2.",
+        "title": "Artificial intelligence reconstructs missing climate information",
+        "year": "2024"
+      },
+      "issues": [
+        "Invalid DOI: DOI 10.1038/s41561-023-01297-2 not found in CrossRef or DOI resolver"
+      ],
+      "key": "ansari100_042",
+      "status": "invalid",
+      "suspicion_reasons": [
+        "DOI validation failed"
+      ],
+      "type": "misc",
+      "warnings": [],
+      "ai_error": {
+        "status_code": 529,
+        "message": "{\n  \"error\": \"Anthropic API error: {\\\"type\\\":\\\"error\\\",\\\"error\\\":{\\\"type\\\":\\\"overloaded_error\\\",\\\"message\\\":\\\"Overloaded\\\"},\\\"request_id\\\":\\\"req_011CZvLvtjC7R7aTrexHHxbk\\\"}\"\n}\n"
+      }
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 488,
+            "output_tokens": 102,
+            "total_tokens": 590
+          }
+        },
+        "confidence": 75,
+        "is_suspicious": false,
+        "reason": "While not found in major databases, this appears to be a legitimate paper by two well-known researchers (Pardoux and Veretennikov) in stochastic analysis published in Journal of Mathematical Sciences in 2002. The topic matches their expertise areas, and papers from 2002 in specialized mathematics journals may not be comprehensively indexed in modern databases."
+      },
+      "fields": {
+        "author": "\u00c9tienne Pardoux and Alexander Yu Veretennikov",
+        "note": "\u00c9tienne Pardoux and Alexander Yu Veretennikov. Poisson equation for multiscale diffusions. Journal of Mathematical Sciences, 111(3):3713-3719, 2002.",
+        "title": "Poisson equation for multiscale diffusions",
+        "year": "2002"
+      },
+      "issues": [],
+      "key": "ansari100_043",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 517,
+            "output_tokens": 93,
+            "total_tokens": 610
+          }
+        },
+        "confidence": 25,
+        "is_suspicious": false,
+        "reason": "While not found in major databases, this appears to be a legitimate CVPR 2021 paper with credible authors (including Thomas Brox, a well-known computer vision researcher). The title and venue are consistent with current research trends. Database absence could be due to indexing delays or gaps rather than fabrication."
+      },
+      "fields": {
+        "author": "Charanpal D Mummadi, Matthias Arens, and Thomas Brox",
+        "note": "Charanpal D Mummadi, Matthias Arens, and Thomas Brox. Test-time adaptation for continual semantic segmentation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), pages 11828-11837, 2021.",
+        "title": "Test-time adaptation for continual semantic segmentation",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_044",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 519,
+            "output_tokens": 119,
+            "total_tokens": 638
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Claims to be from ICCV 2021 (major IEEE conference) but has no DOI and appears in zero databases. Real ICCV papers are always indexed in multiple databases and have DOIs. The authors appear to be Chinese names, and the topic is plausible, but the complete absence from all academic databases for a claimed top-tier conference paper is a strong indicator of fabrication."
+      },
+      "fields": {
+        "author": "Jiacheng He, Zhilu Zhang, Zhen Wang, and Yan Huang",
+        "note": "Jiacheng He, Zhilu Zhang, Zhen Wang, and Yan Huang. Autoencoder based test-time adaptation for semantic segmentation. In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), pages 998-1007, 2021.",
+        "title": "Autoencoder based test-time adaptation for semantic segmentation",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_045",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "M",
+        "note": "M. Gong, F. Yu, J. Zhang, and D. Tao. Efficient $\\\\ell_\\{p\\}$ norm regularization for learning sparsity in deep neural networks. IEEE Transactions on Neural Networks and Learning Systems, 33(10): $5381-5392,2022",
+        "title": "Gong, F",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "ansari100_046",
+      "status": "warning",
+      "suspicion_reasons": [
+        "Suspiciously short author"
+      ],
+      "type": "misc",
+      "warnings": [
+        "Suspiciously short author",
+        "No DOI found and not in OpenAlex"
+      ],
+      "ai_error": {
+        "status_code": 529,
+        "message": "{\n  \"error\": \"Anthropic API error: {\\\"type\\\":\\\"error\\\",\\\"error\\\":{\\\"type\\\":\\\"overloaded_error\\\",\\\"message\\\":\\\"Overloaded\\\"},\\\"request_id\\\":\\\"req_011CZvLxCPbkUPePKwZBRaiE\\\"}\"\n}\n"
+      }
+    },
+    {
+      "ai_analysis": null,
+      "fields": {
+        "author": "Mihail Stoian, Richard Milbradt, and Christian Mendl",
+        "note": "Mihail Stoian, Richard Milbradt, and Christian Mendl. NP-Hardness of Optimal TensorNetwork Contraction and Polynomial-Time Algorithms for Tree Tensor Networks. Quantum, 6:e119, 2022.",
+        "title": "NP-Hardness of Optimal TensorNetwork Contraction and Polynomial-Time Algorithms for Tree Tensor Networks",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "ansari100_047",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ],
+      "ai_error": {
+        "status_code": 529,
+        "message": "{\n  \"error\": \"Anthropic API error: {\\\"type\\\":\\\"error\\\",\\\"error\\\":{\\\"type\\\":\\\"overloaded_error\\\",\\\"message\\\":\\\"Overloaded\\\"},\\\"request_id\\\":\\\"req_011CZvLxEwPftjvsKJJbSRm7\\\"}\"\n}\n"
+      }
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 490,
+            "output_tokens": 86,
+            "total_tokens": 576
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "No DOI provided and not found in any major database (CrossRef, OpenAlex, Semantic Scholar). For a 2023 paper in computational physics from a major journal like Journal of Computational Physics, this is highly suspicious as such papers should be indexed in at least one database."
+      },
+      "fields": {
+        "author": "Jianyu Xu, Wei Li, and Ming Zhao",
+        "note": "Jianyu Xu, Wei Li, and Ming Zhao. Complexity of Optimal Tensor Network Contraction Sequences. Journal of Computational Physics, 480:112237, 2023.",
+        "title": "Complexity of Optimal Tensor Network Contraction Sequences",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_048",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 516,
+            "output_tokens": 100,
+            "total_tokens": 616
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "ArXiv paper from 2023 with no DOI found in zero databases (CrossRef, OpenAlex, Semantic Scholar). Real arXiv papers are typically indexed in at least one major database, especially from well-known authors in computer vision. The eprint ID format appears correct but the complete absence from all databases is a significant red flag."
+      },
+      "fields": {
+        "archiveprefix": "arXiv",
+        "author": "Patrick Esser, Robin Rombach, and Bj\u00f6rn Ommer",
+        "eprint": "2303.07332",
+        "note": "Patrick Esser, Robin Rombach, and Bj\u00f6rn Ommer. Structure-aware video generation with latent diffusion models. arXiv preprint arXiv:2303.07332, 2023.",
+        "title": "Structure-aware video generation with latent diffusion models",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_049",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 495,
+            "output_tokens": 83,
+            "total_tokens": 578
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper not found in any major academic database (CrossRef, OpenAlex, Semantic Scholar) and lacks DOI. ECCV 2022 papers should be well-indexed by now. The author format 'and et al' is also unusual in academic citations."
+      },
+      "fields": {
+        "author": "Lele Xu, Chen Lin, Hongyu Zhao, and et al",
+        "note": "Lele Xu, Chen Lin, Hongyu Zhao, and et al. Gaborvit: Global attention with local frequency awareness. In European Conference on Computer Vision (ECCV), 2022.",
+        "title": "Gaborvit: Global attention with local frequency awareness",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "ansari100_050",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 530,
+            "output_tokens": 101,
+            "total_tokens": 631
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper claims to be published at NeurIPS 2022 (a top-tier ML venue) but has no DOI and is not found in any major academic database. NeurIPS papers are well-indexed and should appear in multiple databases. The authors include recognizable names in ML, but this makes the absence from databases more suspicious rather than less."
+      },
+      "fields": {
+        "author": "Yoonwoo Lee, Jaehyeong Kang, Namil Kim, Jinwoo Shin, and Honglak Lee",
+        "note": "Yoonwoo Lee, Jaehyeong Kang, Namil Kim, Jinwoo Shin, and Honglak Lee. Structured fast fourier transform attention for vision transformers. In Advances in Neural Information Processing Systems (NeurIPS), 2022.",
+        "title": "Structured fast fourier transform attention for vision transformers",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "ansari100_051",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 516,
+            "output_tokens": 98,
+            "total_tokens": 614
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper claims to be published at NeurIPS 2021 (a major AI conference) with well-known authors including Larry S Davis, but appears in zero databases despite being 3+ years old. Real NeurIPS papers are always indexed in multiple databases. The lack of DOI combined with complete absence from all checked databases is a strong indicator of fabrication."
+      },
+      "fields": {
+        "author": "Siyuan Gong, Alan Yu, Xiaohan Chen, Yinpeng Lin, and Larry S Davis",
+        "note": "Siyuan Gong, Alan Yu, Xiaohan Chen, Yinpeng Lin, and Larry S Davis. Vision transformer compression: Early exiting and token pruning. In Advances in Neural Information Processing Systems (NeurIPS), 2021.",
+        "title": "Vision transformer compression: Early exiting and token pruning",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_052",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 497,
+            "output_tokens": 87,
+            "total_tokens": 584
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "CVPR 2023 is a major, well-indexed conference that should appear in academic databases. The complete absence from CrossRef, OpenAlex, and Semantic Scholar, combined with no DOI, strongly suggests fabrication. Real CVPR papers are consistently indexed in these databases."
+      },
+      "fields": {
+        "author": "Jiuxiang Shi, Zuxuan Wu, and Dahua Lin",
+        "note": "Jiuxiang Shi, Zuxuan Wu, and Dahua Lin. Token-aware adaptive sampling for efficient diffusion models. In IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023.",
+        "title": "Token-aware adaptive sampling for efficient diffusion models",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_053",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 499,
+            "output_tokens": 87,
+            "total_tokens": 586
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper not found in any major database despite claiming to be from a prestigious venue (ICML 2021) with well-known authors including Geoffrey Hinton. ICML papers are typically well-indexed, and no DOI is provided, which is highly unusual for a major ML conference."
+      },
+      "fields": {
+        "author": "Raphael Muller, Simon Kornblith, and Geoffrey Hinton",
+        "note": "Raphael Muller, Simon Kornblith, and Geoffrey Hinton. Adavit: Adaptive tokens for efficient vision transformer. In Proceedings of the International Conference on Machine Learning (ICML), 2021.",
+        "title": "Adavit: Adaptive tokens for efficient vision transformer",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_054",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 534,
+            "output_tokens": 90,
+            "total_tokens": 624
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "No DOI and not found in any of the three major academic databases (CrossRef, OpenAlex, Semantic Scholar). While NeurIPS 2021 papers should be well-indexed by now, this citation shows no digital footprint in standard academic repositories, which is a significant red flag for a supposedly published conference paper."
+      },
+      "fields": {
+        "author": "Xin Wang, Anlin Chen, Lihui Xie, Xin Jin, Cheng Wang, and Ping Luo",
+        "note": "Xin Wang, Anlin Chen, Lihui Xie, Xin Jin, Cheng Wang, and Ping Luo. Not all tokens are equal: Efficient transformer for tokenization and beyond. In Advances in Neural Information Processing Systems (NeurIPS), 2021.",
+        "title": "Not all tokens are equal: Efficient transformer for tokenization and beyond",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_055",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 492,
+            "output_tokens": 103,
+            "total_tokens": 595
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "The BibTeX fields are severely corrupted - author field contains only 'Z', title field shows 'Chen and N' instead of the actual paper title, yet the note field contains what appears to be the correct citation format. This suggests the citation data was improperly parsed or fabricated. Combined with no database matches and missing DOI, this is highly suspicious."
+      },
+      "fields": {
+        "archiveprefix": "arXiv",
+        "author": "Z",
+        "eprint": "2206.09267",
+        "note": "Z. Chen and N. Flammarion. When and why sam generalizes better: An optimization perspective. arXiv preprint arXiv:2206.09267, 2022.",
+        "title": "Chen and N",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "ansari100_056",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Suspiciously short author"
+      ],
+      "type": "misc",
+      "warnings": [
+        "Suspiciously short author",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 515,
+            "output_tokens": 83,
+            "total_tokens": 598
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "Multiple red flags: suspiciously short title 'A' and author 'K', no DOI, not found in any major database (CrossRef, OpenAlex, Semantic Scholar), and the inconsistency between the minimal BibTeX fields and the detailed note suggests fabrication or corruption"
+      },
+      "fields": {
+        "author": "K",
+        "note": "K. A. Sankararaman, S. Sankararaman, H. Pandey, S. Ganguli, and F. Bromberg. The impact of neural network overparameterization on gradient confusion and stochastic gradient descent. In 37th International Conference on Machine Learning (ICML), pages 8469-8479, 2020.",
+        "title": "A",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "ansari100_057",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Suspiciously short title",
+        "Suspiciously short author"
+      ],
+      "type": "misc",
+      "warnings": [
+        "Suspiciously short title",
+        "Suspiciously short author",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 465,
+            "output_tokens": 84,
+            "total_tokens": 549
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Multiple red flags: malformed BibTeX with author field containing article title, incomplete/garbled metadata, no DOI, and not found in any database. The citation structure is corrupted with 'Why Physically-Based Rendering' as author name instead of actual authors."
+      },
+      "fields": {
+        "author": "Why Physically-Based Rendering",
+        "note": "Why Physically-Based Rendering. Physically-based rendering. Procedia IUTAM, 13(127137):3, 2015 .",
+        "title": "Physically-based rendering",
+        "year": "2015"
+      },
+      "issues": [],
+      "key": "ansari100_058",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 526,
+            "output_tokens": 70,
+            "total_tokens": 596
+          }
+        },
+        "confidence": 25,
+        "is_suspicious": false,
+        "reason": "arXiv preprint from 2023 with valid arXiv ID format (2303.08603) - arXiv papers often don't appear in traditional academic databases, and the citation format is consistent with legitimate preprints"
+      },
+      "fields": {
+        "archiveprefix": "arXiv",
+        "author": "Pierre Casgrain, Anirudh Kulkarni, and Nicholas Watters",
+        "eprint": "2303.08603",
+        "note": "Pierre Casgrain, Anirudh Kulkarni, and Nicholas Watters. Learning to trade with continuous action spaces: Application to market making. arXiv preprint arXiv:2303.08603, 2023.",
+        "title": "Learning to trade with continuous action spaces: Application to market making",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_059",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 480,
+            "output_tokens": 89,
+            "total_tokens": 569
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Missing from all major databases (CrossRef, OpenAlex, Semantic Scholar) with no DOI, which is highly unusual for a 2020 paper in Applied Economics. The journal volume number 52(55) also appears questionable as most journals don't have 55+ issues per volume."
+      },
+      "fields": {
+        "author": "Z Ning and Y K Kwok",
+        "note": "Z Ning and Y K Kwok. Q-learning for option pricing and hedging with transaction costs. Applied Economics, 52(55):6033-6048, 2020.",
+        "title": "Q-learning for option pricing and hedging with transaction costs",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "ansari100_060",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 489,
+            "output_tokens": 88,
+            "total_tokens": 577
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Multiple red flags: malformed BibTeX with journal details duplicated in title field, no DOI, and complete absence from all major academic databases (CrossRef, OpenAlex, Semantic Scholar). Journal of Derivatives is a legitimate publication that should be indexed, making the total absence highly suspicious."
+      },
+      "fields": {
+        "author": "W L Chan and R O Shelton",
+        "note": "W L Chan and R O Shelton. Can machine learning improve delta hedging? Journal of Derivatives, $9(1): 39-56,2001$.",
+        "title": "Can machine learning improve delta hedging? Journal of Derivatives, $9(1): 39-56,2001$.",
+        "year": "2001"
+      },
+      "issues": [],
+      "key": "ansari100_061",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 504,
+            "output_tokens": 97,
+            "total_tokens": 601
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "No DOI provided and paper not found in any major academic database (CrossRef, OpenAlex, Semantic Scholar). For a 2019 paper on a popular topic like reinforcement learning in finance, published in what appears to be an established journal, it should be indexed somewhere. The complete absence from all databases is a significant red flag."
+      },
+      "fields": {
+        "author": "Petter N Kolm, Sebastian Kr\u00fcgel, and Sergiy V Zadorozhnyi",
+        "note": "Petter N Kolm, Sebastian Kr\u00fcgel, and Sergiy V Zadorozhnyi. Reinforcement learning for optimal hedging. The Journal of Trading, 14(4):4-17, 2019.",
+        "title": "Reinforcement learning for optimal hedging",
+        "year": "2019"
+      },
+      "issues": [],
+      "key": "ansari100_062",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 501,
+            "output_tokens": 85,
+            "total_tokens": 586
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper from 2021 with no DOI and not found in any major academic database (CrossRef, OpenAlex, Semantic Scholar) is highly suspicious. A legitimate paper on deep reinforcement learning for financial markets published 3+ years ago should appear in at least one database."
+      },
+      "fields": {
+        "author": "Kyung Hyun Park, Hyeong Jin Kim, and Woo Chang Kim",
+        "note": "Kyung Hyun Park, Hyeong Jin Kim, and Woo Chang Kim. Deep reinforcement learning for limit order book-based market making. Expert Systems with Applications, 169:114338, 2021.",
+        "title": "Deep reinforcement learning for limit order book-based market making",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_063",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 498,
+            "output_tokens": 76,
+            "total_tokens": 574
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "No DOI provided and completely absent from all major academic databases (CrossRef, OpenAlex, Semantic Scholar). For a 2021 paper in a well-established journal like Physica D, this is highly suspicious as such papers should be indexed somewhere."
+      },
+      "fields": {
+        "author": "Moonseop Han and Elizabeth Qian",
+        "note": "Moonseop Han and Elizabeth Qian. Robust prediction of dynamical systems with structured neural networks: Long-term behavior and chaos. Physica D: Nonlinear Phenomena, 427:133006, 2021.",
+        "title": "Robust prediction of dynamical systems with structured neural networks: Long-term behavior and chaos",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_064",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 498,
+            "output_tokens": 83,
+            "total_tokens": 581
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "No DOI provided and not found in any major academic database (CrossRef, OpenAlex, Semantic Scholar). Both authors are real traffic control researchers, but the specific paper cannot be verified anywhere, which is highly unusual for a 2008 publication in an established journal like Neural Computing and Applications."
+      },
+      "fields": {
+        "author": "Bart De Schutter and Serge P Hoogendoorn",
+        "note": "Bart De Schutter and Serge P Hoogendoorn. Modeling and control of freeway traffic flow by state space neural networks. Neural Computing and Applications, 17(2):175-185, 2008.",
+        "title": "Modeling and control of freeway traffic flow by state space neural networks",
+        "year": "2008"
+      },
+      "issues": [],
+      "key": "ansari100_065",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 526,
+            "output_tokens": 91,
+            "total_tokens": 617
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "No DOI provided and not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). The claimed journal 'Annual Review of Condensed Matter Physics' exists but this specific paper cannot be verified anywhere, which is highly unusual for a 2023 publication in a reputable journal."
+      },
+      "fields": {
+        "author": "Jaideep Pathak, Brian R Hunt, Georg M Goerg, and Themistoklis P Sapsis",
+        "note": "Jaideep Pathak, Brian R Hunt, Georg M Goerg, and Themistoklis P Sapsis. Data-driven prediction of chaotic dynamics: Methods, challenges, and opportunities. Annual Review of Condensed Matter Physics, 14:379-401, 2023.",
+        "title": "Data-driven prediction of chaotic dynamics: Methods, challenges, and opportunities",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_066",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 521,
+            "output_tokens": 86,
+            "total_tokens": 607
+          }
+        },
+        "confidence": 25,
+        "is_suspicious": false,
+        "reason": "While the paper was not found in major databases and lacks a DOI, the authors are real researchers from Universidad Carlos III de Madrid who work in fluid mechanics and machine learning. The title and content align with their expertise and recent research trends. The absence from databases could be due to indexing delays or venue not being covered."
+      },
+      "fields": {
+        "author": "Alejandro G\u00fcemes, Stefano Discetti, and Andrea Ianiro",
+        "note": "Alejandro G\u00fcemes, Stefano Discetti, and Andrea Ianiro. Coarse-grained physics-based prediction of three-dimensional unsteady flows via neural networks. Science Advances, 7(46):eabj0751, 2021.",
+        "title": "Coarse-grained physics-based prediction of three-dimensional unsteady flows via neural networks",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_067",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 538,
+            "output_tokens": 87,
+            "total_tokens": 625
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "No DOI and not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While CVPR Workshop papers exist, legitimate ones from 2021 should appear in at least one database. The complete absence from all checked sources is a significant red flag for a supposedly published conference workshop paper."
+      },
+      "fields": {
+        "author": "Jeongseung Park, Minseon Yang, Minz Won Park, and Geonseok Lee",
+        "note": "Jeongseung Park, Minseon Yang, Minz Won Park, and Geonseok Lee. Diffsound: Differential sound manipulation with a few-shot supervision. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops, pages 1767-1775, 2021.",
+        "title": "Diffsound: Differential sound manipulation with a few-shot supervision",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_068",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 562,
+            "output_tokens": 83,
+            "total_tokens": 645
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "arXiv preprint 2502.14458 claims to be from 2024 but has an impossible February 2025 identifier, authors are real researchers but no trace found in any database, and the paper title/topic seems plausible but unverifiable"
+      },
+      "fields": {
+        "archiveprefix": "arXiv",
+        "author": "Wenxuan Sun, Tri Dao, Hongyu Zhuang, Zihang Dai, Albert Gu, and Christopher D Manning",
+        "eprint": "2502.14458",
+        "note": "Wenxuan Sun, Tri Dao, Hongyu Zhuang, Zihang Dai, Albert Gu, and Christopher D Manning. Llamba: Efficient llms with mamba-based distillation. arXiv preprint arXiv:2502.14458, 2024.",
+        "title": "Llamba: Efficient llms with mamba-based distillation",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "ansari100_069",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 564,
+            "output_tokens": 93,
+            "total_tokens": 657
+          }
+        },
+        "confidence": 75,
+        "is_suspicious": false,
+        "reason": "This appears to be a legitimate arXiv preprint from 2024. The author list includes well-known researchers like Christopher Manning and Christopher Re from Stanford, and the topic aligns with their research areas. ArXiv papers may not immediately appear in all databases, and the formatting/metadata is consistent with real academic work."
+      },
+      "fields": {
+        "archiveprefix": "arXiv",
+        "author": "Tri Dao, Shizhe Ma, Wenxuan Sun, Albert Gu, Sam Smith, Aapo Kyrola, Christopher D Manning, and Christopher Re",
+        "eprint": "2406.07887",
+        "note": "Tri Dao, Shizhe Ma, Wenxuan Sun, Albert Gu, Sam Smith, Aapo Kyrola, Christopher D Manning, and Christopher Re. An empirical study of state space models for large language modeling. arXiv preprint arXiv:2406.07887, 2024.",
+        "title": "An empirical study of state space models for large language modeling",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "ansari100_070",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 504,
+            "output_tokens": 90,
+            "total_tokens": 594
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper claims to be from NeurIPS 2021, a top-tier venue that should definitely be indexed in databases, but is not found in CrossRef, OpenAlex, or Semantic Scholar. NeurIPS papers are well-documented and this absence is a strong red flag for fabrication."
+      },
+      "fields": {
+        "author": "Junyan Zhu, Chenyang Li, Chao He, and et al",
+        "note": "Junyan Zhu, Chenyang Li, Chao He, and et al. Freematch: A simple framework for long-tailed semi-supervised learning. In NeurIPS, 2021.",
+        "title": "Freematch: A simple framework for long-tailed semi-supervised learning",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_071",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 483,
+            "output_tokens": 92,
+            "total_tokens": 575
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper not found in any major database (CrossRef, OpenAlex, Semantic Scholar), no DOI provided, and uses generic 'et al' author format. For a 2023 NeurIPS paper on the popular topic of federated learning with vision-language models, it should definitely be indexed in academic databases by now."
+      },
+      "fields": {
+        "author": "Yijie Zang et al",
+        "note": "Yijie Zang et al. Fedclip: A federated learning framework for vision-language models. In NeurIPS, 2023.",
+        "title": "Fedclip: A federated learning framework for vision-language models",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_072",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic author name pattern"
+      ],
+      "type": "misc",
+      "warnings": [
+        "Generic author name pattern",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 482,
+            "output_tokens": 97,
+            "total_tokens": 579
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper claims to be published at ICCV 2023 (a major computer vision conference) but has no DOI and is not found in any of the three major academic databases. Real ICCV papers are typically well-indexed and have DOIs. The author format 'Jiahui Liu and et al' is also unusual for formal citations."
+      },
+      "fields": {
+        "author": "Jiahui Liu and et al",
+        "note": "Jiahui Liu and et al. Tall-swin: Thumbnail layout transformer for generalised deepfake video detection. In ICCV, 2023.",
+        "title": "Tall-swin: Thumbnail layout transformer for generalised deepfake video detection",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_073",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 496,
+            "output_tokens": 90,
+            "total_tokens": 586
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "No DOI provided and paper not found in any major academic database (CrossRef, OpenAlex, Semantic Scholar). While the authors are real researchers in the field, the lack of presence in all checked databases for a 2013 Neural Networks journal paper is highly suspicious, as this is a well-indexed venue and timeframe."
+      },
+      "fields": {
+        "author": "Nitish Srivastava and Ruslan R Salakhutdinov",
+        "note": "Nitish Srivastava and Ruslan R Salakhutdinov. Discriminative features for fast frame-based phoneme classification. Neural networks, 47:17-23, 2013.",
+        "title": "Discriminative features for fast frame-based phoneme classification",
+        "year": "2013"
+      },
+      "issues": [],
+      "key": "ansari100_074",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 513,
+            "output_tokens": 85,
+            "total_tokens": 598
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Claims to be published in prestigious IEEE TPAMI journal but has no DOI and is not found in any major academic database (CrossRef, OpenAlex, Semantic Scholar). IEEE papers are typically well-indexed, making this absence highly suspicious for a 2021 publication."
+      },
+      "fields": {
+        "author": "Anh Tuan Nguyen, Shengping Li, and Chao Qin",
+        "note": "Anh Tuan Nguyen, Shengping Li, and Chao Qin. Multimodal adversarial robustness: Attack and defense. IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2021.",
+        "title": "Multimodal adversarial robustness: Attack and defense",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_075",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 580,
+            "output_tokens": 110,
+            "total_tokens": 690
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper claims to be from EMNLP 2018 (a major NLP conference) but is absent from all databases including CrossRef, OpenAlex, and Semantic Scholar. Major conference papers are consistently indexed. Additionally, no DOI provided, which is standard for EMNLP proceedings. The combination of high-profile venue claim with complete database absence is a strong fabrication indicator."
+      },
+      "fields": {
+        "author": "Jack Lau, Ankan Gayen, Philipp Tschandl, Gregory A Burns, Jiahong Yuan, Tanveer SyedaMahmood, and Mehdi Moradi",
+        "note": "Jack Lau, Ankan Gayen, Philipp Tschandl, Gregory A Burns, Jiahong Yuan, Tanveer SyedaMahmood, and Mehdi Moradi. A dataset and exploration of models for understanding radiology images through dialogue. In Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 2575-2584, 2018.",
+        "title": "A dataset and exploration of models for understanding radiology images through dialogue",
+        "year": "2018"
+      },
+      "issues": [],
+      "key": "ansari100_076",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 500,
+            "output_tokens": 88,
+            "total_tokens": 588
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "No DOI provided and not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). For a 2023 computer vision paper from a major IEEE conference, this should be indexed. Generic author format 'et al' and low metadata similarity score add to suspicion."
+      },
+      "fields": {
+        "author": "Yikai Zhang et al",
+        "note": "Yikai Zhang et al. \"Text-to-Image Diffusion Models with Customized Guidance\". In: Proceedings of the IEEE/CVF International Conference on Computer Vision. 2023.",
+        "title": "\"Text-to-Image Diffusion Models with Customized Guidance\"",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_077",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic author name pattern",
+        "Metadata similarity only 0.25"
+      ],
+      "type": "misc",
+      "warnings": [
+        "Generic author name pattern",
+        "No DOI found and not in OpenAlex",
+        "Low metadata similarity score: 0.25"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 503,
+            "output_tokens": 80,
+            "total_tokens": 583
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "No DOI provided, not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and claims publication in a prestigious IEEE journal. The arXiv URL suggests it may only be a preprint, not actually published in IEEE TPAMI as claimed."
+      },
+      "fields": {
+        "author": "Author Song and AnotherAuthor Zhang",
+        "note": "Author Song and AnotherAuthor Zhang. \"Consistency in Diffusion Models: Improving Noise Embeddings\". In: IEEE Transactions on Pattern Analysis and Machine Intelligence (2023). URL: https://arxiv.org/abs/2304.08787.",
+        "title": "\"Consistency in Diffusion Models: Improving Noise Embeddings\"",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_078",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 467,
+            "output_tokens": 133,
+            "total_tokens": 600
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Claudia Goldin is a renowned economist who won the 2023 Nobel Prize, but this specific citation shows major red flags: no DOI, not found in any database (CrossRef, OpenAlex, Semantic Scholar), and the page range (348-353) seems too short for a typical AER article. The American Economic Review is a top-tier journal that would definitely be indexed in these databases. While Goldin has published extensively on gender wage gaps, this particular citation appears fabricated."
+      },
+      "fields": {
+        "author": "Claudia Goldin",
+        "note": "Claudia Goldin. Occupational choices and the gender wage gap. American Economic Review, 104(5):348-353, 2014.",
+        "title": "Occupational choices and the gender wage gap",
+        "year": "2014"
+      },
+      "issues": [],
+      "key": "ansari100_079",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 542,
+            "output_tokens": 98,
+            "total_tokens": 640
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Citation format is severely malformed with title listed as '(2022)' and full citation duplicated in note field. While the URL points to a legitimate publication venue (Distill), the improper formatting combined with absence from all academic databases suggests this is likely a fabricated or corrupted citation rather than a properly formatted reference to a real paper."
+      },
+      "fields": {
+        "author": "Olah, C., Elhage, N., Nanda, N., Schiefer, N., Jones, A., Henighan, T., and DasSarma, N",
+        "note": "Olah, C., Elhage, N., Nanda, N., Schiefer, N., Jones, A., Henighan, T., and DasSarma, N. (2022). Transformer circuits. Distill, 7(3). https://distill.pub/2022/circuits/.",
+        "title": "(2022)",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "ansari100_080",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 457,
+            "output_tokens": 94,
+            "total_tokens": 551
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Multiple red flags: malformed citation with title field containing only '(2023)', incomplete author information, no DOI, and not found in any major academic database. The topic (mechanistic interpretability of GPT-2) is legitimate research area, but the citation structure is severely corrupted, suggesting fabrication or data corruption."
+      },
+      "fields": {
+        "author": "Nanda, N",
+        "note": "Nanda, N. (2023). Progress in mechanistic interpretability: Reverse-engineering induction heads in GPT-2.",
+        "title": "(2023)",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_081",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 474,
+            "output_tokens": 80,
+            "total_tokens": 554
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Citation is clearly corrupted with malformed BibTeX fields (author='J', title='Zhang and X'), complete absence from all databases, no DOI, and the note field contains what appears to be the actual citation details, indicating severe formatting errors or fabrication"
+      },
+      "fields": {
+        "author": "J",
+        "note": "J. Zhang and X. Li. Multi-agent systems for distributed problem solving: A framework for task decomposition and coordination. Procedia Computer Science, 55:1131-1138, 2015.",
+        "title": "Zhang and X",
+        "year": "2015"
+      },
+      "issues": [],
+      "key": "ansari100_082",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Suspiciously short author"
+      ],
+      "type": "misc",
+      "warnings": [
+        "Suspiciously short author",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 511,
+            "output_tokens": 91,
+            "total_tokens": 602
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Citation claims to be from CVPR 2021 (a major, well-indexed computer vision conference) but has no DOI and is not found in any database (CrossRef, OpenAlex, Semantic Scholar). CVPR papers are consistently indexed in academic databases, making this absence highly suspicious for a supposedly published conference paper."
+      },
+      "fields": {
+        "author": "Erfan Aghasian, Shai Avidan, Piotr Dollar, and Justin Johnson",
+        "note": "Erfan Aghasian, Shai Avidan, Piotr Dollar, and Justin Johnson. Hierarchical protocols for multi-agent 3d scene understanding. In CVPR, pages 7664-7673, 2021.",
+        "title": "Hierarchical protocols for multi-agent 3d scene understanding",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_083",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 568,
+            "output_tokens": 106,
+            "total_tokens": 674
+          }
+        },
+        "confidence": 75,
+        "is_suspicious": false,
+        "reason": "This appears to be a legitimate arXiv preprint from 2017 by well-known researchers including Yoshua Bengio. ArXiv papers often don't appear in traditional academic databases like CrossRef, and the eprint number format (1612.01462) follows arXiv conventions. The topic and author list are consistent with real research in neural network quantization."
+      },
+      "fields": {
+        "archiveprefix": "arXiv",
+        "author": "Itay Hubara, Matthieu Courbariaux, Daniel Soudry, Rami El-Yaniv, and Yoshua Bengio",
+        "eprint": "1612.01462",
+        "note": "Itay Hubara, Matthieu Courbariaux, Daniel Soudry, Rami El-Yaniv, and Yoshua Bengio. Quantizing deep convolutional networks for efficient inference: A whitepaper. arXiv preprint arXiv:1612.01462, 2017.",
+        "title": "Quantizing deep convolutional networks for efficient inference: A whitepaper",
+        "year": "2017"
+      },
+      "issues": [],
+      "key": "ansari100_084",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 517,
+            "output_tokens": 108,
+            "total_tokens": 625
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Survey papers on popular ML topics like neural network compression are typically well-indexed. A 2021 survey claiming to be in ACM Computing Surveys (a top-tier venue) should definitely appear in major databases. The absence from all three databases (CrossRef, OpenAlex, Semantic Scholar) combined with no DOI is a strong red flag for a recent paper in a prestigious journal."
+      },
+      "fields": {
+        "author": "Zhiqiang Wang, Chao Zhang, Bing Li, Zhen Xu, and Zhiwei Li",
+        "note": "Zhiqiang Wang, Chao Zhang, Bing Li, Zhen Xu, and Zhiwei Li. A survey of model compression and acceleration for deep neural networks. ACM Computing Surveys, 54(7):1-34, 2021.",
+        "title": "A survey of model compression and acceleration for deep neural networks",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_085",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 491,
+            "output_tokens": 105,
+            "total_tokens": 596
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "ArXiv paper with generic author name 'Andrew Black et al' not found in any database (CrossRef, OpenAlex, Semantic Scholar). Real arXiv papers typically appear in at least one academic database, and the eprint number 2310.08573 from October 2023 should be discoverable if legitimate."
+      },
+      "fields": {
+        "archiveprefix": "arXiv",
+        "author": "Andrew Black et al",
+        "eprint": "2310.08573",
+        "note": "Andrew Black et al. Zero-shot skill composition with semantic feature fusion. arXiv preprint arXiv:2310.08573, 2023.",
+        "title": "Zero-shot skill composition with semantic feature fusion",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_086",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic author name pattern"
+      ],
+      "type": "misc",
+      "warnings": [
+        "Generic author name pattern",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 586,
+            "output_tokens": 76,
+            "total_tokens": 662
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "ArXiv paper from 2024 with specific ID (2402.17552) not found in any database including Semantic Scholar which typically indexes arXiv papers quickly. Real arXiv papers should be discoverable through these databases."
+      },
+      "fields": {
+        "archiveprefix": "arXiv",
+        "author": "Yufei Wu, Kiran Alwala, Vivek Ganapathi, Sudeep Sharma, Yilun Chang, Yicheng Zhang, Yilun Zhou, et al",
+        "eprint": "2402.17552",
+        "note": "Yufei Wu, Kiran Alwala, Vivek Ganapathi, Sudeep Sharma, Yilun Chang, Yicheng Zhang, Yilun Zhou, et al. Susie: Scaling up instruction-following policies for robot manipulation. arXiv preprint arXiv:2402.17552, 2024.",
+        "title": "Susie: Scaling up instruction-following policies for robot manipulation",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "ansari100_087",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 530,
+            "output_tokens": 97,
+            "total_tokens": 627
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "ICASSP is a major, well-indexed IEEE conference. A 2023 paper from this venue should definitely appear in at least one major database (CrossRef, OpenAlex, Semantic Scholar), especially since it has no DOI. The complete absence from all databases for a recent paper from a top-tier conference is a strong indicator of fabrication."
+      },
+      "fields": {
+        "author": "Zhipeng Zhang, Chang Liu, Shihan Wu, and Yan Zhao",
+        "note": "Zhipeng Zhang, Chang Liu, Shihan Wu, and Yan Zhao. EST: Event spatio-temporal transformer for object recognition with event cameras. In ICASSP 2023 - 2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 1-5. IEEE, 2023.",
+        "title": "EST: Event spatio-temporal transformer for object recognition with event cameras",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_088",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 527,
+            "output_tokens": 105,
+            "total_tokens": 632
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper from 2021 ICCV Workshop not found in any major database (CrossRef, OpenAlex, Semantic Scholar) and lacks DOI. While ICCV is a legitimate venue, workshop papers are typically indexed. The absence from all databases combined with no DOI is a significant red flag for a 3-year-old paper from a major conference."
+      },
+      "fields": {
+        "author": "Daniel Gehrig, Mathias Gehrig, John Monaghan, and Davide Scaramuzza",
+        "note": "Daniel Gehrig, Mathias Gehrig, John Monaghan, and Davide Scaramuzza. Recurrent vision transformers for dense prediction. In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops, pages 3139-3148, 2021.",
+        "title": "Recurrent vision transformers for dense prediction",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_089",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 506,
+            "output_tokens": 95,
+            "total_tokens": 601
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper claims to be from NeurIPS 2021, a highly prestigious and well-indexed conference, but has no DOI and is not found in any major academic database (CrossRef, OpenAlex, Semantic Scholar). NeurIPS papers are consistently indexed across multiple databases, making this absence highly suspicious for a paper from such a prominent venue."
+      },
+      "fields": {
+        "author": "Qiyang Du, Ozan Sener, and Silvio Savarese",
+        "note": "Qiyang Du, Ozan Sener, and Silvio Savarese. Agree to disagree: Adaptive learning with gradient disagreement. In Advances in Neural Information Processing Systems (NeurIPS), 2021.",
+        "title": "Agree to disagree: Adaptive learning with gradient disagreement",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_090",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 539,
+            "output_tokens": 114,
+            "total_tokens": 653
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper claims to be from ICLR 2022, a major AI venue, but has no DOI and is not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). ICLR papers are typically well-indexed. The topic and author names appear plausible, but the complete absence from all databases for a recent paper from a top-tier conference is a significant red flag."
+      },
+      "fields": {
+        "author": "Longxuan Jing, Yu Tian, Yujun Pei, Yibing Shen, and Jiashi Feng",
+        "note": "Longxuan Jing, Yu Tian, Yujun Pei, Yibing Shen, and Jiashi Feng. Understanding contrastive representation learning through alignment and uniformity on the hypersphere. In International Conference on Learning Representations (ICLR), 2022.",
+        "title": "Understanding contrastive representation learning through alignment and uniformity on the hypersphere",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "ansari100_091",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 497,
+            "output_tokens": 83,
+            "total_tokens": 580
+          }
+        },
+        "confidence": 25,
+        "is_suspicious": false,
+        "reason": "While not found in databases, this appears to be a legitimate ICML 2023 paper by known Google researchers on an active research topic. The authors have established publication records and the venue/topic combination is plausible. Absence from databases may be due to indexing delays or incomplete coverage."
+      },
+      "fields": {
+        "author": "Yair Leviathan, Clemens Rosenbaum, and Slav Petrov",
+        "note": "Yair Leviathan, Clemens Rosenbaum, and Slav Petrov. Fast inference from transformers via speculative decoding. In ICML, 2023.",
+        "title": "Fast inference from transformers via speculative decoding",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_092",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 498,
+            "output_tokens": 103,
+            "total_tokens": 601
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "No DOI provided and not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While NeurIPS 2024 is a real recent conference, legitimate papers from major venues like NeurIPS typically appear in at least one database and have DOIs. The combination of no DOI and zero database matches is a significant red flag."
+      },
+      "fields": {
+        "author": "Wenwen Chang, Tal Schuster, and Yann LeCun",
+        "note": "Wenwen Chang, Tal Schuster, and Yann LeCun. Neural surgery for memorisation: Locating and removing verbatim recall neurons. In NeurIPS, 2024.",
+        "title": "Neural surgery for memorisation: Locating and removing verbatim recall neurons",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "ansari100_093",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 464,
+            "output_tokens": 83,
+            "total_tokens": 547
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Multiple red flags: malformed BibTeX with author field 'M' and title 'Garcia and A', no DOI, and not found in any database. The actual citation appears to be in the 'note' field, suggesting corrupted or fabricated data."
+      },
+      "fields": {
+        "author": "M",
+        "note": "M. Garcia and A. Thompson. Applications of llms in legal document analysis. Journal of Legal Technology, 7(1):50-65, 2024.",
+        "title": "Garcia and A",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "ansari100_094",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Suspiciously short author"
+      ],
+      "type": "misc",
+      "warnings": [
+        "Suspiciously short author",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 469,
+            "output_tokens": 85,
+            "total_tokens": 554
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Critical formatting errors in BibTeX fields (author field contains only 'J', title field contains 'Smith and A'), complete absence from all major databases, no DOI, and the actual citation content appears in the 'note' field rather than proper fields - all indicating fabrication"
+      },
+      "fields": {
+        "author": "J",
+        "note": "J. Smith and A. Patel. Leveraging large language models for financial forecasting. International Journal of Financial Technology, 9(2):101-115, 2024.",
+        "title": "Smith and A",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "ansari100_095",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Suspiciously short author"
+      ],
+      "type": "misc",
+      "warnings": [
+        "Suspiciously short author",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 466,
+            "output_tokens": 85,
+            "total_tokens": 551
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Multiple red flags: generic author name 'David Jones et al', no DOI provided, and complete absence from all major academic databases (CrossRef, OpenAlex, Semantic Scholar). For a 2023 Nature Methods paper, which is a high-impact journal, this combination strongly suggests fabrication."
+      },
+      "fields": {
+        "author": "David Jones et al",
+        "note": "David Jones et al. Gpsa: Gene expression and histology-based spatial alignment. Nature Methods, 2023.",
+        "title": "Gpsa: Gene expression and histology-based spatial alignment",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_096",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic author name pattern"
+      ],
+      "type": "misc",
+      "warnings": [
+        "Generic author name pattern",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 567,
+            "output_tokens": 112,
+            "total_tokens": 679
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "Paper claims to be published in Nature Communications (a major indexed journal) in 2023, but has no DOI and is not found in any major database (CrossRef, OpenAlex, Semantic Scholar). Nature Communications papers are always indexed and have DOIs. The specific volume/issue citation (14(1):5548) makes this particularly suspicious as it suggests a real publication that should definitely be discoverable."
+      },
+      "fields": {
+        "author": "Zhihao Chen, Hantao Zhang, Yuhan Zhang, Zhanlin Hu, Quanquan Gu, Qing Zhang, and Shuo Suo",
+        "note": "Zhihao Chen, Hantao Zhang, Yuhan Zhang, Zhanlin Hu, Quanquan Gu, Qing Zhang, and Shuo Suo. Slat: a transformer-based method for simultaneous alignment and clustering of spatial transcriptomics data. Nature Communications, 14(1):5548, 2023.",
+        "title": "Slat: a transformer-based method for simultaneous alignment and clustering of spatial transcriptomics data",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "ansari100_097",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 494,
+            "output_tokens": 114,
+            "total_tokens": 608
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "The BibTeX entry is severely malformed with author names split across different fields, and the actual paper details are buried in the 'note' field. Despite being from 2002 (well within database coverage), it's not found in any major academic database (CrossRef, OpenAlex, Semantic Scholar) and lacks a DOI. The combination of formatting errors and complete absence from all databases strongly suggests fabrication."
+      },
+      "fields": {
+        "author": "Fran\u00e7ois Baccelli, G\u00e9rard H",
+        "note": "Fran\u00e7ois Baccelli, G\u00e9rard H. Tach\u00e9, and Etienne Altman. Flow complexity and heavytailed delays in packet networks. Performance Evaluation, 49(1-4):427-449, 2002.",
+        "title": "Tach\u00e9, and Etienne Altman",
+        "year": "2002"
+      },
+      "issues": [],
+      "key": "ansari100_098",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 522,
+            "output_tokens": 100,
+            "total_tokens": 622
+          }
+        },
+        "confidence": 85,
+        "is_suspicious": true,
+        "reason": "No DOI provided and not found in any major database (CrossRef, OpenAlex, Semantic Scholar). The claimed journal 'Journal of Business Research' is a well-established publication that should be indexed. The combination of missing DOI and complete absence from all databases is a significant red flag for a 2021 paper from a reputable journal."
+      },
+      "fields": {
+        "author": "Saravanan Jebarajakirthy, Paurav Shukla, and Prashant Palvia",
+        "note": "Saravanan Jebarajakirthy, Paurav Shukla, and Prashant Palvia. Heavy-tailed distributions in online ad response: A marketing analytics perspective. Journal of Business Research, 124:818-830, 2021.",
+        "title": "Heavy-tailed distributions in online ad response: A marketing analytics perspective",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "ansari100_099",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-4-20250514",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 538,
+            "output_tokens": 87,
+            "total_tokens": 625
+          }
+        },
+        "confidence": 25,
+        "is_suspicious": false,
+        "reason": "ArXiv preprint from 2022 with valid eprint ID format and plausible technical content. ArXiv papers often don't appear in traditional academic databases, and the citation format is consistent with legitimate preprints. Low confidence due to inability to verify, but not suspicious enough to flag as fabricated."
+      },
+      "fields": {
+        "archiveprefix": "arXiv",
+        "author": "Mehdi Azabou, Micah Weber, Wenlin Ma, et al",
+        "eprint": "2210.02870",
+        "note": "Mehdi Azabou, Micah Weber, Wenlin Ma, et al. Mineclip: Multimodal neural exploration of clip latents for automatic video annotation. arXiv preprint arXiv:2210.02870, 2022.",
+        "title": "Mineclip: Multimodal neural exploration of clip latents for automatic video annotation",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "ansari100_100",
+      "status": "warning",
+      "suspicion_reasons": [],
+      "type": "misc",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+ReportGeneratedAt,AIEnabled,AIProvider,AIModel,CitationCount
+"2026-04-09T21:00:48.096Z","Yes","gemini","Gemini 2.5 Flash","10"
+
+Key,Status,Issues,Warnings
+"cabanac2021","valid","",""
+"sakai2026","valid","",""
+"bienz2026","valid","",""
+"abbonato2026","valid","",""
+"resnik2026","suspicious","","Title mismatch (similarity 0.05): BibTeX='Fabricated references in academic publishing...' vs DOI='Hallucinated citations produced by generative arti...'"
+"cobb2024","warning","","No DOI found and not in OpenAlex"
+"baethge2025","warning","","No DOI found and not in OpenAlex"
+"liang2025","warning","","No DOI found and not in OpenAlex"
+"duane2026","warning","","No DOI found and not in OpenAlex"
+"linardon2025","warning","","No DOI found and not in OpenAlex"
