@@ -5,9 +5,9 @@ against public scholarly databases (CrossRef, OpenAlex, Semantic Scholar) and
 reports whether the citation can be verified — without treating "I can't verify
 this" as "this is fake."
 
-CiteCheck is the tool described in the paper *"Whose Writing Is This, Anyway?"*
-(under review). This repository holds the complete code, the evaluation datasets,
-and the experiment logs behind every number in that paper.
+CiteCheck is the tool described in a paper currently under review. This repository
+holds the complete code, the evaluation datasets, and the experiment logs behind
+every number in that paper.
 
 ## What it does
 
