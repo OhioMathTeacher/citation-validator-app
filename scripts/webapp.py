@@ -11,7 +11,7 @@ import requests
 from pathlib import Path
 from flask import Flask, request, jsonify, Response, send_file, abort
 from flask_cors import CORS
-from citation_validator import CitationValidator
+from citation_validator import CitationValidator, __version__ as APP_VERSION
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -36,6 +36,12 @@ def index():
     if page_path.exists():
         return send_file(page_path)
     return Response(HTML_FALLBACK, mimetype='text/html'), 404
+
+
+@app.route('/version')
+def version():
+    """Version of the running code, so a saved report can be traced back to it."""
+    return jsonify({'version': APP_VERSION})
 
 
 def _serve_repo_file(relative_path: str):

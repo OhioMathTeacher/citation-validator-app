@@ -1,0 +1,2600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citation Validator - Detect AI-Hallucinated References</title>
+    <style>
+        :root {
+            --bg: #f5f7fb;
+            --card: #ffffff;
+            --text: #142033;
+            --muted: #58657a;
+            --line: #d7deea;
+            --primary: #1f6feb;
+            --valid: #138a42;
+            --warning: #8a5b00;
+            --suspicious: #be2f2f;
+            --invalid: #be2f2f;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #eef2f9 0%, #f8fafc 100%);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        
+        header {
+            margin-bottom: 24px;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 4px;
+            color: var(--text);
+        }
+        
+        header p {
+            color: var(--muted);
+            font-size: 1em;
+        }
+        
+        .nature-badge {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--line);
+            padding: 4px 12px;
+            border-radius: 6px;
+            margin-top: 8px;
+            font-size: 0.85em;
+            color: var(--muted);
+        }
+        
+        .section {
+            margin-bottom: 18px;
+        }
+        
+        .section h2 {
+            color: var(--text);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 250px;
+            padding: 14px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            resize: vertical;
+            transition: border-color 0.2s;
+            background: var(--card);
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .input-tabs {
+            display: flex;
+            gap: 0;
+            border-bottom: 2px solid var(--line);
+            margin-bottom: 12px;
+        }
+        .input-tab-btn {
+            padding: 8px 18px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--muted);
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            transition: color 0.15s, border-color 0.15s;
+        }
+        .input-tab-btn.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+            font-weight: 600;
+        }
+        .input-tab-btn:hover:not(.active) { color: var(--text); }
+        .doi-status {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 6px;
+            min-height: 18px;
+        }
+
+        .file-upload {
+            border: 2px dashed var(--line);
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 14px;
+            background: var(--card);
+        }
+        
+        .file-upload:hover {
+            border-color: var(--primary);
+            background: #f0f4ff;
+        }
+        
+        .file-upload input {
+            display: none;
+        }
+
+        .file-status {
+            margin: -6px 0 10px;
+            font-size: 12px;
+            color: var(--muted);
+            min-height: 16px;
+        }
+        
+        .button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 28px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .button:hover {
+            background: #1a5cc7;
+        }
+        
+        .button:active {
+            background: #174ea6;
+        }
+        
+        .button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* AI Settings Button */
+        .ai-settings-btn {
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--card);
+            color: var(--muted);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .ai-settings-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .ai-settings-btn.ai-active {
+            border-color: var(--valid);
+            color: var(--valid);
+            background: rgba(19,138,66,0.04);
+        }
+        
+        .ai-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: currentColor;
+            display: inline-block;
+        }
+        
+        /* AI Settings Modal */
+        .ai-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.65);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ai-modal-overlay.open {
+            display: flex;
+        }
+        
+        .ai-modal {
+            background: #1e2738;
+            border: 1px solid rgba(212,168,67,0.2);
+            border-radius: 16px;
+            padding: 32px;
+            width: 600px;
+            max-width: calc(100vw - 40px);
+            box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+            animation: modalSlideIn 0.3s ease;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .ai-modal h2 {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 400;
+            color: #e8dcc8;
+            font-size: 1.8em;
+            margin-bottom: 24px;
+        }
+        
+        .ai-provider-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        
+        .ai-provider-card {
+            background: rgba(255,255,255,0.04);
+            border: 2px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .ai-provider-card:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(212,168,67,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .ai-provider-card.selected {
+            border-color: #d4a843;
+            background: rgba(212,168,67,0.1);
+        }
+        
+        .ai-card-title {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.95em;
+            color: #e8dcc8;
+            margin-bottom: 6px;
+        }
+        
+        .ai-card-desc {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8em;
+            color: #8a8a7a;
+            line-height: 1.5;
+        }
+        
+        .ai-card-badge {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7em;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        
+        .ai-badge-paid {
+            background: rgba(122,59,16,0.35);
+            color: #d4956a;
+        }
+        
+        .ai-badge-free {
+            background: rgba(40,120,60,0.35);
+            color: #7ec88a;
+        }
+        
+        .ai-key-section {
+            margin-bottom: 24px;
+            display: none;
+        }
+        
+        .ai-key-section input {
+            width: 100%;
+            padding: 12px 14px;
+            background: rgba(255,255,255,0.06);
+            border: 2px solid rgba(212,168,67,0.2);
+            border-radius: 8px;
+            color: #e8dcc8;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            outline: none;
+            margin-bottom: 8px;
+        }
+        
+        .ai-key-section input:focus {
+            border-color: rgba(212,168,67,0.5);
+        }
+        
+        .ai-key-hint {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8em;
+            color: #6a6a5a;
+            line-height: 1.6;
+        }
+        
+        .ai-key-hint a {
+            color: #d4a843;
+            text-decoration: none;
+        }
+        
+        .ai-key-hint a:hover {
+            text-decoration: underline;
+        }
+        
+        .ai-modal-actions {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .ai-modal-actions button {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9em;
+            font-weight: 500;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .am-save {
+            background: #d4a843;
+            color: #1e2738;
+            flex: 1;
+        }
+        
+        .am-save:hover {
+            background: #e0b84e;
+            transform: translateY(-1px);
+        }
+        
+        .am-cancel {
+            background: rgba(255,255,255,0.08);
+            color: #9a9083;
+        }
+        
+        .am-cancel:hover {
+            background: rgba(255,255,255,0.14);
+        }
+        
+        #results {
+            margin-top: 18px;
+            display: none;
+        }
+        
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .stat-card {
+            min-width: 120px;
+        }
+        
+        .stat-card {
+            flex: 1;
+            background: var(--card);
+            border: 1px solid var(--line);
+            padding: 14px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-card.valid {
+            border-left: 3px solid var(--valid);
+        }
+        
+        .stat-card.warning {
+            border-left: 3px solid #c09000;
+        }
+        
+        .stat-card.suspicious {
+            border-left: 3px solid #d46a00;
+        }
+        
+        .stat-card.invalid {
+            border-left: 3px solid var(--invalid);
+        }
+
+        .stat-card.unchecked {
+            border-left: 3px solid var(--muted);
+        }
+
+        .coverage-note {
+            display: none;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--muted);
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 18px;
+            font-size: 0.92em;
+            line-height: 1.5;
+            color: var(--text);
+        }
+
+        .citation-meta {
+            font-size: 0.82em;
+            color: var(--muted);
+            margin-top: 4px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            word-break: break-all;
+        }
+
+        .citation-meta a {
+            color: var(--muted);
+        }
+
+        .citation-id {
+            opacity: 0.7;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 2px;
+            color: var(--text);
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: var(--muted);
+        }
+        
+        .citation-item {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--line);
+            padding: 14px 16px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(20,32,51,0.04);
+        }
+        
+        .citation-item.valid {
+            border-left-color: var(--valid);
+        }
+        
+        .citation-item.warning {
+            border-left-color: #c09000;
+        }
+        
+        .citation-item.suspicious {
+            border-left-color: #d46a00;
+        }
+        
+        .citation-item.invalid {
+            border-left-color: var(--invalid);
+        }
+
+        /* "Could not be checked" is not a defect claim, so it is never amber. */
+        .citation-item.unverified {
+            border-left-color: var(--muted);
+        }
+
+        .citation-key {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+        
+        .citation-status {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-left: 8px;
+        }
+        
+        .citation-status.valid {
+            background: rgba(19,138,66,0.1);
+            color: var(--valid);
+        }
+        
+        .citation-status.warning {
+            background: rgba(138,91,0,0.1);
+            color: var(--warning);
+        }
+        
+        .citation-status.suspicious {
+            background: rgba(190,47,47,0.1);
+            color: var(--suspicious);
+        }
+        
+        .citation-status.invalid {
+            background: rgba(190,47,47,0.12);
+            color: var(--invalid);
+        }
+
+        .citation-status.unverified {
+            background: rgba(88,101,122,0.12);
+            color: var(--muted);
+        }
+
+        .issue-list {
+            margin-top: 8px;
+        }
+        
+        .issue-item {
+            padding: 3px 0;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        
+        .issue-item.error {
+            color: var(--invalid);
+        }
+        
+        .issue-item.warning {
+            color: var(--warning);
+        }
+        
+        .ai-analysis {
+            background: rgba(31,111,235,0.04);
+            border: 1px solid rgba(31,111,235,0.15);
+            padding: 10px 12px;
+            border-radius: 6px;
+            margin-top: 8px;
+            font-size: 13px;
+        }
+        
+        .ai-analysis strong {
+            color: var(--primary);
+        }
+        
+        #loading {
+            display: none;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .spinner {
+            border: 3px solid var(--line);
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 14px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .export-buttons {
+            margin-top: 14px;
+            display: flex;
+            gap: 8px;
+        }
+        
+        .export-buttons button {
+            flex: 1;
+            background: var(--card);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            font-size: 13px;
+            padding: 8px 14px;
+        }
+        
+        .export-buttons button:hover {
+            background: rgba(31,111,235,0.05);
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* BENCHMARK LIBRARY                                                 */
+        /* ═══════════════════════════════════════════════════════════════════ */
+
+        .bench-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: border-color 0.2s;
+            user-select: none;
+        }
+
+        .bench-toggle:hover { border-color: var(--primary); }
+
+        .bench-toggle .bench-label {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .bench-toggle .bench-hint {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .bench-toggle .bench-arrow {
+            font-size: 18px;
+            transition: transform 0.2s;
+            color: var(--muted);
+        }
+
+        .bench-toggle.open .bench-arrow { transform: rotate(180deg); }
+
+        .bench-panel {
+            display: none;
+            border: 1px solid var(--line);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            background: var(--card);
+            padding: 16px;
+        }
+
+        .bench-panel.open { display: block; }
+
+        .bench-filters {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        .bench-chip {
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            border: 1px solid var(--line);
+            background: var(--card);
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .bench-chip:hover { border-color: var(--primary); }
+
+        .bench-chip.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .bench-datasets {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-height: 360px;
+            overflow-y: auto;
+        }
+
+        .bench-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 12px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            transition: border-color 0.15s;
+        }
+
+        .bench-card:hover { border-color: var(--primary); }
+
+        .bench-card.pending { opacity: 0.55; }
+
+        .bench-card input[type="checkbox"] {
+            margin-top: 3px;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .bench-card-body { flex: 1; min-width: 0; }
+
+        .bench-card-title {
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .bench-card-meta {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .bench-card-desc {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        .bench-card-tags {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+
+        .bench-tag {
+            font-size: 10px;
+            padding: 1px 6px;
+            border-radius: 4px;
+            background: #eef2f9;
+            color: var(--muted);
+        }
+
+        .bench-tag.tag-fake { background: #fde8e8; color: #be2f2f; }
+        .bench-tag.tag-real { background: #e6f4ea; color: #138a42; }
+        .bench-tag.tag-pending { background: #fff3e0; color: #8a5b00; }
+
+        .bench-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            align-items: center;
+        }
+
+        .bench-actions .button { font-size: 13px; padding: 8px 20px; }
+
+        .bench-selection-info {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
+        /* ACCURACY DASHBOARD                                                */
+        /* ═══════════════════════════════════════════════════════════════════ */
+
+        .accuracy-dashboard {
+            display: none;
+            margin-top: 18px;
+            padding: 16px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+        }
+
+        .accuracy-dashboard.open { display: block; }
+
+        .accuracy-dashboard h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .confusion-matrix {
+            display: grid;
+            grid-template-columns: auto 1fr 1fr;
+            grid-template-rows: auto 1fr 1fr;
+            gap: 2px;
+            max-width: 360px;
+            margin: 0 auto 16px;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .cm-corner { background: transparent; }
+
+        .cm-header {
+            padding: 6px 10px;
+            font-weight: 600;
+            background: #eef2f9;
+            border-radius: 4px;
+        }
+
+        .cm-cell {
+            padding: 12px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .cm-cell small {
+            display: block;
+            font-weight: 400;
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .cm-tp { background: #e6f4ea; color: #138a42; }
+        .cm-fp { background: #fde8e8; color: #be2f2f; }
+        .cm-fn { background: #fde8e8; color: #be2f2f; }
+        .cm-tn { background: #e6f4ea; color: #138a42; }
+
+        .accuracy-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .acc-metric {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+        }
+
+        .acc-metric .acc-value {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .acc-metric .acc-label {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .acc-value.good { color: #138a42; }
+        .acc-value.ok { color: #8a5b00; }
+        .acc-value.bad { color: #be2f2f; }
+
+        footer {
+            margin-top: 32px;
+            padding: 18px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+        }
+        
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Citation Validator</h1>
+            <p>Detect AI-hallucinated references in scientific literature</p>
+            <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">
+                <strong>Best for:</strong> Journal articles (@article) • <strong>Also supports:</strong> Books, conference papers, theses, and other BibTeX entry types
+            </p>
+        </header>
+        
+        <div class="main-content">
+            <!-- ══════════ BENCHMARK LIBRARY ══════════ -->
+            <div class="section">
+                <div class="bench-toggle" id="benchToggle" onclick="toggleBenchPanel()">
+                    <div>
+                        <div class="bench-label">Benchmark Library</div>
+                        <div class="bench-hint">Load curated datasets from published citation hallucination research</div>
+                    </div>
+                    <span class="bench-arrow">&#9660;</span>
+                </div>
+                <div class="bench-panel" id="benchPanel">
+                    <div class="bench-filters" id="benchFilters"></div>
+                    <div class="bench-datasets" id="benchDatasets"></div>
+                    <div class="bench-actions">
+                        <button class="button" onclick="loadSelectedDatasets()">Load Selected</button>
+                        <span class="bench-selection-info" id="benchSelectionInfo">No datasets selected</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Input References</h2>
+
+                <div class="input-tabs">
+                    <button class="input-tab-btn active" id="tabBibtex" onclick="switchInputTab('bibtex')">BibTeX</button>
+                    <button class="input-tab-btn" id="tabDoi" onclick="switchInputTab('doi')">Reference list / DOIs</button>
+                </div>
+
+                <div id="panelBibtex">
+                    <div class="file-upload" id="fileUpload">
+                        <input type="file" id="fileInput" accept=".bib,.txt">
+                        <p>📁 Click to upload .bib file or drag and drop</p>
+                        <p style="font-size: 0.9em; opacity: 0.7;">Supports BibTeX (.bib) files</p>
+                    </div>
+                    <p class="file-status" id="fileStatus"></p>
+                    <textarea id="bibInput" placeholder="Or paste your BibTeX entries here...
+
+Example:
+@article{AuthorYear,
+  title={Paper Title},
+  author={Author, First and Author, Second},
+  journal={Journal Name},
+  year={2025},
+  doi={10.1234/example}
+}"></textarea>
+                </div>
+
+                <div id="panelDoi" style="display:none;">
+                    <textarea id="doiInput" placeholder="Paste DOIs or a reference list here — one reference per line.
+DOIs are extracted automatically; everything else is ignored.
+
+Examples accepted:
+  10.1080/26939169.2024.2394534
+  https://doi.org/10.5038/1936-4660.4.2.8
+  Bates et al. (2025). Cultivating critical thinking... doi:10.1080/26939169.2024.2394534
+  Full APA or MLA references — any line containing a DOI works."></textarea>
+                    <p class="doi-status" id="doiStatus"></p>
+                </div>
+            </div>
+
+            <div class="section" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--card); border: 1px solid var(--line); border-radius: 8px;">
+                <div>
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px;">
+                        <input type="checkbox" id="useAI" style="width: 16px; height: 16px; cursor: pointer;">
+                        <span>Enable AI-powered analysis</span>
+                    </label>
+                    <p style="font-size: 12px; color: var(--muted); margin-top: 4px; margin-left: 24px;">
+                        Analyze suspicious citations that can't be verified in databases
+                    </p>
+                </div>
+                <button class="ai-settings-btn" id="aiBtn" onclick="openAIModal()">
+                    <span class="ai-dot"></span>
+                    <span id="aiBtnLabel">Configure AI</span>
+                </button>
+            </div>
+            
+            <div class="section" style="text-align: center;">
+                <button class="button" onclick="validateCitations()">
+                    Validate Citations
+                </button>
+            </div>
+            
+            <div id="loading">
+                <div class="spinner"></div>
+                <p id="loadingMessage">Validating citations... This may take a moment.</p>
+            </div>
+            
+            <div id="results">
+                <div class="section">
+                    <h2>Results</h2>
+                    
+                    <div class="stats" id="stats"></div>
+
+                    <div class="coverage-note" id="coverageNote"></div>
+
+                    <div class="citation-list" id="citationList"></div>
+                    
+                    <div class="export-buttons">
+                        <button class="button" onclick="exportPDF()">Export PDF</button>
+                        <button class="button" onclick="exportHTML()">Export HTML</button>
+                        <button class="button" onclick="exportJSON()">Export JSON</button>
+                        <button class="button" onclick="exportCSV()">Export CSV</button>
+                    </div>
+
+                    <!-- Accuracy Dashboard (shown when ground truth is available) -->
+                    <div class="accuracy-dashboard" id="accuracyDashboard">
+                        <h3>Accuracy vs. Ground Truth</h3>
+                        <div id="confusionMatrix"></div>
+                        <div class="accuracy-metrics" id="accuracyMetrics"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p><strong>Built to protect academic integrity</strong></p>
+            <p>Citation Validator <span id="appVersion">…</span> | Free, open-source | <a href="https://github.com/OhioMathTeacher/Ohio-Journal-of-School-Mathematics" target="_blank">View on GitHub</a></p>
+            <p style="margin-top: 6px;">
+                Developed in response to Nature's report that 2–6% of 2025 papers contain hallucinated citations
+            </p>
+        </footer>
+    </div>
+    
+    <!-- AI Settings Modal -->
+    <div class="ai-modal-overlay" id="aiModalOverlay" onclick="if(event.target===this)closeAIModal()">
+        <div class="ai-modal">
+            <h2>AI Provider Settings</h2>
+            
+            <div class="ai-provider-cards">
+                <div class="ai-provider-card" id="card-anthropic" onclick="selectProvider('anthropic')">
+                    <div class="ai-card-title">Anthropic Claude</div>
+                    <div class="ai-card-desc">Claude Sonnet 4 — Most powerful for nuanced analysis</div>
+                    <div class="ai-card-badge ai-badge-paid">Paid Key</div>
+                </div>
+                
+                <div class="ai-provider-card" id="card-gemini" onclick="selectProvider('gemini')">
+                    <div class="ai-card-title">Google Gemini</div>
+                    <div class="ai-card-desc">Gemini 2.5 Flash — Free tier (use personal Gmail)</div>
+                    <div class="ai-card-badge ai-badge-free">Free</div>
+                </div>
+                
+                <div class="ai-provider-card" id="card-groq" onclick="selectProvider('groq')">
+                    <div class="ai-card-title">Groq (Llama 3.3)</div>
+                    <div class="ai-card-desc">Fast & free — No Google account needed</div>
+                    <div class="ai-card-badge ai-badge-free">Free</div>
+                </div>
+                
+                <div class="ai-provider-card" id="card-openai" onclick="selectProvider('openai')">
+                    <div class="ai-card-title">OpenAI GPT-4</div>
+                    <div class="ai-card-desc">GPT-4o — Fast, accurate, widely used</div>
+                    <div class="ai-card-badge ai-badge-paid">Paid Key</div>
+                </div>
+            </div>
+            
+            <div class="ai-key-section" id="aiKeySection">
+                <input type="password" id="aiKeyInput" placeholder="Paste your API key here…" 
+                       autocomplete="off" spellcheck="false"
+                       onkeydown="if(event.key==='Enter')saveAISettings();if(event.key==='Escape')closeAIModal()">
+                <div class="ai-key-hint" id="aiKeyHint">
+                    🔒 Stored only in your browser • Never sent to our server • Never in source code
+                </div>
+            </div>
+            
+            <div class="ai-modal-actions">
+                <button class="am-save" onclick="saveAISettings()">Save</button>
+                <button class="am-cancel" onclick="closeAIModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // ═══════════════════════════════════════════════════════════════════════════
+        // BIBTEX PARSER
+        // ═══════════════════════════════════════════════════════════════════════════
+        
+        function parseBibTeX(bibtexString) {
+            const entries = [];
+            const rawEntries = splitBibTeXEntries(bibtexString);
+
+            rawEntries.forEach(rawEntry => {
+                const headerMatch = rawEntry.match(/^@(\w+)\s*\{\s*([^,]+)\s*,/s);
+                if (!headerMatch) return;
+
+                const type = headerMatch[1];
+                const key = headerMatch[2].trim();
+                const fieldsString = rawEntry.slice(headerMatch[0].length, -1);
+                const fields = parseBibTeXFields(fieldsString);
+
+                entries.push({ type, key, fields });
+            });
+
+            return entries;
+        }
+
+        function splitBibTeXEntries(bibtexString) {
+            const entries = [];
+            let i = 0;
+
+            while (i < bibtexString.length) {
+                const atIndex = bibtexString.indexOf('@', i);
+                if (atIndex === -1) break;
+
+                const openBraceIndex = bibtexString.indexOf('{', atIndex);
+                if (openBraceIndex === -1) break;
+
+                let depth = 0;
+                let endIndex = -1;
+
+                for (let j = openBraceIndex; j < bibtexString.length; j++) {
+                    const ch = bibtexString[j];
+                    if (ch === '{') depth++;
+                    if (ch === '}') {
+                        depth--;
+                        if (depth === 0) {
+                            endIndex = j;
+                            break;
+                        }
+                    }
+                }
+
+                if (endIndex === -1) break;
+                entries.push(bibtexString.slice(atIndex, endIndex + 1));
+                i = endIndex + 1;
+            }
+
+            return entries;
+        }
+
+        function parseBibTeXFields(fieldsString) {
+            const fields = {};
+            let i = 0;
+
+            function skipDelimiters() {
+                while (i < fieldsString.length && /[\s,]/.test(fieldsString[i])) i++;
+            }
+
+            while (i < fieldsString.length) {
+                skipDelimiters();
+                if (i >= fieldsString.length) break;
+
+                const keyMatch = fieldsString.slice(i).match(/^([a-zA-Z][\w-]*)\s*=/);
+                if (!keyMatch) {
+                    i++;
+                    continue;
+                }
+
+                const fieldName = keyMatch[1].toLowerCase();
+                i += keyMatch[0].length;
+
+                while (i < fieldsString.length && /\s/.test(fieldsString[i])) i++;
+                if (i >= fieldsString.length) break;
+
+                let value = '';
+
+                if (fieldsString[i] === '{') {
+                    i++;
+                    let depth = 1;
+                    const start = i;
+                    while (i < fieldsString.length && depth > 0) {
+                        if (fieldsString[i] === '{') depth++;
+                        else if (fieldsString[i] === '}') depth--;
+                        i++;
+                    }
+                    value = fieldsString.slice(start, i - 1).trim();
+                } else if (fieldsString[i] === '"') {
+                    i++;
+                    const start = i;
+                    while (i < fieldsString.length) {
+                        if (fieldsString[i] === '"' && fieldsString[i - 1] !== '\\') break;
+                        i++;
+                    }
+                    value = fieldsString.slice(start, i).trim();
+                    i++;
+                } else {
+                    const start = i;
+                    while (i < fieldsString.length && fieldsString[i] !== ',') i++;
+                    value = fieldsString.slice(start, i).trim();
+                }
+
+                fields[fieldName] = value;
+            }
+
+            return fields;
+        }
+        
+        // ═══════════════════════════════════════════════════════════════════════════
+        // NOTE: Client-side API validation functions were removed during code review.
+        // All validation is handled server-side by citation_validator.py via /validate.
+        // See git history for the original client-side implementation.
+        // ═══════════════════════════════════════════════════════════════════════════
+
+        
+        // ═══════════════════════════════════════════════════════════════════════════
+        // AI PROVIDER MANAGEMENT
+        // ═══════════════════════════════════════════════════════════════════════════
+        
+        const PROVIDER_KEY = 'cv_provider';
+        const ANTHROPIC_KEY = 'cv_anthropic_key';
+        const GEMINI_KEY = 'cv_gemini_key';
+        const GROQ_KEY = 'cv_groq_key';
+        const OPENAI_KEY = 'cv_openai_key';
+        
+        let _modalProvider = '';
+        let validationRunMeta = null;
+
+        // How much of the pasted bibliography could be checked at all. Null when
+        // the input was BibTeX (the user supplied the entries directly, so there
+        // is no "not checked" remainder to report).
+        let coverage = null;
+
+        // Populated from /version at load; stamped into every exported report so
+        // a saved report can be traced back to the code that produced it.
+        let APP_VERSION = 'unknown';
+
+        function getProviderModelLabel(provider) {
+            if (provider === 'gemini') return 'Gemini 2.5 Flash';
+            if (provider === 'groq') return 'Groq Llama 3.3 70B';
+            if (provider === 'openai') return 'OpenAI GPT-4o';
+            if (provider === 'anthropic') return 'Anthropic Claude Sonnet 4';
+            return 'None';
+        }
+
+        function formatDuration(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.max(1, Math.round(seconds % 60));
+            if (mins <= 0) return `~${secs}s`;
+            return `~${mins}m ${secs}s`;
+        }
+
+        function estimateValidationSeconds(citationCount, useAI, provider) {
+            // Deterministic validation dominates at scale; AI is applied only to flagged citations.
+            const deterministicPerCitation = 0.22;
+            const estimatedAiFraction = 0.18;
+            const aiPerCitation = {
+                gemini: 1.8,
+                groq: 1.1,
+                openai: 1.3,
+                anthropic: 1.6
+            };
+
+            let total = citationCount * deterministicPerCitation;
+            if (useAI) {
+                total += citationCount * estimatedAiFraction * (aiPerCitation[provider] || 1.4);
+            }
+            return total;
+        }
+
+        function preflightValidationRequest(citationCount, useAI, provider) {
+            // Hard stop for extreme requests in browser mode.
+            const hardMaxBrowserCitations = 5000;
+            if (citationCount > hardMaxBrowserCitations) {
+                alert(`This request has ${citationCount} citations. For very large jobs, use the Python batch runner instead of the browser app.`);
+                return false;
+            }
+
+            if (!useAI) return true;
+
+            const softLimits = {
+                gemini: 250,
+                groq: 300,
+                anthropic: 800,
+                openai: 1000
+            };
+            const limit = softLimits[provider] || 300;
+            const eta = formatDuration(estimateValidationSeconds(citationCount, true, provider));
+            const model = getProviderModelLabel(provider);
+
+            if (citationCount > limit) {
+                const proceed = confirm(
+                    `Large AI request: ${citationCount} citations with ${model}.\n\n`
+                    + `Estimated runtime: ${eta}.\n`
+                    + `Free-tier models may rate-limit or fail on long runs.\n\n`
+                    + `Click OK to continue, or Cancel to run deterministic validation only.`
+                );
+                return proceed;
+            }
+
+            return true;
+        }
+
+        function updateLoadingMessage(text) {
+            const el = document.getElementById('loadingMessage');
+            if (el) el.textContent = text;
+        }
+        let validationResults = null;
+        
+        function getProvider() {
+            return localStorage.getItem(PROVIDER_KEY) || '';
+        }
+        
+        function getStoredKey(provider) {
+            if (provider === 'anthropic') return localStorage.getItem(ANTHROPIC_KEY) || '';
+            if (provider === 'gemini') return localStorage.getItem(GEMINI_KEY) || '';
+            if (provider === 'groq') return localStorage.getItem(GROQ_KEY) || '';
+            if (provider === 'openai') return localStorage.getItem(OPENAI_KEY) || '';
+            return '';
+        }
+        
+        function updateAIBtn() {
+            const btn = document.getElementById('aiBtn');
+            const label = document.getElementById('aiBtnLabel');
+            const p = getProvider();
+            
+            if (p === 'anthropic' && getStoredKey('anthropic')) {
+                btn.classList.add('ai-active');
+                label.textContent = 'AI: Claude ✓';
+            } else if (p === 'gemini' && getStoredKey('gemini')) {
+                btn.classList.add('ai-active');
+                label.textContent = 'AI: Gemini ✓';
+            } else if (p === 'groq' && getStoredKey('groq')) {
+                btn.classList.add('ai-active');
+                label.textContent = 'AI: Groq ✓';
+            } else if (p === 'openai' && getStoredKey('openai')) {
+                btn.classList.add('ai-active');
+                label.textContent = 'AI: OpenAI ✓';
+            } else {
+                btn.classList.remove('ai-active');
+                label.textContent = 'Configure AI';
+            }
+        }
+        
+        function openAIModal() {
+            _modalProvider = getProvider() || 'groq';
+            _refreshModalCards();
+            _refreshKeySection();
+            document.getElementById('aiModalOverlay').classList.add('open');
+            setTimeout(() => document.getElementById('aiKeyInput').focus(), 100);
+        }
+        
+        function closeAIModal() {
+            document.getElementById('aiModalOverlay').classList.remove('open');
+        }
+        
+        function selectProvider(p) {
+            _modalProvider = p;
+            _refreshModalCards();
+            _refreshKeySection();
+            setTimeout(() => document.getElementById('aiKeyInput').focus(), 50);
+        }
+        
+        function _refreshModalCards() {
+            ['anthropic', 'gemini', 'groq', 'openai'].forEach(p => {
+                document.getElementById('card-' + p).classList.toggle('selected', p === _modalProvider);
+            });
+        }
+        
+        function _refreshKeySection() {
+            const section = document.getElementById('aiKeySection');
+            const input = document.getElementById('aiKeyInput');
+            const hint = document.getElementById('aiKeyHint');
+            
+            section.style.display = 'block';
+            const stored = getStoredKey(_modalProvider);
+            input.value = stored ? '••••••••••••••••' : '';
+            
+            if (_modalProvider === 'anthropic') {
+                input.placeholder = 'sk-ant-…';
+                hint.innerHTML = '🔒 Stored only in your browser • Never shared • Get key at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>';
+            } else if (_modalProvider === 'gemini') {
+                input.placeholder = 'AIza…';
+                hint.innerHTML = '🔒 Get free key at <a href="https://aistudio.google.com/app/apikey" target="_blank">aistudio.google.com</a> — <strong style="color:#d4a843">use personal Gmail, not school account</strong>';
+            } else if (_modalProvider === 'groq') {
+                input.placeholder = 'gsk_…';
+                hint.innerHTML = '🔒 Get free key at <a href="https://console.groq.com/keys" target="_blank">console.groq.com</a> — any email works, no Google account needed';
+            } else if (_modalProvider === 'openai') {
+                input.placeholder = 'sk-…';
+                hint.innerHTML = '🔒 Get key at <a href="https://platform.openai.com/api-keys" target="_blank">platform.openai.com</a> — Stored only in your browser';
+            }
+        }
+        
+        function saveAISettings() {
+            const val = document.getElementById('aiKeyInput').value.trim();
+            localStorage.setItem(PROVIDER_KEY, _modalProvider);
+            
+            if (val && !val.startsWith('•')) {
+                const storageKey = _modalProvider === 'anthropic' ? ANTHROPIC_KEY
+                                 : _modalProvider === 'gemini' ? GEMINI_KEY
+                                 : _modalProvider === 'groq' ? GROQ_KEY
+                                 : OPENAI_KEY;
+                localStorage.setItem(storageKey, val);
+            }
+            
+            closeAIModal();
+            updateAIBtn();
+        }
+        
+        // ═══════════════════════════════════════════════════════════════════════════
+        // AI ANALYSIS
+        // ═══════════════════════════════════════════════════════════════════════════
+        
+        async function analyzeWithAI(citation, provider, apiKey) {
+            try {
+                const suspicionReasons = [
+                    ...(citation.issues || []),
+                    ...(citation.warnings || [])
+                ].join('; ');
+
+                const fields = citation.fields || {};
+                const fieldLines = Object.entries(fields)
+                    .filter(([k,v]) => v && v.trim())
+                    .map(([k,v]) => `  ${k}: ${v}`)
+                    .join('\n');
+
+                // Tell the AI what our database checks actually found. The
+                // registry record comes back on the result itself; inventing a
+                // "not found anywhere" line when a DOI resolved would invite the
+                // model to call a confirmed reference fabricated.
+                const dbStatus = citation.status || 'unknown';
+                const registry = citation.verified_metadata || null;
+                const doiResolved = citation.doi_resolved === true;
+
+                const verificationBlock = doiResolved
+                    ? `  The DOI RESOLVED. This work EXISTS -- it is not fabricated.
+  Registry record: ${registry?.title || '(title not returned)'}
+  Registry authors: ${(registry?.authors || []).join('; ') || '(not returned)'}
+  Registry year: ${registry?.year || '(not returned)'}
+  Source: ${registry?.source || 'CrossRef'}`
+                    : registry
+                    ? `  No DOI resolved, but a database search matched a record.
+  Matched record: ${registry.title || '(none)'}
+  Source: ${registry.source || 'OpenAlex/Semantic Scholar'}`
+                    : `  No DOI supplied or resolved, and no database match was found.
+  NOTE: absence from these databases is weak evidence. Books, chapters,
+  reports, dissertations, conference papers, and most pre-2000 work are
+  simply not indexed.`;
+
+                const prompt = doiResolved
+                    ? `A citation's DOI resolved successfully, so the cited work is confirmed to exist.
+Your ONLY task is to judge the DISCREPANCY between how the citation is written and
+what the registry record says.
+
+Citation as written:
+${fieldLines || '  (sparse)'}
+
+VERIFICATION RESULTS:
+${verificationBlock}
+
+Discrepancies our automated checks found:
+${suspicionReasons || '(none)'}
+
+INSTRUCTIONS:
+- The work EXISTS. Never answer that it is fabricated, hallucinated, or "not found".
+- Judge only whether the discrepancy is a routine transcription slip or something
+  that would mislead a reader.
+- A misspelled or accented name (Michele/Michèle), a transposed name (Paradis/Pardis),
+  an initial for a given name, or a 1-2 year gap between online and print publication
+  are ROUTINE. is_suspicious must be false for these.
+- Set is_suspicious true only if the citation points at a substantively DIFFERENT work
+  than the registry record describes -- a different title, different authors entirely.
+- In "reason", state the correction the author should make, in one sentence.
+
+Respond with JSON only:
+{"is_suspicious": true/false, "confidence": 0-100, "reason": "brief explanation"}`
+                    : `Analyze this academic citation and judge whether it can be verified.
+
+Citation as written:
+${fieldLines || '  (very sparse - only key and type available)'}
+
+VERIFICATION RESULTS:
+  Status: ${dbStatus}
+${verificationBlock}
+
+Our automated checks found these notes:
+${suspicionReasons || '(none)'}
+
+INSTRUCTIONS:
+- "Cannot be verified" is NOT the same as "fabricated". Say so plainly when that is the case.
+- Books, book chapters, technical reports, dissertations, conference papers, and older
+  work are frequently absent from these databases. Their absence is expected, not damning.
+- Set is_suspicious true only on positive evidence of fabrication: a DOI that fails to
+  resolve, or a title and author list that no database can match even loosely.
+- If you are unsure, answer is_suspicious false and say what a human should check by hand.
+
+Respond with JSON only:
+{"is_suspicious": true/false, "confidence": 0-100, "reason": "brief explanation"}`;
+
+                // Call Flask proxy server to bypass CORS
+                const res = await fetch('/analyze', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        provider: provider,
+                        apiKey: apiKey,
+                        prompt: prompt
+                    })
+                });
+                
+                if (!res.ok) {
+                    const errBody = await res.text();
+                    console.error(`Proxy server error (${res.status}):`, errBody);
+                    return null;
+                }
+                
+                const data = await res.json();
+                console.log(`${provider} response:`, data);
+                return data;
+                
+            } catch (error) {
+                console.error('AI analysis failed:', error);
+                return null;
+            }
+        }
+        
+        // ═══════════════════════════════════════════════════════════════════════════
+        // FILE UPLOAD HANDLING
+        // ═══════════════════════════════════════════════════════════════════════════
+        
+        const fileInput = document.getElementById('fileInput');
+        const bibInput = document.getElementById('bibInput');
+        const fileStatus = document.getElementById('fileStatus');
+
+        function loadBibFile(file) {
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                bibInput.value = e.target.result || '';
+                bibInput.focus();
+                fileStatus.textContent = `Loaded: ${file.name}`;
+            };
+            reader.onerror = function() {
+                fileStatus.textContent = 'Unable to read that file. Please try another .bib file.';
+            };
+            reader.readAsText(file);
+        }
+
+        fileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            loadBibFile(file);
+            // Allow re-selecting the same file and still trigger change.
+            event.target.value = '';
+        });
+        
+        const fileUpload = document.getElementById('fileUpload');
+        fileUpload.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            fileUpload.style.background = '#f8f9ff';
+        });
+        
+        fileUpload.addEventListener('dragleave', () => {
+            fileUpload.style.background = '';
+        });
+        
+        fileUpload.addEventListener('drop', (e) => {
+            e.preventDefault();
+            fileUpload.style.background = '';
+            const file = e.dataTransfer.files[0];
+            loadBibFile(file);
+        });
+        
+        fileUpload.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        document.getElementById('doiInput').addEventListener('input', updateDoiStatus);
+
+        // ═══════════════════════════════════════════════════════════════════════════
+        // DOI-LIST INPUT TAB
+        // ═══════════════════════════════════════════════════════════════════════════
+
+        let activeInputTab = 'bibtex';
+
+        function switchInputTab(tab) {
+            activeInputTab = tab;
+            document.getElementById('panelBibtex').style.display = tab === 'bibtex' ? '' : 'none';
+            document.getElementById('panelDoi').style.display    = tab === 'doi'     ? '' : 'none';
+            document.getElementById('tabBibtex').classList.toggle('active', tab === 'bibtex');
+            document.getElementById('tabDoi').classList.toggle('active',    tab === 'doi');
+            if (tab === 'doi') updateDoiStatus();
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════
+        // REFERENCE EXTRACTION
+        //
+        // A pasted reference list is segmented into one block per reference,
+        // rather than harvesting bare DOI strings. Two reasons:
+        //
+        //   1. The author, title, and year sitting next to each DOI can then be
+        //      compared against the registry record. A DOI that resolves tells
+        //      you the record exists; it says nothing about whether the citation
+        //      describes it correctly.
+        //   2. Results can be labelled with something a human recognises rather
+        //      than "auto_007".
+        //
+        // References with no DOI still cannot be checked here — but they are
+        // counted and reported, so "0 problems" is never mistaken for "0
+        // problems in the whole bibliography".
+        // ═══════════════════════════════════════════════════════════════════════
+
+        const DOI_REGEX_G = /10\.\d{4,9}\/[^\s,;)"'>\]]+/gi;
+
+        function rejoinSplitDois(text) {
+            // Rejoin DOIs broken across lines (common in PDF-pasted reference
+            // lists, e.g. "10.1080/14794802.\n2024.2444321"). Only fires when the
+            // next line starts with a digit or period, which matches DOI-suffix
+            // continuations and avoids fusing a DOI with an unrelated next-
+            // reference author name like "Smith, J.".
+            return text.replace(/(10\.\d{4,9}\/\S*)\n[ \t]*(\.?\d[^\s,;)"'>\]]*)/gi, '$1$2');
+        }
+
+        function looksLikeReferenceStart(line) {
+            return /^\s*(?:\[\d+\]|\(\d+\)|\d{1,3}[.)]\s)/.test(line)   // [12]  (12)  12.
+                || /^[A-Z][A-Za-z'’\-]+,\s+[A-Z]/.test(line)             // Surname, Given
+                || /^[A-Z][^.]{2,80}\.\s+\d{4}[.,]/.test(line);          // Organization. 2018.
+        }
+
+        function splitReferenceBlocks(text) {
+            // 1. Blank-line separated — Word/Docs exports and spaced PDFs.
+            if (/\n[ \t]*\n/.test(text)) {
+                const blocks = text.split(/\n[ \t]*\n/).map(b => b.trim()).filter(Boolean);
+                if (blocks.length > 1) return blocks;
+            }
+
+            const lines = text.split('\n').filter(l => l.trim());
+            if (!lines.length) return [];
+
+            // 2. Hanging indent — continuation lines are indented, starts are not.
+            const indented = lines.filter(l => /^[ \t]+\S/.test(l)).length;
+            if (indented >= lines.length * 0.25) {
+                const blocks = [];
+                for (const line of lines) {
+                    if (/^[ \t]+\S/.test(line) && blocks.length) {
+                        blocks[blocks.length - 1] += ' ' + line.trim();
+                    } else {
+                        blocks.push(line.trim());
+                    }
+                }
+                return blocks;
+            }
+
+            // 3. Fall back to an author-year / numbered-entry heuristic.
+            const blocks = [];
+            for (const line of lines) {
+                if (!blocks.length || looksLikeReferenceStart(line)) blocks.push(line.trim());
+                else blocks[blocks.length - 1] += ' ' + line.trim();
+            }
+            return blocks;
+        }
+
+        function extractYear(block) {
+            const m = block.match(/\b(1[6-9]\d{2}|20\d{2})\b/);
+            return m ? m[1] : '';
+        }
+
+        // Only a quoted title is used. Titles set in italics lose their markup
+        // when pasted as plain text, and a guessed-wrong title would produce a
+        // bogus "title mismatch" — a false accusation is worse here than a
+        // missed check.
+        function extractTitle(block) {
+            const m = block.match(/[“"]([^”"]{10,300})[”"]/);
+            if (!m) return '';
+            const title = m[1].trim().replace(/[.,;:]+$/, '');
+            return /\s/.test(title) ? title : '';
+        }
+
+        // Author-date styles put the authors before the year, so take the text
+        // ahead of the first year as-is. No attempt is made to normalise it into
+        // BibTeX "Last, First and ..." form; the validator compares surnames and
+        // given names against the raw string.
+        function extractAuthors(block, year) {
+            if (!year) return '';
+            const head = block.slice(0, block.indexOf(year)).trim().replace(/[.,\s]+$/, '');
+            if (head.length < 3 || head.length > 300) return '';
+            if (!/[A-Za-z]{2}/.test(head)) return '';
+            return head;
+        }
+
+        function bibSafe(value, maxLength) {
+            return String(value)
+                .replace(/[{}\\"]/g, '')
+                .replace(/\s+/g, ' ')
+                .trim()
+                .slice(0, maxLength || 400);
+        }
+
+        // Returns { references, withDoi, withoutDoi, entries }
+        function extractReferences(text) {
+            const blocks = splitReferenceBlocks(rejoinSplitDois(text));
+            const seen = new Set();
+            const entries = [];
+            let withoutDoi = 0;
+
+            blocks.forEach(block => {
+                const matches = block.match(DOI_REGEX_G) || [];
+                if (!matches.length) { withoutDoi++; return; }
+
+                const doi = matches[0].replace(/[.,;)"'>\]]+$/, '');
+                if (seen.has(doi.toLowerCase())) return;
+                seen.add(doi.toLowerCase());
+
+                const year = extractYear(block);
+                entries.push({
+                    doi,
+                    raw: bibSafe(block, 400),
+                    title: bibSafe(extractTitle(block), 300),
+                    author: bibSafe(extractAuthors(block, year), 300),
+                    year
+                });
+            });
+
+            return {
+                references: blocks.length,
+                withDoi: entries.length,
+                withoutDoi: blocks.length - entries.length,
+                entries
+            };
+        }
+
+        // Retained for callers that only want the DOI strings.
+        function extractDois(text) {
+            return extractReferences(text).entries.map(e => e.doi);
+        }
+
+        function buildSyntheticBibtex(entries) {
+            return entries.map((ref, i) => {
+                const n = String(i + 1).padStart(3, '0');
+                const fields = [`  doi = {${ref.doi}}`];
+                if (ref.author) fields.push(`  author = {${ref.author}}`);
+                if (ref.title)  fields.push(`  title = {${ref.title}}`);
+                if (ref.year)   fields.push(`  year = {${ref.year}}`);
+                if (ref.raw)    fields.push(`  note = {${ref.raw}}`);
+                return `@misc{auto_${n},\n${fields.join(',\n')}\n}`;
+            }).join('\n\n');
+        }
+
+        function updateDoiStatus() {
+            const raw = document.getElementById('doiInput').value;
+            const status = document.getElementById('doiStatus');
+            if (!raw.trim()) { status.textContent = ''; return; }
+
+            const { references, withDoi, withoutDoi } = extractReferences(raw);
+            const plural = n => n === 1 ? '' : 's';
+            status.textContent =
+                `Found ${references} reference${plural(references)}: ` +
+                `${withDoi} with a DOI (checkable), ` +
+                `${withoutDoi} without a DOI (cannot be checked automatically).`;
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════════
+        // MAIN VALIDATION WORKFLOW
+        // ═══════════════════════════════════════════════════════════════════════════
+
+        async function validateCitations() {
+            let bibText;
+            if (activeInputTab === 'doi') {
+                const raw = document.getElementById('doiInput').value.trim();
+                if (!raw) {
+                    alert('Please paste DOIs or references, or switch to the BibTeX tab.');
+                    return;
+                }
+                const extraction = extractReferences(raw);
+                if (extraction.withDoi === 0) {
+                    alert('No DOIs found. Make sure at least one reference contains a DOI like 10.xxxx/...');
+                    return;
+                }
+                coverage = {
+                    references: extraction.references,
+                    checked: extraction.withDoi,
+                    not_checked: extraction.withoutDoi
+                };
+                bibText = buildSyntheticBibtex(extraction.entries);
+            } else {
+                coverage = null;
+                bibText = document.getElementById('bibInput').value.trim();
+                if (!bibText) {
+                    alert('Please paste BibTeX or upload a file');
+                    return;
+                }
+            }
+            
+            const useAI = document.getElementById('useAI').checked;
+            const provider = getProvider();
+            const apiKey = getStoredKey(provider);
+            
+            if (useAI && (!provider || !apiKey)) {
+                openAIModal();
+                alert('Please configure an AI provider first');
+                return;
+            }
+
+            const citationCount = parseBibTeX(bibText).length;
+            if (citationCount === 0) {
+                alert('No BibTeX entries were detected.');
+                return;
+            }
+
+            if (!preflightValidationRequest(citationCount, useAI, provider)) {
+                return;
+            }
+
+            const estimatedSeconds = estimateValidationSeconds(citationCount, useAI, provider);
+            validationRunMeta = {
+                started_at: new Date().toISOString(),
+                app_version: APP_VERSION,
+                citation_count: citationCount,
+                coverage: coverage,
+                ai_enabled: useAI,
+                ai_provider: useAI ? provider : null,
+                ai_model: useAI ? getProviderModelLabel(provider) : 'None',
+                estimated_duration_seconds: Math.round(estimatedSeconds)
+            };
+            
+            // Show loading
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+            updateLoadingMessage(`Validating ${citationCount} citations (${formatDuration(estimatedSeconds)} estimated)...`);
+            
+            try {
+                const response = await fetch('/validate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ bibtex: bibText })
+                });
+
+                const data = await response.json();
+                if (!response.ok || data.error) {
+                    throw new Error(data.error || `Validation request failed (${response.status})`);
+                }
+
+                updateLoadingMessage('Deterministic validation finished.');
+                validationResults = {
+                    ...data,
+                    run_info: {
+                        ...validationRunMeta,
+                        deterministic_completed_at: new Date().toISOString()
+                    }
+                };
+                displayResults(validationResults);
+                renderAccuracyDashboard(validationResults.details);
+                
+                // AI analysis if enabled
+                if (useAI) {
+                    const aiTargets = data.details.filter(r => ['suspicious', 'invalid', 'warning'].includes(r.status));
+                    const total = aiTargets.length;
+                    let done = 0;
+
+                    for (const result of aiTargets) {
+                        updateLoadingMessage(`Running AI analysis ${done + 1}/${total}...`);
+                        result.ai_analysis = await analyzeWithAI(result, provider, apiKey);
+                        done++;
+
+                        // Let results trickle in while AI runs.
+                        if (done === total || done % 3 === 0) {
+                            displayResults(validationResults);
+                        }
+                    }
+
+                    if (validationResults.run_info) {
+                        validationResults.run_info.ai_completed_at = new Date().toISOString();
+                    }
+                }
+
+                if (validationResults.run_info) {
+                    validationResults.run_info.completed_at = new Date().toISOString();
+                }
+
+                validationResults = validationResults || data;
+                displayResults(validationResults);
+                renderAccuracyDashboard(validationResults.details);
+
+            } catch (error) {
+                alert('Validation failed: ' + error.message);
+            } finally {
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+
+        function buildReportMetadataRows() {
+            const info = validationResults?.run_info || {};
+            const generatedAt = new Date().toISOString();
+            const model = info.ai_model || 'None';
+            const provider = info.ai_provider || 'None';
+            const aiEnabled = info.ai_enabled ? 'Yes' : 'No';
+            const count = info.citation_count || (validationResults?.details?.length || 0);
+            const cov = info.coverage || coverage;
+
+            return {
+                generatedAt,
+                appVersion: info.app_version || APP_VERSION,
+                model,
+                provider,
+                aiEnabled,
+                count,
+                referencesFound: cov ? cov.references : count,
+                referencesChecked: cov ? cov.checked : count,
+                referencesNotChecked: cov ? cov.not_checked : 0
+            };
+        }
+
+        function slugifyForFilename(value) {
+            return String(value || 'none')
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '')
+                .slice(0, 40) || 'none';
+        }
+
+        function compactTimestamp(isoString) {
+            const d = isoString ? new Date(isoString) : new Date();
+            if (Number.isNaN(d.getTime())) {
+                return new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
+            }
+            return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
+        }
+
+        function buildExportFilename(ext) {
+            const meta = buildReportMetadataRows();
+            const ts = compactTimestamp(meta.generatedAt);
+            const provider = slugifyForFilename(meta.provider);
+            const model = slugifyForFilename(meta.model);
+            const count = Number(meta.count || 0);
+            return `citation-report-${ts}-${provider}-${model}-${count}c.${ext}`;
+        }
+        
+        function escapeHtml(value) {
+            return String(value == null ? '' : value)
+                .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+
+        // What to call a citation on screen. "auto_007" identifies nothing; the
+        // reference text, or failing that the DOI, lets a reader act on the row.
+        function citationLabel(citation) {
+            const f = citation.fields || {};
+            if (f.note) return f.note.length > 160 ? f.note.slice(0, 157) + '…' : f.note;
+            const parts = [f.author, f.year, f.title].filter(Boolean);
+            if (parts.length) return parts.join('. ');
+            if (f.doi) return f.doi;
+            return citation.key;
+        }
+
+        // The stored status stays `valid|warning|suspicious|invalid` -- the
+        // benchmark harness, the false-positive baseline, and the accuracy
+        // figures in the paper all key off those four strings, and renaming
+        // them would silently invalidate published numbers.
+        //
+        // What changes is only what a reader is shown. A single amber
+        // "WARNING" currently covers two opposite situations: "the registry
+        // contradicts this citation" (a finding, backed by evidence) and
+        // "nothing could be checked" (an absence of information, and no
+        // accusation at all). Collapsing those is the error the whole project
+        // argues against, so they are split here.
+        function displayStatus(citation) {
+            if (citation.status !== 'warning') {
+                return { label: citation.status.toUpperCase(), cls: citation.status };
+            }
+            if (citation.doi_resolved === true) {
+                return { label: 'DISCREPANCY', cls: 'warning' };
+            }
+            if (citation.doi_resolved === false) {
+                return { label: 'UNVERIFIED', cls: 'unverified' };
+            }
+            // Reports produced before doi_resolved existed carry no evidence
+            // either way -- leave them as they were rather than guess.
+            return { label: 'WARNING', cls: 'warning' };
+        }
+
+        function displayResults(data) {
+            document.getElementById('results').style.display = 'block';
+
+            const cov = data.run_info?.coverage || coverage;
+            const discrepancies = data.details.filter(c => displayStatus(c).label === 'DISCREPANCY').length;
+            const unverified = data.details.filter(c => displayStatus(c).label === 'UNVERIFIED').length;
+            const plainWarnings = data.details.filter(c => displayStatus(c).label === 'WARNING').length;
+
+            // Update stats. When part of the bibliography had no DOI, that count
+            // is shown alongside the verdicts: three green zeros next to "14
+            // valid" otherwise reads as a clean bill of health for the whole
+            // list, when in fact most of it was never examined.
+            const stats = document.getElementById('stats');
+            stats.innerHTML = `
+                <div class="stat-card valid">
+                    <div class="stat-value">${data.valid}</div>
+                    <div class="stat-label">✓ Valid</div>
+                </div>
+                ${plainWarnings > 0 || (discrepancies === 0 && unverified === 0) ? `
+                <div class="stat-card warning">
+                    <div class="stat-value">${plainWarnings || data.warnings}</div>
+                    <div class="stat-label">⚠ Warnings</div>
+                </div>` : ''}
+                ${discrepancies > 0 ? `
+                <div class="stat-card warning">
+                    <div class="stat-value">${discrepancies}</div>
+                    <div class="stat-label">⚠ Discrepancies</div>
+                </div>` : ''}
+                ${unverified > 0 ? `
+                <div class="stat-card unverified">
+                    <div class="stat-value">${unverified}</div>
+                    <div class="stat-label">– Unverified</div>
+                </div>` : ''}
+                <div class="stat-card suspicious">
+                    <div class="stat-value">${data.suspicious}</div>
+                    <div class="stat-label">⚠⚠ Suspicious</div>
+                </div>
+                <div class="stat-card invalid">
+                    <div class="stat-value">${data.invalid}</div>
+                    <div class="stat-label">✗ Invalid</div>
+                </div>
+                ${cov && cov.not_checked > 0 ? `
+                <div class="stat-card unchecked">
+                    <div class="stat-value">${cov.not_checked}</div>
+                    <div class="stat-label">– Not checked</div>
+                </div>` : ''}
+            `;
+
+            const coverageNote = document.getElementById('coverageNote');
+            if (cov && cov.not_checked > 0) {
+                const pct = Math.round((cov.not_checked / cov.references) * 100);
+                coverageNote.style.display = 'block';
+                coverageNote.innerHTML =
+                    `<strong>${cov.checked} of ${cov.references} references were checked.</strong> ` +
+                    `The other ${cov.not_checked} (${pct}%) carry no DOI, so there is nothing for an ` +
+                    `automated checker to resolve — they were not examined at all. A reference that ` +
+                    `cannot be verified is not the same as a reference that is wrong.`;
+            } else if (coverageNote) {
+                coverageNote.style.display = 'none';
+            }
+
+            // Display citations
+            const citationList = document.getElementById('citationList');
+            citationList.innerHTML = '<h3>Citation Details</h3>';
+
+            data.details.forEach(citation => {
+                const shown = displayStatus(citation);
+                const div = document.createElement('div');
+                div.className = `citation-item ${shown.cls}`;
+
+                let html = `
+                    <div class="citation-key">
+                        ${escapeHtml(citationLabel(citation))}
+                        <span class="citation-status ${shown.cls}">${shown.label}</span>
+                    </div>
+                    <div class="citation-meta">
+                        ${citation.fields?.doi ? `<a href="https://doi.org/${encodeURI(citation.fields.doi)}" target="_blank" rel="noopener">${escapeHtml(citation.fields.doi)}</a> · ` : ''}
+                        <span class="citation-id">${escapeHtml(citation.key)}</span>
+                    </div>
+                `;
+
+                if (shown.label === 'UNVERIFIED') {
+                    html += `<div class="citation-meta" style="font-family:inherit;font-size:0.88em;margin-top:6px">
+                        Could not be checked — this is not a finding against the reference.
+                        Books, chapters, reports, and dissertations are routinely absent from these databases.
+                    </div>`;
+                }
+
+                if (citation.issues && citation.issues.length > 0) {
+                    html += '<div class="issue-list">';
+                    citation.issues.forEach(issue => {
+                        html += `<div class="issue-item error">✗ ${issue}</div>`;
+                    });
+                    html += '</div>';
+                }
+                
+                if (citation.warnings && citation.warnings.length > 0) {
+                    html += '<div class="issue-list">';
+                    citation.warnings.forEach(warning => {
+                        html += `<div class="issue-item warning">⚠ ${warning}</div>`;
+                    });
+                    html += '</div>';
+                }
+                
+                if (citation.ai_analysis) {
+                    const ai = citation.ai_analysis;
+                    html += `
+                        <div class="ai-analysis">
+                            <strong>🤖 AI Analysis:</strong>
+                            ${ai.is_suspicious ? 
+                                `LIKELY HALLUCINATED (${ai.confidence}% confidence)` :
+                                `Appears legitimate (${ai.confidence}% confidence)`
+                            }<br>
+                            <em>${ai.reason}</em>
+                        </div>
+                    `;
+                }
+                
+                div.innerHTML = html;
+                citationList.appendChild(div);
+            });
+            
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // ═══════════════════════════════════════════════════════════════════════════
+        // EXPORT FUNCTIONS
+        // ═══════════════════════════════════════════════════════════════════════════
+        
+        // The report body, shared by the HTML and PDF exports. The export
+        // buttons are stripped: they are live controls, meaningless in a saved
+        // report and worse in a printed one.
+        function buildReportDocument() {
+            const results = document.getElementById('results').cloneNode(true);
+            results.querySelectorAll('.export-buttons').forEach(el => el.remove());
+            const meta = buildReportMetadataRows();
+
+            return `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Citation Validation Report</title>
+    <style>${document.querySelector('style').textContent}</style>
+    <style>
+        @page { margin: 18mm; }
+        @media print {
+            /* Keep a citation and its findings on one page. */
+            .citation-item { break-inside: avoid; page-break-inside: avoid; }
+            .stat-card, .coverage-note { break-inside: avoid; page-break-inside: avoid; }
+            .stats { display: flex; }
+            a { text-decoration: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header><h1>Citation Validation Report</h1></header>
+        <p><strong>Generated:</strong> ${meta.generatedAt}</p>
+        <p><strong>Validator Version:</strong> ${meta.appVersion}</p>
+        <p><strong>References Found:</strong> ${meta.referencesFound}</p>
+        <p><strong>References Checked:</strong> ${meta.referencesChecked}</p>
+        <p><strong>References Not Checked (no DOI):</strong> ${meta.referencesNotChecked}</p>
+        <p><strong>AI Enabled:</strong> ${meta.aiEnabled}</p>
+        <p><strong>AI Provider:</strong> ${meta.provider}</p>
+        <p><strong>AI Model:</strong> ${meta.model}</p>
+        <div class="main-content">${results.innerHTML}</div>
+    </div>
+</body>
+</html>`;
+        }
+
+        function exportHTML() {
+            const blob = new Blob([buildReportDocument()], { type: 'text/html' });
+            downloadFile(blob, buildExportFilename('html'));
+        }
+
+        // No PDF library is bundled -- the browser's own print-to-PDF produces a
+        // better document than a JS renderer would, keeps text selectable, and
+        // adds nothing to the page weight.
+        function exportPDF() {
+            const win = window.open('', '_blank');
+            if (!win) {
+                alert('Your browser blocked the print window. Allow pop-ups for this site, or use Export HTML and print that file.');
+                return;
+            }
+            win.document.write(buildReportDocument());
+            win.document.close();
+            win.document.title = buildExportFilename('pdf').replace(/\.pdf$/, '');
+            // Give the new document a moment to lay out before printing.
+            win.addEventListener('load', () => setTimeout(() => win.print(), 150));
+            if (win.document.readyState === 'complete') {
+                setTimeout(() => win.print(), 150);
+            }
+        }
+        
+        function exportJSON() {
+            // `status` is preserved verbatim for continuity with the benchmark
+            // harness and previously published figures; `display_status` is the
+            // human-facing reading of it.
+            const payload = {
+                ...(validationResults || {}),
+                details: (validationResults?.details || []).map(c => ({
+                    ...c,
+                    display_status: displayStatus(c).label
+                })),
+                export_metadata: buildReportMetadataRows()
+            };
+            const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+            downloadFile(blob, buildExportFilename('json'));
+        }
+        
+        function exportCSV() {
+            const meta = buildReportMetadataRows();
+            const q = v => `"${String(v == null ? '' : v).replace(/"/g, '""')}"`;
+            let csv = 'ReportGeneratedAt,ValidatorVersion,ReferencesFound,ReferencesChecked,ReferencesNotChecked,AIEnabled,AIProvider,AIModel\n';
+            csv += [meta.generatedAt, meta.appVersion, meta.referencesFound, meta.referencesChecked,
+                    meta.referencesNotChecked, meta.aiEnabled, meta.provider, meta.model].map(q).join(',') + '\n\n';
+            csv += 'Key,Reference,DOI,Status,DisplayStatus,Issues,Warnings\n';
+            validationResults.details.forEach(citation => {
+                const issues = citation.issues ? citation.issues.join('; ') : '';
+                const warnings = citation.warnings ? citation.warnings.join('; ') : '';
+                const fields = citation.fields || {};
+                csv += [citation.key, fields.note || citationLabel(citation), fields.doi || '',
+                        citation.status, displayStatus(citation).label, issues, warnings].map(q).join(',') + '\n';
+            });
+            const blob = new Blob([csv], { type: 'text/csv' });
+            downloadFile(blob, buildExportFilename('csv'));
+        }
+        
+        function downloadFile(blob, filename) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+        
+        // ═══════════════════════════════════════════════════════════════════════════
+        // BENCHMARK LIBRARY
+        // ═══════════════════════════════════════════════════════════════════════════
+
+        let benchManifest = [];
+        let benchSelectedIds = new Set();
+        let benchActiveFilter = 'all';
+        // Ground truth metadata keyed by dataset id → { citeKey: { ground_truth: ... } }
+        let benchGroundTruth = {};
+
+        function toggleBenchPanel() {
+            const toggle = document.getElementById('benchToggle');
+            const panel = document.getElementById('benchPanel');
+            toggle.classList.toggle('open');
+            panel.classList.toggle('open');
+
+            // Load manifest on first open
+            if (panel.classList.contains('open') && benchManifest.length === 0) {
+                loadBenchManifest();
+            }
+        }
+
+        async function loadBenchManifest() {
+            try {
+                // Try relative path (works on GitHub Pages and local file:// with same structure)
+                const response = await fetch('datasets/manifest.json');
+                if (!response.ok) throw new Error('manifest not found');
+                benchManifest = await response.json();
+            } catch (e) {
+                // Fallback: embed the manifest inline if fetch fails (e.g., strict CORS on file://)
+                benchManifest = getEmbeddedManifest();
+            }
+            renderBenchFilters();
+            renderBenchDatasets();
+        }
+
+        function getEmbeddedManifest() {
+            // Fallback manifest for when fetch isn't available (file:// protocol).
+            // Mirrors datasets/manifest.json — keep in sync.
+            return [
+                { id: "ojsm-real-arxiv", name: "Real arXiv CS Citations (2024)", authors: "OJSM Test Suite", description: "285 real citations from two 2024 arXiv CS papers.", citation_count: 285, ground_truth: "valid", tags: ["real", "arxiv", "cs"], bib_files: ["test_citations/real_citations/arxiv_cs_2024/arxiv_2604.05875.bib", "test_citations/real_citations/arxiv_cs_2024/arxiv_2604.05952.bib"] },
+                { id: "ojsm-real-crossref", name: "Real CrossRef Random Sample", authors: "OJSM Test Suite", description: "100 real citations from CrossRef random API sample.", citation_count: 100, ground_truth: "valid", tags: ["real", "crossref", "multidisciplinary"], bib_files: ["test_citations/real_citations/crossref_random/crossref_sample_0001.bib", "test_citations/real_citations/crossref_random/crossref_sample_0002.bib"] },
+                { id: "ojsm-fake-frankenstein", name: "Frankenstein Citations", authors: "OJSM Test Suite", description: "100 synthetic fakes: real author + real journal + fabricated title.", citation_count: 100, ground_truth: "invalid", fabrication_type: "frankenstein", tags: ["fake", "frankenstein", "synthetic"], bib_files: ["test_citations/false_negative_tests/frankenstein/frankenstein_0001.bib", "test_citations/false_negative_tests/frankenstein/frankenstein_0002.bib"] },
+                { id: "ojsm-fake-stolen-doi", name: "Stolen DOI Citations", authors: "OJSM Test Suite", description: "100 synthetic fakes: real DOI + completely wrong metadata.", citation_count: 100, ground_truth: "invalid", fabrication_type: "stolen_doi", tags: ["fake", "stolen_doi", "synthetic"], bib_files: ["test_citations/false_negative_tests/stolen_doi/stolen_doi_0001.bib", "test_citations/false_negative_tests/stolen_doi/stolen_doi_0002.bib"] },
+                { id: "ojsm-fake-plausible", name: "Plausible Fake Citations", authors: "OJSM Test Suite", description: "100 synthetic fakes: entirely fabricated but realistic-looking.", citation_count: 100, ground_truth: "invalid", fabrication_type: "plausible", tags: ["fake", "plausible", "synthetic"], bib_files: ["test_citations/false_negative_tests/plausible/plausible_0001.bib", "test_citations/false_negative_tests/plausible/plausible_0002.bib"] },
+                { id: "ojsm-fake-nonsense", name: "Nonsense Citations", authors: "OJSM Test Suite", description: "100 synthetic fakes: obviously wrong (future years, fake DOIs).", citation_count: 100, ground_truth: "invalid", fabrication_type: "nonsense", tags: ["fake", "nonsense", "synthetic"], bib_files: ["test_citations/false_negative_tests/nonsense/nonsense_0001.bib", "test_citations/false_negative_tests/nonsense/nonsense_0002.bib"] },
+                { id: "nature-article-refs", name: "Nature Article References", authors: "Nature (April 2026)", description: "10 references cited by the Nature article. Tests sparse metadata handling.", citation_count: 10, ground_truth: "valid", tags: ["real", "nature", "sparse"], bib_files: ["datasets/nature-article/refs.bib"], metadata_file: "datasets/nature-article/metadata.json" },
+                { id: "nature-frankenstein-examples", name: "Nature — Frankenstein Examples", authors: "Linardon et al. (2025) via Nature", description: "GPT-4o fabricated citation from Nature article. Real author + real journal + fake paper.", citation_count: 1, ground_truth: "invalid", fabrication_type: "frankenstein", tags: ["fake", "frankenstein", "nature", "gpt4o"], bib_files: ["datasets/nature-article-examples/frankenstein_examples.bib"], metadata_file: "datasets/nature-article-examples/metadata.json" },
+                { id: "compound-deception-ansari", name: "Compound Deception — NeurIPS 2025", authors: "Ansari (2026)", arxiv: "2602.05930", description: "ansari100 seed subset: 100 hallucination examples from the public GPTZero table referenced by Ansari (2026).", citation_count: 100, ground_truth: "invalid", tags: ["fake", "neurips", "real-world", "taxonomy"], bib_files: ["datasets/compound-deception-ansari/ansari100.bib"], metadata_file: "datasets/compound-deception-ansari/metadata.json", status: "seed", source_url: "https://arxiv.org/abs/2602.05930" },
+                { id: "hallucitation-sakai", name: "HalluCitation — ACL/NAACL/EMNLP", authors: "Sakai et al. (2026)", arxiv: "2601.18724", description: "~300 papers with hallucinated references from NLP conferences.", citation_count: 300, ground_truth: "invalid", tags: ["fake", "nlp", "real-world"], status: "pending", source_url: "https://arxiv.org/abs/2601.18724" },
+                { id: "bibtex-hallucinations-rao", name: "BibTeX Hallucinations Benchmark", authors: "Rao & Callison-Burch (2026)", arxiv: "2604.03159", description: "931-paper benchmark with ~23K field-level observations.", citation_count: 931, ground_truth: "mixed", tags: ["benchmark", "field-level", "multi-domain"], status: "pending", source_url: "https://arxiv.org/abs/2604.03159" },
+                { id: "ghostcite-real-corpus", name: "GhostCite — Real Paper Citations", authors: "Xu et al. (2026)", arxiv: "2602.06718", description: "Sample from 2.2M real citations (2020-2025).", citation_count: 500, ground_truth: "valid", tags: ["real", "large-scale"], status: "pending", source_url: "https://arxiv.org/abs/2602.06718" },
+                { id: "mysterious-citations-bienz", name: "Mysterious Citations — HPC", authors: "Bienz et al. (2026)", arxiv: "2602.05867", description: "HPC conference citations 2021 vs 2025. Source of Nature's 2-6%.", citation_count: null, ground_truth: "mixed", tags: ["real-world", "hpc"], status: "pending", source_url: "https://arxiv.org/abs/2602.05867" },
+                { id: "citeaudit-benchmark", name: "CiteAudit — Human-Validated Benchmark", authors: "Yuan et al. (2026)", arxiv: "2602.23452", description: "9,442 citations (6,475 real + 2,967 fake) with human-validated labels. Multi-domain.", citation_count: 9442, ground_truth: "mixed", tags: ["benchmark", "human-validated", "multi-domain", "large-scale"], status: "pending", source_url: "https://arxiv.org/abs/2602.23452" }
+            ];
+        }
+
+        function renderBenchFilters() {
+            const filters = [
+                { key: 'all', label: 'All' },
+                { key: 'real', label: 'Real Citations' },
+                { key: 'fake', label: 'Fake Citations' },
+                { key: 'benchmark', label: 'Benchmarks' },
+                { key: 'available', label: 'Available Now' },
+                { key: 'pending', label: 'Coming Soon' }
+            ];
+
+            const container = document.getElementById('benchFilters');
+            container.innerHTML = filters.map(f =>
+                `<span class="bench-chip ${benchActiveFilter === f.key ? 'active' : ''}" onclick="setBenchFilter('${f.key}')">${f.label}</span>`
+            ).join('');
+        }
+
+        function setBenchFilter(key) {
+            benchActiveFilter = key;
+            renderBenchFilters();
+            renderBenchDatasets();
+        }
+
+        function filterDatasets() {
+            return benchManifest.filter(ds => {
+                if (benchActiveFilter === 'all') return true;
+                if (benchActiveFilter === 'available') return ds.status !== 'pending';
+                if (benchActiveFilter === 'pending') return ds.status === 'pending';
+                if (benchActiveFilter === 'real') return ds.ground_truth === 'valid';
+                if (benchActiveFilter === 'fake') return ds.ground_truth === 'invalid';
+                if (benchActiveFilter === 'benchmark') return (ds.tags || []).includes('benchmark') || ds.ground_truth === 'mixed';
+                return true;
+            });
+        }
+
+        function renderBenchDatasets() {
+            const container = document.getElementById('benchDatasets');
+            const datasets = filterDatasets();
+
+            if (datasets.length === 0) {
+                container.innerHTML = '<p style="color:var(--muted);font-size:13px;padding:12px;">No datasets match this filter.</p>';
+                return;
+            }
+
+            container.innerHTML = datasets.map(ds => {
+                const isPending = ds.status === 'pending' || (!ds.bib_files && !ds.bib_file);
+                const checked = benchSelectedIds.has(ds.id) ? 'checked' : '';
+                const tags = (ds.tags || []).map(t => {
+                    const cls = ['fake','frankenstein','stolen_doi','plausible','nonsense'].includes(t) ? 'tag-fake'
+                              : t === 'real' ? 'tag-real'
+                              : isPending ? 'tag-pending' : '';
+                    return `<span class="bench-tag ${cls}">${t}</span>`;
+                }).join('');
+
+                const countLabel = ds.citation_count ? `${ds.citation_count} citations` : 'TBD';
+                const pendingTag = isPending ? '<span class="bench-tag tag-pending">data not yet available</span>' : '';
+                const arxivLink = ds.arxiv ? ` &middot; <a href="https://arxiv.org/abs/${ds.arxiv}" target="_blank" style="font-size:11px;color:var(--primary);" onclick="event.stopPropagation()">arXiv:${ds.arxiv}</a>` : '';
+
+                return `
+                    <div class="bench-card ${isPending ? 'pending' : ''}">
+                        <input type="checkbox" ${checked} ${isPending ? 'disabled' : ''} onchange="toggleBenchDataset('${ds.id}', this.checked)">
+                        <div class="bench-card-body">
+                            <div class="bench-card-title">${ds.name}</div>
+                            <div class="bench-card-meta">${ds.authors} &middot; ${countLabel}${arxivLink}</div>
+                            <div class="bench-card-desc">${ds.description}</div>
+                            <div class="bench-card-tags">${tags}${pendingTag}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            updateBenchSelectionInfo();
+        }
+
+        function toggleBenchDataset(id, checked) {
+            if (checked) benchSelectedIds.add(id);
+            else benchSelectedIds.delete(id);
+            updateBenchSelectionInfo();
+        }
+
+        function updateBenchSelectionInfo() {
+            const info = document.getElementById('benchSelectionInfo');
+            if (benchSelectedIds.size === 0) {
+                info.textContent = 'No datasets selected';
+                return;
+            }
+
+            let totalCitations = 0;
+            let realCount = 0;
+            let fakeCount = 0;
+            benchSelectedIds.forEach(id => {
+                const ds = benchManifest.find(d => d.id === id);
+                if (!ds) return;
+                totalCitations += ds.citation_count || 0;
+                if (ds.ground_truth === 'valid') realCount += ds.citation_count || 0;
+                else if (ds.ground_truth === 'invalid') fakeCount += ds.citation_count || 0;
+            });
+
+            const parts = [`${benchSelectedIds.size} dataset${benchSelectedIds.size > 1 ? 's' : ''}`, `${totalCitations} citations`];
+            if (realCount > 0 && fakeCount > 0) parts.push(`${realCount} real + ${fakeCount} fake`);
+            else if (realCount > 0) parts.push(`all real`);
+            else if (fakeCount > 0) parts.push(`all fake`);
+            info.textContent = parts.join(' · ');
+        }
+
+        async function loadSelectedDatasets() {
+            if (benchSelectedIds.size === 0) {
+                alert('Select at least one dataset to load.');
+                return;
+            }
+
+            let combinedBib = '';
+            benchGroundTruth = {};
+
+            for (const id of benchSelectedIds) {
+                const ds = benchManifest.find(d => d.id === id);
+                if (!ds || ds.status === 'pending' || (!ds.bib_files && !ds.bib_file)) continue;
+
+                // Load the .bib content
+                const bibContent = await fetchDatasetBib(ds);
+                if (!bibContent) continue;
+
+                combinedBib += `% === Dataset: ${ds.name} ===\n${bibContent}\n\n`;
+
+                // Load per-citation metadata if available
+                const meta = await fetchDatasetMetadata(ds);
+                const metaMap = meta?.citations || meta;
+
+                // Parse the BibTeX to extract cite keys, then assign ground truth
+                const entries = parseBibTeX(bibContent);
+                for (const entry of entries) {
+                    if (metaMap && metaMap[entry.key]) {
+                        // Per-citation ground truth from metadata file
+                        benchGroundTruth[entry.key] = {
+                            ground_truth: metaMap[entry.key].ground_truth || ds.ground_truth,
+                            dataset_id: id,
+                            dataset_name: ds.name,
+                            ...metaMap[entry.key]
+                        };
+                    } else {
+                        // Dataset-level ground truth applied to each citation
+                        benchGroundTruth[entry.key] = {
+                            ground_truth: ds.ground_truth,
+                            dataset_id: id,
+                            dataset_name: ds.name
+                        };
+                    }
+                }
+            }
+
+            if (!combinedBib.trim()) {
+                alert('Could not load BibTeX data. The selected datasets may not have .bib files available yet.');
+                return;
+            }
+
+            const gtCount = Object.keys(benchGroundTruth).length;
+            const validCount = Object.values(benchGroundTruth).filter(g => g.ground_truth === 'valid').length;
+            const invalidCount = Object.values(benchGroundTruth).filter(g => g.ground_truth === 'invalid').length;
+
+            // Insert into the textarea
+            const textarea = document.getElementById('bibInput');
+            if (textarea.value.trim()) {
+                const append = confirm('There is already BibTeX content in the editor.\n\nOK = Append benchmark data\nCancel = Replace with benchmark data');
+                if (append) {
+                    textarea.value += '\n\n' + combinedBib;
+                } else {
+                    textarea.value = combinedBib;
+                }
+            } else {
+                textarea.value = combinedBib;
+            }
+
+            const gtSummary = gtCount > 0 ? ` (ground truth: ${validCount} real, ${invalidCount} fake)` : '';
+            document.getElementById('fileStatus').textContent = `Loaded ${benchSelectedIds.size} dataset(s)${gtSummary}`;
+            textarea.focus();
+            textarea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        async function fetchDatasetBib(ds) {
+            // Support both single bib_file (legacy) and bib_files array
+            const files = ds.bib_files || (ds.bib_file ? [ds.bib_file] : []);
+            if (files.length === 0) return null;
+
+            let combined = '';
+            for (const bibPath of files) {
+                // Try the path directly (relative to HTML file), then under datasets/
+                const candidates = [bibPath, `datasets/${bibPath}`];
+                for (const path of candidates) {
+                    try {
+                        const resp = await fetch(path);
+                        if (resp.ok) {
+                            combined += (await resp.text()) + '\n\n';
+                            break;
+                        }
+                    } catch (e) { /* try next */ }
+                }
+            }
+            return combined || null;
+        }
+
+        async function fetchDatasetMetadata(ds) {
+            const metaPath = ds.metadata_file;
+            if (!metaPath) return null;
+
+            const paths = [
+                `datasets/${metaPath}`,
+                metaPath
+            ];
+
+            for (const path of paths) {
+                try {
+                    const resp = await fetch(path);
+                    if (resp.ok) return await resp.json();
+                } catch (e) { /* try next */ }
+            }
+            return null;
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════════
+        // ACCURACY DASHBOARD (Tier 2)
+        // ═══════════════════════════════════════════════════════════════════════════
+
+        function computeAccuracy(validationDetails) {
+            if (Object.keys(benchGroundTruth).length === 0) return null;
+
+            let tp = 0, tn = 0, fp = 0, fn = 0, skipped = 0;
+
+            for (const citation of validationDetails) {
+                const gt = benchGroundTruth[citation.key];
+                if (!gt || !gt.ground_truth || gt.ground_truth === 'mixed') {
+                    skipped++;
+                    continue;
+                }
+
+                const expected = gt.ground_truth;  // 'valid' or 'invalid'
+                const isFlagged = citation.status === 'suspicious' || citation.status === 'invalid';
+
+                if (expected === 'valid') {
+                    if (!isFlagged) tp++;
+                    else fp++;
+                } else if (expected === 'invalid') {
+                    if (isFlagged) tn++;
+                    else fn++;
+                } else {
+                    skipped++;
+                }
+            }
+
+            const total = tp + tn + fp + fn;
+            if (total === 0) return null;
+
+            const accuracy = (tp + tn) / total;
+            const precision = (tp + fp) > 0 ? tp / (tp + fp) : 0;
+            const recall = (tp + fn) > 0 ? tp / (tp + fn) : 0;
+            const f1 = (precision + recall) > 0 ? 2 * precision * recall / (precision + recall) : 0;
+            const fpr = (fp + tn) > 0 ? fp / (fp + tn) : 0;
+            const fnr = (fn + tp) > 0 ? fn / (fn + tp) : 0;
+
+            return { tp, tn, fp, fn, total, skipped, accuracy, precision, recall, f1, fpr, fnr };
+        }
+
+        function renderAccuracyDashboard(validationDetails) {
+            const acc = computeAccuracy(validationDetails);
+            const dashboard = document.getElementById('accuracyDashboard');
+
+            if (!acc) {
+                dashboard.classList.remove('open');
+                return;
+            }
+
+            dashboard.classList.add('open');
+
+            // Confusion matrix
+            document.getElementById('confusionMatrix').innerHTML = `
+                <div class="confusion-matrix">
+                    <div class="cm-corner"></div>
+                    <div class="cm-header">Predicted Valid</div>
+                    <div class="cm-header">Predicted Flagged</div>
+
+                    <div class="cm-header">Actually Valid</div>
+                    <div class="cm-cell cm-tp">${acc.tp}<small>True Positive</small></div>
+                    <div class="cm-cell cm-fp">${acc.fp}<small>False Positive</small></div>
+
+                    <div class="cm-header">Actually Fake</div>
+                    <div class="cm-cell cm-fn">${acc.fn}<small>False Negative</small></div>
+                    <div class="cm-cell cm-tn">${acc.tn}<small>True Negative</small></div>
+                </div>
+                ${acc.skipped > 0 ? `<p style="text-align:center;font-size:12px;color:var(--muted);">${acc.skipped} citation(s) skipped (no ground truth available)</p>` : ''}
+            `;
+
+            // Metrics
+            function rateClass(value, goodBelow, badAbove) {
+                if (value <= goodBelow) return 'good';
+                if (value >= badAbove) return 'bad';
+                return 'ok';
+            }
+
+            function pct(v) { return (v * 100).toFixed(1) + '%'; }
+
+            document.getElementById('accuracyMetrics').innerHTML = `
+                <div class="acc-metric">
+                    <div class="acc-value ${rateClass(1 - acc.accuracy, 0.08, 0.2)}">${pct(acc.accuracy)}</div>
+                    <div class="acc-label">Accuracy</div>
+                </div>
+                <div class="acc-metric">
+                    <div class="acc-value ${rateClass(1 - acc.f1, 0.08, 0.2)}">${pct(acc.f1)}</div>
+                    <div class="acc-label">F1 Score</div>
+                </div>
+                <div class="acc-metric">
+                    <div class="acc-value ${rateClass(1 - acc.precision, 0.05, 0.15)}">${pct(acc.precision)}</div>
+                    <div class="acc-label">Precision</div>
+                </div>
+                <div class="acc-metric">
+                    <div class="acc-value ${rateClass(1 - acc.recall, 0.1, 0.25)}">${pct(acc.recall)}</div>
+                    <div class="acc-label">Recall</div>
+                </div>
+                <div class="acc-metric">
+                    <div class="acc-value ${rateClass(acc.fpr, 0.05, 0.15)}">${pct(acc.fpr)}</div>
+                    <div class="acc-label">False Positive Rate</div>
+                </div>
+                <div class="acc-metric">
+                    <div class="acc-value ${rateClass(acc.fnr, 0.1, 0.25)}">${pct(acc.fnr)}</div>
+                    <div class="acc-label">False Negative Rate</div>
+                </div>
+            `;
+        }
+
+        async function loadAppVersion() {
+            try {
+                const res = await fetch('/version');
+                if (!res.ok) return;
+                const data = await res.json();
+                if (data.version) {
+                    APP_VERSION = data.version;
+                    document.getElementById('appVersion').textContent = 'v' + data.version;
+                    return;
+                }
+            } catch (e) {
+                // Version display is cosmetic; never block the page on it.
+            }
+            document.getElementById('appVersion').textContent = '';
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            updateAIBtn();
+            loadAppVersion();
+        });
+    </script>
+</body>
+</html>
