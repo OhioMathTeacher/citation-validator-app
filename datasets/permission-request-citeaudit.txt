@@ -4,7 +4,9 @@ Subject: Using CiteAudit in an open citation-verification evaluation -- licence 
 
 Dear Dr. Ye and colleagues,
 
-I am the editor of a small mathematics education journal. My colleagues and I have spent the past several months building a free, open citation validator in response to an April article published in Nature. The tool checks each reference against CrossRef, OpenAlex, Semantic Scholar and arXiv, and it is built to distinguish a citation it cannot verify from one it believes is fabricated -- a conflation we found recurring in our own early code, in general-purpose language models, and in the commercial tool Nature relied on.
+I am the editor of a small mathematics education journal. I built a free, open citation validator in response to an April article published in Nature. The tool checks each reference against CrossRef, OpenAlex, Semantic Scholar and arXiv, and it is built to distinguish a citation it cannot verify from one it believes is fabricated -- a conflation I found recurring in my own early code, in general-purpose language models, and in the commercial tool Nature relied on.
+
+Two colleagues, S. Asli Özgün-Koca and Gregory Foley, and I have been testing and refining the citation validator over the last two months.
 
 CiteAudit has been the most valuable external check we have. Because your labels are human-assigned and your real-world group is independently sourced, it is the only dataset we have that can tell us whether our false-positive rate holds up outside our own test construction. It is also, frankly, the benchmark that told us our author matching was wrong: hand-checking the citations where we disagreed turned up several defects in our code.
 
