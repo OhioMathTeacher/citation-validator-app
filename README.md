@@ -1,5 +1,7 @@
 # Citation Validator
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21795712.svg)](https://doi.org/10.5281/zenodo.21795712)
+
 A free, open citation validator. It checks each reference in a bibliography
 against public scholarly databases (CrossRef, OpenAlex, Semantic Scholar) and
 reports whether the citation can be verified — without treating "I can't verify
