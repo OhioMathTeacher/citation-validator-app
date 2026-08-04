@@ -19,6 +19,14 @@ abstract: >-
   A deterministic pass resolves DOIs and compares the returned record
   against the citation as written; an optional AI second pass reviews
   only what the deterministic pass could not settle.
+
+
+  Code is licensed under AGPL-3.0 with the Commons Clause. The datasets
+  constructed for this project and the experiment logs in results/ are
+  licensed separately under CC BY 4.0 - see datasets/LICENSE in the archive.
+  Three further datasets (CiteAudit, Ansari 100) belong to other researchers,
+  are not included in this deposit, and are fetched from their sources by
+  scripts in the repository.
 keywords:
   - citation hallucination
   - reference verification
@@ -28,5 +36,5 @@ keywords:
 license: AGPL-3.0-or-later
 # Code is AGPL-3.0 with the Commons Clause; the datasets built here and the
 # experiment logs in results/ are CC BY 4.0. See datasets/LICENSE.
-version: 1.4.1
+version: 1.4.2
 date-released: '2026-08-04'
