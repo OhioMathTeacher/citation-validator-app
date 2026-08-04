@@ -314,7 +314,7 @@ class CitationValidator:
             titles = re.findall(r'<title[^>]*>(.*?)</title>', data, re.DOTALL)
             title = titles[-1].strip() if len(titles) > 1 else titles[0].strip()
             authors = re.findall(r'<name>(.*?)</name>', data)
-            return True, {
+            record = {
                 'title': [title],
                 # arXiv writes names given-first ("Diletta Abbonato"), so the
                 # LAST token is the family name and the rest is the given name.
@@ -323,6 +323,19 @@ class CitationValidator:
                 'source': 'arxiv',
                 'arxiv_id': arxiv_id
             }
+            # Publication date, in the same shape CrossRef returns, so the year
+            # comparison in check_citation applies to arXiv DOIs too. Without
+            # it that check is skipped entirely -- 'published' is simply absent
+            # -- and a citation dated 2011 for a paper posted in 2020 passes
+            # clean. The arXiv identifier's own YYMM prefix is a standing trap
+            # here: 2011.04006 was posted in November 2020, and a bibliography
+            # that reads that prefix as a year produces exactly that citation.
+            published = re.search(r'<published>(\d{4})-(\d{2})-(\d{2})', data)
+            if published:
+                record['published'] = {
+                    'date-parts': [[int(g) for g in published.groups()]]
+                }
+            return True, record
         # arXiv answered cleanly and the paper is genuinely absent
         return False, {'error': f'arXiv paper {arxiv_id} not found'}
     
