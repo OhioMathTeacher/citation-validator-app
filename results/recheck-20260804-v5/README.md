@@ -11,8 +11,14 @@ python3 scripts/recheck_affected.py \
 
 Baseline: the 2026-05-24 deterministic runs. Comparison set: the 85 DOI-bearing
 citations in those runs. Only DOI-bearing citations can move, because the author
-and date checks live on the DOI path; in the CiteAudit real-world set roughly
-nine citations in ten carry no DOI at all.
+and date checks live on the DOI path — and in the CiteAudit real-world set that
+is **85 of 3,356 citations, 2.5%**. The other 97.5% carry no DOI, so nothing
+added here can reach them at all.
+
+That ratio is worth reporting in its own right. These are references harvested
+from published papers, not a synthetic sample, and it puts a hard ceiling on
+what *any* identifier-based checker can verify: the DOI boundary is not a
+narrow edge case, it is where almost the entire real-world bibliography sits.
 
 **85 checked, 15 changed, 13 code-attributable, 0 errors.** Two changes had a
 baseline `warning` that was an arXiv timeout rather than a finding — those
