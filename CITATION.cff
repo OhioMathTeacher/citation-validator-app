@@ -8,6 +8,7 @@ authors:
   - family-names: Edwards
     given-names: Michael Todd
     affiliation: Ohio Journal of School Mathematics
+doi: 10.5281/zenodo.21795712
 repository-code: 'https://github.com/OhioMathTeacher/citation-validator-app'
 url: 'https://huggingface.co/spaces/ojsm/citation-validator'
 abstract: >-
@@ -25,5 +26,7 @@ keywords:
   - open tools
   - reproducibility
 license: AGPL-3.0-or-later
-version: 1.4.0
+# Code is AGPL-3.0 with the Commons Clause; the datasets built here and the
+# experiment logs in results/ are CC BY 4.0. See datasets/LICENSE.
+version: 1.4.1
 date-released: '2026-08-04'
