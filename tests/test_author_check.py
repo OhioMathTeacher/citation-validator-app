@@ -288,3 +288,20 @@ def test_systematically_corrupted_author_list_is_caught():
                       _authors(("Jianwei", "Li"), ("Baoyou", "Wang"),
                                ("Israr", "Ahmad"), ("Chang", "Liu")))
     assert len(warnings) >= 2
+
+
+def test_author_string_with_no_latin_words_is_coverage_not_a_crash():
+    """A CrossRef random-sample entry killed the 2026-08-04 benchmark run.
+
+    _check_authors_against_registry returned a bare `warnings` on this path
+    while every other path returned (warnings, notes), so the caller's
+    two-value unpack raised ValueError and took the whole run down mid-dataset.
+
+    An author string with no Latin-script words after folding -- a name written
+    wholly in CJK or Cyrillic -- can be compared against nothing. That is a gap
+    in coverage, not a discrepancy, and certainly not a crash.
+    """
+    registry = _authors(("Wei", "Zhang"), ("Ming", "Li"))
+    for bib_author in ("张伟", "Иванов", "—", "123"):
+        assert _check(bib_author, registry) == []
+        assert _notes(bib_author, registry) == []

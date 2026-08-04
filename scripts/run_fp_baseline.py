@@ -39,7 +39,7 @@ def _git_version():
     except Exception:
         return "unknown"
 
-from citation_validator import CitationValidator
+from citation_validator import CitationValidator, check_citations
 
 # ── Datasets ────────────────────────────────────────────────────────────────
 
@@ -171,14 +171,14 @@ def run_step1():
         print(f"  Loaded {len(entries)} citations")
 
         t0 = time.time()
-        details = []
-        for i, entry in enumerate(entries, 1):
-            result = validator.check_citation(entry)
-            details.append(result)
-            if i % 25 == 0 or i == len(entries):
-                elapsed = time.time() - t0
+
+        def _progress(i, n, _t0=t0):
+            if i % 25 == 0 or i == n:
+                elapsed = time.time() - _t0
                 rate = i / elapsed if elapsed > 0 else 0
-                print(f"  [{i}/{len(entries)}] {rate:.1f} cit/s", end="\r")
+                print(f"  [{i}/{n}] {rate:.1f} cit/s", end="\r")
+
+        details = check_citations(validator, entries, _progress)
 
         elapsed = time.time() - t0
         print(f"  Completed in {elapsed:.1f}s" + " " * 30)
@@ -186,6 +186,9 @@ def run_step1():
         # Tally
         counts = {"valid": 0, "warning": 0, "suspicious": 0, "invalid": 0}
         fp_details = []
+        errors = [d for d in details if d["status"] == "error"]
+        if errors:
+            print(f"  WARNING: {len(errors)} citation(s) errored; see output JSON")
         for d in details:
             counts[d["status"]] = counts.get(d["status"], 0) + 1
             if d["status"] in ("suspicious", "invalid"):
@@ -429,14 +432,14 @@ def run_step4():
             continue
 
         t0 = time.time()
-        details = []
-        for i, entry in enumerate(entries, 1):
-            result = validator.check_citation(entry)
-            details.append(result)
-            if i % 25 == 0 or i == len(entries):
-                elapsed = time.time() - t0
+
+        def _progress(i, n, _t0=t0):
+            if i % 25 == 0 or i == n:
+                elapsed = time.time() - _t0
                 rate = i / elapsed if elapsed > 0 else 0
-                print(f"  [{i}/{len(entries)}] {rate:.1f} cit/s", end="\r")
+                print(f"  [{i}/{n}] {rate:.1f} cit/s", end="\r")
+
+        details = check_citations(validator, entries, _progress)
 
         elapsed = time.time() - t0
         print(f"  Completed in {elapsed:.1f}s" + " " * 30)

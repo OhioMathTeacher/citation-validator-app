@@ -8,13 +8,60 @@ import re
 import sys
 import os
 import json
+import threading
 import time
 import unicodedata
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-from typing import Dict, List, Tuple, Optional
+from typing import Callable, Dict, List, Tuple, Optional
 from urllib.parse import quote, urlencode, urlparse
 from urllib.request import urlopen, Request
 from urllib.error import URLError, HTTPError
+
+# How many citations to have in flight at once. The per-host throttle in
+# CitationValidator._throttle still serializes each service at its own rate,
+# so this does not raise the request rate any service sees -- it only stops
+# the code idling while one service thinks. Sized so the strictest host we
+# query in bulk (Semantic Scholar, 1.1s) stays saturated despite ~12s of
+# round-trip latency per citation.
+CHECK_WORKERS = 12
+
+
+def check_citations(validator, entries: List[dict],
+                    progress: Optional[Callable[[int, int], None]] = None
+                    ) -> List[dict]:
+    """Check `entries` concurrently, returning results in the ORIGINAL order.
+
+    A citation that raises is recorded as an `error` result rather than being
+    allowed to abort the batch. A single unparseable author string once took
+    down a twelve-hour benchmark run partway through; a tool whose argument is
+    that it should say "I could not check this" ought to do so about itself.
+    """
+    results: List[Optional[dict]] = [None] * len(entries)
+    done = 0
+    lock = threading.Lock()
+
+    def one(idx_entry):
+        idx, entry = idx_entry
+        try:
+            return idx, validator.check_citation(entry)
+        except Exception as exc:                      # noqa: BLE001
+            return idx, {
+                'status': 'error',
+                'error': f'{type(exc).__name__}: {exc}',
+                'citation_key': (entry or {}).get('key', f'entry-{idx}'),
+                'warnings': [], 'notes': [],
+            }
+
+    with ThreadPoolExecutor(max_workers=CHECK_WORKERS) as pool:
+        for idx, result in pool.map(one, enumerate(entries)):
+            results[idx] = result
+            with lock:
+                done += 1
+                if progress:
+                    progress(done, len(entries))
+
+    return [r for r in results if r is not None]
 
 
 def _read_version() -> str:
@@ -68,6 +115,12 @@ class CitationValidator:
             'doi.org': 0.5,
         }
         self._last_request = {}      # host -> timestamp of last request
+        # Per-host locks let citations be checked concurrently while each
+        # service still sees its requests strictly serialized at the interval
+        # above. The point is to stop the code idling: waiting on Semantic
+        # Scholar spends none of OpenAlex's budget, and vice versa.
+        self._host_locks: Dict[str, threading.Lock] = {}
+        self._host_locks_guard = threading.Lock()
         self._max_attempts = 4       # request attempts before giving up
         # Identify the client politely: CrossRef and OpenAlex grant a
         # better rate-limit pool to requests that carry a mailto.
@@ -80,12 +133,21 @@ class CitationValidator:
             self.use_ai = False
         
     def _throttle(self, host: str) -> None:
-        """Sleep as needed so requests to `host` stay under its rate limit."""
-        min_interval = self._min_interval.get(host, 0.5)
-        elapsed = time.time() - self._last_request.get(host, 0.0)
-        if elapsed < min_interval:
-            time.sleep(min_interval - elapsed)
-        self._last_request[host] = time.time()
+        """Sleep as needed so requests to `host` stay under its rate limit.
+
+        Holding the per-host lock across the sleep is what makes this correct
+        under concurrency: two threads bound for the same host queue behind one
+        another and observe the full interval, while threads bound for
+        different hosts never block each other.
+        """
+        with self._host_locks_guard:
+            lock = self._host_locks.setdefault(host, threading.Lock())
+        with lock:
+            min_interval = self._min_interval.get(host, 0.5)
+            elapsed = time.time() - self._last_request.get(host, 0.0)
+            if elapsed < min_interval:
+                time.sleep(min_interval - elapsed)
+            self._last_request[host] = time.time()
 
     def _http_get(self, url: str, headers: Optional[Dict] = None,
                   timeout: int = 15) -> bytes:
@@ -471,7 +533,10 @@ class CitationValidator:
         haystack = self._fold_accents(bib_author).lower()
         words = set(re.findall(r"[a-z']+", haystack))
         if not words:
-            return warnings
+            # An author string with no Latin-script words after folding -- a
+            # name written wholly in CJK or Cyrillic, say. Nothing here can be
+            # compared, which is a gap in coverage, not a discrepancy.
+            return warnings, notes
 
         # Report a missing first author only when at least one OTHER registry
         # surname IS present. That corroboration is what distinguishes a

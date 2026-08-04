@@ -35,6 +35,7 @@ import os
 import re
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -43,7 +44,7 @@ import requests
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
-from citation_validator import CitationValidator  # noqa: E402
+from citation_validator import CitationValidator, CHECK_WORKERS  # noqa: E402
 
 GEMINI_URL = ("https://generativelanguage.googleapis.com/v1beta/"
               "models/gemini-2.5-flash:generateContent")
@@ -197,16 +198,27 @@ def main() -> None:
     # --- Deterministic tier (in-process) -----------------------------------
     print(f"Step 1: deterministic validation ({n} citations)...")
     t0 = time.time()
-    details = []
-    for i, e in enumerate(entries, 1):
+    # Checked concurrently; the per-host throttle inside the validator still
+    # serializes each service at its own interval, so no service sees a higher
+    # request rate. Results are collected back into the original order.
+    details = [None] * n
+
+    def _check(idx_entry):
+        i, e = idx_entry
         try:
-            details.append(validator.check_citation(e))
+            return i, validator.check_citation(e)
         except Exception as ex:  # one bad citation must not kill the run
-            details.append({"key": e.get("key", f"_err_{i}"), "status": "error",
-                            "issues": [f"validator exception: {ex}"],
-                            "warnings": [], "fields": e.get("fields", {})})
-        if i % 100 == 0 or i == n:
-            print(f"  {i}/{n}  ({time.time()-t0:.0f}s elapsed)", flush=True)
+            return i, {"key": e.get("key", f"_err_{i}"), "status": "error",
+                       "issues": [f"validator exception: {ex}"],
+                       "warnings": [], "fields": e.get("fields", {})}
+
+    completed = 0
+    with ThreadPoolExecutor(max_workers=CHECK_WORKERS) as pool:
+        for i, result in pool.map(_check, enumerate(entries)):
+            details[i] = result
+            completed += 1
+            if completed % 100 == 0 or completed == n:
+                print(f"  {completed}/{n}  ({time.time()-t0:.0f}s elapsed)", flush=True)
     det_time = time.time() - t0
     det_score = score(details, gt)
     print(f"  deterministic done in {det_time:.0f}s")

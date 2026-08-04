@@ -36,5 +36,5 @@ keywords:
 license: AGPL-3.0-or-later
 # Code is AGPL-3.0 with the Commons Clause; the datasets built here and the
 # experiment logs in results/ are CC BY 4.0. See datasets/LICENSE.
-version: 1.4.3
+version: 1.4.4
 date-released: '2026-08-04'
