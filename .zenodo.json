@@ -1,0 +1,53 @@
+{
+  "title": "Citation Validator",
+  "upload_type": "software",
+  "license": "agpl-3.0-or-later",
+  "access_right": "open",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Edwards, Michael Todd",
+      "affiliation": "Ohio Journal of School Mathematics"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Özgün-Koca, S. Asli",
+      "affiliation": "Wayne State University",
+      "type": "Researcher"
+    },
+    {
+      "name": "Foley, Gregory",
+      "affiliation": "Ohio University",
+      "type": "Researcher"
+    }
+  ],
+  "keywords": [
+    "citation hallucination",
+    "reference verification",
+    "scholarly publishing infrastructure",
+    "open tools",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/OhioMathTeacher/citation-validator-app",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
+      "identifier": "arXiv:2602.23452",
+      "relation": "references",
+      "resource_type": "publication-preprint",
+      "scheme": "arxiv"
+    },
+    {
+      "identifier": "https://huggingface.co/spaces/ojsm/citation-validator",
+      "relation": "isIdenticalTo",
+      "resource_type": "software",
+      "scheme": "url"
+    }
+  ],
+  "description": "<p>A free, open citation validator. It checks each reference in a bibliography against public scholarly databases (CrossRef, OpenAlex, Semantic Scholar, arXiv) and reports whether the citation can be verified, without treating &quot;I cannot verify this&quot; as &quot;this is fake.&quot; A deterministic pass resolves DOIs and compares the returned record&mdash;title, authors, and year&mdash;against the citation as written; an optional AI second pass reviews only what the deterministic pass could not settle.</p><p><strong>Licensing.</strong> Code is licensed under AGPL-3.0 with the Commons Clause. The datasets constructed for this project and the experiment logs in <code>results/</code> are licensed separately under CC BY 4.0 &mdash; see <code>datasets/LICENSE</code> in the archive. Three further datasets (CiteAudit, Ansari 100) belong to other researchers, are not included in this deposit, and are fetched from their sources by scripts in the repository.</p><p><strong>Copyright</strong> (c) 2026 Michael Todd Edwards.</p>"
+}
