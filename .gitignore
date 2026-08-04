@@ -19,3 +19,7 @@ api_keys.txt
 
 # Upstream third-party data, fetched on demand and never redistributed
 .cache/
+
+# Third-party datasets: fetched on demand, never redistributed (see datasets/README.md)
+datasets/citeaudit-*/[!R]*
+datasets/compound-deception-ansari/[!R]*
