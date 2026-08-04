@@ -45,6 +45,15 @@ about. Fetching costs one command and leaves the attribution where it belongs.
 stays in the repository, so each figure in the paper still traces to its source
 run without needing anyone else's data.
 
+## Licence request
+
+**Sent 2026-08-04** to Yanfang Ye (yye7@nd.edu), corresponding author, cc
+S. Asli Ozgun-Koca and Gregory Foley. Text as sent:
+[`permission-request-citeaudit.txt`](permission-request-citeaudit.txt). It asks whether
+redistribution with attribution is acceptable, and passes back three real-world
+entries whose citation text disagrees with the record its DOI points to. Awaiting
+a reply; nothing here changes unless one arrives.
+
 ## Attribution
 
 - **CiteAudit** — Shi, Sun, Zhang, Sun, Chawla & Ye (2026), arXiv:2602.23452,
