@@ -1,0 +1,73 @@
+To:      [corresponding author, Yuan et al. 2026 -- arXiv:2602.23452]
+Subject: Using CiteAudit in an open citation-verification evaluation -- licence question
+
+
+Dear Dr Yuan and colleagues,
+
+I am the editor of a small mathematics education journal, and I have
+spent the past several months building a free, open citation validator
+after Nature reported that AI-fabricated references may already
+contaminate a substantial share of the 2025 literature. The tool checks
+each reference against CrossRef, OpenAlex, Semantic Scholar and arXiv,
+and it is built to distinguish a citation it cannot verify from one it
+believes is fabricated -- a conflation I found recurring in my own early
+code, in general-purpose language models, and in the commercial tool
+Nature relied on.
+
+CiteAudit has been the most valuable external check I have. Because your
+labels are human-assigned and your real-world group is independently
+sourced, it is the only dataset I have that can tell me whether my
+false-positive rate holds up outside my own test construction. It is
+also, frankly, the benchmark that told me my author matching was wrong:
+hand-checking the citations where we disagreed turned up several defects
+in my code.
+
+Two things I would like to ask.
+
+First, the repository has no LICENSE file, so I have no explicit
+permission to redistribute the data. My repository therefore does not
+include it -- an importer downloads data/benchmark.json from your
+repository on demand, records its SHA-256, and rebuilds the derived
+BibTeX locally. If you are willing to attach a licence, or simply to say
+that redistribution with attribution is acceptable, I would gladly ship
+a pinned snapshot so that readers can reproduce the evaluation from a
+single clone. If you would rather it stayed fetch-only, that is entirely
+fine and nothing changes.
+
+Second, a small finding you may want regardless. Four entries in the
+real-world group look worth a second look to me:
+
+  - 10.1109/cvpr.2017.712, cited as SphereFace, is labelled real, but
+    the DOI resolves to "Binary Coding for Partial..." -- a different
+    paper. The reference is real; the identifier attached to it is not.
+
+  - citeaudit_rw_2272, the SSDD dataset paper, is labelled real and
+    carries a correct DOI and title, but 12 of its 16 authors are
+    misnamed (Jianwei -> Jia, Israr -> Imran, Chang -> Chao, Dece ->
+    Dong, Shunjun -> Shaoyi, and others).
+
+  - citeaudit_rw_2015, the IEDB 2018 update, is labelled real with three
+    given names altered (Swapnil -> Shuchismita, Sheridan -> Silvia,
+    Daniel K. -> Derin K.).
+
+  - 10.1016/j.artint.2019.103216 is labelled real and is dated 1902 in
+    the citation text for a 2020 article.
+
+These may simply reflect that your labels answer "is this a real piece
+of work?" while I was asking "does the citation match the record its DOI
+points to" -- two different questions, and yours is much the harder one
+to annotate. I mention them only in case they are useful.
+
+One further observation from working with the set, which surprised me:
+of the 3,356 real-world citations, only 85 carry a DOI at all. That
+2.5% figure has become a central point in my own write-up, since it puts
+a hard ceiling on what any identifier-based checker can reach.
+
+The tool and all experiment logs are public, and I would be happy to
+share the per-citation comparison against your labels if it is of any
+use to you.
+
+With thanks for making the benchmark available at all,
+
+Michael Todd Edwards
+Editor, Ohio Journal of School Mathematics

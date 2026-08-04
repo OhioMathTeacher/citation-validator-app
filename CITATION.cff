@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+title: Citation Validator
+message: >-
+  If you use this software or its datasets, please cite it using the
+  metadata below.
+type: software
+authors:
+  - family-names: Edwards
+    given-names: Michael Todd
+    affiliation: Ohio Journal of School Mathematics
+repository-code: 'https://github.com/OhioMathTeacher/citation-validator-app'
+url: 'https://huggingface.co/spaces/ojsm/citation-validator'
+abstract: >-
+  A free, open citation validator. It checks each reference in a
+  bibliography against public scholarly databases (CrossRef, OpenAlex,
+  Semantic Scholar, arXiv) and reports whether the citation can be
+  verified, without treating "I cannot verify this" as "this is fake."
+  A deterministic pass resolves DOIs and compares the returned record
+  against the citation as written; an optional AI second pass reviews
+  only what the deterministic pass could not settle.
+keywords:
+  - citation hallucination
+  - reference verification
+  - scholarly publishing infrastructure
+  - open tools
+  - reproducibility
+license: AGPL-3.0-or-later
+version: 1.4.0
+date-released: '2026-08-04'
