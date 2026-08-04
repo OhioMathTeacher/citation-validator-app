@@ -9,11 +9,23 @@ import sys
 import os
 import json
 import time
+import unicodedata
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
 from urllib.parse import quote, urlencode, urlparse
 from urllib.request import urlopen, Request
 from urllib.error import URLError, HTTPError
+
+
+def _read_version() -> str:
+    """Version string, from the VERSION file at the repository root."""
+    try:
+        return (Path(__file__).resolve().parent.parent / 'VERSION').read_text().strip()
+    except OSError:
+        return 'unknown'
+
+
+__version__ = _read_version()
 
 # Import enhanced validation heuristics
 try:
@@ -304,7 +316,10 @@ class CitationValidator:
             authors = re.findall(r'<name>(.*?)</name>', data)
             return True, {
                 'title': [title],
-                'author': [{'given': a.split()[-1], 'family': ' '.join(a.split()[:-1])} for a in authors] if authors else [],
+                # arXiv writes names given-first ("Diletta Abbonato"), so the
+                # LAST token is the family name and the rest is the given name.
+                'author': [{'given': ' '.join(a.split()[:-1]), 'family': a.split()[-1]}
+                           for a in authors if a.split()] if authors else [],
                 'source': 'arxiv',
                 'arxiv_id': arxiv_id
             }
@@ -372,6 +387,82 @@ class CitationValidator:
         if not words_a or not words_b:
             return 0.0
         return len(words_a & words_b) / len(words_a | words_b)
+
+    @staticmethod
+    def _fold_accents(text: str) -> str:
+        """Strip diacritics so 'Blomhoj' matches 'Blomhøj' at the surname level."""
+        decomposed = unicodedata.normalize('NFKD', text.replace('ø', 'o').replace('Ø', 'O'))
+        return ''.join(c for c in decomposed if not unicodedata.combining(c))
+
+    @staticmethod
+    def _edit_ratio(a: str, b: str) -> float:
+        """Normalised Levenshtein similarity in [0, 1]. 1.0 means identical."""
+        if a == b:
+            return 1.0
+        if not a or not b:
+            return 0.0
+        previous = list(range(len(b) + 1))
+        for i, char_a in enumerate(a, 1):
+            current = [i]
+            for j, char_b in enumerate(b, 1):
+                current.append(min(previous[j] + 1,
+                                   current[j - 1] + 1,
+                                   previous[j - 1] + (char_a != char_b)))
+            previous = current
+        return 1.0 - previous[-1] / max(len(a), len(b))
+
+    def _check_authors_against_registry(self, bib_author: str,
+                                        registry_authors: List[Dict]) -> List[str]:
+        """Compare the citation's author text against the registry's author list.
+
+        Returns warnings only, never issues. Author strings vary for legitimate
+        reasons — initials instead of given names, married names, transliteration,
+        editors credited as authors — so these checks are deliberately narrow:
+
+          1. The FIRST author's surname is missing from the citation entirely.
+          2. A given name is a near-miss of the registered spelling, checked only
+             where the surname already matched and both sides spell the name out.
+
+        'Bill' for 'William' is a variant and is left alone; 'Younggon' for
+        'Yonggon' is a typo and is reported. Anything less clear-cut is passed
+        over, because falsely flagging an honest citation costs more than
+        missing a typo.
+        """
+        warnings = []
+        if not bib_author or not registry_authors:
+            return warnings
+
+        haystack = self._fold_accents(bib_author).lower()
+        words = set(re.findall(r'[a-z]+', haystack))
+        if not words:
+            return warnings
+
+        first = registry_authors[0]
+        first_family = self._fold_accents(first.get('family', '') or '').lower()
+        if first_family and first_family not in haystack:
+            closest = max((self._edit_ratio(first_family, word) for word in words), default=0.0)
+            hint = ' — possible misspelling' if closest >= 0.7 else ''
+            warnings.append(
+                f"First author '{first.get('family')}' does not appear in the citation{hint}")
+
+        for author in registry_authors:
+            family = self._fold_accents(author.get('family', '') or '').lower()
+            registry_given = (author.get('given', '') or '').strip()
+            given = self._fold_accents(registry_given).lower().split(' ')[0] if registry_given else ''
+            if not family or family not in haystack:
+                continue
+            if len(given) < 3 or given in words:
+                continue  # initials, or an exact match — nothing to report
+            near_misses = [w for w in words
+                           if len(w) >= 3 and w != family
+                           and 0.7 <= self._edit_ratio(given, w) < 1.0]
+            if near_misses:
+                best = max(near_misses, key=lambda w: self._edit_ratio(given, w))
+                warnings.append(
+                    f"Given name for {author.get('family')} reads '{best}' in the citation "
+                    f"but '{registry_given}' in the registry")
+
+        return warnings
     
     def search_openalex(self, title: str, author: str = None) -> Tuple[bool, Dict]:
         """Search OpenAlex for a publication by title and optional author."""
@@ -520,6 +611,9 @@ Respond with JSON: {{"is_suspicious": true/false, "confidence": 0-100, "reason":
         fields = entry['fields']
         doi = fields.get('doi', '')
         verified_metadata = None
+        # True once the record the DOI resolves to contradicts a field in the
+        # citation. Such a finding must not be undone by a later fuzzy match.
+        doi_field_conflict = False
         is_arxiv_doi = doi.lower().startswith('10.48550/arxiv.') if doi else False
         
         # ENHANCEMENT: Check for suspicious patterns first
@@ -571,14 +665,27 @@ Respond with JSON: {{"is_suspicious": true/false, "confidence": 0-100, "reason":
                     result['warnings'].append(f"Title mismatch (similarity {sim:.2f}): BibTeX='{fields['title'][:50]}...' vs DOI='{doi_title[:50]}...'")
                     result['status'] = 'suspicious'
                     result['suspicion_reasons'].append(f"DOI title similarity only {sim:.2f}")
-            
+                    doi_field_conflict = True
+
             # Check year
             if 'year' in fields and 'published' in doi_data:
                 bib_year = fields['year']
                 doi_year = str(doi_data['published'].get('date-parts', [[None]])[0][0])
-                
+
                 if bib_year != doi_year:
                     result['warnings'].append(f"Year mismatch: BibTeX={bib_year} vs DOI={doi_year}")
+                    doi_field_conflict = True
+                    if result['status'] == 'valid':
+                        result['status'] = 'warning'
+
+            # Check author names. A resolving DOI proves the record exists; it
+            # says nothing about whether the citation names the right people.
+            if 'author' in fields and doi_data.get('author'):
+                for warning in self._check_authors_against_registry(fields['author'],
+                                                                    doi_data['author']):
+                    result['warnings'].append(warning)
+                    result['suspicion_reasons'].append(warning)
+                    doi_field_conflict = True
                     if result['status'] == 'valid':
                         result['status'] = 'warning'
         
@@ -660,9 +767,18 @@ Respond with JSON: {{"is_suspicious": true/false, "confidence": 0-100, "reason":
                         if fields.get('year') and ss_data.get('year'):
                             year_match = str(fields['year']) == str(ss_data['year'])
                         
-                        # Only promote to valid if we have author OR year confirmation
+                        # Only promote to valid if we have author OR year
+                        # confirmation -- and never when the DOI's own registry
+                        # record already contradicted a field in the citation.
+                        # This fallback exists to rescue entries that could not
+                        # be verified at all, not to overrule a positive finding:
+                        # a fuzzy title-and-surname hit in a second database is
+                        # weaker evidence than an exact mismatch against the
+                        # record the DOI itself points to.
                         if result['status'] in ('warning', 'suspicious', 'invalid'):
-                            if author_match or year_match:
+                            if doi_field_conflict:
+                                pass  # keep the mismatch verdict
+                            elif author_match or year_match:
                                 result['status'] = 'valid'
                             else:
                                 result['warnings'].append('Semantic Scholar title match but no author/year confirmation')
