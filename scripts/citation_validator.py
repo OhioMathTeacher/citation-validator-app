@@ -390,8 +390,16 @@ class CitationValidator:
 
     @staticmethod
     def _fold_accents(text: str) -> str:
-        """Strip diacritics so 'Blomhoj' matches 'Blomhøj' at the surname level."""
-        decomposed = unicodedata.normalize('NFKD', text.replace('ø', 'o').replace('Ø', 'O'))
+        """Strip diacritics and normalise apostrophes.
+
+        'Blomhoj' must match 'Blomhøj', and O'Donnell written with a curly
+        apostrophe (U+2019) must match the straight-quoted registry spelling --
+        otherwise a correctly cited Irish surname reads as a missing author.
+        """
+        text = text.replace('ø', 'o').replace('Ø', 'O')
+        for quote in ('’', '‘', 'ʼ', '´', '`'):
+            text = text.replace(quote, "'")
+        decomposed = unicodedata.normalize('NFKD', text)
         return ''.join(c for c in decomposed if not unicodedata.combining(c))
 
     @staticmethod
@@ -433,13 +441,28 @@ class CitationValidator:
             return warnings
 
         haystack = self._fold_accents(bib_author).lower()
-        words = set(re.findall(r'[a-z]+', haystack))
+        words = set(re.findall(r"[a-z']+", haystack))
         if not words:
             return warnings
 
+        # Report a missing first author only when at least one OTHER registry
+        # surname IS present. That corroboration is what distinguishes a
+        # misspelling from an author field that never named these people at all
+        # -- "Molecular Transformer", "PKU-Yuan Lab and Tuzhan AI et al", or any
+        # free-text parsing artifact. Without it, the tool accuses an author of
+        # an error that belongs to whoever built the bibliography.
+        #
+        # The cost is a missed misspelling on single-author works, where nothing
+        # can corroborate. That trade is deliberate: a false accusation is worse
+        # than a missed typo.
         first = registry_authors[0]
         first_family = self._fold_accents(first.get('family', '') or '').lower()
-        if first_family and first_family not in haystack:
+        others_present = any(
+            self._fold_accents(a.get('family', '') or '').lower() in haystack
+            for a in registry_authors[1:]
+            if (a.get('family') or '').strip()
+        )
+        if first_family and first_family not in haystack and others_present:
             closest = max((self._edit_ratio(first_family, word) for word in words), default=0.0)
             hint = ' — possible misspelling' if closest >= 0.7 else ''
             warnings.append(
@@ -453,9 +476,33 @@ class CitationValidator:
                 continue
             if len(given) < 3 or given in words:
                 continue  # initials, or an exact match — nothing to report
-            near_misses = [w for w in words
+
+            # Search for the given name ONLY in the text adjoining this surname.
+            # Scanning the whole author string means that on a long list some
+            # other author's given name eventually lands within edit distance of
+            # this one -- which is how 'Jianwei Li' was reported as a misspelling
+            # of 'Tianwen', a name seven authors away.
+            # Compare only against the tokens ADJACENT to this surname. A given
+            # name sits next to its family name -- "Yonggon Bae", "Bae, Yonggon"
+            # -- so anything further away belongs to a different author. A
+            # character window is the wrong model: on a six-author list it
+            # reaches the next name but one, which is how 'Chang Liu' came to be
+            # reported as a misspelling of a 'Zhang' thirty-nine characters away.
+            tokens = [t.group() for t in re.finditer(r"[a-z']+", haystack)]
+            window = set()
+            for idx, tok in enumerate(tokens):
+                if tok != family:
+                    continue
+                for offset in (-2, -1, 1):          # "Given Middle Family" / "Family, Given"
+                    j = idx + offset
+                    if 0 <= j < len(tokens):
+                        window.add(tokens[j])
+            if given in window:
+                continue
+
+            near_misses = [w for w in window
                            if len(w) >= 3 and w != family
-                           and 0.7 <= self._edit_ratio(given, w) < 1.0]
+                           and 0.75 <= self._edit_ratio(given, w) < 1.0]
             if near_misses:
                 best = max(near_misses, key=lambda w: self._edit_ratio(given, w))
                 warnings.append(
@@ -702,7 +749,17 @@ Respond with JSON: {{"is_suspicious": true/false, "confidence": 0-100, "reason":
                 bib_year = fields['year']
                 doi_year = str(doi_data['published'].get('date-parts', [[None]])[0][0])
 
-                if bib_year != doi_year:
+                # A one-year gap is the ordinary distance between advance-access
+                # and issue publication -- Bioinformatics 2015/2016, the NAR
+                # database issue 2018/2019. Reporting that as a defect flags
+                # correctly cited work, which is the error this project exists
+                # to argue against. Two or more years is a real discrepancy.
+                try:
+                    gap = abs(int(bib_year) - int(doi_year))
+                except (TypeError, ValueError):
+                    gap = None
+
+                if bib_year != doi_year and gap != 1:
                     result['warnings'].append(f"Year mismatch: BibTeX={bib_year} vs DOI={doi_year}")
                     doi_field_conflict = True
                     if result['status'] == 'valid':
