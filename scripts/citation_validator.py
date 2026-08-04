@@ -532,8 +532,38 @@ class CitationValidator:
         if not self.use_ai or not self.groq_api_key:
             return None
         
-        # Build enhanced prompt with more context
-        if HAS_ENHANCEMENTS and suspicion_reasons:
+        # When the DOI resolved, existence is already settled. Asking the model
+        # whether the work is "fabricated" at that point invites it to answer
+        # yes about a reference we just confirmed -- so ask a narrower question.
+        if metadata and entry['fields'].get('doi'):
+            fields = entry['fields']
+            registry_title = metadata.get('title')
+            if isinstance(registry_title, list):
+                registry_title = ' '.join(registry_title)
+            prompt = f"""A citation's DOI resolved successfully, so the cited work is confirmed to exist.
+Your ONLY task is to judge the DISCREPANCY between how the citation is written and
+what the registry record says.
+
+Citation as written:
+- Title: {fields.get('title', 'N/A')}
+- Author(s): {fields.get('author', 'N/A')}
+- Year: {fields.get('year', 'N/A')}
+- DOI: {fields.get('doi', 'N/A')}
+
+Registry record: {registry_title or '(title not returned)'}
+
+Discrepancies our automated checks found:
+{chr(10).join('- ' + r for r in (suspicion_reasons or [])) or '- (none)'}
+
+INSTRUCTIONS:
+- The work EXISTS. Never answer that it is fabricated, hallucinated, or "not found".
+- A misspelled or accented name, a transposed name, an initial for a given name, or a
+  1-2 year gap between online and print publication are ROUTINE: is_suspicious = false.
+- Set is_suspicious true only if the citation points at a substantively DIFFERENT work.
+- In "reason", state the correction the author should make, in one sentence.
+
+Respond with JSON: {{"is_suspicious": true/false, "confidence": 0-100, "reason": "brief explanation"}}"""
+        elif HAS_ENHANCEMENTS and suspicion_reasons:
             prompt = EnhancedValidator.improved_ai_prompt(entry, metadata, suspicion_reasons)
         else:
             # Fallback to original prompt
@@ -800,16 +830,43 @@ Respond with JSON: {{"is_suspicious": true/false, "confidence": 0-100, "reason":
                     if result['status'] == 'valid':
                         result['status'] = 'warning'
         
+        # Publish what the databases actually returned. Any second opinion --
+        # the AI pass here, or the one the web UI runs client-side -- must be
+        # told that a DOI resolved, or it will reason from "not found anywhere"
+        # and conclude fabrication about a reference we just confirmed exists.
+        result['doi_resolved'] = bool(doi) and verified_metadata is not None
+        if verified_metadata:
+            registry_title = verified_metadata.get('title')
+            if isinstance(registry_title, list):
+                registry_title = ' '.join(registry_title)
+            registry_authors = []
+            for author in (verified_metadata.get('author') or [])[:8]:
+                name = ' '.join(part for part in (author.get('given'), author.get('family')) if part)
+                if not name:
+                    name = author.get('name', '')
+                if name:
+                    registry_authors.append(name)
+            published = (verified_metadata.get('published') or {}).get('date-parts') or [[None]]
+            result['verified_metadata'] = {
+                'title': registry_title or '',
+                'authors': registry_authors,
+                'year': str(published[0][0]) if published[0][0] else '',
+                'source': verified_metadata.get('source', 'CrossRef'),
+            }
+
         # AI analysis for suspicious/invalid citations
         if self.use_ai and result['status'] in ['suspicious', 'invalid', 'warning']:
             ai_result = self.analyze_with_ai(entry, verified_metadata, result['suspicion_reasons'])
             result['ai_analysis'] = ai_result
             
-            # Allow AI to escalate status if high confidence
-            if ai_result and isinstance(ai_result, dict):
+            # Allow AI to escalate status if high confidence -- but never for a
+            # reference whose DOI resolved. Existence is settled by the registry,
+            # not by a language model's opinion, and escalating there would let
+            # a typo be reported as a fabrication.
+            if ai_result and isinstance(ai_result, dict) and not result.get('doi_resolved'):
                 is_suspicious = ai_result.get('is_suspicious', False)
                 confidence = ai_result.get('confidence', 0)
-                
+
                 if is_suspicious and confidence >= 70:
                     if result['status'] == 'warning':
                         result['status'] = 'suspicious'
