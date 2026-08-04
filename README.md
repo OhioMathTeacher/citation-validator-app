@@ -1,4 +1,4 @@
-# CiteCheck
+# Citation Validator
 
 A free, open citation validator. It checks each reference in a bibliography
 against public scholarly databases (CrossRef, OpenAlex, Semantic Scholar) and
@@ -11,9 +11,11 @@ also the engine behind the hosted version, which needs no installation:
 
 **<https://huggingface.co/spaces/ojsm/citation-validator>**
 
-("CiteCheck" was a pseudonym used while the technical paper was under
-double-blind review. The tool's name is **Citation Validator**; the repository
-keeps the old name so existing links continue to work.)
+(This repository was briefly called `citecheck`, after a pseudonym adopted while
+the technical paper was under double-blind review. That name is now taken by an
+unrelated citation-hallucination detector — Khajavi et al., arXiv:2605.27700 —
+so it has been retired to avoid confusing two different tools. GitHub redirects
+the old URL, so existing links still work.)
 
 ## What it does
 
@@ -77,7 +79,7 @@ internet connection, and (for the AI pass) a free-tier API key.
 ## License
 
 **GNU AGPL-3.0 with the Commons Clause** (see [LICENSE](LICENSE)). You are free to
-use, read, modify, share, and self-host CiteCheck for any purpose — and any
+use, read, modify, share, and self-host Citation Validator for any purpose — and any
 networked version must publish its source — but you may **not sell** it. Verification
 infrastructure for the scholarly record should stay free and open; this license
 keeps it that way.
