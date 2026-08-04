@@ -545,6 +545,17 @@ class CitationValidator:
                 skipped += 1
             return None
 
+        # Every spelled-out name part the registry knows about, from either
+        # field, pooled across all authors.
+        registry_name_parts = set()
+        for author in registry_authors:
+            for field in ('given', 'family'):
+                registry_name_parts.update(
+                    t for t in re.findall(
+                        r"[a-z']+",
+                        self._fold_accents(author.get(field, '') or '').lower())
+                    if len(t) >= 3)
+
         claimed: Dict[str, set] = {}
         for idx, tok in enumerate(tokens):
             if tok not in registry_surnames:
@@ -571,6 +582,20 @@ class CitationValidator:
                 continue                     # registry gives initials only
             for candidate in sorted(candidates):
                 if any(candidate in parts for parts, _ in known):
+                    continue
+                # Before accusing, check the whole registry list. If the name
+                # is in there somewhere -- as another author's given name, or
+                # as a surname -- then every component is accounted for and the
+                # disagreement is about how the two sides split names apart,
+                # not about who wrote the paper.
+                #
+                # Both cases this silences came from the registry rather than
+                # the citation. CrossRef holds the XJTU-SY bearing dataset with
+                # its name parts swapped (given 'WANG', family 'Biao'), so a
+                # correct "Biao Wang" read as an impostor. And a repeated
+                # surname -- "Tian Tian, Peng Gao" -- let the scan attach Peng
+                # Gao's given name to Tian.
+                if candidate in registry_name_parts:
                     continue
                 ratio, registered = max(
                     (max(self._edit_ratio(candidate, part) for part in parts), spelling)

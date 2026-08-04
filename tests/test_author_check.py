@@ -255,3 +255,36 @@ def test_wrong_people_still_caught_after_the_multi_part_fix():
     warnings = _check("Hieu Pham, Qin Yang",
                       _authors(("Philip", "Pham"), ("Liu", "Yang")))
     assert len(warnings) == 2
+
+
+def test_registry_with_swapped_name_parts_does_not_convict_the_citation():
+    """CrossRef holds the XJTU-SY bearing dataset surname-first.
+
+    Its record gives 'WANG' as the given name and 'Biao' as the family name, so
+    a perfectly correct "Biao Wang" in the citation read as an impostor. When
+    every name part is present somewhere in the registry list, the two sides
+    disagree about parsing, not about people.
+    """
+    registry = _authors(("LEI", "Yaguo"), ("HAN", "Tianyu"), ("WANG", "Biao"),
+                        ("LI", "Naipeng"), ("YAN", "Tao"), ("YANG", "Jun"))
+    bib = "Yaguo Lei, Tianyu Han, Biao Wang, Naipeng Li, Tao Yan, and Jun Yang"
+    assert _check(bib, registry) == []
+
+
+def test_repeated_surname_does_not_borrow_the_next_given_name():
+    """'Tian Tian, Peng Gao' once produced a 'Peng Tian'."""
+    assert _check("Peng Zhang, Hao Xu, Tian Tian, Peng Gao",
+                  _authors(("Peng", "Zhang"), ("Hao", "Xu"),
+                           ("Tian", "Tian"), ("Peng", "Gao"))) == []
+
+
+def test_systematically_corrupted_author_list_is_caught():
+    """citeaudit_rw_2272 (SSDD): real paper, real DOI, given names rewritten.
+
+    Jianwei -> Jia, Israr -> Imran, Chang -> Chao. CiteAudit labels the entry
+    real because the work exists; the citation still misnames its authors.
+    """
+    warnings = _check("Jia Li, Bo Wang, Imran Ahmad, Chao Liu",
+                      _authors(("Jianwei", "Li"), ("Baoyou", "Wang"),
+                               ("Israr", "Ahmad"), ("Chang", "Liu")))
+    assert len(warnings) >= 2

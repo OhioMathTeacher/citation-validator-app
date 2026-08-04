@@ -41,12 +41,35 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import random
 import re
 from datetime import date
 from pathlib import Path
 from typing import Iterable
+from urllib.request import urlopen
+
+
+# Upstream lives in the CiteAudit repository, which carries no licence. This
+# project therefore does not redistribute it: the data is fetched on demand
+# and the derived BibTeX is rebuilt locally. See datasets/README.md.
+UPSTREAM_URL = ("https://raw.githubusercontent.com/shiiiikw/CiteAudit/"
+                "main/data/benchmark.json")
+# The snapshot every published figure in this project was computed against.
+UPSTREAM_SHA256 = "0bf0a7b23d13f2ee355ee0742ffadf9b8bf7f8c025226dc9363d8ea012b1bae5"
+
+
+def fetch_upstream(cache: Path) -> Path:
+    """Download CiteAudit's benchmark.json, reusing a cached copy if present."""
+    if cache.exists():
+        print(f"Using cached upstream copy: {cache}")
+        return cache
+    cache.parent.mkdir(parents=True, exist_ok=True)
+    print(f"Downloading {UPSTREAM_URL}")
+    with urlopen(UPSTREAM_URL) as response:
+        cache.write_bytes(response.read())
+    return cache
 
 
 # ---------------------------------------------------------------------------
@@ -263,8 +286,16 @@ def write_dataset(records: list[dict], dataset_id: str, output_dir: Path,
 def main() -> None:
     parser = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--input", type=Path, required=True,
-                        help="Path to CiteAudit benchmark.json")
+    parser.add_argument("--input", type=Path, default=None,
+                        help="Path to a local CiteAudit benchmark.json. Omit to "
+                             "download it from upstream (see --fetch).")
+    parser.add_argument("--fetch", action="store_true",
+                        help="Download benchmark.json from the CiteAudit repository. "
+                             "This project does not redistribute CiteAudit's data; "
+                             "see datasets/README.md.")
+    parser.add_argument("--cache", type=Path,
+                        default=Path(".cache/citeaudit-benchmark.json"),
+                        help="Where --fetch stores the download (git-ignored)")
     parser.add_argument("--dataset-id", required=True,
                         help="Slug used for filenames and manifest id")
     parser.add_argument("--output-dir", type=Path, required=True,
@@ -277,11 +308,22 @@ def main() -> None:
                              "class (balanced subset, seed 42)")
     args = parser.parse_args()
 
-    if not args.input.exists():
-        raise SystemExit(f"Input not found: {args.input}")
+    if args.fetch or args.input is None:
+        source = fetch_upstream(args.cache)
+    else:
+        source = args.input
+        if not source.exists():
+            raise SystemExit(f"Input not found: {source}")
 
-    print(f"Parsing {args.input} (source-type={args.source_type})...")
-    records = list(parse_input(args.input, source_type=args.source_type))
+    digest = hashlib.sha256(source.read_bytes()).hexdigest()
+    print(f"Source SHA-256: {digest}")
+    if digest != UPSTREAM_SHA256:
+        print("  WARNING: upstream differs from the snapshot this project's "
+              "published figures were computed against")
+        print(f"  expected {UPSTREAM_SHA256}")
+
+    print(f"Parsing {source} (source-type={args.source_type})...")
+    records = list(parse_input(source, source_type=args.source_type))
 
     description = DATASET_DESCRIPTION
     if args.source_type != "all":

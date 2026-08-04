@@ -1,0 +1,1165 @@
+{
+  "version": "1.3.0",
+  "baseline": [
+    "results/experiments/*det*.json"
+  ],
+  "checked": 85,
+  "changed": 15,
+  "changed_excluding_transient_baseline": 13,
+  "errors": 0,
+  "elapsed_seconds": 187.3,
+  "rows": [
+    {
+      "doi": "10.1007/s00182-018-0626-x",
+      "key": "citeaudit_rw_2690",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1007/s00251-011-0579-8",
+      "key": "citeaudit_rw_2000",
+      "old_status": "warning",
+      "new_status": "valid",
+      "old_warnings": [
+        "Year mismatch: BibTeX=2012 vs DOI=2011"
+      ],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": true,
+      "error": null
+    },
+    {
+      "doi": "10.1007/s002510050595",
+      "key": "citeaudit_rw_2009",
+      "old_status": "suspicious",
+      "new_status": "suspicious",
+      "old_warnings": [
+        "Title mismatch (similarity 0.00): BibTeX='Immunogenetics, 50 (3-4):213-219, 1999...' vs DOI='SYFPEITHI: database for MHC ligands and peptide mo...'"
+      ],
+      "new_warnings": [
+        "Title mismatch (similarity 0.00): BibTeX='Immunogenetics, 50 (3-4):213-219, 1999...' vs DOI='SYFPEITHI: database for MHC ligands and peptide mo...'"
+      ],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1007/s10601-018-9285-6",
+      "key": "citeaudit_rw_2778",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1007/s11538-018-0429-6",
+      "key": "citeaudit_rw_2011",
+      "old_status": "invalid",
+      "new_status": "invalid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1007/s13347-024-00756-6",
+      "key": "citeaudit_rw_3230",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1007/s44196-024-00639-w",
+      "key": "citeaudit_rw_2314",
+      "old_status": "suspicious",
+      "new_status": "suspicious",
+      "old_warnings": [
+        "Title mismatch (similarity 0.04): BibTeX='International Journal of Computational Intelligenc...' vs DOI='Prediction of Remaining Useful Life of Aero-engine...'"
+      ],
+      "new_warnings": [
+        "Title mismatch (similarity 0.04): BibTeX='International Journal of Computational Intelligenc...' vs DOI='Prediction of Remaining Useful Life of Aero-engine...'"
+      ],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1016/j.artint.2007.05.001",
+      "key": "citeaudit_rw_3222",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1016/j.artint.2019.103216",
+      "key": "citeaudit_rw_2687",
+      "old_status": "warning",
+      "new_status": "warning",
+      "old_warnings": [
+        "Generic author name pattern",
+        "Year mismatch: BibTeX=1902 vs DOI=2020"
+      ],
+      "new_warnings": [
+        "Generic author name pattern",
+        "Year mismatch: BibTeX=1902 vs DOI=2020"
+      ],
+      "coverage_notes": [
+        "Author list abbreviated with 'et al': 1 of 15 registered authors are named in the citation; the rest could not be checked"
+      ],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1016/j.celrep.2022.111155",
+      "key": "citeaudit_rw_2755",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1016/j.cels.2018.05.014",
+      "key": "citeaudit_rw_2008",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1016/j.cmpbup.2024.100148",
+      "key": "citeaudit_rw_3153",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1016/j.compbiomed.2022.105238",
+      "key": "citeaudit_rw_3176",
+      "old_status": "valid",
+      "new_status": "suspicious",
+      "old_warnings": [
+        "Generic author name pattern",
+        "Title mismatch (similarity 0.07): BibTeX='Unbox the black-box for the medical explainable ai...' vs DOI='Robust biometric system using session invariant mu...'"
+      ],
+      "new_warnings": [
+        "Generic author name pattern",
+        "Title mismatch (similarity 0.07): BibTeX='Unbox the black-box for the medical explainable ai...' vs DOI='Robust biometric system using session invariant mu...'"
+      ],
+      "coverage_notes": [
+        "Author list abbreviated with 'et al': 0 of 10 registered authors are named in the citation; the rest could not be checked"
+      ],
+      "baseline_transient": false,
+      "changed": true,
+      "error": null
+    },
+    {
+      "doi": "10.1016/j.cviu.2024.104160",
+      "key": "citeaudit_rw_2022",
+      "old_status": "suspicious",
+      "new_status": "suspicious",
+      "old_warnings": [
+        "Title mismatch (similarity 0.27): BibTeX='Optical flow in the deep learning era: A survey...' vs DOI='Estimating optical flow: A comprehensive review of...'"
+      ],
+      "new_warnings": [
+        "Title mismatch (similarity 0.27): BibTeX='Optical flow in the deep learning era: A survey...' vs DOI='Estimating optical flow: A comprehensive review of...'"
+      ],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1016/j.dib.2024.109123",
+      "key": "citeaudit_rw_1859",
+      "old_status": "invalid",
+      "new_status": "invalid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1016/j.ijbiomac.2023.131180",
+      "key": "citeaudit_rw_2023",
+      "old_status": "invalid",
+      "new_status": "invalid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1016/j.jcp.2018.10.045",
+      "key": "citeaudit_rw_2930",
+      "old_status": "warning",
+      "new_status": "valid",
+      "old_warnings": [
+        "Year mismatch: BibTeX=2018 vs DOI=2019"
+      ],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": true,
+      "error": null
+    },
+    {
+      "doi": "10.1016/j.tics.2004.10.003",
+      "key": "citeaudit_rw_2427",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1021/acs.jctc.9b00287",
+      "key": "citeaudit_rw_2020",
+      "old_status": "invalid",
+      "new_status": "invalid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1021/acscentsci.9b00576",
+      "key": "citeaudit_rw_0832",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1037/0033-295x.108.3.624",
+      "key": "citeaudit_rw_2426",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1037/0033-295x.109.4.679",
+      "key": "citeaudit_rw_2445",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1037/h0042519",
+      "key": "citeaudit_rw_3200",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1038/d41586-025-01599-7",
+      "key": "citeaudit_rw_3225",
+      "old_status": "suspicious",
+      "new_status": "suspicious",
+      "old_warnings": [
+        "Title mismatch (similarity 0.12): BibTeX='As ais become more persuasive, scientists debate t...' vs DOI='AI is more persuasive than people in online debate...'"
+      ],
+      "new_warnings": [
+        "Title mismatch (similarity 0.12): BibTeX='As ais become more persuasive, scientists debate t...' vs DOI='AI is more persuasive than people in online debate...'"
+      ],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1038/s41467-024-37785-9",
+      "key": "citeaudit_rw_1990",
+      "old_status": "invalid",
+      "new_status": "invalid",
+      "old_warnings": [
+        "Generic author name pattern"
+      ],
+      "new_warnings": [
+        "Generic author name pattern"
+      ],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1038/s41562-025-02194-6",
+      "key": "citeaudit_rw_3247",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1038/s42256-019-0048-x",
+      "key": "citeaudit_rw_3168",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1088/1361-6501/acf390",
+      "key": "citeaudit_rw_1828",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1093/bioinformatics/btac834",
+      "key": "citeaudit_rw_2001",
+      "old_status": "suspicious",
+      "new_status": "suspicious",
+      "old_warnings": [
+        "Title mismatch (similarity 0.05): BibTeX='Deepligand: a deep learning framework for peptide-...' vs DOI='AWOT and CWOT for genotype and genotype-by-treatme...'"
+      ],
+      "new_warnings": [
+        "Title mismatch (similarity 0.05): BibTeX='Deepligand: a deep learning framework for peptide-...' vs DOI='AWOT and CWOT for genotype and genotype-by-treatme...'"
+      ],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1093/bioinformatics/btv639",
+      "key": "citeaudit_rw_1988",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [
+        "Year mismatch: BibTeX=2016 vs DOI=2015"
+      ],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1093/grurint/ikac054",
+      "key": "citeaudit_rw_1653",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1093/nar/gkaa379",
+      "key": "citeaudit_rw_2012",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1093/nar/gky1006",
+      "key": "citeaudit_rw_2015",
+      "old_status": "valid",
+      "new_status": "warning",
+      "old_warnings": [
+        "Year mismatch: BibTeX=2019 vs DOI=2018"
+      ],
+      "new_warnings": [
+        "Citation credits 'Shuchismita Mahajan', but no author of this work is named that (registry: Swapnil Mahajan)",
+        "Citation credits 'Silvia Martini', but no author of this work is named that (registry: Sheridan Martini)",
+        "Citation credits 'Derin Wheeler', but no author of this work is named that (registry: Daniel K Wheeler)"
+      ],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": true,
+      "error": null
+    },
+    {
+      "doi": "10.1101/gr.276765.122",
+      "key": "citeaudit_rw_2750",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [
+        "Author list abbreviated with 'et al': 1 of 12 registered authors are named in the citation; the rest could not be checked"
+      ],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1109/csi54720.2022.9923954",
+      "key": "citeaudit_rw_3162",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1109/cvpr.2017.712",
+      "key": "citeaudit_rw_2365",
+      "old_status": "valid",
+      "new_status": "suspicious",
+      "old_warnings": [
+        "Title mismatch (similarity 0.06): BibTeX='Sphereface: Deep hypersphere embedding for face re...' vs DOI='Binary Coding for Partial Action Analysis with Lim...'"
+      ],
+      "new_warnings": [
+        "Title mismatch (similarity 0.06): BibTeX='Sphereface: Deep hypersphere embedding for face re...' vs DOI='Binary Coding for Partial Action Analysis with Lim...'",
+        "First author 'Qin' does not appear in the citation"
+      ],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": true,
+      "error": null
+    },
+    {
+      "doi": "10.1109/cvpr52733.2024.02060",
+      "key": "citeaudit_rw_2050",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1109/iccv51070.2023.01430",
+      "key": "citeaudit_rw_1933",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1109/jstars.2022.3169339",
+      "key": "citeaudit_rw_2265",
+      "old_status": "valid",
+      "new_status": "warning",
+      "old_warnings": [],
+      "new_warnings": [
+        "Citation credits 'Liyuan Li', but no author of this work is named that (registry: Linfeng Li)",
+        "Citation credits 'Jie Tian', but no author of this work is named that (registry: Jinwen Tian, Tian Tian)",
+        "Citation credits 'Ting Zhao', but no author of this work is named that (registry: Tianming Zhao)"
+      ],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": true,
+      "error": null
+    },
+    {
+      "doi": "10.1109/jtehm.2017.2736559",
+      "key": "citeaudit_rw_2056",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1109/tifs.2021.3090959",
+      "key": "citeaudit_rw_1723",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1111/rssb.12167",
+      "key": "citeaudit_rw_2573",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1126/science.aaz3041",
+      "key": "citeaudit_rw_3321",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1136/medethics-2020-106598",
+      "key": "citeaudit_rw_3141",
+      "old_status": "invalid",
+      "new_status": "invalid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1145/3539597.3570464",
+      "key": "citeaudit_rw_2590",
+      "old_status": "valid",
+      "new_status": "warning",
+      "old_warnings": [],
+      "new_warnings": [
+        "First author 'Ji' does not appear in the citation",
+        "Citation credits 'Xiaoxue Wang', but no author of this work is named that (registry: Hao Wang)",
+        "Citation credits 'Yali Wang', but no author of this work is named that (registry: Hao Wang)",
+        "Citation credits 'Yichao Wang', but no author of this work is named that (registry: Hao Wang)",
+        "Citation credits 'Chengyu Zhang', but no author of this work is named that (registry: Yongfeng Zhang)",
+        "Citation credits 'Lizi Zhang', but no author of this work is named that (registry: Yongfeng Zhang)",
+        "Citation credits 'Meng Zhang', but no author of this work is named that (registry: Yongfeng Zhang)"
+      ],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": true,
+      "error": null
+    },
+    {
+      "doi": "10.1145/3586183.3606763",
+      "key": "citeaudit_rw_2691",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1146/annurev.neuro.24.1.167",
+      "key": "citeaudit_rw_2467",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1198/jcgs.2010.08162",
+      "key": "citeaudit_rw_2552",
+      "old_status": "warning",
+      "new_status": "warning",
+      "old_warnings": [
+        "Year mismatch: BibTeX=2024 vs DOI=2011"
+      ],
+      "new_warnings": [
+        "Year mismatch: BibTeX=2024 vs DOI=2011"
+      ],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1371/journal.pcbi.1012752",
+      "key": "citeaudit_rw_2731",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1609/aaai.v32i1.12233",
+      "key": "citeaudit_rw_2060",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.1609/aaai.v38i17.29908",
+      "key": "citeaudit_rw_1905",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.18653/v1/2020.acl-main.633",
+      "key": "citeaudit_rw_3241",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.18653/v1/2021.acl-long.366",
+      "key": "citeaudit_rw_3216",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.18653/v1/2021.acl-tutorials.1",
+      "key": "citeaudit_rw_3220",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.18653/v1/2021.emnlp-main.629",
+      "key": "citeaudit_rw_3221",
+      "old_status": "valid",
+      "new_status": "suspicious",
+      "old_warnings": [
+        "Title mismatch (similarity 0.00): BibTeX='Key point analysis via contrastive learning and ex...' vs DOI='Text Detoxification using Large Pre-trained Neural...'"
+      ],
+      "new_warnings": [
+        "Title mismatch (similarity 0.00): BibTeX='Key point analysis via contrastive learning and ex...' vs DOI='Text Detoxification using Large Pre-trained Neural...'"
+      ],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": true,
+      "error": null
+    },
+    {
+      "doi": "10.18653/v1/2024.blackboxnlp-1.19",
+      "key": "citeaudit_rw_1760",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.18653/v1/2025.acl-long.854",
+      "key": "citeaudit_rw_1603",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.18653/v1/d15-1050",
+      "key": "citeaudit_rw_3243",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.18653/v1/p19-1097",
+      "key": "citeaudit_rw_3223",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.18653/v1/w19-4507",
+      "key": "citeaudit_rw_3234",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.22002/7fbwg-rx843",
+      "key": "citeaudit_rw_2730",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.24963/ijcai.2019/276",
+      "key": "citeaudit_rw_2027",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.24963/ijcai.2025/1161",
+      "key": "citeaudit_rw_1713",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.3389/fgene.2019.00524",
+      "key": "citeaudit_rw_2550",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.3389/fimmu.2025.1616113",
+      "key": "citeaudit_rw_2016",
+      "old_status": "valid",
+      "new_status": "warning",
+      "old_warnings": [],
+      "new_warnings": [
+        "First author 'Nilsson' does not appear in the citation"
+      ],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": true,
+      "error": null
+    },
+    {
+      "doi": "10.3389/fspor.2020.00050",
+      "key": "citeaudit_rw_2074",
+      "old_status": "suspicious",
+      "new_status": "suspicious",
+      "old_warnings": [
+        "Title mismatch (similarity 0.19): BibTeX='Evaluation of OpenPose software for estimating joi...' vs DOI='Evaluation of 3D Markerless Motion Capture Accurac...'"
+      ],
+      "new_warnings": [
+        "Title mismatch (similarity 0.19): BibTeX='Evaluation of OpenPose software for estimating joi...' vs DOI='Evaluation of 3D Markerless Motion Capture Accurac...'",
+        "Citation credits 'Yoshiharu Iino', but no author of this work is named that (registry: Yoichi Iino)",
+        "Citation credits 'Akira Kimura', but no author of this work is named that (registry: Arata Kimura)",
+        "Citation credits 'Naohisa Nakano', but no author of this work is named that (registry: Nobuyasu Nakano)",
+        "Citation credits 'Liko Omura', but no author of this work is named that (registry: Leon Omura)",
+        "Citation credits 'Takaaki Sakura', but no author of this work is named that (registry: Tetsuro Sakura)",
+        "Citation credits 'Koh Ueda', but no author of this work is named that (registry: Kazuhiro Ueda)",
+        "Citation credits 'Shota Yoshioka', but no author of this work is named that (registry: Shinsuke Yoshioka)"
+      ],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.3390/rs13183690",
+      "key": "citeaudit_rw_2272",
+      "old_status": "valid",
+      "new_status": "warning",
+      "old_warnings": [],
+      "new_warnings": [
+        "Citation credits 'Imran Ahmad', but no author of this work is named that (registry: Israr Ahmad)",
+        "Citation credits 'Xiaozhi Ke', but no author of this work is named that (registry: Xiao Ke)",
+        "Citation credits 'Jia Li', but no author of this work is named that (registry: Jianwei Li)",
+        "Citation credits 'Chao Liu', but no author of this work is named that (registry: Chang Liu)",
+        "Citation credits 'Dong Pan', but no author of this work is named that (registry: Dece Pan)",
+        "Citation credits 'Jie Shi', but no author of this work is named that (registry: Jun Shi)",
+        "Citation credits 'Xiang Wang', but no author of this work is named that (registry: Baoyou Wang)",
+        "Citation credits 'Shaoyi Wei', but no author of this work is named that (registry: Shunjun Wei)",
+        "Citation credits 'Xiang Xu', but no author of this work is named that (registry: Xiaowo Xu, Yanqin Xu)",
+        "Citation credits 'Yahui Xu', but no author of this work is named that (registry: Xiaowo Xu, Yanqin Xu)",
+        "Citation credits 'Tao Zeng', but no author of this work is named that (registry: Tianjiao Zeng)",
+        "Citation credits 'Yanan Zhou', but no author of this work is named that (registry: Yue Zhou)"
+      ],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": true,
+      "error": null
+    },
+    {
+      "doi": "10.3901/jme.2019.16.001",
+      "key": "citeaudit_rw_1825",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.4049/jimmunol.1600582",
+      "key": "citeaudit_rw_2010",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.48550/arxiv.2011.04006",
+      "key": "citeaudit_rw_2936",
+      "old_status": "valid",
+      "new_status": "warning",
+      "old_warnings": [],
+      "new_warnings": [
+        "Year mismatch: BibTeX=2011 vs DOI=2020",
+        "Citation credits 'Hieu Pham', but no author of this work is named that (registry: Philip Pham)",
+        "Citation credits 'Qin Yang', but no author of this work is named that (registry: Liu Yang)"
+      ],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": true,
+      "error": null
+    },
+    {
+      "doi": "10.48550/arxiv.2209.14792",
+      "key": "citeaudit_rw_2082",
+      "old_status": "warning",
+      "new_status": "valid",
+      "old_warnings": [
+        "DOI could not be verified: arXiv API unreachable (export.arxiv.org: request failed after 4 attempts (The read operation timed out))"
+      ],
+      "new_warnings": [],
+      "coverage_notes": [
+        "Author list abbreviated with 'et al': 3 of 13 registered authors are named in the citation; the rest could not be checked"
+      ],
+      "baseline_transient": true,
+      "changed": true,
+      "error": null
+    },
+    {
+      "doi": "10.48550/arxiv.2305.10874",
+      "key": "citeaudit_rw_2094",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [
+        "Author list abbreviated with 'et al': 1 of 7 registered authors are named in the citation; the rest could not be checked"
+      ],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.48550/arxiv.2306.07075",
+      "key": "citeaudit_rw_0601",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.48550/arxiv.2306.09525",
+      "key": "citeaudit_rw_0530",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.48550/arxiv.2308.06571",
+      "key": "citeaudit_rw_2111",
+      "old_status": "valid",
+      "new_status": "warning",
+      "old_warnings": [],
+      "new_warnings": [
+        "Citation credits 'Ziqi Wang', but no author of this work is named that (registry: Jiuniu Wang, Xiang Wang)",
+        "Citation credits 'Jing Zhang', but no author of this work is named that (registry: Shiwei Zhang, Yingya Zhang)"
+      ],
+      "coverage_notes": [
+        "Author list abbreviated with 'et al': 2 of 6 registered authors are named in the citation; the rest could not be checked"
+      ],
+      "baseline_transient": false,
+      "changed": true,
+      "error": null
+    },
+    {
+      "doi": "10.48550/arxiv.2311.01813",
+      "key": "citeaudit_rw_2063",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.48550/arxiv.2311.15127",
+      "key": "citeaudit_rw_2026",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.48550/arxiv.2402.19072",
+      "key": "citeaudit_rw_1853",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.48550/arxiv.2407.21065",
+      "key": "citeaudit_rw_0303",
+      "old_status": "warning",
+      "new_status": "valid",
+      "old_warnings": [
+        "DOI could not be verified: arXiv API unreachable (export.arxiv.org: request failed after 4 attempts (The read operation timed out))"
+      ],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": true,
+      "changed": true,
+      "error": null
+    },
+    {
+      "doi": "10.48550/arxiv.2410.07504",
+      "key": "citeaudit_rw_0834",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.48550/arxiv.2412.03603",
+      "key": "citeaudit_rw_2057",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [
+        "Author list abbreviated with 'et al': 6 of 52 registered authors are named in the citation; the rest could not be checked"
+      ],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.48550/arxiv.2501.00332",
+      "key": "citeaudit_rw_0219",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.48550/arxiv.2503.20314",
+      "key": "citeaudit_rw_2086",
+      "old_status": "warning",
+      "new_status": "valid",
+      "old_warnings": [
+        "Generic author name pattern"
+      ],
+      "new_warnings": [
+        "Generic author name pattern"
+      ],
+      "coverage_notes": [
+        "Author list abbreviated with 'et al': 1 of 62 registered authors are named in the citation; the rest could not be checked"
+      ],
+      "baseline_transient": false,
+      "changed": true,
+      "error": null
+    },
+    {
+      "doi": "10.5281/zenodo.10948109",
+      "key": "citeaudit_rw_2076",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [
+        "Author list abbreviated with 'et al': 0 of 1 registered authors are named in the citation; the rest could not be checked"
+      ],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    },
+    {
+      "doi": "10.57760/sciencedb.09538",
+      "key": "citeaudit_rw_2245",
+      "old_status": "valid",
+      "new_status": "valid",
+      "old_warnings": [],
+      "new_warnings": [],
+      "coverage_notes": [],
+      "baseline_transient": false,
+      "changed": false,
+      "error": null
+    }
+  ]
+}
