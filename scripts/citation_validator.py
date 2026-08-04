@@ -508,7 +508,7 @@ class CitationValidator:
 
         # surname -> {folded given: registered spelling}; initials excluded,
         # since 'J.' cannot confirm or contradict anything.
-        registry_givens: Dict[str, Dict[str, str]] = {}
+        registry_givens: Dict[str, List[Tuple[set, str]]] = {}
         display: Dict[str, str] = {}
         for author in registry_authors:
             family = self._fold_accents(author.get('family', '') or '').lower()
@@ -516,9 +516,16 @@ class CitationValidator:
                 continue
             display.setdefault(family, author.get('family'))
             registry_given = (author.get('given', '') or '').strip()
-            given = self._fold_accents(registry_given).lower().split(' ')[0] if registry_given else ''
-            if len(given) >= 3:
-                registry_givens.setdefault(family, {})[given] = registry_given
+            # Keep every spelled-out part of the given name, not just the first.
+            # "Sandeep Kumar Dhanda", "Meredith Ringel Morris" and "Chia-Yuan
+            # Chang" are all routinely shortened to a later part, and comparing
+            # against the first token alone reported those citations as naming
+            # someone who did not write the paper.
+            parts = {t for t in re.findall(
+                r"[a-z']+", self._fold_accents(registry_given).lower())
+                if len(t) >= 3}
+            if parts:
+                registry_givens.setdefault(family, []).append((parts, registry_given))
 
         def _nearest(idx: int, step: int) -> Optional[str]:
             """First spelled-out name token away from `idx`, skipping initials.
@@ -563,15 +570,18 @@ class CitationValidator:
             if not known:
                 continue                     # registry gives initials only
             for candidate in sorted(candidates):
-                if candidate in known:
+                if any(candidate in parts for parts, _ in known):
                     continue
-                ratio, best = max((self._edit_ratio(candidate, g), g) for g in known)
+                ratio, registered = max(
+                    (max(self._edit_ratio(candidate, part) for part in parts), spelling)
+                    for parts, spelling in known)
                 if ratio >= 0.75:
                     warnings.append(
                         f"Given name for {display[surname]} reads '{candidate}' in the "
-                        f"citation but '{known[best]}' in the registry")
+                        f"citation but '{registered}' in the registry")
                 else:
-                    unmatched.append((candidate, display[surname], sorted(known.values())))
+                    unmatched.append((candidate, display[surname],
+                                      sorted(spelling for _, spelling in known)))
 
         # A single unrecognised given name is usually a familiar form -- 'Bill'
         # for 'William', 'Tony' for 'Anthony' -- or a transliteration this code

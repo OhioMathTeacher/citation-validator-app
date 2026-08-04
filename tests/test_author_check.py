@@ -232,3 +232,26 @@ def test_mixed_initial_styles_across_a_long_list_stay_silent():
     bib = ("Timothy J. O’Donnell, Alex Rubinsteyn, Marius Bonsack, "
            "Angelika B. Riemer, Uri Laserson, and Jeff Hammerbacher")
     assert _check(bib, registry) == []
+
+
+def test_multi_part_given_names_are_matched_on_any_part():
+    """A citation may shorten a given name to any of its parts.
+
+    All three were real false positives: 'Kumar Dhanda' reported against
+    'Sandeep Kumar Dhanda', 'Ringel Morris' against 'Meredith Ringel Morris',
+    'Yuan Chang' against 'Chia-Yuan Chang'. Comparing only the first token of
+    the registered given name made every shortened form an impostor.
+    """
+    assert _check("Sandeep Kumar Dhanda, Swapnil Mahajan",
+                  _authors(("Sandeep Kumar", "Dhanda"), ("Swapnil", "Mahajan"))) == []
+    assert _check("Meredith Ringel Morris and Joon Sung Park",
+                  _authors(("Meredith Ringel", "Morris"), ("Joon Sung", "Park"))) == []
+    assert _check("Chia-Yuan Chang and Chin-Chia Michael Yeh",
+                  _authors(("Chia-Yuan", "Chang"), ("Chin-Chia Michael", "Yeh"))) == []
+
+
+def test_wrong_people_still_caught_after_the_multi_part_fix():
+    """citeaudit_rw_2936: 'Hieu Pham' and 'Qin Yang' for Philip Pham, Liu Yang."""
+    warnings = _check("Hieu Pham, Qin Yang",
+                      _authors(("Philip", "Pham"), ("Liu", "Yang")))
+    assert len(warnings) == 2
