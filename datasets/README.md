@@ -1,5 +1,10 @@
 # Datasets
 
+Datasets built here, and everything in `../results/`, are **CC BY 4.0** — see
+[LICENSE](LICENSE). The code is licensed separately and more restrictively.
+The three third-party sets below are not ours to license and are not
+redistributed.
+
 Eight datasets back the evaluation: three of known-real citations, which measure
 the false-positive rate, and five of known-fabricated ones, which measure
 detection. Five were built here. **Three come from other people, and this

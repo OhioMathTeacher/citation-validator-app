@@ -1,0 +1,52 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+
+WHAT THIS COVERS
+================
+
+The datasets built for this project, and the experiment logs in ../results/:
+
+  - ojsm-synthetic/            Frankenstein, Stolen DOI, Plausible and
+                               Nonsense fabrication sets, constructed here
+  - the real-citation sets     arXiv CS (2024), the CrossRef random sample,
+                               and the Nature article references, collected
+                               here
+  - manifest.json
+  - ../results/                every experiment log and re-check produced by
+                               this project
+
+You may copy, redistribute, adapt and build on this material for any purpose,
+including commercially, provided you give appropriate credit. Cite the
+repository (see ../CITATION.cff) and, where a figure or number is involved,
+the run directory under ../results/ that produced it.
+
+The code in this repository is licensed separately and more restrictively —
+AGPL-3.0 with the Commons Clause. See ../LICENSE. The distinction is
+deliberate: the tool carries a no-sale condition so that verification
+infrastructure for the scholarly record stays free to use, while the evidence
+behind the published claims carries none, because a reader who cannot freely
+re-analyse the data cannot check the argument.
+
+
+WHAT THIS DOES NOT COVER
+========================
+
+Three datasets are other researchers' work. They are NOT redistributed here
+and are NOT licensed by this file. Each is fetched from its source on demand;
+see README.md.
+
+  - citeaudit-benchmark/, citeaudit-realworld/, citeaudit-realworld-subset/
+      Shi, Sun, Zhang, Sun, Chawla & Ye (2026), arXiv:2602.23452
+      https://github.com/shiiiikw/CiteAudit
+      That repository carries no licence, so all rights are reserved to its
+      authors. A licence request was sent 2026-08-04; this file will be
+      updated if terms are granted.
+
+  - compound-deception-ansari/
+      Derived from the public GPTZero NeurIPS 2025 hallucination table
+      referenced by Ansari (2026). Terms of reuse unstated.
+
+The README.md files inside those directories record provenance only. Anything
+this project derived from them — parsed BibTeX, our own labels, our own
+results — is rebuilt locally by the importers in ../scripts/ and is not
+distributed.
