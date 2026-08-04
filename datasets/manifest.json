@@ -183,7 +183,7 @@
   {
     "id": "citeaudit-benchmark",
     "name": "CiteAudit — Human-Validated Citation Benchmark",
-    "authors": "Yuan, Shi, Zhang, Sun, Chawla & Ye (2026)",
+    "authors": "Shi, Sun, Zhang, Sun, Chawla & Ye (2026)",
     "arxiv": "2602.23452",
     "description": "9,442 citations (6,475 real + 2,967 fake) with human-validated labels. Multi-domain (ML, biology, chemistry). First open standardized benchmark for hallucinated citation detection.",
     "citation_count": 9442,
@@ -198,7 +198,7 @@
   {
     "id": "citeaudit-realworld",
     "name": "CiteAudit — Real-World Group",
-    "authors": "Yuan, Shi, Zhang, Sun, Chawla & Ye (2026)",
+    "authors": "Shi, Sun, Zhang, Sun, Chawla & Ye (2026)",
     "arxiv": "2602.23452",
     "description": "3,356 citations (2,889 real + 467 fake) — the independently-sourced 'realworld' group of the CiteAudit benchmark. External validation set for the OJSM citation paper.",
     "citation_count": 3356,
@@ -212,7 +212,7 @@
   {
     "id": "citeaudit-realworld-subset",
     "name": "CiteAudit — Real-World Balanced Subset",
-    "authors": "Yuan, Shi, Zhang, Sun, Chawla & Ye (2026)",
+    "authors": "Shi, Sun, Zhang, Sun, Chawla & Ye (2026)",
     "arxiv": "2602.23452",
     "description": "500-citation balanced random subset (250 real + 250 fake, seed 42) of the CiteAudit realworld group. Sized for the AI tier under Gemini's free-tier daily token budget.",
     "citation_count": 500,

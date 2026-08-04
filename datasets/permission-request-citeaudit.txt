@@ -1,8 +1,9 @@
-To: [corresponding author, Yuan et al. 2026 -- arXiv:2602.23452]
+To: yye7@nd.edu (Yanfang Ye, corresponding author)
+Cc: Kaiwen Shi (first author) -- address not published; optional
 Subject: Using CiteAudit in an open citation-verification evaluation -- licence question
 
 
-Dear Dr Yuan and colleagues,
+Dear Dr Ye and colleagues,
 
 I am the editor of a small mathematics education journal, and I have spent the past several months building a free, open citation validator after Nature reported that AI-fabricated references may already contaminate a substantial share of the 2025 literature. The tool checks each reference against CrossRef, OpenAlex, Semantic Scholar and arXiv, and it is built to distinguish a citation it cannot verify from one it believes is fabricated -- a conflation I found recurring in my own early code, in general-purpose language models, and in the commercial tool Nature relied on.
 

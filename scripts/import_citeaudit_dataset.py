@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Importer for the CiteAudit benchmark (Yuan et al., arXiv:2602.23452).
+"""Importer for the CiteAudit benchmark (Shi et al., arXiv:2602.23452).
 
 Source: https://github.com/shiiiikw/CiteAudit  (data/benchmark.json)
 
@@ -76,10 +76,10 @@ def fetch_upstream(cache: Path) -> Path:
 # TODO_PER_DATASET #1 — describe the source.
 # ---------------------------------------------------------------------------
 DATASET_NAME = "CiteAudit — Human-Validated Citation Benchmark"
-DATASET_AUTHORS = "Yuan, Shi, Zhang, Sun, Chawla & Ye (2026)"
+DATASET_AUTHORS = "Shi, Sun, Zhang, Sun, Chawla & Ye (2026)"
 DATASET_ARXIV = "2602.23452"
 DATASET_DESCRIPTION = (
-    "Human-validated citation benchmark (Yuan et al., 2026). Each entry is "
+    "Human-validated citation benchmark (Shi et al., 2026). Each entry is "
     "a free-text reference string labelled real/fake by human annotators. "
     "The 'realworld' group is independently sourced from published papers; "
     "the 'generated' group is synthetically constructed."

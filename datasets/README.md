@@ -11,7 +11,7 @@ repository does not redistribute them.**
 |---|---|---|
 | `ojsm-synthetic` (Frankenstein, Stolen DOI, Plausible, Nonsense) | built here | yes |
 | real arXiv CS, CrossRef random, *Nature* article | collected here | yes |
-| `citeaudit-benchmark`, `citeaudit-realworld`, `citeaudit-realworld-subset` | Yuan et al. | **fetched on demand** |
+| `citeaudit-benchmark`, `citeaudit-realworld`, `citeaudit-realworld-subset` | Shi et al. | **fetched on demand** |
 | `compound-deception-ansari` | GPTZero / Ansari | **fetched on demand** |
 
 Rebuild the fetched sets with:
@@ -47,7 +47,7 @@ run without needing anyone else's data.
 
 ## Attribution
 
-- **CiteAudit** — Yuan, Shi, Zhang, Sun, Chawla & Ye (2026), arXiv:2602.23452,
+- **CiteAudit** — Shi, Sun, Zhang, Sun, Chawla & Ye (2026), arXiv:2602.23452,
   <https://github.com/shiiiikw/CiteAudit>. 9,442 human-labelled citations; this
   project uses the `realworld` group (3,356) and a balanced 500-entry subset.
 - **Ansari 100** — derived from the public GPTZero NeurIPS 2025 hallucination

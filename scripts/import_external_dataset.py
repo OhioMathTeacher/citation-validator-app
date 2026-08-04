@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generic importer template for external citation-validation benchmarks.
 
-When CiteAudit (Yuan et al., 2602.23452), the Rao 931-paper benchmark
+When CiteAudit (Shi et al., 2602.23452), the Rao 931-paper benchmark
 (Rao & Callison-Burch, 2604.03159), or the HalluCitation list (Sakai
 et al., 2601.18724) lands in a publicly accessible form, copy this
 file to ``import_<name>_dataset.py`` and customize the four functions
