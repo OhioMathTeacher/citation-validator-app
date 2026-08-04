@@ -134,16 +134,23 @@ def parse_reference(text: str) -> dict:
         fields["eprint"] = am.group(1)
         fields["archivePrefix"] = "arXiv"
 
-    years = [y for y in YEAR_RE.findall(text) if 1900 <= int(y) <= 2027]
-    if years:
-        fields["year"] = years[-1]
-
     # Strip identifiers before the author/title split so trailing
     # "doi: ..." / "URL ..." fragments don't pollute the venue chunk.
     clean = URL_RE.sub("", text)
     clean = DOI_RE.sub("", clean)
     clean = re.sub(r"\bdoi\s*:?\s*", "", clean, flags=re.I)
     clean = re.sub(r"\barxiv\s*[:/]?\s*\S+", "", clean, flags=re.I)
+
+    # Read the year from the stripped text, never from the raw string. An
+    # arXiv identifier's YYMM prefix looks exactly like a year, and PDF
+    # extraction splits it: ".../abs/1902. 00506" left "1902" as the last
+    # year-shaped token in the Hanabi reference, so a citation correctly
+    # dated 2020 was imported as 1902 and later reported as a year
+    # mismatch against the registry. The defect was ours; the citation
+    # was right, and so was CiteAudit's label.
+    years = [y for y in YEAR_RE.findall(clean) if 1900 <= int(y) <= 2027]
+    if years:
+        fields["year"] = years[-1]
     parts = [p.strip() for p in SENT_SPLIT_RE.split(clean) if p.strip()]
     if len(parts) >= 2:
         fields["author"] = parts[0]
