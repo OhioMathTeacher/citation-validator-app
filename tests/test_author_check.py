@@ -21,8 +21,15 @@ def _authors(*pairs):
 
 
 def _check(bib_author, registry):
+    """Discrepancies only — findings that count against a citation."""
     return CitationValidator(use_ai=False)._check_authors_against_registry(
-        bib_author, registry)
+        bib_author, registry)[0]
+
+
+def _notes(bib_author, registry):
+    """Coverage notes — what could not be checked. Never a finding."""
+    return CitationValidator(use_ai=False)._check_authors_against_registry(
+        bib_author, registry)[1]
 
 
 # ── Must stay silent: correctly cited work ─────────────────────────────────
@@ -143,3 +150,85 @@ def test_arxiv_author_names_are_not_reversed(monkeypatch):
     _, record = v._validate_arxiv("2011.04006")
 
     assert record["author"][0] == {"given": "Yi", "family": "Tay"}
+
+
+# ── Named authors are verified as pairs, not as a bag of surnames ──────────
+
+MODELSCOPE = _authors(("Jiuniu", "Wang"), ("Hangjie", "Yuan"), ("Dayou", "Chen"),
+                      ("Yingya", "Zhang"), ("Xiang", "Wang"), ("Shiwei", "Zhang"))
+
+
+def test_fabricated_authors_sharing_common_surnames_are_caught():
+    """citeaudit_rw_2111: a real DOI wearing an invented author list.
+
+    Cited as 'Ziqi Wang, Jing Zhang, and et al' for a paper by Jiuniu Wang,
+    Hangjie Yuan, Dayou Chen, Yingya Zhang, Xiang Wang and Shiwei Zhang. Title,
+    DOI, venue and year are all correct; only the people are wrong. Wang and
+    Zhang both appear in the registry list, so a surname-only check passes it.
+    """
+    warnings = _check("Ziqi Wang, Jing Zhang, and et al", MODELSCOPE)
+    assert warnings
+    assert any("ziqi" in w.lower() for w in warnings)
+    assert any("jing" in w.lower() for w in warnings)
+
+
+def test_single_unrecognised_given_name_is_not_an_accusation():
+    """'Bill' for 'William' is a familiar form, not a fabrication.
+
+    One unmatched given name never fires; it takes a second to corroborate.
+    """
+    assert _check("Bill Smith and Robert Jones",
+                  _authors(("William", "Smith"), ("Robert", "Jones"))) == []
+
+
+def test_adjacent_given_name_is_attributed_to_the_right_surname():
+    """In 'William Smith, Robert Jones', 'Robert' belongs to Jones, not Smith."""
+    assert _check("William Smith, Robert Jones",
+                  _authors(("William", "Smith"), ("Robert", "Jones"))) == []
+
+
+def test_registry_initials_cannot_contradict_anything():
+    """If the registry itself only has 'J.', there is nothing to compare."""
+    assert _check("Ziqi Wang and Jing Zhang",
+                  _authors(("J.", "Wang"), ("Y.", "Zhang"))) == []
+
+
+# ── 'et al' is coverage, never a finding ───────────────────────────────────
+
+def test_et_al_reports_coverage_not_suspicion():
+    """An abbreviated list is correct practice; say what went unchecked."""
+    warnings = _check("Jiuniu Wang, Hangjie Yuan, et al", MODELSCOPE)
+    notes = _notes("Jiuniu Wang, Hangjie Yuan, et al", MODELSCOPE)
+    assert warnings == []          # nothing held against the citation
+    assert notes                   # but the gap is stated
+    assert "et al" in notes[0]
+    assert "2 of 6" in notes[0]
+
+
+def test_no_et_al_means_no_coverage_note():
+    assert _notes("Jiuniu Wang and Hangjie Yuan", MODELSCOPE) == []
+
+
+def test_middle_initials_do_not_shift_given_names_onto_the_next_author():
+    """Real case: the pair check's first draft invented three discrepancies.
+
+    "Matthew M Botvinick, Todd S Braver, ..." -- the backward step lands on the
+    middle initial, so an earlier version ran on into the next author and
+    reported a 'Todd Botvinick', a 'Cameron Barch' and a 'Deanna Braver'.
+    """
+    registry = _authors(("Matthew M.", "Botvinick"), ("Todd S.", "Braver"),
+                        ("Deanna M.", "Barch"), ("Cameron S.", "Carter"),
+                        ("Jonathan D.", "Cohen"))
+    bib = ("Matthew M Botvinick, Todd S Braver, Deanna M Barch, "
+           "Cameron S Carter, and Jonathan D Cohen")
+    assert _check(bib, registry) == []
+
+
+def test_mixed_initial_styles_across_a_long_list_stay_silent():
+    """Some authors carry middle initials, some do not. All correctly cited."""
+    registry = _authors(("Timothy J.", "O'Donnell"), ("Alex", "Rubinsteyn"),
+                        ("Marius", "Bonsack"), ("Angelika B.", "Riemer"),
+                        ("Uri", "Laserson"), ("Jeff", "Hammerbacher"))
+    bib = ("Timothy J. O’Donnell, Alex Rubinsteyn, Marius Bonsack, "
+           "Angelika B. Riemer, Uri Laserson, and Jeff Hammerbacher")
+    assert _check(bib, registry) == []

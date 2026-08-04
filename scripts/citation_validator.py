@@ -41,6 +41,10 @@ class TransientNetworkError(Exception):
     verify' (status: warning) -- never as evidence of fabrication."""
 
 
+# Tokens that sit next to a surname without being anyone's given name.
+_NAME_STOPWORDS = {'and', 'et', 'al', 'the', 'of', 'for', 'with',
+                   'jr', 'sr', 'eds', 'ed', 'editors'}
+
 class CitationValidator:
     """Validates academic citations against CrossRef, OpenAlex, and Semantic Scholar APIs."""
     
@@ -433,25 +437,36 @@ class CitationValidator:
         return 1.0 - previous[-1] / max(len(a), len(b))
 
     def _check_authors_against_registry(self, bib_author: str,
-                                        registry_authors: List[Dict]) -> List[str]:
+                                        registry_authors: List[Dict]
+                                        ) -> Tuple[List[str], List[str]]:
         """Compare the citation's author text against the registry's author list.
 
-        Returns warnings only, never issues. Author strings vary for legitimate
-        reasons — initials instead of given names, married names, transliteration,
-        editors credited as authors — so these checks are deliberately narrow:
+        Returns ``(discrepancies, notes)``. Discrepancies are findings about the
+        citation; notes describe what could not be checked and must never count
+        against it. Author strings vary for legitimate reasons — initials,
+        married names, transliteration, editors credited as authors — so these
+        checks are deliberately narrow:
 
           1. The FIRST author's surname is missing from the citation entirely.
           2. A given name is a near-miss of the registered spelling, checked only
              where the surname already matched and both sides spell the name out.
+          3. The citation names an author in full who is not an author of the
+             work, corroborated by a second such name (see below).
 
         'Bill' for 'William' is a variant and is left alone; 'Younggon' for
         'Yonggon' is a typo and is reported. Anything less clear-cut is passed
         over, because falsely flagging an honest citation costs more than
         missing a typo.
+
+        An 'et al' is the citation declining to name the rest of the list. That
+        is a gap in what can be checked, not agreement with the registry, so it
+        is reported as coverage — the same distinction between *unverifiable*
+        and *wrong* that this tool exists to keep.
         """
-        warnings = []
+        warnings: List[str] = []
+        notes: List[str] = []
         if not bib_author or not registry_authors:
-            return warnings
+            return warnings, notes
 
         haystack = self._fold_accents(bib_author).lower()
         words = set(re.findall(r"[a-z']+", haystack))
@@ -481,48 +496,105 @@ class CitationValidator:
             warnings.append(
                 f"First author '{first.get('family')}' does not appear in the citation{hint}")
 
+        # Pair each surname the citation shares with the registry against the
+        # given name the citation puts beside it. Scanning the whole author
+        # string instead would mean that on a long list some other author's
+        # given name eventually lands within edit distance of this one -- which
+        # is how 'Jianwei Li' was once reported as a misspelling of a 'Tianwen'
+        # seven names away.
+        tokens = [t.group() for t in re.finditer(r"[a-z']+", haystack)]
+        registry_surnames = {self._fold_accents(a.get('family', '') or '').lower()
+                             for a in registry_authors if (a.get('family') or '').strip()}
+
+        # surname -> {folded given: registered spelling}; initials excluded,
+        # since 'J.' cannot confirm or contradict anything.
+        registry_givens: Dict[str, Dict[str, str]] = {}
+        display: Dict[str, str] = {}
         for author in registry_authors:
             family = self._fold_accents(author.get('family', '') or '').lower()
+            if not family:
+                continue
+            display.setdefault(family, author.get('family'))
             registry_given = (author.get('given', '') or '').strip()
             given = self._fold_accents(registry_given).lower().split(' ')[0] if registry_given else ''
-            if not family or family not in haystack:
-                continue
-            if len(given) < 3 or given in words:
-                continue  # initials, or an exact match — nothing to report
+            if len(given) >= 3:
+                registry_givens.setdefault(family, {})[given] = registry_given
 
-            # Search for the given name ONLY in the text adjoining this surname.
-            # Scanning the whole author string means that on a long list some
-            # other author's given name eventually lands within edit distance of
-            # this one -- which is how 'Jianwei Li' was reported as a misspelling
-            # of 'Tianwen', a name seven authors away.
-            # Compare only against the tokens ADJACENT to this surname. A given
-            # name sits next to its family name -- "Yonggon Bae", "Bae, Yonggon"
-            # -- so anything further away belongs to a different author. A
-            # character window is the wrong model: on a six-author list it
-            # reaches the next name but one, which is how 'Chang Liu' came to be
-            # reported as a misspelling of a 'Zhang' thirty-nine characters away.
-            tokens = [t.group() for t in re.finditer(r"[a-z']+", haystack)]
-            window = set()
-            for idx, tok in enumerate(tokens):
-                if tok != family:
+        def _nearest(idx: int, step: int) -> Optional[str]:
+            """First spelled-out name token away from `idx`, skipping initials.
+
+            "Deanna M Barch" puts the given name two tokens from the surname,
+            not one, so a fixed offset lands on the middle initial.
+            """
+            j = idx + step
+            skipped = 0
+            while 0 <= j < len(tokens) and skipped <= 2:
+                token = tokens[j]
+                if token in registry_surnames or token in _NAME_STOPWORDS:
+                    return None                  # ran into the next author
+                if len(token) >= 3:
+                    return token
+                j += step                        # an initial -- keep going
+                skipped += 1
+            return None
+
+        claimed: Dict[str, set] = {}
+        for idx, tok in enumerate(tokens):
+            if tok not in registry_surnames:
+                continue
+            # Look BEHIND first: "Given M. Family" is the dominant free-text
+            # form. Only when nothing precedes the surname is this the BibTeX
+            # "Family, Given" order, where the given name follows.
+            #
+            # Reading forward whenever the backward step came up empty is what
+            # made "Matthew M Botvinick, Todd S Braver" report a 'Todd
+            # Botvinick': the initial hid Matthew, so the scan ran on into the
+            # next author. Behind-then-ahead keeps each given name with the
+            # surname it was written next to, and claims nothing when the order
+            # is ambiguous -- silence costs a missed typo, a wrong guess costs
+            # an accusation.
+            candidate = _nearest(idx, -1) or _nearest(idx, +1)
+            if candidate:
+                claimed.setdefault(tok, set()).add(candidate)
+
+        unmatched = []
+        for surname, candidates in sorted(claimed.items()):
+            known = registry_givens.get(surname)
+            if not known:
+                continue                     # registry gives initials only
+            for candidate in sorted(candidates):
+                if candidate in known:
                     continue
-                for offset in (-2, -1, 1):          # "Given Middle Family" / "Family, Given"
-                    j = idx + offset
-                    if 0 <= j < len(tokens):
-                        window.add(tokens[j])
-            if given in window:
-                continue
+                ratio, best = max((self._edit_ratio(candidate, g), g) for g in known)
+                if ratio >= 0.75:
+                    warnings.append(
+                        f"Given name for {display[surname]} reads '{candidate}' in the "
+                        f"citation but '{known[best]}' in the registry")
+                else:
+                    unmatched.append((candidate, display[surname], sorted(known.values())))
 
-            near_misses = [w for w in window
-                           if len(w) >= 3 and w != family
-                           and 0.75 <= self._edit_ratio(given, w) < 1.0]
-            if near_misses:
-                best = max(near_misses, key=lambda w: self._edit_ratio(given, w))
+        # A single unrecognised given name is usually a familiar form -- 'Bill'
+        # for 'William', 'Tony' for 'Anthony' -- or a transliteration this code
+        # has no business adjudicating. Two or more of them is not a naming
+        # convention; it is a different set of people, which is how a real DOI
+        # comes to be wearing a fabricated author list.
+        if len(unmatched) >= 2:
+            for candidate, surname, known in unmatched:
                 warnings.append(
-                    f"Given name for {author.get('family')} reads '{best}' in the citation "
-                    f"but '{registry_given}' in the registry")
+                    f"Citation credits '{candidate.title()} {surname}', but no author of "
+                    f"this work is named that (registry: "
+                    f"{', '.join(f'{g} {surname}' for g in known)})")
 
-        return warnings
+        # 'et al' hides the rest of the list. Say how much of it went unchecked.
+        if re.search(r'\bet\s+al\b', haystack):
+            present = sum(1 for surname in registry_surnames if surname in tokens)
+            if present < len(registry_authors):
+                notes.append(
+                    f"Author list abbreviated with 'et al': {present} of "
+                    f"{len(registry_authors)} registered authors are named in the "
+                    f"citation; the rest could not be checked")
+
+        return warnings, notes
     
     def search_openalex(self, title: str, author: str = None) -> Tuple[bool, Dict]:
         """Search OpenAlex for a publication by title and optional author."""
@@ -781,13 +853,19 @@ Respond with JSON: {{"is_suspicious": true/false, "confidence": 0-100, "reason":
             # Check author names. A resolving DOI proves the record exists; it
             # says nothing about whether the citation names the right people.
             if 'author' in fields and doi_data.get('author'):
-                for warning in self._check_authors_against_registry(fields['author'],
-                                                                    doi_data['author']):
+                author_warnings, author_notes = self._check_authors_against_registry(
+                    fields['author'], doi_data['author'])
+                for warning in author_warnings:
                     result['warnings'].append(warning)
                     result['suspicion_reasons'].append(warning)
                     doi_field_conflict = True
                     if result['status'] == 'valid':
                         result['status'] = 'warning'
+                # Coverage notes record what could not be checked. They are
+                # reported, but they never change the status and never become
+                # a suspicion reason -- an abbreviated author list is correct
+                # citation practice, not a defect.
+                result.setdefault('coverage_notes', []).extend(author_notes)
         
         else:
             # No DOI - try OpenAlex search

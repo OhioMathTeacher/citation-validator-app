@@ -16,3 +16,6 @@ api_keys.txt
 # OS / editor
 .DS_Store
 *.swp
+
+# Upstream third-party data, fetched on demand and never redistributed
+.cache/
