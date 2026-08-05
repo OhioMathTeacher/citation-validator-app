@@ -6,9 +6,14 @@ The third-party data below is not ours to license and is not redistributed.
 
 Eight datasets back the evaluation: three of known-real citations, which measure
 the false-positive rate, and five of known-fabricated ones, which measure
-detection. Six were built here. **Two belong to other researchers — the
-CiteAudit real-world group and the Ansari 100 — and this repository
-redistributes neither.**
+detection. Six were built here and are ours to license. **Two are other
+people's, and this repository redistributes neither:**
+
+- **CiteAudit real-world group** — Kaiwen Shi, Weixiang Sun, Zheyuan Zhang,
+  Lichao Sun, Nitesh V. Chawla and Yanfang Ye ([arXiv:2602.23452](https://arxiv.org/abs/2602.23452)).
+- **Ansari 100** — derived from GPTZero's public table of NeurIPS 2025
+  hallucinations, which Ansari (2026) references. GPTZero owns the table;
+  Ansari is the paper that points to it.
 
 Those two sources supply four of the directories listed below, because CiteAudit
 is cut three ways (full benchmark, real-world group, balanced subset).
