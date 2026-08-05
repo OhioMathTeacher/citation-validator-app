@@ -2,13 +2,17 @@
 
 Datasets built here, and everything in `../results/`, are **CC BY 4.0** — see
 [LICENSE](LICENSE). The code is licensed separately and more restrictively.
-The three third-party sets below are not ours to license and are not
-redistributed.
+The third-party data below is not ours to license and is not redistributed.
 
 Eight datasets back the evaluation: three of known-real citations, which measure
 the false-positive rate, and five of known-fabricated ones, which measure
-detection. Five were built here. **Three come from other people, and this
-repository does not redistribute them.**
+detection. Six were built here. **Two belong to other researchers — the
+CiteAudit real-world group and the Ansari 100 — and this repository
+redistributes neither.**
+
+Those two sources supply four of the directories listed below, because CiteAudit
+is cut three ways (full benchmark, real-world group, balanced subset).
+Permission is owed per owner, not per derived file.
 
 ## What is here, and what is fetched
 
@@ -56,8 +60,12 @@ run without needing anyone else's data.
 S. Asli Ozgun-Koca and Gregory Foley. Text as sent:
 [`permission-request-citeaudit.txt`](permission-request-citeaudit.txt). It asks whether
 redistribution with attribution is acceptable, and passes back three real-world
-entries whose citation text disagrees with the record its DOI points to. Awaiting
-a reply; nothing here changes unless one arrives.
+entries whose citation text disagrees with the record its DOI points to.
+**No reply as of 2026-08-05.** Nothing here changes unless one arrives.
+
+No request has gone to the owners of the Ansari 100. It derives from a public
+GPTZero table that states no terms of reuse, and there is no obvious
+corresponding author to write to; it stays fetch-only for that reason.
 
 ## Attribution
 
