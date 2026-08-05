@@ -1,0 +1,3707 @@
+{
+  "run": {
+    "timestamp": "2026-08-05T16:53:34.217145+00:00",
+    "dataset_id": "ojsm-fake-frankenstein",
+    "dataset_name": "Frankenstein Citations",
+    "citation_count": 100,
+    "ai_enabled": true,
+    "ai_provider": "gemini",
+    "ai_model": "Gemini 2.5 Flash",
+    "ai_calls": 98,
+    "ai_errors": 0,
+    "deterministic_seconds": 1414.9,
+    "ai_seconds": 123.4,
+    "total_seconds": 1538.3,
+    "counts": {
+      "valid": 2,
+      "warning": 0,
+      "suspicious": 98,
+      "invalid": 0
+    },
+    "accuracy": {
+      "tp": 98,
+      "tn": 0,
+      "fp": 0,
+      "fn": 2,
+      "total": 100,
+      "skipped": 0,
+      "accuracy": 0.98,
+      "precision": 1.0,
+      "recall": 0.98,
+      "f1": 0.9899,
+      "fpr": 0,
+      "fnr": 0.02,
+      "false_negatives": [
+        "frankenstein0007",
+        "frankenstein0047"
+      ],
+      "false_positives": []
+    },
+    "tokens": {
+      "input_tokens": 42774,
+      "output_tokens": 11045,
+      "total_tokens": 53819,
+      "avg_per_call": 549.2
+    }
+  },
+  "details": [
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 431,
+            "output_tokens": 94,
+            "total_tokens": 525
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and is listed with a very recent publication year (2024) for which it should already be indexed if real. The author Demis Hassabis is a real person, but this specific publication appears fabricated."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Demis Hassabis",
+        "journal": "Physical Review Letters",
+        "pages": "259--878",
+        "title": "New Approaches to Machine Learning",
+        "volume": "536",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0001",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 458,
+            "output_tokens": 123,
+            "total_tokens": 581
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is dated 2025, which is in the future, making it highly unlikely to be published and indexed yet. More critically, it has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for any paper, especially one with a well-known author like Fei-Fei Li, whose work would typically be well-indexed. The low metadata similarity score further supports this."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "240--535",
+        "title": "A Survey of Neural Networks Methods",
+        "volume": "838",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0002",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Metadata similarity only 0.18"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "Medical Image Classifications Using Convolutional Neural Networks: A Survey of Current Methods and Statistical Modeling of the Literature",
+        "year": ""
+      },
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Weak Semantic Scholar match (similarity 0.35)",
+        "Low metadata similarity score: 0.18"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 436,
+            "output_tokens": 112,
+            "total_tokens": 548
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is attributed to Claude Shannon, who passed away in 2001, making a 2021 publication impossible. Additionally, it was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar) and lacks a DOI, which are significant red flags for a paper supposedly published in 2021 in a prominent journal like 'IEEE Transactions on Pattern Analysis and Machine Intelligence'."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Shannon, Claude",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "430--759",
+        "title": "Recent Advances in Natural Language Processing",
+        "volume": "311",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0003",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 430,
+            "output_tokens": 100,
+            "total_tokens": 530
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is listed with a future publication year (2025), which is highly unusual for a citation that should already be published and indexed. Additionally, it has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which are significant red flags for a paper supposedly from a prominent journal like Physical Review Letters."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Ian Goodfellow",
+        "journal": "Physical Review Letters",
+        "pages": "494--939",
+        "title": "Analysis of Computer Vision Techniques",
+        "volume": "870",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0004",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 429,
+            "output_tokens": 104,
+            "total_tokens": 533
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and the author (Edsger Dijkstra) is deceased, making a 2021 publication impossible. The journal 'Science' is a high-impact journal, and a paper from it, especially in 2021, would almost certainly be indexed."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Dijkstra, Edsger",
+        "journal": "Science",
+        "pages": "325--965",
+        "title": "New Approaches to AI Safety",
+        "volume": "960",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0005",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 429,
+            "output_tokens": 109,
+            "total_tokens": 538
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is attributed to Judea Pearl, a prominent computer scientist, but is listed in 'Physical Review Letters', a physics journal, which is highly unusual. The publication year is 2025, which is in the future, and it was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), nor does it have a DOI. These factors combined strongly suggest fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Judea Pearl",
+        "journal": "Physical Review Letters",
+        "pages": "17--502",
+        "title": "Analysis of Machine Learning Techniques",
+        "volume": "440",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0006",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": null,
+      "doi_resolved": false,
+      "fields": {
+        "author": "Stuart Russell",
+        "journal": "Artificial Intelligence",
+        "pages": "281--502",
+        "title": "A Study of Quantum Computing",
+        "volume": "614",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0007",
+      "status": "valid",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "A Study of Quantum Computing",
+        "year": ""
+      },
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 429,
+            "output_tokens": 125,
+            "total_tokens": 554
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and is attributed to a prominent author (Donald Knuth) for a topic (AI Safety) outside his primary research area, published in a very recent year (2023) with an unusually high volume number (792) and an extremely wide page range (18-652) for a single article. These are strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Knuth, Donald",
+        "journal": "Artificial Intelligence",
+        "pages": "18--652",
+        "title": "Analysis of AI Safety Techniques",
+        "volume": "792",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0008",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 449,
+            "output_tokens": 86,
+            "total_tokens": 535
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and has a generic title. The author 'Alan Turing' for a 2023 paper is highly improbable given his historical period. These are strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "Neural Information Processing Systems",
+        "pages": "384--708",
+        "title": "A Study of Blockchain",
+        "volume": "471",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0009",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "A study of blockchain consensus protocols",
+        "year": ""
+      },
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex",
+        "Semantic Scholar title match but no author/year confirmation"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 444,
+            "output_tokens": 172,
+            "total_tokens": 616
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the title had a partial match in Semantic Scholar, there was no author/year confirmation. Yoshua Bengio is a prominent researcher, and a paper of this nature from him in a major venue like 'Neural Information Processing Systems' (NIPS/NeurIPS) in 2022 would almost certainly be indexed. The 'journal' field being 'Neural Information Processing Systems' is also unusual, as NIPS is a conference, not a journal. The page range (381-846) for a single paper is also extremely large and highly improbable for a conference paper."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yoshua Bengio",
+        "journal": "Neural Information Processing Systems",
+        "pages": "381--846",
+        "title": "Recent Advances in Reinforcement Learning",
+        "volume": "978",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0010",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "Recent Advances in Reinforcement Learning",
+        "year": ""
+      },
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Semantic Scholar title match but no author/year confirmation"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 463,
+            "output_tokens": 142,
+            "total_tokens": 605
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "The paper is listed with a future publication year (2025), which is plausible for pre-prints or accepted papers. However, the author Claude Shannon is a historical figure who passed away in 2001, making it impossible for him to author a paper in 2025. Additionally, the paper was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), has no DOI, and received a low metadata similarity score, all of which are strong indicators of fabrication, especially when combined with the anachronistic authorship."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Shannon, Claude",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "490--652",
+        "title": "A Study of Deep Learning",
+        "volume": "801",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0011",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)",
+        "Metadata similarity only 0.21"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "A Comparative Study of Deep Reinforcement Learning Models: DQN vs PPO vs A2C",
+        "year": ""
+      },
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex",
+        "Weak Semantic Scholar match (similarity 0.42)",
+        "Low metadata similarity score: 0.21"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 429,
+            "output_tokens": 103,
+            "total_tokens": 532
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the year 2024 is very recent, the complete absence across all checked databases, combined with a lack of DOI, is a significant red flag for a paper supposedly published in 'Cell', a prominent journal that would typically be well-indexed."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Demis Hassabis",
+        "journal": "Cell",
+        "pages": "384--702",
+        "title": "Analysis of Data Science Techniques",
+        "volume": "907",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0012",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 432,
+            "output_tokens": 107,
+            "total_tokens": 539
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is attributed to Alan Turing, who passed away in 1954, making a 2023 publication impossible. Additionally, it has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is highly unusual for a legitimate paper published in 2023 in a prominent journal like 'Journal of Machine Learning Research'."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "215--508",
+        "title": "Analysis of AI Safety Techniques",
+        "volume": "703",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0013",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 435,
+            "output_tokens": 155,
+            "total_tokens": 590
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is listed with a future publication year (2025), which is plausible for very new papers. However, it has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While a future date could explain the absence, the complete lack of any indexing or a DOI for a paper supposedly in a prominent journal like 'IEEE Transactions on Pattern Analysis and Machine Intelligence' is a significant red flag, especially given the journal's typical indexing practices. The author 'Grace Hopper' is also a very famous historical figure in computer science, which can sometimes be a characteristic of fabricated citations."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Hopper, Grace",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "496--936",
+        "title": "New Approaches to Neural Networks",
+        "volume": "414",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0014",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 451,
+            "output_tokens": 141,
+            "total_tokens": 592
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is listed with a future publication year (2025), which is unusual but not impossible. However, the complete absence from all major academic databases (CrossRef, OpenAlex, Semantic Scholar) combined with no DOI and a very low metadata similarity score (0.17) are strong indicators of fabrication. The author, Alan Turing, is deceased and could not have published in 2025. The journal 'Artificial Intelligence' is real, but the title 'Recent Advances in Blockchain' is highly anachronistic for Turing's work."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "Artificial Intelligence",
+        "pages": "255--754",
+        "title": "Recent Advances in Blockchain",
+        "volume": "195",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0015",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Metadata similarity only 0.17"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "Recent advances in blockchain technology: prospects, applications and constraints in the minerals industry",
+        "year": ""
+      },
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Weak Semantic Scholar match (similarity 0.33)",
+        "Low metadata similarity score: 0.17"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 443,
+            "output_tokens": 128,
+            "total_tokens": 571
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is dated 2025, which is in the near future, yet it has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While a future date could explain absence, the complete lack of a DOI and any database entry for a paper supposedly in a prominent journal like 'Journal of Machine Learning Research' is highly unusual and a significant red flag, especially given the 'warning' status and 'no metadata found' in verification results."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Hopper, Grace",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "293--508",
+        "title": "Recent Advances in Deep Learning",
+        "volume": "252",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0016",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "Recent advances in deep learning",
+        "year": ""
+      },
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Semantic Scholar title match but no author/year confirmation"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 461,
+            "output_tokens": 72,
+            "total_tokens": 533
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and has a generic title pattern often associated with fabricated entries. The low metadata similarity score further supports this."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Daphne Koller",
+        "journal": "Artificial Intelligence",
+        "pages": "453--967",
+        "title": "An Overview of Reinforcement Learning",
+        "volume": "974",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0017",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)",
+        "Metadata similarity only 0.17"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "An overview of reinforcement learning-based approaches for smart home energy management systems with energy storages",
+        "year": ""
+      },
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex",
+        "Weak Semantic Scholar match (similarity 0.33)",
+        "Low metadata similarity score: 0.17"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 430,
+            "output_tokens": 94,
+            "total_tokens": 524
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new or old papers might be missed, a 2020 publication should typically be indexed. The author Stuart Russell is a prominent figure, making the absence of this specific paper in databases highly suspicious."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Stuart Russell",
+        "journal": "Communications of the ACM",
+        "pages": "491--858",
+        "title": "Analysis of Neural Networks Techniques",
+        "volume": "249",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0018",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 439,
+            "output_tokens": 104,
+            "total_tokens": 543
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is dated 2025, which is in the future, making it impossible for it to be published yet. Additionally, it has a generic title, no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which are strong indicators of fabrication, especially for a paper supposedly from a prominent journal like Physical Review Letters."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Demis Hassabis",
+        "journal": "Physical Review Letters",
+        "pages": "245--922",
+        "title": "A Study of Data Science",
+        "volume": "705",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0019",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 437,
+            "output_tokens": 151,
+            "total_tokens": 588
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). The journal 'IEEE Transactions on Pattern Analysis and Machine Intelligence' is real, but the volume (623) and page numbers (253-929) for a 2024 publication seem highly improbable for a single paper, especially given the typical page counts for journal articles. Donald Knuth is a real and prominent computer scientist, but a 2024 publication in this specific area and with such high volume/page numbers is highly unlikely without any database record."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Knuth, Donald",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "253--929",
+        "title": "A Survey of Data Science Methods",
+        "volume": "623",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0020",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 430,
+            "output_tokens": 104,
+            "total_tokens": 534
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is attributed to Alan Turing, who passed away in 1954, but the publication year is listed as 2022. Additionally, the paper was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar) and lacks a DOI, which is highly unusual for a 2022 publication. These factors strongly suggest fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "Artificial Intelligence",
+        "pages": "437--571",
+        "title": "Recent Advances in Reinforcement Learning",
+        "volume": "412",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0021",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 439,
+            "output_tokens": 131,
+            "total_tokens": 570
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has a generic title, no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). The journal volume (999) and page range (163-717) are highly unusual for a single article, and the author is known for work in AI, not typically blockchain. The publication year (2024) is very recent, but the complete lack of indexing across multiple databases, combined with other red flags, strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Jurgen Schmidhuber",
+        "journal": "Communications of the ACM",
+        "pages": "163--717",
+        "title": "An Overview of Blockchain",
+        "volume": "999",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0022",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 463,
+            "output_tokens": 110,
+            "total_tokens": 573
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and has a generic title pattern. The year 2024 is recent but not so new as to explain complete absence from all databases, especially for a prominent author like Ian Goodfellow in a well-known journal like Communications of the ACM. The low metadata similarity score further supports fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Ian Goodfellow",
+        "journal": "Communications of the ACM",
+        "pages": "452--778",
+        "title": "An Overview of Reinforcement Learning",
+        "volume": "712",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0023",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)",
+        "Metadata similarity only 0.16"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "An Overview of Reinforcement Learning Algorithms for Handover Management in 5G Ultra-Dense Small Cell Networks",
+        "year": ""
+      },
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex",
+        "Weak Semantic Scholar match (similarity 0.31)",
+        "Low metadata similarity score: 0.16"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 429,
+            "output_tokens": 110,
+            "total_tokens": 539
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new papers might not be indexed, a 2023 paper by a prominent author like Fei-Fei Li in a major journal like 'Cell' should be discoverable. The page range (51-736) is also unusually large for a single paper."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "Cell",
+        "pages": "51--736",
+        "title": "New Approaches to Neural Networks",
+        "volume": "228",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0024",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 438,
+            "output_tokens": 79,
+            "total_tokens": 517
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is listed for 2025, which is in the future. It has a generic title, no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). These are strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Jurgen Schmidhuber",
+        "journal": "PNAS",
+        "pages": "432--846",
+        "title": "An Overview of Machine Learning",
+        "volume": "678",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0025",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 430,
+            "output_tokens": 74,
+            "total_tokens": 504
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI, was not found in CrossRef, OpenAlex, or Semantic Scholar, and the author (Alan Turing) passed away in 1954, making a 2021 publication impossible."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "6--861",
+        "title": "Analysis of AI Safety Techniques",
+        "volume": "663",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0026",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 428,
+            "output_tokens": 108,
+            "total_tokens": 536
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). The journal 'Communications of the ACM' is well-indexed, and a 2021 paper by a prominent author like Andrew Ng should be easily discoverable if real. The page range (280-823) is also unusually large for a single paper."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Andrew Ng",
+        "journal": "Communications of the ACM",
+        "pages": "280--823",
+        "title": "Improving Blockchain Systems",
+        "volume": "954",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0027",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 450,
+            "output_tokens": 110,
+            "total_tokens": 560
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While Semantic Scholar had a title match, it lacked author/year confirmation, and the overall metadata similarity score was very low (0.25). The journal 'Science' is a prominent publication, making the absence of this recent paper (2022) from all databases highly suspicious."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Hopper, Grace",
+        "journal": "Science",
+        "pages": "484--778",
+        "title": "Recent Advances in Quantum Computing",
+        "volume": "123",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0028",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Metadata similarity only 0.25"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "Recent Advances in Quantum Computing for Drug Discovery and Development",
+        "year": ""
+      },
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Semantic Scholar title match but no author/year confirmation",
+        "Low metadata similarity score: 0.25"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 448,
+            "output_tokens": 117,
+            "total_tokens": 565
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has a generic title, no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). Donald Knuth is a famous computer scientist, but his primary work is in algorithms and programming, not quantum computing, and he is very unlikely to be publishing in Science in 2022. The page range (488-613) is also unusually large for a single article."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Knuth, Donald",
+        "journal": "Science",
+        "pages": "488--613",
+        "title": "An Overview of Quantum Computing",
+        "volume": "812",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0029",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "Bits to Qubits: An Overview of Quantum Computing",
+        "year": ""
+      },
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex",
+        "Semantic Scholar title match but no author/year confirmation"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 429,
+            "output_tokens": 120,
+            "total_tokens": 549
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). The journal 'Cell' is a highly reputable and well-indexed journal, making it highly unlikely for a 2022 paper by a prominent author like Demis Hassabis to be completely absent from all databases if it were real. The page range (421-795) for a single article is also unusually large."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Demis Hassabis",
+        "journal": "Cell",
+        "pages": "421--795",
+        "title": "Analysis of Computer Vision Techniques",
+        "volume": "623",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0030",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 427,
+            "output_tokens": 78,
+            "total_tokens": 505
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is dated 2025, which is in the future, and it was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). Additionally, no DOI was provided. These factors strongly suggest it is fabricated."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Sebastian Thrun",
+        "journal": "Cell",
+        "pages": "421--542",
+        "title": "Improving Neural Networks Systems",
+        "volume": "852",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0031",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 443,
+            "output_tokens": 94,
+            "total_tokens": 537
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While Semantic Scholar had a title match, it lacked author/year confirmation, which is a significant red flag for a paper published in 2020, as most legitimate papers from that year would be indexed."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Demis Hassabis",
+        "journal": "Neural Information Processing Systems",
+        "pages": "125--742",
+        "title": "Recent Advances in Machine Learning",
+        "volume": "539",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0032",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "Recent Advances in Machine Learning",
+        "year": ""
+      },
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Semantic Scholar title match but no author/year confirmation"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 429,
+            "output_tokens": 125,
+            "total_tokens": 554
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is attributed to Judea Pearl, a prominent AI researcher, but is supposedly published in 'The Lancet', a medical journal, which is highly unusual for his field. Furthermore, it is dated 2024, yet was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar) and lacks a DOI, which is a significant red flag for a paper from a well-known author in a supposedly established journal, even for a very recent publication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Judea Pearl",
+        "journal": "The Lancet",
+        "pages": "264--941",
+        "title": "New Approaches to AI Safety",
+        "volume": "603",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0033",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 430,
+            "output_tokens": 142,
+            "total_tokens": 572
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is listed with a future publication year (2025), which is plausible for pre-prints or accepted papers. However, the complete absence from all major academic databases (CrossRef, OpenAlex, Semantic Scholar) combined with no DOI, despite the journal 'Communications of the ACM' being a well-indexed publication, is a strong indicator of fabrication. While new papers might not be fully indexed, a paper from a prominent journal like CACM would typically have some pre-publication record or DOI available if it were genuinely slated for 2025."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Stuart Russell",
+        "journal": "Communications of the ACM",
+        "pages": "199--884",
+        "title": "Analysis of Quantum Computing Techniques",
+        "volume": "671",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0034",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 429,
+            "output_tokens": 145,
+            "total_tokens": 574
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is attributed to a prominent author (Yoshua Bengio) and a major journal (Science), yet it is not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar) and lacks a DOI. The publication year (2025) is in the near future, which could explain the lack of indexing if it were a pre-print, but the 'Science' journal typically has DOIs and appears in databases quickly. The combination of a prominent author/journal, future publication date, and complete absence from all databases without a DOI is highly suspicious."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yoshua Bengio",
+        "journal": "Science",
+        "pages": "307--930",
+        "title": "Analysis of Neural Networks Techniques",
+        "volume": "254",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0035",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 432,
+            "output_tokens": 141,
+            "total_tokens": 573
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the year 2022 is recent, it's old enough that it should appear in at least one database if it were a real publication. The author 'Grace Hopper' is a famous historical figure in computer science, making a 2022 publication under her name highly improbable. The volume number (955) and page range (186-915) for a single article are also unusually large."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Hopper, Grace",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "186--915",
+        "title": "Recent Advances in Neural Networks",
+        "volume": "955",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0036",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 433,
+            "output_tokens": 98,
+            "total_tokens": 531
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the author is real, the journal and title combination for that year, along with the lack of database presence, strongly suggests fabrication. The page range (40-553) is also unusually large for a single paper."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Jurgen Schmidhuber",
+        "journal": "Journal of the American Chemical Society",
+        "pages": "40--553",
+        "title": "New Approaches to Computer Vision",
+        "volume": "412",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0037",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 432,
+            "output_tokens": 97,
+            "total_tokens": 529
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is listed with a 2024 publication year, which is recent enough to be indexed in major databases. However, it has no DOI and was not found in CrossRef, OpenAlex, or Semantic Scholar. This complete absence from all checked databases, combined with a recent publication year, is a significant red flag for fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Sebastian Thrun",
+        "journal": "Communications of the ACM",
+        "pages": "215--887",
+        "title": "A Survey of Deep Learning Methods",
+        "volume": "331",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0038",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 430,
+            "output_tokens": 111,
+            "total_tokens": 541
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and the author (Edsger Dijkstra) is a famous computer scientist who passed away in 2002, making a 2021 publication impossible. The journal 'Nature' is also highly multidisciplinary, making a specific NLP survey by Dijkstra in 2021 highly improbable."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Dijkstra, Edsger",
+        "journal": "Nature",
+        "pages": "26--754",
+        "title": "A Survey of Natural Language Processing Methods",
+        "volume": "389",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0039",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 430,
+            "output_tokens": 139,
+            "total_tokens": 569
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new or old papers might be missed, a 2022 paper in 'Nature' by a prominent author like Fei-Fei Li should be easily discoverable. The page range (300-803) is also unusually large for a single article in Nature. The topic 'Analysis of Quantum Computing Techniques' is also outside Fei-Fei Li's primary research area (computer vision, AI)."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "Nature",
+        "pages": "300--803",
+        "title": "Analysis of Quantum Computing Techniques",
+        "volume": "657",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0040",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 428,
+            "output_tokens": 149,
+            "total_tokens": 577
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). The journal 'Physical Review Letters' is a highly reputable physics journal, making it extremely unlikely for a 2020 paper to be completely absent from these databases if it were real. The author Stuart Russell is a prominent figure in AI, not typically publishing in physics journals like PRL for a paper titled 'Recent Advances in Neural Networks'. The page range (19-549) is also unusually large for a single paper in PRL, which typically publishes short, concise letters."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Stuart Russell",
+        "journal": "Physical Review Letters",
+        "pages": "19--549",
+        "title": "Recent Advances in Neural Networks",
+        "volume": "247",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0041",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 441,
+            "output_tokens": 112,
+            "total_tokens": 553
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). The author (Edsger Dijkstra) is a famous computer scientist who passed away in 2002, making a 2020 publication impossible. The journal 'The Lancet' is a medical journal, making a paper on 'Recent Advances in Neural Networks' highly unlikely to be published there."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Dijkstra, Edsger",
+        "journal": "The Lancet",
+        "pages": "322--555",
+        "title": "Recent Advances in Neural Networks",
+        "volume": "345",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0042",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "Recent advances in convolutional neural networks",
+        "year": ""
+      },
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Semantic Scholar title match but no author/year confirmation"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 435,
+            "output_tokens": 120,
+            "total_tokens": 555
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new papers might not be indexed immediately, a 2023 paper by a prominent author in a major journal like 'IEEE Transactions on Pattern Analysis and Machine Intelligence' would almost certainly be indexed by now. The page range (38-675) is also unusually large for a single paper, suggesting a potential fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Jurgen Schmidhuber",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "38--675",
+        "title": "Recent Advances in AI Safety",
+        "volume": "104",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0043",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 448,
+            "output_tokens": 99,
+            "total_tokens": 547
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation lists Alan Turing as an author in 2020, which is impossible as he died in 1954. Additionally, the paper was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar) and lacks a DOI, despite a recent publication year (2020) where it should be indexed."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "PNAS",
+        "pages": "136--780",
+        "title": "An Overview of Computer Vision",
+        "volume": "673",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0044",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "An overview of computer vision",
+        "year": ""
+      },
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex",
+        "Semantic Scholar title match but no author/year confirmation"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 438,
+            "output_tokens": 119,
+            "total_tokens": 557
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has a generic title, no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). The journal 'The Lancet' is a well-known medical journal, making a paper on 'Natural Language Processing' by 'Grace Hopper' (a famous computer scientist, not typically associated with medical journals) in 2023 highly unusual and suspicious, especially with such a broad title and no database presence."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Hopper, Grace",
+        "journal": "The Lancet",
+        "pages": "430--673",
+        "title": "An Overview of Natural Language Processing",
+        "volume": "291",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0045",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 432,
+            "output_tokens": 95,
+            "total_tokens": 527
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and the author Ronald Rivest is known for work in cryptography, not typically reinforcement learning. The publication year (2024) is recent, but the lack of any database presence is a strong indicator of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Rivest, Ronald",
+        "journal": "PNAS",
+        "pages": "213--979",
+        "title": "A Survey of Reinforcement Learning Methods",
+        "volume": "528",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0046",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": null,
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "261--519",
+        "title": "Recent Advances in Neural Networks",
+        "volume": "870",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0047",
+      "status": "valid",
+      "suspicion_reasons": [],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "Recent advances in convolutional neural networks",
+        "year": ""
+      },
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 436,
+            "output_tokens": 87,
+            "total_tokens": 523
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has a generic title, no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). The author (Alan Turing) died in 1954, making a 2023 publication impossible. These are strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "Nature",
+        "pages": "348--700",
+        "title": "An Overview of Data Science",
+        "volume": "641",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0048",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 433,
+            "output_tokens": 115,
+            "total_tokens": 548
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). The journal 'Journal of the American Chemical Society' is a real and highly reputable journal, but the article title 'A Survey of Data Science Methods' is completely out of scope for a chemistry journal. The author 'Michael Jordan' is a common name, but without further verification, this combination of factors strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Michael Jordan",
+        "journal": "Journal of the American Chemical Society",
+        "pages": "371--680",
+        "title": "A Survey of Data Science Methods",
+        "volume": "714",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0049",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 430,
+            "output_tokens": 103,
+            "total_tokens": 533
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and is listed with a very recent publication year (2024) in a prominent journal (Physical Review Letters), making its absence from databases highly suspicious. Ian Goodfellow is a well-known researcher, but this specific publication does not appear to exist."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Ian Goodfellow",
+        "journal": "Physical Review Letters",
+        "pages": "112--839",
+        "title": "Analysis of Computer Vision Techniques",
+        "volume": "662",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0050",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 432,
+            "output_tokens": 103,
+            "total_tokens": 535
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the year 2023 is recent, the complete absence across all checked databases for a paper in a prominent journal like 'Journal of Machine Learning Research' is a significant red flag, especially given the author's prominence. This strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Sebastian Thrun",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "358--852",
+        "title": "New Approaches to Neural Networks",
+        "volume": "317",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0051",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 425,
+            "output_tokens": 102,
+            "total_tokens": 527
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is listed with a future publication year (2025), has no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While a future date could explain the lack of indexing, the combination with no DOI and no database presence is a significant red flag for a paper supposedly in 'Nature', a prominent journal."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Hopper, Grace",
+        "journal": "Nature",
+        "pages": "6--753",
+        "title": "Improving Deep Learning Systems",
+        "volume": "916",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0052",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 428,
+            "output_tokens": 114,
+            "total_tokens": 542
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new or old papers might be missed, a 2022 paper in 'Science' by a prominent author like Fei-Fei Li should be indexed. The topic 'Improving Blockchain Systems' is also not typical for Fei-Fei Li's primary research area (computer vision/AI)."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "Science",
+        "pages": "424--987",
+        "title": "Improving Blockchain Systems",
+        "volume": "716",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0053",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 429,
+            "output_tokens": 116,
+            "total_tokens": 545
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and the journal 'Physical Review Letters' is a well-indexed, high-impact journal where a 2021 paper by a prominent author like Judea Pearl would almost certainly be found. The title 'New Approaches to Blockchain' also seems out of scope for 'Physical Review Letters', which typically publishes physics research."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Judea Pearl",
+        "journal": "Physical Review Letters",
+        "pages": "122--919",
+        "title": "New Approaches to Blockchain",
+        "volume": "429",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0054",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 430,
+            "output_tokens": 116,
+            "total_tokens": 546
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the author (Geoffrey Hinton) is a prominent figure, the journal (Communications of the ACM) is well-indexed, and the publication year (2020) is recent enough that it should appear in databases. The lack of any trace across multiple comprehensive databases is a significant red flag, strongly suggesting fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Geoffrey Hinton",
+        "journal": "Communications of the ACM",
+        "pages": "218--555",
+        "title": "Analysis of Computer Vision Techniques",
+        "volume": "418",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0055",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 427,
+            "output_tokens": 90,
+            "total_tokens": 517
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is dated 2025, which is in the future, making it highly suspicious. Additionally, it was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar) and has no DOI, which are strong indicators of fabrication for a paper that should be indexed if real."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Andrew Ng",
+        "journal": "The Lancet",
+        "pages": "101--995",
+        "title": "Improving Neural Networks Systems",
+        "volume": "438",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0056",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 425,
+            "output_tokens": 165,
+            "total_tokens": 590
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is listed with a 2024 publication year, which is recent enough to be indexed. However, it has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). The journal 'Cell' is a highly prestigious and well-indexed journal, making the absence of this paper particularly suspicious. The author 'Stuart Russell' is a prominent figure in AI, but the title 'Improving Blockchain Systems' seems out of his primary research area, and 'Cell' is a biology journal, not a computer science or engineering journal. The page range '129--978' is also unusually large for a single paper."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Stuart Russell",
+        "journal": "Cell",
+        "pages": "129--978",
+        "title": "Improving Blockchain Systems",
+        "volume": "734",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0057",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 434,
+            "output_tokens": 111,
+            "total_tokens": 545
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is listed for 2025, which is in the future, making it impossible to be published yet. Additionally, it has a generic title, no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). The journal 'Cell' is a highly reputable biology journal, making a quantum computing paper in it highly unlikely. These factors combined strongly suggest fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Andrew Ng",
+        "journal": "Cell",
+        "pages": "29--890",
+        "title": "A Study of Quantum Computing",
+        "volume": "671",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0058",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 435,
+            "output_tokens": 167,
+            "total_tokens": 602
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the author (Ian Goodfellow) is real and the journal (IEEE Transactions on Pattern Analysis and Machine Intelligence) is real, the specific volume (792) and page range (134--700) for a 2023 publication in this journal are highly improbable, as this journal typically has around 400-500 pages per volume and its volume numbers are much lower (e.g., volume 45 in 2023). The combination of no database presence and highly unrealistic publication details strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Ian Goodfellow",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "134--700",
+        "title": "New Approaches to Neural Networks",
+        "volume": "792",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0059",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 436,
+            "output_tokens": 73,
+            "total_tokens": 509
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and has a generic title pattern, all of which are strong indicators of fabrication, despite the prominent author name."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Geoffrey Hinton",
+        "journal": "The Lancet",
+        "pages": "155--638",
+        "title": "A Study of AI Safety",
+        "volume": "743",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0060",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 450,
+            "output_tokens": 104,
+            "total_tokens": 554
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the author is prominent, the journal 'Nature' is well-indexed, making its absence highly suspicious, especially for a 2021 publication. The page range (297-785) also seems unusually large for a single paper."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Geoffrey Hinton",
+        "journal": "Nature",
+        "pages": "297--785",
+        "title": "New Approaches to Data Science",
+        "volume": "498",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0061",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Metadata similarity only 0.15"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "Data science approaches to confronting the COVID-19 pandemic: a narrative review",
+        "year": ""
+      },
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Weak Semantic Scholar match (similarity 0.31)",
+        "Low metadata similarity score: 0.15"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 451,
+            "output_tokens": 126,
+            "total_tokens": 577
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). The automated checks also noted a weak Semantic Scholar match and a very low metadata similarity score. While very new or old papers might be missed, a 2021 paper by a prominent author like Judea Pearl in PNAS should be indexed. The title 'Analysis of Blockchain Techniques' is also out of Pearl's typical research area (causality, AI)."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Judea Pearl",
+        "journal": "PNAS",
+        "pages": "161--639",
+        "title": "Analysis of Blockchain Techniques",
+        "volume": "220",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0062",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Metadata similarity only 0.18"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "Analysis of Blockchain Transaction Patterns in the Metaverse Using Clustering Techniques",
+        "year": ""
+      },
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Weak Semantic Scholar match (similarity 0.36)",
+        "Low metadata similarity score: 0.18"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 435,
+            "output_tokens": 127,
+            "total_tokens": 562
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the author is a prominent researcher, the journal volume (913) and page range (283-511) for a 2023 paper in JMLR seem unusually high and broad, respectively, for a single article. The combination of no DOI and no database presence for a recent paper in a well-indexed journal strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "283--511",
+        "title": "Analysis of Natural Language Processing Techniques",
+        "volume": "913",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0063",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 438,
+            "output_tokens": 92,
+            "total_tokens": 530
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has a generic title, no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the author is a prominent figure, the lack of any verifiable record for a 2020 paper in a well-known journal like JMLR is highly suspicious."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Stuart Russell",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "156--957",
+        "title": "An Overview of Blockchain",
+        "volume": "436",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0064",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 436,
+            "output_tokens": 78,
+            "total_tokens": 514
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has a generic title, no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), despite being listed with a recent publication year (2023). This combination of factors strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Michael Jordan",
+        "journal": "Artificial Intelligence",
+        "pages": "324--592",
+        "title": "A Study of Quantum Computing",
+        "volume": "666",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0065",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 430,
+            "output_tokens": 111,
+            "total_tokens": 541
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new or old papers might be missed, a 2021 paper in PNAS by a prominent author like Daphne Koller should be indexed. The page range (197-602) for a single paper is also unusually large. These factors combined strongly suggest fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Daphne Koller",
+        "journal": "PNAS",
+        "pages": "197--602",
+        "title": "A Survey of AI Safety Methods",
+        "volume": "743",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0066",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 434,
+            "output_tokens": 95,
+            "total_tokens": 529
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI, was not found in CrossRef, OpenAlex, or Semantic Scholar, and the author (Alan Turing) passed away in 1954, making a 2020 publication impossible. The page range (47-978) is also unusually large for a single journal article."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "47--978",
+        "title": "Analysis of Machine Learning Techniques",
+        "volume": "721",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0067",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 444,
+            "output_tokens": 76,
+            "total_tokens": 520
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and has a generic title, all of which are strong indicators of fabrication, especially for a 2020 publication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Rivest, Ronald",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "307--804",
+        "title": "A Study of Computer Vision",
+        "volume": "191",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0068",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 428,
+            "output_tokens": 131,
+            "total_tokens": 559
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new or old papers might not be indexed, a 2022 paper by a prominent author in a well-known journal like 'Cell' should be discoverable. The author 'Claude Shannon' is a historical figure, making a 2022 publication highly improbable. The page range (430-612) is also unusually large for a single paper."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Shannon, Claude",
+        "journal": "Cell",
+        "pages": "430--612",
+        "title": "Improving Reinforcement Learning Systems",
+        "volume": "953",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0069",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 429,
+            "output_tokens": 104,
+            "total_tokens": 533
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is listed with a 2024 publication year, which is recent enough to be indexed in major databases. However, it has no DOI and was not found in CrossRef, OpenAlex, or Semantic Scholar. This, combined with the author being a prominent figure (Yann LeCun) whose real work would almost certainly be indexed, strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yann LeCun",
+        "journal": "Science",
+        "pages": "459--739",
+        "title": "Analysis of AI Safety Techniques",
+        "volume": "989",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0070",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 430,
+            "output_tokens": 125,
+            "total_tokens": 555
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the author (Peter Norvig) is real and prominent in AI, and the journal (Artificial Intelligence) is legitimate, the complete absence from databases for a 2021 paper, combined with a very high page count (355-841), is highly suspicious. Most real papers from a journal like 'Artificial Intelligence' would be indexed."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Peter Norvig",
+        "journal": "Artificial Intelligence",
+        "pages": "355--841",
+        "title": "Recent Advances in Natural Language Processing",
+        "volume": "256",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0071",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 455,
+            "output_tokens": 117,
+            "total_tokens": 572
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has a generic title, no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While Semantic Scholar had a title match, it lacked author/year confirmation, which is a common pattern for fabricated citations where a real title is combined with a fake author/year. The extremely high volume number (436) for a 2022 journal is also highly unusual and suspicious."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yann LeCun",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "53--939",
+        "title": "An Overview of Natural Language Processing",
+        "volume": "436",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0072",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "An Overview of Natural Language Processing",
+        "year": ""
+      },
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex",
+        "Semantic Scholar title match but no author/year confirmation"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 434,
+            "output_tokens": 93,
+            "total_tokens": 527
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the author is a real researcher and the journal is legitimate, the combination of no DOI and no database presence for a 2022 paper is a significant red flag, suggesting it is likely fabricated."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Jurgen Schmidhuber",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "431--607",
+        "title": "A Survey of AI Safety Methods",
+        "volume": "638",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0073",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 431,
+            "output_tokens": 138,
+            "total_tokens": 569
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is attributed to Geoffrey Hinton, a prominent figure in AI, but is listed in the 'Journal of the American Chemical Society' which is a chemistry journal, not related to computer vision or AI. Additionally, it has a very recent publication year (2024), yet no DOI was found and it was not indexed in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). This combination of an inappropriate journal for the author and topic, lack of DOI, and absence from all major databases for a recent paper strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Geoffrey Hinton",
+        "journal": "Journal of the American Chemical Society",
+        "pages": "18--877",
+        "title": "New Approaches to Computer Vision",
+        "volume": "304",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0074",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 435,
+            "output_tokens": 155,
+            "total_tokens": 590
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is listed with a recent publication year (2022) but was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar) and has no DOI. The author, Edsger Dijkstra, is a famous computer scientist who passed away in 2002, making a 2022 publication highly improbable. The journal 'IEEE Transactions on Pattern Analysis and Machine Intelligence' is real, but the volume number (810) seems excessively high for a 2022 publication, and the page range (95-672) is unusually broad for a single paper."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Dijkstra, Edsger",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "95--672",
+        "title": "New Approaches to Computer Vision",
+        "volume": "810",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0075",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 454,
+            "output_tokens": 95,
+            "total_tokens": 549
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new or old papers might be missing, a 2021 paper by a prominent author like Andrew Ng in a major venue like NIPS should be indexed. The low metadata similarity score further increases suspicion."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Andrew Ng",
+        "journal": "Neural Information Processing Systems",
+        "pages": "290--794",
+        "title": "A Survey of Computer Vision Methods",
+        "volume": "105",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0076",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Metadata similarity only 0.21"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "A Survey of Computer Vision Methods for 2D Object Detection from Unmanned Aerial Vehicles",
+        "year": ""
+      },
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Weak Semantic Scholar match (similarity 0.43)",
+        "Low metadata similarity score: 0.21"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 437,
+            "output_tokens": 85,
+            "total_tokens": 522
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is dated 2025, which is in the future. It has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). This combination of a future publication date and complete absence from databases is a strong indicator of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "350--895",
+        "title": "New Approaches to Machine Learning",
+        "volume": "711",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0077",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 431,
+            "output_tokens": 142,
+            "total_tokens": 573
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the year 2021 is recent, it's old enough that a legitimate paper by a prominent author like Geoffrey Hinton in a major journal like Communications of the ACM should be indexed. The high volume number (750) for a 2021 publication in Communications of the ACM also seems unusually high, as this journal typically has much lower volume numbers (e.g., in the 60s for recent years)."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Geoffrey Hinton",
+        "journal": "Communications of the ACM",
+        "pages": "491--508",
+        "title": "Recent Advances in Reinforcement Learning",
+        "volume": "750",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0078",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 430,
+            "output_tokens": 91,
+            "total_tokens": 521
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new or old papers might be missed, a 2020 paper in a prominent journal like Physical Review Letters should be indexed. This lack of discoverability is a significant red flag."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Hopper, Grace",
+        "journal": "Physical Review Letters",
+        "pages": "170--707",
+        "title": "Improving Reinforcement Learning Systems",
+        "volume": "596",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0079",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 429,
+            "output_tokens": 98,
+            "total_tokens": 527
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is attributed to Edsger Dijkstra, who passed away in 2002, but the publication year is listed as 2024. This anachronism, combined with the absence of a DOI and the fact that it was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Dijkstra, Edsger",
+        "journal": "Nature",
+        "pages": "146--905",
+        "title": "Analysis of Computer Vision Techniques",
+        "volume": "485",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0080",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 433,
+            "output_tokens": 124,
+            "total_tokens": 557
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new or old papers might not be indexed, a 2021 paper in a prominent journal like 'Journal of Machine Learning Research' by a well-known author like Fei-Fei Li should be easily discoverable. The topic 'New Approaches to Blockchain' is also outside Fei-Fei Li's primary research area (computer vision)."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "396--520",
+        "title": "New Approaches to Blockchain",
+        "volume": "970",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0081",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 436,
+            "output_tokens": 102,
+            "total_tokens": 538
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and features a generic title pattern. The author (Alan Turing) died in 1954, making a 2020 publication impossible. The page range (90-876) is also unusually large for a single paper."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "The Lancet",
+        "pages": "90--876",
+        "title": "A Study of AI Safety",
+        "volume": "827",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0082",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 430,
+            "output_tokens": 118,
+            "total_tokens": 548
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While very new or old papers might be missed, a 2022 publication in 'Physical Review Letters' by a prominent author like Stuart Russell should be indexed. The page range (368-649) for a single article is also unusually large for Physical Review Letters, which typically publishes short, concise articles."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Stuart Russell",
+        "journal": "Physical Review Letters",
+        "pages": "368--649",
+        "title": "Analysis of Reinforcement Learning Techniques",
+        "volume": "806",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0083",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 451,
+            "output_tokens": 99,
+            "total_tokens": 550
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI, was not found in CrossRef, OpenAlex, or Semantic Scholar, and has a very low metadata similarity score (0.18). While the year 2024 is recent, the complete absence from all major databases for a paper by a prominent author in 'Nature' is highly unusual and points towards fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "Nature",
+        "pages": "24--922",
+        "title": "Improving Machine Learning Systems",
+        "volume": "976",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0084",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Metadata similarity only 0.18"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "Improving Fairness in Machine Learning Systems: What Do Industry Practitioners Need?",
+        "year": ""
+      },
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Weak Semantic Scholar match (similarity 0.36)",
+        "Low metadata similarity score: 0.18"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 434,
+            "output_tokens": 94,
+            "total_tokens": 528
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is dated 2025, which is in the future, making it highly suspicious. Additionally, it has a generic title, no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which are strong indicators of fabrication, especially for a paper supposedly in 'Nature'."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Andrew Ng",
+        "journal": "Nature",
+        "pages": "55--778",
+        "title": "An Overview of Data Science",
+        "volume": "842",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0085",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 453,
+            "output_tokens": 118,
+            "total_tokens": 571
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and has a very low metadata similarity score (0.19). The author (Donald Knuth) is a famous computer scientist, but the journal (The Lancet) is a medical journal, making the title 'Analysis of Computer Vision Techniques' highly incongruous with the journal's scope. This combination of factors strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Knuth, Donald",
+        "journal": "The Lancet",
+        "pages": "189--893",
+        "title": "Analysis of Computer Vision Techniques",
+        "volume": "506",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0086",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Metadata similarity only 0.19"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "Design and analysis of computer vision techniques for object detection and recognition in ADAS",
+        "year": ""
+      },
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Weak Semantic Scholar match (similarity 0.38)",
+        "Low metadata similarity score: 0.19"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 456,
+            "output_tokens": 129,
+            "total_tokens": 585
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and has a very low metadata similarity score (0.17). The author (Yann LeCun) is a prominent AI researcher, but the journal (Journal of the American Chemical Society) is completely unrelated to his field, and the title ('Recent Advances in Blockchain') is also outside his typical research area and the journal's scope. This combination of factors strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yann LeCun",
+        "journal": "Journal of the American Chemical Society",
+        "pages": "162--875",
+        "title": "Recent Advances in Blockchain",
+        "volume": "824",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0087",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Metadata similarity only 0.17"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "Recent advances in blockchain technology: prospects, applications and constraints in the minerals industry",
+        "year": ""
+      },
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Weak Semantic Scholar match (similarity 0.33)",
+        "Low metadata similarity score: 0.17"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 448,
+            "output_tokens": 140,
+            "total_tokens": 588
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and has a generic title. While 'Semantic Scholar title match' is noted, it explicitly states 'no author/year confirmation', which means it's not a match for this specific citation. Donald Knuth is primarily known for computer science and algorithms, not deep learning, especially in a journal like Science in 2022. The page range (391-940) for a single article is also unusually large."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Knuth, Donald",
+        "journal": "Science",
+        "pages": "391--940",
+        "title": "An Overview of Deep Learning",
+        "volume": "740",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0088",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "An Overview of Deep Learning",
+        "year": ""
+      },
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex",
+        "Semantic Scholar title match but no author/year confirmation"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 436,
+            "output_tokens": 82,
+            "total_tokens": 518
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has a generic title, no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar) despite being published in 2021, which is recent enough to be indexed. This combination of factors strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Peter Norvig",
+        "journal": "Cell",
+        "pages": "382--935",
+        "title": "A Study of AI Safety",
+        "volume": "260",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0089",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 427,
+            "output_tokens": 125,
+            "total_tokens": 552
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has no DOI and was not found in any of the major academic databases (CrossRef, OpenAlex, Semantic Scholar), despite being published in 2021, which is recent enough to be indexed. The author Ian Goodfellow is a prominent researcher, but this specific paper and title are not associated with him in reputable databases. The journal 'Artificial Intelligence' is real, but the volume and page numbers for 2021 are highly unlikely for a single paper."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Ian Goodfellow",
+        "journal": "Artificial Intelligence",
+        "pages": "239--718",
+        "title": "Improving Blockchain Systems",
+        "volume": "811",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0090",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 429,
+            "output_tokens": 127,
+            "total_tokens": 556
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is attributed to Geoffrey Hinton, a prominent researcher, but is listed with a publication year of 2025, which is in the future. More critically, it has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is a significant red flag for a paper from a well-known journal like Physical Review Letters, even if it were genuinely forthcoming. The combination of a future date and complete absence from databases strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Geoffrey Hinton",
+        "journal": "Physical Review Letters",
+        "pages": "354--761",
+        "title": "Improving Reinforcement Learning Systems",
+        "volume": "597",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0091",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 440,
+            "output_tokens": 109,
+            "total_tokens": 549
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper has a generic title, no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While Yann LeCun is a real author, the topic 'Quantum Computing' is outside his primary research area (deep learning), and the page range (361-760) for a single article is unusually large. These factors strongly suggest fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yann LeCun",
+        "journal": "Communications of the ACM",
+        "pages": "361--760",
+        "title": "A Study of Quantum Computing",
+        "volume": "191",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0092",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 428,
+            "output_tokens": 99,
+            "total_tokens": 527
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is attributed to Claude Shannon, who passed away in 2001, making a 2022 publication impossible. Additionally, it has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which is highly unusual for a paper published in 'Science' in 2022."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Shannon, Claude",
+        "journal": "Science",
+        "pages": "349--620",
+        "title": "Improving Reinforcement Learning Systems",
+        "volume": "256",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0093",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 432,
+            "output_tokens": 121,
+            "total_tokens": 553
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is attributed to a prominent author (Yann LeCun) and a well-known journal (Communications of the ACM) with a recent publication year (2024). However, it has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). This combination, especially for a paper supposedly from a high-impact journal and a leading researcher, is a significant red flag, suggesting it is likely fabricated."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yann LeCun",
+        "journal": "Communications of the ACM",
+        "pages": "265--662",
+        "title": "Analysis of Deep Learning Techniques",
+        "volume": "717",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0094",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 430,
+            "output_tokens": 133,
+            "total_tokens": 563
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). The journal 'Journal of Machine Learning Research' is real, but the specific volume, pages, and title 'Improving Quantum Computing Systems' by Stuart Russell in 2020 do not appear to exist within that journal's publications. Stuart Russell is a prominent AI researcher, but this specific paper title and topic (quantum computing systems) are not typical for his published work, especially in JMLR."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Stuart Russell",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "224--508",
+        "title": "Improving Quantum Computing Systems",
+        "volume": "402",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0095",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 430,
+            "output_tokens": 137,
+            "total_tokens": 567
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is listed with a 2024 publication year, which is recent enough to be indexed in major databases. However, it has no DOI and was not found in CrossRef, OpenAlex, or Semantic Scholar. This complete absence from all checked databases, despite its recent publication date, is a significant red flag, especially for an author like Yann LeCun who typically publishes in well-indexed venues. The journal 'Physical Review Letters' is also a highly reputable and well-indexed journal, making its absence even more suspicious."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yann LeCun",
+        "journal": "Physical Review Letters",
+        "pages": "21--510",
+        "title": "New Approaches to Neural Networks",
+        "volume": "222",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0096",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 440,
+            "output_tokens": 115,
+            "total_tokens": 555
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is listed with a 2024 publication year, which is recent enough to be indexed. However, it has no DOI and was not found in CrossRef, OpenAlex, or Semantic Scholar. The journal 'Science' is a major publication, and a paper from it, especially by a prominent author like Daphne Koller, should be easily discoverable in these databases. The low metadata similarity score further supports suspicion."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Daphne Koller",
+        "journal": "Science",
+        "pages": "104--630",
+        "title": "Analysis of Reinforcement Learning Techniques",
+        "volume": "663",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0097",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Metadata similarity only 0.25"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "Comparative Analysis of Reinforcement Learning Techniques in Simulated Robotics Environments",
+        "year": ""
+      },
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Low metadata similarity score: 0.25"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 436,
+            "output_tokens": 98,
+            "total_tokens": 534
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has no DOI, was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), and features a generic title pattern, all strong indicators of fabrication. While very new papers might not be indexed, a 2021 paper in 'Science' by a prominent author like Judea Pearl would almost certainly be found."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Judea Pearl",
+        "journal": "Science",
+        "pages": "312--626",
+        "title": "A Study of Computer Vision",
+        "volume": "320",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0098",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 440,
+            "output_tokens": 88,
+            "total_tokens": 528
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The paper is dated 2025, which is in the future, making it impossible to be published yet. Additionally, it has a generic title, no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar), which are strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Judea Pearl",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "249--623",
+        "title": "A Study of Data Science",
+        "volume": "682",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0099",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "STOP",
+          "model": "gemini-2.5-flash",
+          "provider": "gemini",
+          "tokens": {
+            "input_tokens": 448,
+            "output_tokens": 93,
+            "total_tokens": 541
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "The citation has a generic title, no DOI, and was not found in any major academic databases (CrossRef, OpenAlex, Semantic Scholar). While the author is a real prominent researcher, the lack of any database presence for a 2021 paper in a major journal like Science is highly unusual and points towards fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yoshua Bengio",
+        "journal": "Science",
+        "pages": "387--595",
+        "title": "A Study of Quantum Computing",
+        "volume": "849",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0100",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "A Study of Quantum Computing",
+        "year": ""
+      },
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex",
+        "Semantic Scholar title match but no author/year confirmation"
+      ]
+    }
+  ]
+}

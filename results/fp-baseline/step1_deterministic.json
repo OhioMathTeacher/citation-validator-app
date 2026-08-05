@@ -1,8 +1,8 @@
 {
   "step": 1,
   "description": "Deterministic false-positive baseline (no AI)",
-  "version": "7973dc2 (2026-05-22 08:01:27)",
-  "timestamp": "2026-05-24T01:03:42.428444+00:00",
+  "version": "f97110b (2026-08-04 18:42:43)",
+  "timestamp": "2026-08-04T22:58:57.112194+00:00",
   "overall_fpr": 0.0,
   "overall_fp": 0,
   "overall_total": 391,
@@ -11,45 +11,45 @@
       "dataset": "Real arXiv CS Citations (2024)",
       "total": 285,
       "counts": {
-        "valid": 104,
-        "warning": 181,
+        "valid": 4,
+        "warning": 281,
         "suspicious": 0,
         "invalid": 0
       },
       "fp": 0,
       "tn": 285,
       "fpr": 0.0,
-      "elapsed_seconds": 1836.4,
+      "elapsed_seconds": 1249.9,
       "false_positives": []
     },
     "ojsm-real-crossref": {
       "dataset": "Real CrossRef Random Sample",
       "total": 96,
       "counts": {
-        "valid": 95,
-        "warning": 1,
+        "valid": 94,
+        "warning": 2,
         "suspicious": 0,
         "invalid": 0
       },
       "fp": 0,
       "tn": 96,
       "fpr": 0.0,
-      "elapsed_seconds": 62.3,
+      "elapsed_seconds": 48.1,
       "false_positives": []
     },
     "nature-article-refs": {
       "dataset": "Nature Article References",
       "total": 10,
       "counts": {
-        "valid": 1,
-        "warning": 9,
+        "valid": 5,
+        "warning": 5,
         "suspicious": 0,
         "invalid": 0
       },
       "fp": 0,
       "tn": 10,
       "fpr": 0.0,
-      "elapsed_seconds": 198.1,
+      "elapsed_seconds": 28.8,
       "false_positives": []
     }
   }

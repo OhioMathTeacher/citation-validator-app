@@ -52,7 +52,7 @@ PRICING = {
         "free_tier": None,
     },
     "anthropic": {
-        "name": "Anthropic Claude Sonnet 4",
+        "name": "Anthropic Claude Sonnet 5",
         "input_per_1m": 3.00,
         "output_per_1m": 15.00,
         "free_tier": None,

@@ -83,7 +83,7 @@ PROVIDER_MODELS = {
     "gemini": "Gemini 2.5 Flash",
     "groq": "Groq Llama 3.3 70B",
     "openai": "OpenAI GPT-4o",
-    "anthropic": "Anthropic Claude Sonnet 4",
+    "anthropic": "Anthropic Claude Sonnet 5",
 }
 
 ENV_KEY_NAMES = {

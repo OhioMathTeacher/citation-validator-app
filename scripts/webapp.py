@@ -127,7 +127,7 @@ def analyze():
                     'anthropic-version': '2023-06-01'
                 },
                 json={
-                    'model': 'claude-sonnet-4-20250514',
+                    'model': 'claude-sonnet-5',
                     'max_tokens': 300,
                     'messages': [{'role': 'user', 'content': prompt}]
                 },
@@ -157,7 +157,7 @@ def analyze():
                 parsed = json.loads(json_match.group(0))
                 parsed['_metadata'] = {
                     'provider': 'anthropic',
-                    'model': 'claude-sonnet-4-20250514',
+                    'model': 'claude-sonnet-5',
                     'finish_reason': stop_reason,
                     'tokens': tokens
                 }
@@ -329,4 +329,10 @@ if __name__ == '__main__':
     print("\n  Press Ctrl+C to stop the server")
     print("="*70 + "\n")
 
-    app.run(debug=True, host='0.0.0.0', port=args.port)
+    # use_reloader=False: the stat reloader watches all of scripts/, so any edit
+    # there restarts the server and kills whatever request is in flight. That
+    # destroyed a 21-minute benchmark condition on 2026-08-05. Setting
+    # WERKZEUG_RUN_MAIN=true is not a substitute -- on this Werkzeug it makes the
+    # process believe it is the reloader's child and demand an inherited socket
+    # in WERKZEUG_SERVER_FD, so it exits before serving anything.
+    app.run(debug=True, use_reloader=False, host='0.0.0.0', port=args.port)

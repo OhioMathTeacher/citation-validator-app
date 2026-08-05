@@ -1,26 +1,26 @@
 {
   "step": 4,
   "description": "Fake-citation detection regression test (no AI)",
-  "version": "7973dc2 (2026-05-22 08:01:27)",
-  "timestamp": "2026-05-24T01:48:56.251696+00:00",
-  "overall_detection_rate": 0.452,
-  "overall_tp": 226,
-  "overall_fn": 274,
+  "version": "f97110b (2026-08-04 18:42:43)",
+  "timestamp": "2026-08-04T23:27:24.738538+00:00",
+  "overall_detection_rate": 0.454,
+  "overall_tp": 227,
+  "overall_fn": 273,
   "overall_total": 500,
   "datasets": {
     "compound-deception-ansari": {
       "dataset": "Ansari 100 \u2014 NeurIPS 2025 Fakes",
       "total": 100,
       "counts": {
-        "valid": 3,
-        "warning": 93,
+        "valid": 0,
+        "warning": 96,
         "suspicious": 0,
         "invalid": 4
       },
       "tp": 4,
       "fn": 96,
       "detection_rate": 0.04,
-      "elapsed_seconds": 719.8,
+      "elapsed_seconds": 430.5,
       "false_negatives": [
         {
           "key": "ansari100_001",
@@ -272,7 +272,7 @@
         },
         {
           "key": "ansari100_019",
-          "status": "valid",
+          "status": "warning",
           "issues": [],
           "warnings": [
             "No DOI found and not in OpenAlex"
@@ -361,9 +361,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.31)",
-            "Low metadata similarity score: 0.16"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Weijia Xu, Xing Niu, and Marine Carpuat",
@@ -444,7 +442,7 @@
         },
         {
           "key": "ansari100_033",
-          "status": "valid",
+          "status": "warning",
           "issues": [],
           "warnings": [
             "No DOI found and not in OpenAlex"
@@ -505,7 +503,7 @@
         },
         {
           "key": "ansari100_037",
-          "status": "valid",
+          "status": "warning",
           "issues": [],
           "warnings": [
             "No DOI found and not in OpenAlex"
@@ -608,9 +606,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.40)",
-            "Low metadata similarity score: 0.20"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Jiacheng He, Zhilu Zhang, Zhen Wang, and Yan Huang",
@@ -725,9 +721,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.42)",
-            "Low metadata similarity score: 0.21"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Jiuxiang Shi, Zuxuan Wu, and Dahua Lin",
@@ -974,9 +968,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.46)",
-            "Low metadata similarity score: 0.23"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Tri Dao, Shizhe Ma, Wenxuan Sun, Albert Gu, Sam Smith, Aapo Kyrola, Christopher ",
@@ -1035,9 +1027,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.31)",
-            "Low metadata similarity score: 0.15"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Nitish Srivastava and Ruslan R Salakhutdinov",
@@ -1122,8 +1112,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.33)"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Olah, C., Elhage, N., Nanda, N., Schiefer, N., Jones, A., Henighan, T., and DasS",
@@ -1431,15 +1420,15 @@
       "dataset": "Frankenstein Citations (real author + real journal + fake title)",
       "total": 100,
       "counts": {
-        "valid": 2,
-        "warning": 98,
+        "valid": 0,
+        "warning": 100,
         "suspicious": 0,
         "invalid": 0
       },
       "tp": 0,
       "fn": 100,
       "detection_rate": 0.0,
-      "elapsed_seconds": 651.1,
+      "elapsed_seconds": 448.2,
       "false_negatives": [
         {
           "key": "frankenstein0001",
@@ -1462,9 +1451,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.35)",
-            "Low metadata similarity score: 0.18"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Fei-Fei Li",
@@ -1541,7 +1528,7 @@
         },
         {
           "key": "frankenstein0007",
-          "status": "valid",
+          "status": "warning",
           "issues": [],
           "warnings": [
             "Generic title pattern (common in hallucinations)",
@@ -1594,8 +1581,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Yoshua Bengio",
@@ -1628,9 +1614,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.38)",
-            "Low metadata similarity score: 0.19"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Demis Hassabis",
@@ -1678,9 +1662,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.33)",
-            "Low metadata similarity score: 0.17"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Turing, Alan",
@@ -1696,8 +1678,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Hopper, Grace",
@@ -1730,9 +1711,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.45)",
-            "Low metadata similarity score: 0.23"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Stuart Russell",
@@ -1749,9 +1728,7 @@
           "issues": [],
           "warnings": [
             "Generic title pattern (common in hallucinations)",
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.44)",
-            "Low metadata similarity score: 0.22"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Demis Hassabis",
@@ -1866,9 +1843,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.40)",
-            "Low metadata similarity score: 0.20"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Turing, Alan",
@@ -1900,9 +1875,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation",
-            "Low metadata similarity score: 0.25"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Hopper, Grace",
@@ -1951,9 +1924,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation",
-            "Low metadata similarity score: 0.25"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Sebastian Thrun",
@@ -1969,8 +1940,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Demis Hassabis",
@@ -2018,9 +1988,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.45)",
-            "Low metadata similarity score: 0.23"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Yoshua Bengio",
@@ -2036,8 +2004,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Hopper, Grace",
@@ -2133,8 +2100,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Dijkstra, Edsger",
@@ -2150,9 +2116,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.36)",
-            "Low metadata similarity score: 0.18"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Jurgen Schmidhuber",
@@ -2169,8 +2133,7 @@
           "issues": [],
           "warnings": [
             "Generic title pattern (common in hallucinations)",
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Turing, Alan",
@@ -2203,9 +2166,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.42)",
-            "Low metadata similarity score: 0.21"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Rivest, Ronald",
@@ -2218,7 +2179,7 @@
         },
         {
           "key": "frankenstein0047",
-          "status": "valid",
+          "status": "warning",
           "issues": [],
           "warnings": [
             "No DOI found and not in OpenAlex"
@@ -2238,9 +2199,7 @@
           "issues": [],
           "warnings": [
             "Generic title pattern (common in hallucinations)",
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.36)",
-            "Low metadata similarity score: 0.18"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Turing, Alan",
@@ -2256,9 +2215,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.36)",
-            "Low metadata similarity score: 0.18"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Michael Jordan",
@@ -2274,9 +2231,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.38)",
-            "Low metadata similarity score: 0.19"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Ian Goodfellow",
@@ -2356,9 +2311,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.38)",
-            "Low metadata similarity score: 0.19"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Geoffrey Hinton",
@@ -2374,9 +2327,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation",
-            "Low metadata similarity score: 0.25"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Andrew Ng",
@@ -2458,9 +2409,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.31)",
-            "Low metadata similarity score: 0.15"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Geoffrey Hinton",
@@ -2509,9 +2458,7 @@
           "issues": [],
           "warnings": [
             "Generic title pattern (common in hallucinations)",
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation",
-            "Low metadata similarity score: 0.29"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Stuart Russell",
@@ -2544,8 +2491,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Low metadata similarity score: 0.27"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Daphne Koller",
@@ -2594,9 +2540,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.38)",
-            "Low metadata similarity score: 0.19"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Shannon, Claude",
@@ -2661,9 +2605,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation",
-            "Low metadata similarity score: 0.27"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Jurgen Schmidhuber",
@@ -2711,9 +2653,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.43)",
-            "Low metadata similarity score: 0.21"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Andrew Ng",
@@ -2745,8 +2685,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Geoffrey Hinton",
@@ -2843,9 +2782,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.36)",
-            "Low metadata similarity score: 0.18"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Fei-Fei Li",
@@ -2894,9 +2831,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.33)",
-            "Low metadata similarity score: 0.17"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Yann LeCun",
@@ -2962,9 +2897,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.38)",
-            "Low metadata similarity score: 0.19"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Geoffrey Hinton",
@@ -2981,8 +2914,7 @@
           "issues": [],
           "warnings": [
             "Generic title pattern (common in hallucinations)",
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Yann LeCun",
@@ -2998,9 +2930,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.38)",
-            "Low metadata similarity score: 0.19"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Shannon, Claude",
@@ -3016,9 +2946,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.42)",
-            "Low metadata similarity score: 0.21"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Yann LeCun",
@@ -3083,9 +3011,7 @@
           "issues": [],
           "warnings": [
             "Generic title pattern (common in hallucinations)",
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.38)",
-            "Low metadata similarity score: 0.19"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Judea Pearl",
@@ -3137,33 +3063,15 @@
       "total": 100,
       "counts": {
         "valid": 0,
-        "warning": 1,
-        "suspicious": 99,
+        "warning": 0,
+        "suspicious": 100,
         "invalid": 0
       },
-      "tp": 99,
-      "fn": 1,
-      "detection_rate": 0.99,
-      "elapsed_seconds": 754.2,
-      "false_negatives": [
-        {
-          "key": "stolen_doi0075",
-          "status": "warning",
-          "issues": [],
-          "warnings": [
-            "Title mismatch (similarity 0.00): BibTeX='Recent Advances in Reinforcement Learning...' vs DOI='Reducing the Dimensionality of Data with Neural Ne...'",
-            "Year mismatch: BibTeX=2020 vs DOI=2006",
-            "Low metadata similarity score: 0.00"
-          ],
-          "fields": {
-            "author": "Smith, John Q. and Johnson, Mary R.",
-            "title": "Recent Advances in Reinforcement Learning",
-            "journal": "Advances in Artificial Intelligence and Robotics",
-            "year": "2020",
-            "doi": "10.1126/science.1127647"
-          }
-        }
-      ]
+      "tp": 100,
+      "fn": 0,
+      "detection_rate": 1.0,
+      "elapsed_seconds": 440.9,
+      "false_negatives": []
     },
     "ojsm-fake-plausible": {
       "dataset": "Plausible Fakes (entirely fabricated but realistic)",
@@ -3177,7 +3085,7 @@
       "tp": 98,
       "fn": 2,
       "detection_rate": 0.98,
-      "elapsed_seconds": 50.3,
+      "elapsed_seconds": 49.9,
       "false_negatives": [
         {
           "key": "plausible0069",
@@ -3229,7 +3137,7 @@
       "tp": 25,
       "fn": 75,
       "detection_rate": 0.25,
-      "elapsed_seconds": 538.3,
+      "elapsed_seconds": 338.0,
       "false_negatives": [
         {
           "key": "future0001",
@@ -3237,9 +3145,7 @@
           "issues": [],
           "warnings": [
             "Future year (2027) - likely hallucinated",
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.45)",
-            "Low metadata similarity score: 0.23"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Anderson, Future",
@@ -3284,9 +3190,7 @@
           "issues": [],
           "warnings": [
             "Future year (2028) - likely hallucinated",
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.45)",
-            "Low metadata similarity score: 0.23"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Anderson, Future",
@@ -3301,7 +3205,9 @@
           "issues": [],
           "warnings": [
             "Future year (2029) - likely hallucinated",
-            "No DOI found and not in OpenAlex"
+            "No DOI found and not in OpenAlex",
+            "Semantic Scholar title match but no author/year confirmation",
+            "Low metadata similarity score: 0.25"
           ],
           "fields": {
             "author": "Anderson, Future",
@@ -3346,9 +3252,7 @@
           "issues": [],
           "warnings": [
             "Future year (2029) - likely hallucinated",
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.45)",
-            "Low metadata similarity score: 0.23"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Anderson, Future",
@@ -3363,8 +3267,7 @@
           "issues": [],
           "warnings": [
             "Future year (2027) - likely hallucinated",
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Anderson, Future",
@@ -3409,8 +3312,7 @@
           "issues": [],
           "warnings": [
             "Future year (2028) - likely hallucinated",
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Anderson, Future",
@@ -3455,9 +3357,7 @@
           "issues": [],
           "warnings": [
             "Future year (2030) - likely hallucinated",
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation",
-            "Low metadata similarity score: 0.25"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Anderson, Future",
@@ -3985,8 +3885,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Historical, Anachronism",
@@ -4042,8 +3941,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Historical, Anachronism",
@@ -4057,8 +3955,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Historical, Anachronism",
@@ -4072,8 +3969,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Historical, Anachronism",
@@ -4129,8 +4025,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Historical, Anachronism",
@@ -4144,8 +4039,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Historical, Anachronism",
@@ -4173,8 +4067,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Historical, Anachronism",
@@ -4188,8 +4081,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Historical, Anachronism",
@@ -4203,8 +4095,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Historical, Anachronism",
@@ -4218,8 +4109,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Historical, Anachronism",
@@ -4233,8 +4123,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Historical, Anachronism",
@@ -4276,8 +4165,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Historical, Anachronism",
@@ -4291,8 +4179,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Historical, Anachronism",
@@ -4320,8 +4207,7 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Semantic Scholar title match but no author/year confirmation"
+            "No DOI found and not in OpenAlex"
           ],
           "fields": {
             "author": "Historical, Anachronism",
