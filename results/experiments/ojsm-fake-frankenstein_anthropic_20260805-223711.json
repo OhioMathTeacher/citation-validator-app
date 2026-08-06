@@ -1,0 +1,3534 @@
+{
+  "run": {
+    "timestamp": "2026-08-05T22:37:11.131183+00:00",
+    "dataset_id": "ojsm-fake-frankenstein",
+    "dataset_name": "Frankenstein Citations",
+    "citation_count": 100,
+    "ai_enabled": true,
+    "ai_provider": "anthropic",
+    "ai_model": "Anthropic Claude Sonnet 5",
+    "ai_calls": 100,
+    "ai_errors": 0,
+    "deterministic_seconds": 1517.7,
+    "ai_seconds": 292.6,
+    "total_seconds": 1810.3,
+    "counts": {
+      "valid": 0,
+      "warning": 0,
+      "suspicious": 100,
+      "invalid": 0
+    },
+    "accuracy": {
+      "tp": 100,
+      "tn": 0,
+      "fp": 0,
+      "fn": 0,
+      "total": 100,
+      "skipped": 0,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "fpr": 0,
+      "fnr": 0.0,
+      "false_negatives": [],
+      "false_positives": []
+    },
+    "tokens": {
+      "input_tokens": 66255,
+      "output_tokens": 12796,
+      "total_tokens": 79051,
+      "avg_per_call": 790.5
+    }
+  },
+  "details": [
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 656,
+            "output_tokens": 120,
+            "total_tokens": 776
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Generic title mismatched with a physics journal (Physical Review Letters), author is a DeepMind AI researcher not a physicist, implausible volume/page numbers, and not found in CrossRef, OpenAlex, or Semantic Scholar. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Demis Hassabis",
+        "journal": "Physical Review Letters",
+        "pages": "259--878",
+        "title": "New Approaches to Machine Learning",
+        "volume": "536",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0001",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 663,
+            "output_tokens": 137,
+            "total_tokens": 800
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar; no DOI; generic title; implausible volume number 838 for JMLR; single-author attribution to Fei-Fei Li on a generic neural networks survey is inconsistent with her known research focus (computer vision). All these factors strongly suggest fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "240--535",
+        "title": "A Survey of Neural Networks Methods",
+        "volume": "838",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0002",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 677,
+            "output_tokens": 113,
+            "total_tokens": 790
+          }
+        },
+        "confidence": 99,
+        "is_suspicious": true,
+        "reason": "Claude Shannon died in 2001 and never worked on NLP; this paper is not indexed in any database; volume 311 is implausible for IEEE TPAMI; the pages range (430-759) is absurdly large for a single article. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Shannon, Claude",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "430--759",
+        "title": "Recent Advances in Natural Language Processing",
+        "volume": "311",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0003",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 660,
+            "output_tokens": 161,
+            "total_tokens": 821
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Title 'Analysis of Computer Vision Techniques' by Ian Goodfellow published in Physical Review Letters is an implausible pairing (a physics journal for a CV/ML topic), not found in CrossRef, OpenAlex, or Semantic Scholar, has no DOI, and has anomalous metadata (implausible page range 494-939, volume 870). All signs point to a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Ian Goodfellow",
+        "journal": "Physical Review Letters",
+        "pages": "494--939",
+        "title": "Analysis of Computer Vision Techniques",
+        "volume": "870",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0004",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 687,
+            "output_tokens": 218,
+            "total_tokens": 905
+          }
+        },
+        "confidence": 99,
+        "is_suspicious": true,
+        "reason": "Edsger Dijkstra died in 2002, making a 2021 publication impossible. The paper is not found in any database, has implausible pagination (325--965), and the topic (AI Safety) doesn't match Dijkstra's known work. This is almost certainly fabricated."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Dijkstra, Edsger",
+        "journal": "Science",
+        "pages": "325--965",
+        "title": "New Approaches to AI Safety",
+        "volume": "960",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0005",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Metadata similarity only 0.25"
+      ],
+      "type": "article",
+      "verified_metadata": {
+        "authors": [],
+        "source": "semantic_scholar",
+        "title": "Position: Preventing AI-Generated CSAM Necessitates New Approaches to AI Safety",
+        "year": ""
+      },
+      "warnings": [
+        "No DOI found and not in OpenAlex",
+        "Semantic Scholar title match but no author/year confirmation",
+        "Low metadata similarity score: 0.25"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 658,
+            "output_tokens": 167,
+            "total_tokens": 825
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Judea Pearl is a computer scientist known for causal inference/Bayesian networks, not a physicist; a generic-titled ML paper in Physical Review Letters is highly atypical for his work. The citation is absent from CrossRef, OpenAlex, and Semantic Scholar, has no DOI, and the volume/page numbers appear inconsistent with real PRL formatting. This strongly suggests a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Judea Pearl",
+        "journal": "Physical Review Letters",
+        "pages": "17--502",
+        "title": "Analysis of Machine Learning Techniques",
+        "volume": "440",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0006",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 671,
+            "output_tokens": 129,
+            "total_tokens": 800
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Generic title mismatched with author's known expertise (AI/rationality, not quantum computing), implausible volume number (614) for the journal Artificial Intelligence, unusually long page range, and not found in any database (CrossRef, OpenAlex, Semantic Scholar). All signs point to a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Stuart Russell",
+        "journal": "Artificial Intelligence",
+        "pages": "281--502",
+        "title": "A Study of Quantum Computing",
+        "volume": "614",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0007",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 659,
+            "output_tokens": 124,
+            "total_tokens": 783
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Donald Knuth is not known for AI safety research; title is generic and mismatched with author's actual field (computer science algorithms/TeX). Not found in any database, no DOI, implausible page range (18--652), and suspiciously high volume number (792) for a journal. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Knuth, Donald",
+        "journal": "Artificial Intelligence",
+        "pages": "18--652",
+        "title": "Analysis of AI Safety Techniques",
+        "volume": "792",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0008",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 671,
+            "output_tokens": 128,
+            "total_tokens": 799
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Alan Turing died in 1954 and could not publish a 2023 paper. Title is generic, NeurIPS journal name is malformed (it's a conference), page range is absurdly large, and no database match found in CrossRef, OpenAlex, or Semantic Scholar. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "Neural Information Processing Systems",
+        "pages": "384--708",
+        "title": "A Study of Blockchain",
+        "volume": "471",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0009",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 664,
+            "output_tokens": 111,
+            "total_tokens": 775
+          }
+        },
+        "confidence": 90,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar; no DOI; generic title with implausible volume number (978) and abnormal page range (381--846) for NeurIPS. These characteristics strongly suggest a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yoshua Bengio",
+        "journal": "Neural Information Processing Systems",
+        "pages": "381--846",
+        "title": "Recent Advances in Reinforcement Learning",
+        "volume": "978",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0010",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 674,
+            "output_tokens": 158,
+            "total_tokens": 832
+          }
+        },
+        "confidence": 98,
+        "is_suspicious": true,
+        "reason": "Claude Shannon died in 2001 and could not have authored a 2025 paper. The title is generic, volume 801 is implausible for JMLR, and the paper is not found in any database, all strongly indicating fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Shannon, Claude",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "490--652",
+        "title": "A Study of Deep Learning",
+        "volume": "801",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0011",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 652,
+            "output_tokens": 126,
+            "total_tokens": 778
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Generic title mismatched with a prominent AI researcher author, implausible volume number for Cell (907), unusual page range, and not found in any database (CrossRef, OpenAlex, Semantic Scholar) despite being a recent 2024 paper. This pattern strongly suggests a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Demis Hassabis",
+        "journal": "Cell",
+        "pages": "384--702",
+        "title": "Analysis of Data Science Techniques",
+        "volume": "907",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0012",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 661,
+            "output_tokens": 108,
+            "total_tokens": 769
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Author (Alan Turing, died 1954) could not have authored a 2023 paper; not found in CrossRef, OpenAlex, or Semantic Scholar; implausible volume number and page range for JMLR. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "215--508",
+        "title": "Analysis of AI Safety Techniques",
+        "volume": "703",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0013",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 674,
+            "output_tokens": 120,
+            "total_tokens": 794
+          }
+        },
+        "confidence": 98,
+        "is_suspicious": true,
+        "reason": "Grace Hopper, a pioneering computer scientist who died in 1992, cannot have authored a 2025 paper. The citation is not found in any database, has an implausible page range (496-936), and an unusually high volume number for IEEE TPAMI. This is almost certainly fabricated."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Hopper, Grace",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "496--936",
+        "title": "New Approaches to Neural Networks",
+        "volume": "414",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0014",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 656,
+            "output_tokens": 148,
+            "total_tokens": 804
+          }
+        },
+        "confidence": 98,
+        "is_suspicious": true,
+        "reason": "Alan Turing died in 1954 and could not have authored a 2025 paper on blockchain, a technology that didn't exist in his lifetime. The paper is not found in any database (CrossRef, OpenAlex, Semantic Scholar), has no DOI, and the page range (255--754) is implausibly large for a journal article. All indicators strongly suggest fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "Artificial Intelligence",
+        "pages": "255--754",
+        "title": "Recent Advances in Blockchain",
+        "volume": "195",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0015",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 661,
+            "output_tokens": 107,
+            "total_tokens": 768
+          }
+        },
+        "confidence": 96,
+        "is_suspicious": true,
+        "reason": "Grace Hopper (computing pioneer, died 1992) cannot have authored a 2025 paper. Not found in any database, no DOI, and the pages range (293-508) is implausibly large for a journal article. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Hopper, Grace",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "293--508",
+        "title": "Recent Advances in Deep Learning",
+        "volume": "252",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0016",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 674,
+            "output_tokens": 125,
+            "total_tokens": 799
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar. Generic title pattern, implausible volume number (974) for this journal, and an absurdly large page range (453-967) all suggest fabrication. Daphne Koller is not known for reinforcement learning survey work in this journal."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Daphne Koller",
+        "journal": "Artificial Intelligence",
+        "pages": "453--967",
+        "title": "An Overview of Reinforcement Learning",
+        "volume": "974",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0017",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 658,
+            "output_tokens": 134,
+            "total_tokens": 792
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Not found in any database (CrossRef, OpenAlex, Semantic Scholar), no DOI, generic/vague title, implausible volume number (249) for CACM in 2020, and an implausible page range (491-858, spanning 367 pages) inconsistent with a journal article. These combined factors strongly suggest fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Stuart Russell",
+        "journal": "Communications of the ACM",
+        "pages": "491--858",
+        "title": "Analysis of Neural Networks Techniques",
+        "volume": "249",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0018",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 668,
+            "output_tokens": 111,
+            "total_tokens": 779
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Generic title 'A Study of Data Science' mismatched with Physical Review Letters (a physics journal), author known as AI researcher not physicist, not found in any database, no DOI, and page/volume numbers appear implausible - strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Demis Hassabis",
+        "journal": "Physical Review Letters",
+        "pages": "245--922",
+        "title": "A Study of Data Science",
+        "volume": "705",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0019",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 674,
+            "output_tokens": 132,
+            "total_tokens": 806
+          }
+        },
+        "confidence": 98,
+        "is_suspicious": true,
+        "reason": "Donald Knuth is not known for data science surveys; the title doesn't match his work, page range (253--929) is implausibly large, volume 623 is unrealistic for this journal, and the paper is not found in CrossRef, OpenAlex, or Semantic Scholar. This combination strongly indicates a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Knuth, Donald",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "253--929",
+        "title": "A Survey of Data Science Methods",
+        "volume": "623",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0020",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 660,
+            "output_tokens": 125,
+            "total_tokens": 785
+          }
+        },
+        "confidence": 98,
+        "is_suspicious": true,
+        "reason": "Alan Turing died in 1954 and could not have authored a 2022 paper on reinforcement learning. The citation is not found in any database, the volume number (412) is implausible for the journal Artificial Intelligence, and the author-topic-date combination is anachronistic, all strongly indicating fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "Artificial Intelligence",
+        "pages": "437--571",
+        "title": "Recent Advances in Reinforcement Learning",
+        "volume": "412",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0021",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 674,
+            "output_tokens": 121,
+            "total_tokens": 795
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar; suspicious volume number (999), implausible page range (163-717), generic title unrelated to Schmidhuber's known research focus (deep learning/AI), and no DOI. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Jurgen Schmidhuber",
+        "journal": "Communications of the ACM",
+        "pages": "163--717",
+        "title": "An Overview of Blockchain",
+        "volume": "999",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0022",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 675,
+            "output_tokens": 143,
+            "total_tokens": 818
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Not found in any database (CrossRef, OpenAlex, Semantic Scholar), no DOI, generic title, implausible volume number (712) for CACM, and single-author attribution to Ian Goodfellow for a generic RL overview in CACM is inconsistent with his actual publication record (GANs, deep learning). Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Ian Goodfellow",
+        "journal": "Communications of the ACM",
+        "pages": "452--778",
+        "title": "An Overview of Reinforcement Learning",
+        "volume": "712",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0023",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 652,
+            "output_tokens": 137,
+            "total_tokens": 789
+          }
+        },
+        "confidence": 92,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar; the generic title 'New Approaches to Neural Networks' combined with Cell (a biology journal, atypical for Fei-Fei Li's ML work), an unusual volume/page format, and complete absence from all databases strongly suggests a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "Cell",
+        "pages": "51--736",
+        "title": "New Approaches to Neural Networks",
+        "volume": "228",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0024",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 671,
+            "output_tokens": 103,
+            "total_tokens": 774
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Generic title, not found in any database (CrossRef, OpenAlex, Semantic Scholar), no DOI, implausible volume number for PNAS in 2025, and unusually broad page range - all consistent with a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Jurgen Schmidhuber",
+        "journal": "PNAS",
+        "pages": "432--846",
+        "title": "An Overview of Machine Learning",
+        "volume": "678",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0025",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 661,
+            "output_tokens": 107,
+            "total_tokens": 768
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Author (Alan Turing, died 1954) could not have authored a 2021 paper; not found in CrossRef, OpenAlex, or Semantic Scholar; volume 663 is implausible for JMLR; strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "6--861",
+        "title": "Analysis of AI Safety Techniques",
+        "volume": "663",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0026",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 654,
+            "output_tokens": 127,
+            "total_tokens": 781
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar; no DOI. Volume 954 and pages 280-823 are implausible for CACM. Title/author combination (Andrew Ng on blockchain) doesn't match his known research area (AI/ML), suggesting fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Andrew Ng",
+        "journal": "Communications of the ACM",
+        "pages": "280--823",
+        "title": "Improving Blockchain Systems",
+        "volume": "954",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0027",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 652,
+            "output_tokens": 127,
+            "total_tokens": 779
+          }
+        },
+        "confidence": 99,
+        "is_suspicious": true,
+        "reason": "Grace Hopper died in 1992 and could not have authored a 2022 paper; the citation is not found in any database, and the page range (484-778) is implausibly large for a journal article, all indicating fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Hopper, Grace",
+        "journal": "Science",
+        "pages": "484--778",
+        "title": "Recent Advances in Quantum Computing",
+        "volume": "123",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0028",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 666,
+            "output_tokens": 140,
+            "total_tokens": 806
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Donald Knuth is a computer scientist not known for quantum computing papers in Science; the title is generic, volume 812 doesn't match Science's actual volume numbering for 2022, page range is unusually large, and the citation is absent from CrossRef, OpenAlex, and Semantic Scholar with no DOI. All signs point to fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Knuth, Donald",
+        "journal": "Science",
+        "pages": "488--613",
+        "title": "An Overview of Quantum Computing",
+        "volume": "812",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0029",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 654,
+            "output_tokens": 123,
+            "total_tokens": 777
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Generic title mismatched with a specific journal (Cell, a biology journal) and author known for AI research (DeepMind founder), not computer vision academic publishing. Not found in any database, no DOI, and pages range (421--795) is implausibly large for a single article. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Demis Hassabis",
+        "journal": "Cell",
+        "pages": "421--795",
+        "title": "Analysis of Computer Vision Techniques",
+        "volume": "623",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0030",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 652,
+            "output_tokens": 162,
+            "total_tokens": 814
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Not found in any database (CrossRef, OpenAlex, Semantic Scholar), no DOI, and the pairing of Sebastian Thrun (a robotics/AI researcher) with the journal Cell (a biology journal) for a generic-sounding title is highly implausible. Also volume 852 and page range 421-542 (121 pages) are unusually large for a journal article, suggesting fabricated metadata."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Sebastian Thrun",
+        "journal": "Cell",
+        "pages": "421--542",
+        "title": "Improving Neural Networks Systems",
+        "volume": "852",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0031",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 660,
+            "output_tokens": 144,
+            "total_tokens": 804
+          }
+        },
+        "confidence": 92,
+        "is_suspicious": true,
+        "reason": "Generic title, single-author citation attributed to Demis Hassabis (a DeepMind researcher not typically publishing solo generic ML surveys), not found in CrossRef, OpenAlex, or Semantic Scholar. No DOI, and NeurIPS proceedings are normally well-indexed, so absence across all databases strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Demis Hassabis",
+        "journal": "Neural Information Processing Systems",
+        "pages": "125--742",
+        "title": "Recent Advances in Machine Learning",
+        "volume": "539",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0032",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 651,
+            "output_tokens": 137,
+            "total_tokens": 788
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Judea Pearl is an AI/causal inference researcher, not a medical author, and this paper is not published in The Lancet - a medical journal mismatch. Not found in CrossRef, OpenAlex, or Semantic Scholar. The pages field (264-941) is also implausible for a single article. This combination strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Judea Pearl",
+        "journal": "The Lancet",
+        "pages": "264--941",
+        "title": "New Approaches to AI Safety",
+        "volume": "603",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0033",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 659,
+            "output_tokens": 141,
+            "total_tokens": 800
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Not found in any database (CrossRef, OpenAlex, Semantic Scholar), no DOI, implausible volume number (671) for CACM in 2025, and suspicious page range (199-884) spanning 685 pages. Title also seems generic/mismatched for Stuart Russell's typical AI research focus. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Stuart Russell",
+        "journal": "Communications of the ACM",
+        "pages": "199--884",
+        "title": "Analysis of Quantum Computing Techniques",
+        "volume": "671",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0034",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 654,
+            "output_tokens": 116,
+            "total_tokens": 770
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Generic title, implausible future year (2025) with a page range (307-930) that is inconsistent with typical journal formatting, not found in CrossRef, OpenAlex, or Semantic Scholar, and no DOI. This pattern strongly suggests a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yoshua Bengio",
+        "journal": "Science",
+        "pages": "307--930",
+        "title": "Analysis of Neural Networks Techniques",
+        "volume": "254",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0035",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 661,
+            "output_tokens": 140,
+            "total_tokens": 801
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Grace Hopper, the pioneering computer scientist, died in 1992 and could not have authored a 2022 paper. The citation is not found in any database (CrossRef, OpenAlex, Semantic Scholar), has no DOI, uses a generic title, and has implausible volume/page numbers for JMLR. All indicators point to fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Hopper, Grace",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "186--915",
+        "title": "Recent Advances in Neural Networks",
+        "volume": "955",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0036",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 664,
+            "output_tokens": 135,
+            "total_tokens": 799
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Mismatched subject matter (Schmidhuber is an AI/ML researcher, but this is published in a chemistry journal) combined with generic title 'New Approaches to Computer Vision', implausible page range, and no record in CrossRef, OpenAlex, or Semantic Scholar strongly indicates a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Jurgen Schmidhuber",
+        "journal": "Journal of the American Chemical Society",
+        "pages": "40--553",
+        "title": "New Approaches to Computer Vision",
+        "volume": "412",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0037",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 659,
+            "output_tokens": 84,
+            "total_tokens": 743
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Not found in any database, implausible volume number (331) for CACM, absurd page range (215--887 spanning 672 pages), and generic title/author pairing suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Sebastian Thrun",
+        "journal": "Communications of the ACM",
+        "pages": "215--887",
+        "title": "A Survey of Deep Learning Methods",
+        "volume": "331",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0038",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 658,
+            "output_tokens": 138,
+            "total_tokens": 796
+          }
+        },
+        "confidence": 99,
+        "is_suspicious": true,
+        "reason": "Edsger Dijkstra died in 2002 and was a computer scientist known for algorithms, not NLP; he never published an NLP survey in Nature in 2021. The paper is not found in CrossRef, OpenAlex, or Semantic Scholar, and the pagination format is atypical for Nature. This is almost certainly fabricated."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Dijkstra, Edsger",
+        "journal": "Nature",
+        "pages": "26--754",
+        "title": "A Survey of Natural Language Processing Methods",
+        "volume": "389",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0039",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 656,
+            "output_tokens": 98,
+            "total_tokens": 754
+          }
+        },
+        "confidence": 92,
+        "is_suspicious": true,
+        "reason": "Generic title mismatched with Fei-Fei Li's expertise (computer vision, not quantum computing), unrealistic page range (300-803), not found in any database, and no DOI. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "Nature",
+        "pages": "300--803",
+        "title": "Analysis of Quantum Computing Techniques",
+        "volume": "657",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0040",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 656,
+            "output_tokens": 166,
+            "total_tokens": 822
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "This citation is a mismatch: Stuart Russell is an AI/computer science researcher, and a generic title like 'Recent Advances in Neural Networks' would not plausibly appear in Physical Review Letters, a physics journal. It is not found in CrossRef, OpenAlex, or Semantic Scholar, has no DOI, and the volume/page numbers appear implausible. This strongly suggests a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Stuart Russell",
+        "journal": "Physical Review Letters",
+        "pages": "19--549",
+        "title": "Recent Advances in Neural Networks",
+        "volume": "247",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0041",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 657,
+            "output_tokens": 159,
+            "total_tokens": 816
+          }
+        },
+        "confidence": 98,
+        "is_suspicious": true,
+        "reason": "Edsger Dijkstra was a computer scientist (died 2002) known for algorithms and formal methods, not neural networks; publishing in The Lancet (a medical journal) in 2020 is implausible. The paper is not found in CrossRef, OpenAlex, or Semantic Scholar, has no DOI, and the page range (322-555) is unrealistic. All signs point to a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Dijkstra, Edsger",
+        "journal": "The Lancet",
+        "pages": "322--555",
+        "title": "Recent Advances in Neural Networks",
+        "volume": "345",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0042",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 678,
+            "output_tokens": 146,
+            "total_tokens": 824
+          }
+        },
+        "confidence": 92,
+        "is_suspicious": true,
+        "reason": "Title 'Recent Advances in AI Safety' attributed solely to Schmidhuber in IEEE TPAMI is atypical of his known work, volume 104 doesn't match TPAMI's actual 2023 volume numbering, and the paper is not found in CrossRef, OpenAlex, or Semantic Scholar, suggesting it is fabricated."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Jurgen Schmidhuber",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "38--675",
+        "title": "Recent Advances in AI Safety",
+        "volume": "104",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0043",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 666,
+            "output_tokens": 102,
+            "total_tokens": 768
+          }
+        },
+        "confidence": 98,
+        "is_suspicious": true,
+        "reason": "Alan Turing died in 1954 and could not have authored a 2020 paper; title is generic, no DOI, and not found in CrossRef, OpenAlex, or Semantic Scholar. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "PNAS",
+        "pages": "136--780",
+        "title": "An Overview of Computer Vision",
+        "volume": "673",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0044",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 670,
+            "output_tokens": 132,
+            "total_tokens": 802
+          }
+        },
+        "confidence": 98,
+        "is_suspicious": true,
+        "reason": "Grace Hopper (computer scientist, died 1992) publishing in The Lancet (medical journal) in 2023 on NLP is anachronistic and implausible. Not found in CrossRef, OpenAlex, or Semantic Scholar, generic title pattern, and no DOI. All indicators point to fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Hopper, Grace",
+        "journal": "The Lancet",
+        "pages": "430--673",
+        "title": "An Overview of Natural Language Processing",
+        "volume": "291",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0045",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 658,
+            "output_tokens": 141,
+            "total_tokens": 799
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Ronald Rivest is a cryptography expert, not known for RL surveys; PNAS doesn't typically publish such surveys; volume 528 is implausible for PNAS in 2024; pages format is unusual; and the paper isn't found in CrossRef, OpenAlex, or Semantic Scholar, strongly suggesting fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Rivest, Ronald",
+        "journal": "PNAS",
+        "pages": "213--979",
+        "title": "A Survey of Reinforcement Learning Methods",
+        "volume": "528",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0046",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 676,
+            "output_tokens": 131,
+            "total_tokens": 807
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Not found in any database (CrossRef, OpenAlex, Semantic Scholar), no DOI, implausible volume number (870) for TPAMI, absurd page range (261-519 = 258 pages), generic title, and a 2025 date that would typically already be indexed. These are strong indicators of a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "261--519",
+        "title": "Recent Advances in Neural Networks",
+        "volume": "870",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0047",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 663,
+            "output_tokens": 109,
+            "total_tokens": 772
+          }
+        },
+        "confidence": 98,
+        "is_suspicious": true,
+        "reason": "Author Alan Turing died in 1954, making a 2023 publication impossible. Generic title, implausible page range (348-700), and not found in any database (CrossRef, OpenAlex, Semantic Scholar). Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "Nature",
+        "pages": "348--700",
+        "title": "An Overview of Data Science",
+        "volume": "641",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0048",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 659,
+            "output_tokens": 155,
+            "total_tokens": 814
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "The title 'A Survey of Data Science Methods' is implausible for JACS (a chemistry journal), the volume number (714) is far beyond JACS's actual range, and the paper is not found in CrossRef, OpenAlex, or Semantic Scholar. Michael Jordan is a machine learning researcher, not a chemist, further suggesting this is a fabricated/mismatched citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Michael Jordan",
+        "journal": "Journal of the American Chemical Society",
+        "pages": "371--680",
+        "title": "A Survey of Data Science Methods",
+        "volume": "714",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0049",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 660,
+            "output_tokens": 124,
+            "total_tokens": 784
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Not found in any database (CrossRef, OpenAlex, Semantic Scholar), no DOI, and the topic (computer vision) is a highly implausible mismatch for Physical Review Letters, a physics journal. The generic title and mismatched author-journal combination strongly suggest fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Ian Goodfellow",
+        "journal": "Physical Review Letters",
+        "pages": "112--839",
+        "title": "Analysis of Computer Vision Techniques",
+        "volume": "662",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0050",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 661,
+            "output_tokens": 101,
+            "total_tokens": 762
+          }
+        },
+        "confidence": 92,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar; no DOI. JMLR volume 317 is implausible for 2023, and the title is generic with an unusually large page range, consistent with fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Sebastian Thrun",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "358--852",
+        "title": "New Approaches to Neural Networks",
+        "volume": "317",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0051",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 651,
+            "output_tokens": 130,
+            "total_tokens": 781
+          }
+        },
+        "confidence": 99,
+        "is_suspicious": true,
+        "reason": "Grace Hopper died in 1992 and cannot be an author of a 2025 paper. Not found in any database, generic title, and implausible author-journal-topic combination strongly indicate fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Hopper, Grace",
+        "journal": "Nature",
+        "pages": "6--753",
+        "title": "Improving Deep Learning Systems",
+        "volume": "916",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0052",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 650,
+            "output_tokens": 120,
+            "total_tokens": 770
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Not found in any database (CrossRef, OpenAlex, Semantic Scholar), no DOI, and the topic (blockchain) mismatches Fei-Fei Li's known field (computer vision/AI), with an implausible volume number for Science. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "Science",
+        "pages": "424--987",
+        "title": "Improving Blockchain Systems",
+        "volume": "716",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0053",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 654,
+            "output_tokens": 170,
+            "total_tokens": 824
+          }
+        },
+        "confidence": 98,
+        "is_suspicious": true,
+        "reason": "Judea Pearl is a computer scientist/AI researcher known for causal inference, not blockchain research, and would not publish in Physical Review Letters (a physics journal). The title 'New Approaches to Blockchain' is inconsistent with the author's known field and the journal's scope. Not found in CrossRef, OpenAlex, or Semantic Scholar, and no DOI exists. This combination strongly suggests a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Judea Pearl",
+        "journal": "Physical Review Letters",
+        "pages": "122--919",
+        "title": "New Approaches to Blockchain",
+        "volume": "429",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0054",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 661,
+            "output_tokens": 109,
+            "total_tokens": 770
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Not found in any database, generic title inconsistent with Hinton's known work, implausible volume number (418) for CACM, and an impossible page range (218--555) spanning hundreds of pages for a journal article. These are strong indicators of a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Geoffrey Hinton",
+        "journal": "Communications of the ACM",
+        "pages": "218--555",
+        "title": "Analysis of Computer Vision Techniques",
+        "volume": "418",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0055",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 652,
+            "output_tokens": 155,
+            "total_tokens": 807
+          }
+        },
+        "confidence": 96,
+        "is_suspicious": true,
+        "reason": "Not found in any database (CrossRef, OpenAlex, Semantic Scholar), no DOI. Topic (neural networks) mismatches journal (The Lancet, a medical journal), author's typical publishing venues don't include The Lancet for ML topics, page numbers are implausible (101-995 spanning 894 pages), and title is generic/vague. All strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Andrew Ng",
+        "journal": "The Lancet",
+        "pages": "101--995",
+        "title": "Improving Neural Networks Systems",
+        "volume": "438",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0056",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 649,
+            "output_tokens": 120,
+            "total_tokens": 769
+          }
+        },
+        "confidence": 96,
+        "is_suspicious": true,
+        "reason": "Not found in any database despite being a 2024 paper that should be indexed. Author (Stuart Russell, AI safety researcher) and topic (blockchain) are mismatched with the journal (Cell, a biology journal), and page range/volume look implausible. Strong indication of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Stuart Russell",
+        "journal": "Cell",
+        "pages": "129--978",
+        "title": "Improving Blockchain Systems",
+        "volume": "734",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0057",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 665,
+            "output_tokens": 141,
+            "total_tokens": 806
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Generic title mismatched with journal (Cell is a biology journal, not quantum computing), Andrew Ng is an ML researcher not known for quantum computing work, not found in any database (CrossRef, OpenAlex, Semantic Scholar), no DOI, and the title follows a generic hallucination pattern. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Andrew Ng",
+        "journal": "Cell",
+        "pages": "29--890",
+        "title": "A Study of Quantum Computing",
+        "volume": "671",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0058",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 675,
+            "output_tokens": 96,
+            "total_tokens": 771
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Generic title, implausible volume/page numbers, and no match in CrossRef, OpenAlex, or Semantic Scholar for a supposedly high-profile author/journal combination strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Ian Goodfellow",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "134--700",
+        "title": "New Approaches to Neural Networks",
+        "volume": "792",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0059",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 668,
+            "output_tokens": 117,
+            "total_tokens": 785
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Generic title mismatched with journal (The Lancet publishing AI safety research by Hinton is implausible), not found in CrossRef, OpenAlex, or Semantic Scholar, no DOI, and suspicious volume/page numbers. All indicators point to fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Geoffrey Hinton",
+        "journal": "The Lancet",
+        "pages": "155--638",
+        "title": "A Study of AI Safety",
+        "volume": "743",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0060",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 651,
+            "output_tokens": 99,
+            "total_tokens": 750
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Generic title inconsistent with Hinton's known work, page range is anomalous (297--785), and the citation was not found in CrossRef, OpenAlex, or Semantic Scholar, suggesting it is fabricated."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Geoffrey Hinton",
+        "journal": "Nature",
+        "pages": "297--785",
+        "title": "New Approaches to Data Science",
+        "volume": "498",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0061",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 653,
+            "output_tokens": 138,
+            "total_tokens": 791
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Judea Pearl is a causal inference/AI researcher with no known connection to blockchain research; the title is inconsistent with his work, the paper is not found in any database (CrossRef, OpenAlex, Semantic Scholar), and the page numbers (161-639) are implausible for a journal article. This strongly suggests a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Judea Pearl",
+        "journal": "PNAS",
+        "pages": "161--639",
+        "title": "Analysis of Blockchain Techniques",
+        "volume": "220",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0062",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 666,
+            "output_tokens": 138,
+            "total_tokens": 804
+          }
+        },
+        "confidence": 93,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar; no DOI. Volume 913 is implausible for JMLR, and the generic title with Fei-Fei Li (a computer vision researcher, not typically NLP) as sole author is inconsistent with typical publication patterns. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "283--511",
+        "title": "Analysis of Natural Language Processing Techniques",
+        "volume": "913",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0063",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 673,
+            "output_tokens": 135,
+            "total_tokens": 808
+          }
+        },
+        "confidence": 96,
+        "is_suspicious": true,
+        "reason": "Not found in any database, generic/mismatched title ('An Overview of Blockchain' unlikely from JMLR and by Stuart Russell, an AI researcher), implausible volume number 436 for JMLR in 2020 (actual JMLR volumes were around 21), and abnormal page range. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Stuart Russell",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "156--957",
+        "title": "An Overview of Blockchain",
+        "volume": "436",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0064",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 671,
+            "output_tokens": 140,
+            "total_tokens": 811
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Not found in any database (CrossRef, OpenAlex, Semantic Scholar), no DOI, generic title, and volume 666 for a 2023 issue of Artificial Intelligence is implausible. Michael Jordan is a machine learning researcher not typically associated with quantum computing papers in this journal. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Michael Jordan",
+        "journal": "Artificial Intelligence",
+        "pages": "324--592",
+        "title": "A Study of Quantum Computing",
+        "volume": "666",
+        "year": "2023"
+      },
+      "issues": [],
+      "key": "frankenstein0065",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 652,
+            "output_tokens": 103,
+            "total_tokens": 755
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar; volume 743 and pages 197-602 are implausible for PNAS, and no DOI exists. This pattern strongly suggests a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Daphne Koller",
+        "journal": "PNAS",
+        "pages": "197--602",
+        "title": "A Survey of AI Safety Methods",
+        "volume": "743",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0066",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 676,
+            "output_tokens": 91,
+            "total_tokens": 767
+          }
+        },
+        "confidence": 98,
+        "is_suspicious": true,
+        "reason": "Author Alan Turing died in 1954 and could not have published in 2020. The paper is not found in any database, has an implausible page range (47-978), and generic title. All signs point to a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "47--978",
+        "title": "Analysis of Machine Learning Techniques",
+        "volume": "721",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0067",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 689,
+            "output_tokens": 97,
+            "total_tokens": 786
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Generic title, implausible author (Ronald Rivest is a cryptographer, not a computer vision researcher), impossible page range (307-804), not found in any database, and no DOI. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Rivest, Ronald",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "307--804",
+        "title": "A Study of Computer Vision",
+        "volume": "191",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0068",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 654,
+            "output_tokens": 156,
+            "total_tokens": 810
+          }
+        },
+        "confidence": 99,
+        "is_suspicious": true,
+        "reason": "Claude Shannon died in 2001 and could not publish in 2022; the topic (reinforcement learning) is anachronistic and unrelated to his work; Cell is a biology journal, not a fit for this ML topic; volume/page numbers are implausible; and the paper is not found in CrossRef, OpenAlex, or Semantic Scholar. This is almost certainly a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Shannon, Claude",
+        "journal": "Cell",
+        "pages": "430--612",
+        "title": "Improving Reinforcement Learning Systems",
+        "volume": "953",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0069",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 651,
+            "output_tokens": 130,
+            "total_tokens": 781
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar; no DOI. Generic title, implausible page range (459-739 is far too many pages for a Science article), and volume 989 doesn't match Science's actual volume numbering for 2024 (~383-386). Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yann LeCun",
+        "journal": "Science",
+        "pages": "459--739",
+        "title": "Analysis of AI Safety Techniques",
+        "volume": "989",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0070",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 659,
+            "output_tokens": 129,
+            "total_tokens": 788
+          }
+        },
+        "confidence": 92,
+        "is_suspicious": true,
+        "reason": "Not found in any database (CrossRef, OpenAlex, Semantic Scholar), lacks a DOI, has an implausible page range (355--841, nearly 500 pages) for a journal article, and the generic title doesn't match Peter Norvig's known research focus. These red flags strongly suggest fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Peter Norvig",
+        "journal": "Artificial Intelligence",
+        "pages": "355--841",
+        "title": "Recent Advances in Natural Language Processing",
+        "volume": "256",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0071",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 690,
+            "output_tokens": 129,
+            "total_tokens": 819
+          }
+        },
+        "confidence": 96,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar; generic title mismatched with author's known research area (LeCun is known for deep learning/vision, not NLP surveys); implausible page range (53-939) and volume number for this journal; overall pattern strongly suggests a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yann LeCun",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "53--939",
+        "title": "An Overview of Natural Language Processing",
+        "volume": "436",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0072",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 665,
+            "output_tokens": 108,
+            "total_tokens": 773
+          }
+        },
+        "confidence": 92,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar; no DOI. JMLR volume 638 is implausibly high, and the generic title combined with lack of any database record strongly suggests a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Jurgen Schmidhuber",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "431--607",
+        "title": "A Survey of AI Safety Methods",
+        "volume": "638",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0073",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 662,
+            "output_tokens": 102,
+            "total_tokens": 764
+          }
+        },
+        "confidence": 98,
+        "is_suspicious": true,
+        "reason": "Topic-journal mismatch (computer vision paper in a chemistry journal), author mismatch (Hinton is a computer scientist, not a chemist), not found in any database, and no DOI. All signs point to a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Geoffrey Hinton",
+        "journal": "Journal of the American Chemical Society",
+        "pages": "18--877",
+        "title": "New Approaches to Computer Vision",
+        "volume": "304",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0074",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 677,
+            "output_tokens": 128,
+            "total_tokens": 805
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Edsger Dijkstra died in 2002 and was a computer scientist known for algorithms/computer science, not computer vision; this 2022 paper is not found in any database, has implausible page numbers (95-672), and the title/author/journal combination is inconsistent with his known work, strongly suggesting fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Dijkstra, Edsger",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "95--672",
+        "title": "New Approaches to Computer Vision",
+        "volume": "810",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0075",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 660,
+            "output_tokens": 111,
+            "total_tokens": 771
+          }
+        },
+        "confidence": 92,
+        "is_suspicious": true,
+        "reason": "Generic title, implausible page range (290-794), and NeurIPS is a conference proceedings not typically called a 'journal' with volume numbers like this; not found in CrossRef, OpenAlex, or Semantic Scholar, suggesting fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Andrew Ng",
+        "journal": "Neural Information Processing Systems",
+        "pages": "290--794",
+        "title": "A Survey of Computer Vision Methods",
+        "volume": "105",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0076",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 675,
+            "output_tokens": 75,
+            "total_tokens": 750
+          }
+        },
+        "confidence": 92,
+        "is_suspicious": true,
+        "reason": "Generic title, implausible volume/page numbers, not found in any database, and year 2025 with no DOI\u2014strong indicators of a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+        "pages": "350--895",
+        "title": "New Approaches to Machine Learning",
+        "volume": "711",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0077",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 662,
+            "output_tokens": 139,
+            "total_tokens": 801
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar; no DOI. Volume 750 is implausible for Communications of the ACM (actual volumes are in the 60s in 2021). Title doesn't match known Hinton publications, who is not primarily known for reinforcement learning work. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Geoffrey Hinton",
+        "journal": "Communications of the ACM",
+        "pages": "491--508",
+        "title": "Recent Advances in Reinforcement Learning",
+        "volume": "750",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0078",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 659,
+            "output_tokens": 128,
+            "total_tokens": 787
+          }
+        },
+        "confidence": 98,
+        "is_suspicious": true,
+        "reason": "Grace Hopper (computer scientist, died 1992) could not have authored a 2020 paper. Topic (reinforcement learning) is anachronistic and irrelevant to Physical Review Letters. Not found in any database, no DOI, and page range/volume are implausible. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Hopper, Grace",
+        "journal": "Physical Review Letters",
+        "pages": "170--707",
+        "title": "Improving Reinforcement Learning Systems",
+        "volume": "596",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0079",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 657,
+            "output_tokens": 140,
+            "total_tokens": 797
+          }
+        },
+        "confidence": 98,
+        "is_suspicious": true,
+        "reason": "Edsger Dijkstra died in 2002 and never worked on computer vision; the paper is dated 2024, published posthumously, in Nature\u2014implausible. It is not found in CrossRef, OpenAlex, or Semantic Scholar, has no DOI, and the page range (146-905) is anomalous. All signs point to a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Dijkstra, Edsger",
+        "journal": "Nature",
+        "pages": "146--905",
+        "title": "Analysis of Computer Vision Techniques",
+        "volume": "485",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0080",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 660,
+            "output_tokens": 116,
+            "total_tokens": 776
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Fei-Fei Li is a computer vision researcher, not known for blockchain research; title mismatches her expertise; volume 970 is implausible for JMLR; not found in CrossRef, OpenAlex, or Semantic Scholar, indicating likely fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "396--520",
+        "title": "New Approaches to Blockchain",
+        "volume": "970",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0081",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 665,
+            "output_tokens": 153,
+            "total_tokens": 818
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Alan Turing died in 1954 and could not have authored a 2020 paper. The title is generic, the journal (The Lancet, a medical journal) doesn't match the AI safety topic, page numbers are nonsensical (90-876), and it's not found in CrossRef, OpenAlex, or Semantic Scholar. This is almost certainly a fabricated/hallucinated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Turing, Alan",
+        "journal": "The Lancet",
+        "pages": "90--876",
+        "title": "A Study of AI Safety",
+        "volume": "827",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0082",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 661,
+            "output_tokens": 154,
+            "total_tokens": 815
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar. Also, 'Physical Review Letters' is a physics journal, making it highly implausible for a paper titled 'Analysis of Reinforcement Learning Techniques' by an AI researcher (Stuart Russell). The volume/page numbers and topic-journal mismatch strongly suggest fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Stuart Russell",
+        "journal": "Physical Review Letters",
+        "pages": "368--649",
+        "title": "Analysis of Reinforcement Learning Techniques",
+        "volume": "806",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0083",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 652,
+            "output_tokens": 95,
+            "total_tokens": 747
+          }
+        },
+        "confidence": 92,
+        "is_suspicious": true,
+        "reason": "Generic title, implausible volume number for Nature, unusual page numbering, and not found in CrossRef, OpenAlex, or Semantic Scholar. No DOI. Strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Fei-Fei Li",
+        "journal": "Nature",
+        "pages": "24--922",
+        "title": "Improving Machine Learning Systems",
+        "volume": "976",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0084",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 663,
+            "output_tokens": 115,
+            "total_tokens": 778
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Generic title, implausible pairing of Andrew Ng with a Nature 'Overview of Data Science' article, unusual page numbering (55--778), and not found in CrossRef, OpenAlex, or Semantic Scholar. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Andrew Ng",
+        "journal": "Nature",
+        "pages": "55--778",
+        "title": "An Overview of Data Science",
+        "volume": "842",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0085",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 656,
+            "output_tokens": 131,
+            "total_tokens": 787
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Donald Knuth is a computer science figure with no known publications in The Lancet, a medical journal, on 'Computer Vision Techniques.' The pages field (189--893) is malformed, and the citation is not found in CrossRef, OpenAlex, or Semantic Scholar, strongly suggesting fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Knuth, Donald",
+        "journal": "The Lancet",
+        "pages": "189--893",
+        "title": "Analysis of Computer Vision Techniques",
+        "volume": "506",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0086",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 659,
+            "output_tokens": 109,
+            "total_tokens": 768
+          }
+        },
+        "confidence": 98,
+        "is_suspicious": true,
+        "reason": "Yann LeCun is a machine learning researcher with no known publications in chemistry; a blockchain paper by him in JACS is highly implausible. Not found in CrossRef, OpenAlex, or Semantic Scholar, indicating fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yann LeCun",
+        "journal": "Journal of the American Chemical Society",
+        "pages": "162--875",
+        "title": "Recent Advances in Blockchain",
+        "volume": "824",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0087",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 665,
+            "output_tokens": 118,
+            "total_tokens": 783
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar; generic title mismatched with Donald Knuth's actual research area (algorithms, not deep learning); implausible volume/page numbers for Science journal; no DOI. All indicators point to fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Knuth, Donald",
+        "journal": "Science",
+        "pages": "391--940",
+        "title": "An Overview of Deep Learning",
+        "volume": "740",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0088",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 663,
+            "output_tokens": 125,
+            "total_tokens": 788
+          }
+        },
+        "confidence": 96,
+        "is_suspicious": true,
+        "reason": "Peter Norvig is an AI researcher not known for publishing in Cell, a biology journal - this mismatch alone is a red flag. The generic title, lack of DOI, and absence from CrossRef, OpenAlex, and Semantic Scholar all strongly suggest this citation is fabricated."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Peter Norvig",
+        "journal": "Cell",
+        "pages": "382--935",
+        "title": "A Study of AI Safety",
+        "volume": "260",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0089",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 657,
+            "output_tokens": 170,
+            "total_tokens": 827
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Ian Goodfellow is known for deep learning/GANs research, not blockchain; the title mismatches his known work, the journal 'Artificial Intelligence' doesn't typically publish blockchain systems papers, volume 811 and pages 239-718 are implausible (extremely large page range), and the paper is not found in CrossRef, OpenAlex, or Semantic Scholar. This combination strongly suggests a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Ian Goodfellow",
+        "journal": "Artificial Intelligence",
+        "pages": "239--718",
+        "title": "Improving Blockchain Systems",
+        "volume": "811",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0090",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 661,
+            "output_tokens": 146,
+            "total_tokens": 807
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar. Also, 'Physical Review Letters' is an unlikely venue for a reinforcement learning paper by Hinton, volume 597 is implausibly high for PRL, and the page range (354-761) is nonsensical for a journal article. These are strong indicators of a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Geoffrey Hinton",
+        "journal": "Physical Review Letters",
+        "pages": "354--761",
+        "title": "Improving Reinforcement Learning Systems",
+        "volume": "597",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0091",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 670,
+            "output_tokens": 143,
+            "total_tokens": 813
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Yann LeCun (a deep learning researcher, not a quantum computing specialist) with a generic title 'A Study of Quantum Computing' not found in CrossRef, OpenAlex, or Semantic Scholar. Volume 191 and page range 361-760 (400 pages) are implausible for a CACM article. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yann LeCun",
+        "journal": "Communications of the ACM",
+        "pages": "361--760",
+        "title": "A Study of Quantum Computing",
+        "volume": "191",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0092",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 653,
+            "output_tokens": 123,
+            "total_tokens": 776
+          }
+        },
+        "confidence": 97,
+        "is_suspicious": true,
+        "reason": "Claude Shannon died in 2001 and could not have published in 2022. The topic (reinforcement learning) is anachronistic for Shannon, the paper is not found in any database, has no DOI, and the page range (349-620) is implausibly large for a journal article. This is almost certainly fabricated."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Shannon, Claude",
+        "journal": "Science",
+        "pages": "349--620",
+        "title": "Improving Reinforcement Learning Systems",
+        "volume": "256",
+        "year": "2022"
+      },
+      "issues": [],
+      "key": "frankenstein0093",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 658,
+            "output_tokens": 106,
+            "total_tokens": 764
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Generic title, implausible volume number (717) for CACM, invalid page range (265-662), not found in any database (CrossRef, OpenAlex, Semantic Scholar), and no DOI. These are strong indicators of a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yann LeCun",
+        "journal": "Communications of the ACM",
+        "pages": "265--662",
+        "title": "Analysis of Deep Learning Techniques",
+        "volume": "717",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0094",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 660,
+            "output_tokens": 150,
+            "total_tokens": 810
+          }
+        },
+        "confidence": 92,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar; no DOI. JMLR volume 402 doesn't match known volume numbering, and the title/topic (quantum computing) is unusual for Stuart Russell's known research area (AI/agents). Journal page range (224-508) is also implausibly large for a single article. Strong indicators of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Stuart Russell",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "224--508",
+        "title": "Improving Quantum Computing Systems",
+        "volume": "402",
+        "year": "2020"
+      },
+      "issues": [],
+      "key": "frankenstein0095",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 655,
+            "output_tokens": 122,
+            "total_tokens": 777
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Generic title, mismatched journal (Physical Review Letters is unusual for LeCun's neural network work), implausible volume/page numbers, and not found in CrossRef, OpenAlex, or Semantic Scholar. No DOI. This combination strongly suggests a fabricated citation."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yann LeCun",
+        "journal": "Physical Review Letters",
+        "pages": "21--510",
+        "title": "New Approaches to Neural Networks",
+        "volume": "222",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0096",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 655,
+            "output_tokens": 111,
+            "total_tokens": 766
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Not found in any database (CrossRef, OpenAlex, Semantic Scholar), no DOI, and has implausible metadata (volume 663 for Science, page range 104-630 spanning 526 pages, generic title) - strongly suggests fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Daphne Koller",
+        "journal": "Science",
+        "pages": "104--630",
+        "title": "Analysis of Reinforcement Learning Techniques",
+        "volume": "663",
+        "year": "2024"
+      },
+      "issues": [],
+      "key": "frankenstein0097",
+      "status": "suspicious",
+      "suspicion_reasons": [],
+      "type": "article",
+      "warnings": [
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 663,
+            "output_tokens": 108,
+            "total_tokens": 771
+          }
+        },
+        "confidence": 96,
+        "is_suspicious": true,
+        "reason": "Judea Pearl is known for causal inference/AI, not computer vision; the generic title, implausible page range (312-626), and absence from CrossRef, OpenAlex, and Semantic Scholar all strongly suggest this citation is fabricated."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Judea Pearl",
+        "journal": "Science",
+        "pages": "312--626",
+        "title": "A Study of Computer Vision",
+        "volume": "320",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0098",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 671,
+            "output_tokens": 111,
+            "total_tokens": 782
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Generic title, not found in CrossRef/OpenAlex/Semantic Scholar, implausible volume number (682) for JMLR, future year (2025), and page range spanning 375 pages is unrealistic for a single article. Strong signs of fabrication."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Judea Pearl",
+        "journal": "Journal of Machine Learning Research",
+        "pages": "249--623",
+        "title": "A Study of Data Science",
+        "volume": "682",
+        "year": "2025"
+      },
+      "issues": [],
+      "key": "frankenstein0099",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    },
+    {
+      "ai_analysis": {
+        "_metadata": {
+          "finish_reason": "end_turn",
+          "model": "claude-sonnet-5",
+          "provider": "anthropic",
+          "tokens": {
+            "input_tokens": 666,
+            "output_tokens": 125,
+            "total_tokens": 791
+          }
+        },
+        "confidence": 95,
+        "is_suspicious": true,
+        "reason": "Not found in CrossRef, OpenAlex, or Semantic Scholar; generic title pattern typical of hallucinations; implausible author-topic pairing (Bengio is a deep learning researcher, not quantum computing); page range 387-595 is unusually large for a journal article; no DOI found."
+      },
+      "doi_resolved": false,
+      "fields": {
+        "author": "Yoshua Bengio",
+        "journal": "Science",
+        "pages": "387--595",
+        "title": "A Study of Quantum Computing",
+        "volume": "849",
+        "year": "2021"
+      },
+      "issues": [],
+      "key": "frankenstein0100",
+      "status": "suspicious",
+      "suspicion_reasons": [
+        "Generic title pattern (common in hallucinations)"
+      ],
+      "type": "article",
+      "warnings": [
+        "Generic title pattern (common in hallucinations)",
+        "No DOI found and not in OpenAlex"
+      ]
+    }
+  ]
+}
