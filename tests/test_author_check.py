@@ -305,3 +305,66 @@ def test_author_string_with_no_latin_words_is_coverage_not_a_crash():
     for bib_author in ("张伟", "Иванов", "—", "123"):
         assert _check(bib_author, registry) == []
         assert _notes(bib_author, registry) == []
+
+
+# ── Wrong people on a resolving DOI: the composite score cannot report it ──
+
+def _overlap(bib_author, registry):
+    from citation_enhancements import EnhancedValidator
+    return EnhancedValidator.authors_overlap(bib_author, {"author": registry})
+
+
+def test_wholly_wrong_author_list_has_no_overlap():
+    """Found 2026-08-05 by probing the deployed Space.
+
+    A real DOI, a matching title and a matching year, carrying an author list
+    naming nobody who wrote the paper, was reported `valid` with no warning.
+    The composite similarity score sees it and cannot act: an unweighted mean
+    over title, year and author floors at 0.67 when two of three agree, and
+    the threshold that warns is 0.30.
+    """
+    assert _overlap("Smith, John and Doe, Jane",
+                    _authors(("Kaiming", "He"), ("Xiangyu", "Zhang"),
+                             ("Shaoqing", "Ren"), ("Jian", "Sun"))) is False
+
+
+def test_hyphenated_surnames_are_not_a_mismatch():
+    """All three false positives the token-based version produced.
+
+    Whole-name comparison; 'Matus-Vargas' is never split into tokens that
+    match nothing.
+    """
+    assert _overlap("Antonio Matus-Vargas and Gustavo Rodriguez-Gomez",
+                    _authors(("Antonio", "Matus-Vargas"),
+                             ("Gustavo", "Rodriguez-Gomez"))) is True
+    assert _overlap("Xuan Jing and Lap-Pui Chau",
+                    _authors(("Xuan", "Jing"), ("Lap-Pui", "Chau"))) is True
+    assert _overlap("Emmanuel Augustine Etukudoh and Ahmad Hamdan",
+                    _authors(("Emmanuel Augustine", "Etukudoh"),
+                             ("Ahmad", "Hamdan"))) is True
+
+
+def test_one_shared_author_is_enough():
+    """An abbreviated citation naming only the first author still overlaps."""
+    assert _overlap("He, Kaiming", _authors(("Kaiming", "He"), ("Jian", "Sun"))) is True
+
+
+def test_nothing_to_compare_returns_none_not_a_finding():
+    """Unverifiable is not wrong. Neither side naming people is coverage."""
+    assert _overlap("", _authors(("Kaiming", "He"))) is None
+    assert _overlap("Smith, John", {"author": []}) is None
+
+
+def test_corporate_registry_name_is_read():
+    """CrossRef stores some records with a corporate `name` and no given/family."""
+    assert _overlap("World Health Organization",
+                    [{"name": "World Health Organization"}]) is True
+
+
+def test_flattened_authors_key_is_read_off_the_doi_path():
+    """OpenAlex and Semantic Scholar arrive already flattened under `authors`."""
+    from citation_enhancements import EnhancedValidator
+    assert EnhancedValidator.authors_overlap(
+        "Smith, John", {"authors": ["Kaiming He", "Jian Sun"]}) is False
+    assert EnhancedValidator.authors_overlap(
+        "He, Kaiming", {"authors": ["Kaiming He", "Jian Sun"]}) is True

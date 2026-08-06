@@ -1077,7 +1077,34 @@ Respond with JSON: {{"is_suspicious": true/false, "confidence": 0-100, "reason":
                     result['suspicion_reasons'].append(f"Metadata similarity only {similarity:.2f}")
                     if result['status'] == 'valid':
                         result['status'] = 'warning'
-        
+
+            # The composite score above cannot report an author mismatch. It is
+            # an unweighted mean over title, year and author, so authors move it
+            # by at most a third: a correct title and year floor it at 0.67
+            # against a 0.30 threshold, and no author mismatch, however total,
+            # can reach the floor. A citation naming nobody who wrote the paper
+            # scored 0.67 and was reported valid, with no warning at all.
+            #
+            # So authors are reported in their own right, outside the gating
+            # above -- an arXiv DOI or a three-word title is a reason to
+            # distrust title similarity, not a reason to skip who wrote it.
+            #
+            # This says the citation credits the wrong people. It does not say
+            # the work is fabricated: the DOI resolved and the record exists.
+            # Where either side names nobody, authors_overlap returns None and
+            # nothing is reported -- unverifiable is not wrong.
+            overlap = EnhancedValidator.authors_overlap(
+                fields.get('author', ''), verified_metadata)
+            if overlap is False:
+                registered = EnhancedValidator.registry_author_names(verified_metadata)
+                shown = ', '.join(registered[:3]) + (', …' if len(registered) > 3 else '')
+                message = (f"No author named in the citation is among the "
+                           f"{len(registered)} registered for this record ({shown})")
+                result['warnings'].append(message)
+                result['suspicion_reasons'].append(message)
+                if result['status'] == 'valid':
+                    result['status'] = 'warning'
+
         # Publish what the databases actually returned. Any second opinion --
         # the AI pass here, or the one the web UI runs client-side -- must be
         # told that a DOI resolved, or it will reason from "not found anywhere"

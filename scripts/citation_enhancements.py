@@ -4,6 +4,7 @@ Improvements for detecting hallucinated citations
 """
 
 import re
+import unicodedata
 from datetime import datetime
 from typing import Dict, List, Tuple
 
@@ -93,6 +94,83 @@ class EnhancedValidator:
         return authors
     
     @staticmethod
+    def registry_author_names(verified_data: Dict) -> List[str]:
+        """Full author names from a registry record, whatever shape it arrived in.
+
+        CrossRef gives ``author`` as dicts of given/family, sometimes with a
+        corporate ``name`` instead. The OpenAlex and Semantic Scholar fallbacks
+        arrive already flattened under ``authors``. Reading both keys keeps the
+        comparison working off the DOI path instead of silently finding nothing.
+        """
+        raw = verified_data.get('author') or verified_data.get('authors') or []
+        if isinstance(raw, str):
+            return [part.strip() for part in re.split(r'\s+and\s+|,', raw) if part.strip()]
+        names = []
+        for author in raw if isinstance(raw, list) else []:
+            if isinstance(author, dict):
+                name = ' '.join(p for p in (author.get('given'), author.get('family')) if p).strip()
+                name = name or (author.get('name') or '').strip()
+            else:
+                name = str(author).strip()
+            if name:
+                names.append(name)
+        return names
+
+    @staticmethod
+    def _name_tokens(names) -> set:
+        """The comparable parts of a list of personal names.
+
+        Folds accents, drops punctuation, lowercases, and keeps parts of three
+        characters or more. Everything that differs between two spellings of
+        the same person collapses:
+
+          'Matthew M. Botvinick' and 'Matthew M Botvinick'  -> same set
+          'Luciano Floridi'      and 'Floridi Luciano'      -> same set
+          'Frank Rosenblatt'     and 'F. Rosenblatt'        -> share 'rosenblatt'
+          'T. J. M. Bench-Capon' and 'T.J.M. Bench-Capon'   -> same set
+
+        Periods after initials are a typesetting choice; CrossRef stores some
+        records surname-first; a hyphenated surname is one name written with a
+        hyphen. None of those are disagreements about who wrote the paper, and
+        a substring comparison of whole name strings called all four of them
+        mismatches -- 15 of 71 CiteAudit citations, every one correctly cited.
+
+        Parts under three characters are dropped: an initial cannot confirm or
+        contradict anything, and a two-letter surname collides with too much.
+        """
+        tokens = set()
+        for name in names:
+            folded = unicodedata.normalize('NFKD', str(name)).encode(
+                'ascii', 'ignore').decode('ascii').lower()
+            tokens.update(t for t in re.findall(r"[a-z']+", folded) if len(t) >= 3)
+        return tokens
+
+    @staticmethod
+    def authors_overlap(bib_author: str, verified_data: Dict):
+        """Does the citation name anyone the registry also names?
+
+        Returns True, False, or None when one side names nobody and there is
+        nothing to compare -- a gap in coverage, never a finding.
+
+        Names are compared as sets of normalised parts, not as whole strings.
+        Sharing any part counts as agreement: the point is to find citations
+        that name a wholly different set of people, and one shared name part
+        is enough to show the two lists are talking about the same work. The
+        cost is that a citation differing from the registry only in a given
+        name -- 'Yugandhar Balaji' for 'Yogesh Balaji' -- reads as agreement
+        here. That case belongs to the given-name check in citation_validator,
+        which compares the two spellings directly; this test exists for the
+        case that check cannot see, where nothing at all lines up.
+        """
+        cited = EnhancedValidator._name_tokens(
+            EnhancedValidator.extract_author_list(bib_author or ''))
+        registered = EnhancedValidator._name_tokens(
+            EnhancedValidator.registry_author_names(verified_data))
+        if not cited or not registered:
+            return None
+        return bool(cited & registered)
+
+    @staticmethod
     def calculate_metadata_similarity(bib_fields: Dict, verified_data: Dict) -> float:
         """Calculate similarity score between BibTeX and verified metadata."""
         score = 0.0
@@ -130,33 +208,14 @@ class EnhancedValidator:
             if ver_year and bib_year == ver_year:
                 score += 1.0
         
-        # Compare authors
-        if 'author' in bib_fields and 'author' in verified_data:
-            checks += 1
-            bib_authors = EnhancedValidator.extract_author_list(bib_fields['author'])
-            
-            # Verified authors might be in different format
-            ver_authors = []
-            if isinstance(verified_data['author'], list):
-                for author in verified_data['author']:
-                    if isinstance(author, dict):
-                        name = f"{author.get('given', '')} {author.get('family', '')}".strip()
-                        ver_authors.append(name)
-                    else:
-                        ver_authors.append(str(author))
-            
-            if bib_authors and ver_authors:
-                # Check for any overlapping author names
-                bib_names_lower = [a.lower() for a in bib_authors]
-                ver_names_lower = [a.lower() for a in ver_authors]
-                
-                overlap = any(
-                    any(b_name in v_name or v_name in b_name 
-                        for v_name in ver_names_lower)
-                    for b_name in bib_names_lower
-                )
+        # Compare authors. Shares its implementation with authors_overlap so the
+        # composite score and the standalone author check cannot drift apart.
+        if 'author' in bib_fields:
+            overlap = EnhancedValidator.authors_overlap(bib_fields['author'], verified_data)
+            if overlap is not None:
+                checks += 1
                 score += 1.0 if overlap else 0.0
-        
+
         return score / checks if checks > 0 else 0.0
     
     @staticmethod
