@@ -1096,14 +1096,28 @@ Respond with JSON: {{"is_suspicious": true/false, "confidence": 0-100, "reason":
             overlap = EnhancedValidator.authors_overlap(
                 fields.get('author', ''), verified_metadata)
             if overlap is False:
-                registered = EnhancedValidator.registry_author_names(verified_metadata)
-                shown = ', '.join(registered[:3]) + (', …' if len(registered) > 3 else '')
-                message = (f"No author named in the citation is among the "
-                           f"{len(registered)} registered for this record ({shown})")
-                result['warnings'].append(message)
-                result['suspicion_reasons'].append(message)
-                if result['status'] == 'valid':
-                    result['status'] = 'warning'
+                # Before saying the citation credits the wrong people, check it
+                # is naming people at all. A bibliography built by segmenting
+                # free-text references can leave the title in the author field,
+                # and "no author named here wrote this" is then both true and
+                # useless -- the field holds no authors to be wrong about.
+                if EnhancedValidator.author_field_holds_title(
+                        fields.get('author', ''), verified_metadata):
+                    message = ("The author field repeats this record's title; the "
+                               "citation appears to have been parsed into the wrong "
+                               "fields, so its authors could not be checked")
+                    result['warnings'].append(message)
+                    if result['status'] == 'valid':
+                        result['status'] = 'warning'
+                else:
+                    registered = EnhancedValidator.registry_author_names(verified_metadata)
+                    shown = ', '.join(registered[:3]) + (', …' if len(registered) > 3 else '')
+                    message = (f"No author named in the citation is among the "
+                               f"{len(registered)} registered for this record ({shown})")
+                    result['warnings'].append(message)
+                    result['suspicion_reasons'].append(message)
+                    if result['status'] == 'valid':
+                        result['status'] = 'warning'
 
         # Publish what the databases actually returned. Any second opinion --
         # the AI pass here, or the one the web UI runs client-side -- must be

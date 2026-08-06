@@ -171,6 +171,55 @@ class EnhancedValidator:
         return bool(cited & registered)
 
     @staticmethod
+    def _flatten_registry_title(verified_data: Dict) -> str:
+        """The record's title, whichever shape the registry returned it in."""
+        title = verified_data.get('title')
+        if isinstance(title, list):
+            title = title[0] if title else ''
+        return str(title or '')
+
+    @staticmethod
+    def _fold(text: str) -> str:
+        """Lowercase, drop accents and punctuation, collapse whitespace."""
+        folded = unicodedata.normalize('NFKD', str(text)).encode(
+            'ascii', 'ignore').decode('ascii').lower()
+        return ' '.join(re.findall(r"[a-z0-9']+", folded))
+
+    @staticmethod
+    def author_field_holds_title(bib_author: str, verified_data: Dict) -> bool:
+        """Is the citation's author field carrying the record's title?
+
+        Some bibliographies are built by segmenting free-text reference strings,
+        and the segmentation goes wrong. Two of the seventy-one CiteAudit
+        citations that resolve to a registry record have the title sitting in
+        the author field:
+
+          author = {Molecular Transformer}
+              -> record titled 'Molecular Transformer: A Model for Uncertainty-
+                 Calibrated Chemical Reaction Prediction', split at its colon
+
+          author = {Prediction of remaining useful life of aero-engines ...}
+              -> the whole record title, with the journal name left in `title`
+
+        Both cite the right work with the right DOI. Reporting them as crediting
+        the wrong people names the wrong defect: nobody is miscredited, because
+        the field holds no names at all.
+
+        The comparison is exact after folding, against the title and against the
+        segment before its first colon -- no similarity threshold to tune. A
+        fabricated author list does not accidentally equal the record's title.
+        """
+        author = EnhancedValidator._fold(bib_author)
+        if not author:
+            return False
+        title = EnhancedValidator._flatten_registry_title(verified_data)
+        if not title:
+            return False
+        candidates = {EnhancedValidator._fold(title),
+                      EnhancedValidator._fold(title.split(':')[0])}
+        return author in {c for c in candidates if c}
+
+    @staticmethod
     def calculate_metadata_similarity(bib_fields: Dict, verified_data: Dict) -> float:
         """Calculate similarity score between BibTeX and verified metadata."""
         score = 0.0

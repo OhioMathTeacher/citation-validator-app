@@ -368,3 +368,52 @@ def test_flattened_authors_key_is_read_off_the_doi_path():
         "Smith, John", {"authors": ["Kaiming He", "Jian Sun"]}) is False
     assert EnhancedValidator.authors_overlap(
         "He, Kaiming", {"authors": ["Kaiming He", "Jian Sun"]}) is True
+
+
+# ── The author field is not always holding authors ─────────────────────────
+
+def _holds_title(bib_author, registry):
+    from citation_enhancements import EnhancedValidator
+    return EnhancedValidator.author_field_holds_title(bib_author, registry)
+
+
+def test_title_split_at_its_colon_lands_in_the_author_field():
+    """citeaudit_rw_0832. The DOI and the work are correct.
+
+    CiteAudit built this entry by segmenting a free-text reference. The
+    record is titled 'Molecular Transformer: A Model for Uncertainty-
+    Calibrated Chemical Reaction Prediction'; the segmenter split it at the
+    colon and filed the first half as the author.
+    """
+    assert _holds_title("Molecular Transformer", {
+        "title": ["Molecular Transformer: A Model for Uncertainty-Calibrated "
+                  "Chemical Reaction Prediction"]}) is True
+
+
+def test_whole_title_lands_in_the_author_field():
+    """citeaudit_rw_2314, with the journal name left behind in `title`."""
+    assert _holds_title(
+        "Prediction of remaining useful life of aero-engines based on cnn-lstm-attention",
+        {"title": "Prediction of Remaining Useful Life of Aero-engines Based "
+                  "on CNN-LSTM-Attention"}) is True
+
+
+def test_a_real_author_list_is_not_mistaken_for_a_title():
+    """The guard must not reach citations whose author field holds names."""
+    assert _holds_title("Kaiming He and Jian Sun", {
+        "title": ["Deep Residual Learning for Image Recognition"]}) is False
+
+
+def test_guard_does_not_suppress_a_genuine_attribution_mismatch():
+    """citeaudit_rw_2001. Wrong people named; the field does hold names."""
+    assert _holds_title(
+        "Yuchen Han, Yohan Kim, Dalibor Petrovic, Alessandro Sette",
+        {"title": "AWOT and CWOT for genotype and genotype-by-treatment "
+                  "interaction joint analysis in pharmacogenetics"}) is False
+
+
+def test_nothing_to_compare_is_not_a_parse_problem():
+    """An empty field on either side is coverage, not a finding."""
+    assert _holds_title("", {"title": "Deep Residual Learning"}) is False
+    assert _holds_title("Kaiming He", {}) is False
+    assert _holds_title("Kaiming He", {"title": []}) is False
