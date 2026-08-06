@@ -1078,46 +1078,46 @@ Respond with JSON: {{"is_suspicious": true/false, "confidence": 0-100, "reason":
                     if result['status'] == 'valid':
                         result['status'] = 'warning'
 
-            # The composite score above cannot report an author mismatch. It is
-            # an unweighted mean over title, year and author, so authors move it
-            # by at most a third: a correct title and year floor it at 0.67
-            # against a 0.30 threshold, and no author mismatch, however total,
-            # can reach the floor. A citation naming nobody who wrote the paper
-            # scored 0.67 and was reported valid, with no warning at all.
+            # A citation can name a wholly different set of people from the ones
+            # the registry has on the record, and nothing here reports it. The
+            # composite score above cannot: it is an unweighted mean over title,
+            # year and author, so authors move it by at most a third, and a
+            # correct title and year floor it at 0.67 against a 0.30 threshold.
+            # A citation naming nobody who wrote the paper scored 0.67 and was
+            # reported valid, with no warning at all.
             #
-            # So authors are reported in their own right, outside the gating
-            # above -- an arXiv DOI or a three-word title is a reason to
-            # distrust title similarity, not a reason to skip who wrote it.
+            # That gap is left open deliberately. Four attempts to close it were
+            # measured against the 71 CiteAudit citations that resolve to a
+            # registry record and the 96 CrossRef citations in the real-citation
+            # corpus. None of them found a single fabricated author list that
+            # the title check had not already flagged at similarity <= 0.12, and
+            # each one accused correctly cited work: hyphenated surnames, then
+            # initials and surname-first records, then titles sitting in the
+            # author field, then organisations cited against a registry that
+            # names a person ('PKU-Yuan Lab and Tuzhan AI et al' for Zenodo's
+            # 'Bin Lin'). The pattern the check exists for does not appear in
+            # 3,356 real-world citations; the false positives appear every time.
             #
-            # This says the citation credits the wrong people. It does not say
-            # the work is fabricated: the DOI resolved and the record exists.
-            # Where either side names nobody, authors_overlap returns None and
-            # nothing is reported -- unverifiable is not wrong.
-            overlap = EnhancedValidator.authors_overlap(
-                fields.get('author', ''), verified_metadata)
-            if overlap is False:
-                # Before saying the citation credits the wrong people, check it
-                # is naming people at all. A bibliography built by segmenting
-                # free-text references can leave the title in the author field,
-                # and "no author named here wrote this" is then both true and
-                # useless -- the field holds no authors to be wrong about.
-                if EnhancedValidator.author_field_holds_title(
-                        fields.get('author', ''), verified_metadata):
-                    message = ("The author field repeats this record's title; the "
-                               "citation appears to have been parsed into the wrong "
-                               "fields, so its authors could not be checked")
-                    result['warnings'].append(message)
-                    if result['status'] == 'valid':
-                        result['status'] = 'warning'
-                else:
-                    registered = EnhancedValidator.registry_author_names(verified_metadata)
-                    shown = ', '.join(registered[:3]) + (', …' if len(registered) > 3 else '')
-                    message = (f"No author named in the citation is among the "
-                               f"{len(registered)} registered for this record ({shown})")
-                    result['warnings'].append(message)
-                    result['suspicion_reasons'].append(message)
-                    if result['status'] == 'valid':
-                        result['status'] = 'warning'
+            # A deterministic false positive is not a local cost. suspicion_reasons
+            # is handed to analyze_with_ai below, so a wrong finding here becomes
+            # a reason the AI tier is told to distrust a citation we just
+            # confirmed. The tier whose value is a 0.4% false-positive rate does
+            # not get to spend it on a check that measured no true positives.
+            #
+            # What the attempts did surface is real, and is reported. Where the
+            # author field holds the record's own title, the bibliography was
+            # segmented wrong -- and that is worth saying plainly rather than as
+            # an accusation about who wrote the paper. It is a warning, never a
+            # suspicion_reason: a mis-parsed field says nothing about whether
+            # the work exists, and the AI tier must not be told otherwise.
+            if EnhancedValidator.author_field_holds_title(
+                    fields.get('author', ''), verified_metadata):
+                message = ("The author field repeats this record's title; the "
+                           "citation appears to have been parsed into the wrong "
+                           "fields, so its authors could not be checked")
+                result['warnings'].append(message)
+                if result['status'] == 'valid':
+                    result['status'] = 'warning'
 
         # Publish what the databases actually returned. Any second opinion --
         # the AI pass here, or the one the web UI runs client-side -- must be
