@@ -498,6 +498,47 @@ class CitationValidator:
             previous = current
         return 1.0 - previous[-1] / max(len(a), len(b))
 
+    def _spelled_out_people(self, bib_author: str) -> List[Tuple[str, str]]:
+        """Names in the citation that resolve to a given name AND a surname.
+
+        Returns folded, lower-cased ``(given, family)`` pairs. Used only to
+        decide whether an author field names people at all: a corporate or
+        parsing-artifact field ("Molecular Transformer", "PKU-Yuan Lab and
+        Tuzhan AI et al") does not yield two of these, while a fabricated
+        author list does.
+
+        Initials are not spelled-out names -- 'J. Smith' says nothing this
+        method can act on -- so a part must be three characters or longer to
+        count. Segments carrying an 'et al' are skipped: the citation is
+        declining to name the rest, not naming someone.
+        """
+        # BibTeX separates people with ' and '; a comma inside a segment
+        # inverts one name. Bibliographies pasted from a PDF often use commas
+        # for both, so fall back to comma-splitting when there is no ' and '.
+        text = bib_author.strip()
+        segments = re.split(r'\s+and\s+', text, flags=re.IGNORECASE) \
+            if re.search(r'\s+and\s+', text, re.IGNORECASE) else text.split(',')
+
+        people: List[Tuple[str, str]] = []
+        for segment in segments:
+            segment = segment.strip().strip(',').strip()
+            if not segment or re.search(r'\bet\s+al\b', segment, re.IGNORECASE):
+                continue
+            if ',' in segment:
+                family_text, _, given_text = segment.partition(',')
+            else:
+                parts = segment.split()
+                if len(parts) < 2:
+                    continue
+                family_text, given_text = parts[-1], ' '.join(parts[:-1])
+            family = [t for t in re.findall(
+                r"[a-z']+", self._fold_accents(family_text).lower()) if len(t) >= 3]
+            given = [t for t in re.findall(
+                r"[a-z']+", self._fold_accents(given_text).lower()) if len(t) >= 3]
+            if family and given:
+                people.append((given[0], family[-1]))
+        return people
+
     def _check_authors_against_registry(self, bib_author: str,
                                         registry_authors: List[Dict]
                                         ) -> Tuple[List[str], List[str]]:
@@ -684,6 +725,33 @@ class CitationValidator:
                     f"Citation credits '{candidate.title()} {surname}', but no author of "
                     f"this work is named that (registry: "
                     f"{', '.join(f'{g} {surname}' for g in known)})")
+
+        # Every check above needs the citation and the registry to share at
+        # least one surname: the first-author check requires `others_present`,
+        # and the given-name scan only ever looks at surnames already in
+        # `registry_surnames`. So the checks are quietest when the mismatch is
+        # total -- one wrong name among four right ones is reported, four wrong
+        # names out of four is not. That is backwards, and it is how a real DOI
+        # comes to be wearing an author list belonging to nobody on the paper.
+        #
+        # The reason the corroboration rule exists is that a zero-overlap author
+        # field is usually not a different set of people but a parsing artifact
+        # -- "Molecular Transformer", "PKU-Yuan Lab and Tuzhan AI et al". Those
+        # do not resolve into two people each having a spelled-out given name
+        # and a spelled-out surname, so requiring two such names separates the
+        # cases without having to judge whether a string looks like a person.
+        if not any(surname in tokens for surname in registry_surnames) \
+                and len(registry_surnames) >= 2:
+            named = self._spelled_out_people(bib_author)
+            if len(named) >= 2:
+                shown = ', '.join(f"{g.title()} {f.title()}" for g, f in named[:3])
+                registered = ', '.join(
+                    f"{(a.get('given') or '').strip()} {(a.get('family') or '').strip()}".strip()
+                    for a in registry_authors[:3])
+                warnings.append(
+                    f"Citation credits {shown}, but no author of this work is named "
+                    f"in it at all (registry: {registered}"
+                    f"{', …' if len(registry_authors) > 3 else ''})")
 
         # 'et al' hides the rest of the list. Say how much of it went unchecked.
         if re.search(r'\bet\s+al\b', haystack):

@@ -305,3 +305,62 @@ def test_author_string_with_no_latin_words_is_coverage_not_a_crash():
     for bib_author in ("张伟", "Иванов", "—", "123"):
         assert _check(bib_author, registry) == []
         assert _notes(bib_author, registry) == []
+
+
+# ── Zero overlap: the case every check above was blind to ──────────────────
+
+def test_borrowed_doi_with_a_wholly_different_author_list_is_caught():
+    """Found 2026-08-05 by probing the deployed Space, not by the suite.
+
+    A real DOI whose title matches, carrying an author list sharing nothing
+    with the registry, was reported `valid` with no warning at all. Every
+    other positive case in this file shares at least one surname with the
+    registry -- the first-author check needs `others_present`, and the
+    given-name scan only inspects surnames already in `registry_surnames`.
+    So the checks were quietest when the mismatch was total.
+    """
+    warnings = _check("Smith, John and Doe, Jane",
+                      _authors(("Kaiming", "He"), ("Xiangyu", "Zhang"),
+                               ("Shaoqing", "Ren"), ("Jian", "Sun")))
+    assert len(warnings) == 1
+    assert "no author of this work is named in it at all" in warnings[0]
+
+
+def test_comma_separated_wrong_people_are_caught_too():
+    """Bibliographies pasted out of a PDF separate people with commas."""
+    assert _check("Hieu Pham, Qin Yang",
+                  _authors(("Kaiming", "He"), ("Jian", "Sun"))) != []
+
+
+# ── Zero overlap that must stay silent: not people, or not enough of them ──
+
+def test_corporate_author_field_is_not_an_accusation():
+    """'Molecular Transformer' names no one; it is a parsing artifact."""
+    registry = _authors(("Kaiming", "He"), ("Jian", "Sun"))
+    assert _check("Molecular Transformer", registry) == []
+
+
+def test_lab_style_author_field_is_not_an_accusation():
+    registry = _authors(("Kaiming", "He"), ("Jian", "Sun"))
+    assert _check("PKU-Yuan Lab and Tuzhan AI et al", registry) == []
+
+
+def test_one_wrong_name_alone_is_not_enough_to_convict():
+    """A single unrecognised name is a variant or a transliteration.
+
+    The same restraint the given-name check applies: one is a naming
+    convention, two is a different set of people.
+    """
+    registry = _authors(("Kaiming", "He"), ("Jian", "Sun"))
+    assert _check("Smith, John", registry) == []
+
+
+def test_initials_only_citation_is_not_convicted():
+    """'J. Smith and A. Doe' spells out no given name to judge."""
+    registry = _authors(("Kaiming", "He"), ("Jian", "Sun"))
+    assert _check("J. Smith and A. Doe", registry) == []
+
+
+def test_single_author_registry_is_left_alone():
+    """Nothing corroborates on a single-author work -- the documented trade."""
+    assert _check("Smith, John and Doe, Jane", _authors(("Kaiming", "He"))) == []
