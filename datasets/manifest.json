@@ -6,7 +6,11 @@
     "description": "285 real citations extracted from two 2024 arXiv CS papers. Ground truth: all VALID.",
     "citation_count": 285,
     "ground_truth": "valid",
-    "tags": ["real", "arxiv", "cs"],
+    "tags": [
+      "real",
+      "arxiv",
+      "cs"
+    ],
     "bib_files": [
       "test_citations/real_citations/arxiv_cs_2024/arxiv_2604.05875.bib",
       "test_citations/real_citations/arxiv_cs_2024/arxiv_2604.05952.bib"
@@ -20,7 +24,11 @@
     "description": "100 real citations from CrossRef random API sample across disciplines. Ground truth: all VALID.",
     "citation_count": 100,
     "ground_truth": "valid",
-    "tags": ["real", "crossref", "multidisciplinary"],
+    "tags": [
+      "real",
+      "crossref",
+      "multidisciplinary"
+    ],
     "bib_files": [
       "test_citations/real_citations/crossref_random/crossref_sample_0001.bib",
       "test_citations/real_citations/crossref_random/crossref_sample_0002.bib"
@@ -35,7 +43,11 @@
     "citation_count": 100,
     "ground_truth": "invalid",
     "fabrication_type": "frankenstein",
-    "tags": ["fake", "frankenstein", "synthetic"],
+    "tags": [
+      "fake",
+      "frankenstein",
+      "synthetic"
+    ],
     "bib_files": [
       "test_citations/false_negative_tests/frankenstein/frankenstein_0001.bib",
       "test_citations/false_negative_tests/frankenstein/frankenstein_0002.bib"
@@ -50,7 +62,11 @@
     "citation_count": 100,
     "ground_truth": "invalid",
     "fabrication_type": "stolen_doi",
-    "tags": ["fake", "stolen_doi", "synthetic"],
+    "tags": [
+      "fake",
+      "stolen_doi",
+      "synthetic"
+    ],
     "bib_files": [
       "test_citations/false_negative_tests/stolen_doi/stolen_doi_0001.bib",
       "test_citations/false_negative_tests/stolen_doi/stolen_doi_0002.bib"
@@ -65,7 +81,11 @@
     "citation_count": 100,
     "ground_truth": "invalid",
     "fabrication_type": "plausible",
-    "tags": ["fake", "plausible", "synthetic"],
+    "tags": [
+      "fake",
+      "plausible",
+      "synthetic"
+    ],
     "bib_files": [
       "test_citations/false_negative_tests/plausible/plausible_0001.bib",
       "test_citations/false_negative_tests/plausible/plausible_0002.bib"
@@ -80,7 +100,11 @@
     "citation_count": 100,
     "ground_truth": "invalid",
     "fabrication_type": "nonsense",
-    "tags": ["fake", "nonsense", "synthetic"],
+    "tags": [
+      "fake",
+      "nonsense",
+      "synthetic"
+    ],
     "bib_files": [
       "test_citations/false_negative_tests/nonsense/nonsense_0001.bib",
       "test_citations/false_negative_tests/nonsense/nonsense_0002.bib"
@@ -94,8 +118,14 @@
     "description": "10 references cited by the Nature article that inspired this tool. Tests validator on real but sparse metadata.",
     "citation_count": 10,
     "ground_truth": "valid",
-    "tags": ["real", "nature", "sparse"],
-    "bib_files": ["datasets/nature-article/refs.bib"],
+    "tags": [
+      "real",
+      "nature",
+      "sparse"
+    ],
+    "bib_files": [
+      "datasets/nature-article/refs.bib"
+    ],
     "metadata_file": "datasets/nature-article/metadata.json"
   },
   {
@@ -106,8 +136,16 @@
     "citation_count": 1,
     "ground_truth": "invalid",
     "fabrication_type": "frankenstein",
-    "tags": ["fake", "frankenstein", "nature", "gpt4o", "mental-health"],
-    "bib_files": ["datasets/nature-article-examples/frankenstein_examples.bib"],
+    "tags": [
+      "fake",
+      "frankenstein",
+      "nature",
+      "gpt4o",
+      "mental-health"
+    ],
+    "bib_files": [
+      "datasets/nature-article-examples/frankenstein_examples.bib"
+    ],
     "metadata_file": "datasets/nature-article-examples/metadata.json"
   },
   {
@@ -118,67 +156,20 @@
     "description": "ansari100 seed subset from the public GPTZero NeurIPS table referenced by Ansari (2026): 100 verified hallucination examples with per-row provenance.",
     "citation_count": 100,
     "ground_truth": "invalid",
-    "tags": ["fake", "neurips", "real-world", "taxonomy"],
-    "bib_files": ["datasets/compound-deception-ansari/ansari100.bib"],
+    "tags": [
+      "fake",
+      "neurips",
+      "real-world",
+      "taxonomy"
+    ],
+    "bib_files": [
+      "datasets/compound-deception-ansari/ansari100.bib"
+    ],
     "metadata_file": "datasets/compound-deception-ansari/metadata.json",
-    "status": "seed",
-    "source_url": "https://arxiv.org/abs/2602.05930"
-  },
-  {
-    "id": "hallucitation-sakai",
-    "name": "HalluCitation — ACL/NAACL/EMNLP Fakes",
-    "authors": "Sakai, Kamigaito & Watanabe (2026)",
-    "arxiv": "2601.18724",
-    "description": "~300 papers with hallucinated references from ACL, NAACL, and EMNLP 2024-2025. Appendix B lists specific papers.",
-    "citation_count": 300,
-    "ground_truth": "invalid",
-    "tags": ["fake", "nlp", "real-world"],
-    "bib_files": null,
-    "metadata_file": null,
-    "status": "pending",
-    "source_url": "https://arxiv.org/abs/2601.18724"
-  },
-  {
-    "id": "bibtex-hallucinations-rao",
-    "name": "BibTeX Hallucinations Benchmark",
-    "authors": "Rao & Callison-Burch (2026)",
-    "arxiv": "2604.03159",
-    "description": "931-paper benchmark across 4 domains with ~23,000 field-level observations. Only 50.9% of LLM BibTeX fully correct.",
-    "citation_count": 931,
-    "ground_truth": "mixed",
-    "tags": ["benchmark", "field-level", "multi-domain"],
-    "bib_files": null,
-    "metadata_file": null,
-    "status": "pending",
-    "source_url": "https://arxiv.org/abs/2604.03159"
-  },
-  {
-    "id": "ghostcite-real-corpus",
-    "name": "GhostCite — Real Paper Citations",
-    "authors": "Xu, Qiu, Sun, Miao, Wu, Wang, Li, Lu, Zhang, Hu, Li, Luo, Zhang, Luo, Liu, Li & Liu (2026)",
-    "arxiv": "2602.06718",
-    "description": "Sample from 2.2M real citations in 56,381 papers (2020-2025). Large-scale false-positive baseline.",
-    "citation_count": 500,
-    "ground_truth": "valid",
-    "tags": ["real", "large-scale", "multi-domain"],
-    "bib_files": null,
-    "metadata_file": null,
-    "status": "pending",
-    "source_url": "https://arxiv.org/abs/2602.06718"
-  },
-  {
-    "id": "mysterious-citations-bienz",
-    "name": "Mysterious Citations — HPC Conferences",
-    "authors": "Bienz, Pearson & Garcia de Gonzalo (2026)",
-    "arxiv": "2602.05867",
-    "description": "Citations from 4 HPC conferences comparing 2021 vs 2025. Source of Nature's 2-6% headline figure.",
-    "citation_count": null,
-    "ground_truth": "mixed",
-    "tags": ["real-world", "hpc", "longitudinal"],
-    "bib_files": null,
-    "metadata_file": null,
-    "status": "pending",
-    "source_url": "https://arxiv.org/abs/2602.05867"
+    "status": "external",
+    "source_url": "https://arxiv.org/abs/2602.05930",
+    "data_owner": "GPTZero / Ansari",
+    "redistributed": false
   },
   {
     "id": "citeaudit-benchmark",
@@ -188,12 +179,21 @@
     "description": "9,442 citations (6,475 real + 2,967 fake) with human-validated labels. Multi-domain (ML, biology, chemistry). First open standardized benchmark for hallucinated citation detection.",
     "citation_count": 9442,
     "ground_truth": "mixed",
-    "tags": ["benchmark", "human-validated", "multi-domain", "large-scale"],
-    "bib_files": ["datasets/citeaudit-benchmark/citeaudit-benchmark.bib"],
+    "tags": [
+      "benchmark",
+      "human-validated",
+      "multi-domain",
+      "large-scale"
+    ],
+    "bib_files": [
+      "datasets/citeaudit-benchmark/citeaudit-benchmark.bib"
+    ],
     "metadata_file": "datasets/citeaudit-benchmark/metadata.json",
-    "status": "active",
+    "status": "external",
     "source_url": "https://arxiv.org/abs/2602.23452",
-    "web_app": "https://www.checkcitation.com"
+    "web_app": "https://www.checkcitation.com",
+    "data_owner": "Shi et al.",
+    "redistributed": false
   },
   {
     "id": "citeaudit-realworld",
@@ -203,11 +203,21 @@
     "description": "3,356 citations (2,889 real + 467 fake) — the independently-sourced 'realworld' group of the CiteAudit benchmark. External validation set for the OJSM citation paper.",
     "citation_count": 3356,
     "ground_truth": "mixed",
-    "tags": ["benchmark", "external", "human-validated", "citeaudit", "realworld"],
-    "bib_files": ["datasets/citeaudit-realworld/citeaudit-realworld.bib"],
+    "tags": [
+      "benchmark",
+      "external",
+      "human-validated",
+      "citeaudit",
+      "realworld"
+    ],
+    "bib_files": [
+      "datasets/citeaudit-realworld/citeaudit-realworld.bib"
+    ],
     "metadata_file": "datasets/citeaudit-realworld/metadata.json",
-    "status": "active",
-    "source_url": "https://arxiv.org/abs/2602.23452"
+    "status": "external",
+    "source_url": "https://arxiv.org/abs/2602.23452",
+    "data_owner": "Shi et al.",
+    "redistributed": false
   },
   {
     "id": "citeaudit-realworld-subset",
@@ -217,10 +227,21 @@
     "description": "500-citation balanced random subset (250 real + 250 fake, seed 42) of the CiteAudit realworld group. Sized for the AI tier under Gemini's free-tier daily token budget.",
     "citation_count": 500,
     "ground_truth": "mixed",
-    "tags": ["benchmark", "external", "human-validated", "citeaudit", "realworld", "subset"],
-    "bib_files": ["datasets/citeaudit-realworld-subset/citeaudit-realworld-subset.bib"],
+    "tags": [
+      "benchmark",
+      "external",
+      "human-validated",
+      "citeaudit",
+      "realworld",
+      "subset"
+    ],
+    "bib_files": [
+      "datasets/citeaudit-realworld-subset/citeaudit-realworld-subset.bib"
+    ],
     "metadata_file": "datasets/citeaudit-realworld-subset/metadata.json",
-    "status": "active",
-    "source_url": "https://arxiv.org/abs/2602.23452"
+    "status": "external",
+    "source_url": "https://arxiv.org/abs/2602.23452",
+    "data_owner": "Shi et al.",
+    "redistributed": false
   }
 ]

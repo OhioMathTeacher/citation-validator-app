@@ -1,6 +1,89 @@
 # Deployment Guide: Citation Validator Web App
 
-## 🚀 Quick Deployment Options
+## The live deployment: Hugging Face Spaces
+
+**This is the one that is actually running.** The public demo the papers and the
+Code4Lib proposal link to is <https://huggingface.co/spaces/ojsm/citation-validator>.
+Everything below this section is an alternative that has been tried or could be
+used; none of it is what serves the live app.
+
+### It is a separate repository
+
+The Space is its own git repo. **Pushing this repository to GitHub does not
+update it.**
+
+```bash
+# Clone once, alongside this repo
+git clone git@hf.co:spaces/ojsm/citation-validator ~/Repos/citation-validator-space
+```
+
+| | Repository |
+|---|---|
+| Development | `github.com/OhioMathTeacher/citation-validator-app` |
+| Live Space | `hf.co:spaces/ojsm/citation-validator` (local clone: `~/Repos/citation-validator-space`) |
+
+That separation is the single most important fact here. On 2026-08-05 the Space
+was found running a full version behind — it still had author-matching defects
+the paper describes fixing, including a crash on non-Latin author names —
+because everyone assumed a GitHub push deployed it.
+
+### How to sync a change
+
+Copy only the files that changed, commit in the Space repo, push:
+
+```bash
+cd ~/Repos/citation-validator-space
+cp ~/Repos/citation-validator-app/scripts/citation_validator.py    scripts/
+cp ~/Repos/citation-validator-app/scripts/citation_enhancements.py scripts/
+git add scripts/ && git commit -m "Sync <what> to the Space" && git push origin main
+```
+
+**Never copy these from the app repo:**
+
+| File | Why |
+|---|---|
+| `README.md` | Carries the Space's YAML frontmatter — the SDK, port and title Hugging Face reads. Overwriting it put the Space in `CONFIG_ERROR` for ~12 minutes on 2026-08-05. |
+| `Dockerfile` | The Space's build differs from local. |
+| `datasets/manifest.json` | The Space ships without the gitignored third-party data; see `datasets/README.md`. |
+
+Before pushing, confirm nothing else drifted:
+
+```bash
+cd ~/Repos/citation-validator-space
+for f in $(git ls-files scripts/ web/ | grep -v __pycache__); do
+  diff -q "$f" "$HOME/Repos/citation-validator-app/$f" >/dev/null 2>&1 || echo "DIFFERS: $f"
+done
+```
+
+### Confirm it came back up
+
+A push triggers a rebuild. It is not deployed until the stage reads `RUNNING` —
+`BUILD_ERROR`, `RUNTIME_ERROR` and `CONFIG_ERROR` are all silent in the git
+output, so check explicitly rather than assuming the push was the last step:
+
+```bash
+curl -s https://huggingface.co/api/spaces/ojsm/citation-validator \
+  | python3 -c "import sys,json;print(json.load(sys.stdin)['runtime']['stage'])"
+```
+
+Expect `RUNNING_BUILDING` → `RUNNING_APP_STARTING` → `RUNNING`, usually under
+two minutes. If it stops at `CONFIG_ERROR`, `README.md` is the first thing to
+check.
+
+### Rolling back
+
+The Space is a normal git repo, so a bad deploy reverts like any other:
+
+```bash
+cd ~/Repos/citation-validator-space
+git revert <sha> && git push origin main   # then re-check the stage above
+```
+
+---
+
+## 🚀 Other deployment options
+
+*The following are alternatives, not the live deployment. See above.*
 
 ### Option 1: Heroku (Easiest - Free Tier)
 

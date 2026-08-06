@@ -717,6 +717,8 @@
         .bench-card:hover { border-color: var(--primary); }
 
         .bench-card.pending { opacity: 0.55; }
+        /* Not "coming soon" -- this data exists and belongs to someone else. */
+        .bench-card.external { opacity: 0.78; border-style: dashed; }
 
         .bench-card input[type="checkbox"] {
             margin-top: 3px;
@@ -763,6 +765,7 @@
         .bench-tag.tag-fake { background: #fde8e8; color: #be2f2f; }
         .bench-tag.tag-real { background: #e6f4ea; color: #138a42; }
         .bench-tag.tag-pending { background: #fff3e0; color: #8a5b00; }
+        .bench-tag.tag-external { background: #e8eefc; color: #2a4b8d; }
 
         .bench-actions {
             display: flex;
@@ -2228,23 +2231,24 @@ Respond with JSON only:
         }
 
         function getEmbeddedManifest() {
-            // Fallback manifest for when fetch isn't available (file:// protocol).
-            // Mirrors datasets/manifest.json — keep in sync.
+            // Fallback manifest for when fetch is unavailable (file:// protocol).
+            // GENERATED from datasets/manifest.json -- do not hand-edit. This list
+            // drifted from the manifest once already: it carried CiteAudit under the
+            // wrong authors, marked it pending when the manifest had it active, and
+            // omitted two of its three cuts entirely.
             return [
-                { id: "ojsm-real-arxiv", name: "Real arXiv CS Citations (2024)", authors: "OJSM Test Suite", description: "285 real citations from two 2024 arXiv CS papers.", citation_count: 285, ground_truth: "valid", tags: ["real", "arxiv", "cs"], bib_files: ["test_citations/real_citations/arxiv_cs_2024/arxiv_2604.05875.bib", "test_citations/real_citations/arxiv_cs_2024/arxiv_2604.05952.bib"] },
-                { id: "ojsm-real-crossref", name: "Real CrossRef Random Sample", authors: "OJSM Test Suite", description: "100 real citations from CrossRef random API sample.", citation_count: 100, ground_truth: "valid", tags: ["real", "crossref", "multidisciplinary"], bib_files: ["test_citations/real_citations/crossref_random/crossref_sample_0001.bib", "test_citations/real_citations/crossref_random/crossref_sample_0002.bib"] },
-                { id: "ojsm-fake-frankenstein", name: "Frankenstein Citations", authors: "OJSM Test Suite", description: "100 synthetic fakes: real author + real journal + fabricated title.", citation_count: 100, ground_truth: "invalid", fabrication_type: "frankenstein", tags: ["fake", "frankenstein", "synthetic"], bib_files: ["test_citations/false_negative_tests/frankenstein/frankenstein_0001.bib", "test_citations/false_negative_tests/frankenstein/frankenstein_0002.bib"] },
-                { id: "ojsm-fake-stolen-doi", name: "Stolen DOI Citations", authors: "OJSM Test Suite", description: "100 synthetic fakes: real DOI + completely wrong metadata.", citation_count: 100, ground_truth: "invalid", fabrication_type: "stolen_doi", tags: ["fake", "stolen_doi", "synthetic"], bib_files: ["test_citations/false_negative_tests/stolen_doi/stolen_doi_0001.bib", "test_citations/false_negative_tests/stolen_doi/stolen_doi_0002.bib"] },
-                { id: "ojsm-fake-plausible", name: "Plausible Fake Citations", authors: "OJSM Test Suite", description: "100 synthetic fakes: entirely fabricated but realistic-looking.", citation_count: 100, ground_truth: "invalid", fabrication_type: "plausible", tags: ["fake", "plausible", "synthetic"], bib_files: ["test_citations/false_negative_tests/plausible/plausible_0001.bib", "test_citations/false_negative_tests/plausible/plausible_0002.bib"] },
-                { id: "ojsm-fake-nonsense", name: "Nonsense Citations", authors: "OJSM Test Suite", description: "100 synthetic fakes: obviously wrong (future years, fake DOIs).", citation_count: 100, ground_truth: "invalid", fabrication_type: "nonsense", tags: ["fake", "nonsense", "synthetic"], bib_files: ["test_citations/false_negative_tests/nonsense/nonsense_0001.bib", "test_citations/false_negative_tests/nonsense/nonsense_0002.bib"] },
-                { id: "nature-article-refs", name: "Nature Article References", authors: "Nature (April 2026)", description: "10 references cited by the Nature article. Tests sparse metadata handling.", citation_count: 10, ground_truth: "valid", tags: ["real", "nature", "sparse"], bib_files: ["datasets/nature-article/refs.bib"], metadata_file: "datasets/nature-article/metadata.json" },
-                { id: "nature-frankenstein-examples", name: "Nature — Frankenstein Examples", authors: "Linardon et al. (2025) via Nature", description: "GPT-4o fabricated citation from Nature article. Real author + real journal + fake paper.", citation_count: 1, ground_truth: "invalid", fabrication_type: "frankenstein", tags: ["fake", "frankenstein", "nature", "gpt4o"], bib_files: ["datasets/nature-article-examples/frankenstein_examples.bib"], metadata_file: "datasets/nature-article-examples/metadata.json" },
-                { id: "compound-deception-ansari", name: "Compound Deception — NeurIPS 2025", authors: "Ansari (2026)", arxiv: "2602.05930", description: "ansari100 seed subset: 100 hallucination examples from the public GPTZero table referenced by Ansari (2026).", citation_count: 100, ground_truth: "invalid", tags: ["fake", "neurips", "real-world", "taxonomy"], bib_files: ["datasets/compound-deception-ansari/ansari100.bib"], metadata_file: "datasets/compound-deception-ansari/metadata.json", status: "seed", source_url: "https://arxiv.org/abs/2602.05930" },
-                { id: "hallucitation-sakai", name: "HalluCitation — ACL/NAACL/EMNLP", authors: "Sakai et al. (2026)", arxiv: "2601.18724", description: "~300 papers with hallucinated references from NLP conferences.", citation_count: 300, ground_truth: "invalid", tags: ["fake", "nlp", "real-world"], status: "pending", source_url: "https://arxiv.org/abs/2601.18724" },
-                { id: "bibtex-hallucinations-rao", name: "BibTeX Hallucinations Benchmark", authors: "Rao & Callison-Burch (2026)", arxiv: "2604.03159", description: "931-paper benchmark with ~23K field-level observations.", citation_count: 931, ground_truth: "mixed", tags: ["benchmark", "field-level", "multi-domain"], status: "pending", source_url: "https://arxiv.org/abs/2604.03159" },
-                { id: "ghostcite-real-corpus", name: "GhostCite — Real Paper Citations", authors: "Xu et al. (2026)", arxiv: "2602.06718", description: "Sample from 2.2M real citations (2020-2025).", citation_count: 500, ground_truth: "valid", tags: ["real", "large-scale"], status: "pending", source_url: "https://arxiv.org/abs/2602.06718" },
-                { id: "mysterious-citations-bienz", name: "Mysterious Citations — HPC", authors: "Bienz et al. (2026)", arxiv: "2602.05867", description: "HPC conference citations 2021 vs 2025. Source of Nature's 2-6%.", citation_count: null, ground_truth: "mixed", tags: ["real-world", "hpc"], status: "pending", source_url: "https://arxiv.org/abs/2602.05867" },
-                { id: "citeaudit-benchmark", name: "CiteAudit — Human-Validated Benchmark", authors: "Yuan et al. (2026)", arxiv: "2602.23452", description: "9,442 citations (6,475 real + 2,967 fake) with human-validated labels. Multi-domain.", citation_count: 9442, ground_truth: "mixed", tags: ["benchmark", "human-validated", "multi-domain", "large-scale"], status: "pending", source_url: "https://arxiv.org/abs/2602.23452" }
+                { id: "ojsm-real-arxiv", name: "Real arXiv CS Citations (2024)", authors: "OJSM Test Suite", description: "285 real citations extracted from two 2024 arXiv CS papers. Ground truth: all VALID.", citation_count: 285, ground_truth: "valid", tags: ["real", "arxiv", "cs"], bib_files: ["test_citations/real_citations/arxiv_cs_2024/arxiv_2604.05875.bib", "test_citations/real_citations/arxiv_cs_2024/arxiv_2604.05952.bib"] },
+                { id: "ojsm-real-crossref", name: "Real CrossRef Random Sample", authors: "OJSM Test Suite", description: "100 real citations from CrossRef random API sample across disciplines. Ground truth: all VALID.", citation_count: 100, ground_truth: "valid", tags: ["real", "crossref", "multidisciplinary"], bib_files: ["test_citations/real_citations/crossref_random/crossref_sample_0001.bib", "test_citations/real_citations/crossref_random/crossref_sample_0002.bib"] },
+                { id: "ojsm-fake-frankenstein", name: "Frankenstein Citations", authors: "OJSM Test Suite", description: "100 synthetic fakes: real author + real journal + fabricated title. Tests metadata cross-checking.", citation_count: 100, ground_truth: "invalid", fabrication_type: "frankenstein", tags: ["fake", "frankenstein", "synthetic"], bib_files: ["test_citations/false_negative_tests/frankenstein/frankenstein_0001.bib", "test_citations/false_negative_tests/frankenstein/frankenstein_0002.bib"] },
+                { id: "ojsm-fake-stolen-doi", name: "Stolen DOI Citations", authors: "OJSM Test Suite", description: "100 synthetic fakes: real DOI paired with completely wrong metadata. Tests DOI-to-metadata comparison.", citation_count: 100, ground_truth: "invalid", fabrication_type: "stolen_doi", tags: ["fake", "stolen_doi", "synthetic"], bib_files: ["test_citations/false_negative_tests/stolen_doi/stolen_doi_0001.bib", "test_citations/false_negative_tests/stolen_doi/stolen_doi_0002.bib"] },
+                { id: "ojsm-fake-plausible", name: "Plausible Fake Citations", authors: "OJSM Test Suite", description: "100 synthetic fakes: entirely fabricated but realistic-looking. Tests ability to detect without any matching real paper.", citation_count: 100, ground_truth: "invalid", fabrication_type: "plausible", tags: ["fake", "plausible", "synthetic"], bib_files: ["test_citations/false_negative_tests/plausible/plausible_0001.bib", "test_citations/false_negative_tests/plausible/plausible_0002.bib"] },
+                { id: "ojsm-fake-nonsense", name: "Nonsense Citations", authors: "OJSM Test Suite", description: "100 synthetic fakes: obviously wrong (future years, fake DOIs, impossible metadata). Baseline sanity check.", citation_count: 100, ground_truth: "invalid", fabrication_type: "nonsense", tags: ["fake", "nonsense", "synthetic"], bib_files: ["test_citations/false_negative_tests/nonsense/nonsense_0001.bib", "test_citations/false_negative_tests/nonsense/nonsense_0002.bib"] },
+                { id: "nature-article-refs", name: "Nature Article References", authors: "Nature (April 2026)", description: "10 references cited by the Nature article that inspired this tool. Tests validator on real but sparse metadata.", citation_count: 10, ground_truth: "valid", tags: ["real", "nature", "sparse"], bib_files: ["datasets/nature-article/refs.bib"], metadata_file: "datasets/nature-article/metadata.json" },
+                { id: "nature-frankenstein-examples", name: "Nature Article — Frankenstein Examples", authors: "Linardon et al. (2025) via Nature (April 2026)", description: "AI-fabricated Frankenstein citations featured in the Nature article. Generated by GPT-4o in a study of mental health literature reviews. Every component (author, journal, DOI prefix) is real; the combination is fake.", citation_count: 1, ground_truth: "invalid", fabrication_type: "frankenstein", tags: ["fake", "frankenstein", "nature", "gpt4o", "mental-health"], bib_files: ["datasets/nature-article-examples/frankenstein_examples.bib"], metadata_file: "datasets/nature-article-examples/metadata.json" },
+                { id: "compound-deception-ansari", name: "Compound Deception — NeurIPS 2025 Fakes", authors: "Ansari (2026)", arxiv: "2602.05930", description: "ansari100 seed subset from the public GPTZero NeurIPS table referenced by Ansari (2026): 100 verified hallucination examples with per-row provenance.", citation_count: 100, ground_truth: "invalid", tags: ["fake", "neurips", "real-world", "taxonomy"], bib_files: ["datasets/compound-deception-ansari/ansari100.bib"], metadata_file: "datasets/compound-deception-ansari/metadata.json", status: "external", source_url: "https://arxiv.org/abs/2602.05930", data_owner: "GPTZero / Ansari", redistributed: false },
+                { id: "citeaudit-benchmark", name: "CiteAudit — Human-Validated Citation Benchmark", authors: "Shi, Sun, Zhang, Sun, Chawla & Ye (2026)", arxiv: "2602.23452", description: "9,442 citations (6,475 real + 2,967 fake) with human-validated labels. Multi-domain (ML, biology, chemistry). First open standardized benchmark for hallucinated citation detection.", citation_count: 9442, ground_truth: "mixed", tags: ["benchmark", "human-validated", "multi-domain", "large-scale"], bib_files: ["datasets/citeaudit-benchmark/citeaudit-benchmark.bib"], metadata_file: "datasets/citeaudit-benchmark/metadata.json", status: "external", source_url: "https://arxiv.org/abs/2602.23452", data_owner: "Shi et al.", redistributed: false },
+                { id: "citeaudit-realworld", name: "CiteAudit — Real-World Group", authors: "Shi, Sun, Zhang, Sun, Chawla & Ye (2026)", arxiv: "2602.23452", description: "3,356 citations (2,889 real + 467 fake) — the independently-sourced 'realworld' group of the CiteAudit benchmark. External validation set for the OJSM citation paper.", citation_count: 3356, ground_truth: "mixed", tags: ["benchmark", "external", "human-validated", "citeaudit", "realworld"], bib_files: ["datasets/citeaudit-realworld/citeaudit-realworld.bib"], metadata_file: "datasets/citeaudit-realworld/metadata.json", status: "external", source_url: "https://arxiv.org/abs/2602.23452", data_owner: "Shi et al.", redistributed: false },
+                { id: "citeaudit-realworld-subset", name: "CiteAudit — Real-World Balanced Subset", authors: "Shi, Sun, Zhang, Sun, Chawla & Ye (2026)", arxiv: "2602.23452", description: "500-citation balanced random subset (250 real + 250 fake, seed 42) of the CiteAudit realworld group. Sized for the AI tier under Gemini's free-tier daily token budget.", citation_count: 500, ground_truth: "mixed", tags: ["benchmark", "external", "human-validated", "citeaudit", "realworld", "subset"], bib_files: ["datasets/citeaudit-realworld-subset/citeaudit-realworld-subset.bib"], metadata_file: "datasets/citeaudit-realworld-subset/metadata.json", status: "external", source_url: "https://arxiv.org/abs/2602.23452", data_owner: "Shi et al.", redistributed: false }
             ];
         }
 
@@ -2254,8 +2258,8 @@ Respond with JSON only:
                 { key: 'real', label: 'Real Citations' },
                 { key: 'fake', label: 'Fake Citations' },
                 { key: 'benchmark', label: 'Benchmarks' },
-                { key: 'available', label: 'Available Now' },
-                { key: 'pending', label: 'Coming Soon' }
+                { key: 'available', label: 'Bundled Here' },
+                { key: 'external', label: 'Fetch from Source' }
             ];
 
             const container = document.getElementById('benchFilters');
@@ -2273,7 +2277,8 @@ Respond with JSON only:
         function filterDatasets() {
             return benchManifest.filter(ds => {
                 if (benchActiveFilter === 'all') return true;
-                if (benchActiveFilter === 'available') return ds.status !== 'pending';
+                if (benchActiveFilter === 'available') return ds.status !== 'pending' && ds.status !== 'external';
+                if (benchActiveFilter === 'external') return ds.status === 'external';
                 if (benchActiveFilter === 'pending') return ds.status === 'pending';
                 if (benchActiveFilter === 'real') return ds.ground_truth === 'valid';
                 if (benchActiveFilter === 'fake') return ds.ground_truth === 'invalid';
@@ -2292,7 +2297,13 @@ Respond with JSON only:
             }
 
             container.innerHTML = datasets.map(ds => {
-                const isPending = ds.status === 'pending' || (!ds.bib_files && !ds.bib_file);
+                // Three states, not two. "External" is the one that used to be
+                // mislabelled: the data exists and is documented, it is simply
+                // not ours to redistribute, so it is fetched rather than shipped.
+                // Calling that "coming soon" told the opposite of the truth.
+                const isExternal = ds.status === 'external';
+                const isPending = !isExternal && (ds.status === 'pending' || (!ds.bib_files && !ds.bib_file));
+                const isRunnable = !isExternal && !isPending;
                 const checked = benchSelectedIds.has(ds.id) ? 'checked' : '';
                 const tags = (ds.tags || []).map(t => {
                     const cls = ['fake','frankenstein','stolen_doi','plausible','nonsense'].includes(t) ? 'tag-fake'
@@ -2302,17 +2313,20 @@ Respond with JSON only:
                 }).join('');
 
                 const countLabel = ds.citation_count ? `${ds.citation_count} citations` : 'TBD';
-                const pendingTag = isPending ? '<span class="bench-tag tag-pending">data not yet available</span>' : '';
+                const owner = ds.data_owner || ds.authors || 'its authors';
+                const statusTag = isExternal
+                    ? `<span class="bench-tag tag-external">${owner}'s data &middot; fetch from source, not redistributed here</span>`
+                    : isPending ? '<span class="bench-tag tag-pending">data not yet available</span>' : '';
                 const arxivLink = ds.arxiv ? ` &middot; <a href="https://arxiv.org/abs/${ds.arxiv}" target="_blank" style="font-size:11px;color:var(--primary);" onclick="event.stopPropagation()">arXiv:${ds.arxiv}</a>` : '';
 
                 return `
-                    <div class="bench-card ${isPending ? 'pending' : ''}">
-                        <input type="checkbox" ${checked} ${isPending ? 'disabled' : ''} onchange="toggleBenchDataset('${ds.id}', this.checked)">
+                    <div class="bench-card ${isPending ? 'pending' : ''}${isExternal ? ' external' : ''}">
+                        <input type="checkbox" ${checked} ${isRunnable ? '' : 'disabled'} onchange="toggleBenchDataset('${ds.id}', this.checked)">
                         <div class="bench-card-body">
                             <div class="bench-card-title">${ds.name}</div>
                             <div class="bench-card-meta">${ds.authors} &middot; ${countLabel}${arxivLink}</div>
                             <div class="bench-card-desc">${ds.description}</div>
-                            <div class="bench-card-tags">${tags}${pendingTag}</div>
+                            <div class="bench-card-tags">${tags}${statusTag}</div>
                         </div>
                     </div>
                 `;
