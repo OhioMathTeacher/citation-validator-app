@@ -896,6 +896,16 @@ Respond with JSON: {{"is_suspicious": true/false, "confidence": 0-100, "reason":
                     # Transient API failure (rate limit / timeout): the DOI
                     # could not be VERIFIED -- 'unverifiable', not
                     # 'fabricated'. Record a warning, never an invalid flag.
+                    #
+                    # This branch RETURNS EARLY, so it has to set doi_resolved
+                    # itself -- the assignment further down is never reached.
+                    # With the key absent, the web UI's displayStatus() tests
+                    # `=== true`, then `=== false`, and falls through both to a
+                    # plain amber WARNING. A registry that never answered is the
+                    # purest 'could not verify' this tool produces, and must
+                    # render as UNVERIFIED, exactly like a title search that
+                    # found nothing. Two routes to the same nothing, one label.
+                    result['doi_resolved'] = False
                     result['warnings'].append(
                         f"DOI could not be verified: {doi_data.get('error', 'transient API failure')}")
                     if result['status'] == 'valid':
