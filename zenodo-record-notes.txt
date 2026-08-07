@@ -55,13 +55,28 @@ GitHub's "Cite this repository" button, which is the reason to keep it current.
 
 Verified 2026-08-07 against https://developers.zenodo.org/ and the live records.
 
-DO NOT CHECK THE LICENCES VIA THE API. https://zenodo.org/api/records/<id>
+DO NOT CHECK THE LICENCES VIA THE DEFAULT API. https://zenodo.org/api/records/<id>
 returns metadata.license as a single object, so a record carrying both licences
 reports only {"id": "agpl-3.0-or-later"} -- the same answer a record carrying one
 gives. It is the singular-field limitation again, showing up in the read path
 this time. An API check cannot distinguish "CC BY is missing" from "CC BY is
 there and unrepresentable", and reading it as the former wasted time twice on
-2026-08-07. Open the record page and look at the Licenses block.
+2026-08-07.
+
+USE THE DATACITE EXPORT INSTEAD. DataCite's schema has a plural rightsList, so it
+shows everything -- both licences, the copyright statement, and the Issued date
+in one shot:
+
+  curl -s -H "Accept: application/vnd.datacite.datacite+json" \
+    https://zenodo.org/api/records/<id> |
+    python -c "import sys,json; d=json.load(sys.stdin); \
+      print(d.get('version'), d.get('dates')); \
+      [print(' ', r.get('rights')) for r in d.get('rightsList',[])]"
+
+Run it after the post-release edit to confirm all three manual fields saved. On
+v1.5.1 it returned both licences, the copyright line, and Issued 2026-08-07. A
+null entry in rightsList is Zenodo padding the copyright statement into the same
+list, not a stray licence row.
 The v1.4.1 record shows the licensing under a separate Notes heading and v1.5.0
 shows it inside the description; that is the difference between hand entry and
 .zenodo.json, not a loss. Do not "fix" it by adding a `notes` field -- the
