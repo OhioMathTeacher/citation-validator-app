@@ -36,5 +36,8 @@ keywords:
 license: AGPL-3.0-or-later
 # Code is AGPL-3.0 with the Commons Clause; the datasets built here and the
 # experiment logs in results/ are CC BY 4.0. See datasets/LICENSE.
-version: 1.4.4
-date-released: '2026-08-04'
+# Describes the latest released artifact, which is what GitHub's "Cite this
+# repository" button offers and what Zenodo has archived. Not the working tree:
+# VERSION may be ahead between releases. Bump both at tag time.
+version: 1.5.0
+date-released: '2026-08-06'

@@ -1,22 +1,37 @@
-Zenodo record metadata, entered by hand at https://zenodo.org/records/21795721
-Keep this file: a new release regenerates metadata from CITATION.cff, which can
-only express one licence, so the two-licence setup below may need re-entering.
+Zenodo record metadata for https://doi.org/10.5281/zenodo.21795712 (concept DOI,
+always resolves to latest). Originally entered by hand on the v1.4.1 record at
+https://zenodo.org/records/21795721.
+
+THIS FILE IS NO LONGER A HAND-ENTRY CHECKLIST. It was one for the v1.4.1 record,
+before .zenodo.json existed. Since then, .zenodo.json at the repository root has
+overridden what Zenodo derives from a GitHub release, and its `description`
+already carries the licensing paragraph and the copyright line as formatted HTML.
+Nothing below needs pasting into the web form. Edit .zenodo.json instead.
+
+ONE THING STILL CANNOT BE AUTOMATED. Zenodo's deposit schema has a singular
+`license` field -- "the selected license applies to all files in this deposition"
+-- so only AGPL-3.0-or-later can come from the repository. AFTER EVERY RELEASE,
+open the new record and add Creative Commons Attribution 4.0 International as a
+second licence by hand. That is the whole manual step.
+
+The version number comes from the GIT TAG, not from CITATION.cff. The v1.5.0
+record is correctly labelled v1.5.0 even though CITATION.cff still said 1.4.4 at
+the time, so a stale CITATION.cff does not mislabel the archive. It does mislabel
+GitHub's "Cite this repository" button, which is the reason to keep it current.
+
+Verified 2026-08-07 against https://developers.zenodo.org/ and the live records.
+The v1.4.1 record shows the licensing under a separate Notes heading and v1.5.0
+shows it inside the description; that is the difference between hand entry and
+.zenodo.json, not a loss. Do not "fix" it by adding a `notes` field -- the
+paragraph would then appear on the record twice.
 
 
-NOTES FIELD (Additional Description, type: Notes)
--------------------------------------------------
+WHAT THE RECORD SHOULD SAY -- for reference, not for pasting
+-------------------------------------------------------------
 
 Code is licensed under AGPL-3.0 with the Commons Clause. The datasets constructed for this project and the experiment logs in results/ are licensed separately under CC BY 4.0 -- see datasets/LICENSE in the archive. Three further datasets (CiteAudit, Ansari 100) belong to other researchers, are not included in this deposit, and are fetched from their sources by scripts in the repository.
 
-
-LICENCES (add both)
--------------------
-
-GNU Affero General Public License v3.0 or later
-Creative Commons Attribution 4.0 International
-
-
-COPYRIGHT FIELD
----------------
-
 Copyright (c) 2026 Michael Todd Edwards
+
+Licences: GNU Affero General Public License v3.0 or later  (.zenodo.json)
+          Creative Commons Attribution 4.0 International   (BY HAND, EVERY RELEASE)
