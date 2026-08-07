@@ -20,8 +20,16 @@ with only AGPL and stayed that way until Todd added CC BY 4.0 by hand on
 
 SO, AFTER EVERY RELEASE: open the new record, Edit, "Add standard", add Creative
 Commons Attribution 4.0 International, and Publish to save it. Publishing a
-metadata edit on an already-published record does not mint a new DOI -- but make
-sure you are editing the record and not in a "New version" draft, which does.
+metadata edit on an already-published record does not mint a new DOI.
+
+Do make sure you are editing the record and not in a "New version" draft, which
+does mint one. But DO NOT use the DOI section to tell them apart. The edit form
+of a published record still shows "No, I need one" selected and still prints
+"Reserve a DOI ... registered when your upload is published", which reads exactly
+like a draft and is not. The reliable check is the DOI NUMBER: if it matches the
+DOI of the record you meant to edit, you are editing that record. v1.5.0 is
+10.5281/zenodo.21817511; the concept DOI, which the paper prints and which always
+resolves to latest, is 10.5281/zenodo.21795712.
 
 The version number comes from the GIT TAG, not from CITATION.cff. The v1.5.0
 record is correctly labelled v1.5.0 even though CITATION.cff still said 1.4.4 at
