@@ -13,15 +13,15 @@ ONE THING CANNOT COME FROM THE REPOSITORY. Zenodo's deposit schema has a singula
 -- so only AGPL-3.0-or-later can be set from .zenodo.json. Creative Commons
 Attribution 4.0 International has to reach the record another way.
 
-BUT IT MAY ALREADY BE ARRIVING ON ITS OWN. Checked on the v1.5.0 record 2026-08-07:
-both licences are present and correctly listed. Zenodo's new-version flow copies
-metadata forward from the previous version, which is the likely explanation, since
-.zenodo.json cannot have supplied the second one.
+IT DOES NOT CARRY FORWARD. Zenodo's new-version flow copies much of the previous
+version's metadata, but not this. The v1.5.0 record was published on 2026-08-06
+with only AGPL and stayed that way until Todd added CC BY 4.0 by hand on
+2026-08-07. Assume every future release starts with one licence.
 
-So the step is VERIFY, NOT RE-ENTER. After a release, open the record and look at
-the Licenses block. If both are there, nothing to do. If only AGPL is there, use
-"Add standard" to add Creative Commons Attribution 4.0 International. Metadata
-edits on a published record do not mint a new DOI.
+SO, AFTER EVERY RELEASE: open the new record, Edit, "Add standard", add Creative
+Commons Attribution 4.0 International, and Publish to save it. Publishing a
+metadata edit on an already-published record does not mint a new DOI -- but make
+sure you are editing the record and not in a "New version" draft, which does.
 
 The version number comes from the GIT TAG, not from CITATION.cff. The v1.5.0
 record is correctly labelled v1.5.0 even though CITATION.cff still said 1.4.4 at
