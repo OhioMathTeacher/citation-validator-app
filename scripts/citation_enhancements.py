@@ -73,12 +73,12 @@ class EnhancedValidator:
         if author and len(author) < 5:
             warnings.append("Suspiciously short author")
         
-        # 8. arXiv papers with a proper arXiv DOI are legitimate — skip
-        #    Only check the DOI field, not all fields (a fake citation
-        #    mentioning "arxiv" in a note/url shouldn't get a free pass).
-        if fields.get('doi', '').lower().startswith('10.48550/arxiv.'):
-            return warnings
-
+        # Seven checks, and no arXiv exemption. An eighth was written to skip
+        # these for entries carrying an arXiv DOI, but both of its branches
+        # returned the same list, so it never did anything. Reviving it would be
+        # worse than removing it: this method runs before validate_doi, so the
+        # DOI prefix it tested is an unverified string, and a fabricated
+        # 10.48550/arxiv. would buy a pass on all seven checks.
         return warnings
     
     @staticmethod
