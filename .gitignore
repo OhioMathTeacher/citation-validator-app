@@ -23,4 +23,13 @@ api_keys.txt
 # Third-party datasets: fetched on demand, never redistributed (see datasets/README.md)
 datasets/citeaudit-*/[!R]*
 datasets/compound-deception-ansari/[!R]*
+
+# Other people's papers. extract_citations_from_arxiv.py downloads arXiv source
+# bundles so their bibliographies can be harvested for the test corpus. The
+# bundles are working material, not ours to redistribute: arXiv's default licence
+# lets arXiv distribute a paper, not third parties. Keep them locally, keep them
+# out of the release archive.
+test_citations/[0-9][0-9][0-9][0-9].[0-9]*/
+test_citations/[0-9][0-9][0-9][0-9].[0-9]*.tar.gz
+
 !.env.example

@@ -111,6 +111,17 @@ python3 generate_fake_citations.py --type all --count 400 --output false_negativ
 ```
 
 ### From arXiv papers
+
+**The paper folders are not in this repository.** They are other researchers'
+arXiv source bundles, downloaded here so their bibliographies could be harvested.
+arXiv's default licence lets arXiv distribute a paper, not third parties, so the
+bundles are kept locally and ignored by git. The extracted `.bib` files under
+`real_citations/` are our own work and are committed.
+
+To rebuild a paper folder, fetch the source bundle from arXiv and unpack it into
+`test_citations/<arxiv-id>/` — e.g. `https://arxiv.org/e-print/2604.05875` —
+then:
+
 ```bash
 python3 extract_citations_from_arxiv.py 2604.05875/   # specific paper folder
 python3 extract_citations_from_arxiv.py --all          # all paper folders in directory
