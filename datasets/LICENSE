@@ -31,9 +31,9 @@ re-analyse the data cannot check the argument.
 WHAT THIS DOES NOT COVER
 ========================
 
-Three datasets are other researchers' work. They are NOT redistributed here
-and are NOT licensed by this file. Each is fetched from its source on demand;
-see README.md.
+Four directories here hold other researchers' work, from two projects. They are
+NOT redistributed here and are NOT licensed by this file. Each is fetched from
+its source on demand; see README.md.
 
   - citeaudit-benchmark/, citeaudit-realworld/, citeaudit-realworld-subset/
       Shi, Sun, Zhang, Sun, Chawla & Ye (2026), arXiv:2602.23452
