@@ -8,11 +8,20 @@ overridden what Zenodo derives from a GitHub release, and its `description`
 already carries the licensing paragraph and the copyright line as formatted HTML.
 Nothing below needs pasting into the web form. Edit .zenodo.json instead.
 
-ONE THING STILL CANNOT BE AUTOMATED. Zenodo's deposit schema has a singular
+ONE THING CANNOT COME FROM THE REPOSITORY. Zenodo's deposit schema has a singular
 `license` field -- "the selected license applies to all files in this deposition"
--- so only AGPL-3.0-or-later can come from the repository. AFTER EVERY RELEASE,
-open the new record and add Creative Commons Attribution 4.0 International as a
-second licence by hand. That is the whole manual step.
+-- so only AGPL-3.0-or-later can be set from .zenodo.json. Creative Commons
+Attribution 4.0 International has to reach the record another way.
+
+BUT IT MAY ALREADY BE ARRIVING ON ITS OWN. Checked on the v1.5.0 record 2026-08-07:
+both licences are present and correctly listed. Zenodo's new-version flow copies
+metadata forward from the previous version, which is the likely explanation, since
+.zenodo.json cannot have supplied the second one.
+
+So the step is VERIFY, NOT RE-ENTER. After a release, open the record and look at
+the Licenses block. If both are there, nothing to do. If only AGPL is there, use
+"Add standard" to add Creative Commons Attribution 4.0 International. Metadata
+edits on a published record do not mint a new DOI.
 
 The version number comes from the GIT TAG, not from CITATION.cff. The v1.5.0
 record is correctly labelled v1.5.0 even though CITATION.cff still said 1.4.4 at
