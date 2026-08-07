@@ -37,6 +37,14 @@ the time, so a stale CITATION.cff does not mislabel the archive. It does mislabe
 GitHub's "Cite this repository" button, which is the reason to keep it current.
 
 Verified 2026-08-07 against https://developers.zenodo.org/ and the live records.
+
+DO NOT CHECK THE LICENCES VIA THE API. https://zenodo.org/api/records/<id>
+returns metadata.license as a single object, so a record carrying both licences
+reports only {"id": "agpl-3.0-or-later"} -- the same answer a record carrying one
+gives. It is the singular-field limitation again, showing up in the read path
+this time. An API check cannot distinguish "CC BY is missing" from "CC BY is
+there and unrepresentable", and reading it as the former wasted time twice on
+2026-08-07. Open the record page and look at the Licenses block.
 The v1.4.1 record shows the licensing under a separate Notes heading and v1.5.0
 shows it inside the description; that is the difference between hand entry and
 .zenodo.json, not a loss. Do not "fix" it by adding a `notes` field -- the
