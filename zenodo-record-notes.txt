@@ -18,9 +18,26 @@ version's metadata, but not this. The v1.5.0 record was published on 2026-08-06
 with only AGPL and stayed that way until Todd added CC BY 4.0 by hand on
 2026-08-07. Assume every future release starts with one licence.
 
-SO, AFTER EVERY RELEASE: open the new record, Edit, "Add standard", add Creative
-Commons Attribution 4.0 International, and Publish to save it. Publishing a
-metadata edit on an already-published record does not mint a new DOI.
+SO, AFTER EVERY RELEASE, open the new record, click Edit, and fix TWO fields:
+
+  1. Licenses -> "Add standard" -> Creative Commons Attribution 4.0 International
+  2. Copyright -> Copyright (c) 2026 Michael Todd Edwards
+
+Both are structured fields that .zenodo.json cannot populate. The copyright line
+IS in the description prose, which is why the record looks complete at a glance;
+the field under the Licenses block is separate and comes up empty every release.
+Its placeholder reads "Copyright (C) 2026 The Authors." in grey -- that is not a
+value.
+
+Then Publish. Publishing a metadata edit on an already-published record does not
+mint a new DOI.
+
+While you are in the form, check Publication date under Basic information. Zenodo
+timestamps the deposit on CERN time, so a release cut late in the UTC day lands
+on the following date: v1.5.1 was tagged 2026-08-07 at 22:21 UTC and the record
+said 2026-08-08. Set it to the date of the tag. Do NOT use the "Dates" section
+lower down -- that is for additional dates like Accepted or Issued, each needing
+a type, and it does not change the publication date.
 
 Do make sure you are editing the record and not in a "New version" draft, which
 does mint one. But DO NOT use the DOI section to tell them apart. The edit form
