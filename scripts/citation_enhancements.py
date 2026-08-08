@@ -27,15 +27,7 @@ class EnhancedValidator:
         if any(term in title for term in generic_terms) and len(title) < 50:
             warnings.append("Generic title pattern (common in hallucinations)")
         
-        # 2. Check for suspiciously generic author names
-        author = fields.get('author', '')
-        if author:
-            # Common AI-generated names or patterns
-            generic_authors = ['smith', 'jones', 'johnson', 'et al', 'unknown']
-            if any(gen in author.lower() for gen in generic_authors) and len(author) < 20:
-                warnings.append("Generic author name pattern")
-        
-        # 3. Check for year-related issues
+        # 2. Check for year-related issues
         year = fields.get('year', '')
         if year:
             try:
@@ -48,37 +40,51 @@ class EnhancedValidator:
             except ValueError:
                 warnings.append(f"Invalid year format: {year}")
         
-        # 4. Check for malformed URLs/DOIs
+        # 3. Check for malformed URLs/DOIs
         url = fields.get('url', '')
         if url and not url.startswith(('http://', 'https://', 'www.')):
             warnings.append("Malformed URL")
         
-        # 5. Check for inconsistent venue information
+        # 4. Check for inconsistent venue information
         journal = fields.get('journal', '')
         booktitle = fields.get('booktitle', '')
         if journal and booktitle:
             # Shouldn't have both for same entry
             warnings.append("Both journal and booktitle present (inconsistent)")
         
-        # 6. Check for missing critical fields
+        # 5. Check for missing critical fields
         entry_type = entry['type'].lower()
         if entry_type == 'article' and not journal and not fields.get('doi'):
             warnings.append("Article entry missing journal and DOI")
         elif entry_type == 'inproceedings' and not booktitle:
             warnings.append("Conference paper missing booktitle")
         
-        # 7. Check for suspiciously short or long field values
+        # 6. Check for suspiciously short or long field values
+        author = fields.get('author', '')
         if title and len(title) < 5:
             warnings.append("Suspiciously short title")
         if author and len(author) < 5:
             warnings.append("Suspiciously short author")
-        
-        # Seven checks, and no arXiv exemption. An eighth was written to skip
-        # these for entries carrying an arXiv DOI, but both of its branches
-        # returned the same list, so it never did anything. Reviving it would be
-        # worse than removing it: this method runs before validate_doi, so the
-        # DOI prefix it tested is an unverified string, and a fabricated
-        # 10.48550/arxiv. would buy a pass on all seven checks.
+
+        # Six checks. Two others were removed rather than repaired.
+        #
+        # A generic-author-name check matched ['smith', 'jones', 'johnson',
+        # 'et al', 'unknown'] as substrings against author fields under 20
+        # characters. Measured, it never fired on a real citation: 0 of 285
+        # arXiv and 0 of 96 CrossRef. It fired 68 times out of 100 on one
+        # synthetic set, and 0 of 100 on each of the other three -- because
+        # generate_fake_citations.py:139 draws that set's surnames from
+        # ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones'], three of which
+        # this list contained. The checker and the test data encoded the same
+        # guess about what a fake name looks like, so the score measured the
+        # generator. It was also biased: three common English surnames and no
+        # others, so J. Smith drew a warning and L. Wang did not.
+        #
+        # An eighth check meant to exempt arXiv DOIs returned the same list
+        # from both branches and never did anything. Reviving it would be worse
+        # than removing it: this method runs before validate_doi, so the DOI
+        # prefix it tested is an unverified string, and a fabricated
+        # 10.48550/arxiv. would buy a pass on every check here.
         return warnings
     
     @staticmethod
