@@ -39,5 +39,5 @@ license: AGPL-3.0-or-later
 # Describes the latest released artifact, which is what GitHub's "Cite this
 # repository" button offers and what Zenodo has archived. Not the working tree:
 # VERSION may be ahead between releases. Bump both at tag time.
-version: 1.5.1
-date-released: '2026-08-07'
+version: 1.6.0
+date-released: '2026-08-10'
