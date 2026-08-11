@@ -15,6 +15,33 @@ people's, and this repository redistributes neither:**
   hallucinations, which Ansari (2026) references. GPTZero owns the table;
   Ansari is the paper that points to it.
 
+## Correction, 2026-08-11
+
+**Between April and 11 August 2026 that claim was not true of this repository.**
+The two datasets above were withheld from `datasets/`, as described, but the
+per-citation JSON under `results/` carried each citation's `fields` — author,
+title, identifier and the original note — so both corpora were published
+through the results instead. 48 files, 28,685 citation records. The sentence
+above about `../results/` being CC BY 4.0 therefore applied this project's
+licence to a compilation that is not ours to license.
+
+It was found by an audit of what the repository actually contains rather than
+what it says, which is the method the accompanying paper argues for, applied
+here to its own artefact.
+
+**Fixed forward:** `scripts/strip_restricted_results.py` removes citation text
+from results belonging to any dataset whose source `.bib` is withheld, keeping
+the verdicts, the registry that settled each lookup, and the AI judgements, so
+every result remains checkable. `tests/test_no_restricted_data.py` fails if it
+comes back. Saved UI exports and editor backups under `results/` are no longer
+tracked, having slipped past the first two passes of the stripper.
+
+**Not fixed, and cannot be:** releases already archived on Zenodo (v1.5.x and
+v1.6.0) contain the unredacted files. Zenodo records are immutable by design.
+Git history likewise still contains them; rewriting it would break the
+`/blob/v1.6.0/` permalinks the paper cites, which we judged the worse trade.
+Anyone wanting either dataset should go to its source, linked above.
+
 Those two sources supply four of the directories listed below, because CiteAudit
 is cut three ways (full benchmark, real-world group, balanced subset).
 Permission is owed per owner, not per derived file.

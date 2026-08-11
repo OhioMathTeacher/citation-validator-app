@@ -33,3 +33,10 @@ test_citations/[0-9][0-9][0-9][0-9].[0-9]*/
 test_citations/[0-9][0-9][0-9][0-9].[0-9]*.tar.gz
 
 !.env.example
+
+# Saved UI exports and editor backups under results/. These are not primary
+# evidence -- results/experiments/ is -- and they carried withheld citation
+# text past the redaction in scripts/strip_restricted_results.py, because they
+# are neither .json in the expected shape nor labelled with a dataset.
+results/**/citation-report-*
+results/**/*.bak-*

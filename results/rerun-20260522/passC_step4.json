@@ -27,1403 +27,797 @@
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "John Doe and Jane Smith",
-            "title": "Webvoyager: Building an end-to-end web agent with large multimodal models",
-            "year": "2024",
-            "eprint": "2401.00001",
-            "archiveprefix": "arXiv",
-            "note": "John Doe and Jane Smith. Webvoyager: Building an end-to-end web agent with large"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_002",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "John Smith and Jane Doe",
-            "title": "Deep learning techniques for avatar-based interaction in virtual environments",
-            "year": "2021",
-            "note": "John Smith and Jane Doe. Deep learning techniques for avatar-based interaction i"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_004",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Firstname Lastname and Others",
-            "title": "Drivlme: A large-scale multi-agent driving benchmark, 2023",
-            "year": "2023",
-            "note": "Firstname Lastname and Others. Drivlme: A large-scale multi-agent driving benchm"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_005",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Firstname Lastname and Others",
-            "title": "Robotslang: Grounded natural language for multi-robot object search, 2024",
-            "year": "2024",
-            "note": "Firstname Lastname and Others. Robotslang: Grounded natural language for multi-r"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_006",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "Generic author name pattern",
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Nuo Lou and et al",
-            "title": "Dsp: Diffusion-based span prediction for masked text modeling",
-            "year": "2023",
-            "note": "Nuo Lou and et al. Dsp: Diffusion-based span prediction for masked text modeling"
-          }
+            "Generic author name pattern [detail redacted [redacted: third-party dataset]",
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_007",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "Suspiciously short author",
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "A",
-            "title": "Sahoo and et al",
-            "year": "2024",
-            "note": "A. Sahoo and et al. inatk: Iterative noise aware text denoising. arXiv preprint "
-          }
+            "Suspiciously short author [detail redacted [redacted: third-party dataset]",
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_008",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "Generic author name pattern",
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Sheng Shi and et al",
-            "title": "Maskgpt: Uniform denoising diffusion for language",
-            "year": "2024",
-            "note": "Sheng Shi and et al. Maskgpt: Uniform denoising diffusion for language. arXiv pr"
-          }
+            "Generic author name pattern [detail redacted [redacted: third-party dataset]",
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_009",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Asma Issa, George Mohler, and John Johnson",
-            "title": "Paraphrase identification using deep contextualized representations",
-            "year": "2018",
-            "note": "Asma Issa, George Mohler, and John Johnson. Paraphrase identification using deep"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_010",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Yi Tay, Kelvin Fu, Kai Wu, Ivan Casanueva, Jianfeng Liu, Byron Wallace, Shuohang",
-            "title": "Reasoning with heterogeneous graph representations for knowledge-aware question ",
-            "year": "2021",
-            "note": "Yi Tay, Kelvin Fu, Kai Wu, Ivan Casanueva, Jianfeng Liu, Byron Wallace, Shuohang"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_011",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Alex Wang, Rishi Bommasani, Dan Hendrycks, Daniel Song, and Zhilin Zhang",
-            "title": "Efficient fewshot learning with efl: A single transformer for all tasks",
-            "year": "2021",
-            "eprint": "2107.13586",
-            "archiveprefix": "arXiv",
-            "note": "Alex Wang, Rishi Bommasani, Dan Hendrycks, Daniel Song, and Zhilin Zhang. Effici"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_012",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Lei Yu, Jimmy Dumsmyr, and Kevin Knight",
-            "title": "Deep paraphrase identification",
-            "year": "2014",
-            "note": "Lei Yu, Jimmy Dumsmyr, and Kevin Knight. Deep paraphrase identification. In Proc"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_013",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "Suspiciously short author",
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "X",
-            "title": "Ou and et al",
-            "year": "2024",
-            "note": "X. Ou and et al. Tuqdm: Token unmasking with quantized diffusion models. In ACL,"
-          }
+            "Suspiciously short author [detail redacted [redacted: third-party dataset]",
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_014",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Franz Aichberger, Lily Chen, and John Smith",
-            "title": "Semantically diverse language generation",
-            "year": "2025",
-            "note": "Franz Aichberger, Lily Chen, and John Smith. Semantically diverse language gener"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_015",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Maria Glushkova, Shiori Kobayashi, and Junichi Suzuki",
-            "title": "Uncertainty estimation in neural text regression",
-            "year": "2021",
-            "note": "Maria Glushkova, Shiori Kobayashi, and Junichi Suzuki. Uncertainty estimation in"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_016",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Yichao Wang, Bowen Zhou, Adam Lopez, and Benjamin Snyder",
-            "title": "Uncertainty quantification in abstractive summarization",
-            "year": "2022",
-            "note": "Yichao Wang, Bowen Zhou, Adam Lopez, and Benjamin Snyder. Uncertainty quantifica"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_017",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Mohit Jain, Ethan Perez, and James Glass",
-            "title": "Learning to predict confidence for language models",
-            "year": "2021",
-            "note": "Mohit Jain, Ethan Perez, and James Glass. Learning to predict confidence for lan"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_018",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Srinivasan Kadavath, Urvashi Khandelwal, Alec Radford, and Noam Shazeer",
-            "title": "Answer me this: Self-verifying large language models",
-            "year": "2022",
-            "eprint": "2205.05407",
-            "archiveprefix": "arXiv",
-            "note": "Srinivasan Kadavath, Urvashi Khandelwal, Alec Radford, and Noam Shazeer. Answer "
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_019",
           "status": "valid",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Zayne Sprague, Xi Ye, Kyle Richardson, and Greg Durrett",
-            "title": "MuSR: Testing the limits of chain-of-thought with multistep soft reasoning",
-            "year": "2023",
-            "note": "Zayne Sprague, Xi Ye, Kyle Richardson, and Greg Durrett. MuSR: Testing the limit"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_020",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Mario Paolone, Trevor Gaunt, Xavier Guillaud, Marco Liserre, Sakis Meliopoulos, ",
-            "title": "A benchmark model for power system stability controls",
-            "year": "2020",
-            "note": "Mario Paolone, Trevor Gaunt, Xavier Guillaud, Marco Liserre, Sakis Meliopoulos, "
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_021",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Mingliang Han, Bingni W Wei, Phelan Senatus, J\u00f6rg D Winkel, Mason Youngblood, I-",
-            "title": "Deep koopman operator: A model-free approach to nonlinear dynamical systems",
-            "year": "2020",
-            "note": "Mingliang Han, Bingni W Wei, Phelan Senatus, J\u00f6rg D Winkel, Mason Youngblood, I-"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_022",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Francisco Ramalho, Meng Liu, Zihan Liu, and Etienne Mathieu",
-            "title": "Towards gflownets for continuous control",
-            "year": "2023",
-            "eprint": "2310.18664",
-            "archiveprefix": "arXiv",
-            "note": "Francisco Ramalho, Meng Liu, Zihan Liu, and Etienne Mathieu. Towards gflownets f"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_023",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Arjun Gupta, Xi Victoria Lin, Chunyuan Zhang, Michel Galley, Jianfeng Gao, and C",
-            "title": "Robust compositional visual reasoning via language-guided neural module networks",
-            "year": "2021",
-            "note": "Arjun Gupta, Xi Victoria Lin, Chunyuan Zhang, Michel Galley, Jianfeng Gao, and C"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_024",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Diederik P",
-            "title": "Kingma and Jimmy Ba",
-            "year": "2015",
-            "note": "Diederik P. Kingma and Jimmy Ba. Deepfm: a factorization-machine based neural ne"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_025",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.31)",
-            "Low metadata similarity score: 0.16"
-          ],
-          "fields": {
-            "author": "Weijia Xu, Xing Niu, and Marine Carpuat",
-            "title": "Controlling toxicity in neural machine translation",
-            "year": "2020",
-            "note": "Weijia Xu, Xing Niu, and Marine Carpuat. Controlling toxicity in neural machine "
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]",
+            "Weak Semantic Scholar match (similarity 0.31) [detail redact [redacted: third-party dataset]",
+            "Low metadata similarity score [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_026",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Xiang Zhang, Xuehai Wei, Xian Zhang, and Xue Zhang",
-            "title": "Adversarial attacks and defenses in toxicity detection: A survey",
-            "year": "2020",
-            "note": "Xiang Zhang, Xuehai Wei, Xian Zhang, and Xue Zhang. Adversarial attacks and defe"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_027",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Fenglin Ding, Debesh Jha, Maria H\u00e4rgestam, P\u00e5l Halvorsen, Michael A Riegler, Dag",
-            "title": "Vits: Vision transformer for video self-supervised pretraining of surgical phase",
-            "year": "2022",
-            "note": "Fenglin Ding, Debesh Jha, Maria H\u00e4rgestam, P\u00e5l Halvorsen, Michael A Riegler, Dag"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_030",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Bernd Kerbl, Thomas M\u00fcller, and Paolo Favaro",
-            "title": "Efficient 3d gaussian splatting for real-time neural rendering",
-            "year": "2022",
-            "note": "Bernd Kerbl, Thomas M\u00fcller, and Paolo Favaro. Efficient 3d gaussian splatting fo"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_031",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Punchana Khungurn, Edward H",
-            "title": "Adelson, Julie Dorsey, and Holly Rushmeier",
-            "year": "2015",
-            "note": "Punchana Khungurn, Edward H. Adelson, Julie Dorsey, and Holly Rushmeier. Matchin"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_032",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Ashish Kumar, Logan Engstrom, Andrew Ilyas, and Dimitris Tsipras",
-            "title": "Understanding self-training for gradient-boosted trees",
-            "year": "2020",
-            "note": "Ashish Kumar, Logan Engstrom, Andrew Ilyas, and Dimitris Tsipras. Understanding "
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_033",
           "status": "valid",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Chuang Fan, Shipeng Liu, Seyed Motamed, Shiyu Zhong, Silvio Savarese, Juan Carlo",
-            "title": "Expectation maximization pseudo labels",
-            "year": "2023",
-            "eprint": "2305.01747",
-            "archiveprefix": "arXiv",
-            "note": "Chuang Fan, Shipeng Liu, Seyed Motamed, Shiyu Zhong, Silvio Savarese, Juan Carlo"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_034",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "Suspiciously short author",
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "T",
-            "title": "Qiao, W",
-            "year": "2022",
-            "eprint": "2201.07519",
-            "archiveprefix": "arXiv",
-            "note": "T. Qiao, W. Liu, Z. Xie, H. Xu, J. Lin, J. Huang, and Y. Yang, \"Clip-score: A ro"
-          }
+            "Suspiciously short author [detail redacted [redacted: third-party dataset]",
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_035",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Yunwen Lei, Puyu Wang, Yiming Ying, and Ding-Xuan Zhou",
-            "title": "Optimization and generalization of gradient descent for shallow relu networks wi",
-            "year": "2024",
-            "note": "Yunwen Lei, Puyu Wang, Yiming Ying, and Ding-Xuan Zhou. Optimization and general"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_036",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Uher, R., Goodman, R., Moutoussis, M., Brammer, M., Williams, S.C.R., Dolan, R.J",
-            "title": "Journal of Affective Disorders 169, 94-104 (2014)",
-            "year": "2014",
-            "note": "Uher, R., Goodman, R., Moutoussis, M., Brammer, M., Williams, S.C.R., Dolan, R.J"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_037",
           "status": "valid",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Junyeong Lee, Yiseong Kim, Seungju Park, and Hyunjik Lee",
-            "title": "Softmatch: Addressing the quantity-quality trade-off in semi-supervised learning",
-            "year": "2023",
-            "note": "Junyeong Lee, Yiseong Kim, Seungju Park, and Hyunjik Lee. Softmatch: Addressing "
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_038",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "Suspiciously short author",
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Z",
-            "title": "Zhu, T",
-            "year": "2022",
-            "note": "Z. Zhu, T. Yu, X. Zhang, J. Li, Y. Zhang, and Y. Fu. Neuralrgb-d: Neural represe"
-          }
+            "Suspiciously short author [detail redacted [redacted: third-party dataset]",
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_039",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "Suspiciously short author",
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Y",
-            "title": "Zhang, M",
-            "year": "2023",
-            "note": "Y. Zhang, M. Oswald, and D. Cremers. Airslam: Illumination-invariant hybrid slam"
-          }
+            "Suspiciously short author [detail redacted [redacted: third-party dataset]",
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_040",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Yihong Zhu, Junxian Li, Xianfeng Han, Shirui Pan, Liang Yao, and Chengqi Wang",
-            "title": "Spectral contrastive graph clustering",
-            "year": "2022",
-            "note": "Yihong Zhu, Junxian Li, Xianfeng Han, Shirui Pan, Liang Yao, and Chengqi Wang. S"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_041",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Ming Zhong, Han Liu, Weizhu Zhang, Houyu Wang, Xiang Li, Maosong Sun, and Xu Han",
-            "title": "Hyperbolic and spherical embeddings for long-tail entities",
-            "year": "2021",
-            "note": "Ming Zhong, Han Liu, Weizhu Zhang, Houyu Wang, Xiang Li, Maosong Sun, and Xu Han"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_043",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "\u00c9tienne Pardoux and Alexander Yu Veretennikov",
-            "title": "Poisson equation for multiscale diffusions",
-            "year": "2002",
-            "note": "\u00c9tienne Pardoux and Alexander Yu Veretennikov. Poisson equation for multiscale d"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_044",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Charanpal D Mummadi, Matthias Arens, and Thomas Brox",
-            "title": "Test-time adaptation for continual semantic segmentation",
-            "year": "2021",
-            "note": "Charanpal D Mummadi, Matthias Arens, and Thomas Brox. Test-time adaptation for c"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_045",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.40)",
-            "Low metadata similarity score: 0.20"
-          ],
-          "fields": {
-            "author": "Jiacheng He, Zhilu Zhang, Zhen Wang, and Yan Huang",
-            "title": "Autoencoder based test-time adaptation for semantic segmentation",
-            "year": "2021",
-            "note": "Jiacheng He, Zhilu Zhang, Zhen Wang, and Yan Huang. Autoencoder based test-time "
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]",
+            "Weak Semantic Scholar match (similarity 0.40) [detail redact [redacted: third-party dataset]",
+            "Low metadata similarity score [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_046",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "Suspiciously short author",
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "M",
-            "title": "Gong, F",
-            "year": "2022",
-            "note": "M. Gong, F. Yu, J. Zhang, and D. Tao. Efficient $\\\\ell_\\{p\\}$ norm regularizatio"
-          }
+            "Suspiciously short author [detail redacted [redacted: third-party dataset]",
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_047",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Mihail Stoian, Richard Milbradt, and Christian Mendl",
-            "title": "NP-Hardness of Optimal TensorNetwork Contraction and Polynomial-Time Algorithms ",
-            "year": "2022",
-            "note": "Mihail Stoian, Richard Milbradt, and Christian Mendl. NP-Hardness of Optimal Ten"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_048",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Jianyu Xu, Wei Li, and Ming Zhao",
-            "title": "Complexity of Optimal Tensor Network Contraction Sequences",
-            "year": "2023",
-            "note": "Jianyu Xu, Wei Li, and Ming Zhao. Complexity of Optimal Tensor Network Contracti"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_049",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Patrick Esser, Robin Rombach, and Bj\u00f6rn Ommer",
-            "title": "Structure-aware video generation with latent diffusion models",
-            "year": "2023",
-            "eprint": "2303.07332",
-            "archiveprefix": "arXiv",
-            "note": "Patrick Esser, Robin Rombach, and Bj\u00f6rn Ommer. Structure-aware video generation "
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_050",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Lele Xu, Chen Lin, Hongyu Zhao, and et al",
-            "title": "Gaborvit: Global attention with local frequency awareness",
-            "year": "2022",
-            "note": "Lele Xu, Chen Lin, Hongyu Zhao, and et al. Gaborvit: Global attention with local"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_051",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Yoonwoo Lee, Jaehyeong Kang, Namil Kim, Jinwoo Shin, and Honglak Lee",
-            "title": "Structured fast fourier transform attention for vision transformers",
-            "year": "2022",
-            "note": "Yoonwoo Lee, Jaehyeong Kang, Namil Kim, Jinwoo Shin, and Honglak Lee. Structured"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_052",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Siyuan Gong, Alan Yu, Xiaohan Chen, Yinpeng Lin, and Larry S Davis",
-            "title": "Vision transformer compression: Early exiting and token pruning",
-            "year": "2021",
-            "note": "Siyuan Gong, Alan Yu, Xiaohan Chen, Yinpeng Lin, and Larry S Davis. Vision trans"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_053",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.42)",
-            "Low metadata similarity score: 0.21"
-          ],
-          "fields": {
-            "author": "Jiuxiang Shi, Zuxuan Wu, and Dahua Lin",
-            "title": "Token-aware adaptive sampling for efficient diffusion models",
-            "year": "2023",
-            "note": "Jiuxiang Shi, Zuxuan Wu, and Dahua Lin. Token-aware adaptive sampling for effici"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]",
+            "Weak Semantic Scholar match (similarity 0.42) [detail redact [redacted: third-party dataset]",
+            "Low metadata similarity score [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_054",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Raphael Muller, Simon Kornblith, and Geoffrey Hinton",
-            "title": "Adavit: Adaptive tokens for efficient vision transformer",
-            "year": "2021",
-            "note": "Raphael Muller, Simon Kornblith, and Geoffrey Hinton. Adavit: Adaptive tokens fo"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_055",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Xin Wang, Anlin Chen, Lihui Xie, Xin Jin, Cheng Wang, and Ping Luo",
-            "title": "Not all tokens are equal: Efficient transformer for tokenization and beyond",
-            "year": "2021",
-            "note": "Xin Wang, Anlin Chen, Lihui Xie, Xin Jin, Cheng Wang, and Ping Luo. Not all toke"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_056",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "Suspiciously short author",
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Z",
-            "title": "Chen and N",
-            "year": "2022",
-            "eprint": "2206.09267",
-            "archiveprefix": "arXiv",
-            "note": "Z. Chen and N. Flammarion. When and why sam generalizes better: An optimization "
-          }
+            "Suspiciously short author [detail redacted [redacted: third-party dataset]",
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_057",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "Suspiciously short title",
-            "Suspiciously short author",
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "K",
-            "title": "A",
-            "year": "2020",
-            "note": "K. A. Sankararaman, S. Sankararaman, H. Pandey, S. Ganguli, and F. Bromberg. The"
-          }
+            "Suspiciously short title [detail redacted [redacted: third-party dataset]",
+            "Suspiciously short author [detail redacted [redacted: third-party dataset]",
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_058",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Why Physically-Based Rendering",
-            "title": "Physically-based rendering",
-            "year": "2015",
-            "note": "Why Physically-Based Rendering. Physically-based rendering. Procedia IUTAM, 13(1"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_059",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Pierre Casgrain, Anirudh Kulkarni, and Nicholas Watters",
-            "title": "Learning to trade with continuous action spaces: Application to market making",
-            "year": "2023",
-            "eprint": "2303.08603",
-            "archiveprefix": "arXiv",
-            "note": "Pierre Casgrain, Anirudh Kulkarni, and Nicholas Watters. Learning to trade with "
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_060",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Z Ning and Y K Kwok",
-            "title": "Q-learning for option pricing and hedging with transaction costs",
-            "year": "2020",
-            "note": "Z Ning and Y K Kwok. Q-learning for option pricing and hedging with transaction "
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_061",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "W L Chan and R O Shelton",
-            "title": "Can machine learning improve delta hedging? Journal of Derivatives, $9(1): 39-56",
-            "year": "2001",
-            "note": "W L Chan and R O Shelton. Can machine learning improve delta hedging? Journal of"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_062",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Petter N Kolm, Sebastian Kr\u00fcgel, and Sergiy V Zadorozhnyi",
-            "title": "Reinforcement learning for optimal hedging",
-            "year": "2019",
-            "note": "Petter N Kolm, Sebastian Kr\u00fcgel, and Sergiy V Zadorozhnyi. Reinforcement learnin"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_063",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Kyung Hyun Park, Hyeong Jin Kim, and Woo Chang Kim",
-            "title": "Deep reinforcement learning for limit order book-based market making",
-            "year": "2021",
-            "note": "Kyung Hyun Park, Hyeong Jin Kim, and Woo Chang Kim. Deep reinforcement learning "
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_064",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Moonseop Han and Elizabeth Qian",
-            "title": "Robust prediction of dynamical systems with structured neural networks: Long-ter",
-            "year": "2021",
-            "note": "Moonseop Han and Elizabeth Qian. Robust prediction of dynamical systems with str"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_065",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Bart De Schutter and Serge P Hoogendoorn",
-            "title": "Modeling and control of freeway traffic flow by state space neural networks",
-            "year": "2008",
-            "note": "Bart De Schutter and Serge P Hoogendoorn. Modeling and control of freeway traffi"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_066",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Jaideep Pathak, Brian R Hunt, Georg M Goerg, and Themistoklis P Sapsis",
-            "title": "Data-driven prediction of chaotic dynamics: Methods, challenges, and opportuniti",
-            "year": "2023",
-            "note": "Jaideep Pathak, Brian R Hunt, Georg M Goerg, and Themistoklis P Sapsis. Data-dri"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_067",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Alejandro G\u00fcemes, Stefano Discetti, and Andrea Ianiro",
-            "title": "Coarse-grained physics-based prediction of three-dimensional unsteady flows via ",
-            "year": "2021",
-            "note": "Alejandro G\u00fcemes, Stefano Discetti, and Andrea Ianiro. Coarse-grained physics-ba"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_068",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Jeongseung Park, Minseon Yang, Minz Won Park, and Geonseok Lee",
-            "title": "Diffsound: Differential sound manipulation with a few-shot supervision",
-            "year": "2021",
-            "note": "Jeongseung Park, Minseon Yang, Minz Won Park, and Geonseok Lee. Diffsound: Diffe"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_069",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Wenxuan Sun, Tri Dao, Hongyu Zhuang, Zihang Dai, Albert Gu, and Christopher D Ma",
-            "title": "Llamba: Efficient llms with mamba-based distillation",
-            "year": "2024",
-            "eprint": "2502.14458",
-            "archiveprefix": "arXiv",
-            "note": "Wenxuan Sun, Tri Dao, Hongyu Zhuang, Zihang Dai, Albert Gu, and Christopher D Ma"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_070",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.46)",
-            "Low metadata similarity score: 0.23"
-          ],
-          "fields": {
-            "author": "Tri Dao, Shizhe Ma, Wenxuan Sun, Albert Gu, Sam Smith, Aapo Kyrola, Christopher ",
-            "title": "An empirical study of state space models for large language modeling",
-            "year": "2024",
-            "eprint": "2406.07887",
-            "archiveprefix": "arXiv",
-            "note": "Tri Dao, Shizhe Ma, Wenxuan Sun, Albert Gu, Sam Smith, Aapo Kyrola, Christopher "
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]",
+            "Weak Semantic Scholar match (similarity 0.46) [detail redact [redacted: third-party dataset]",
+            "Low metadata similarity score [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_071",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Junyan Zhu, Chenyang Li, Chao He, and et al",
-            "title": "Freematch: A simple framework for long-tailed semi-supervised learning",
-            "year": "2021",
-            "note": "Junyan Zhu, Chenyang Li, Chao He, and et al. Freematch: A simple framework for l"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_072",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "Generic author name pattern",
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Yijie Zang et al",
-            "title": "Fedclip: A federated learning framework for vision-language models",
-            "year": "2023",
-            "note": "Yijie Zang et al. Fedclip: A federated learning framework for vision-language mo"
-          }
+            "Generic author name pattern [detail redacted [redacted: third-party dataset]",
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_073",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Jiahui Liu and et al",
-            "title": "Tall-swin: Thumbnail layout transformer for generalised deepfake video detection",
-            "year": "2023",
-            "note": "Jiahui Liu and et al. Tall-swin: Thumbnail layout transformer for generalised de"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_074",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.31)",
-            "Low metadata similarity score: 0.15"
-          ],
-          "fields": {
-            "author": "Nitish Srivastava and Ruslan R Salakhutdinov",
-            "title": "Discriminative features for fast frame-based phoneme classification",
-            "year": "2013",
-            "note": "Nitish Srivastava and Ruslan R Salakhutdinov. Discriminative features for fast f"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]",
+            "Weak Semantic Scholar match (similarity 0.31) [detail redact [redacted: third-party dataset]",
+            "Low metadata similarity score [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_075",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Anh Tuan Nguyen, Shengping Li, and Chao Qin",
-            "title": "Multimodal adversarial robustness: Attack and defense",
-            "year": "2021",
-            "note": "Anh Tuan Nguyen, Shengping Li, and Chao Qin. Multimodal adversarial robustness: "
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_076",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Jack Lau, Ankan Gayen, Philipp Tschandl, Gregory A Burns, Jiahong Yuan, Tanveer ",
-            "title": "A dataset and exploration of models for understanding radiology images through d",
-            "year": "2018",
-            "note": "Jack Lau, Ankan Gayen, Philipp Tschandl, Gregory A Burns, Jiahong Yuan, Tanveer "
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_077",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "Generic author name pattern",
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Yikai Zhang et al",
-            "title": "\"Text-to-Image Diffusion Models with Customized Guidance\"",
-            "year": "2023",
-            "note": "Yikai Zhang et al. \"Text-to-Image Diffusion Models with Customized Guidance\". In"
-          }
+            "Generic author name pattern [detail redacted [redacted: third-party dataset]",
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_078",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Author Song and AnotherAuthor Zhang",
-            "title": "\"Consistency in Diffusion Models: Improving Noise Embeddings\"",
-            "year": "2023",
-            "note": "Author Song and AnotherAuthor Zhang. \"Consistency in Diffusion Models: Improving"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_079",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Claudia Goldin",
-            "title": "Occupational choices and the gender wage gap",
-            "year": "2014",
-            "note": "Claudia Goldin. Occupational choices and the gender wage gap. American Economic "
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_080",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex",
-            "Weak Semantic Scholar match (similarity 0.33)"
-          ],
-          "fields": {
-            "author": "Olah, C., Elhage, N., Nanda, N., Schiefer, N., Jones, A., Henighan, T., and DasS",
-            "title": "(2022)",
-            "year": "2022",
-            "note": "Olah, C., Elhage, N., Nanda, N., Schiefer, N., Jones, A., Henighan, T., and DasS"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]",
+            "Weak Semantic Scholar match (similarity 0.33) [detail redact [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_081",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Nanda, N",
-            "title": "(2023)",
-            "year": "2023",
-            "note": "Nanda, N. (2023). Progress in mechanistic interpretability: Reverse-engineering "
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_082",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "Suspiciously short author",
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "J",
-            "title": "Zhang and X",
-            "year": "2015",
-            "note": "J. Zhang and X. Li. Multi-agent systems for distributed problem solving: A frame"
-          }
+            "Suspiciously short author [detail redacted [redacted: third-party dataset]",
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_083",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Erfan Aghasian, Shai Avidan, Piotr Dollar, and Justin Johnson",
-            "title": "Hierarchical protocols for multi-agent 3d scene understanding",
-            "year": "2021",
-            "note": "Erfan Aghasian, Shai Avidan, Piotr Dollar, and Justin Johnson. Hierarchical prot"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_084",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Itay Hubara, Matthieu Courbariaux, Daniel Soudry, Rami El-Yaniv, and Yoshua Beng",
-            "title": "Quantizing deep convolutional networks for efficient inference: A whitepaper",
-            "year": "2017",
-            "eprint": "1612.01462",
-            "archiveprefix": "arXiv",
-            "note": "Itay Hubara, Matthieu Courbariaux, Daniel Soudry, Rami El-Yaniv, and Yoshua Beng"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_085",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Zhiqiang Wang, Chao Zhang, Bing Li, Zhen Xu, and Zhiwei Li",
-            "title": "A survey of model compression and acceleration for deep neural networks",
-            "year": "2021",
-            "note": "Zhiqiang Wang, Chao Zhang, Bing Li, Zhen Xu, and Zhiwei Li. A survey of model co"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_086",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "Generic author name pattern",
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Andrew Black et al",
-            "title": "Zero-shot skill composition with semantic feature fusion",
-            "year": "2023",
-            "eprint": "2310.08573",
-            "archiveprefix": "arXiv",
-            "note": "Andrew Black et al. Zero-shot skill composition with semantic feature fusion. ar"
-          }
+            "Generic author name pattern [detail redacted [redacted: third-party dataset]",
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_087",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Yufei Wu, Kiran Alwala, Vivek Ganapathi, Sudeep Sharma, Yilun Chang, Yicheng Zha",
-            "title": "Susie: Scaling up instruction-following policies for robot manipulation",
-            "year": "2024",
-            "eprint": "2402.17552",
-            "archiveprefix": "arXiv",
-            "note": "Yufei Wu, Kiran Alwala, Vivek Ganapathi, Sudeep Sharma, Yilun Chang, Yicheng Zha"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_088",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Zhipeng Zhang, Chang Liu, Shihan Wu, and Yan Zhao",
-            "title": "EST: Event spatio-temporal transformer for object recognition with event cameras",
-            "year": "2023",
-            "note": "Zhipeng Zhang, Chang Liu, Shihan Wu, and Yan Zhao. EST: Event spatio-temporal tr"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_089",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Daniel Gehrig, Mathias Gehrig, John Monaghan, and Davide Scaramuzza",
-            "title": "Recurrent vision transformers for dense prediction",
-            "year": "2021",
-            "note": "Daniel Gehrig, Mathias Gehrig, John Monaghan, and Davide Scaramuzza. Recurrent v"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_090",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Qiyang Du, Ozan Sener, and Silvio Savarese",
-            "title": "Agree to disagree: Adaptive learning with gradient disagreement",
-            "year": "2021",
-            "note": "Qiyang Du, Ozan Sener, and Silvio Savarese. Agree to disagree: Adaptive learning"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_091",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Longxuan Jing, Yu Tian, Yujun Pei, Yibing Shen, and Jiashi Feng",
-            "title": "Understanding contrastive representation learning through alignment and uniformi",
-            "year": "2022",
-            "note": "Longxuan Jing, Yu Tian, Yujun Pei, Yibing Shen, and Jiashi Feng. Understanding c"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_092",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Yair Leviathan, Clemens Rosenbaum, and Slav Petrov",
-            "title": "Fast inference from transformers via speculative decoding",
-            "year": "2023",
-            "note": "Yair Leviathan, Clemens Rosenbaum, and Slav Petrov. Fast inference from transfor"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_093",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Wenwen Chang, Tal Schuster, and Yann LeCun",
-            "title": "Neural surgery for memorisation: Locating and removing verbatim recall neurons",
-            "year": "2024",
-            "note": "Wenwen Chang, Tal Schuster, and Yann LeCun. Neural surgery for memorisation: Loc"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_094",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "Suspiciously short author",
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "M",
-            "title": "Garcia and A",
-            "year": "2024",
-            "note": "M. Garcia and A. Thompson. Applications of llms in legal document analysis. Jour"
-          }
+            "Suspiciously short author [detail redacted [redacted: third-party dataset]",
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_095",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "Suspiciously short author",
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "J",
-            "title": "Smith and A",
-            "year": "2024",
-            "note": "J. Smith and A. Patel. Leveraging large language models for financial forecastin"
-          }
+            "Suspiciously short author [detail redacted [redacted: third-party dataset]",
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_096",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "Generic author name pattern",
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "David Jones et al",
-            "title": "Gpsa: Gene expression and histology-based spatial alignment",
-            "year": "2023",
-            "note": "David Jones et al. Gpsa: Gene expression and histology-based spatial alignment. "
-          }
+            "Generic author name pattern [detail redacted [redacted: third-party dataset]",
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_097",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Zhihao Chen, Hantao Zhang, Yuhan Zhang, Zhanlin Hu, Quanquan Gu, Qing Zhang, and",
-            "title": "Slat: a transformer-based method for simultaneous alignment and clustering of sp",
-            "year": "2023",
-            "note": "Zhihao Chen, Hantao Zhang, Yuhan Zhang, Zhanlin Hu, Quanquan Gu, Qing Zhang, and"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_098",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Fran\u00e7ois Baccelli, G\u00e9rard H",
-            "title": "Tach\u00e9, and Etienne Altman",
-            "year": "2002",
-            "note": "Fran\u00e7ois Baccelli, G\u00e9rard H. Tach\u00e9, and Etienne Altman. Flow complexity and heav"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_099",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Saravanan Jebarajakirthy, Paurav Shukla, and Prashant Palvia",
-            "title": "Heavy-tailed distributions in online ad response: A marketing analytics perspect",
-            "year": "2021",
-            "note": "Saravanan Jebarajakirthy, Paurav Shukla, and Prashant Palvia. Heavy-tailed distr"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         },
         {
           "key": "ansari100_100",
           "status": "warning",
           "issues": [],
           "warnings": [
-            "No DOI found and not in OpenAlex"
-          ],
-          "fields": {
-            "author": "Mehdi Azabou, Micah Weber, Wenlin Ma, et al",
-            "title": "Mineclip: Multimodal neural exploration of clip latents for automatic video anno",
-            "year": "2022",
-            "eprint": "2210.02870",
-            "archiveprefix": "arXiv",
-            "note": "Mehdi Azabou, Micah Weber, Wenlin Ma, et al. Mineclip: Multimodal neural explora"
-          }
+            "No DOI found and not in OpenAlex [detail redacted [redacted: third-party dataset]"
+          ]
         }
       ]
     },
