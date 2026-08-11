@@ -872,6 +872,16 @@ Respond with JSON: {{"is_suspicious": true/false, "confidence": 0-100, "reason":
         
         fields = entry['fields']
         doi = fields.get('doi', '')
+        # An arXiv identifier in `eprint` is a resolvable locator and was being
+        # ignored: only `doi` was read, so a reference carrying eprint =
+        # {2401.00001} took the no-DOI path and could never be settled. In the
+        # CiteAudit real-world set that is 820 of the 3,271 citations counted as
+        # carrying nothing to check; in the Ansari 100 it is 15. Hand it to the
+        # arXiv branch of validate_doi in the DataCite form it already accepts.
+        if not doi:
+            eprint = (fields.get('eprint', '') or '').strip()
+            if re.fullmatch(r'\d{4}\.\d{4,5}(v\d+)?', eprint):
+                doi = f'10.48550/arXiv.{eprint}'
         verified_metadata = None
         # True once the record the DOI resolves to contradicts a field in the
         # citation. Such a finding must not be undone by a later fuzzy match.

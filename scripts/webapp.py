@@ -128,7 +128,12 @@ def analyze():
                 },
                 json={
                     'model': 'claude-sonnet-5',
-                    'max_tokens': 300,
+                    # 2048 to match Gemini's maxOutputTokens. At 300 (sized for
+                    # Sonnet 4) Sonnet 5's longer `reason` strings were cut off
+                    # mid-sentence, so the JSON failed to parse and the call
+                    # 500'd — silently, since a failed call just leaves the
+                    # citation unescalated. Cost 22-27 of 100 calls per run.
+                    'max_tokens': 2048,
                     'messages': [{'role': 'user', 'content': prompt}]
                 },
                 timeout=30

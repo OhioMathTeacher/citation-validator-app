@@ -261,7 +261,8 @@ def compute_accuracy(details, ground_truth):
 
 # ── Main ─────────────────────────────────────────────────────────────────────
 
-def run_benchmark(dataset_name, provider, api_key, use_ai, output_dir):
+def run_benchmark(dataset_name, provider, api_key, use_ai, output_dir, delay=0.0,
+                  retries=3, retry_backoff=2.0):
     registry = load_manifest()
     if dataset_name not in registry:
         print(f"ERROR: Unknown dataset '{dataset_name}'")
@@ -318,6 +319,8 @@ def run_benchmark(dataset_name, provider, api_key, use_ai, output_dir):
     ai_time = 0
     ai_calls = 0
     ai_errors = 0
+    ai_retries = 0      # retry attempts spent
+    ai_recovered = 0    # citations that failed once and succeeded on a retry
     total_input_tokens = 0
     total_output_tokens = 0
     total_tokens = 0
@@ -331,55 +334,97 @@ def run_benchmark(dataset_name, provider, api_key, use_ai, output_dir):
 
         for i, citation in enumerate(targets, 1):
             prompt = build_prompt(citation)
-            try:
-                ai_resp = requests.post(
-                    f"{SERVER}/analyze",
-                    json={"provider": provider, "apiKey": api_key, "prompt": prompt},
-                    timeout=60,
-                )
-                if ai_resp.ok:
-                    ai_data = ai_resp.json()
-                    
-                    # Extract token usage metadata
-                    metadata = ai_data.get('_metadata', {})
-                    if metadata:
-                        tokens = metadata.get('tokens', {})
-                        total_input_tokens += tokens.get('input_tokens', 0)
-                        total_output_tokens += tokens.get('output_tokens', 0)
-                        total_tokens += tokens.get('total_tokens', 0)
-                    
-                    citation["ai_analysis"] = ai_data
 
-                    # Apply AI escalation (mirrors citation_validator.py logic)
-                    if isinstance(ai_data, dict):
-                        is_susp = ai_data.get("is_suspicious", False)
-                        conf = ai_data.get("confidence", 0)
-                        if is_susp and conf >= 70:
-                            if citation["status"] == "warning":
-                                citation["status"] = "suspicious"
-                            elif citation["status"] == "suspicious" and conf >= 85:
-                                citation["status"] = "invalid"
+            # Try each citation up to `retries` times. A dropped call is not a
+            # visible failure — it leaves the citation unescalated and the run
+            # still reports a complete-looking count — so a transient error
+            # silently biases the result downward. Retrying is what keeps the
+            # denominator honest.
+            last_error = None
+            for attempt in range(1, retries + 1):
+                try:
+                    ai_resp = requests.post(
+                        f"{SERVER}/analyze",
+                        json={"provider": provider, "apiKey": api_key, "prompt": prompt},
+                        timeout=60,
+                    )
+                    if ai_resp.ok:
+                        ai_data = ai_resp.json()
 
-                    ai_calls += 1
-                else:
-                    ai_errors += 1
-                    error_code = ai_resp.status_code
-                    citation["ai_error"] = {"status_code": error_code, "message": ai_resp.text[:200]}
-                    print(f"  AI error on {citation['key']}: {error_code}")
-            except requests.exceptions.Timeout:
+                        # Extract token usage metadata
+                        metadata = ai_data.get('_metadata', {})
+                        if metadata:
+                            tokens = metadata.get('tokens', {})
+                            total_input_tokens += tokens.get('input_tokens', 0)
+                            total_output_tokens += tokens.get('output_tokens', 0)
+                            total_tokens += tokens.get('total_tokens', 0)
+
+                        citation["ai_analysis"] = ai_data
+
+                        # Apply AI escalation (mirrors citation_validator.py logic)
+                        if isinstance(ai_data, dict):
+                            is_susp = ai_data.get("is_suspicious", False)
+                            conf = ai_data.get("confidence", 0)
+                            if is_susp and conf >= 70:
+                                if citation["status"] == "warning":
+                                    citation["status"] = "suspicious"
+                                elif citation["status"] == "suspicious" and conf >= 85:
+                                    citation["status"] = "invalid"
+
+                        ai_calls += 1
+                        if attempt > 1:
+                            citation["ai_attempts"] = attempt
+                            ai_recovered += 1
+                            print(f"  AI recovered on {citation['key']} "
+                                  f"(attempt {attempt}/{retries})")
+                        last_error = None
+                        break
+
+                    last_error = {"status_code": ai_resp.status_code,
+                                  "message": ai_resp.text[:200]}
+                    # Auth and permission failures will not fix themselves;
+                    # retrying only burns quota and delays the run.
+                    if ai_resp.status_code in (401, 403):
+                        break
+                except requests.exceptions.Timeout:
+                    last_error = {"status_code": "timeout",
+                                  "message": "Request timed out"}
+                except Exception as e:
+                    last_error = {"status_code": "exception",
+                                  "message": str(e)[:200]}
+
+                if attempt < retries:
+                    ai_retries += 1
+                    backoff = retry_backoff * (2 ** (attempt - 1))
+                    print(f"  AI {last_error['status_code']} on {citation['key']}, "
+                          f"retrying in {backoff:.0f}s ({attempt}/{retries - 1} used)")
+                    time.sleep(backoff)
+
+            if last_error is not None:
                 ai_errors += 1
-                citation["ai_error"] = {"status_code": "timeout", "message": "Request timed out"}
-                print(f"  AI timeout on {citation['key']}")
-            except Exception as e:
-                ai_errors += 1
-                citation["ai_error"] = {"status_code": "exception", "message": str(e)[:200]}
-                print(f"  AI exception on {citation['key']}: {e}")
+                citation["ai_error"] = last_error
+                citation["ai_attempts"] = retries
+                print(f"  AI FAILED on {citation['key']} after {retries} attempts: "
+                      f"{last_error['status_code']}")
 
             if i % 10 == 0 or i == total:
                 print(f"  {i}/{total} complete...")
 
+            # Pace the calls. An unthrottled run that trips a rate limit does
+            # not fail — it records ai_errors and leaves those citations
+            # unescalated, so the run still looks complete while reporting
+            # fewer suspicious citations than it should.
+            if delay and i < total:
+                time.sleep(delay)
+
         ai_time = time.time() - t1
         print(f"  AI pass done in {ai_time:.1f}s ({ai_calls} successful calls, {ai_errors} errors)")
+        if ai_retries:
+            print(f"  Retries: {ai_retries} spent, {ai_recovered} citations recovered")
+        if ai_errors:
+            print(f"  WARNING: {ai_errors} citations have no AI verdict after "
+                  f"{retries} attempts. They were NOT escalated, so the counts "
+                  f"below understate detection. Do not average this run.")
         if ai_calls > 0:
             print(f"  Tokens: {total_input_tokens} in, {total_output_tokens} out, {total_tokens} total")
             print(f"  Avg per call: {total_tokens/ai_calls:.0f} tokens")
@@ -405,6 +450,9 @@ def run_benchmark(dataset_name, provider, api_key, use_ai, output_dir):
         "ai_model": PROVIDER_MODELS.get(provider) if use_ai else None,
         "ai_calls": ai_calls,
         "ai_errors": ai_errors if use_ai else 0,
+        "ai_retries": ai_retries if use_ai else 0,
+        "ai_recovered": ai_recovered if use_ai else 0,
+        "ai_max_attempts": retries if use_ai else 0,
         "deterministic_seconds": round(det_time, 1),
         "ai_seconds": round(ai_time, 1),
         "total_seconds": round(det_time + ai_time, 1),
@@ -528,6 +576,15 @@ Examples:
                         help="List available datasets and exit")
     parser.add_argument("--server", "-s", default="http://localhost:5000",
                         help="Server URL (default: http://localhost:5000)")
+    parser.add_argument("--delay", type=float, default=0.0,
+                        help="Seconds to pause between AI calls, to stay under "
+                             "provider rate limits (default: 0, unthrottled)")
+    parser.add_argument("--retries", type=int, default=3,
+                        help="Attempts per citation before giving up "
+                             "(default: 3; use 1 to disable retrying)")
+    parser.add_argument("--retry-backoff", type=float, default=2.0,
+                        help="Base seconds before a retry, doubling each "
+                             "attempt (default: 2 -> 2s, 4s)")
 
     args = parser.parse_args()
 
@@ -554,7 +611,9 @@ Examples:
             if not api_key:
                 parser.error(f"No API key. Set {env_name} or pass --api-key")
 
-    run_benchmark(args.dataset, provider, api_key, use_ai, args.output_dir)
+    run_benchmark(args.dataset, provider, api_key, use_ai, args.output_dir,
+                  delay=args.delay, retries=max(1, args.retries),
+                  retry_backoff=args.retry_backoff)
 
 
 if __name__ == "__main__":
