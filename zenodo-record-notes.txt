@@ -53,6 +53,15 @@ record is correctly labelled v1.5.0 even though CITATION.cff still said 1.4.4 at
 the time, so a stale CITATION.cff does not mislabel the archive. It does mislabel
 GitHub's "Cite this repository" button, which is the reason to keep it current.
 
+BUMP THE **VERSION** FILE TOO -- IT IS THE ONE THE RUNNING APP REPORTS.
+This procedure said "bump CITATION.cff" and never mentioned VERSION, so v1.6.0
+was tagged and released with VERSION still reading 1.5.1. /version reads that
+file, so the deployed Space and every report saved from it claimed 1.5.1 -- a
+version that does not contain the v1.6.0 code -- while Zenodo archived it as
+1.6.0. Found 2026-08-11 by the Version tab in the app's own settings panel.
+tests/test_version_consistency.py now fails if VERSION and CITATION.cff drift
+apart, so this cannot recur silently. Bump BOTH, then tag.
+
 Verified 2026-08-07 against https://developers.zenodo.org/ and the live records.
 
 DO NOT CHECK THE LICENCES VIA THE DEFAULT API. https://zenodo.org/api/records/<id>
