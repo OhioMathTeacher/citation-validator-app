@@ -101,14 +101,16 @@ redistribution with attribution is acceptable, and passes back three real-world
 entries whose citation text disagrees with the record its DOI points to.
 **No reply as of 2026-08-05.** Nothing here changes unless one arrives.
 
-No request has gone to the owners of the Ansari 100. It derives from a public
-GPTZero table that states no terms of reuse, and there is no obvious
-corresponding author to write to; it stays fetch-only for that reason.
+No licence request went to the owners of the Ansari 100 before 2026-08-11. It
+derives from a public GPTZero table that states no terms of reuse, and there was
+no obvious corresponding author to write to; it stayed fetch-only for that
+reason. GPTZero was first contacted in the disclosure below.
 
 ## Disclosure, 2026-08-11
 
 Both owners were written to after the redistribution described in the correction
-above was found. Text as drafted:
+above was found. **Both sent 2026-08-11** — to Yanfang Ye (yye7@nd.edu) and to
+GPTZero (team@gptzero.me). Text as sent:
 [`disclosure-citeaudit-2026-08-11.txt`](disclosure-citeaudit-2026-08-11.txt) —
 a correction to the 4 August request, which had told Dr. Ye the repository did
 not include the data — and
@@ -119,8 +121,8 @@ stating no terms of reuse.
 Each says the same three things: derived result files had included their
 citation records, that is fixed going forward and guarded by a test, and
 releases already archived on Zenodo retain the unredacted files and cannot be
-altered. Neither asks for anything. Update this section when replies arrive, or
-record that none did.
+altered. Neither asks for anything. **No reply to either as of 2026-08-11.**
+Update this section when replies arrive, or record that none did.
 
 ## Attribution
 
