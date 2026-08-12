@@ -1,36 +1,19 @@
 To: team@gptzero.me (general contact)
 Subject: Your NeurIPS 2025 hallucinated-citation table -- a disclosure
 
-[Postal address, if a letter is ever wanted rather than email:
- GPTZero Inc., 228 Park Ave S, PMB 66763, New York, NY 10003-1502]
+[Postal address, if a letter is ever wanted rather than email: GPTZero Inc., 228 Park Ave S, PMB 66763, New York, NY 10003-1502]
 
 Hello,
 
-I edit a small mathematics education journal and built a free, open citation
-validator after the April Nature article on fabricated references. One of the
-sets I evaluate it against is derived from your public table of hallucinated
-citations in NeurIPS 2025 submissions, by way of Ansari (2026).
+I edit a small mathematics education journal and built a free, open citation validator after the April Nature article on fabricated references. One of the sets I evaluate it against is derived from your public table of hallucinated citations in NeurIPS 2025 submissions, by way of Ansari (2026).
 
-Because the table states no terms of reuse, our repository deliberately does not
-redistribute it: an importer fetches it from your site on demand. Auditing our
-own repository yesterday I found that was only half true. The per-citation
-result files from our experiments had recorded each citation's author, title
-and identifier, so the derived set was reconstructable from our results
-directory even though the dataset itself was withheld. This went back to April
-and covers 100 citations derived from your table.
+Because the table states no terms of reuse, our repository deliberately does not redistribute it: an importer fetches it from your site on demand. Auditing our own repository yesterday I found that was only half true. The per-citation result files from our experiments had recorded each citation's author, title and identifier, so the derived set was reconstructable from our results directory even though the dataset itself was withheld. This went back to April and covers 100 citations derived from your table.
 
-Those files now keep only our tool's verdict for each citation, with the
-citation text removed, and a test now fails if it returns. Two releases archived
-on Zenodo before yesterday still contain the unredacted files; Zenodo records
-are immutable, so those cannot be altered, and our git history retains them for
-the same practical reason.
+Those files now keep only our tool's verdict for each citation, with the citation text removed, and a test now fails if it returns. Two releases archived on Zenodo before yesterday still contain the unredacted files; Zenodo records are immutable, so those cannot be altered, and our git history retains them for the same practical reason.
 
-I am telling you because it is your table and you had no way to know. Nothing is
-required of you, and if you would rather we stopped using the derived set
-altogether, say so and we will remove it and adjust the paper accordingly.
+I am telling you because it is your table and you had no way to know. Nothing is required of you, and if you would rather we stopped using the derived set altogether, say so and we will remove it and adjust the paper accordingly.
 
-With thanks for publishing the table in the first place -- it is the only
-independent set of confirmed fabrications I have been able to test against,
+With thanks for publishing the table in the first place -- it is the only independent set of confirmed fabrications I have been able to test against,
 
 Michael Todd Edwards
 Editor, Ohio Journal of School Mathematics
