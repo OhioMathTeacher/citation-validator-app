@@ -95,8 +95,7 @@ run without needing anyone else's data.
 
 ## Licence request
 
-**Sent 2026-08-04** to Yanfang Ye (yye7@nd.edu), corresponding author, cc
-S. Asli Ozgun-Koca and Gregory Foley. Text as sent:
+**Sent 2026-08-04** to Yanfang Ye (yye7@nd.edu), corresponding author. Text as sent:
 [`permission-request-citeaudit.txt`](permission-request-citeaudit.txt). It asks whether
 redistribution with attribution is acceptable, and passes back three real-world
 entries whose citation text disagrees with the record its DOI points to.
