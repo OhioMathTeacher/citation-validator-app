@@ -34,6 +34,15 @@ test_citations/[0-9][0-9][0-9][0-9].[0-9]*.tar.gz
 
 !.env.example
 
+# Saved mail. The letters we send are tracked as plain .txt in datasets/ on
+# purpose -- datasets/README.md links them as the public record of what was
+# said. An exported message is a different thing: it carries headers, routing,
+# addresses and whatever a reply quotes back, none of which is ours to publish.
+# Keep the drafts, never the mail.
+*.eml
+*.mbox
+*.msg
+
 # Saved UI exports and editor backups under results/. These are not primary
 # evidence -- results/experiments/ is -- and they carried withheld citation
 # text past the redaction in scripts/strip_restricted_results.py, because they
