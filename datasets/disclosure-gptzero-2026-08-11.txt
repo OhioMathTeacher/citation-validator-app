@@ -9,7 +9,7 @@ I edit a small mathematics education journal and built a free, open citation val
 
 Because the table states no terms of reuse, our repository deliberately does not redistribute it: an importer fetches it from your site on demand. Auditing our own repository yesterday I found that was only half true. The per-citation result files from our experiments had recorded each citation's author, title and identifier, so the derived set was reconstructable from our results directory even though the dataset itself was withheld. This went back to April and covers 100 citations derived from your table.
 
-Those files now keep only our tool's verdict for each citation, with the citation text removed, and a test now fails if it returns. Two releases archived on Zenodo before yesterday still contain the unredacted files; Zenodo records are immutable, so those cannot be altered, and our git history retains them for the same practical reason.
+Those files now keep only our tool's verdict for each citation, with the citation text removed, and a test now fails if it returns. Every release archived on Zenodo before yesterday -- seven of them, v1.4.0 through v1.6.0 -- still contains the unredacted files; Zenodo records are immutable, so those cannot be altered, and our git history retains them for the same practical reason. Zenodo's download counter stands at zero for all seven, so as best I can tell nobody has ever obtained the derived set that way.
 
 I am telling you because it is your table and you had no way to know. Nothing is required of you, and if you would rather we stopped using the derived set altogether, say so and we will remove it and adjust the paper accordingly.
 
