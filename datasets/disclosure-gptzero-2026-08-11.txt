@@ -1,6 +1,8 @@
-To: [GPTZero -- address to confirm. Their published support route is
-     support@gptzero.me; a research or press contact may be more apt.]
+To: team@gptzero.me (general contact)
 Subject: Your NeurIPS 2025 hallucinated-citation table -- a disclosure
+
+[Postal address, if a letter is ever wanted rather than email:
+ GPTZero Inc., 228 Park Ave S, PMB 66763, New York, NY 10003-1502]
 
 Hello,
 
