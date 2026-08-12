@@ -121,7 +121,15 @@ stating no terms of reuse.
 Each says the same three things: derived result files had included their
 citation records, that is fixed going forward and guarded by a test, and
 releases already archived on Zenodo retain the unredacted files and cannot be
-altered. Neither asks for anything. **No reply to either as of 2026-08-11.**
+altered. Neither asks for anything.
+
+**GPTZero replied 2026-08-12.** They acknowledged the disclosure and are
+checking internally on whether we may continue using the derived set; an answer
+is expected but has not arrived. Our response
+([`reply-gptzero-2026-08-12.txt`](reply-gptzero-2026-08-12.txt)) restates what
+continued use would mean in practice and notes that the paper is near
+submission. **No reply from CiteAudit as of 2026-08-12** — that thread has now
+been unanswered since 4 August.
 
 Record replies here as they arrive, or note that none did — but record them by
 date and substance only. The letters above are ours and are published on
