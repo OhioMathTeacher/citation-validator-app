@@ -1,11 +1,12 @@
 To: team@gptzero.me
+Cc: edwardm2@miamioh.edu
 Subject: Re: Your NeurIPS 2025 hallucinated-citation table -- a disclosure
 
-Thank you -- that is a generous reply, and nothing further is needed from me while your team decides.
+Thank you.
 
-In case it helps make the question concrete: the derived set is 100 citations taken from your public NeurIPS table, used only as an evaluation set for the validator. What gets published is the aggregate -- how many the tool caught, how many it missed, and where it was wrong -- not the citation records, which are no longer in our repository or in our released results. Nothing is redistributed either way, so the decision is only about whether we may keep evaluating against it.
+In case it helps make the question more concrete, please note that the derived set is 100 citations taken from your public NeurIPS table, used only as an evaluation set for the validator. What gets published is the aggregate -- how many the tool caught, how many it missed, and where it was wrong -- not the citation records, which are no longer in our repository or in our released results. Nothing is redistributed either way, so the decision is only about whether we may keep evaluating against it.
 
-One timing note, offered as information and not as pressure: an article describing the evaluation is close to submission. If the answer is that you would rather we did not use the set, hearing that sooner is easier for me than later -- but I would rather have the considered answer than the quick one. If it is no, I will remove the set and adjust the paper, exactly as offered.
+One timing note, offered as information and not as pressure: an article describing the evaluation is close to submission. If the answer is that you would rather we did not use the set, hearing that sooner is easier for me than later, but I would rather have the considered answer than the quick one. If it is no, I will remove the set and adjust the paper, exactly as offered.
 
 Thanks again for looking at this so quickly.
 

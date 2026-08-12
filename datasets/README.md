@@ -125,8 +125,9 @@ altered. Neither asks for anything.
 
 **GPTZero replied 2026-08-12.** They acknowledged the disclosure and are
 checking internally on whether we may continue using the derived set; an answer
-is expected but has not arrived. Our response
-([`reply-gptzero-2026-08-12.txt`](reply-gptzero-2026-08-12.txt)) restates what
+is expected but has not arrived. Our response was **sent 2026-08-12**, cc'd to
+edwardm2@miamioh.edu. Text as sent:
+[`reply-gptzero-2026-08-12.txt`](reply-gptzero-2026-08-12.txt). It restates what
 continued use would mean in practice and notes that the paper is near
 submission. **No reply from CiteAudit as of 2026-08-12** — that thread has now
 been unanswered since 4 August.
@@ -135,8 +136,10 @@ Record replies here as they arrive, or note that none did — but record them by
 date and substance only. The letters above are ours and are published on
 purpose; a reply is the other party's writing, sent privately to one person, and
 is not ours to publish however agreeable it turns out to be. Summarise what was
-decided, not what was said. Exported mail is git-ignored (`*.eml`, `*.mbox`,
-`*.msg`) so that a saved message cannot reach this repository by accident.
+decided, not what was said. Exported mail is kept outside the repository
+altogether, not merely untracked inside it; the git-ignore rules (`*.eml`,
+`*.mbox`, `*.msg`) are a backstop against a stray `git add`, not a filing
+cabinet.
 
 ## Attribution
 
