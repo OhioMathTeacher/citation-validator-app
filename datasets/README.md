@@ -122,7 +122,13 @@ Each says the same three things: derived result files had included their
 citation records, that is fixed going forward and guarded by a test, and
 releases already archived on Zenodo retain the unredacted files and cannot be
 altered. Neither asks for anything. **No reply to either as of 2026-08-11.**
-Update this section when replies arrive, or record that none did.
+
+Record replies here as they arrive, or note that none did — but record them by
+date and substance only. The letters above are ours and are published on
+purpose; a reply is the other party's writing, sent privately to one person, and
+is not ours to publish however agreeable it turns out to be. Summarise what was
+decided, not what was said. Exported mail is git-ignored (`*.eml`, `*.mbox`,
+`*.msg`) so that a saved message cannot reach this repository by accident.
 
 ## Attribution
 
