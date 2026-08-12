@@ -1,0 +1,35 @@
+To: yye7@nd.edu (Yanfang Ye, corresponding author)
+Cc: S. Asli Özgün-Koca, Gregory Foley
+Subject: CiteAudit redistribution -- a correction to what I told you on 4 August
+
+Dear Dr. Ye and colleagues,
+
+Following up on my 4 August note about redistributing CiteAudit: I told you our
+repository did not include your data, only fetched it on demand. That was true
+of the data directory and not true of the repository as a whole, and I would
+rather you heard it from me.
+
+Auditing our own repository yesterday, I found that the per-citation result
+files from our experiments had recorded each citation's author, title,
+identifier and original reference string. Your real-world and benchmark groups
+were therefore reproducible from our results directory even though the datasets
+themselves were withheld. This went back to April.
+
+Those files now keep only our tool's verdict for each citation -- the status,
+which registry resolved it, and the model's judgement -- with the citation text
+removed, and we have added a test that fails if it returns. Two releases
+archived on Zenodo before yesterday (v1.5.1 and v1.6.0) still contain the
+unredacted files; Zenodo records are immutable, so those cannot be altered.
+Our git history likewise retains them, and rewriting it would break permalinks
+cited in a forthcoming article.
+
+Nothing is required of you. If you would prefer we take any further step with
+the archived releases, I will do it. The standing question from 4 August is
+also still open, and still entirely yours to decline: if redistribution with
+attribution were acceptable we would ship a pinned snapshot, and if not,
+fetch-only remains completely fine.
+
+With apologies for the correction and thanks for the benchmark,
+
+Michael Todd Edwards
+Editor, Ohio Journal of School Mathematics

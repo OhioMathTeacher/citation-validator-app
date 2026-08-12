@@ -86,6 +86,12 @@ about. Fetching costs one command and leaves the attribution where it belongs.
 stays in the repository, so each figure in the paper still traces to its source
 run without needing anyone else's data.
 
+> **That paragraph was wrong from April until 2026-08-11, and it is the sentence
+> this repository got most wrong.** It asks the right question — is `results/`
+> affected? — and answers it from what the experiment logs are *for* rather than
+> from what they *contain*. They contained each citation's author, title,
+> identifier and original reference string. See the correction below.
+
 ## Licence request
 
 **Sent 2026-08-04** to Yanfang Ye (yye7@nd.edu), corresponding author, cc
@@ -98,6 +104,23 @@ entries whose citation text disagrees with the record its DOI points to.
 No request has gone to the owners of the Ansari 100. It derives from a public
 GPTZero table that states no terms of reuse, and there is no obvious
 corresponding author to write to; it stays fetch-only for that reason.
+
+## Disclosure, 2026-08-11
+
+Both owners were written to after the redistribution described in the correction
+above was found. Text as drafted:
+[`disclosure-citeaudit-2026-08-11.txt`](disclosure-citeaudit-2026-08-11.txt) —
+a correction to the 4 August request, which had told Dr. Ye the repository did
+not include the data — and
+[`disclosure-gptzero-2026-08-11.txt`](disclosure-gptzero-2026-08-11.txt), the
+first approach to GPTZero, whose table had until then only been relied on as
+stating no terms of reuse.
+
+Each says the same three things: derived result files had included their
+citation records, that is fixed going forward and guarded by a test, and
+releases already archived on Zenodo retain the unredacted files and cannot be
+altered. Neither asks for anything. Update this section when replies arrive, or
+record that none did.
 
 ## Attribution
 
