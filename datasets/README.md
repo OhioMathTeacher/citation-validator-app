@@ -36,8 +36,9 @@ every result remains checkable. `tests/test_no_restricted_data.py` fails if it
 comes back. Saved UI exports and editor backups under `results/` are no longer
 tracked, having slipped past the first two passes of the stripper.
 
-**Not fixed, and cannot be:** releases already archived on Zenodo (v1.5.x and
-v1.6.0) contain the unredacted files. Zenodo records are immutable by design.
+**Not fixed, and cannot be:** every release already archived on Zenodo — all
+seven, v1.4.0 through v1.6.0 — contains the unredacted files. Zenodo records
+are immutable by design. All seven show zero downloads as of 2026-08-11.
 Git history likewise still contains them; rewriting it would break the
 `/blob/v1.6.0/` permalinks the paper cites, which we judged the worse trade.
 Anyone wanting either dataset should go to its source, linked above.
