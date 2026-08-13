@@ -40,4 +40,4 @@ license: AGPL-3.0-or-later
 # repository" button offers and what Zenodo has archived. Not the working tree:
 # VERSION may be ahead between releases. Bump both at tag time.
 version: 1.7.0
-date-released: '2026-08-11'
+date-released: '2026-08-12'
