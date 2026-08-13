@@ -1,0 +1,27 @@
+To: yye7@nd.edu (Yanfang Ye, corresponding author)
+Subject: Re: Using CiteAudit in an open citation-verification evaluation -- a fourth entry, and a correction to my own figure
+
+Dear Dr. Ye and colleagues,
+
+Two small things to add to my messages of 4 and 11 August. Neither needs a reply, and neither asks anything of you.
+
+First, a fourth entry of the same kind as the three I sent on 4 August. Entry citeaudit_rw_2115 records:
+
+    Xiaoke Zhang. How does AI-generated voice affect online video creation?: evidence from TikTok. PhD thesis, University of British Columbia, 2023.
+
+The author, title, institution and year are all correct. The degree is not: the title page reads Master of Science in Business Administration. I retrieved the thesis to check.
+
+As with the earlier three, I do not think this is a defect in your annotation. The citation string is what the citing author wrote, and your "valid" label answers whether the cited work is real, which it is. It is another instance of the distinction my earlier letter drew -- "is this a real piece of work?" against "does the citation match the record?" -- and yours remains the harder question to annotate.
+
+Second, and more importantly, I need to correct something I told you on 4 August. I wrote that of the 3,356 real-world citations only 85 carry a DOI, that this was 2.5%, and that the figure had become a central point in my write-up. The count was right and the conclusion I drew from it was wrong, in a way that was my fault rather than the corpus's.
+
+My importer read the `doi` field and ignored `eprint`. A further 820 of those citations carry an arXiv identifier, which resolves perfectly well and which my own tool now treats as a locator. So 905 of the 3,356 -- 27%, not one in forty -- carry something a registry can settle. The share carrying nothing checkable is 73%, not 97.5%.
+
+I had been reporting a property of my own code as a property of your benchmark, in writing, to you. It changes the figure in my paper and it changes the argument that rested on it, and since I put the wrong number in front of you first, correcting it here seemed the least I could do.
+
+The evaluation itself is unaffected: every finding I described came from the 85 citations carrying a DOI, which take the same path they always did.
+
+With thanks again for the benchmark, which has been the most useful external check this project has had,
+
+Michael Todd Edwards
+Editor, Ohio Journal of School Mathematics
