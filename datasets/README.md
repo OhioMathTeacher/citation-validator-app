@@ -36,6 +36,18 @@ every result remains checkable. `tests/test_no_restricted_data.py` fails if it
 comes back. Saved UI exports and editor backups under `results/` are no longer
 tracked, having slipped past the first two passes of the stripper.
 
+**That fix was itself incomplete, and the rest landed 2026-08-12.** Preparing
+the v1.7.0 release, the archive was built and searched instead of the policy
+being read again, which found two further routes: `ai_error.message` kept the
+model's raw reply whenever a call would not parse — and a model explaining why
+a citation is fabricated quotes the citation — and `ai_analysis.additional_note`
+carried prose under a key the stripper did not name. 79 records across four
+files, one of them written by a v1.7.0 run, after the first fix. Both are
+closed, `ai_analysis` now works from an allowlist, and the test no longer names
+keys at all: any free text over 60 characters in a restricted record fails it,
+whatever key holds it. **v1.7.0 ([10.5281/zenodo.21911148](https://doi.org/10.5281/zenodo.21911148))
+is the first archived release that contains none of it.**
+
 **Not fixed, and cannot be:** every release already archived on Zenodo — all
 seven, v1.4.0 through v1.6.0 — contains the unredacted files. Zenodo records
 are immutable by design. All seven show zero downloads as of 2026-08-11.
