@@ -926,7 +926,7 @@
       ],
       "ai_error": {
         "status_code": 529,
-        "message": "{\n  \"error\": \"Anthropic API error: {\\\"type\\\":\\\"error\\\",\\\"error\\\":{\\\"type\\\":\\\"overloaded_error\\\",\\\"message\\\":\\\"Overloaded\\\"},\\\"request_id\\\":\\\"req_011CZvLt9UsFxVWJva4nuPQY\\\"}\"\n}\n"
+        "message": "Anthropic API error: {\\ [redacted: third-party dataset]"
       }
     },
     {
@@ -966,7 +966,7 @@
       ],
       "ai_error": {
         "status_code": 529,
-        "message": "{\n  \"error\": \"Anthropic API error: {\\\"type\\\":\\\"error\\\",\\\"error\\\":{\\\"type\\\":\\\"overloaded_error\\\",\\\"message\\\":\\\"Overloaded\\\"},\\\"request_id\\\":\\\"req_011CZvLtbEB2AtpzKhvxisra\\\"}\"\n}\n"
+        "message": "Anthropic API error: {\\ [redacted: third-party dataset]"
       }
     },
     {
@@ -1037,7 +1037,7 @@
       ],
       "ai_error": {
         "status_code": 529,
-        "message": "{\n  \"error\": \"Anthropic API error: {\\\"type\\\":\\\"error\\\",\\\"error\\\":{\\\"type\\\":\\\"overloaded_error\\\",\\\"message\\\":\\\"Overloaded\\\"},\\\"request_id\\\":\\\"req_011CZvLuqVSvHH9USJmEWoWy\\\"}\"\n}\n"
+        "message": "Anthropic API error: {\\ [redacted: third-party dataset]"
       }
     },
     {
@@ -1104,7 +1104,7 @@
       "warnings": [],
       "ai_error": {
         "status_code": 529,
-        "message": "{\n  \"error\": \"Anthropic API error: {\\\"type\\\":\\\"error\\\",\\\"error\\\":{\\\"type\\\":\\\"overloaded_error\\\",\\\"message\\\":\\\"Overloaded\\\"},\\\"request_id\\\":\\\"req_011CZvLvtjC7R7aTrexHHxbk\\\"}\"\n}\n"
+        "message": "Anthropic API error: {\\ [redacted: third-party dataset]"
       }
     },
     {
@@ -1197,7 +1197,7 @@
       ],
       "ai_error": {
         "status_code": 529,
-        "message": "{\n  \"error\": \"Anthropic API error: {\\\"type\\\":\\\"error\\\",\\\"error\\\":{\\\"type\\\":\\\"overloaded_error\\\",\\\"message\\\":\\\"Overloaded\\\"},\\\"request_id\\\":\\\"req_011CZvLxCPbkUPePKwZBRaiE\\\"}\"\n}\n"
+        "message": "Anthropic API error: {\\ [redacted: third-party dataset]"
       }
     },
     {
@@ -1212,7 +1212,7 @@
       ],
       "ai_error": {
         "status_code": 529,
-        "message": "{\n  \"error\": \"Anthropic API error: {\\\"type\\\":\\\"error\\\",\\\"error\\\":{\\\"type\\\":\\\"overloaded_error\\\",\\\"message\\\":\\\"Overloaded\\\"},\\\"request_id\\\":\\\"req_011CZvLxEwPftjvsKJJbSRm7\\\"}\"\n}\n"
+        "message": "Anthropic API error: {\\ [redacted: third-party dataset]"
       }
     },
     {

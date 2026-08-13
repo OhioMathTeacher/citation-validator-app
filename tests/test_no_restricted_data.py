@@ -90,6 +90,51 @@ def test_no_citation_fields_in_tracked_results():
     )
 
 
+def _strings(node):
+    if isinstance(node, dict):
+        for key, value in node.items():
+            for path, text in _strings(value):
+                yield f'{key}.{path}' if path else key, text
+    elif isinstance(node, list):
+        for item in node:
+            yield from _strings(item)
+    elif isinstance(node, str):
+        yield '', node
+
+
+# Nothing legitimate in a stripped record runs long: citation keys, statuses,
+# provider names and model identifiers all sit under 40 characters. Prose does
+# not. Measured across every tracked restricted file on 2026-08-12, the
+# longest survivor was 39 characters and the shortest offender was 220.
+MAX_SAFE_LEN = 60
+
+
+def test_no_long_free_text_anywhere_in_restricted_records():
+    """Catch prose by shape, not by key name.
+
+    The three escapes so far were all the same mistake in different clothes.
+    `fields` was published for four months; `ai_error.message` kept the raw
+    model reply whenever a call hit the token ceiling; `ai_analysis.
+    additional_note` appeared once, in a v1.7.0 run, after the first two were
+    fixed. Each was found by looking, and each would have been caught here
+    without being named, because a key nobody has thought of yet still holds
+    a string that is too long to be anything but prose.
+    """
+    offenders = []
+    for rel, blob in _restricted_result_files():
+        for c in blob.get('details') or []:
+            for path, text in _strings(c):
+                if len(text) > MAX_SAFE_LEN and not REDACTED.search(text):
+                    offenders.append(
+                        f'{rel}: {c.get("key")!r} {path or "<str>"} '
+                        f'({len(text)} chars) {text[:70]!r}')
+    assert not offenders, (
+        f'{len(offenders)} records carry free text longer than '
+        f'{MAX_SAFE_LEN} characters.\n' + '\n'.join(offenders[:8]) +
+        '\n\nRun: python scripts/strip_restricted_results.py --apply'
+    )
+
+
 def test_no_unredacted_free_text_in_tracked_results():
     """Warning strings quote titles, so they must be reduced to reason codes."""
     offenders = []

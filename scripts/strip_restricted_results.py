@@ -39,11 +39,20 @@ REPO = Path(__file__).resolve().parent.parent
 # Keys whose values are free text that can quote a title or an author.
 TEXT_KEYS = ('warnings', 'issues', 'suspicion_reasons', 'coverage_notes')
 
+# String-valued keys inside `ai_analysis` that describe the call rather than
+# the citation. Everything else the model wrote is treated as prose.
+AI_KEEP = ('model', 'provider', 'tier')
+
 # A warning reads like "Title mismatch (similarity 0.00): BibTeX='...' vs ...".
 # Keep the part before the colon; that is the finding. Drop the quoted evidence.
 REASON_HEAD = re.compile(r'^([^:]{3,60}?)(?::|$)')
 
 REDACTION = '[redacted: third-party dataset]'
+
+# A failed AI call stores the model's reply verbatim, and the reply is often
+# truncated mid-string, so it will not parse as JSON. Lift the error type out
+# by pattern instead.
+ERROR_HEAD = re.compile(r'"error"\s*:\s*"([^"]{0,80})"')
 
 
 def tracked_files():
@@ -74,10 +83,36 @@ def redact_reason(text):
     return f'{head} {REDACTION}'
 
 
+def strip_ai_error(err):
+    """Drop the transcript of a failed AI call, keep the reason it failed.
+
+    When a reply will not parse, the raw response is stored whole -- and a
+    model explaining why a citation is fabricated quotes the citation to do
+    it. The Anthropic runs of 5 August hit the token ceiling 22 to 27 times
+    each, so each of those runs carried that many verbatim quotations.
+
+    The error type is kept because it is the thing that distinguishes a call
+    that failed from a citation that was judged, which is the distinction the
+    whole tool exists to protect. The transcript is not evidence about the
+    citation and goes.
+    """
+    if not isinstance(err, dict):
+        return False
+    msg = err.get('message')
+    if not isinstance(msg, str) or REDACTION in msg:
+        return False
+    m = ERROR_HEAD.search(msg)
+    err['message'] = f'{m.group(1)} {REDACTION}' if m else REDACTION
+    return True
+
+
 def strip_citation(c):
     """Return the citation record with identifying text removed."""
     changed = False
     if c.pop('fields', None) is not None:
+        changed = True
+
+    if strip_ai_error(c.get('ai_error')):
         changed = True
 
     for key in TEXT_KEYS:
@@ -98,12 +133,19 @@ def strip_citation(c):
 
     ai = c.get('ai_analysis')
     if isinstance(ai, dict):
-        # Verdict and confidence stay; the prose quotes titles. Must be
-        # idempotent: re-running has to report nothing, or the dry run can
-        # never be used to prove the tree is clean.
-        for key in ('reason', 'raw'):
-            val = ai.get(key)
-            if isinstance(val, str) and REDACTION not in val:
+        # An allowlist, not a blocklist. Naming the prose keys to remove is
+        # what let this through twice: `reason` and `raw` were listed, so
+        # `additional_note` went out in the v1.7.0 runs and `ai_error` went
+        # out in every run that hit the token ceiling. Anything the model
+        # wrote is prose until shown otherwise. The verdict and the
+        # confidence are not strings and stay untouched.
+        #
+        # Must be idempotent: re-running has to report nothing, or the dry
+        # run can never be used to prove the tree is clean.
+        for key, val in ai.items():
+            if key in AI_KEEP or not isinstance(val, str):
+                continue
+            if REDACTION not in val:
                 ai[key] = REDACTION
                 changed = True
     return changed

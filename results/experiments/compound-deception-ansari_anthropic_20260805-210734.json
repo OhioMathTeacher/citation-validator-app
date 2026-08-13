@@ -568,7 +568,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 65, \\\"reason\\\": \\\"The paper MuSR by Sprague et al. is a real work, but it was published at ICLR 2024, not"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -584,7 +584,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 65, \\\"reason\\\": \\\"Despite the author list containing real, well-known power systems researchers, the pape"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -704,7 +704,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -826,7 +826,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 97, \\\"reason\\\": \\\"This citation misattributes the well-known paper '3D Gaussian Splatting for Real-Time R"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -842,7 +842,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -939,7 +939,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -981,7 +981,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 97, \\\"reason\\\": \\\"SoftMatch is a real paper but was published at ICLR 2023 by Hao Chen, Ran Tao, Yue Fan,"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1134,7 +1134,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 78, \\\"reason\\\": \\\"No DOI and not found in CrossRef, OpenAlex, or Semantic Scholar. Pardoux and Veretennik"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1150,7 +1150,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 85, \\\"reason\\\": \\\"Not found in CrossRef, OpenAlex, or Semantic Scholar, and the author name '\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1474,7 +1474,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1495,7 +1495,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 92, \\\"reason\\\": \\\"The real ICML 2020 paper with this title is authored by Karthik A. Sankararaman, Soham "
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1602,7 +1602,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1618,7 +1618,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 85, \\\"reason\\\": \\\"Not found in any major database, and the known Kolm paper on RL for hedging ('Dynamic R"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1738,7 +1738,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 75, \\\"reason\\\": \\\"Despite plausible author names in the fluid mechanics ML field, the paper is not found "
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1780,7 +1780,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 75, \\\"reason\\\": \\\"Not found in CrossRef, OpenAlex, or Semantic Scholar, and the arXiv ID prefix (2502) im"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1796,7 +1796,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 80, \\\"reason\\\": \\\"Not found in any of CrossRef, OpenAlex, or Semantic Scholar, and no DOI exists. The aut"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1867,7 +1867,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 82, \\\"reason\\\": \\\"Not found in CrossRef, OpenAlex, or Semantic Scholar. The actual ICCV 2023 paper on thi"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -2016,7 +2016,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 85, \\\"reason\\\": \\\"Not found in any database, and the details don't match Goldin's well-known 2014 AER pap"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -2032,7 +2032,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 88, \\\"reason\\\": \\\"The real 'Transformer Circuits' work by Olah et al. is published as an ongoing web seri"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -2139,7 +2139,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 90, \\\"reason\\\": \\\"arXiv:1612.01462 with this title actually belongs to Raghuraman Krishnamoorthi (2018\"\n}"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -2210,7 +2210,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 95, \\\"reason\\\": \\\"The real SuSIE paper (arXiv 2402.17552) is authored by Kevin Black, Mitsuhiko Nakamoto,"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -2474,7 +2474,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -2490,7 +2490,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 70, \\\"reason\\\": \\\"The BibTeX fields are malformed (title field contains author names, author field is tru"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -2532,7 +2532,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 90, \\\"reason\\\": \\\"The real MineCLIP model was introduced in the MineDojo paper by Linxi Fan, Guanzhi Wang"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     }
   ]

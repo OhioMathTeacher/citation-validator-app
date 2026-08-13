@@ -354,7 +354,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 92, \\\"reason\\\": \\\"Not found in CrossRef, OpenAlex, or Semantic Scholar. The actual 'Entailment as Few-Sho"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -370,7 +370,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 90, \\\"reason\\\": \\\"Not found in any database (CrossRef, OpenAlex, Semantic Scholar), no DOI, and the middl"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -552,7 +552,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -620,7 +620,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 78, \\\"reason\\\": \\\"Not found in CrossRef, OpenAlex, or Semantic Scholar despite having a specific arXiv ID"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -678,7 +678,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 65, \\\"reason\\\": \\\"The paper is not found in CrossRef, OpenAlex, or Semantic Scholar, and lacks a DO\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -800,7 +800,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 97, \\\"reason\\\": \\\"This appears to be a fabricated/misattributed citation. The real 3D Gaussian Splatting "
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -816,7 +816,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1003,7 +1003,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 92, \\\"reason\\\": \\\"Malformed BibTeX fields, not found in CrossRef/OpenAlex/Semantic Scholar, no DOI, and t"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1098,7 +1098,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 60, \\\"reason\\\": \\\"The paper is\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1114,7 +1114,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 88, \\\"reason\\\": \\\"Not found in CrossRef, OpenAlex, or Semantic Scholar; author name 'Charanpal D Mummadi'"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1422,7 +1422,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1443,7 +1443,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 90, \\\"reason\\\": \\\"The paper title matches a real ICML 2020 paper, but the actual authors are Karthik A. S"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1537,7 +1537,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 75, \\\"reason\\\": \\\"Not found in any database (CrossRef, OpenAlex, Semantic Scholar), no DOI\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1553,7 +1553,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 85, \\\"reason\\\": \\\"Not found in CrossRef, OpenAlex, or Semantic Scholar, and no DOI. The known Kolm reinfo"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1673,7 +1673,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 78, \\\"reason\\\": \\\"The paper is not found in CrossRef, OpenAlex, or Semantic Scholar, and has no DOI. Whil"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1822,7 +1822,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 78, \\\"reason\\\": \\\"Not found in CrossRef, OpenAlex, or Semantic Scholar, and the author name 'Jiahui Liu' "
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1890,7 +1890,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 65, \\\"reason\\\": \\\"The paper is not found in CrossRef\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -1987,7 +1987,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 90, \\\"reason\\\": \\\"The actual 'Transformer Circuits' work was published on transformer-circuits.pub (Anthr"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -2084,7 +2084,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -2424,7 +2424,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -2440,7 +2440,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     },
     {
@@ -2482,7 +2482,7 @@
       ],
       "ai_error": {
         "status_code": 500,
-        "message": "{\n  \"error\": \"No JSON in Claude response\",\n  \"raw\": \"{\\\"is_suspicious\\\": true, \\\"confidence\\\": 92, \\\"reason\\\": \\\"The real MineCLIP model comes from the MineDojo paper by\"\n}\n"
+        "message": "No JSON in Claude response [redacted: third-party dataset]"
       }
     }
   ]
