@@ -45,8 +45,13 @@ of a published record still shows "No, I need one" selected and still prints
 "Reserve a DOI ... registered when your upload is published", which reads exactly
 like a draft and is not. The reliable check is the DOI NUMBER: if it matches the
 DOI of the record you meant to edit, you are editing that record. v1.5.0 is
-10.5281/zenodo.21817511; the concept DOI, which the paper prints and which always
-resolves to latest, is 10.5281/zenodo.21795712.
+10.5281/zenodo.21817511; v1.7.0 is 10.5281/zenodo.21911148 (record 21911148);
+the concept DOI, which the paper prints and which always resolves to latest, is
+10.5281/zenodo.21795712.
+
+v1.7.0, released 2026-08-12, came up needing all three fixes below, exactly as
+predicted: one licence, an empty copyright field, and Issued 2026-08-13 because
+the release was cut after 20:00 EDT. The tag date is 2026-08-12.
 
 The version number comes from the GIT TAG, not from CITATION.cff. The v1.5.0
 record is correctly labelled v1.5.0 even though CITATION.cff still said 1.4.4 at
