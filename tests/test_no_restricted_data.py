@@ -54,10 +54,20 @@ def _dataset_of(path, blob):
 
 
 def _restricted_result_files():
+    # Walk the working tree, not `git ls-files`. Selecting from the index
+    # meant a newly generated result was outside this guard until it had
+    # already been committed -- the run/`git add`/commit sequence stages the
+    # unredacted file and brings it into scope in one motion, so the check
+    # that should have blocked it only ever ran afterwards. Found 2026-08-16.
+    # _restricted_ids still reads the index by design: a dataset is
+    # restricted exactly when its .bib is untracked.
     tracked = _tracked()
     restricted = _restricted_ids(tracked)
-    for rel in sorted(f for f in tracked
-                      if f.startswith('results/') and f.endswith('.json')):
+    results_root = REPO / 'results'
+    everything = (sorted(str(p.relative_to(REPO))
+                         for p in results_root.rglob('*.json'))
+                  if results_root.is_dir() else [])
+    for rel in everything:
         path = REPO / rel
         try:
             blob = json.loads(path.read_text())

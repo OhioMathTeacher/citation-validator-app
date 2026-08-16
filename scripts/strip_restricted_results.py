@@ -61,6 +61,26 @@ def tracked_files():
     return set(out.split('\n'))
 
 
+def result_files():
+    """Every results/*.json in the working tree, tracked or not.
+
+    Selecting these from `git ls-files` left a hole. A freshly generated
+    result is invisible to the stripper until it is committed, and the
+    ordinary workflow -- run the validator, then `git add -A && git commit`
+    -- stages the unredacted file and brings it into scope in the same
+    motion, so the redaction step it was supposed to pass through never saw
+    it. Found 2026-08-16, when a dry run reported "0 files, 0 citation
+    records" against a new result holding 3,356 full reference strings.
+
+    restricted_dataset_ids() below still reads the index, and must: a
+    dataset counts as restricted precisely when its own .bib is untracked.
+    """
+    root = REPO / 'results'
+    if not root.is_dir():
+        return []
+    return sorted(str(p.relative_to(REPO)) for p in root.rglob('*.json'))
+
+
 def restricted_dataset_ids(tracked):
     """A dataset is restricted when its own .bib is withheld from the repo."""
     manifest = json.loads((REPO / 'datasets/manifest.json').read_text())
@@ -195,8 +215,7 @@ def main():
     print(f'restricted datasets (source withheld): {sorted(restricted)}\n')
 
     touched = total = 0
-    for rel in sorted(f for f in tracked
-                      if f.startswith('results/') and f.endswith('.json')):
+    for rel in result_files():
         path = REPO / rel
         try:
             blob = json.loads(path.read_text())
