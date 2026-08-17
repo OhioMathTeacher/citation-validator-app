@@ -1,8 +1,8 @@
 {
   "step": 1,
   "description": "Deterministic false-positive baseline (no AI)",
-  "version": "ca45d11 (2026-08-16 19:51:07)",
-  "timestamp": "2026-08-17T00:14:32.773712+00:00",
+  "version": "f97110b (2026-08-04 18:42:43)",
+  "timestamp": "2026-08-04T22:58:57.112194+00:00",
   "overall_fpr": 0.0,
   "overall_fp": 0,
   "overall_total": 391,
@@ -11,15 +11,15 @@
       "dataset": "Real arXiv CS Citations (2024)",
       "total": 285,
       "counts": {
-        "valid": 36,
-        "warning": 249,
+        "valid": 4,
+        "warning": 281,
         "suspicious": 0,
         "invalid": 0
       },
       "fp": 0,
       "tn": 285,
       "fpr": 0.0,
-      "elapsed_seconds": 1116.9,
+      "elapsed_seconds": 1249.9,
       "false_positives": []
     },
     "ojsm-real-crossref": {
@@ -34,7 +34,7 @@
       "fp": 0,
       "tn": 96,
       "fpr": 0.0,
-      "elapsed_seconds": 48.0,
+      "elapsed_seconds": 48.1,
       "false_positives": []
     },
     "nature-article-refs": {
@@ -49,7 +49,7 @@
       "fp": 0,
       "tn": 10,
       "fpr": 0.0,
-      "elapsed_seconds": 28.7,
+      "elapsed_seconds": 28.8,
       "false_positives": []
     }
   }
